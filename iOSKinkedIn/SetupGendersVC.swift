@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SetupGendersVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +20,14 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func _loadGenders(_ results: [Gender]){
+        for g in results {
+            print(g.label)
+        }
+    }
 
+    @IBAction func doGetGenders(_ sender: AnyObject){
+        KinkedInAPI.genders(_loadGenders)
+    }
 }
 
