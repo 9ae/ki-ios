@@ -9,10 +9,14 @@
 import UIKit
 
 class SetupPageNC: UIPageViewController {
+    
+    var userNeoId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        
+        print("neo = \(userNeoId)")
         
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],

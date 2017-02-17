@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://dev.kinkd.in/"
+let HOST_URL = "https://private-859cb-theash.apiary-mock.com/"
+//"https://dev.kinkd.in/"
 
 class KinkedInAPI {
 
@@ -22,7 +23,14 @@ class KinkedInAPI {
             }
         }
     }
-    
+  /*
+    static func post(_ path: String, parameters: Parameters) -> NSURLRequest {
+        return Alamofire.request(HOST_URL+path,
+                                 method: "POST",
+                                 parameters: parameters,
+                                 encoding: JSONEncoding.default)
+    }
+    */
     
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
         var genders: [Gender] = [Gender]()
@@ -42,5 +50,40 @@ class KinkedInAPI {
             }
             callback(genders)
         }
+    }
+    
+    static func login(email: String, password: String){
+        
+        let params: Parameters = [
+            "email": email,
+            "password": password
+        ]
+            
+        Alamofire.request(HOST_URL+"login",
+                          method: .post,
+                          parameters: params,
+                          encoding: JSONEncoding.default).responseJSON{ response in
+                if let json = response.result.value as? [String:Any] {
+                    if let token = json["token"] as? String {
+                        Login.setToken(token)
+                    }
+                    //TODO #2 login failed messages
+                }
+        
+        }
+    }
+    
+    static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
+        Alamofire.request(HOST_URL+"validate").responseJSON{ response in
+            if let json = response.result.value as? [String:Any] {
+                if let neoId = json["neo_id"] as? String {
+                    callback(neoId)
+                }
+            }
+        }
+    }
+    
+    static func register(email: String, password: String, inviteCode: String){
+    
     }
 }

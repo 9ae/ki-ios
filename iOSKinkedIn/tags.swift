@@ -25,3 +25,9 @@ extension Gender {
         self.label = _label
     }
 }
+
+
+struct Kink {
+    var id: Int
+    var label: String
+}
