@@ -8,18 +8,13 @@
 
 import UIKit
 
-class SetupBasicVC: UIViewController {
+class SetupBasicVC: SetupViewVC {
     
-    var me: Profile?
     @IBOutlet var fieldName: UITextField?
     @IBOutlet var fieldBirthday: UIDatePicker?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if(me==nil){
-            me = Profile()
-        }
         
         //fieldName?.addTarget(self, action: #selector(nameFieldChanged(_:)), for: .editingChanged)
         
@@ -36,24 +31,18 @@ class SetupBasicVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        print("sege to next")
-    }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let name = fieldName?.text!
-        me?.name = name!
-        me?.birthday = fieldBirthday?.date
-        RealmDB.save(me!)
+        
+        let realm = RealmDB.instance()
+        try! realm.write {
+            me?.name = name!
+            me?.birthday = fieldBirthday?.date
+        }
+        //TODO: post updates to server
+        
     }
     
 }

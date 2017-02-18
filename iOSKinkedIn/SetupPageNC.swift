@@ -11,19 +11,24 @@ import UIKit
 class SetupPageNC: UIPageViewController {
     
     var userNeoId: String?
+    var userProfile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
         
-        print("neo = \(userNeoId)")
+        self.userProfile = Profile.create(userNeoId!)
         
         if let firstViewController = orderedViewControllers.first {
+            
+            firstViewController.setProfile(self.userProfile!)
+            
             setViewControllers([firstViewController],
                                direction: .forward,
                                animated: true,
                                completion: nil)
         }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,14 +36,14 @@ class SetupPageNC: UIPageViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private(set) lazy var orderedViewControllers: [UIViewController] = {
+    private(set) lazy var orderedViewControllers: [SetupViewVC] = {
         return [self.getPageViewController("Kinks"),
                 self.getPageViewController("Basic"),
                 self.getPageViewController("Genders")]
     }()
     
-    private func getPageViewController(_ name: String ) -> UIViewController {
-        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "vcSetup\(name)")
+    private func getPageViewController(_ name: String ) -> SetupViewVC {
+        return (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "vcSetup\(name)") as? SetupViewVC)!
     }
 
     /*
@@ -58,7 +63,13 @@ extension SetupPageNC: UIPageViewControllerDataSource {
         _ pageViewController: UIPageViewController,
         viewControllerBefore viewController: UIViewController
         ) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+        
+        guard let setupViewController = viewController as? SetupViewVC else {
+            return nil
+        }
+        
+        guard let viewControllerIndex = orderedViewControllers.index(
+            of: setupViewController) else {
             return nil
         }
         
@@ -72,14 +83,23 @@ extension SetupPageNC: UIPageViewControllerDataSource {
             return nil
         }
         
-        return orderedViewControllers[previousIndex]
+        let nextView = orderedViewControllers[previousIndex]
+        nextView.setProfile(self.userProfile!)
+        
+        return nextView
     }
     
     func pageViewController(
         _ pageViewController: UIPageViewController,
         viewControllerAfter viewController: UIViewController
         ) -> UIViewController? {
-        guard let viewControllerIndex = orderedViewControllers.index(of: viewController) else {
+        
+        guard let setupViewController = viewController as? SetupViewVC else {
+            return nil
+        }
+        
+        guard let viewControllerIndex = orderedViewControllers.index(
+            of: setupViewController) else {
             return nil
         }
         
@@ -94,6 +114,9 @@ extension SetupPageNC: UIPageViewControllerDataSource {
             return nil
         }
         
-        return orderedViewControllers[nextIndex]
+        let nextView = orderedViewControllers[nextIndex]
+        nextView.setProfile(self.userProfile!)
+        
+        return nextView
     }
 }
