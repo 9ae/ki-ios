@@ -60,13 +60,14 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
         //TODO endpoint to look up definiton
         let label = genders[indexPath.row].label
-        let cell = tableView.cellForRow(at: indexPath)
-        if let accessoryView = cell?.accessoryView {
-            print("access frame metrics")
-            print(accessoryView.frame)
+        if let cell = tableView.cellForRow(at: indexPath)
+        {
             let popTip = AMPopTip()
-            popTip.showText("Definition of \(label)", direction: .left,
-                            maxWidth: 300, in: tableView, fromFrame: accessoryView.frame)
+            popTip.shouldDismissOnTap = true
+            popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
+            popTip.textColor = UIColor.white
+            popTip.showText("Definition of \(label)", direction: .none,
+                            maxWidth: 300, in: self.view, fromFrame: cell.frame)
         }
     }
     
