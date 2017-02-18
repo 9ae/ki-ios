@@ -37,9 +37,11 @@ class SetupPageNC: UIPageViewController {
     }
     
     private(set) lazy var orderedViewControllers: [SetupViewVC] = {
-        return [self.getPageViewController("Kinks"),
+        return [
+                self.getPageViewController("Genders"),
                 self.getPageViewController("Basic"),
-                self.getPageViewController("Genders")]
+                self.getPageViewController("Kinks")
+                ]
     }()
     
     private func getPageViewController(_ name: String ) -> SetupViewVC {

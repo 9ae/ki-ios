@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMPopTip
 
 class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
@@ -17,6 +18,8 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     /*: [Gender] =  [
         Gender(id: 1, label: "bishounen")
     ] */
+    
+    var selectedGendersIds = Set<Int>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +37,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
 
     private func _loadGenders(_ results: [Gender]){
         self.genders = results
+        tableView?.reloadData()
     }
     
     // MARK: Table View Data Source Methods
@@ -51,4 +55,34 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         cell?.textLabel?.text = genders[indexPath.row].label
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView,
+                   accessoryButtonTappedForRowWith indexPath: IndexPath){
+        //TODO endpoint to look up definiton
+        let label = genders[indexPath.row].label
+        let cell = tableView.cellForRow(at: indexPath)
+        if let accessoryView = cell?.accessoryView {
+            print("access frame metrics")
+            print(accessoryView.frame)
+            let popTip = AMPopTip()
+            popTip.showText("Definition of \(label)", direction: .left,
+                            maxWidth: 300, in: tableView, fromFrame: accessoryView.frame)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didDeselectRowAt indexPath: IndexPath){
+        let id = genders[indexPath.row].id
+        selectedGendersIds.remove(id)
+        //TODO apply cool styles
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        let id = genders[indexPath.row].id
+        selectedGendersIds.insert(id)
+        //TODO apply selection styles
+    }
+    
+    
 }

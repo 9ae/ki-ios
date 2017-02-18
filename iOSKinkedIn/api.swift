@@ -34,7 +34,7 @@ class KinkedInAPI {
     
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
         var genders: [Gender] = [Gender]()
-        Alamofire.request(HOST_URL+"list/genders").responseJSON { response in
+        Alamofire.request(HOST_URL+"genders").responseJSON { response in
             
             if let json = response.result.value as? [String:Any] {
                 if let list = json["genders"] as? [Any] {

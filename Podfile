@@ -7,6 +7,7 @@ target 'iOSKinkedIn' do
 
   # Pods for iOSKinkedIn
   pod 'Alamofire', '~> 4.3'
+  pod 'AMPopTip'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

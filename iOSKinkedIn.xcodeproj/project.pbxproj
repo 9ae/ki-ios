@@ -84,6 +84,7 @@
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		00171A551E5650FD00640B09 /* tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
 		0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksVC.swift; sourceTree = "<group>"; };
+		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
+		00CD2AA31E58294900C306A3 /* AMPopTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AMPopTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,6 +142,7 @@
 		00171A161E56384500640B09 = {
 			isa = PBXGroup;
 			children = (
+				00CD2AA31E58294900C306A3 /* AMPopTip.framework */,
 				0070C3721E569E23000D5BA0 /* RealmSwift.framework */,
 				0070C36E1E569E11000D5BA0 /* Realm.framework */,
 				0070C36A1E569DEA000D5BA0 /* Realm.framework */,
@@ -232,6 +235,7 @@
 		60EDCD05462830E481D434C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				005767C11E5827A60075665A /* AMPopTip.framework */,
 				5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */,
 				549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */,
 				F4A43E642C023C6C0874ED96 /* Pods_iOSKinkedInUITests.framework */,
@@ -715,6 +719,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AMPopTip",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -732,6 +737,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AMPopTip",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
