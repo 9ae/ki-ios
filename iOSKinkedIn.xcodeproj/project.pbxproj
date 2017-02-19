@@ -18,6 +18,8 @@
 		00171A561E5650FD00640B09 /* tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A551E5650FD00640B09 /* tags.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21161E5A3EBB00317600 /* SetupPictureVC.swift */; };
+		001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* SetupRolesVC.swift */; };
+		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
 		0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */; };
 		0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */; };
 		0070C36F1E569E11000D5BA0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; };
@@ -87,6 +89,8 @@
 		00171A551E5650FD00640B09 /* tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21161E5A3EBB00317600 /* SetupPictureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPictureVC.swift; sourceTree = "<group>"; };
+		001D21181E5A4B1300317600 /* SetupRolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupRolesVC.swift; sourceTree = "<group>"; };
+		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
@@ -223,6 +227,8 @@
 				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,
 				0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */,
 				001D21161E5A3EBB00317600 /* SetupPictureVC.swift */,
+				001D21181E5A4B1300317600 /* SetupRolesVC.swift */,
+				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -343,6 +349,9 @@
 		00171A171E56384500640B09 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 0820;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = KinkedIn;
@@ -567,8 +576,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
+				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
+				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
 				00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */,
 				00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */,
 				001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */,

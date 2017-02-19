@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SetupPictureVC: SetupViewVC {
+class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    @IBOutlet weak var imagePicked: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,15 +23,30 @@ class SetupPictureVC: SetupViewVC {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectPhoto(_sender: AnyObject) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = true
+            self.present(imagePicker, animated: true, completion: nil)
+        }
     }
-    */
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        print("image selected 2")
+        print(info)
+        imagePicked.image = info["UIImagePickerControllerEditedImage"] as? UIImage
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        //TODO don't save to DB just upload to cloudinary or server
+    }
+    
+    
 
 }

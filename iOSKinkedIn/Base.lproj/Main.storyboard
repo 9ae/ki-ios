@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="2642" y="937"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup RolesVC-->
         <scene sceneID="p1W-Zd-mvv">
             <objects>
-                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJp-8Y-k5q" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJp-8Y-k5q" customClass="SetupRolesVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ObL-Xf-R8Q"/>
                         <viewControllerLayoutGuide type="bottom" id="JPL-8v-GEz"/>
@@ -100,18 +100,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qb-Jf0">
+                                <rect key="frame" x="53" y="156" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-vh-X1Z">
+                                <rect key="frame" x="100" y="353" width="175" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Photo from Library"/>
+                                <connections>
+                                    <action selector="selectPhotoWith_sender:" destination="I8z-4V-akP" eventType="touchDown" id="KRJ-ZL-tlt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imagePicked" destination="zPg-qb-Jf0" id="grM-Gh-Jlc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7T-vN-m8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4317.6000000000004" y="949.47526236881572"/>
         </scene>
-        <!--View Controller-->
+        <!--Setup BioVC-->
         <scene sceneID="dAs-el-b8Z">
             <objects>
-                <viewController storyboardIdentifier="vcSetupBio" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dtf-H8-yzL" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcSetupBio" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Dtf-H8-yzL" customClass="SetupBioVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ExV-DM-mEu"/>
                         <viewControllerLayoutGuide type="bottom" id="u2S-qR-gJd"/>
@@ -127,6 +142,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k18-EK-ZLm">
+                                <rect key="frame" x="172" y="409" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="completeSetup:" destination="Dtf-H8-yzL" eventType="touchDown" id="rWf-SM-F6R"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -138,7 +161,11 @@
         <!--Setup PageNC-->
         <scene sceneID="BQg-JN-LkV">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jpS-e6-Ob3" customClass="SetupPageNC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="jpS-e6-Ob3" customClass="SetupPageNC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="B5u-ov-EwW" kind="show" identifier="setup2app" id="9Rp-uO-vkD"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O6w-0D-wOa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="334" y="937"/>
@@ -335,7 +362,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lac-CJ-Pay"/>
         <segue reference="P16-Jh-e69"/>
+        <segue reference="9Rp-uO-vkD"/>
     </inferredMetricsTieBreakers>
 </document>

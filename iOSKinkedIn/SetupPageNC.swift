@@ -12,6 +12,11 @@ class SetupPageNC: UIPageViewController {
     
     var userNeoId: String?
     var userProfile: Profile?
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +35,8 @@ class SetupPageNC: UIPageViewController {
                                completion: nil)
         }
         
+        NotificationCenter.default.addObserver(self, selector: #selector(SetupPageNC.handleProfileSetupComplete), name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,11 +48,12 @@ class SetupPageNC: UIPageViewController {
         return [
                 //TODO in kinks list simulate to popular 100
                 //TODO self.getPageViewController("Kinks"),
+            
                 self.getPageViewController("Basic"),
                 self.getPageViewController("Genders"),
                 self.getPageViewController("Picture"),
                 //TODO self.getPageViewController("Roles"),
-                //TODO self.getPageViewController("Bio")
+                 self.getPageViewController("Bio")
                 ]
     }()
     
@@ -53,15 +61,10 @@ class SetupPageNC: UIPageViewController {
         return (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "vcSetup\(name)") as? SetupViewVC)!
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @objc func handleProfileSetupComplete(){
+        print("profile setup comlete")
+        self.performSegue(withIdentifier: "setup2app", sender: self)
     }
-    */
 
 }
 
