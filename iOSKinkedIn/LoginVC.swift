@@ -13,6 +13,11 @@ class LoginVC: UIViewController {
     
     @IBOutlet var fieldEmail: UITextField?
     @IBOutlet var fieldPassword: UITextField?
+    
+    var loginBtnSender: AnyObject?
+    var userNeoId: String?
+    
+    //TODO set password field to type=pwd
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,24 +32,36 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func login(_ sender: AnyObject){
+        loginBtnSender = sender
         if let email = fieldEmail?.text,
             let password = fieldPassword?.text {
-            KinkedInAPI.login(email: email, password: password)
+            KinkedInAPI.login(email: email, password: password, callback: checkProfileCreated)
+            
         }
         
-        
+    }
+    
+    func checkProfileCreated(_ neoId: String) {
+        userNeoId = neoId
+        if ((Profile.get(neoId)) != nil){ //TODO we shoud really validate with the server instead locally
+            self.performSegue(withIdentifier: "login2app", sender: loginBtnSender!)
+        } else {
+            self.performSegue(withIdentifier: "login2setup", sender: loginBtnSender!)
+        }
     }
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier=="login2setup"){
+            let setupView = segue.destination as? SetupPageNC
+            setupView?.userNeoId = userNeoId
+        }
     }
-    */
+    
 
 }

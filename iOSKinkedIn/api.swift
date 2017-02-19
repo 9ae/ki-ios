@@ -52,7 +52,7 @@ class KinkedInAPI {
         }
     }
     
-    static func login(email: String, password: String){
+    static func login(email: String, password: String, callback: @escaping(_ neoId: String)->Void){
         
         let params: Parameters = [
             "email": email,
@@ -66,6 +66,9 @@ class KinkedInAPI {
                 if let json = response.result.value as? [String:Any] {
                     if let token = json["token"] as? String {
                         Login.setToken(token)
+                    }
+                    if let neoId = json["neo_id"] as? String {
+                        callback(neoId)
                     }
                     //TODO #2 login failed messages
                 }

@@ -14,8 +14,11 @@ class RealmDB {
     private static var _db: Realm?
     
     static func instance() -> Realm {
+        
         if(_db == nil){
-            _db = try! Realm()
+            _db = try! Realm.init(
+                //TODO: Remove this for prod
+                fileURL: (URL(string: "/Users/alice/Workspaces/ki/db/irealm/default.realm"))!)
         }
         return _db!
     }
@@ -31,6 +34,17 @@ class RealmDB {
         let realm = instance()
         try! realm.write {
             realm.delete(modelInstance)
+        }
+    }
+    
+    static func backgroundsave(_ callback: ()-> Void) {
+        // Import many items in a background thread
+        DispatchQueue.global().async {
+            // Get new realm and table since we are in a new thread
+            let realm = instance()
+            realm.beginWrite()
+            
+            try! realm.commitWrite()
         }
     }
     

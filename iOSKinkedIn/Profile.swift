@@ -22,6 +22,11 @@ class Profile: Object {
     
     dynamic var name: String = ""
     dynamic var birthday: Date?
+    dynamic var bio: String = ""
+    
+    dynamic var genderIds: String = ""
+    dynamic var roleIds: String = ""
+    
     
     static func me() -> Profile? {
         return nil
@@ -48,6 +53,26 @@ class Profile: Object {
         RealmDB.save(profile)
         return profile
 
+    }
+    
+    static func joinIds(_ ids: [Int]) -> String {
+        return ids.map(String.init).joined(separator: ",")
+    }
+    
+    static func splitIds(_ str: String) -> [Int] {
+        return str.characters.split(separator: ",")
+            .map(String.init)
+            .map{ (c) -> Int in return Int(c, radix: 10)! }
+        
+    }
+    
+    func saveGenders(_ ids: [Int]) {
+        let idStr = Profile.joinIds(ids)
+        let realm = RealmDB.instance()
+        try! realm.write {
+            self.genderIds = idStr
+        }
+        
     }
     
 }

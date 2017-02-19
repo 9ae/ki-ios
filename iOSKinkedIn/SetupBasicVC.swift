@@ -12,6 +12,8 @@ class SetupBasicVC: SetupViewVC {
     
     @IBOutlet var fieldName: UITextField?
     @IBOutlet var fieldBirthday: UIDatePicker?
+    
+    //TODO limit date field to be YYYY-MM-DD and assert they are 18 years of age
 
     override func viewDidLoad() {
         super.viewDidLoad()

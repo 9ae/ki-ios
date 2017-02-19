@@ -22,9 +22,6 @@ class Login: Object {
     
     static func getToken() -> String? {
         
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-        
-        
         let realm = RealmDB.instance()
         let logins = realm.objects(Login.self)
         

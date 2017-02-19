@@ -85,5 +85,13 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         //TODO apply selection styles
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        me?.saveGenders(Array(selectedGendersIds))
+        //TODO: post updates to server
+        
+    }
+    
     
 }

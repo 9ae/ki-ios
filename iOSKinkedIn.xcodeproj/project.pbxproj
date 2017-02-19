@@ -16,6 +16,8 @@
 		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
 		00171A561E5650FD00640B09 /* tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A551E5650FD00640B09 /* tags.swift */; };
+		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
+		001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21161E5A3EBB00317600 /* SetupPictureVC.swift */; };
 		0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */; };
 		0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */; };
 		0070C36F1E569E11000D5BA0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; };
@@ -83,6 +85,8 @@
 		00171A441E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		00171A551E5650FD00640B09 /* tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
+		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
+		001D21161E5A3EBB00317600 /* SetupPictureVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPictureVC.swift; sourceTree = "<group>"; };
 		0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				001D21131E5A284A00317600 /* helpers */,
 				00171A541E5650D300640B09 /* models */,
 				00171A511E56465E00640B09 /* vc */,
 				00171A501E56461900640B09 /* providers */,
@@ -217,6 +222,7 @@
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,
 				0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */,
+				001D21161E5A3EBB00317600 /* SetupPictureVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -230,6 +236,14 @@
 				00A0CD7A1E56CF5E00D39CD8 /* Login.swift */,
 			);
 			name = models;
+			sourceTree = "<group>";
+		};
+		001D21131E5A284A00317600 /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				001D21141E5A286900317600 /* strings.swift */,
+			);
+			name = helpers;
 			sourceTree = "<group>";
 		};
 		60EDCD05462830E481D434C8 /* Frameworks */ = {
@@ -557,9 +571,11 @@
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
 				00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */,
 				00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */,
+				001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00A0CD791E56CE2C00D39CD8 /* Interest.swift in Sources */,
 				00171A561E5650FD00640B09 /* tags.swift in Sources */,
+				001D21151E5A286900317600 /* strings.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
