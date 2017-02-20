@@ -28,6 +28,24 @@ extension Gender {
 
 
 struct Kink {
-    var id: Int
     var label: String
+    var popularity: Int
+    var ways: [String]
+}
+
+extension Kink {
+    init?(json: [String:Any]){
+        guard let _label = json["label"] as? String,
+            let _pop = json["popularity"] as? Int
+            else {
+                    return nil
+            }
+        self.label = _label
+        self.popularity = _pop
+        self.ways = [String]()
+        
+        if let _ways = json["ways"] as? [String] {
+            self.ways = _ways
+        }
+    }
 }

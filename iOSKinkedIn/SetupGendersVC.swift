@@ -58,7 +58,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
-        //TODO endpoint to look up definiton
+        //TODO api:#4 endpoint to look up definiton
         let label = genders[indexPath.row].label
         if let cell = tableView.cellForRow(at: indexPath)
         {
@@ -75,21 +75,20 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
                    didDeselectRowAt indexPath: IndexPath){
         let id = genders[indexPath.row].id
         selectedGendersIds.remove(id)
-        //TODO apply cool styles
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
         let id = genders[indexPath.row].id
         selectedGendersIds.insert(id)
-        //TODO apply selection styles
+        //TODO #7 apply cool styles
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         me?.saveGenders(Array(selectedGendersIds))
-        //TODO: post updates to server
+        //TODO #9 post updates to server
         
     }
     

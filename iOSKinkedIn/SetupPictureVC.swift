@@ -44,7 +44,7 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        //TODO don't save to DB just upload to cloudinary or server
+        //TODO #12 don't save to DB just upload to cloudinary or server
     }
     
     

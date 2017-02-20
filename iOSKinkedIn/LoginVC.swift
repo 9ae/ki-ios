@@ -17,7 +17,7 @@ class LoginVC: UIViewController {
     var loginBtnSender: AnyObject?
     var userNeoId: String?
     
-    //TODO set password field to type=pwd
+    //TODO #3 set password field to type=pwd
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +43,8 @@ class LoginVC: UIViewController {
     
     func checkProfileCreated(_ neoId: String) {
         userNeoId = neoId
-        if ((Profile.get(neoId)) != nil){ //TODO we shoud really validate with the server instead locally
+        if ((Profile.get(neoId)) != nil){
+            //TODO api:#2 we shoud really validate with the server instead locally
             self.performSegue(withIdentifier: "login2app", sender: loginBtnSender!)
         } else {
             self.performSegue(withIdentifier: "login2setup", sender: loginBtnSender!)

@@ -46,13 +46,11 @@ class SetupPageNC: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [SetupViewVC] = {
         return [
-                //TODO in kinks list simulate to popular 100
-                //TODO self.getPageViewController("Kinks"),
-            
+                self.getPageViewController("Kinks"),
                 self.getPageViewController("Basic"),
                 self.getPageViewController("Genders"),
                 self.getPageViewController("Picture"),
-                //TODO self.getPageViewController("Roles"),
+                //TODO #12 self.getPageViewController("Roles"),
                  self.getPageViewController("Bio")
                 ]
     }()

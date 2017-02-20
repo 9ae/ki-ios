@@ -17,7 +17,7 @@ class RealmDB {
         
         if(_db == nil){
             _db = try! Realm.init(
-                //TODO: Remove this for prod
+                //TODO Remove this for prod
                 fileURL: (URL(string: "/Users/alice/Workspaces/ki/db/irealm/default.realm"))!)
         }
         return _db!

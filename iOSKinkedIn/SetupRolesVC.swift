@@ -9,8 +9,6 @@
 import UIKit
 
 class SetupRolesVC: SetupViewVC {
-    
-    //TODO same setup as genders
 
     override func viewDidLoad() {
         super.viewDidLoad()

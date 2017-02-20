@@ -8,12 +8,20 @@
 
 import UIKit
 
-class SetupKinksVC: SetupViewVC {
+class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
+    
+    let CELL_ID = "cellKinks"
+    @IBOutlet var kinksTableView: UITableView?
+    
+    var kinks = [Kink]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        KinkedInAPI.kinks(_loadKinks)
+        kinksTableView?.dataSource = self
+        kinksTableView?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,15 +33,38 @@ class SetupKinksVC: SetupViewVC {
         super.viewWillDisappear(animated)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    private func _loadKinks(_ results: [Kink]){
+        self.kinks = results
+        kinksTableView?.reloadData()
     }
-    */
+    
+    private func _detailView(_ kink: String){
+        print("more details for \(kink)")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return kinks.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID)
+        if (cell == nil) {
+            cell = UITableViewCell(
+                style: UITableViewCellStyle.default,
+                reuseIdentifier: CELL_ID)
+        }
+        cell?.textLabel?.text = kinks[indexPath.row].label
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   accessoryButtonTappedForRowWith indexPath: IndexPath){
+        _detailView(kinks[indexPath.row].label)
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath){
+        _detailView(kinks[indexPath.row].label)
+    }
 
 }

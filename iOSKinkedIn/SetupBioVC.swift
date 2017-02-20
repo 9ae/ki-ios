@@ -24,9 +24,9 @@ class SetupBioVC: SetupViewVC {
     }
     
     @IBAction func completeSetup(_ sender: AnyObject){
-        //TODO save bio
+        //TODO #6 save bio
         
-        //TODO inform server that profile has been setup
+        //TODO #7 inform server that profile has been setup
         
         NotificationCenter.default.post(name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
     }

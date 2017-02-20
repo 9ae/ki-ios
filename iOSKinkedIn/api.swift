@@ -33,7 +33,7 @@ class KinkedInAPI {
     */
     
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
-        var genders: [Gender] = [Gender]()
+        var genders = [Gender]()
         Alamofire.request(HOST_URL+"genders").responseJSON { response in
             
             if let json = response.result.value as? [String:Any] {
@@ -49,6 +49,24 @@ class KinkedInAPI {
                 
             }
             callback(genders)
+        }
+    }
+    
+    static func kinks(_ callback: @escaping(_ results:[Kink]) -> Void) {
+        var kinks = [Kink]()
+        Alamofire.request(HOST_URL+"kinks").responseJSON { response in
+            if let json = response.result.value as? [String:Any] {
+                if let list = json["kinks"] as? [Any] {
+                    for li in list {
+                        if let kd = li as? [String:Any] {
+                            if let k = Kink(json:kd){
+                                kinks.append(k)
+                            }
+                        }
+                    }
+                }
+            }
+            callback(kinks)
         }
     }
     
@@ -70,7 +88,7 @@ class KinkedInAPI {
                     if let neoId = json["neo_id"] as? String {
                         callback(neoId)
                     }
-                    //TODO #2 login failed messages
+                    //TODO #2 login failed messages via notification system
                 }
         
         }
