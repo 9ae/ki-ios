@@ -97,8 +97,8 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 realm.delete(interest!)
             }
         }
-
-        performSegue(withIdentifier: "return2kinks", sender: sender)
+        self.navigationController?.popViewController(animated: false)
+        //performSegue(withIdentifier: "return2kinks", sender: sender)
     }
 
 }
