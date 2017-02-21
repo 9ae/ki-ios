@@ -55,19 +55,8 @@ class Profile: Object {
 
     }
     
-    static func joinIds(_ ids: [Int]) -> String {
-        return ids.map(String.init).joined(separator: ",")
-    }
-    
-    static func splitIds(_ str: String) -> [Int] {
-        return str.characters.split(separator: ",")
-            .map(String.init)
-            .map{ (c) -> Int in return Int(c, radix: 10)! }
-        
-    }
-    
     func saveGenders(_ ids: [Int]) {
-        let idStr = Profile.joinIds(ids)
+        let idStr = joinIds(ids)
         let realm = RealmDB.instance()
         try! realm.write {
             self.genderIds = idStr

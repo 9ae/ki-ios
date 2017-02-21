@@ -37,13 +37,13 @@ class RealmDB {
         }
     }
     
-    static func backgroundsave(_ callback: ()-> Void) {
+    static func backgroundsave(_ callback: @escaping ()-> Void) {
         // Import many items in a background thread
         DispatchQueue.global().async {
             // Get new realm and table since we are in a new thread
             let realm = instance()
             realm.beginWrite()
-            
+            callback()
             try! realm.commitWrite()
         }
     }

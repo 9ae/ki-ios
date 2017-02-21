@@ -12,8 +12,10 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     let CELL_ID = "cellKinks"
     @IBOutlet var kinksTableView: UITableView?
+    @IBOutlet var segmentControl: UISegmentedControl?
     
     var kinks = [Kink]()
+    var selectedKink: Kink?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         KinkedInAPI.kinks(_loadKinks)
         kinksTableView?.dataSource = self
         kinksTableView?.delegate = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,13 +36,22 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         super.viewWillDisappear(animated)
     }
     
+    private func sortByABC(a:Kink, b:Kink) -> Bool {
+        return a.label < b.label
+    }
+    
+    private func sortByPopularity(a:Kink, b:Kink) -> Bool {
+        return a.popularity < b.popularity
+    }
+
     private func _loadKinks(_ results: [Kink]){
-        self.kinks = results
+        self.kinks = results.sorted(by: sortByABC)
         kinksTableView?.reloadData()
     }
     
-    private func _detailView(_ kink: String){
-        print("more details for \(kink)")
+    private func _detailView(_ kink: Kink){
+        selectedKink = kink
+        self.performSegue(withIdentifier: "kinkprefs", sender: self)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,18 +65,53 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
                 style: UITableViewCellStyle.default,
                 reuseIdentifier: CELL_ID)
         }
-        cell?.textLabel?.text = kinks[indexPath.row].label
+        let kink = kinks[indexPath.row]
+        cell?.textLabel?.text = kink.label
+        if(KinkInterest.has(_label: kink.label)){
+            cell?.textLabel?.textColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+        } else {
+            cell?.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        }
         return cell!
     }
     
     func tableView(_ tableView: UITableView,
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
-        _detailView(kinks[indexPath.row].label)
+        _detailView(kinks[indexPath.row])
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        _detailView(kinks[indexPath.row].label)
+        _detailView(kinks[indexPath.row])
+    }
+    
+    @IBAction func indexChanged(_ sender: AnyObject) {
+        guard let idx = segmentControl?.selectedSegmentIndex else {
+            return
+        }
+        
+        switch idx
+        {
+        case 0:
+            self.kinks = self.kinks.sorted(by: sortByABC)
+        case 1:
+            self.kinks = self.kinks.sorted(by: sortByPopularity)
+            
+        default:
+            break
+        }
+        kinksTableView?.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "kinkprefs"){
+            guard let kinkPrefsView = segue.destination as? SetKinkPrefsVC else {
+                return
+            }
+            
+            kinkPrefsView.kinkInFocus = selectedKink
+            
+        }
     }
 
 }

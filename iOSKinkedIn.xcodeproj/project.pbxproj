@@ -29,11 +29,12 @@
 		00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD721E56A03B00D39CD8 /* Profile.swift */; };
 		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
-		00A0CD791E56CE2C00D39CD8 /* Interest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD781E56CE2C00D39CD8 /* Interest.swift */; };
 		00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7A1E56CF5E00D39CD8 /* Login.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
+		00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */; };
+		00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* KinkInterest.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
 		EB4D3BE2042256B198045EFE /* Pods_iOSKinkedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */; };
 		F0E30A0072FD34780B13D594 /* Pods_iOSKinkedInUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A43E642C023C6C0874ED96 /* Pods_iOSKinkedInUITests.framework */; };
@@ -100,12 +101,13 @@
 		00A0CD721E56A03B00D39CD8 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
-		00A0CD781E56CE2C00D39CD8 /* Interest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interest.swift; sourceTree = "<group>"; };
 		00A0CD7A1E56CF5E00D39CD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00CD2AA31E58294900C306A3 /* AMPopTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AMPopTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetKinkPrefsVC.swift; sourceTree = "<group>"; };
+		00D193B11E5BA4FE0010C34C /* KinkInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkInterest.swift; sourceTree = "<group>"; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +231,7 @@
 				001D21161E5A3EBB00317600 /* SetupPictureVC.swift */,
 				001D21181E5A4B1300317600 /* SetupRolesVC.swift */,
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
+				00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -238,8 +241,8 @@
 			children = (
 				00171A551E5650FD00640B09 /* tags.swift */,
 				00A0CD721E56A03B00D39CD8 /* Profile.swift */,
-				00A0CD781E56CE2C00D39CD8 /* Interest.swift */,
 				00A0CD7A1E56CF5E00D39CD8 /* Login.swift */,
+				00D193B11E5BA4FE0010C34C /* KinkInterest.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -575,6 +578,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */,
+				00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
@@ -584,7 +589,6 @@
 				00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */,
 				001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
-				00A0CD791E56CE2C00D39CD8 /* Interest.swift in Sources */,
 				00171A561E5650FD00640B09 /* tags.swift in Sources */,
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
