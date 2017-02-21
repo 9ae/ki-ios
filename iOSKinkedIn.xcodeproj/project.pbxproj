@@ -222,8 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				00171A241E56384500640B09 /* SetupGendersVC.swift */,
-				0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */,
 				00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */,
+				0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */,
 				00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */,
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,

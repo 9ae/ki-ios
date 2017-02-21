@@ -41,10 +41,11 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
         
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         //TODO #12 don't save to DB just upload to cloudinary or server
+        if let nextScene = segue.destination as? SetupViewVC {
+            nextScene.setProfile(self.me!)
+        }
     }
     
     

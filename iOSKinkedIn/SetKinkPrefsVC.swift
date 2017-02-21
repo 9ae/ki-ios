@@ -23,13 +23,15 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        guard kinkInFocus != nil else {
+            return
+        }
+        
         waysTable?.dataSource = self
         waysTable?.delegate = self
         
-
         let lbl = kinkInFocus?.label ?? ""
         defineLabel?.text = "Definition of \(lbl)"
-        
         
         interest = KinkInterest.getOrCreate(_label: (kinkInFocus?.label)!)
         let _ways = splitStrings((interest?.compactWays)!)
@@ -81,10 +83,9 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             myWays.insert(w!)
         }
     }
-
-
-    @IBAction func saveAndReturn(_ sender: AnyObject){
-        
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(false)
         let realm = RealmDB.instance()
         let hasKink: Bool = myWays.count > 0
         if(hasKink){
@@ -97,8 +98,6 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 realm.delete(interest!)
             }
         }
-        self.navigationController?.popViewController(animated: false)
-        //performSegue(withIdentifier: "return2kinks", sender: sender)
     }
 
 }

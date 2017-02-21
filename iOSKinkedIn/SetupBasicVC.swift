@@ -33,9 +33,7 @@ class SetupBasicVC: SetupViewVC {
         // Dispose of any resources that can be recreated.
     }
     
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let name = fieldName?.text!
         
         let realm = RealmDB.instance()
@@ -44,7 +42,9 @@ class SetupBasicVC: SetupViewVC {
             me?.birthday = fieldBirthday?.date
         }
         //TODO #5 post updates to server
-        
+        if let nextScene = segue.destination as? SetupViewVC {
+            nextScene.setProfile(self.me!)
+        }
     }
     
 }

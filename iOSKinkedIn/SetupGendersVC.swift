@@ -67,7 +67,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
             popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
             popTip.textColor = UIColor.white
             popTip.showText("Definition of \(label)", direction: .none,
-                            maxWidth: 300, in: self.view, fromFrame: cell.frame)
+                            maxWidth: 300, in: tableView, fromFrame: cell.frame)
         }
     }
     
@@ -84,12 +84,12 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         //TODO #7 apply cool styles
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         me?.saveGenders(Array(selectedGendersIds))
         //TODO #9 post updates to server
-        
+        if let nextScene = segue.destination as? SetupViewVC {
+            nextScene.setProfile(self.me!)
+        }
     }
     
     

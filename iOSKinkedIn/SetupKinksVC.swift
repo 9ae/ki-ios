@@ -84,7 +84,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
                    didSelectRowAt indexPath: IndexPath){
         _detailView(kinks[indexPath.row])
     }
-    
+ 
     @IBAction func indexChanged(_ sender: AnyObject) {
         guard let idx = segmentControl?.selectedSegmentIndex else {
             return
@@ -105,12 +105,12 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "kinkprefs"){
-            guard let kinkPrefsView = segue.destination as? SetKinkPrefsVC else {
-                return
-            }
+            let kinkPrefsView = segue.destination as? SetKinkPrefsVC
+            kinkPrefsView?.kinkInFocus = selectedKink
             
-            kinkPrefsView.kinkInFocus = selectedKink
-            
+        }
+        if let nextScene = segue.destination as? SetupViewVC {
+            nextScene.setProfile(self.me!)
         }
     }
 

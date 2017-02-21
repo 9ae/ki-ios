@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SetupPageNC: UIPageViewController {
+class SetupPageNC: UINavigationController {
     
     var userNeoId: String?
     var userProfile: Profile?
@@ -20,22 +20,17 @@ class SetupPageNC: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = self
         
-        self.userProfile = Profile.create(userNeoId!, isSelf: true)
-        RealmDB.save(self.userProfile!)
+        if (userNeoId != nil){
         
-        if let firstViewController = orderedViewControllers.first {
-            
-            firstViewController.setProfile(self.userProfile!)
-            
-            setViewControllers([firstViewController],
-                               direction: .forward,
-                               animated: true,
-                               completion: nil)
+            self.userProfile = Profile.create(userNeoId!, isSelf: true)
+            RealmDB.save(self.userProfile!)
+        
+            NotificationCenter.default.addObserver(self, selector: #selector(SetupPageNC.handleProfileSetupComplete), name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
+        
+            let firstScreen = self.viewControllers.first as? SetupViewVC
+            firstScreen?.setProfile(self.userProfile!)
         }
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(SetupPageNC.handleProfileSetupComplete), name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
         
     }
 
@@ -44,28 +39,12 @@ class SetupPageNC: UIPageViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    private(set) lazy var orderedViewControllers: [SetupViewVC] = {
-        return [
-                self.getPageViewController("Kinks"),
-                self.getPageViewController("Basic"),
-                self.getPageViewController("Genders"),
-                self.getPageViewController("Picture"),
-                //TODO #12 self.getPageViewController("Roles"),
-                 self.getPageViewController("Bio")
-                ]
-    }()
-    
-    private func getPageViewController(_ name: String ) -> SetupViewVC {
-        return (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "vcSetup\(name)") as? SetupViewVC)!
-    }
-
     @objc func handleProfileSetupComplete(){
-        print("profile setup comlete")
         self.performSegue(withIdentifier: "setup2app", sender: self)
     }
 
 }
-
+/*
 extension SetupPageNC: UIPageViewControllerDataSource {
     func pageViewController(
         _ pageViewController: UIPageViewController,
@@ -128,3 +107,4 @@ extension SetupPageNC: UIPageViewControllerDataSource {
         return nextView
     }
 }
+*/
