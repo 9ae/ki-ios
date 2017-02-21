@@ -16,6 +16,8 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     var kinks = [Kink]()
     var selectedKink: Kink?
+    
+    var isComingBack = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,12 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         KinkedInAPI.kinks(_loadKinks)
         kinksTableView?.dataSource = self
         kinksTableView?.delegate = self
-        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if(isComingBack){
+            kinksTableView?.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -107,7 +114,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         if (segue.identifier == "kinkprefs"){
             let kinkPrefsView = segue.destination as? SetKinkPrefsVC
             kinkPrefsView?.kinkInFocus = selectedKink
-            
+            isComingBack = true
         }
         if let nextScene = segue.destination as? SetupViewVC {
             nextScene.setProfile(self.me!)
