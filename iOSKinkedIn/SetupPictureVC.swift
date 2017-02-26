@@ -35,9 +35,9 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
-        print("image selected 2")
-        print(info)
-        imagePicked.image = info["UIImagePickerControllerEditedImage"] as? UIImage
+        picker.dismiss(animated: false) {
+            self.imagePicked.image = info["UIImagePickerControllerEditedImage"] as? UIImage
+        }
         
     }
     
