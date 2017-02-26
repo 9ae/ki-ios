@@ -11,22 +11,17 @@ import RealmSwift
 
 class Profile: Object {
     
-// Specify properties to ignore (Realm won't persist these)
-    
-//  override static func ignoredProperties() -> [String] {
-//    return []
-//  }
-    
     dynamic var neoId: String = ""
     dynamic var isSelf: Bool = false
     
     dynamic var name: String = ""
+    
     dynamic var birthday: Date?
     dynamic var bio: String = ""
     
     dynamic var genderIds: String = ""
     dynamic var roleIds: String = ""
-    
+
     
     static func me() -> Profile? {
         return nil
