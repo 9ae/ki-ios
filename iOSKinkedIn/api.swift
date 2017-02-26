@@ -76,7 +76,7 @@ class KinkedInAPI {
             "email": email,
             "password": password
         ]
-            
+        
         Alamofire.request(HOST_URL+"login",
                           method: .post,
                           parameters: params,
@@ -95,6 +95,7 @@ class KinkedInAPI {
     }
     
     static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
+        
         Alamofire.request(HOST_URL+"validate").responseJSON{ response in
             if let json = response.result.value as? [String:Any] {
                 if let neoId = json["neo_id"] as? String {
@@ -102,6 +103,7 @@ class KinkedInAPI {
                 }
             }
         }
+        
     }
     
     static func register(email: String, password: String, inviteCode: String){

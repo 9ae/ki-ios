@@ -24,6 +24,10 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
 
         // Do any additional setup after loading the view.
         KinkedInAPI.kinks(_loadKinks)
+        _loadKinks([
+            Kink(label: "foot", popularity: 3, ways: ["touch","smell","worship"]),
+            Kink(label: "hands", popularity: 2, ways:["draw", "tocuh"])
+            ])
         kinksTableView?.dataSource = self
         kinksTableView?.delegate = self
     }
@@ -48,7 +52,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     private func sortByPopularity(a:Kink, b:Kink) -> Bool {
-        return a.popularity < b.popularity
+        return a.popularity > b.popularity
     }
 
     private func _loadKinks(_ results: [Kink]){

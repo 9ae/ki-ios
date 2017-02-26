@@ -46,8 +46,7 @@ class Profile: Object {
     }
     
     static func create(_ neo: String, isSelf: Bool = false) -> Profile {
-
-        var profile = Profile()
+        let profile = Profile()
         profile.neoId = neo
         profile.isSelf = isSelf
         RealmDB.save(profile)
@@ -62,6 +61,14 @@ class Profile: Object {
             self.genderIds = idStr
         }
         
+    }
+    
+    func saveRoles(_ ids: [Int]){
+        let idStr = joinIds(ids)
+        let realm = RealmDB.instance()
+        try! realm.write {
+            self.roleIds = idStr
+        }
     }
     
 }

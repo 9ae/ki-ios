@@ -14,10 +14,10 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     let CELL_ID = "cellGender"
     @IBOutlet var tableView: UITableView?
     
-    var genders = [Gender]()
-    /*: [Gender] =  [
-        Gender(id: 1, label: "bishounen")
-    ] */
+    var genders =  [
+        Gender(id: 1, label: "bishounen"),
+        Gender(id: 2, label: "shoujo")
+    ]
     
     var selectedGendersIds = Set<Int>()
 

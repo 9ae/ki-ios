@@ -18,6 +18,9 @@ class SetupBasicVC: SetupViewVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //fieldBirthday?.maximumDate =  fieldBirthday?.calendar.date(byAdding: Calendar.Component.year, value: -18, to: Date())
+        
+        
         //fieldName?.addTarget(self, action: #selector(nameFieldChanged(_:)), for: .editingChanged)
         
     }

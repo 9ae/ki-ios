@@ -16,8 +16,6 @@ class LoginVC: UIViewController {
     
     var loginBtnSender: AnyObject?
     var userNeoId: String?
-    
-    //TODO #3 set password field to type=pwd
 
     override func viewDidLoad() {
         super.viewDidLoad()
