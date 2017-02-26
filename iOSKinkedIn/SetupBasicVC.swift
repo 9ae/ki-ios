@@ -12,23 +12,16 @@ class SetupBasicVC: SetupViewVC {
     
     @IBOutlet var fieldName: UITextField?
     @IBOutlet var fieldBirthday: UIDatePicker?
-    
-    //TODO #4 limit date field to be YYYY-MM-DD and assert they are 18 years of age
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //fieldBirthday?.maximumDate =  fieldBirthday?.calendar.date(byAdding: Calendar.Component.year, value: -18, to: Date())
+        let today = Date()
+        var dc = DateComponents()
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        dc.year = -18
+        fieldBirthday?.maximumDate = calendar.date(byAdding: dc, to: today)
         
-        
-        //fieldName?.addTarget(self, action: #selector(nameFieldChanged(_:)), for: .editingChanged)
-        
-    }
-    
-    func nameFieldChanged(_ textField: UITextField){
-        let newValue = textField.text!
-        print(newValue)
-        me?.name = newValue
     }
 
     override func didReceiveMemoryWarning() {
