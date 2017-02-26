@@ -41,16 +41,12 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID)
-        if (cell == nil) {
-            cell = UITableViewCell(
-                style: UITableViewCellStyle.default,
-                reuseIdentifier: CELL_ID)
-        }
-        cell?.textLabel?.text = roles[indexPath.row].label
-        return cell!
+        let cell = tableView.getOrCreateCell(CELL_ID)
+        cell.textLabel?.text = roles[indexPath.row].label
+        return cell
     }
     
+    /*
     func tableView(_ tableView: UITableView,
                    accessoryButtonTappedForRowWith indexPath: IndexPath){
         //TODO api:#4 endpoint to look up definiton
@@ -65,18 +61,22 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
                             maxWidth: 300, in: tableView, fromFrame: cell.frame)
         }
     }
+    */
     
     func tableView(_ tableView: UITableView,
                    didDeselectRowAt indexPath: IndexPath){
         let id = roles[indexPath.row].id
         selectedRoleIds.remove(id)
+        let cell = tableView.cellForRow(at: indexPath)!
+        LabelStyles.deselectCell(cell.textLabel!)
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
         let id = roles[indexPath.row].id
         selectedRoleIds.insert(id)
-        //TODO #7 apply cool styles
+        let cell = tableView.cellForRow(at: indexPath)!
+        LabelStyles.selectedCell(cell.textLabel!)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

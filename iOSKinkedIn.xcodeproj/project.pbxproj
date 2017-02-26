@@ -33,6 +33,8 @@
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
+		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
+		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
 		00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */; };
 		00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* KinkInterest.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
@@ -105,6 +107,8 @@
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
+		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
+		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
 		00CD2AA31E58294900C306A3 /* AMPopTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AMPopTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetKinkPrefsVC.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* KinkInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkInterest.swift; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 			isa = PBXGroup;
 			children = (
 				001D21141E5A286900317600 /* strings.swift */,
+				00BA200C1E62B2F000D31F6F /* styles.swift */,
+				00BA200E1E62B8C200D31F6F /* tables.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -589,11 +595,13 @@
 				00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */,
 				001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
+				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,
 				00171A561E5650FD00640B09 /* tags.swift in Sources */,
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
+				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */,

@@ -66,20 +66,15 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: CELL_ID)
-        if (cell == nil) {
-            cell = UITableViewCell(
-                style: UITableViewCellStyle.default,
-                reuseIdentifier: CELL_ID)
-        }
+        let cell = tableView.getOrCreateCell(CELL_ID)
         let kink = kinks[indexPath.row]
-        cell?.textLabel?.text = kink.label
+        cell.textLabel?.text = kink.label
         if(KinkInterest.has(_label: kink.label)){
-            cell?.textLabel?.textColor = #colorLiteral(red: 0, green: 0.4784313725, blue: 1, alpha: 1)
+            LabelStyles.selectedCell(cell.textLabel!)
         } else {
-            cell?.textLabel?.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+            LabelStyles.deselectCell(cell.textLabel!)
         }
-        return cell!
+        return cell
     }
     
     func tableView(_ tableView: UITableView,
