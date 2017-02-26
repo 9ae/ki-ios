@@ -70,6 +70,26 @@ class KinkedInAPI {
         }
     }
     
+    static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
+        var roles = [Role]()
+        Alamofire.request(HOST_URL+"roles").responseJSON { response in
+            
+            if let json = response.result.value as? [String:Any] {
+                if let list = json["roles"] as? [Any] {
+                    for li in list {
+                        if let gd = li as? [String:Any] {
+                            if let g = Role(json:gd){
+                                roles.append(g)
+                            }
+                        }
+                    }
+                }
+                
+            }
+            callback(roles)
+        }
+    }
+    
     static func login(email: String, password: String, callback: @escaping(_ neoId: String)->Void){
         
         let params: Parameters = [

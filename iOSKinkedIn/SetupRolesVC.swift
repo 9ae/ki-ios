@@ -20,6 +20,10 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        KinkedInAPI.roles { (results: [Role]) in
+            self.roles = results
+            self.tableView?.reloadData()
+        }
         tableView?.delegate = self
         tableView?.dataSource = self
 
