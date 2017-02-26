@@ -257,7 +257,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                     </navigationBar>
                     <connections>
                         <segue destination="Stl-Tx-hDL" kind="relationship" relationship="rootViewController" id="N0c-0c-f8j"/>
-                        <segue destination="B5u-ov-EwW" kind="showDetail" identifier="setup2app" id="rcY-Cw-udi"/>
+                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="setup2app" id="Agg-jq-c8I"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vv1-ii-gL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -610,8 +610,8 @@ please apply for an invitation on trykinkedin.com</string>
                     <connections>
                         <outlet property="fieldEmail" destination="dYp-Eb-ZM2" id="Qm9-PD-RVH"/>
                         <outlet property="fieldPassword" destination="SKY-tc-4v2" id="ahm-pN-9c4"/>
-                        <segue destination="B5u-ov-EwW" kind="show" identifier="login2app" animates="NO" id="lac-CJ-Pay"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="login2setup" animates="NO" id="dR0-x4-1ic"/>
+                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="login2app" id="LAg-aZ-ASG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMw-SC-Hiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -715,13 +715,29 @@ please apply for an invitation on trykinkedin.com</string>
                     </view>
                     <connections>
                         <segue destination="GoA-mT-FEQ" kind="show" identifier="splash2login" animates="NO" id="f35-Qc-8OT"/>
-                        <segue destination="B5u-ov-EwW" kind="show" identifier="splash2app" id="TUo-4a-6ob"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="splash2setup" id="r6W-Lp-HEe"/>
+                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="splash2app" id="n5w-4Q-t6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-506.39999999999998" y="936.88155922038993"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0qZ-t3-lkF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRZ-wR-9Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="oVd-Em-mOK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L47-l8-saY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="B5u-ov-EwW" kind="relationship" relationship="rootViewController" id="Qri-uC-431"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-1348" y="1709"/>
         </scene>
         <!--KinkedIn-->
         <scene sceneID="yIn-Da-CRs">
@@ -830,7 +846,7 @@ please apply for an invitation on trykinkedin.com</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dR0-x4-1ic"/>
-        <segue reference="lac-CJ-Pay"/>
+        <segue reference="LAg-aZ-ASG"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
 </document>
