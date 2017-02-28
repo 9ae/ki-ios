@@ -965,7 +965,7 @@ please apply for an invitation on trykinkedin.com</string>
         <!--KinkedIn-->
         <scene sceneID="UFz-jF-esF">
             <objects>
-                <tabBarController title="KinkedIn" id="FOy-dc-EyP" sceneMemberID="viewController">
+                <tabBarController title="KinkedIn" id="FOy-dc-EyP" customClass="AppTabVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Qmt-1b-gDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

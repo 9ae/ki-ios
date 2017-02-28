@@ -23,6 +23,7 @@
 		0051D1FE1E62D3DC004ABBF6 /* ViewProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* ViewProfile.swift */; };
 		0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
+		006D50071E658635005DAABE /* AppTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D50061E658635005DAABE /* AppTabVC.swift */; };
 		0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */; };
 		0070C36F1E569E11000D5BA0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; };
 		0070C3701E569E11000D5BA0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -100,6 +101,7 @@
 		0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		006D50061E658635005DAABE /* AppTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabVC.swift; sourceTree = "<group>"; };
 		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
 				00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */,
 				0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */,
+				006D50061E658635005DAABE /* AppTabVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
 				00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */,
 				00A0CD731E56A03B00D39CD8 /* Profile.swift in Sources */,
+				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				001D21171E5A3EBB00317600 /* SetupPictureVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,
