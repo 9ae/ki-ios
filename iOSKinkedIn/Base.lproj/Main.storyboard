@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FOy-dc-EyP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -580,14 +580,14 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="126" y="372.5" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
                                 <rect key="frame" x="88" y="312.5" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5S2-WV-cPu"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -630,8 +630,97 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
+                                <rect key="frame" x="46" y="410" width="283" height="75.5"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="KinkedIn is NOT for people under the age of 18">
+                                        <attributes>
+                                            <color key="NSColor" red="0.98594677448272705" green="0.0" blue="0.039444983005523682" alpha="1" colorSpace="calibratedRGB"/>
+                                            <font key="NSFont" size="11" name="Avenir-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", or for anyone who is NOT thoroughly interested in ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="communication">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=", ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="respecting boundaries">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=",  and ">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="enthusiastic consent">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=".">
+                                        <attributes>
+                                            <font key="NSFont" size="11" name="Avenir-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-C4-Aab">
+                                <rect key="frame" x="109" y="190" width="156" height="21"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S NOT JUST YOU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfQ-6n-Tjq">
+                                <rect key="frame" x="110" y="231" width="155" height="21"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-SF-MnY">
+                                <rect key="frame" x="44" y="332" width="286" height="18"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-MP-wCz">
+                                <rect key="frame" x="127" y="40" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="h2B-sN-UUV"/>
+                                    <constraint firstAttribute="height" constant="120" id="pku-AF-MvY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Q-JJ-zIc">
+                                <rect key="frame" x="61" y="272" width="254" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="F8E-Mr-3F2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-ng-anD">
-                                <rect key="frame" x="143" y="605" width="88" height="32"/>
+                                <rect key="frame" x="144" y="505.5" width="88" height="32"/>
                                 <color key="backgroundColor" red="0.12075482308864594" green="0.81129539012908936" blue="0.11177953332662582" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="QDV-Pz-APo"/>
@@ -646,50 +735,6 @@ please apply for an invitation on trykinkedin.com</string>
                                     <action selector="go:" destination="eZa-Es-J1g" eventType="touchDown" id="yX0-Zy-8Jg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
-                                <rect key="frame" x="46" y="485" width="283" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="XuC-bU-YHq"/>
-                                </constraints>
-                                <string key="text">KinkedIn is NOT for people under the age of 18, or for anyone who is not thoroughly interested in communication + respecting boundaries + enthusiastic consent.</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-C4-Aab">
-                                <rect key="frame" x="109" y="190" width="156" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S NOT JUST YOU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfQ-6n-Tjq">
-                                <rect key="frame" x="118" y="230" width="139" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-SF-MnY">
-                                <rect key="frame" x="44" y="328" width="286" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-MP-wCz">
-                                <rect key="frame" x="127" y="40" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="h2B-sN-UUV"/>
-                                    <constraint firstAttribute="height" constant="120" id="pku-AF-MvY"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Q-JJ-zIc">
-                                <rect key="frame" x="61" y="268" width="253.5" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="F8E-Mr-3F2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -705,7 +750,7 @@ please apply for an invitation on trykinkedin.com</string>
                             <constraint firstItem="SfQ-6n-Tjq" firstAttribute="top" secondItem="mXB-C4-Aab" secondAttribute="bottom" constant="20" id="Ty8-BQ-NhB"/>
                             <constraint firstItem="l1V-me-kGo" firstAttribute="leading" secondItem="kqO-z9-hiq" secondAttribute="leadingMargin" constant="30" id="VEc-Dw-O1q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l1V-me-kGo" secondAttribute="trailing" constant="30" id="VKF-4J-3kH"/>
-                            <constraint firstItem="rzN-Qy-EoN" firstAttribute="top" secondItem="QLX-ng-anD" secondAttribute="bottom" constant="30" id="bVa-qw-pm4"/>
+                            <constraint firstItem="l1V-me-kGo" firstAttribute="top" secondItem="dUP-SF-MnY" secondAttribute="bottom" constant="60" id="XNN-EN-otE"/>
                             <constraint firstItem="l1V-me-kGo" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="fVp-xa-j80"/>
                             <constraint firstItem="dUP-SF-MnY" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="gZe-me-NKK"/>
                             <constraint firstItem="c3x-MP-wCz" firstAttribute="top" secondItem="Nd1-Tx-mgk" secondAttribute="bottom" constant="20" id="l26-qN-Kks"/>
@@ -726,7 +771,6 @@ please apply for an invitation on trykinkedin.com</string>
         <!--Navigation Controller-->
         <scene sceneID="0qZ-t3-lkF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kRZ-wR-9Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="oVd-Em-mOK" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="L47-l8-saY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -736,6 +780,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <segue destination="B5u-ov-EwW" kind="relationship" relationship="rootViewController" id="Qri-uC-431"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kRZ-wR-9Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1348" y="1709"/>
         </scene>
@@ -751,24 +796,26 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Browse screen. Connect to Nav + Tab Ctrlr" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Da8-RP-goW">
-                                <rect key="frame" x="58" y="51" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-7F-UPk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="uL9-GD-gCZ" kind="embed" id="xfm-MZ-yz3"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="o4c-7F-UPk" firstAttribute="top" secondItem="Ath-8y-ylm" secondAttribute="bottom" id="eOl-rr-LCY"/>
+                            <constraint firstItem="ssP-fP-vaD" firstAttribute="top" secondItem="o4c-7F-UPk" secondAttribute="bottom" id="im2-B7-SwA"/>
+                            <constraint firstItem="o4c-7F-UPk" firstAttribute="leading" secondItem="num-31-D05" secondAttribute="leading" id="n6s-bi-4lc"/>
+                            <constraint firstAttribute="trailing" secondItem="o4c-7F-UPk" secondAttribute="trailing" id="rRc-bg-bdm"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="KinkedIn" id="AlE-ZL-7f8">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="oUt-Sg-IMk"/>
-                        <barButtonItem key="rightBarButtonItem" title="Matches" id="oN4-OJ-Avu"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="KinkedIn" id="AlE-ZL-7f8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZOg-2x-ABb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506" y="1709"/>
+            <point key="canvasLocation" x="-506.39999999999998" y="1708.6956521739132"/>
         </scene>
         <!--About You-->
         <scene sceneID="Mrs-cP-ls9">
@@ -839,14 +886,148 @@ please apply for an invitation on trykinkedin.com</string>
             </objects>
             <point key="canvasLocation" x="1902" y="937"/>
         </scene>
+        <!--Adjust-->
+        <scene sceneID="BAi-zF-SIi">
+            <objects>
+                <viewController id="Jqg-yr-4hZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oPP-cD-caS"/>
+                        <viewControllerLayoutGuide type="bottom" id="CfG-4j-OqX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1Zo-Or-LYg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Adjust" image="adjust" id="Wom-sS-2ZW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WDH-Kd-Xrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1284" y="3155"/>
+        </scene>
+        <!--Connect-->
+        <scene sceneID="KkL-eG-t4j">
+            <objects>
+                <viewController id="eMc-cn-GaZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O0e-0Z-TVR"/>
+                        <viewControllerLayoutGuide type="bottom" id="lc1-Sk-FtO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fv0-Qz-3sB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Connect" image="connect" id="uk8-Ec-WGh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G5q-7H-yjK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-353" y="3155"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="X9a-Hs-gcS">
+            <objects>
+                <viewController id="EMa-3y-ECG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m4J-1J-3b0"/>
+                        <viewControllerLayoutGuide type="bottom" id="meU-bj-Sah"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gRw-7p-M9Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" id="6sA-wf-02X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FRz-Xh-WbX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1284" y="2482"/>
+        </scene>
+        <!--I need Help!-->
+        <scene sceneID="fRv-WA-uck">
+            <objects>
+                <viewController id="rTP-2v-JDH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nIA-r8-KKX"/>
+                        <viewControllerLayoutGuide type="bottom" id="oXQ-dK-OMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GSQ-yF-xUD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="I need Help!" image="ihelp" id="ecd-XK-ad4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hWQ-Xc-YvZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2244" y="3744"/>
+        </scene>
+        <!--KinkedIn-->
+        <scene sceneID="UFz-jF-esF">
+            <objects>
+                <tabBarController title="KinkedIn" id="FOy-dc-EyP" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qmt-1b-gDY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="rTP-2v-JDH" kind="relationship" relationship="viewControllers" id="Yj2-yY-kQe"/>
+                        <segue destination="Jqg-yr-4hZ" kind="relationship" relationship="viewControllers" id="eZY-mu-2hi"/>
+                        <segue destination="EMa-3y-ECG" kind="relationship" relationship="viewControllers" id="sDt-1n-kJl"/>
+                        <segue destination="eMc-cn-GaZ" kind="relationship" relationship="viewControllers" id="Z2O-hu-udf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUI-Rn-N6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2244" y="2830"/>
+        </scene>
+        <!--View ProfileVC-->
+        <scene sceneID="vNx-Mw-vXz">
+            <objects>
+                <viewController id="uL9-GD-gCZ" customClass="ViewProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uhp-gj-OKn"/>
+                        <viewControllerLayoutGuide type="bottom" id="hLv-nz-USx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qOH-Un-9Lu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-FT-Fq7">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="232" id="MKI-Ii-Dme"/>
+                                    <constraint firstAttribute="width" constant="375" id="cun-7R-8DO"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cyK-FT-Fq7" firstAttribute="top" secondItem="qOH-Un-9Lu" secondAttribute="top" id="Yew-yT-6le"/>
+                            <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="hBr-bY-QYt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="profilePicture" destination="cyK-FT-Fq7" id="qlG-aX-jwZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z0R-d8-0v6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="286" y="2141"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BondageEx" width="371" height="198"/>
         <image name="Logo" width="195" height="195"/>
+        <image name="adjust" width="24" height="25"/>
+        <image name="connect" width="29" height="25"/>
+        <image name="discover" width="21" height="25"/>
+        <image name="ihelp" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dR0-x4-1ic"/>
-        <segue reference="LAg-aZ-ASG"/>
+        <segue reference="r6W-Lp-HEe"/>
+        <segue reference="n5w-4Q-t6v"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -10,7 +10,6 @@
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* SetupGendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
-		00171A2A1E56384500640B09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00171A291E56384500640B09 /* Assets.xcassets */; };
 		00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A2B1E56384500640B09 /* LaunchScreen.storyboard */; };
 		00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A371E56384500640B09 /* iOSKinkedInTests.swift */; };
 		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
@@ -22,6 +21,8 @@
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
 		0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* ViewProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* ViewProfile.swift */; };
+		0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */; };
+		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
 		0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */; };
 		0070C36F1E569E11000D5BA0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; };
 		0070C3701E569E11000D5BA0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -80,7 +81,6 @@
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00171A241E56384500640B09 /* SetupGendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGendersVC.swift; sourceTree = "<group>"; };
 		00171A271E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		00171A291E56384500640B09 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00171A2C1E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00171A2E1E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A331E56384500640B09 /* iOSKinkedInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKinkedInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,7 +97,9 @@
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksVC.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* ViewProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfile.swift; sourceTree = "<group>"; };
+		0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
+		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -184,13 +186,13 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				006D50041E65810B005DAABE /* Assets.xcassets */,
 				001D21131E5A284A00317600 /* helpers */,
 				00171A541E5650D300640B09 /* models */,
 				00171A511E56465E00640B09 /* vc */,
 				00171A501E56461900640B09 /* providers */,
 				00171A221E56384500640B09 /* AppDelegate.swift */,
 				00171A261E56384500640B09 /* Main.storyboard */,
-				00171A291E56384500640B09 /* Assets.xcassets */,
 				00171A2B1E56384500640B09 /* LaunchScreen.storyboard */,
 				00171A2E1E56384500640B09 /* Info.plist */,
 			);
@@ -238,6 +240,7 @@
 				001D21181E5A4B1300317600 /* SetupRolesVC.swift */,
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
 				00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */,
+				0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -410,7 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */,
-				00171A2A1E56384500640B09 /* Assets.xcassets in Resources */,
+				006D50051E65810B005DAABE /* Assets.xcassets in Resources */,
 				00171A281E56384500640B09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +591,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */,
+				0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */,
 				00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,

@@ -54,5 +54,12 @@ class ViewProfile {
         
     }
     
+    init(neoId: String, name: String, age: Int){
+        self.neoId = neoId
+        self.name = name
+        self.age = age
+        self.kinksMatched = 0
+    }
+    
     
 }
