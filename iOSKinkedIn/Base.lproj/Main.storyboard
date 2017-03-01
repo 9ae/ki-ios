@@ -36,11 +36,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7G-GZ-rmy" id="FSN-N1-r8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MpS-jK-skM">
-                                                    <rect key="frame" x="45" y="0.0" width="315" height="43.5"/>
+                                                    <rect key="frame" x="45" y="0.0" width="315" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -104,11 +104,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -300,11 +300,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPU-eb-oYq" id="FKg-Eb-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pYg-bb-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="323" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="323" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -380,11 +380,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYB-eB-QEz" id="Zk5-6X-axc">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vv6-qQ-RkR">
-                                                    <rect key="frame" x="15" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="343" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -446,7 +446,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-6d-dnr">
-                                <rect key="frame" x="128" y="50" width="120" height="120"/>
+                                <rect key="frame" x="127.5" y="50" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="B4p-QT-Ixt"/>
                                     <constraint firstAttribute="height" constant="120" id="gN3-TF-IFU"/>
@@ -462,7 +462,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                <rect key="frame" x="88" y="252" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="252" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="QzH-Ry-fSp"/>
                                 </constraints>
@@ -471,7 +471,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                <rect key="frame" x="88" y="302" width="120" height="30"/>
+                                <rect key="frame" x="87.5" y="302" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="pLB-3r-Ty4"/>
                                 </constraints>
@@ -486,7 +486,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="168" y="400" width="38" height="30"/>
+                                <rect key="frame" x="168.5" y="400" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
@@ -498,11 +498,11 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="139" y="511" width="98" height="30"/>
+                                <rect key="frame" x="138.5" y="511" width="98" height="30"/>
                                 <state key="normal" title="Request Invite"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
-                                <rect key="frame" x="228" y="302" width="55" height="30"/>
+                                <rect key="frame" x="227.5" y="302" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                             </button>
                         </subviews>
@@ -548,7 +548,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYp-Eb-ZM2">
-                                <rect key="frame" x="88" y="262.5" width="200" height="30"/>
+                                <rect key="frame" x="87.5" y="262.5" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Ddz-9s-GIX"/>
                                 </constraints>
@@ -557,7 +557,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-bW-Jyq">
-                                <rect key="frame" x="228" y="312.5" width="38" height="30"/>
+                                <rect key="frame" x="227.5" y="312.5" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="GoA-mT-FEQ" eventType="touchDown" id="mde-oL-QYQ"/>
@@ -570,7 +570,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="R6S-44-Bmj">
-                                <rect key="frame" x="127" y="50" width="120" height="120"/>
+                                <rect key="frame" x="127.5" y="50" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="s9N-o9-TCh"/>
                                     <constraint firstAttribute="width" constant="120" id="x2E-KD-cjm"/>
@@ -581,7 +581,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
-                                <rect key="frame" x="88" y="312.5" width="120" height="30"/>
+                                <rect key="frame" x="87.5" y="312.5" width="120" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="5S2-WV-cPu"/>
                                 </constraints>
@@ -686,7 +686,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-C4-Aab">
-                                <rect key="frame" x="109" y="190" width="156" height="21"/>
+                                <rect key="frame" x="109.5" y="190" width="156" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -698,20 +698,20 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-SF-MnY">
-                                <rect key="frame" x="44" y="332" width="286" height="18"/>
+                                <rect key="frame" x="44.5" y="332" width="286" height="18"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-MP-wCz">
-                                <rect key="frame" x="127" y="40" width="120" height="120"/>
+                                <rect key="frame" x="127.5" y="40" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="h2B-sN-UUV"/>
                                     <constraint firstAttribute="height" constant="120" id="pku-AF-MvY"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Q-JJ-zIc">
-                                <rect key="frame" x="61" y="272" width="254" height="40"/>
+                                <rect key="frame" x="60.5" y="272" width="254" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="F8E-Mr-3F2"/>
                                 </constraints>
@@ -720,7 +720,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-ng-anD">
-                                <rect key="frame" x="144" y="505.5" width="88" height="32"/>
+                                <rect key="frame" x="143.5" y="505.5" width="88" height="32"/>
                                 <color key="backgroundColor" red="0.12075482308864594" green="0.81129539012908936" blue="0.11177953332662582" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="QDV-Pz-APo"/>
@@ -795,21 +795,7 @@ please apply for an invitation on trykinkedin.com</string>
                     <view key="view" contentMode="scaleToFill" id="num-31-D05">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o4c-7F-UPk">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <connections>
-                                    <segue destination="uL9-GD-gCZ" kind="embed" id="xfm-MZ-yz3"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="o4c-7F-UPk" firstAttribute="top" secondItem="Ath-8y-ylm" secondAttribute="bottom" id="eOl-rr-LCY"/>
-                            <constraint firstItem="ssP-fP-vaD" firstAttribute="top" secondItem="o4c-7F-UPk" secondAttribute="bottom" id="im2-B7-SwA"/>
-                            <constraint firstItem="o4c-7F-UPk" firstAttribute="leading" secondItem="num-31-D05" secondAttribute="leading" id="n6s-bi-4lc"/>
-                            <constraint firstAttribute="trailing" secondItem="o4c-7F-UPk" secondAttribute="trailing" id="rRc-bg-bdm"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="KinkedIn" id="AlE-ZL-7f8"/>
                 </viewController>
@@ -935,7 +921,21 @@ please apply for an invitation on trykinkedin.com</string>
                     <view key="view" contentMode="scaleToFill" id="gRw-7p-M9Y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-xx-AE8">
+                                <rect key="frame" x="1" y="20" width="373" height="598"/>
+                                <connections>
+                                    <segue destination="uL9-GD-gCZ" kind="embed" id="YsC-KU-QWO"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="H2k-xx-AE8" secondAttribute="trailing" constant="-15" id="PQl-eo-K7z"/>
+                            <constraint firstItem="H2k-xx-AE8" firstAttribute="top" secondItem="m4J-1J-3b0" secondAttribute="bottom" id="Whe-dN-OUc"/>
+                            <constraint firstItem="H2k-xx-AE8" firstAttribute="leading" secondItem="gRw-7p-M9Y" secondAttribute="leadingMargin" constant="-15" id="cUu-Uz-scJ"/>
+                            <constraint firstItem="meU-bj-Sah" firstAttribute="top" secondItem="H2k-xx-AE8" secondAttribute="bottom" id="kJZ-JU-bLH"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Discover" image="discover" id="6sA-wf-02X"/>
                 </viewController>
@@ -991,34 +991,115 @@ please apply for an invitation on trykinkedin.com</string>
                         <viewControllerLayoutGuide type="bottom" id="hLv-nz-USx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qOH-Un-9Lu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-FT-Fq7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="232"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-FT-Fq7">
+                                <rect key="frame" x="0.0" y="0.0" width="373" height="415"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="232" id="MKI-Ii-Dme"/>
-                                    <constraint firstAttribute="width" constant="375" id="cun-7R-8DO"/>
+                                    <constraint firstAttribute="height" constant="415" id="P3a-Yz-yPA"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-Bg-gnD">
+                                <rect key="frame" x="0.0" y="400" width="373" height="198"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-R5-Zzx">
+                                        <rect key="frame" x="30" y="30" width="53" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
+                                        <rect key="frame" x="236" y="39" width="107" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age, city genders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
+                                        <rect key="frame" x="15" y="74" width="343" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5G-vK-aiS">
+                                        <rect key="frame" x="15" y="124" width="343" height="86"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fade" translatesAutoresizingMaskIntoConstraints="NO" id="hpo-LJ-LPr">
+                                        <rect key="frame" x="0.0" y="148" width="373" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="PM5-29-Kgl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3A-4p-kUO">
+                                        <rect key="frame" x="271" y="168" width="87" height="30"/>
+                                        <state key="normal" title="Read More..."/>
+                                        <connections>
+                                            <action selector="showBio:" destination="uL9-GD-gCZ" eventType="touchDown" id="9xe-fH-XLP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNN-44-k8y">
+                                        <rect key="frame" x="7" y="8" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="&lt; Back"/>
+                                        <connections>
+                                            <action selector="hideBio:" destination="uL9-GD-gCZ" eventType="touchDown" id="1oX-Cm-crj"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Zku-wK-z1y" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="39" id="00q-Vz-aus"/>
+                                    <constraint firstAttribute="trailing" secondItem="D91-AZ-shp" secondAttribute="trailing" constant="15" id="0fF-gN-Y35"/>
+                                    <constraint firstItem="b8b-R5-Zzx" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="30" id="21I-Od-rCg"/>
+                                    <constraint firstItem="b8b-R5-Zzx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="30" id="JrY-dk-74J"/>
+                                    <constraint firstAttribute="bottom" secondItem="hpo-LJ-LPr" secondAttribute="bottom" id="RLm-Oh-zie"/>
+                                    <constraint firstAttribute="trailing" secondItem="I3A-4p-kUO" secondAttribute="trailing" constant="15" id="aCa-RP-CE6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Zku-wK-z1y" secondAttribute="trailing" constant="30" id="c4S-hF-Nsl"/>
+                                    <constraint firstItem="hpo-LJ-LPr" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" id="dWu-D8-db7"/>
+                                    <constraint firstAttribute="bottom" secondItem="I3A-4p-kUO" secondAttribute="bottom" id="gzF-mc-BYv"/>
+                                    <constraint firstItem="D91-AZ-shp" firstAttribute="top" secondItem="b8b-R5-Zzx" secondAttribute="bottom" constant="20" id="nAa-HH-5EX"/>
+                                    <constraint firstAttribute="trailing" secondItem="hpo-LJ-LPr" secondAttribute="trailing" id="yT0-iZ-cCu"/>
+                                    <constraint firstItem="D91-AZ-shp" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="15" id="yxQ-4r-JrB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="3Y3-0F-6MS"/>
+                            <constraint firstItem="gQH-Bg-gnD" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="4qs-PT-XbH"/>
+                            <constraint firstItem="hLv-nz-USx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="bottom" id="5vc-bj-gjA"/>
+                            <constraint firstAttribute="trailing" secondItem="gQH-Bg-gnD" secondAttribute="trailing" id="NjJ-kh-WsJ"/>
+                            <constraint firstAttribute="trailing" secondItem="cyK-FT-Fq7" secondAttribute="trailing" id="PdO-68-Ekl"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="top" secondItem="qOH-Un-9Lu" secondAttribute="top" id="Yew-yT-6le"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="hBr-bY-QYt"/>
+                            <constraint firstItem="gQH-Bg-gnD" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="400" id="sgw-7t-C6f"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bioExcerpt" destination="v5G-vK-aiS" id="Zb6-jg-vgI"/>
+                        <outlet property="bioTab" destination="gQH-Bg-gnD" id="AtQ-T1-uY4"/>
+                        <outlet property="fadeGradient" destination="hpo-LJ-LPr" id="WKU-Qp-o6m"/>
+                        <outlet property="kinksCount" destination="Zku-wK-z1y" id="DYB-fV-e93"/>
+                        <outlet property="preferredName" destination="b8b-R5-Zzx" id="1Th-Nn-cO5"/>
                         <outlet property="profilePicture" destination="cyK-FT-Fq7" id="qlG-aX-jwZ"/>
+                        <outlet property="readLess" destination="vNN-44-k8y" id="Sjl-VS-Cng"/>
+                        <outlet property="readMore" destination="I3A-4p-kUO" id="tbf-Qe-7ss"/>
+                        <outlet property="shortBio" destination="D91-AZ-shp" id="HGQ-v1-Ws7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0R-d8-0v6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="286" y="2141"/>
+            <point key="canvasLocation" x="-380" y="2480.9595202398805"/>
         </scene>
     </scenes>
     <resources>
         <image name="BondageEx" width="371" height="198"/>
+        <image name="Fade" width="2" height="50"/>
         <image name="Logo" width="195" height="195"/>
         <image name="adjust" width="24" height="25"/>
         <image name="connect" width="29" height="25"/>
