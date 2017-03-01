@@ -20,8 +20,16 @@ class ViewProfileVC: UIViewController {
     @IBOutlet var bioTab: UIView?
     @IBOutlet var readLess: UIButton?
     
+    @IBOutlet var likeUser: UIButton?
+    @IBOutlet var skipUser: UIButton?
+    @IBOutlet var hideUser: UIButton?
+    
     static let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
     var blurEffectView = UIVisualEffectView(effect: blurEffect)
+    
+    var likeBtnOrigin: CGRect?
+    var hideBtnOrigin: CGRect?
+    var skipBtnOrigin: CGRect?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +39,19 @@ class ViewProfileVC: UIViewController {
             let imgData = try Data(contentsOf: imgURL!)
             let img = UIImage(data: imgData)
             self.profilePicture?.image = img
+            print("image loaded")
         } catch {
+            print("image failed to load")
             // TODO: use put in place holder image
         }
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        likeBtnOrigin = self.likeUser?.frame
+        hideBtnOrigin = self.hideUser?.frame
+        skipBtnOrigin = self.skipUser?.frame
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,11 +59,22 @@ class ViewProfileVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showBio(_ sender: AnyObject) {
-        readMore?.isHidden = true
-        fadeGradient?.isHidden = true
-        self.readMore?.isEnabled = false
-        
+    private func _buttonsBounceUp(){
+        // TODO: Add bounce
+        likeUser?.frame.origin.y = 2
+        skipUser?.frame.origin.y = 2
+        hideUser?.frame.origin.y = 2
+    
+    }
+    
+    private func _buttonsBounceBack() {
+        likeUser?.frame = likeBtnOrigin!
+        skipUser?.frame = skipBtnOrigin!
+        hideUser?.frame = hideBtnOrigin!
+    }
+    
+    private func _animateUp(finished: Bool){
+        // TODO: Make sure this is the correct way to chain animations
         let screenHeight = self.view.frame.size.height - 40
         self.bioExcerpt?.frame.size.height = screenHeight - 15
         
@@ -65,7 +90,7 @@ class ViewProfileVC: UIViewController {
                     )
                 }
                 
-            },
+        },
             completion: { finished in
                 if(finished){
                     if(self.blurEffectView.superview == nil){
@@ -81,8 +106,15 @@ class ViewProfileVC: UIViewController {
                     self.readLess?.isHidden = false
                     self.readLess?.isEnabled = true
                 }
-            }
+        }
         )
+    }
+    
+    @IBAction func showBio(_ sender: AnyObject) {
+        readMore?.isHidden = true
+        fadeGradient?.isHidden = true
+        self.readMore?.isEnabled = false
+        UIView.animate(withDuration: 1, animations: _buttonsBounceUp, completion: _animateUp)
     }
     
     @IBAction func hideBio(_ sender: AnyObject) {
@@ -103,6 +135,7 @@ class ViewProfileVC: UIViewController {
                 self.fadeGradient?.isHidden = false
                 self.readMore?.isHidden = false
                 self.readMore?.isEnabled = true
+                UIView.animate(withDuration: 1, animations: self._buttonsBounceBack)
             }
         }
     }

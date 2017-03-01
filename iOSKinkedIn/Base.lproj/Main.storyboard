@@ -1004,19 +1004,19 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="400" width="373" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-R5-Zzx">
-                                        <rect key="frame" x="30" y="30" width="53" height="24"/>
+                                        <rect key="frame" x="30" y="40" width="53" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
-                                        <rect key="frame" x="236" y="39" width="107" height="15"/>
+                                        <rect key="frame" x="236" y="40" width="107" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age, city genders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
-                                        <rect key="frame" x="15" y="74" width="343" height="29"/>
+                                        <rect key="frame" x="15" y="84" width="343" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1053,10 +1053,10 @@ please apply for an invitation on trykinkedin.com</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Zku-wK-z1y" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="39" id="00q-Vz-aus"/>
+                                    <constraint firstItem="Zku-wK-z1y" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="40" id="00q-Vz-aus"/>
                                     <constraint firstAttribute="trailing" secondItem="D91-AZ-shp" secondAttribute="trailing" constant="15" id="0fF-gN-Y35"/>
                                     <constraint firstItem="b8b-R5-Zzx" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="30" id="21I-Od-rCg"/>
-                                    <constraint firstItem="b8b-R5-Zzx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="30" id="JrY-dk-74J"/>
+                                    <constraint firstItem="b8b-R5-Zzx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="40" id="JrY-dk-74J"/>
                                     <constraint firstAttribute="bottom" secondItem="hpo-LJ-LPr" secondAttribute="bottom" id="RLm-Oh-zie"/>
                                     <constraint firstAttribute="trailing" secondItem="I3A-4p-kUO" secondAttribute="trailing" constant="15" id="aCa-RP-CE6"/>
                                     <constraint firstAttribute="trailing" secondItem="Zku-wK-z1y" secondAttribute="trailing" constant="30" id="c4S-hF-Nsl"/>
@@ -1067,29 +1067,62 @@ please apply for an invitation on trykinkedin.com</string>
                                     <constraint firstItem="D91-AZ-shp" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="15" id="yxQ-4r-JrB"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv6-U5-Xzt">
+                                <rect key="frame" x="308" y="370" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="IDf-V0-Q6a"/>
+                                    <constraint firstAttribute="width" constant="50" id="l7m-Dz-Ukb"/>
+                                </constraints>
+                                <state key="normal" image="LikeUser"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hf-LM-hgv">
+                                <rect key="frame" x="262" y="385" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="L1E-Ip-1B5"/>
+                                    <constraint firstAttribute="width" constant="30" id="YyC-NN-Vh6"/>
+                                </constraints>
+                                <state key="normal" image="SkipUser"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMl-Xx-wq7">
+                                <rect key="frame" x="216" y="385" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="Pvu-dC-wpm"/>
+                                    <constraint firstAttribute="height" constant="30" id="s9H-5S-7Co"/>
+                                </constraints>
+                                <state key="normal" image="HideUser"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="3Y3-0F-6MS"/>
                             <constraint firstItem="gQH-Bg-gnD" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="4qs-PT-XbH"/>
                             <constraint firstItem="hLv-nz-USx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="bottom" id="5vc-bj-gjA"/>
+                            <constraint firstItem="9Hf-LM-hgv" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="385" id="CN2-V5-7El"/>
                             <constraint firstAttribute="trailing" secondItem="gQH-Bg-gnD" secondAttribute="trailing" id="NjJ-kh-WsJ"/>
                             <constraint firstAttribute="trailing" secondItem="cyK-FT-Fq7" secondAttribute="trailing" id="PdO-68-Ekl"/>
+                            <constraint firstItem="cMl-Xx-wq7" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="385" id="QvJ-ZC-IPd"/>
+                            <constraint firstItem="9Hf-LM-hgv" firstAttribute="leading" secondItem="cMl-Xx-wq7" secondAttribute="trailing" constant="16" id="QyP-Bh-L3R"/>
+                            <constraint firstAttribute="trailing" secondItem="Rv6-U5-Xzt" secondAttribute="trailing" constant="15" id="Wyz-R9-LZJ"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="top" secondItem="qOH-Un-9Lu" secondAttribute="top" id="Yew-yT-6le"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="hBr-bY-QYt"/>
+                            <constraint firstItem="Rv6-U5-Xzt" firstAttribute="leading" secondItem="9Hf-LM-hgv" secondAttribute="trailing" constant="16" id="hVk-TU-4vL"/>
                             <constraint firstItem="gQH-Bg-gnD" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="400" id="sgw-7t-C6f"/>
+                            <constraint firstItem="Rv6-U5-Xzt" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="370" id="yTC-xe-rIb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bioExcerpt" destination="v5G-vK-aiS" id="Zb6-jg-vgI"/>
                         <outlet property="bioTab" destination="gQH-Bg-gnD" id="AtQ-T1-uY4"/>
                         <outlet property="fadeGradient" destination="hpo-LJ-LPr" id="WKU-Qp-o6m"/>
+                        <outlet property="hideUser" destination="cMl-Xx-wq7" id="IBN-JZ-hbp"/>
                         <outlet property="kinksCount" destination="Zku-wK-z1y" id="DYB-fV-e93"/>
+                        <outlet property="likeUser" destination="Rv6-U5-Xzt" id="Af4-3T-wKi"/>
                         <outlet property="preferredName" destination="b8b-R5-Zzx" id="1Th-Nn-cO5"/>
                         <outlet property="profilePicture" destination="cyK-FT-Fq7" id="qlG-aX-jwZ"/>
                         <outlet property="readLess" destination="vNN-44-k8y" id="Sjl-VS-Cng"/>
                         <outlet property="readMore" destination="I3A-4p-kUO" id="tbf-Qe-7ss"/>
                         <outlet property="shortBio" destination="D91-AZ-shp" id="HGQ-v1-Ws7"/>
+                        <outlet property="skipUser" destination="9Hf-LM-hgv" id="3hU-Xv-U51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z0R-d8-0v6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1100,7 +1133,10 @@ please apply for an invitation on trykinkedin.com</string>
     <resources>
         <image name="BondageEx" width="371" height="198"/>
         <image name="Fade" width="2" height="50"/>
+        <image name="HideUser" width="39" height="37"/>
+        <image name="LikeUser" width="99" height="96"/>
         <image name="Logo" width="195" height="195"/>
+        <image name="SkipUser" width="37" height="37"/>
         <image name="adjust" width="24" height="25"/>
         <image name="connect" width="29" height="25"/>
         <image name="discover" width="21" height="25"/>
