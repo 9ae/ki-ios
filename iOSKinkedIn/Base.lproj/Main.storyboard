@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FOy-dc-EyP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -66,7 +66,7 @@
                     <navigationItem key="navigationItem" title="Genders" id="YHP-GV-HdC">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="oTh-Tf-b7t">
                             <connections>
-                                <segue destination="tJp-8Y-k5q" kind="show" id="sC5-gk-jgd"/>
+                                <segue destination="tJp-8Y-k5q" kind="show" animates="NO" id="sC5-gk-jgd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -134,7 +134,7 @@
                     <navigationItem key="navigationItem" title="Roles" id="Sew-gp-7DB">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="Qwe-FE-OIZ">
                             <connections>
-                                <segue destination="I8z-4V-akP" kind="show" id="hox-47-gvw"/>
+                                <segue destination="I8z-4V-akP" kind="show" animates="NO" id="hox-47-gvw"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -183,7 +183,7 @@
                     <navigationItem key="navigationItem" title="Profile picture" id="qr0-zi-SCh">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="Oew-GV-Rz1">
                             <connections>
-                                <segue destination="Dtf-H8-yzL" kind="show" id="ksN-dI-yab"/>
+                                <segue destination="Dtf-H8-yzL" kind="show" animates="NO" id="ksN-dI-yab"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -257,7 +257,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                     </navigationBar>
                     <connections>
                         <segue destination="Stl-Tx-hDL" kind="relationship" relationship="rootViewController" id="N0c-0c-f8j"/>
-                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="setup2app" id="Agg-jq-c8I"/>
+                        <segue destination="FOy-dc-EyP" kind="showDetail" identifier="setup2app" animates="NO" id="Agg-jq-c8I"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vv1-ii-gL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,7 +331,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                     <navigationItem key="navigationItem" title="All Kinks" id="cdC-nf-Th1">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="P7Y-kN-nyn">
                             <connections>
-                                <segue destination="foG-02-y3o" kind="show" id="GYJ-QD-HD0"/>
+                                <segue destination="foG-02-y3o" kind="show" animates="NO" id="GYJ-QD-HD0"/>
                             </connections>
                         </barButtonItem>
                         <connections>
@@ -611,7 +611,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="fieldEmail" destination="dYp-Eb-ZM2" id="Qm9-PD-RVH"/>
                         <outlet property="fieldPassword" destination="SKY-tc-4v2" id="ahm-pN-9c4"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="login2setup" animates="NO" id="dR0-x4-1ic"/>
-                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="login2app" id="LAg-aZ-ASG"/>
+                        <segue destination="FOy-dc-EyP" kind="showDetail" identifier="login2app" animates="NO" id="LAg-aZ-ASG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMw-SC-Hiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -631,7 +631,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
-                                <rect key="frame" x="46" y="410" width="283" height="75.5"/>
+                                <rect key="frame" x="46" y="410" width="283" height="60.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="KinkedIn is NOT for people under the age of 18">
                                         <attributes>
@@ -652,7 +652,7 @@ please apply for an invitation on trykinkedin.com</string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=", ">
+                                    <fragment content=", ">
                                         <attributes>
                                             <font key="NSFont" size="11" name="Avenir-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -664,7 +664,7 @@ please apply for an invitation on trykinkedin.com</string>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
-                                    <fragment content=",  and ">
+                                    <fragment content=",  and ">
                                         <attributes>
                                             <font key="NSFont" size="11" name="Avenir-Light"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
@@ -720,7 +720,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-ng-anD">
-                                <rect key="frame" x="143.5" y="505.5" width="88" height="32"/>
+                                <rect key="frame" x="143.5" y="490.5" width="88" height="32"/>
                                 <color key="backgroundColor" red="0.12075482308864594" green="0.81129539012908936" blue="0.11177953332662582" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="QDV-Pz-APo"/>
@@ -760,48 +760,13 @@ please apply for an invitation on trykinkedin.com</string>
                     </view>
                     <connections>
                         <segue destination="GoA-mT-FEQ" kind="show" identifier="splash2login" animates="NO" id="f35-Qc-8OT"/>
-                        <segue destination="CxT-oB-BvI" kind="show" identifier="splash2setup" id="r6W-Lp-HEe"/>
-                        <segue destination="oVd-Em-mOK" kind="showDetail" identifier="splash2app" id="n5w-4Q-t6v"/>
+                        <segue destination="CxT-oB-BvI" kind="show" identifier="splash2setup" animates="NO" id="r6W-Lp-HEe"/>
+                        <segue destination="FOy-dc-EyP" kind="showDetail" identifier="splash2app" animates="NO" id="n5w-4Q-t6v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-506.39999999999998" y="936.88155922038993"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="0qZ-t3-lkF">
-            <objects>
-                <navigationController id="oVd-Em-mOK" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="L47-l8-saY">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="B5u-ov-EwW" kind="relationship" relationship="rootViewController" id="Qri-uC-431"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kRZ-wR-9Bd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1348" y="1709"/>
-        </scene>
-        <!--KinkedIn-->
-        <scene sceneID="yIn-Da-CRs">
-            <objects>
-                <viewController id="B5u-ov-EwW" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ath-8y-ylm"/>
-                        <viewControllerLayoutGuide type="bottom" id="ssP-fP-vaD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="num-31-D05">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="KinkedIn" id="AlE-ZL-7f8"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOg-2x-ABb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-506.39999999999998" y="1708.6956521739132"/>
+            <point key="canvasLocation" x="-1236" y="1002"/>
         </scene>
         <!--About You-->
         <scene sceneID="Mrs-cP-ls9">
@@ -859,7 +824,7 @@ please apply for an invitation on trykinkedin.com</string>
                     <navigationItem key="navigationItem" title="About You" id="bUt-Te-lTE">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="JJO-Ha-89P">
                             <connections>
-                                <segue destination="ftr-md-waT" kind="show" id="sHx-wk-YYl"/>
+                                <segue destination="ftr-md-waT" kind="show" animates="NO" id="sHx-wk-YYl"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1015,8 +980,8 @@ please apply for an invitation on trykinkedin.com</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age, city genders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
-                                        <rect key="frame" x="15" y="84" width="343" height="29"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="age, city genders" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
+                                        <rect key="frame" x="15" y="84" width="343" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1143,8 +1108,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="ihelp" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r6W-Lp-HEe"/>
         <segue reference="n5w-4Q-t6v"/>
+        <segue reference="dR0-x4-1ic"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
 </document>
