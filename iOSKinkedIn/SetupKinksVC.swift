@@ -70,9 +70,9 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let kink = kinks[indexPath.row]
         cell.textLabel?.text = kink.label
         if(KinkInterest.has(_label: kink.label)){
-            LabelStyles.selectedCell(cell.textLabel!)
+            CellStyles.select(cell)
         } else {
-            LabelStyles.deselectCell(cell.textLabel!)
+            CellStyles.deselect(cell)
         }
         return cell
     }

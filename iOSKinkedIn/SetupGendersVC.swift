@@ -73,7 +73,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let id = genders[indexPath.row].id
         selectedGendersIds.remove(id)
         let cell = tableView.cellForRow(at: indexPath)!
-        LabelStyles.deselectCell(cell.textLabel!)
+        CellStyles.deselect(cell, check: true)
     }
     
     func tableView(_ tableView: UITableView,
@@ -81,7 +81,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let id = genders[indexPath.row].id
         selectedGendersIds.insert(id)
         let cell = tableView.cellForRow(at: indexPath)!
-        LabelStyles.selectedCell(cell.textLabel!)
+        CellStyles.select(cell, check: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

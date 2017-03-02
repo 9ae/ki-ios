@@ -64,9 +64,9 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let wayName = kinkInFocus?.ways[indexPath.row]
         cell?.textLabel?.text = wayName
         if(myWays.contains(wayName!)){
-            cell?.accessoryType = .checkmark
+            CellStyles.select(cell!, check: true)
         } else {
-              cell?.accessoryType = .none
+            CellStyles.deselect(cell!, check: true)
         }
         return cell!
     }
@@ -76,10 +76,10 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.cellForRow(at: indexPath)
         let w = kinkInFocus?.ways[indexPath.row]
         if(cell?.accessoryType == .checkmark) {
-            cell?.accessoryType = .none
+            CellStyles.deselect(cell!, check: true)
             myWays.remove(w!)
         } else {
-            cell?.accessoryType = .checkmark
+            CellStyles.select(cell!, check: true)
             myWays.insert(w!)
         }
     }

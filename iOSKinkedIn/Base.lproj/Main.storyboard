@@ -453,25 +453,34 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
-                                <rect key="frame" x="46" y="140" width="283" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="37.5" y="140" width="300" height="38.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="wvY-eK-Awv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                <rect key="frame" x="30" y="201" width="315" height="30"/>
+                                <rect key="frame" x="30" y="198" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="0uX-db-MOd"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
-                                <rect key="frame" x="31" y="239" width="313" height="30"/>
+                                <rect key="frame" x="31" y="236" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="EPs-Wo-IAn"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                <rect key="frame" x="31" y="277" width="200" height="30"/>
+                                <rect key="frame" x="31" y="274" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="zmN-5o-K6u"/>
                                 </constraints>
@@ -480,17 +489,17 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
-                                <rect key="frame" x="289" y="277" width="55" height="30"/>
+                                <rect key="frame" x="251" y="274" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
                                 </connections>
                             </button>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5XM-Fz-Vih">
-                                <rect key="frame" x="15" y="327" width="345" height="2"/>
+                                <rect key="frame" x="15" y="324" width="345" height="2"/>
                             </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="59" y="389" width="258" height="26"/>
+                                <rect key="frame" x="59" y="386" width="258" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="If you already have an account, you can Login">
@@ -506,7 +515,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                <rect key="frame" x="51" y="475" width="273" height="31"/>
+                                <rect key="frame" x="51" y="472" width="273" height="31"/>
                                 <string key="text">If you would like an invite code,
 please apply for an invitation on trykinkedin.com</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -514,30 +523,27 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="139" y="526" width="98" height="30"/>
+                                <rect key="frame" x="139" y="523" width="98" height="30"/>
                                 <state key="normal" title="Request Invite"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HoB-Vf-Nu2" firstAttribute="top" secondItem="jwn-bZ-yU1" secondAttribute="bottom" constant="8" id="1Ae-9f-Zvv"/>
-                            <constraint firstAttribute="trailing" secondItem="xF5-W4-76e" secondAttribute="trailing" constant="30" id="1B3-3C-kdI"/>
                             <constraint firstItem="xF5-W4-76e" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leading" constant="30" id="322-NE-Zgz"/>
                             <constraint firstItem="jwn-bZ-yU1" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="8" id="36n-2K-FkL"/>
                             <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="15" id="3GN-Gj-jpA"/>
+                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="3KY-X9-mKP"/>
                             <constraint firstItem="jwn-bZ-yU1" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="15" id="6T1-vm-JEE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="HoB-Vf-Nu2" secondAttribute="trailing" constant="15" id="8K7-ga-sFy"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ekf-cw-t7d" secondAttribute="trailing" constant="30" id="9a4-rJ-pbn"/>
                             <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="20" id="9dY-Xd-Yea"/>
                             <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="5XM-Fz-Vih" secondAttribute="bottom" constant="60" id="Cv5-AH-W2v"/>
                             <constraint firstItem="5XM-Fz-Vih" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leading" constant="15" id="Hg8-Xb-pkh"/>
                             <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="Psq-ry-c9G"/>
                             <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="QTG-yM-PT8"/>
                             <constraint firstAttribute="trailing" secondItem="5XM-Fz-Vih" secondAttribute="trailing" constant="15" id="Qlj-cb-YXQ"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="30" id="WgM-No-IFA"/>
                             <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="60" id="YQR-Fe-brD"/>
+                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="Yu7-iI-J0t"/>
                             <constraint firstItem="lRc-E2-Vyw" firstAttribute="top" secondItem="jwn-bZ-yU1" secondAttribute="bottom" constant="8" id="Zzr-fJ-EnV"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="jwn-bZ-yU1" secondAttribute="trailing" constant="15" id="axQ-ey-NcM"/>
                             <constraint firstItem="Yya-WJ-WzH" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="cUZ-o1-nOV"/>
                             <constraint firstItem="5XM-Fz-Vih" firstAttribute="top" secondItem="HoB-Vf-Nu2" secondAttribute="bottom" constant="20" id="eDY-JJ-ir1"/>
                             <constraint firstItem="Ekf-cw-t7d" firstAttribute="top" secondItem="P9b-6d-dnr" secondAttribute="bottom" constant="20" id="ekL-Cn-vAa"/>
@@ -587,13 +593,16 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYp-Eb-ZM2">
-                                <rect key="frame" x="31" y="262.5" width="313" height="30"/>
+                                <rect key="frame" x="31" y="262" width="280" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="Poe-2s-q3d"/>
+                                </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
-                                <rect key="frame" x="31" y="300.5" width="200" height="30"/>
+                                <rect key="frame" x="31" y="300" width="200" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="cRK-e9-vpr"/>
                                 </constraints>
@@ -602,19 +611,20 @@ please apply for an invitation on trykinkedin.com</string>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-bW-Jyq">
-                                <rect key="frame" x="306" y="300.5" width="38" height="30"/>
+                                <rect key="frame" x="251" y="300" width="38" height="30"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
                                     <action selector="login:" destination="GoA-mT-FEQ" eventType="touchDown" id="mde-oL-QYQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrZ-7C-rK6">
-                                <rect key="frame" x="126" y="390.5" width="123" height="30"/>
+                                <rect key="frame" x="126" y="390" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="leading" secondItem="SKY-tc-4v2" secondAttribute="trailing" constant="20" id="3JI-0z-e7n"/>
                             <constraint firstItem="SKY-tc-4v2" firstAttribute="top" secondItem="dYp-Eb-ZM2" secondAttribute="bottom" constant="8" id="9ew-sw-FKP"/>
                             <constraint firstItem="SKY-tc-4v2" firstAttribute="leading" secondItem="Z1n-rS-jhZ" secondAttribute="leadingMargin" constant="15" id="Erg-Y8-VdR"/>
                             <constraint firstItem="dYp-Eb-ZM2" firstAttribute="top" secondItem="zx5-gp-bPQ" secondAttribute="bottom" constant="20" id="FLA-vV-kl4"/>
@@ -625,10 +635,8 @@ please apply for an invitation on trykinkedin.com</string>
                             <constraint firstItem="0Qf-bW-Jyq" firstAttribute="top" secondItem="dYp-Eb-ZM2" secondAttribute="bottom" constant="8" id="T5T-u3-HFd"/>
                             <constraint firstItem="rrZ-7C-rK6" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="g5V-lc-h1K"/>
                             <constraint firstItem="R6S-44-Bmj" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="j8B-zQ-gn3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dYp-Eb-ZM2" secondAttribute="trailing" constant="15" id="nh2-gz-QOx"/>
                             <constraint firstItem="zx5-gp-bPQ" firstAttribute="top" secondItem="R6S-44-Bmj" secondAttribute="bottom" constant="30" id="rmU-PN-MKJ"/>
                             <constraint firstItem="dYp-Eb-ZM2" firstAttribute="leading" secondItem="Z1n-rS-jhZ" secondAttribute="leadingMargin" constant="15" id="tkC-6I-v3A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0Qf-bW-Jyq" secondAttribute="trailing" constant="15" id="ziX-Tu-7Xc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1143,8 +1151,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="ihelp" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n5w-4Q-t6v"/>
-        <segue reference="r6W-Lp-HEe"/>
+        <segue reference="2WY-ZT-It8"/>
+        <segue reference="LAg-aZ-ASG"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

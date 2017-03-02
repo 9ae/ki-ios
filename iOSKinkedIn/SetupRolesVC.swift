@@ -68,7 +68,7 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let id = roles[indexPath.row].id
         selectedRoleIds.remove(id)
         let cell = tableView.cellForRow(at: indexPath)!
-        LabelStyles.deselectCell(cell.textLabel!)
+        CellStyles.deselect(cell, check: true)
     }
     
     func tableView(_ tableView: UITableView,
@@ -76,7 +76,7 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let id = roles[indexPath.row].id
         selectedRoleIds.insert(id)
         let cell = tableView.cellForRow(at: indexPath)!
-        LabelStyles.selectedCell(cell.textLabel!)
+        CellStyles.select(cell, check: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
