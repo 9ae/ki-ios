@@ -18,13 +18,13 @@ class ViewProfile {
     var neoId: String
     var name: String
     var age: Int
+    var kinksMatched: Int
     
     var bio: String?
     var genders: [String] = [String]()
     var roles: [String]?
     var kinks: [Kinky]?
-    
-    var kinksMatched: Int
+    var imageURL: String?
     
     init?(_ json: [String:Any]){
      
