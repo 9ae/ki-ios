@@ -24,7 +24,7 @@ class ViewProfile {
     var genders: [String] = [String]()
     var roles: [String]?
     var kinks: [Kinky]?
-    var imageURL: String?
+    var picture: String?
     
     init?(_ json: [String:Any]){
      
@@ -50,6 +50,10 @@ class ViewProfile {
         
         if let _bio = json["bio"] as? String {
             self.bio = _bio
+        }
+        
+        if let _picture = json["picture"] as? String {
+            self.picture = _picture
         }
         
     }

@@ -9,8 +9,6 @@
 import UIKit
 
 class SetupBioVC: SetupViewVC {
-    
-    static let PROFILE_SETUP_COMPLETE = Notification.Name("KinkedInProfileSetupComplete")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +26,7 @@ class SetupBioVC: SetupViewVC {
         
         //TODO #7 inform server that profile has been setup
         
-        NotificationCenter.default.post(name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
+        NotificationCenter.default.post(name: NOTIFY_PROFILE_SETUP_COMPLETE, object: nil)
     }
 
 }

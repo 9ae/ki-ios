@@ -12,27 +12,38 @@ import Alamofire
 let HOST_URL = "https://private-859cb-theash.apiary-mock.com/"
 //"https://dev.kinkd.in/"
 
+enum ProfileAction: Int {
+    case hide=0, skip, like
+}
+
 class KinkedInAPI {
 
     static func get(_ path: String, callback:@escaping (_ json: [String:Any])->Void){
-        Alamofire.request(HOST_URL+path).responseJSON { response in
+        let url = HOST_URL+path
+        Alamofire.request(url).responseJSON { response in
             
             if let JSON = response.result.value as? [String:Any] {
                 callback(JSON)
-                
+            } else {
+                print(url)
+                print("error parsing json")
             }
         }
     }
   
     static func post(_ path: String, parameters: Parameters,
                      callback: @escaping (_ json: [String:Any])-> Void) {
-        Alamofire.request(HOST_URL+path,
+        let url = HOST_URL+path
+        Alamofire.request(url,
             method: .post,
             parameters: parameters,
             encoding: JSONEncoding.default).responseJSON { response in
                 
                 if let JSON = response.result.value as? [String:Any] {
                     callback(JSON)
+                } else {
+                    print(url)
+                    print("error parsing json")
                 }
         }
     }
@@ -133,5 +144,44 @@ class KinkedInAPI {
         }
     }
     
+    static func listProfiles(callback: @escaping(_ uuids: [String])->Void ){
+        get("profiles"){ json in
+            let count = (json["count"] as? Int) ?? 0
+            if(count>0){
+                if let uuids = json["users"] as? [String] {
+                    callback(uuids)
+                }
+            } else {
+                callback([])
+            }
+        }
+    }
+    
+    static func readProfile(_ uuid: String, callback: @escaping(_ profile: ViewProfile)->Void) {
+        get("profiles/\(uuid)"){ json in
+            if let user = ViewProfile(json) {
+                print(user)
+                callback(user)
+            } else {
+                print("request error in readProfile")
+                // TODO: throws error
+            }
+        }
+    }
+    
+    static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool)->Void ){
+        let params : Parameters = [ "action": ProfileAction.like ]
+        post("profiles/\(uuid)", parameters: params){ json in
+            let reciprocal = (json["reciprocal"] as? Bool) ?? false
+            callback(reciprocal)
+        }
+    }
+    
+    static func markProfile(_ uuid: String, action: ProfileAction){
+        let params : Parameters = [ "action": action.rawValue ]
+        post("profiles/\(uuid)", parameters: params){ json in
+            // assert json["success"] == true
+        }
+    }
     
 }

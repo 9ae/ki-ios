@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AMPopTip
 
 class ViewProfileVC: UIViewController {
     
@@ -31,19 +32,12 @@ class ViewProfileVC: UIViewController {
     var hideBtnOrigin: CGRect?
     var skipBtnOrigin: CGRect?
 
+    var profile: ViewProfile?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let imgURL = URL(string: "https://www.trykinkedin.com/temp/arden3.jpg")
-        do {
-            let imgData = try Data(contentsOf: imgURL!)
-            let img = UIImage(data: imgData)
-            self.profilePicture?.image = img
-            print("image loaded")
-        } catch {
-            print("image failed to load")
-            // TODO: use put in place holder image
-        }
+        KinkedInAPI.readProfile("abc", callback: setProfile)
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
@@ -57,6 +51,27 @@ class ViewProfileVC: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setProfile(_ profile: ViewProfile){
+        self.profile = profile
+        
+        self.preferredName?.text = self.profile?.name
+        let kinksMatched = self.profile?.kinksMatched ?? 0
+        self.kinksCount?.text = "\(kinksMatched) kinks matched"
+        
+        
+        if let pictureURL = self.profile?.picture {
+            let imgURL = URL(string: pictureURL)
+            do {
+                let imgData = try Data(contentsOf: imgURL!)
+                let img = UIImage(data: imgData)
+                self.profilePicture?.image = img
+            } catch {
+                // TODO: use put in place holder image
+            }
+        }
+        
     }
     
     private func _buttonsBounceUp(){
@@ -110,6 +125,19 @@ class ViewProfileVC: UIViewController {
         )
     }
     
+    private func _showPopup(){
+        let popTip = AMPopTip()
+        popTip.shouldDismissOnTap = true
+        popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
+        popTip.textColor = UIColor.white
+        popTip.showText("The feelings are mutual! Start chatting!", direction: .none,
+                        maxWidth: 300, in: self.view, fromFrame: self.view.frame)
+    }
+    
+    private func _nextProfile(){
+        NotificationCenter.default.post(name: NOTIFY_NEXT_PROFILE, object: nil)
+    }
+    
     @IBAction func showBio(_ sender: AnyObject) {
         readMore?.isHidden = true
         fadeGradient?.isHidden = true
@@ -122,12 +150,11 @@ class ViewProfileVC: UIViewController {
         self.readLess?.isEnabled = false
         
         UIView.animate(withDuration: 1, animations: {
-            self.blurEffectView.alpha = 0
             self.bioTab?.alpha = 1.0
             
             
         }) { finished in
-            
+            self.blurEffectView.alpha = 0
             UIView.animate(withDuration: 2, animations: {
                 self.bioTab?.frame.origin.y = 400
             }){
@@ -141,11 +168,36 @@ class ViewProfileVC: UIViewController {
     }
     
     @IBAction func like(_ sender: AnyObject) {
-    
+        
+        guard let uuid = self.profile?.neoId else {
+            return
+        }
+        
+        KinkedInAPI.likeProfile(uuid) { reciprocal in
+            if(reciprocal) {
+                self._showPopup()
+                // scroll down match top menu
+            }
+            self._nextProfile()
+        }
+
     }
     
-    @IBAction func hide(_ sender: AnyObject) {}
+    @IBAction func hide(_ sender: AnyObject) {
+        
+        guard let uuid = self.profile?.neoId else {
+            return
+        }
+        KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
+        _nextProfile()
+    }
     
-    @IBAction func skip(_ sender: AnyObject) {}
+    @IBAction func skip(_ sender: AnyObject) {
+        guard let uuid = self.profile?.neoId else {
+            return
+        }
+        KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
+        _nextProfile()
+    }
 
 }

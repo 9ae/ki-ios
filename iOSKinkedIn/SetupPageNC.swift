@@ -26,7 +26,9 @@ class SetupPageNC: UINavigationController {
             self.userProfile = Profile.create(userNeoId!, isSelf: true)
             RealmDB.save(self.userProfile!)
         
-            NotificationCenter.default.addObserver(self, selector: #selector(SetupPageNC.handleProfileSetupComplete), name: SetupBioVC.PROFILE_SETUP_COMPLETE, object: nil)
+            NotificationCenter.default.addObserver(self,
+                selector: #selector(SetupPageNC.handleProfileSetupComplete),
+                name: NOTIFY_PROFILE_SETUP_COMPLETE, object: nil)
         
             let firstScreen = self.viewControllers.first as? SetupViewVC
             firstScreen?.setProfile(self.userProfile!)
