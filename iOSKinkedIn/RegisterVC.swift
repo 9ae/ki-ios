@@ -18,6 +18,10 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var signup: UIButton!
     @IBOutlet weak var progressBar: UIProgressView!
     
+    @IBOutlet weak var goToLogin: UIButton!
+    @IBOutlet weak var requestInvite: UIButton!
+    
+    
     private var userNeoId: String?
     
     
@@ -46,7 +50,7 @@ class RegisterVC: UIViewController {
     }
     
     private func _updateProgressBar(_ percent: Float){
-        UIView.animate(withDuration: 1) { 
+        UIView.animate(withDuration: 1) {
             self.progressBar?.progress = percent
         }
     }

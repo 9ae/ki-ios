@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,113 +20,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0W-Oz-1Dd">
-                                <rect key="frame" x="46" y="398" width="283" height="76"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="KinkedIn is NOT for people under the age of 18">
-                                        <attributes>
-                                            <color key="NSColor" red="0.98594677448272705" green="0.0" blue="0.039444983005523682" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="11" name="Avenir-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=", or for anyone who is NOT thoroughly interested in ">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="communication">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=", ">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="respecting boundaries">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=",  and ">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="enthusiastic consent">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content=".">
-                                        <attributes>
-                                            <font key="NSFont" size="11" name="Avenir-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BIw-Bb-3Xd">
-                                <rect key="frame" x="109" y="178" width="156" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S NOT JUST YOU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fp-w5-SXB">
-                                <rect key="frame" x="110" y="219" width="155" height="21"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb4-xF-Htf">
-                                <rect key="frame" x="44" y="320" width="286" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="msw-ce-1sM">
-                                <rect key="frame" x="127" y="28" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="Drw-iU-pVj"/>
-                                    <constraint firstAttribute="width" constant="120" id="mXB-xm-rAD"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YY-bf-cyv">
-                                <rect key="frame" x="61" y="260" width="254" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="qYN-OI-Wl9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="msw-ce-1sM" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" symbolic="YES" id="2nz-jB-KFs"/>
-                            <constraint firstItem="8fp-w5-SXB" firstAttribute="centerX" secondItem="lb4-xF-Htf" secondAttribute="centerX" id="3gX-Le-Q7k"/>
-                            <constraint firstItem="0YY-bf-cyv" firstAttribute="top" secondItem="8fp-w5-SXB" secondAttribute="bottom" constant="20" id="BTj-zr-Epc"/>
-                            <constraint firstItem="M0W-Oz-1Dd" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="30" id="F3j-IL-f5R"/>
-                            <constraint firstItem="M0W-Oz-1Dd" firstAttribute="top" secondItem="lb4-xF-Htf" secondAttribute="bottom" constant="60" id="Hhz-iH-juM"/>
-                            <constraint firstItem="BIw-Bb-3Xd" firstAttribute="centerX" secondItem="8fp-w5-SXB" secondAttribute="centerX" id="IEi-sY-SJg"/>
-                            <constraint firstItem="BIw-Bb-3Xd" firstAttribute="top" secondItem="msw-ce-1sM" secondAttribute="bottom" constant="30" id="IwQ-p2-acM"/>
-                            <constraint firstItem="msw-ce-1sM" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="btM-Sf-6MW"/>
-                            <constraint firstItem="lb4-xF-Htf" firstAttribute="top" secondItem="0YY-bf-cyv" secondAttribute="bottom" constant="20" id="caf-EO-XdG"/>
-                            <constraint firstItem="8fp-w5-SXB" firstAttribute="top" secondItem="BIw-Bb-3Xd" secondAttribute="bottom" constant="20" id="hdt-UM-ZGd"/>
-                            <constraint firstItem="8fp-w5-SXB" firstAttribute="centerX" secondItem="0YY-bf-cyv" secondAttribute="centerX" id="mqW-NT-sgT"/>
-                            <constraint firstItem="lb4-xF-Htf" firstAttribute="centerX" secondItem="M0W-Oz-1Dd" secondAttribute="centerX" id="tQW-Xn-khn"/>
-                            <constraint firstItem="msw-ce-1sM" firstAttribute="centerX" secondItem="BIw-Bb-3Xd" secondAttribute="centerX" id="vJJ-Or-u1i"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +28,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Logo" width="195" height="195"/>
-    </resources>
 </document>
