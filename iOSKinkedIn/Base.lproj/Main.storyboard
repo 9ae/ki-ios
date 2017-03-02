@@ -36,11 +36,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7G-GZ-rmy" id="FSN-N1-r8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MpS-jK-skM">
-                                                    <rect key="frame" x="45" y="0.0" width="315" height="43.5"/>
+                                                    <rect key="frame" x="45" y="0.0" width="315" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -51,14 +51,21 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="myD-Jj-PoF" firstAttribute="top" secondItem="EkO-u0-WnA" secondAttribute="bottom" constant="30" id="4av-VW-074"/>
+                            <constraint firstItem="qhr-tb-4Qa" firstAttribute="top" secondItem="gAG-D8-JUf" secondAttribute="bottom" id="6gO-cF-aGU"/>
                             <constraint firstItem="Zb1-t6-la7" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leading" id="Cra-B4-e4S"/>
                             <constraint firstAttribute="trailing" secondItem="Zb1-t6-la7" secondAttribute="trailing" id="L6R-uW-rQD"/>
                             <constraint firstItem="myD-Jj-PoF" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leadingMargin" id="fgt-LT-K0M"/>
                             <constraint firstItem="qhr-tb-4Qa" firstAttribute="top" secondItem="Zb1-t6-la7" secondAttribute="bottom" id="gGE-MR-nQ8"/>
+                            <constraint firstItem="gAG-D8-JUf" firstAttribute="centerX" secondItem="fN2-8b-wUr" secondAttribute="centerX" id="hMF-VV-VdG"/>
                             <constraint firstItem="Zb1-t6-la7" firstAttribute="top" secondItem="myD-Jj-PoF" secondAttribute="bottom" constant="20" id="jAI-So-bIQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="myD-Jj-PoF" secondAttribute="trailing" id="toU-vT-6Sk"/>
                         </constraints>
@@ -104,11 +111,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -119,11 +126,18 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-Zi-zy8">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4IF-3f-Hsv" firstAttribute="leading" secondItem="sZp-CO-JcF" secondAttribute="leadingMargin" id="4Bm-Np-ajW"/>
+                            <constraint firstItem="JPL-8v-GEz" firstAttribute="top" secondItem="ZTC-Zi-zy8" secondAttribute="bottom" id="4I3-xX-pbO"/>
                             <constraint firstItem="tL3-1z-CRY" firstAttribute="top" secondItem="4IF-3f-Hsv" secondAttribute="bottom" constant="20" id="Bie-3y-jye"/>
+                            <constraint firstItem="ZTC-Zi-zy8" firstAttribute="centerX" secondItem="sZp-CO-JcF" secondAttribute="centerX" id="CT5-qF-GBy"/>
                             <constraint firstItem="4IF-3f-Hsv" firstAttribute="top" secondItem="ObL-Xf-R8Q" secondAttribute="bottom" constant="30" id="EUK-nm-0Qg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4IF-3f-Hsv" secondAttribute="trailing" id="Xx4-kr-5IR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tL3-1z-CRY" secondAttribute="trailing" id="apo-DQ-YI3"/>
@@ -177,8 +191,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-iY-63y">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OZD-f8-oze" firstAttribute="top" secondItem="7ne-iY-63y" secondAttribute="bottom" id="Cy5-hu-k71"/>
+                            <constraint firstItem="7ne-iY-63y" firstAttribute="centerX" secondItem="LYa-63-vRw" secondAttribute="centerX" id="W6s-zy-Le4"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile picture" id="qr0-zi-SCh">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="Oew-GV-Rz1">
@@ -208,7 +231,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osr-y8-ME6">
-                                <rect key="frame" x="15" y="94" width="333.5" height="42.5"/>
+                                <rect key="frame" x="15" y="94" width="334" height="43"/>
                                 <string key="text">Tell us something about yourself.
 Your bio will be visislbe to all KinkedIn users</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -216,7 +239,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="I am..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Y7j-Vl-Uqg">
-                                <rect key="frame" x="31" y="166.5" width="313" height="100"/>
+                                <rect key="frame" x="31" y="167" width="313" height="100"/>
                                 <color key="backgroundColor" red="0.93800866603851318" green="0.9379805326461792" blue="0.937996506690979" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Uxq-DQ-gWO"/>
@@ -225,11 +248,18 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="5" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-eK-pqZ">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Y7j-Vl-Uqg" firstAttribute="leading" secondItem="oYj-2P-Dgg" secondAttribute="leadingMargin" constant="15" id="27r-Q9-JeU"/>
+                            <constraint firstItem="l9O-eK-pqZ" firstAttribute="centerX" secondItem="oYj-2P-Dgg" secondAttribute="centerX" id="DaV-j1-ZDP"/>
                             <constraint firstItem="Osr-y8-ME6" firstAttribute="leading" secondItem="oYj-2P-Dgg" secondAttribute="leading" constant="15" id="Lsm-UP-tMB"/>
+                            <constraint firstItem="u2S-qR-gJd" firstAttribute="top" secondItem="l9O-eK-pqZ" secondAttribute="bottom" id="U9q-e4-aZ6"/>
                             <constraint firstItem="Osr-y8-ME6" firstAttribute="top" secondItem="ExV-DM-mEu" secondAttribute="bottom" constant="30" id="bae-oB-udV"/>
                             <constraint firstItem="Y7j-Vl-Uqg" firstAttribute="top" secondItem="Osr-y8-ME6" secondAttribute="bottom" constant="30" id="hEX-BB-y0J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y7j-Vl-Uqg" secondAttribute="trailing" constant="15" id="nTc-Li-5Sb"/>
@@ -300,11 +330,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPU-eb-oYq" id="FKg-Eb-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pYg-bb-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="323" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="323" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -315,11 +345,18 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-ab-zr5">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.66939252614974976" green="0.59080362319946289" blue="0.79067707061767578" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994752883911" green="0.19659152626991272" blue="0.99855035543441772" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="icQ-23-4pY" firstAttribute="top" secondItem="xyX-5T-vfb" secondAttribute="bottom" constant="30" id="1Pe-hu-zRW"/>
                             <constraint firstItem="5pD-AS-wrh" firstAttribute="leading" secondItem="1hd-eZ-Do4" secondAttribute="leadingMargin" constant="-15" id="JDb-2D-pVb"/>
+                            <constraint firstAttribute="bottom" secondItem="TSK-ab-zr5" secondAttribute="bottom" id="PRm-47-Sss"/>
+                            <constraint firstItem="TSK-ab-zr5" firstAttribute="centerX" secondItem="1hd-eZ-Do4" secondAttribute="centerX" id="Rxu-ry-hB3"/>
                             <constraint firstItem="icQ-23-4pY" firstAttribute="centerX" secondItem="1hd-eZ-Do4" secondAttribute="centerX" id="Ubq-dl-gpF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5pD-AS-wrh" secondAttribute="trailing" constant="-15" id="Wen-HU-0Q9"/>
                             <constraint firstItem="5pD-AS-wrh" firstAttribute="top" secondItem="yam-VB-5ze" secondAttribute="bottom" constant="20" id="XvV-KD-sl2"/>
@@ -850,15 +887,22 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
+                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="pPW-46-tDZ" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="DWc-EK-0Dk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pPW-46-tDZ" secondAttribute="trailing" id="EwC-20-CNK"/>
                             <constraint firstItem="pPW-46-tDZ" firstAttribute="top" secondItem="Gdl-gI-oTO" secondAttribute="bottom" constant="20" id="SMc-9t-u7h"/>
+                            <constraint firstItem="Rst-Kc-agM" firstAttribute="top" secondItem="aw9-vC-09a" secondAttribute="bottom" id="Val-eF-7dk"/>
                             <constraint firstItem="Gdl-gI-oTO" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="Yg4-ee-zxo"/>
                             <constraint firstItem="owY-1y-tUv" firstAttribute="top" secondItem="8MV-Tp-WoN" secondAttribute="bottom" constant="20" id="Ypa-6n-p1V"/>
                             <constraint firstItem="Gdl-gI-oTO" firstAttribute="top" secondItem="owY-1y-tUv" secondAttribute="bottom" constant="30" id="aNp-Re-uDJ"/>
+                            <constraint firstItem="aw9-vC-09a" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="elX-Cs-RNI"/>
                             <constraint firstItem="8MV-Tp-WoN" firstAttribute="top" secondItem="sEi-in-SRW" secondAttribute="bottom" constant="30" id="jYL-th-ukq"/>
                             <constraint firstItem="owY-1y-tUv" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leading" constant="15" id="lu6-If-P7b"/>
                             <constraint firstItem="8MV-Tp-WoN" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="qjo-NN-YsF"/>
