@@ -36,11 +36,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7G-GZ-rmy" id="FSN-N1-r8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MpS-jK-skM">
-                                                    <rect key="frame" x="45" y="0.0" width="315" height="43"/>
+                                                    <rect key="frame" x="45" y="0.0" width="315" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -104,11 +104,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -300,11 +300,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPU-eb-oYq" id="FKg-Eb-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pYg-bb-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="323" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="323" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -380,11 +380,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYB-eB-QEz" id="Zk5-6X-axc">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vv6-qQ-RkR">
-                                                    <rect key="frame" x="15" y="0.0" width="343" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="343" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -433,107 +433,112 @@ Your bio will be visislbe to all KinkedIn users</string>
             </objects>
             <point key="canvasLocation" x="1053.5999999999999" y="1727.5862068965519"/>
         </scene>
-        <!--View Controller-->
+        <!--RegisterVC-->
         <scene sceneID="f2S-JO-gAt">
             <objects>
-                <viewController id="66D-tV-fYN" sceneMemberID="viewController">
+                <viewController id="66D-tV-fYN" customClass="RegisterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NC5-bg-bRY"/>
                         <viewControllerLayoutGuide type="bottom" id="BvI-b4-sA7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I89-hD-rUV">
+                    <view key="view" contentMode="scaleToFill" id="I89-hD-rUV" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="P9b-6d-dnr">
-                                <rect key="frame" x="127.5" y="50" width="120" height="120"/>
+                                <rect key="frame" x="138" y="20" width="100" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="B4p-QT-Ixt"/>
-                                    <constraint firstAttribute="height" constant="120" id="gN3-TF-IFU"/>
+                                    <constraint firstAttribute="height" constant="100" id="0tE-h4-lFZ"/>
+                                    <constraint firstAttribute="width" constant="100" id="Gky-nk-AV1"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
-                                <rect key="frame" x="46" y="190" width="283" height="42"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="rcl-Fh-hNc"/>
-                                </constraints>
+                                <rect key="frame" x="46" y="140" width="283" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                <rect key="frame" x="87.5" y="252" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="QzH-Ry-fSp"/>
-                                </constraints>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
+                                <rect key="frame" x="13" y="245" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
+                                <rect key="frame" x="13" y="283" width="192" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                <rect key="frame" x="87.5" y="302" width="120" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="pLB-3r-Ty4"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you already have an account, you can" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwl-Vi-7KN">
-                                <rect key="frame" x="46" y="362" width="270" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
+                                <rect key="frame" x="225" y="283" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
+                                </connections>
+                            </button>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5XM-Fz-Vih">
+                                <rect key="frame" x="44" y="353" width="283" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="If you already have an account, you can" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwl-Vi-7KN">
+                                <rect key="frame" x="44" y="398" width="270" height="18"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="168.5" y="400" width="38" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
+                                <rect key="frame" x="166" y="436" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                <rect key="frame" x="46" y="460" width="283" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
+                                <rect key="frame" x="44" y="496" width="283" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">If you would like an invite code,
 please apply for an invitation on trykinkedin.com</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="138.5" y="511" width="98" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
+                                <rect key="frame" x="136" y="547" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Request Invite"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
-                                <rect key="frame" x="227.5" y="302" width="55" height="30"/>
-                                <state key="normal" title="Sign Up"/>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
+                                <rect key="frame" x="14" y="207" width="345" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="xF5-W4-76e" secondAttribute="leading" id="0c6-qj-PZo"/>
-                            <constraint firstItem="lwl-Vi-7KN" firstAttribute="top" secondItem="HoB-Vf-Nu2" secondAttribute="bottom" constant="30" id="30v-b7-wPG"/>
-                            <constraint firstItem="lwl-Vi-7KN" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="30" id="6ZB-YT-3FH"/>
-                            <constraint firstItem="P9b-6d-dnr" firstAttribute="top" secondItem="NC5-bg-bRY" secondAttribute="bottom" constant="30" id="9ig-Ri-djb"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="AG2-Dn-owi"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="20" id="CJa-5C-osA"/>
-                            <constraint firstItem="P9b-6d-dnr" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="Dw0-sz-CXB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yya-WJ-WzH" secondAttribute="trailing" constant="30" id="Ie9-Cr-LZK"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="30" id="Mdl-Lj-sKi"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="lwl-Vi-7KN" secondAttribute="bottom" constant="20" id="XqH-ei-Du1"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="30" id="Xxe-Ra-LYH"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="20" id="cvp-4V-3Gv"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="top" secondItem="P9b-6d-dnr" secondAttribute="bottom" constant="20" id="hRW-sF-bq7"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="lgg-Jw-nDs"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="30" id="qhi-tE-w9F"/>
-                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="20" id="qmA-uz-9Sc"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="u34-Nr-8L1"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ekf-cw-t7d" secondAttribute="trailing" constant="30" id="zam-Fw-nJd"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="zpg-uQ-paw"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="zpx-aP-uev"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ekf-cw-t7d" secondAttribute="trailing" constant="30" id="9a4-rJ-pbn"/>
+                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="30" id="WgM-No-IFA"/>
+                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="top" secondItem="P9b-6d-dnr" secondAttribute="bottom" constant="20" id="ekL-Cn-vAa"/>
+                            <constraint firstItem="P9b-6d-dnr" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="fbp-nc-DB4"/>
+                            <constraint firstItem="P9b-6d-dnr" firstAttribute="top" secondItem="I89-hD-rUV" secondAttribute="top" constant="20" id="trm-cP-sPg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="email" destination="xF5-W4-76e" id="FNN-he-Oyq"/>
+                        <outlet property="inviteCode" destination="lRc-E2-Vyw" id="epU-Kl-1xu"/>
+                        <outlet property="password" destination="jwn-bZ-yU1" id="Kbc-LP-Bxq"/>
+                        <outlet property="progressBar" destination="5XM-Fz-Vih" id="X34-do-0yz"/>
+                        <outlet property="signup" destination="HoB-Vf-Nu2" id="pjZ-vs-0Lw"/>
+                        <segue destination="CxT-oB-BvI" kind="show" identifier="register2setup" animates="NO" id="2WY-ZT-It8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcM-LK-Wkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1348" y="190.25487256371815"/>
+            <point key="canvasLocation" x="-1322.4000000000001" y="158.77061469265368"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="X3E-GM-5DH">
@@ -759,9 +764,9 @@ please apply for an invitation on trykinkedin.com</string>
                         </constraints>
                     </view>
                     <connections>
-                        <segue destination="GoA-mT-FEQ" kind="show" identifier="splash2login" animates="NO" id="f35-Qc-8OT"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="splash2setup" animates="NO" id="r6W-Lp-HEe"/>
                         <segue destination="FOy-dc-EyP" kind="showDetail" identifier="splash2app" animates="NO" id="n5w-4Q-t6v"/>
+                        <segue destination="66D-tV-fYN" kind="show" identifier="splash2register" animates="NO" id="5CI-cq-ggq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1109,7 +1114,7 @@ please apply for an invitation on trykinkedin.com</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="n5w-4Q-t6v"/>
-        <segue reference="dR0-x4-1ic"/>
+        <segue reference="r6W-Lp-HEe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
 </document>

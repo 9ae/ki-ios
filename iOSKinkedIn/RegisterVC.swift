@@ -1,0 +1,74 @@
+//
+//  RegisterVC.swift
+//  iOSKinkedIn
+//
+//  Created by alice on 3/2/17.
+//  Copyright © 2017 KinkedIn. All rights reserved.
+//
+
+import UIKit
+
+
+class RegisterVC: UIViewController {
+    
+    
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var inviteCode: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var signup: UIButton!
+    @IBOutlet weak var progressBar: UIProgressView!
+    
+    private var userNeoId: String?
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        progressBar?.isHidden = true
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func register(_ sender: AnyObject) {
+        progressBar?.isHidden = false
+        _updateProgressBar(0.25)
+        
+        KinkedInAPI.register(
+            email: email.text!,
+            password: password.text!,
+            inviteCode: inviteCode.text!) { success in
+                self._updateProgressBar(0.5)
+                self._login()
+        }
+    }
+    
+    private func _updateProgressBar(_ percent: Float){
+        UIView.animate(withDuration: 1) { 
+            self.progressBar?.progress = percent
+        }
+    }
+    
+    private func _login(){
+        _updateProgressBar(0.75)
+        KinkedInAPI.login(
+            email: email.text!,
+            password: password.text!) { neoId in
+                self.userNeoId = neoId
+                self._updateProgressBar(1.0)
+                self.performSegue(withIdentifier: "register2setup", sender: self)
+        }
+    }
+    
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier=="register2setup"){
+            let setupView = segue.destination as? SetupPageNC
+            setupView?.userNeoId = userNeoId
+        }
+    }
+    
+
+}

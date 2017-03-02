@@ -126,7 +126,26 @@ class KinkedInAPI {
         
     }
     
-    static func register(email: String, password: String, inviteCode: String){
-    
+    static func register(email: String, password: String, inviteCode: String, callback: @escaping(_ success:Bool)->Void){
+        let params: Parameters = [
+            "email": email,
+            "password": password,
+            "invite_code": inviteCode
+        ]
+        
+        Alamofire.request(HOST_URL+"register",
+                          method: .post,
+                          parameters: params,
+                          encoding: JSONEncoding.default).responseJSON{ response in
+                            if let json = response.result.value as? [String:Any] {
+                                if let success = json["success"] as? Bool {
+                                    callback(success)
+                                } else {
+                                    callback(false)
+                                }
+                            } else {
+                                callback(false)
+                            }
+        }
     }
 }

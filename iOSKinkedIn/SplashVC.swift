@@ -37,7 +37,7 @@ class SplashVC: UIViewController {
             })
         } else {
             print("START: login screen")
-            self.performSegue(withIdentifier: "splash2login", sender: sender)
+            self.performSegue(withIdentifier: "splash2register", sender: sender)
         }
     }
     
