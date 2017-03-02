@@ -654,6 +654,59 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7I-x7-q7h">
+                                <rect key="frame" x="16" y="20" width="343" height="360"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-MP-wCz">
+                                        <rect key="frame" x="112" y="30" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="h2B-sN-UUV"/>
+                                            <constraint firstAttribute="height" constant="120" id="pku-AF-MvY"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-C4-Aab">
+                                        <rect key="frame" x="94" y="180" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S NOT JUST YOU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfQ-6n-Tjq">
+                                        <rect key="frame" x="94" y="221" width="155" height="21"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Q-JJ-zIc">
+                                        <rect key="frame" x="45" y="250" width="254" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="F8E-Mr-3F2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-SF-MnY">
+                                        <rect key="frame" x="29" y="298" width="286" height="18"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="c3x-MP-wCz" firstAttribute="centerX" secondItem="Y7I-x7-q7h" secondAttribute="centerX" id="6Bc-Sx-ChA"/>
+                                    <constraint firstItem="c3x-MP-wCz" firstAttribute="top" secondItem="Y7I-x7-q7h" secondAttribute="top" constant="30" id="6to-Tq-koI"/>
+                                    <constraint firstAttribute="height" constant="360" id="9gC-ql-U2A"/>
+                                    <constraint firstItem="dUP-SF-MnY" firstAttribute="top" secondItem="H0Q-JJ-zIc" secondAttribute="bottom" constant="8" id="IyM-aU-Zqo"/>
+                                    <constraint firstItem="H0Q-JJ-zIc" firstAttribute="top" secondItem="SfQ-6n-Tjq" secondAttribute="bottom" constant="8" id="KK7-jR-RWM"/>
+                                    <constraint firstItem="H0Q-JJ-zIc" firstAttribute="centerX" secondItem="Y7I-x7-q7h" secondAttribute="centerX" id="Tca-fb-e39"/>
+                                    <constraint firstItem="mXB-C4-Aab" firstAttribute="centerX" secondItem="Y7I-x7-q7h" secondAttribute="centerX" id="Zb2-Il-h4l"/>
+                                    <constraint firstItem="SfQ-6n-Tjq" firstAttribute="top" secondItem="mXB-C4-Aab" secondAttribute="bottom" constant="20" id="a9I-le-bV1"/>
+                                    <constraint firstItem="dUP-SF-MnY" firstAttribute="centerX" secondItem="Y7I-x7-q7h" secondAttribute="centerX" id="opD-Em-Qvg"/>
+                                    <constraint firstItem="SfQ-6n-Tjq" firstAttribute="centerX" secondItem="Y7I-x7-q7h" secondAttribute="centerX" id="pmV-oA-kaj"/>
+                                    <constraint firstItem="mXB-C4-Aab" firstAttribute="top" secondItem="c3x-MP-wCz" secondAttribute="bottom" constant="30" id="u8X-2m-vNj"/>
+                                </constraints>
+                            </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
                                 <rect key="frame" x="46" y="410" width="283" height="60.5"/>
                                 <attributedString key="attributedText">
@@ -709,42 +762,8 @@ please apply for an invitation on trykinkedin.com</string>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OUR CORE VALUES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXB-C4-Aab">
-                                <rect key="frame" x="109.5" y="190" width="156" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S NOT JUST YOU" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfQ-6n-Tjq">
-                                <rect key="frame" x="110" y="231" width="155" height="21"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMMUNICATION INCREASES SEXINESS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUP-SF-MnY">
-                                <rect key="frame" x="44.5" y="332" width="286" height="18"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="c3x-MP-wCz">
-                                <rect key="frame" x="127.5" y="40" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="h2B-sN-UUV"/>
-                                    <constraint firstAttribute="height" constant="120" id="pku-AF-MvY"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IT’S OK TO WANT WHAT YOU WANT" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0Q-JJ-zIc">
-                                <rect key="frame" x="60.5" y="272" width="254" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="F8E-Mr-3F2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-ng-anD">
-                                <rect key="frame" x="143.5" y="490.5" width="88" height="32"/>
+                                <rect key="frame" x="144" y="490.5" width="88" height="32"/>
                                 <color key="backgroundColor" red="0.12075482308864594" green="0.81129539012908936" blue="0.11177953332662582" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="QDV-Pz-APo"/>
@@ -763,23 +782,15 @@ please apply for an invitation on trykinkedin.com</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="H0Q-JJ-zIc" firstAttribute="top" secondItem="SfQ-6n-Tjq" secondAttribute="bottom" constant="20" id="1qH-I7-Mq8"/>
-                            <constraint firstItem="c3x-MP-wCz" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="47r-Jo-p6g"/>
-                            <constraint firstItem="SfQ-6n-Tjq" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="7Ns-S4-KIu"/>
-                            <constraint firstItem="H0Q-JJ-zIc" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="J51-TP-cAe"/>
-                            <constraint firstItem="dUP-SF-MnY" firstAttribute="top" secondItem="H0Q-JJ-zIc" secondAttribute="bottom" constant="20" id="MVY-pt-SsB"/>
+                            <constraint firstItem="Y7I-x7-q7h" firstAttribute="top" secondItem="Nd1-Tx-mgk" secondAttribute="bottom" id="BV9-St-LVw"/>
                             <constraint firstItem="QLX-ng-anD" firstAttribute="top" secondItem="l1V-me-kGo" secondAttribute="bottom" constant="20" id="QsR-RU-evG"/>
                             <constraint firstItem="QLX-ng-anD" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="QwZ-eC-x0X"/>
-                            <constraint firstItem="mXB-C4-Aab" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="R8W-nA-aSH"/>
-                            <constraint firstItem="SfQ-6n-Tjq" firstAttribute="top" secondItem="mXB-C4-Aab" secondAttribute="bottom" constant="20" id="Ty8-BQ-NhB"/>
                             <constraint firstItem="l1V-me-kGo" firstAttribute="leading" secondItem="kqO-z9-hiq" secondAttribute="leadingMargin" constant="30" id="VEc-Dw-O1q"/>
                             <constraint firstAttribute="trailingMargin" secondItem="l1V-me-kGo" secondAttribute="trailing" constant="30" id="VKF-4J-3kH"/>
-                            <constraint firstItem="l1V-me-kGo" firstAttribute="top" secondItem="dUP-SF-MnY" secondAttribute="bottom" constant="60" id="XNN-EN-otE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y7I-x7-q7h" secondAttribute="trailing" id="Wm2-Je-uvz"/>
+                            <constraint firstItem="l1V-me-kGo" firstAttribute="top" secondItem="Y7I-x7-q7h" secondAttribute="bottom" constant="30" id="diJ-Lm-eWR"/>
                             <constraint firstItem="l1V-me-kGo" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="fVp-xa-j80"/>
-                            <constraint firstItem="dUP-SF-MnY" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="gZe-me-NKK"/>
-                            <constraint firstItem="c3x-MP-wCz" firstAttribute="top" secondItem="Nd1-Tx-mgk" secondAttribute="bottom" constant="20" id="l26-qN-Kks"/>
-                            <constraint firstItem="mXB-C4-Aab" firstAttribute="top" secondItem="c3x-MP-wCz" secondAttribute="bottom" constant="30" id="tdA-Q2-tTz"/>
-                            <constraint firstItem="dUP-SF-MnY" firstAttribute="centerX" secondItem="kqO-z9-hiq" secondAttribute="centerX" id="zF2-d3-vVz"/>
+                            <constraint firstItem="Y7I-x7-q7h" firstAttribute="leading" secondItem="kqO-z9-hiq" secondAttribute="leadingMargin" id="odu-bn-C7W"/>
                         </constraints>
                     </view>
                     <connections>
@@ -790,7 +801,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1236" y="1002"/>
+            <point key="canvasLocation" x="-1284" y="1011.544227886057"/>
         </scene>
         <!--About You-->
         <scene sceneID="Mrs-cP-ls9">
@@ -1132,8 +1143,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="ihelp" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="LAg-aZ-ASG"/>
-        <segue reference="2WY-ZT-It8"/>
+        <segue reference="n5w-4Q-t6v"/>
+        <segue reference="r6W-Lp-HEe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.91029647435897432" green="0.062884885754361505" blue="0.34769932026532668" alpha="1" colorSpace="calibratedRGB"/>
 </document>
