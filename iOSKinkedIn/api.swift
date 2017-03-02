@@ -116,11 +116,13 @@ class KinkedInAPI {
     
     static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
         
-        Alamofire.request(HOST_URL+"validate").responseJSON{ response in
+        Alamofire.request(HOST_URL+"validate?token=\(token)").responseJSON{ response in
             if let json = response.result.value as? [String:Any] {
                 if let neoId = json["neo_id"] as? String {
                     callback(neoId)
                 }
+            } else {
+                print("error parsing json")
             }
         }
         
