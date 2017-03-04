@@ -12,6 +12,7 @@ class DiscoverVC: UIViewController {
     
     var profileViewController: ViewProfileVC?
     var profilesQueue = [String]()
+    var fakeProfiles = [ViewProfile]()
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -22,11 +23,13 @@ class DiscoverVC: UIViewController {
         
         NotificationCenter.default.addObserver(self,
             selector: #selector(loadNextProfile), name: NOTIFY_NEXT_PROFILE, object: nil)
-        
+        /* uncomment when server is up
         KinkedInAPI.listProfiles { uuids in
             self.profilesQueue = uuids
             self._popProfile()
         }
+         */
+        fakeProfiles = ShadowUsers().users
     }
     
     @objc func loadNextProfile() {
@@ -38,10 +41,14 @@ class DiscoverVC: UIViewController {
             return
         }
         print("load next profile")
+        let profile = self.fakeProfiles.removeFirst()
+        self.profileViewController?.setProfile(profile)
+        /* uncomment when server is up
         let uuid = self.profilesQueue.removeFirst()
         KinkedInAPI.readProfile(uuid) { profile in
             self.profileViewController?.setProfile(profile)
         }
+        */
     }
 
     override func didReceiveMemoryWarning() {

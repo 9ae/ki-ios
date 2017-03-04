@@ -8,6 +8,9 @@ target 'iOSKinkedIn' do
   # Pods for iOSKinkedIn
   pod 'Alamofire', '~> 4.3'
   pod 'AMPopTip'
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'Atributika'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

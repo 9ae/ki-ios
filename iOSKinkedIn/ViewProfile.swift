@@ -25,6 +25,7 @@ class ViewProfile {
     var roles: [String]?
     var kinks: [Kinky]?
     var picture: String?
+    var city: String?
     
     init?(_ json: [String:Any]){
      

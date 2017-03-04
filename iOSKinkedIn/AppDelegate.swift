@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             try FileManager.default.removeItem(at: Realm.Configuration.defaultConfiguration.fileURL!)
         } catch {}
 
-        // Override point for customization after application launch.
+        Fabric.with([Crashlytics.self])
+
         return true
     }
 

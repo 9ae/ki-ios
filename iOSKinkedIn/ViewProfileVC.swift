@@ -56,10 +56,19 @@ class ViewProfileVC: UIViewController {
     func setProfile(_ profile: ViewProfile){
         self.profile = profile
         
-        self.preferredName?.text = self.profile?.name
-        let kinksMatched = self.profile?.kinksMatched ?? 0
-        self.kinksCount?.text = "\(kinksMatched) kinks matched"
+        self.preferredName?.text = profile.name
+        self.kinksCount?.text = "\(profile.kinksMatched) kinks matched"
         
+        var shortBioText = "\(profile.age) years old"
+        
+        if let city = profile.city {
+            shortBioText += ", living in \(city)"
+        }
+        if profile.genders.count > 0 {
+            let joined = profile.genders.joined(separator: ", ")
+            shortBioText += "\nIdentifies as: "+joined
+        }
+        shortBio?.text = shortBioText
         
         if let pictureURL = self.profile?.picture {
             let imgURL = URL(string: pictureURL)
