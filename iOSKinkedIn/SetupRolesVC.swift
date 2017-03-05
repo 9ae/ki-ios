@@ -15,7 +15,7 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView?
     
     var roles = [Role]()
-    var selectedRoleIds = Set<Int>()
+    var selectedRoles = Set<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,47 +42,33 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getOrCreateCell(CELL_ID)
-        cell.textLabel?.text = roles[indexPath.row].label
+        let label = roles[indexPath.row].label
+        cell.textLabel?.text = label
+        if(selectedRoles.contains(label)){
+            CellStyles.select(cell, check: true)
+        } else {
+            CellStyles.deselect(cell, check: true)
+        }
         return cell
     }
     
-    /*
-    func tableView(_ tableView: UITableView,
-                   accessoryButtonTappedForRowWith indexPath: IndexPath){
-        //TODO api:#4 endpoint to look up definiton
-        let label = roles[indexPath.row].label
-        if let cell = tableView.cellForRow(at: indexPath)
-        {
-            let popTip = AMPopTip()
-            popTip.shouldDismissOnTap = true
-            popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
-            popTip.textColor = UIColor.white
-            popTip.showText("Definition of \(label)", direction: .none,
-                            maxWidth: 300, in: tableView, fromFrame: cell.frame)
-        }
-    }
-    */
-    
     func tableView(_ tableView: UITableView,
                    didDeselectRowAt indexPath: IndexPath){
-        let id = roles[indexPath.row].id
-        selectedRoleIds.remove(id)
-        let cell = tableView.cellForRow(at: indexPath)!
-        CellStyles.deselect(cell, check: true)
+        selectedRoles.remove(roles[indexPath.row].label)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        let id = roles[indexPath.row].id
-        selectedRoleIds.insert(id)
-        let cell = tableView.cellForRow(at: indexPath)!
-        CellStyles.select(cell, check: true)
+        selectedRoles.insert(roles[indexPath.row].label)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-
-        //TODO #9 post updates to server
+        var params = self.requestParams
+        params["roles"] = Array(selectedRoles)
+        KinkedInAPI.updateProfile(params)
 
     }
 

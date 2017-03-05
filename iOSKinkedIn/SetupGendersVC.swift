@@ -15,8 +15,9 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var tableView: UITableView?
     
     var genders = [Gender]()
+    var selectedGenders = Set<String>()
     
-    var selectedGendersIds = Set<Int>()
+    //var selectedGendersIds = Set<Int>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,46 +45,34 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getOrCreateCell(CELL_ID)
-        cell.textLabel?.text = genders[indexPath.row].label
+        let label = genders[indexPath.row].label
+        cell.textLabel?.text = label
+        if(selectedGenders.contains(label)){
+            CellStyles.select(cell, check: true)
+        } else {
+            CellStyles.deselect(cell, check: true)
+        }
         return cell
     }
     
-    /*
-    func tableView(_ tableView: UITableView,
-                   accessoryButtonTappedForRowWith indexPath: IndexPath){
-        //TODO api:#4 endpoint to look up definiton
-        let label = genders[indexPath.row].label
-        if let cell = tableView.cellForRow(at: indexPath)
-        {
-            let popTip = AMPopTip()
-            popTip.shouldDismissOnTap = true
-            popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
-            popTip.textColor = UIColor.white
-            popTip.showText("Definition of \(label)", direction: .none,
-                            maxWidth: 300, in: tableView, fromFrame: cell.frame)
-        }
-    }
-    */
-    
     func tableView(_ tableView: UITableView,
                    didDeselectRowAt indexPath: IndexPath){
-        let id = genders[indexPath.row].id
-        selectedGendersIds.remove(id)
-        let cell = tableView.cellForRow(at: indexPath)!
-        CellStyles.deselect(cell, check: true)
+        selectedGenders.remove(genders[indexPath.row].label)
+        tableView.reloadRows(at: [indexPath], with: .none)
+
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        let id = genders[indexPath.row].id
-        selectedGendersIds.insert(id)
-        let cell = tableView.cellForRow(at: indexPath)!
-        CellStyles.select(cell, check: true)
+        selectedGenders.insert(genders[indexPath.row].label)
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        //TODO: update to api
+        var params = self.requestParams
+        params["genders"] = Array(selectedGenders)
+        KinkedInAPI.updateProfile(params)
     }
     
     
