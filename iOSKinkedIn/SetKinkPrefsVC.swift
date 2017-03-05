@@ -19,6 +19,8 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var kinkInFocus: Kink?
     var myWays = Set<String>()
     var interest: KinkInterest?
+    
+    var dataChanged = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,23 +82,45 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             myWays.remove(w!)
         } else {
             CellStyles.select(cell!, check: true)
+            myWays.removeAll()
             myWays.insert(w!)
         }
+        dataChanged = true
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(false)
-        let realm = RealmDB.instance()
         let hasKink: Bool = myWays.count > 0
+        
+        if (!dataChanged){
+            return
+        }
+        
+        if(kinkInFocus?.checked ?? false){
+            if(hasKink){ //update
+                
+            } else { //delete
+            
+            }
+        } else {
+            if(hasKink) { //add
+            
+            }
+        }
+        
+        let realm = RealmDB.instance()
+        
         if(hasKink){
             try! realm.write{
-                interest?.compactWays = joinStrings(Array(myWays))
+                interest?.compactWays = myWays.first!
             }
+            kinkInFocus?.checked = true
             
         } else {
             try! realm.write {
                 realm.delete(interest!)
             }
+            kinkInFocus?.checked = false
         }
     }
 

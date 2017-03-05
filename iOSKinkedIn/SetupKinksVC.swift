@@ -71,8 +71,10 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         cell.textLabel?.text = kink.label
         if(KinkInterest.has(_label: kink.label)){
             CellStyles.select(cell)
+            kink.checked = true
         } else {
             CellStyles.deselect(cell)
+            kink.checked = false
         }
         return cell
     }
@@ -113,6 +115,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
             kinkPrefsView?.kinkInFocus = selectedKink
             isComingBack = true
         }
+        
     }
 
 }

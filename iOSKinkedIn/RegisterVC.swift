@@ -68,10 +68,7 @@ class RegisterVC: UIViewController {
     
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier=="register2setup"){
-            let setupView = segue.destination as? SetupPageNC
-            setupView?.token = userToken
-        }
+        
     }
     
 

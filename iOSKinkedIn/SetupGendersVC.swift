@@ -70,8 +70,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        var params = self.requestParams
-        params["genders"] = Array(selectedGenders)
+        let params = ["genders": Array(selectedGenders)]
         KinkedInAPI.updateProfile(params)
     }
     

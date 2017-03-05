@@ -9,6 +9,37 @@
 import Foundation
 import RealmSwift
 
+class Kink {
+    var label: String
+    var id: Int
+    var popularity: Int
+    var ways: [String]
+    var checked: Bool
+
+    init?(json: [String:Any]){
+        guard let _label = json["label"] as? String,
+            let _id = json["id"] as? Int
+            else {
+                return nil
+        }
+        self.label = _label
+        self.id = _id
+        
+        if let _ways = json["ways"] as? [String] {
+            self.ways = _ways
+        } else {
+            self.ways = [String]()
+        }
+        
+        if let _pop = json["popularity"] as? Int {
+            self.popularity = _pop
+        } else {
+            self.popularity = 0
+        }
+        self.checked = false
+    }
+}
+
 class KinkInterest: Object {
     
     dynamic var label = ""

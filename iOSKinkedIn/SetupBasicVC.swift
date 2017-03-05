@@ -32,8 +32,7 @@ class SetupBasicVC: SetupViewVC {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
 
-        var params = self.requestParams
-        params["name"] = fieldName?.text
+        var params: [String:Any] = ["name" : fieldName?.text ?? nil]
         
         if let birthday = fieldBirthday?.date, let calendar = fieldBirthday?.calendar {
             params["birthday"] = [

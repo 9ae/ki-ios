@@ -16,7 +16,6 @@ class LoginVC: UIViewController {
     
     var loginBtnSender: AnyObject?
     var userNeoId: String?
-    var userToken: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +40,7 @@ class LoginVC: UIViewController {
     }
     
     func checkProfileCreated(_ token: String) {
-        self.userToken = token
-        KinkedInAPI.checkProfileSetup(token){ step in
+        KinkedInAPI.checkProfileSetup(){ step in
             if(step == 0){
                 self.performSegue(withIdentifier: "login2setup", sender: self.loginBtnSender!)
             } else {
@@ -59,10 +57,7 @@ class LoginVC: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier=="login2setup"){
-            let setupView = segue.destination as? SetupPageNC
-            setupView?.token = self.userToken
-        }
+        
     }
     
 

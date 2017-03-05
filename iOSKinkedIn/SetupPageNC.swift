@@ -9,8 +9,6 @@
 import UIKit
 
 class SetupPageNC: UINavigationController {
-    
-    var token: String?
 
     
     deinit {
@@ -20,16 +18,11 @@ class SetupPageNC: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if (token != nil){
+
         
             NotificationCenter.default.addObserver(self,
                 selector: #selector(SetupPageNC.handleProfileSetupComplete),
                 name: NOTIFY_PROFILE_SETUP_COMPLETE, object: nil)
-        
-            let firstScreen = self.viewControllers.first as? SetupViewVC
-            firstScreen?.setToken(token!)
-        }
         
     }
 

@@ -272,6 +272,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bioField" destination="Y7j-Vl-Uqg" id="l3t-F3-Wqr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt3-cK-Px6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

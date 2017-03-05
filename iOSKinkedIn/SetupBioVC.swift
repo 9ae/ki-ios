@@ -10,6 +10,7 @@ import UIKit
 
 class SetupBioVC: SetupViewVC {
 
+    @IBOutlet weak var bioField: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,9 +23,11 @@ class SetupBioVC: SetupViewVC {
     }
     
     @IBAction func completeSetup(_ sender: AnyObject){
-        //TODO #6 save bio
-        
-        //TODO #7 inform server that profile has been setup
+        let params: [String:Any] = [
+            "setup_complete" : true,
+            "bio" : bioField?.text
+            ]
+        KinkedInAPI.updateProfile(params)
         
         NotificationCenter.default.post(name: NOTIFY_PROFILE_SETUP_COMPLETE, object: nil)
     }

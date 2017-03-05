@@ -18,9 +18,18 @@ enum ProfileAction: Int {
 }
 
 class KinkedInAPI {
+    
+    static var token: String = ""
+    
+    static func setToken(_ t: String){
+        token = t
+    }
 
-    static func get(_ path: String, callback:@escaping (_ json: [String:Any])->Void){
-        let url = HOST_URL+path
+    static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
+        var url = HOST_URL+path
+        if(requiresToken){
+            url += "?\(token)"
+        }
         Alamofire.request(url).responseJSON { response in
             
             if let JSON = response.result.value as? [String:Any] {
@@ -32,12 +41,16 @@ class KinkedInAPI {
         }
     }
   
-    static func post(_ path: String, parameters: Parameters,
+    static func post(_ path: String, parameters: [String: Any], requiresToken: Bool = true,
                      callback: @escaping (_ json: [String:Any])-> Void) {
         let url = HOST_URL+path
+        var params: Parameters = parameters
+        if(requiresToken){
+            params["token"] = token
+        }
         Alamofire.request(url,
             method: .post,
-            parameters: parameters,
+            parameters: params,
             encoding: JSONEncoding.default).responseJSON { response in
                 
                 if let JSON = response.result.value as? [String:Any] {
@@ -49,12 +62,16 @@ class KinkedInAPI {
         }
     }
     
-    static func put(_ path: String, parameters: Parameters,
+    static func put(_ path: String, parameters: [String: Any], requiresToken: Bool = true,
                      callback: @escaping (_ json: [String:Any])-> Void) {
         let url = HOST_URL+path
+        var params: Parameters = parameters
+        if(requiresToken){
+            params["token"] = token
+        }
         Alamofire.request(url,
                           method: .put,
-                          parameters: parameters,
+                          parameters: params,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let JSON = response.result.value as? [String:Any] {
@@ -66,9 +83,12 @@ class KinkedInAPI {
         }
     }
     
-    static func delete(_ path: String,
+    static func delete(_ path: String, requiresToken: Bool = true,
                     callback: @escaping (_ json: [String:Any])-> Void) {
-        let url = HOST_URL+path
+        var url = HOST_URL+path
+        if(requiresToken){
+            url += "?\(token)"
+        }
         Alamofire.request(url,
                           method: .delete,
                           encoding: JSONEncoding.default).responseJSON { response in
@@ -85,7 +105,7 @@ class KinkedInAPI {
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
         var genders = [Gender]()
         
-        get("list/genders"){ json in
+        get("list/genders", requiresToken: false){ json in
             if let list = json["genders"] as? [Any] {
                 for li in list {
                     if let gd = li as? [String:Any] {
@@ -102,7 +122,7 @@ class KinkedInAPI {
     static func kinks(_ callback: @escaping(_ results:[Kink]) -> Void) {
         var kinks = [Kink]()
         
-        get("list/kinks"){ json in
+        get("kinks", requiresToken: false){ json in
             if let list = json["kinks"] as? [Any] {
                 for li in list {
                     if let kd = li as? [String:Any] {
@@ -119,7 +139,7 @@ class KinkedInAPI {
     static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
         var roles = [Role]()
         
-        get("list/roles"){ json in
+        get("list/roles", requiresToken: false){ json in
             if let list = json["roles"] as? [Any] {
                 for li in list {
                     if let gd = li as? [String:Any] {
@@ -141,9 +161,10 @@ class KinkedInAPI {
             "password": password
         ]
         
-        post("login", parameters: params){ json in
+        post("login", parameters: params, requiresToken: false){ json in
             if let token = json["token"] as? String {
                 Login.setToken(token)
+                self.setToken(token)
                 callback(token)
             }
             /*
@@ -154,17 +175,17 @@ class KinkedInAPI {
             //TODO #2 login failed messages via notification system
         }
     }
-    
+   /*
     static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
         
-        get("self/validate?token=\(token)"){ json in
+        get("self/validate"){ json in
             if let neoId = json["neo_id"] as? String {
                 callback(neoId)
             }
         }
         
     }
-    
+    */
     static func register(email: String, password: String, inviteCode: String, callback: @escaping(_ success:Bool)->Void){
         let params: Parameters = [
             "email": email,
@@ -172,7 +193,7 @@ class KinkedInAPI {
             "invite_code": inviteCode
         ]
         
-        post("register", parameters: params){ json in
+        post("register", parameters: params, requiresToken: false){ json in
             if let success = json["success"] as? Bool {
                 callback(success)
                 /* set token somewhere if need be
@@ -226,8 +247,8 @@ class KinkedInAPI {
         }
     }
     
-    static func checkProfileSetup(_ token: String, callback: @escaping(_ step: Int)->Void ){
-        get("self/check_setup?token=\(token)"){ json in
+    static func checkProfileSetup(callback: @escaping(_ step: Int)->Void ){
+        get("self/check_setup"){ json in
             let step = json["step"] as? Int ?? 0
             callback(step)
         }

@@ -9,8 +9,7 @@
 import UIKit
 
 class SplashVC: UIViewController {
-    
-    var userToken: String?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +24,8 @@ class SplashVC: UIViewController {
     
     @IBAction func go(_ sender: AnyObject){
         if let token = Login.getToken(){
-            userToken = token
-            KinkedInAPI.checkProfileSetup(token){ step in
+            KinkedInAPI.setToken(token)
+            KinkedInAPI.checkProfileSetup(){ step in
                 if(step == 0){
                     self.performSegue(withIdentifier: "splash2setup", sender: sender)
                 } else {
@@ -37,19 +36,6 @@ class SplashVC: UIViewController {
             self.performSegue(withIdentifier: "splash2register", sender: sender)
         }
     }
-    
 
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        if(segue.identifier=="splash2setup"){
-            let setupView = segue.destination as? SetupPageNC
-            setupView?.token = self.userToken
-        }
-    }
 
 }
