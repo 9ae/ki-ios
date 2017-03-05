@@ -28,7 +28,7 @@ class KinkedInAPI {
     static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
         var url = HOST_URL+path
         if(requiresToken){
-            url += "?\(token)"
+            url += "?token=\(token)"
         }
         Alamofire.request(url).responseJSON { response in
             
@@ -87,7 +87,7 @@ class KinkedInAPI {
                     callback: @escaping (_ json: [String:Any])-> Void) {
         var url = HOST_URL+path
         if(requiresToken){
-            url += "?\(token)"
+            url += "?token=\(token)"
         }
         Alamofire.request(url,
                           method: .delete,
