@@ -22,7 +22,7 @@ class RegisterVC: UIViewController {
     @IBOutlet weak var requestInvite: UIButton!
     
     
-    private var userNeoId: String?
+    private var userToken: String?
     
     
     override func viewDidLoad() {
@@ -59,8 +59,8 @@ class RegisterVC: UIViewController {
         _updateProgressBar(0.75)
         KinkedInAPI.login(
             email: email.text!,
-            password: password.text!) { neoId in
-                self.userNeoId = neoId
+            password: password.text!) { token in
+                self.userToken = token
                 self._updateProgressBar(1.0)
                 self.performSegue(withIdentifier: "register2setup", sender: self)
         }
@@ -70,7 +70,7 @@ class RegisterVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="register2setup"){
             let setupView = segue.destination as? SetupPageNC
-            setupView?.userNeoId = userNeoId
+            setupView?.token = userToken
         }
     }
     

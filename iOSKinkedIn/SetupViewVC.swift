@@ -10,10 +10,23 @@ import UIKit
 
 class SetupViewVC: UIViewController {
     
-    var me: Profile?
+    private var userToken: String?
+    var requestParams: [String:Any] {
+        get {
+            return ["token": self.userToken!]
+
+        }
     
-    func setProfile(_ profile: Profile) {
-        self.me = profile
+    }
+    
+    func setToken(_ token: String) {
+        self.userToken = token
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nextScene = segue.destination as? SetupViewVC {
+            nextScene.setToken(self.userToken!)
+        }
     }
 
 }

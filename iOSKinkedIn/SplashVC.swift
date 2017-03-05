@@ -10,7 +10,7 @@ import UIKit
 
 class SplashVC: UIViewController {
     
-    var userNeoId: String?
+    var userToken: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +25,15 @@ class SplashVC: UIViewController {
     
     @IBAction func go(_ sender: AnyObject){
         if let token = Login.getToken(){
-            KinkedInAPI.validate(token, callback: { (_ neoId) -> Void in
-                self.userNeoId = neoId
-                if ((Profile.get(neoId)) != nil){
-                    print("START: go to app")
-                    self.performSegue(withIdentifier: "splash2app", sender: sender)
-                } else {
-                    print("START: profile setup")
+            userToken = token
+            KinkedInAPI.checkProfileSetup(token){ step in
+                if(step == 0){
                     self.performSegue(withIdentifier: "splash2setup", sender: sender)
+                } else {
+                    self.performSegue(withIdentifier: "splash2app", sender: sender)
                 }
-            })
+            }
         } else {
-            print("START: login screen")
             self.performSegue(withIdentifier: "splash2register", sender: sender)
         }
     }
@@ -51,7 +48,7 @@ class SplashVC: UIViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier=="splash2setup"){
             let setupView = segue.destination as? SetupPageNC
-            setupView?.userNeoId = userNeoId
+            setupView?.token = self.userToken
         }
     }
 

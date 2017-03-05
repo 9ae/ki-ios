@@ -59,8 +59,9 @@ class ViewProfileVC: UIViewController {
         self.preferredName?.text = profile.name
         self.kinksCount?.text = "\(profile.kinksMatched) kinks matched"
         
-        var shortBioText = "\(profile.age) years old"
-        
+        // var b = Style("b").foregroundColor(ThemeColors.primaryDark)
+        // var shortBioText = "<b>\(profile.age)</b> years old".style(tags: b)
+        /*
         if let city = profile.city {
             shortBioText += ", living in \(city)"
         }
@@ -69,6 +70,7 @@ class ViewProfileVC: UIViewController {
             shortBioText += "\nIdentifies as: "+joined
         }
         shortBio?.text = shortBioText
+        */
         
         if let pictureURL = self.profile?.picture {
             let imgURL = URL(string: pictureURL)

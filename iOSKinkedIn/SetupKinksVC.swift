@@ -106,13 +106,12 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
         if (segue.identifier == "kinkprefs"){
             let kinkPrefsView = segue.destination as? SetKinkPrefsVC
             kinkPrefsView?.kinkInFocus = selectedKink
             isComingBack = true
-        }
-        if let nextScene = segue.destination as? SetupViewVC {
-            nextScene.setProfile(self.me!)
         }
     }
 

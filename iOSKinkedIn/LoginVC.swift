@@ -16,6 +16,7 @@ class LoginVC: UIViewController {
     
     var loginBtnSender: AnyObject?
     var userNeoId: String?
+    var userToken: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,16 @@ class LoginVC: UIViewController {
         
     }
     
-    func checkProfileCreated(_ neoId: String) {
-        userNeoId = neoId
-        if ((Profile.get(neoId)) != nil){
-            //TODO api:#2 we shoud really validate with the server instead locally
-            self.performSegue(withIdentifier: "login2app", sender: loginBtnSender!)
-        } else {
-            self.performSegue(withIdentifier: "login2setup", sender: loginBtnSender!)
+    func checkProfileCreated(_ token: String) {
+        self.userToken = token
+        KinkedInAPI.checkProfileSetup(token){ step in
+            if(step == 0){
+                self.performSegue(withIdentifier: "login2setup", sender: self.loginBtnSender!)
+            } else {
+                self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
+            }
         }
+        
     }
     
     
@@ -58,7 +61,7 @@ class LoginVC: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier=="login2setup"){
             let setupView = segue.destination as? SetupPageNC
-            setupView?.userNeoId = userNeoId
+            setupView?.token = self.userToken
         }
     }
     

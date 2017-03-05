@@ -9,7 +9,8 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://private-859cb-theash.apiary-mock.com/"
+let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
+//"https://private-859cb-theash.apiary-mock.com/"
 //"https://dev.kinkd.in/"
 
 enum ProfileAction: Int {
@@ -48,10 +49,43 @@ class KinkedInAPI {
         }
     }
     
+    static func put(_ path: String, parameters: Parameters,
+                     callback: @escaping (_ json: [String:Any])-> Void) {
+        let url = HOST_URL+path
+        Alamofire.request(url,
+                          method: .put,
+                          parameters: parameters,
+                          encoding: JSONEncoding.default).responseJSON { response in
+                            
+                            if let JSON = response.result.value as? [String:Any] {
+                                callback(JSON)
+                            } else {
+                                print(url)
+                                print("error parsing json")
+                            }
+        }
+    }
+    
+    static func delete(_ path: String,
+                    callback: @escaping (_ json: [String:Any])-> Void) {
+        let url = HOST_URL+path
+        Alamofire.request(url,
+                          method: .delete,
+                          encoding: JSONEncoding.default).responseJSON { response in
+                            
+                            if let JSON = response.result.value as? [String:Any] {
+                                callback(JSON)
+                            } else {
+                                print(url)
+                                print("error parsing json")
+                            }
+        }
+    }
+    
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
         var genders = [Gender]()
         
-        get("genders"){ json in
+        get("list/genders"){ json in
             if let list = json["genders"] as? [Any] {
                 for li in list {
                     if let gd = li as? [String:Any] {
@@ -68,7 +102,7 @@ class KinkedInAPI {
     static func kinks(_ callback: @escaping(_ results:[Kink]) -> Void) {
         var kinks = [Kink]()
         
-        get("kinks"){ json in
+        get("list/kinks"){ json in
             if let list = json["kinks"] as? [Any] {
                 for li in list {
                     if let kd = li as? [String:Any] {
@@ -85,7 +119,7 @@ class KinkedInAPI {
     static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
         var roles = [Role]()
         
-        get("roles"){ json in
+        get("list/roles"){ json in
             if let list = json["roles"] as? [Any] {
                 for li in list {
                     if let gd = li as? [String:Any] {
@@ -100,7 +134,7 @@ class KinkedInAPI {
         
     }
     
-    static func login(email: String, password: String, callback: @escaping(_ neoId: String)->Void){
+    static func login(email: String, password: String, callback: @escaping(_ token: String)->Void){
         
         let params: Parameters = [
             "email": email,
@@ -110,17 +144,20 @@ class KinkedInAPI {
         post("login", parameters: params){ json in
             if let token = json["token"] as? String {
                 Login.setToken(token)
+                callback(token)
             }
+            /*
             if let neoId = json["neo_id"] as? String {
                 callback(neoId)
             }
+            */
             //TODO #2 login failed messages via notification system
         }
     }
     
     static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
         
-        get("validate?token=\(token)"){ json in
+        get("self/validate?token=\(token)"){ json in
             if let neoId = json["neo_id"] as? String {
                 callback(neoId)
             }
@@ -138,6 +175,11 @@ class KinkedInAPI {
         post("register", parameters: params){ json in
             if let success = json["success"] as? Bool {
                 callback(success)
+                /* set token somewhere if need be
+                 if let neoId = json["neo_id"] as? String {
+                 callback(neoId)
+                 }
+                 */
             } else {
                 callback(false)
             }
@@ -182,6 +224,20 @@ class KinkedInAPI {
         post("profiles/\(uuid)", parameters: params){ json in
             // assert json["success"] == true
         }
+    }
+    
+    static func checkProfileSetup(_ token: String, callback: @escaping(_ step: Int)->Void ){
+        get("self/check_setup?token=\(token)"){ json in
+            let step = json["step"] as? Int ?? 0
+            callback(step)
+        }
+    }
+    
+    static func updateProfile(_ body: [String: Any]) {
+        put("self/profile", parameters: body){ json in
+            print(json)
+        }
+    
     }
     
 }

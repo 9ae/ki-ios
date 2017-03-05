@@ -42,10 +42,8 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
         //TODO #12 don't save to DB just upload to cloudinary or server
-        if let nextScene = segue.destination as? SetupViewVC {
-            nextScene.setProfile(self.me!)
-        }
     }
     
     

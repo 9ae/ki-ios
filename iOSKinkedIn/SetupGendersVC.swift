@@ -82,12 +82,11 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        me?.saveGenders(Array(selectedGendersIds))
-        //TODO #9 post updates to server
-        if let nextScene = segue.destination as? SetupViewVC {
-            nextScene.setProfile(self.me!)
-        }
+        super.prepare(for: segue, sender: sender)
+        //TODO: update to api
     }
+    
+    
     
     
 }

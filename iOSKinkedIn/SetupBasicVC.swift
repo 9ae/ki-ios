@@ -30,17 +30,21 @@ class SetupBasicVC: SetupViewVC {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let name = fieldName?.text!
+        super.prepare(for: segue, sender: sender)
+
+        var params = self.requestParams
+        params["name"] = fieldName?.text
         
-        let realm = RealmDB.instance()
-        try! realm.write {
-            me?.name = name!
-            me?.birthday = fieldBirthday?.date
+        if let birthday = fieldBirthday?.date, let calendar = fieldBirthday?.calendar {
+            params["birthday"] = [
+                "year": calendar.component(.year, from: birthday),
+                "month": calendar.component(.month, from: birthday),
+                "date": calendar.component(.day, from: birthday)
+            ]
         }
-        //TODO #5 post updates to server
-        if let nextScene = segue.destination as? SetupViewVC {
-            nextScene.setProfile(self.me!)
-        }
+
+        KinkedInAPI.updateProfile(params)
+
     }
     
 }
