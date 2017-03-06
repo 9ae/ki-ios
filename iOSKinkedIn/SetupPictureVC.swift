@@ -28,15 +28,18 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
             imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
-            imagePicker.allowsEditing = true
-            self.present(imagePicker, animated: true, completion: nil)
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: false, completion: nil)
         }
     }
     
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: false) {
-            self.imagePicked.image = info["UIImagePickerControllerEditedImage"] as? UIImage
+            //UIImagePickerControllerReferenceURL
+            var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
+            selectImage = selectImage?.scaledTo(width: 750.0)
+            self.imagePicked.image = selectImage
         }
         
     }

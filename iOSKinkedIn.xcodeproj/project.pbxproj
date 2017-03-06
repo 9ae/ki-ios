@@ -20,6 +20,7 @@
 		001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* SetupRolesVC.swift */; };
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
 		0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */; };
+		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* ViewProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* ViewProfile.swift */; };
@@ -101,6 +102,7 @@
 		001D21181E5A4B1300317600 /* SetupRolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupRolesVC.swift; sourceTree = "<group>"; };
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		0038FAEF1E57DC7E00C160B6 /* SetupKinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksVC.swift; sourceTree = "<group>"; };
+		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* ViewProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfile.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 				00BA200E1E62B8C200D31F6F /* tables.swift */,
 				0041D5BA1E686D4D006DD440 /* KiNotification.swift */,
 				00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */,
+				003B15941E6D1E3200BE2F82 /* graphics.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
+				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
 				005FA4491E6C376E00D7CC9C /* KinkDetailCell.swift in Sources */,
 				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
