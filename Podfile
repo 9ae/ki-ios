@@ -11,6 +11,7 @@ target 'iOSKinkedIn' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Atributika'
+  pod 'Cloudinary', '~> 2.0'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

@@ -46,7 +46,15 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        //TODO #12 don't save to DB just upload to cloudinary or server
+
+        if let image = self.imagePicked.image, let data = UIImageJPEGRepresentation(image, 1.0){
+            print("Converted image to data of width:\(image.size.width)")
+            let cloud = CloudNine(data)
+            cloud.startUpload()
+        } else {
+            print("Unable to convert image")
+        }
+
     }
     
     

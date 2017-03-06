@@ -108,10 +108,9 @@ class KinkedInAPI {
         get("list/genders", requiresToken: false){ json in
             if let list = json["genders"] as? [Any] {
                 for li in list {
-                    if let gd = li as? [String:Any] {
-                        if let g = Gender(json:gd){
-                            genders.append(g)
-                        }
+                    if let gd = li as? String{
+                        genders.append(Gender(label: gd))
+
                     }
                 }
             }
@@ -142,11 +141,9 @@ class KinkedInAPI {
         get("list/roles", requiresToken: false){ json in
             if let list = json["roles"] as? [Any] {
                 for li in list {
-                    if let gd = li as? [String:Any] {
-                        if let g = Role(json:gd){
-                            roles.append(g)
+                    if let gd = li as? String {
+                            roles.append(Role(label: gd))
                         }
-                    }
                 }
             }
             callback(roles)
@@ -284,5 +281,5 @@ class KinkedInAPI {
             print(json)
         }
     }
-    
+
 }
