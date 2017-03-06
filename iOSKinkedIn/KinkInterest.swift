@@ -16,6 +16,7 @@ class Kink {
     var ways: [String]
     var checked: Bool
     var likeWay: String
+    var exp: Int
 
     init?(json: [String:Any]){
         guard let _label = json["label"] as? String,
@@ -39,6 +40,7 @@ class Kink {
         }
         self.checked = false
         self.likeWay = ""
+        self.exp = 0
     }
 }
 

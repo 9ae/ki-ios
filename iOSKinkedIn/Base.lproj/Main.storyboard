@@ -406,14 +406,14 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My interest in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p1n-Ok-xBO">
-                                <rect key="frame" x="16" y="323" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-tb-Yxl">
-                                <rect key="frame" x="1" y="364" width="373" height="303"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BondageEx" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-rJ-MRG">
+                                <rect key="frame" x="0.0" y="64" width="375" height="198"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="wyE-pW-9lr"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-tb-Yxl">
+                                <rect key="frame" x="1" y="262" width="373" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kinkyWay" textLabel="Vv6-qQ-RkR" style="IBUITableViewCellStyleDefault" id="zYB-eB-QEz" customClass="KinkDetailCell" customModule="iOSKinkedIn" customModuleProvider="target">
@@ -436,27 +436,18 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BondageEx" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-rJ-MRG">
-                                <rect key="frame" x="0.0" y="64" width="375" height="198"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="wyE-pW-9lr"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p1n-Ok-xBO" firstAttribute="top" secondItem="V0g-ga-XUi" secondAttribute="bottom" constant="20" id="0DW-wr-6mg"/>
                             <constraint firstItem="QMe-rJ-MRG" firstAttribute="top" secondItem="kmJ-RZ-41W" secondAttribute="bottom" id="C1J-sc-rOF"/>
                             <constraint firstItem="QMe-rJ-MRG" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leading" id="Ecs-2F-blN"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p1n-Ok-xBO" secondAttribute="trailing" id="Ph0-nu-jeQ"/>
                             <constraint firstItem="dwY-oH-RSW" firstAttribute="top" secondItem="cAP-tb-Yxl" secondAttribute="bottom" id="PvD-tB-QD3"/>
                             <constraint firstItem="cAP-tb-Yxl" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" constant="-15" id="TK6-BN-DhW"/>
-                            <constraint firstItem="p1n-Ok-xBO" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" id="VzF-Lx-MUY"/>
+                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="top" secondItem="QMe-rJ-MRG" secondAttribute="bottom" id="ZrJ-SP-o8G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cAP-tb-Yxl" secondAttribute="trailing" constant="-15" id="hAu-kr-G0f"/>
                             <constraint firstAttribute="trailing" secondItem="QMe-rJ-MRG" secondAttribute="trailing" id="htE-tm-m0z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V0g-ga-XUi" secondAttribute="trailing" id="huo-Or-qvD"/>
                             <constraint firstItem="V0g-ga-XUi" firstAttribute="top" secondItem="QMe-rJ-MRG" secondAttribute="bottom" constant="20" id="kLe-xn-r04"/>
-                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="top" secondItem="p1n-Ok-xBO" secondAttribute="bottom" constant="20" id="lPc-xk-dhM"/>
                             <constraint firstItem="V0g-ga-XUi" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" id="rYx-LB-eZ4"/>
                         </constraints>
                     </view>
@@ -1212,8 +1203,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="ihelp" width="28" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2WY-ZT-It8"/>
-        <segue reference="LAg-aZ-ASG"/>
+        <segue reference="n5w-4Q-t6v"/>
+        <segue reference="r6W-Lp-HEe"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>
