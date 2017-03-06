@@ -15,6 +15,7 @@ class Kink {
     var popularity: Int
     var ways: [String]
     var checked: Bool
+    var likeWay: String
 
     init?(json: [String:Any]){
         guard let _label = json["label"] as? String,
@@ -37,6 +38,7 @@ class Kink {
             self.popularity = 0
         }
         self.checked = false
+        self.likeWay = ""
     }
 }
 

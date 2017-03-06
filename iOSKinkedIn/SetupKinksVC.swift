@@ -69,12 +69,10 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.getOrCreateCell(CELL_ID)
         let kink = kinks[indexPath.row]
         cell.textLabel?.text = kink.label
-        if(KinkInterest.has(_label: kink.label)){
+        if(kink.checked){
             CellStyles.select(cell)
-            kink.checked = true
         } else {
             CellStyles.deselect(cell)
-            kink.checked = false
         }
         return cell
     }
