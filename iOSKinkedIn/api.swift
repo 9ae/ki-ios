@@ -217,9 +217,9 @@ class KinkedInAPI {
         }
     }
     
-    static func readProfile(_ uuid: String, callback: @escaping(_ profile: ViewProfile)->Void) {
+    static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
         get("profiles/\(uuid)"){ json in
-            if let user = ViewProfile(json) {
+            if let user = Profile(json) {
                 print(user)
                 callback(user)
             } else {

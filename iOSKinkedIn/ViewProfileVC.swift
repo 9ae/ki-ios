@@ -33,7 +33,7 @@ class ViewProfileVC: UIViewController {
     var hideBtnOrigin: CGRect?
     var skipBtnOrigin: CGRect?
 
-    var profile: ViewProfile?
+    var profile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,7 +54,7 @@ class ViewProfileVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setProfile(_ profile: ViewProfile){
+    func setProfile(_ profile: Profile){
         self.profile = profile
         
         self.preferredName?.text = profile.name

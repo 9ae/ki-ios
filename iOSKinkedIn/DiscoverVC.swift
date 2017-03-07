@@ -12,7 +12,7 @@ class DiscoverVC: UIViewController {
     
     var profileViewController: ViewProfileVC?
     var profilesQueue = [String]()
-    var fakeProfiles = [ViewProfile]()
+    var fakeProfiles = [Profile]()
     
     deinit {
         NotificationCenter.default.removeObserver(self)

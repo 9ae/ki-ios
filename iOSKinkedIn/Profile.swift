@@ -1,5 +1,5 @@
 //
-//  ViewProfile.swift
+//  Profile.swift
 //  iOSKinkedIn
 //
 //  Created by alice on 2/26/17.
@@ -14,7 +14,7 @@ struct Kinky {
     var level: Int
 }
 
-class ViewProfile {
+class Profile {
     var neoId: String
     var name: String
     var age: Int
