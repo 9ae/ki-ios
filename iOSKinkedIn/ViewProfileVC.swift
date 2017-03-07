@@ -8,6 +8,7 @@
 
 import UIKit
 import AMPopTip
+import Atributika
 
 class ViewProfileVC: UIViewController {
     
@@ -57,20 +58,25 @@ class ViewProfileVC: UIViewController {
         self.profile = profile
         
         self.preferredName?.text = profile.name
-        self.kinksCount?.text = "\(profile.kinksMatched) kinks matched"
         
-        // var b = Style("b").foregroundColor(ThemeColors.primaryDark)
-        // var shortBioText = "<b>\(profile.age)</b> years old".style(tags: b)
-        /*
+        self.kinksCount?.text = "\(profile.kinksMatched) kinks matched".uppercased()
+        
+         let b = Style("b")
+            .foregroundColor(ThemeColors.primaryDark)
+         var shortBioText = "<b>\(profile.age)</b> years old"
+        
         if let city = profile.city {
-            shortBioText += ", living in \(city)"
+            shortBioText += ", living in <b>\(city)</b>"
         }
         if profile.genders.count > 0 {
-            let joined = profile.genders.joined(separator: ", ")
+            var joined = profile.genders.joined(separator: ", ")
+            joined = joined.lowercased()
             shortBioText += "\nIdentifies as: "+joined
         }
-        shortBio?.text = shortBioText
-        */
+        
+        let shortBioAS = shortBioText.style(tags: b)
+        shortBio?.attributedText = shortBioAS.attributedString
+        
         
         if let pictureURL = self.profile?.picture {
             let imgURL = URL(string: pictureURL)
@@ -199,7 +205,7 @@ class ViewProfileVC: UIViewController {
         guard let uuid = self.profile?.neoId else {
             return
         }
-        KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
+        //KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
         _nextProfile()
     }
     
@@ -207,7 +213,7 @@ class ViewProfileVC: UIViewController {
         guard let uuid = self.profile?.neoId else {
             return
         }
-        KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
+        //KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
         _nextProfile()
     }
 

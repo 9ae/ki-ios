@@ -1055,14 +1055,14 @@ please apply for an invitation on trykinkedin.com</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
-                                        <rect key="frame" x="236" y="40" width="107" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
+                                        <rect key="frame" x="236.5" y="49.5" width="106.5" height="14.5"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
-                                        <rect key="frame" x="15" y="84" width="343" height="14.5"/>
+                                        <rect key="frame" x="15" y="84" width="343" height="15"/>
                                         <attributedString key="attributedText">
                                             <fragment content="age, city genders">
                                                 <attributes>
@@ -1104,7 +1104,6 @@ please apply for an invitation on trykinkedin.com</string>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="Zku-wK-z1y" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="40" id="00q-Vz-aus"/>
                                     <constraint firstAttribute="trailing" secondItem="D91-AZ-shp" secondAttribute="trailing" constant="15" id="0fF-gN-Y35"/>
                                     <constraint firstItem="b8b-R5-Zzx" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="30" id="21I-Od-rCg"/>
                                     <constraint firstItem="b8b-R5-Zzx" firstAttribute="top" secondItem="gQH-Bg-gnD" secondAttribute="top" constant="40" id="JrY-dk-74J"/>
@@ -1113,6 +1112,7 @@ please apply for an invitation on trykinkedin.com</string>
                                     <constraint firstAttribute="trailing" secondItem="Zku-wK-z1y" secondAttribute="trailing" constant="30" id="c4S-hF-Nsl"/>
                                     <constraint firstItem="hpo-LJ-LPr" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" id="dWu-D8-db7"/>
                                     <constraint firstAttribute="bottom" secondItem="I3A-4p-kUO" secondAttribute="bottom" id="gzF-mc-BYv"/>
+                                    <constraint firstItem="Zku-wK-z1y" firstAttribute="bottom" secondItem="b8b-R5-Zzx" secondAttribute="bottom" id="j6Y-OV-tsp"/>
                                     <constraint firstItem="D91-AZ-shp" firstAttribute="top" secondItem="b8b-R5-Zzx" secondAttribute="bottom" constant="20" id="nAa-HH-5EX"/>
                                     <constraint firstAttribute="trailing" secondItem="hpo-LJ-LPr" secondAttribute="trailing" id="yT0-iZ-cCu"/>
                                     <constraint firstItem="D91-AZ-shp" firstAttribute="leading" secondItem="gQH-Bg-gnD" secondAttribute="leading" constant="15" id="yxQ-4r-JrB"/>

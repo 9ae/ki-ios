@@ -30,6 +30,7 @@ class DiscoverVC: UIViewController {
         }
          */
         fakeProfiles = ShadowUsers().users
+        self._popProfile()
     }
     
     @objc func loadNextProfile() {
