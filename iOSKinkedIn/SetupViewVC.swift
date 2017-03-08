@@ -8,6 +8,11 @@
 
 import UIKit
 
-class SetupViewVC: UIViewController {
+class SetupViewVC: UIViewController, UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
 }

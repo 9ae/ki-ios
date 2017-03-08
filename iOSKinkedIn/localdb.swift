@@ -15,10 +15,11 @@ class RealmDB {
     
     static func instance() -> Realm {
         
+        
+        //TODO Remove this for prod
+        //fileURL: (URL(string: "/Users/alice/Workspaces/ki/db/irealm/default.realm"))!
         if(_db == nil){
-            _db = try! Realm.init(
-                //TODO Remove this for prod
-                fileURL: (URL(string: "/Users/alice/Workspaces/ki/db/irealm/default.realm"))!)
+            _db = try! Realm.init()
         }
         return _db!
     }

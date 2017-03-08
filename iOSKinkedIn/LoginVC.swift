@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class LoginVC: UIViewController {
+class LoginVC: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var fieldEmail: UITextField?
     @IBOutlet var fieldPassword: UITextField?
@@ -19,8 +19,9 @@ class LoginVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
-
+        
+        fieldEmail?.delegate = self
+        fieldPassword?.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -50,6 +51,10 @@ class LoginVC: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
     
 
     

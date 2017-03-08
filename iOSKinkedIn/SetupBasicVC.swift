@@ -16,6 +16,8 @@ class SetupBasicVC: SetupViewVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        fieldName?.delegate = self
+        
         let today = Date()
         var dc = DateComponents()
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)

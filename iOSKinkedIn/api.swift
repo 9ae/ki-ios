@@ -102,6 +102,12 @@ class KinkedInAPI {
         }
     }
     
+    static func test(_ callback:@escaping(_ success:Bool)->Void ){
+        Alamofire.request(HOST_URL).response { defaultDataResponse in
+            callback( defaultDataResponse.error == nil)
+        }
+    }
+    
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
         var genders = [Gender]()
         

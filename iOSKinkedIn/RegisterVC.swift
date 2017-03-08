@@ -9,7 +9,7 @@
 import UIKit
 
 
-class RegisterVC: UIViewController {
+class RegisterVC: UIViewController, UITextFieldDelegate {
     
     
     @IBOutlet weak var email: UITextField!
@@ -29,6 +29,10 @@ class RegisterVC: UIViewController {
         super.viewDidLoad()
 
         progressBar?.isHidden = true
+        
+        email?.delegate = self
+        password?.delegate = self
+        inviteCode?.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -66,6 +70,10 @@ class RegisterVC: UIViewController {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
