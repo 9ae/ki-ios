@@ -12,6 +12,7 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
     
     @IBOutlet weak var imagePicked: UIImageView!
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,7 +39,7 @@ class SetupPictureVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigation
         picker.dismiss(animated: false) {
             //UIImagePickerControllerReferenceURL
             var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
-            selectImage = selectImage?.scaledTo(width: 750.0)
+            selectImage = selectImage?.scaledTo(width: 50.0)
             self.imagePicked.image = selectImage
         }
         

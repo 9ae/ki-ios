@@ -148,7 +148,7 @@
                     <navigationItem key="navigationItem" title="Roles" id="Sew-gp-7DB">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="Qwe-FE-OIZ">
                             <connections>
-                                <segue destination="I8z-4V-akP" kind="show" animates="NO" id="hox-47-gvw"/>
+                                <segue destination="Dtf-H8-yzL" kind="show" id="h1b-vI-Pcg"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -159,64 +159,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKu-OQ-yNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3504" y="943"/>
-        </scene>
-        <!--Profile picture-->
-        <scene sceneID="N6g-Vr-5Se">
-            <objects>
-                <viewController storyboardIdentifier="vcSetupPicture" useStoryboardIdentifierAsRestorationIdentifier="YES" id="I8z-4V-akP" customClass="SetupPictureVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="huK-A5-LlS"/>
-                        <viewControllerLayoutGuide type="bottom" id="OZD-f8-oze"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LYa-63-vRw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qb-Jf0">
-                                <rect key="frame" x="53" y="156" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-vh-X1Z">
-                                <rect key="frame" x="100" y="353" width="175" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Photo from Library"/>
-                                <connections>
-                                    <action selector="selectPhotoWith_sender:" destination="I8z-4V-akP" eventType="touchDown" id="KRJ-ZL-tlt"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Picture Guidlines" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruf-jm-cWw">
-                                <rect key="frame" x="63" y="93" width="199" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="7ne-iY-63y">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="OZD-f8-oze" firstAttribute="top" secondItem="7ne-iY-63y" secondAttribute="bottom" id="Cy5-hu-k71"/>
-                            <constraint firstItem="7ne-iY-63y" firstAttribute="centerX" secondItem="LYa-63-vRw" secondAttribute="centerX" id="W6s-zy-Le4"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Profile picture" id="qr0-zi-SCh">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="Oew-GV-Rz1">
-                            <connections>
-                                <segue destination="Dtf-H8-yzL" kind="show" animates="NO" id="ksN-dI-yab"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imagePicked" destination="zPg-qb-Jf0" id="grM-Gh-Jlc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R7T-vN-m8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4317.6000000000004" y="949.47526236881572"/>
         </scene>
         <!--More About You-->
         <scene sceneID="dAs-el-b8Z">
@@ -277,7 +219,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt3-cK-Px6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5161" y="953"/>
+            <point key="canvasLocation" x="4231" y="942"/>
         </scene>
         <!--Setup PageNC-->
         <scene sceneID="iwG-2B-kqQ">
@@ -367,7 +309,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                             <constraint firstItem="yam-VB-5ze" firstAttribute="top" secondItem="icQ-23-4pY" secondAttribute="bottom" constant="20" id="sbf-py-pft"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="All Kinks" id="cdC-nf-Th1">
+                    <navigationItem key="navigationItem" title="Select Kinks" id="cdC-nf-Th1">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="P7Y-kN-nyn">
                             <connections>
                                 <segue destination="foG-02-y3o" kind="show" animates="NO" id="GYJ-QD-HD0"/>
@@ -854,51 +796,71 @@ please apply for an invitation on trykinkedin.com</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPW-46-tDZ">
-                                <rect key="frame" x="16" y="224" width="343" height="216"/>
+                                <rect key="frame" x="16" y="440" width="343" height="88"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="niJ-zB-hFR"/>
+                                </constraints>
                                 <date key="date" timeIntervalSinceReferenceDate="-343256826.81762791">
                                     <!--1990-02-15 02:52:53 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owY-1y-tUv">
-                                <rect key="frame" x="15" y="129" width="200" height="30"/>
+                                <rect key="frame" x="30" y="345" width="200" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="iAE-1C-ai0"/>
+                                    <constraint firstAttribute="width" constant="200" id="K2s-0w-eyt"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to be called?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MV-Tp-WoN">
-                                <rect key="frame" x="16" y="94" width="178" height="15"/>
+                                <rect key="frame" x="31" y="310" width="178" height="15"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your birthday?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdl-gI-oTO">
-                                <rect key="frame" x="16" y="189" width="131" height="15"/>
+                                <rect key="frame" x="31" y="405" width="131" height="15"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
                                 <rect key="frame" x="144" y="630" width="87" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-vh-X1Z">
+                                <rect key="frame" x="100" y="250" width="175" height="30"/>
+                                <state key="normal" title="Select Photo from Library"/>
+                                <connections>
+                                    <action selector="selectPhotoWith_sender:" destination="foG-02-y3o" eventType="touchDown" id="K0K-y8-wJX"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qb-Jf0">
+                                <rect key="frame" x="120" y="94" width="136" height="136"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="136" id="DcD-gH-8PF"/>
+                                    <constraint firstAttribute="height" constant="136" id="QK0-kC-sL1"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pPW-46-tDZ" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="DWc-EK-0Dk"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pPW-46-tDZ" secondAttribute="trailing" id="EwC-20-CNK"/>
-                            <constraint firstItem="pPW-46-tDZ" firstAttribute="top" secondItem="Gdl-gI-oTO" secondAttribute="bottom" constant="20" id="SMc-9t-u7h"/>
-                            <constraint firstItem="Rst-Kc-agM" firstAttribute="top" secondItem="aw9-vC-09a" secondAttribute="bottom" id="Val-eF-7dk"/>
-                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="Yg4-ee-zxo"/>
-                            <constraint firstItem="owY-1y-tUv" firstAttribute="top" secondItem="8MV-Tp-WoN" secondAttribute="bottom" constant="20" id="Ypa-6n-p1V"/>
-                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="top" secondItem="owY-1y-tUv" secondAttribute="bottom" constant="30" id="aNp-Re-uDJ"/>
-                            <constraint firstItem="aw9-vC-09a" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="elX-Cs-RNI"/>
-                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="top" secondItem="sEi-in-SRW" secondAttribute="bottom" constant="30" id="jYL-th-ukq"/>
-                            <constraint firstItem="owY-1y-tUv" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leading" constant="15" id="lu6-If-P7b"/>
-                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="qjo-NN-YsF"/>
+                            <constraint firstItem="pPW-46-tDZ" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="11U-aS-Zm3"/>
+                            <constraint firstItem="zPg-qb-Jf0" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="5TM-AM-qSY"/>
+                            <constraint firstItem="bFN-vh-X1Z" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="7x1-N2-jGE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pPW-46-tDZ" secondAttribute="trailing" id="8UG-W0-GAn"/>
+                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" constant="15" id="BE6-SO-Y4j"/>
+                            <constraint firstItem="pPW-46-tDZ" firstAttribute="top" secondItem="Gdl-gI-oTO" secondAttribute="bottom" constant="20" id="CCX-fR-q8e"/>
+                            <constraint firstItem="bFN-vh-X1Z" firstAttribute="top" secondItem="zPg-qb-Jf0" secondAttribute="bottom" constant="20" id="I8k-gG-XHN"/>
+                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="top" secondItem="bFN-vh-X1Z" secondAttribute="bottom" constant="30" id="PJF-dd-TcY"/>
+                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" constant="15" id="Sem-jS-81C"/>
+                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="top" secondItem="owY-1y-tUv" secondAttribute="bottom" constant="30" id="fln-3B-qBg"/>
+                            <constraint firstItem="owY-1y-tUv" firstAttribute="top" secondItem="8MV-Tp-WoN" secondAttribute="bottom" constant="20" id="ihl-7i-FK7"/>
+                            <constraint firstItem="owY-1y-tUv" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leading" constant="30" id="sf4-kg-Pws"/>
+                            <constraint firstItem="zPg-qb-Jf0" firstAttribute="top" secondItem="sEi-in-SRW" secondAttribute="bottom" constant="30" id="wd8-3L-7Wa"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="About You" id="bUt-Te-lTE">
@@ -911,11 +873,12 @@ please apply for an invitation on trykinkedin.com</string>
                     <connections>
                         <outlet property="fieldBirthday" destination="pPW-46-tDZ" id="5Lq-jw-DKV"/>
                         <outlet property="fieldName" destination="owY-1y-tUv" id="c5G-1c-gq4"/>
+                        <outlet property="imagePicked" destination="zPg-qb-Jf0" id="Jbr-0F-xKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1Z-V3-Rmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="937"/>
+            <point key="canvasLocation" x="1901.5999999999999" y="936.88155922038993"/>
         </scene>
         <!--Adjust-->
         <scene sceneID="BAi-zF-SIi">
