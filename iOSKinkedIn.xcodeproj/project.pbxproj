@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
+		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* SetupGendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
@@ -84,6 +86,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
+		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00171A241E56384500640B09 /* SetupGendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGendersVC.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 				0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */,
 				006D50061E658635005DAABE /* AppTabVC.swift */,
 				0041D5B61E685C4E006DD440 /* DiscoverVC.swift */,
+				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
 			);
 			name = vc;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				005FA4481E6C376E00D7CC9C /* KinkDetailCell.swift */,
+				00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -637,6 +643,7 @@
 				0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */,
 				00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
+				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
@@ -657,6 +664,7 @@
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
+				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,

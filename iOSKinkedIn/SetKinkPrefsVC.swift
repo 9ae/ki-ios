@@ -161,6 +161,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         let hasKink: Bool = !kink.likeWay.isEmpty
         
+        //TODO include experience
         if(kink.checked){
             if(hasKink){ //update
                 print("update kink")

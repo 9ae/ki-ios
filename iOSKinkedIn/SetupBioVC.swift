@@ -25,7 +25,7 @@ class SetupBioVC: SetupViewVC {
     @IBAction func completeSetup(_ sender: AnyObject){
         let params: [String:Any] = [
             "setup_complete" : true,
-            "bio" : bioField?.text
+            "bio" : bioField?.text ?? ""
             ]
         KinkedInAPI.updateProfile(params)
         

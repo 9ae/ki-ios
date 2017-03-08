@@ -10,3 +10,4 @@ import Foundation
 
 let NOTIFY_PROFILE_SETUP_COMPLETE = Notification.Name("KinkedInProfileSetupComplete")
 let NOTIFY_NEXT_PROFILE = Notification.Name("KinkedInNextProfile")
+let NOTIFY_RECIPROCAL_FEEFEE = Notification.Name("KinkedInReciprocalFeefee")

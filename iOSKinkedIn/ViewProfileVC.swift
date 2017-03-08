@@ -47,6 +47,11 @@ class ViewProfileVC: UIViewController {
         likeBtnOrigin = self.likeUser?.frame
         hideBtnOrigin = self.hideUser?.frame
         skipBtnOrigin = self.skipUser?.frame
+        
+        let swipeUpRecog = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
+        swipeUpRecog.direction = .up
+        swipeUpRecog.numberOfTouchesRequired = 1
+        bioTab?.addGestureRecognizer(swipeUpRecog)
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,15 +147,6 @@ class ViewProfileVC: UIViewController {
         )
     }
     
-    private func _showPopup(){
-        let popTip = AMPopTip()
-        popTip.shouldDismissOnTap = true
-        popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
-        popTip.textColor = UIColor.white
-        popTip.showText("The feelings are mutual! Start chatting!", direction: .none,
-                        maxWidth: 300, in: self.view, fromFrame: self.view.frame)
-    }
-    
     private func _nextProfile(){
         NotificationCenter.default.post(name: NOTIFY_NEXT_PROFILE, object: nil)
     }
@@ -192,10 +188,8 @@ class ViewProfileVC: UIViewController {
         
         KinkedInAPI.likeProfile(uuid) { reciprocal in
             if(reciprocal) {
-                self._showPopup()
-                // scroll down match top menu
+                NotificationCenter.default.post(name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
             }
-            self._nextProfile()
         }
 
     }
@@ -205,7 +199,7 @@ class ViewProfileVC: UIViewController {
         guard let uuid = self.profile?.neoId else {
             return
         }
-        //KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
+        KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
         _nextProfile()
     }
     
@@ -213,8 +207,12 @@ class ViewProfileVC: UIViewController {
         guard let uuid = self.profile?.neoId else {
             return
         }
-        //KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
+        KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
         _nextProfile()
+    }
+    
+    @objc func swipedUp(recog: UISwipeGestureRecognizer) {
+        showBio(recog)
     }
 
 }

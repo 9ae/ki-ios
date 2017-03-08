@@ -16,8 +16,6 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     var genders = [Gender]()
     var selectedGenders = Set<String>()
-    
-    //var selectedGendersIds = Set<Int>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
