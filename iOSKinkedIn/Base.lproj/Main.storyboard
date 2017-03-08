@@ -51,8 +51,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
+                                <rect key="frame" x="152" y="630" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -126,8 +126,8 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-Zi-zy8">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-Zi-zy8">
+                                <rect key="frame" x="152" y="630" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -187,8 +187,8 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="5" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-eK-pqZ">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="4" translatesAutoresizingMaskIntoConstraints="NO" id="l9O-eK-pqZ">
+                                <rect key="frame" x="152" y="630" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -289,8 +289,8 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-ab-zr5">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-ab-zr5">
+                                <rect key="frame" x="152" y="630" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.66939252614974976" green="0.59080362319946289" blue="0.79067707061767578" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994752883911" green="0.19659152626991272" blue="0.99855035543441772" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -825,7 +825,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="6" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
                                 <rect key="frame" x="144" y="630" width="87" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
