@@ -341,18 +341,30 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V0g-ga-XUi">
-                                <rect key="frame" x="16" y="282" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BondageEx" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-rJ-MRG">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-8O-qvn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="198"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="KinkDefaultBg" translatesAutoresizingMaskIntoConstraints="NO" id="QMe-rJ-MRG">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="198"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-We-wD1">
+                                        <rect key="frame" x="142.5" y="125" width="91" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="wyE-pW-9lr"/>
+                                    <constraint firstItem="QMe-rJ-MRG" firstAttribute="leading" secondItem="7Ny-8O-qvn" secondAttribute="leading" id="Qba-Tv-VDC"/>
+                                    <constraint firstAttribute="width" constant="375" id="Tss-8T-edk"/>
+                                    <constraint firstAttribute="trailing" secondItem="QMe-rJ-MRG" secondAttribute="trailing" id="Vyt-pA-AUj"/>
+                                    <constraint firstAttribute="bottom" secondItem="W0Q-We-wD1" secondAttribute="bottom" constant="30" id="cLH-bf-heo"/>
+                                    <constraint firstAttribute="bottom" secondItem="QMe-rJ-MRG" secondAttribute="bottom" id="qgo-Ih-aIl"/>
+                                    <constraint firstItem="W0Q-We-wD1" firstAttribute="centerX" secondItem="7Ny-8O-qvn" secondAttribute="centerX" id="uvw-80-hIm"/>
+                                    <constraint firstItem="QMe-rJ-MRG" firstAttribute="top" secondItem="7Ny-8O-qvn" secondAttribute="top" id="vqy-c6-TAm"/>
                                 </constraints>
-                            </imageView>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-tb-Yxl">
                                 <rect key="frame" x="1" y="262" width="373" height="405"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -380,24 +392,23 @@ Your bio will be visislbe to all KinkedIn users</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QMe-rJ-MRG" firstAttribute="top" secondItem="kmJ-RZ-41W" secondAttribute="bottom" id="C1J-sc-rOF"/>
-                            <constraint firstItem="QMe-rJ-MRG" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leading" id="Ecs-2F-blN"/>
+                            <constraint firstAttribute="trailing" secondItem="7Ny-8O-qvn" secondAttribute="trailing" id="E4x-nQ-uat"/>
                             <constraint firstItem="dwY-oH-RSW" firstAttribute="top" secondItem="cAP-tb-Yxl" secondAttribute="bottom" id="PvD-tB-QD3"/>
                             <constraint firstItem="cAP-tb-Yxl" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" constant="-15" id="TK6-BN-DhW"/>
-                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="top" secondItem="QMe-rJ-MRG" secondAttribute="bottom" id="ZrJ-SP-o8G"/>
+                            <constraint firstItem="dwY-oH-RSW" firstAttribute="top" secondItem="cAP-tb-Yxl" secondAttribute="bottom" id="XHC-Zn-MzM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="cAP-tb-Yxl" secondAttribute="trailing" constant="-15" id="hAu-kr-G0f"/>
-                            <constraint firstAttribute="trailing" secondItem="QMe-rJ-MRG" secondAttribute="trailing" id="htE-tm-m0z"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V0g-ga-XUi" secondAttribute="trailing" id="huo-Or-qvD"/>
-                            <constraint firstItem="V0g-ga-XUi" firstAttribute="top" secondItem="QMe-rJ-MRG" secondAttribute="bottom" constant="20" id="kLe-xn-r04"/>
-                            <constraint firstItem="V0g-ga-XUi" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" id="rYx-LB-eZ4"/>
+                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="top" secondItem="7Ny-8O-qvn" secondAttribute="bottom" id="qdh-J4-pdQ"/>
+                            <constraint firstItem="7Ny-8O-qvn" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leading" id="vP2-Py-FVb"/>
+                            <constraint firstItem="7Ny-8O-qvn" firstAttribute="top" secondItem="kmJ-RZ-41W" secondAttribute="bottom" id="y70-Z4-eQp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Define Preferences" id="fRt-cj-NoA">
                         <barButtonItem key="backBarButtonItem" title="Back" id="OYF-0S-Dyz"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="defineLabel" destination="V0g-ga-XUi" id="Ymi-he-acr"/>
                         <outlet property="headerImage" destination="QMe-rJ-MRG" id="ZQl-qd-2S8"/>
+                        <outlet property="headerView" destination="7Ny-8O-qvn" id="ohY-Dq-vC5"/>
+                        <outlet property="kinkLabel" destination="W0Q-We-wD1" id="Ph6-Ne-4B4"/>
                         <outlet property="waysTable" destination="cAP-tb-Yxl" id="0R6-zr-Md6"/>
                     </connections>
                 </viewController>
@@ -1183,9 +1194,9 @@ please apply for an invitation on trykinkedin.com</string>
         </scene>
     </scenes>
     <resources>
-        <image name="BondageEx" width="371" height="198"/>
         <image name="Fade" width="2" height="50"/>
         <image name="HideUser" width="39" height="37"/>
+        <image name="KinkDefaultBg" width="371" height="198"/>
         <image name="LikeUser" width="99" height="96"/>
         <image name="Logo" width="195" height="195"/>
         <image name="SkipUser" width="37" height="37"/>

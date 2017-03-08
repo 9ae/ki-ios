@@ -11,46 +11,42 @@ import UIKit
 class SplashVC: UIViewController {
 
     @IBOutlet weak var iConsent: UIButton!
-    //var waitForReadyTimer: Timer
-    
-    /*
-    func delay(delay:Double, closure:()->()) {
-        
-        dispatch_after(
-            DispatchTime.now( dispatch_time_t(DISPATCH_TIME_NOW), Int64(delay * Double(NSEC_PER_SEC))), DispatchQueue.main, closure)
-    }
-    */
+    var waitForReadyTimer: Timer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         KinkedInAPI.test { ok in
             if(ok){
-                print("server up")
+                self.allowGo()
             } else {
-                print("server down... waiting 5 seconds to try again")
-            }
-            self.iConsent.isEnabled = true
-            UIView.animate(withDuration: 1){
-                self.iConsent.alpha = 1.0
+                self.waitForReadyTimer = Timer.scheduledTimer(timeInterval: 3,
+                                                              target: self,
+                                                              selector: #selector(self.pingServer),
+                                                              userInfo: nil, repeats: true);
             }
         }
-        
-        //waitForReadyTimer = Timer(timeInterval: 5, target: self, selector: #selector(pingServer), userInfo: nil, repeats: true)
     }
-    /*
-    @objc
+    
+    func allowGo(){
+        self.iConsent.isEnabled = true
+        UIView.animate(withDuration: 1){
+            self.iConsent.alpha = 1.0
+        }
+    }
+
     func pingServer(){
-        KinkedInAPI.test { ok in
+        KinkedInAPI.test{ ok in
             if(ok){
-                self.iConsent.isEnabled = true
                 print("server up")
+                self.waitForReadyTimer?.invalidate()
+                self.allowGo()
             } else {
-                print("server down... waiting 5 seconds to try again")
+                print("server down... waiting 3 seconds to try again")
             }
         }
     }
-    */
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

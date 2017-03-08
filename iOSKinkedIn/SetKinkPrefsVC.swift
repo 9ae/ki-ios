@@ -12,19 +12,19 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
 
     
     @IBOutlet var headerImage: UIImageView?
-    @IBOutlet var defineLabel: UILabel?
     @IBOutlet var waysTable: UITableView?
+    @IBOutlet weak var kinkLabel: UILabel!
+    @IBOutlet weak var headerView: UIView!
     
     let CELL_ID = "kinkyWay"
     var kinkInFocus: Kink?
-    
+    var gradient = CAGradientLayer()
     var dataChanged = false
     
     let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        defineLabel?.isHidden = true
         
         guard let kink = kinkInFocus else {
             return
@@ -34,7 +34,10 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         waysTable?.delegate = self
         
         let lbl = kink.label
-        defineLabel?.text = "Definition of \(lbl)"
+//        defineLabel?.text = "Definition of \(lbl)"
+        kinkLabel?.text = lbl
+        
+        // setupGradient()
         
         if(!kink.likeWay.isEmpty) {
         for i in 0...2 {
@@ -49,6 +52,12 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func setupGradient()
+    {
+        gradient.colors = [UIColor.black, UIColor.purple, UIColor.black]
+        self.headerView.layer.insertSublayer(gradient, at: 0)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
