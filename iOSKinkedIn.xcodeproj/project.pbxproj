@@ -129,7 +129,6 @@
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
-		00CD2AA31E58294900C306A3 /* AMPopTip.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AMPopTip.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetKinkPrefsVC.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* KinkInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkInterest.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -178,7 +177,6 @@
 		00171A161E56384500640B09 = {
 			isa = PBXGroup;
 			children = (
-				00CD2AA31E58294900C306A3 /* AMPopTip.framework */,
 				0070C3721E569E23000D5BA0 /* RealmSwift.framework */,
 				0070C36E1E569E11000D5BA0 /* Realm.framework */,
 				0070C36A1E569DEA000D5BA0 /* Realm.framework */,
@@ -410,7 +408,7 @@
 					00171A1E1E56384500640B09 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8UP95RYJ9H;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					00171A321E56384500640B09 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -833,8 +831,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b1664908-d376-4c94-9096-3186f6272018";
+				PROVISIONING_PROFILE_SPECIFIER = "Self Deploy Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -855,8 +853,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "b1664908-d376-4c94-9096-3186f6272018";
+				PROVISIONING_PROFILE_SPECIFIER = "Self Deploy Dev";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

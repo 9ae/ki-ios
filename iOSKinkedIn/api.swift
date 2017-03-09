@@ -211,7 +211,7 @@ class KinkedInAPI {
     }
     
     static func listProfiles(callback: @escaping(_ uuids: [String])->Void ){
-        get("profiles"){ json in
+        get("discover/profiles"){ json in
             let count = (json["count"] as? Int) ?? 0
             if(count>0){
                 if let uuids = json["users"] as? [String] {
@@ -224,7 +224,8 @@ class KinkedInAPI {
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
-        get("profiles/\(uuid)"){ json in
+        get("discover/profile/\(uuid)"){ json in
+            print(json)
             if let user = Profile(json) {
                 print(user)
                 callback(user)

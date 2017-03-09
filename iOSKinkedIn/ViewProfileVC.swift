@@ -37,8 +37,7 @@ class ViewProfileVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        KinkedInAPI.readProfile("abc", callback: setProfile)
+        bioTab?.isHidden = true
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
@@ -51,6 +50,7 @@ class ViewProfileVC: UIViewController {
         let swipeUpRecog = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
         swipeUpRecog.direction = .up
         swipeUpRecog.numberOfTouchesRequired = 1
+        
         bioTab?.addGestureRecognizer(swipeUpRecog)
     }
 
@@ -93,7 +93,7 @@ class ViewProfileVC: UIViewController {
                 // TODO: use put in place holder image
             }
         }
-        
+        bioTab?.isHidden = false
     }
     
     private func _buttonsBounceUp(){
