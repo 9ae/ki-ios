@@ -42,7 +42,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
         picker.dismiss(animated: false) {
             //UIImagePickerControllerReferenceURL
             var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
-            selectImage = selectImage?.scaledTo(width: 750.0)
+            selectImage = selectImage?.scaledTo(width: 375.0)
             self.imagePicked.image = selectImage
         }
         

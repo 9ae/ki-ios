@@ -225,9 +225,7 @@ class KinkedInAPI {
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
         get("discover/profile/\(uuid)"){ json in
-            print(json)
-            if let user = Profile(json) {
-                print(user)
+            if let user = Profile(uuid, json: json) {
                 callback(user)
             } else {
                 print("request error in readProfile")

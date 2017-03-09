@@ -38,6 +38,12 @@ class ViewProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bioTab?.isHidden = true
+        likeUser?.isHidden = true
+        likeUser?.isEnabled = false
+        skipUser?.isHidden = true
+        skipUser?.isEnabled = false
+        hideUser?.isHidden = true
+        hideUser?.isEnabled = false
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
@@ -91,9 +97,16 @@ class ViewProfileVC: UIViewController {
                 self.profilePicture?.image = img
             } catch {
                 // TODO: use put in place holder image
+                print("error loading profile picture")
             }
         }
         bioTab?.isHidden = false
+        likeUser?.isHidden = false
+        likeUser?.isEnabled = true
+        skipUser?.isHidden = false
+        skipUser?.isEnabled = true
+        hideUser?.isHidden = false
+        hideUser?.isEnabled = true
     }
     
     private func _buttonsBounceUp(){

@@ -40,8 +40,8 @@ class CloudNine {
         self.imageData = data
     }
     
-    private func confirmUpload(_ public_id: String){
-        KinkedInAPI.post("self/picture", parameters: ["public_id": public_id]){ json in
+    private func confirmUpload(_ public_id: String, url: String){
+        KinkedInAPI.post("self/picture", parameters: ["public_id": public_id, "url": url]){ json in
             print(json)
         }
     }
@@ -83,10 +83,11 @@ class CloudNine {
             print(errorMessage)
             print(error)
         }
-        if let publicId = response?.publicId {
+        
+        if let publicId = response?.publicId,
+            let url = response?.url {
             print("Cloudinary Response")
-            print(publicId)
-            confirmUpload(publicId)
+            confirmUpload(publicId, url: url)
         }
     }
     
