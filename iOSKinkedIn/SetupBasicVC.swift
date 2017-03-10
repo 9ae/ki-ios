@@ -63,7 +63,6 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        print("check segue")
         
         var missing = [String]()
         if(identifier=="basic2genders"){
@@ -87,8 +86,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        print("prepare segue")
-        /*
+        
         if let image = self.imagePicked.image, let data = UIImageJPEGRepresentation(image, 1.0){
             print("Converted image to data of width:\(image.size.width)")
             let cloud = CloudNine(data)
@@ -112,7 +110,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
         }
 
         KinkedInAPI.updateProfile(params)
-        */
+        
     }
     
 }

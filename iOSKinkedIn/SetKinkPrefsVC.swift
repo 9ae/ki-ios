@@ -49,6 +49,9 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         }
+        
+        let expIndex = IndexPath(row: kink.exp, section: 1)
+        waysTable?.selectRow(at: expIndex, animated: false, scrollPosition: .none)
     }
 
     override func didReceiveMemoryWarning() {
@@ -179,7 +182,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         if(kink.checked){
             if(hasKink){ //update
                 print("update kink")
-                KinkedInAPI.updateKink(kink.id, way: kink.likeWay)
+                KinkedInAPI.updateKink(kink.id, way: kink.likeWay, exp: kink.exp)
             } else { //delete
                 print("delete kink")
                 KinkedInAPI.deleteKink(kink.id)
@@ -187,7 +190,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             if(hasKink) { //add
                 print("add kink")
-                KinkedInAPI.addKink(kink.id, way: kink.likeWay)
+                KinkedInAPI.addKink(kink.id, way: kink.likeWay, exp: kink.exp)
             }
         }
         

@@ -263,18 +263,20 @@ class KinkedInAPI {
     
     }
     
-    static func addKink(_ id: Int, way: String){
+    static func addKink(_ id: Int, way: String, exp: Int){
         let params: [String: Any] = [
-            "ways": way
+            "ways": way,
+            "exp": exp
         ]
         post("self/kinks/\(id)", parameters: params){json in
             print(json)
         }
     }
     
-    static func updateKink(_ id: Int, way: String){
+    static func updateKink(_ id: Int, way: String, exp: Int){
         let params: [String: Any] = [
-            "ways": way
+            "ways": way,
+            "exp": exp
         ]
         put("self/kinks/\(id)", parameters: params){json in
             print(json)
