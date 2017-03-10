@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,9 +23,11 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         KinkedInAPI.roles { (results: [Role]) in
             self.roles = results
             self.tableView?.reloadData()
+            self.view.hideToastActivity()
         }
         tableView?.delegate = self
         tableView?.dataSource = self
+        self.view.makeToastActivity(.center)
 
         // Do any additional setup after loading the view.
     }
@@ -51,10 +54,16 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                   didDeselectRowAt indexPath: IndexPath){
-        selectedRoles.remove(roles[indexPath.row].label)
-        tableView.reloadRows(at: [indexPath], with: .none)
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let label = roles[indexPath.row].label
+        if(selectedRoles.contains(label)){
+            selectedRoles.remove(label)
+            tableView.reloadRows(at: [indexPath], with: .none)
+            return nil
+        }
+        else {
+            return indexPath
+        }
     }
     
     func tableView(_ tableView: UITableView,

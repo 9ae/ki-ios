@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
@@ -23,6 +24,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         KinkedInAPI.genders(_loadGenders)
         tableView?.dataSource = self
         tableView?.delegate = self
+        self.view.makeToastActivity(.center)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +35,7 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     private func _loadGenders(_ results: [Gender]){
         self.genders = results
         tableView?.reloadData()
+        self.view.hideToastActivity()
     }
     
     // MARK: Table View Data Source Methods
@@ -52,16 +55,22 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func tableView(_ tableView: UITableView,
-                   didDeselectRowAt indexPath: IndexPath){
-        selectedGenders.remove(genders[indexPath.row].label)
-        tableView.reloadRows(at: [indexPath], with: .none)
-
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        let label = genders[indexPath.row].label
+        if(selectedGenders.contains(label)){
+            selectedGenders.remove(label)
+            tableView.reloadRows(at: [indexPath], with: .none)
+            return nil
+        }
+        else {
+            return indexPath
+        }
     }
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        selectedGenders.insert(genders[indexPath.row].label)
+        let label = genders[indexPath.row].label
+        selectedGenders.insert(label)
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     

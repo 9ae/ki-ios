@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
@@ -26,6 +27,9 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         KinkedInAPI.kinks(_loadKinks)
         kinksTableView?.dataSource = self
         kinksTableView?.delegate = self
+        
+        self.view.makeToastActivity(.center)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -54,6 +58,7 @@ class SetupKinksVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     private func _loadKinks(_ results: [Kink]){
         self.kinks = results.sorted(by: sortByABC)
         kinksTableView?.reloadData()
+        self.view.hideToastActivity()
     }
     
     private func _detailView(_ kink: Kink){
