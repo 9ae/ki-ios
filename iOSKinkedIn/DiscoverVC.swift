@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AMPopTip
 
 class DiscoverVC: UIViewController {
     
@@ -60,14 +59,16 @@ class DiscoverVC: UIViewController {
     }
     
     //TODO figure out disappearing bug
+
     private func _showPopup(_ done: Bool) {
+        /*
         let popTip = AMPopTip()
         popTip.shouldDismissOnTap = true
         popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
         popTip.textColor = UIColor.white
         popTip.showText("The feelings are mutual! Start chatting!", direction: .down,
                         maxWidth: 300, in: self.view, fromFrame: self.todayMatches.frame)
-        
+        */
     }
     
     private func _popProfile(){

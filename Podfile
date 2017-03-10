@@ -7,7 +7,7 @@ target 'iOSKinkedIn' do
 
   # Pods for iOSKinkedIn
   pod 'Alamofire', '~> 4.3'
-  pod 'AMPopTip'
+  pod 'Toast-Swift', '~> 2.0.0'
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Atributika'

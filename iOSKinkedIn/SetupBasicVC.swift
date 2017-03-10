@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet var fieldName: UITextField?
     @IBOutlet var fieldBirthday: UIDatePicker?
     @IBOutlet weak var imagePicked: UIImageView!
-
+    
+    var imageUpdated = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,6 +47,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
             var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
             selectImage = selectImage?.scaledTo(width: 375.0)
             self.imagePicked.image = selectImage
+            self.imageUpdated = true
         }
         
     }
@@ -53,8 +57,37 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
         // Dispose of any resources that can be recreated.
     }
     
+    func missingFields(_ missing: [String]){
+        let message = "Please provide us with your: "+missing.joined(separator: ", ")
+        self.view.makeToast(message)
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        print("check segue")
+        
+        var missing = [String]()
+        if(identifier=="basic2genders"){
+            if((fieldName?.text?.isEmpty)!){
+                missing.append("preferred name")
+            }
+            
+            if(!imageUpdated) {
+                missing.append("profile picture")
+            }
+            if(missing.count>0){
+                missingFields(missing)
+                return false
+            } else {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
+        print("prepare segue")
         
         if let image = self.imagePicked.image, let data = UIImageJPEGRepresentation(image, 1.0){
             print("Converted image to data of width:\(image.size.width)")

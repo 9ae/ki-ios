@@ -27,6 +27,8 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "splash2"))
 
         progressBar?.isHidden = true
         

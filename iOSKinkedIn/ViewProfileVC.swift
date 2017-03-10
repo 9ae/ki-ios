@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AMPopTip
 import Atributika
 
 class ViewProfileVC: UIViewController {

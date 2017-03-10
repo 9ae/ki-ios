@@ -30,6 +30,8 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
         
+        headerView.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "KinkDefaultBg"))
+        
         waysTable?.dataSource = self
         waysTable?.delegate = self
         
@@ -65,11 +67,14 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        guard let label = kinkInFocus?.label else {
+            return ""
+        }
         switch(section){
         case 0:
-            return "My interest in"
+            return "I like to __ \(label)"
         case 1:
-            return "My experience level"
+            return "I am __ \(label)"
         default:
             return ""
         }

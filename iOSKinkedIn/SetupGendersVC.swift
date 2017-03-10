@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AMPopTip
 
 class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     

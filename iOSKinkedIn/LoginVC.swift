@@ -20,6 +20,8 @@ class LoginVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "splash3"))
+        
         fieldEmail?.delegate = self
         fieldPassword?.delegate = self
         // Do any additional setup after loading the view.
