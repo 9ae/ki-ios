@@ -28,9 +28,8 @@ class ViewProfileVC: UIViewController {
     static let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
     var blurEffectView = UIVisualEffectView(effect: blurEffect)
     
-    var likeBtnOrigin: CGRect?
-    var hideBtnOrigin: CGRect?
-    var skipBtnOrigin: CGRect?
+    var likeBtnOrigin = CGPoint()
+    var skipBtnOrigin = CGPoint()
 
     var profile: Profile?
 
@@ -46,8 +45,8 @@ class ViewProfileVC: UIViewController {
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
-        likeBtnOrigin = self.likeUser?.frame
-        skipBtnOrigin = self.skipUser?.frame
+        likeBtnOrigin = (self.likeUser?.frame.origin)!
+        skipBtnOrigin = (self.skipUser?.frame.origin)!
         
         let swipeUpRecog = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
         swipeUpRecog.direction = .up
@@ -107,17 +106,23 @@ class ViewProfileVC: UIViewController {
         // TODO: Add bounce
         likeUser?.frame.origin.y = 2
         skipUser?.frame.origin.y = 2
+        
     }
     
     private func _buttonsBounceBack() {
-        likeUser?.frame = likeBtnOrigin!
-        skipUser?.frame = skipBtnOrigin!
+        likeUser?.frame.origin = likeBtnOrigin
+        skipUser?.frame.origin = skipBtnOrigin
+        
     }
     
     private func _animateUp(finished: Bool){
         // TODO: Make sure this is the correct way to chain animations
         let screenHeight = self.view.frame.size.height - 40
         self.bioExcerpt?.frame.size.height = screenHeight - 15
+        if(self.blurEffectView.superview == nil) { // first time animating up
+            self.likeBtnOrigin.x = self.likeUser?.frame.origin.x ?? 0
+            self.skipBtnOrigin.x = self.skipUser?.frame.origin.x ?? 0
+        }
         
         UIView.animate(
             withDuration: 3,
