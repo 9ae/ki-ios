@@ -235,16 +235,16 @@ class KinkedInAPI {
     }
     
     static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool)->Void ){
-        let params : Parameters = [ "action": ProfileAction.like ]
-        post("profiles/\(uuid)", parameters: params){ json in
+        let params : Parameters = [ "likes": true ]
+        post("discover/profile/\(uuid)", parameters: params){ json in
             let reciprocal = (json["reciprocal"] as? Bool) ?? false
             callback(reciprocal)
         }
     }
     
-    static func markProfile(_ uuid: String, action: ProfileAction){
-        let params : Parameters = [ "action": action.rawValue ]
-        post("profiles/\(uuid)", parameters: params){ json in
+    static func skipProfile(_ uuid: String){
+        let params : Parameters = [ "likes": false ]
+        post("discover/profile/\(uuid)", parameters: params){ json in
             // assert json["success"] == true
         }
     }

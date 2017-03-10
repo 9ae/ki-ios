@@ -1145,17 +1145,6 @@ please apply for an invitation on trykinkedin.com</string>
                                     <action selector="skip:" destination="uL9-GD-gCZ" eventType="touchDown" id="MsI-5f-RUT"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMl-Xx-wq7">
-                                <rect key="frame" x="216" y="385" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="30" id="Pvu-dC-wpm"/>
-                                    <constraint firstAttribute="height" constant="30" id="s9H-5S-7Co"/>
-                                </constraints>
-                                <state key="normal" image="HideUser"/>
-                                <connections>
-                                    <action selector="hide:" destination="uL9-GD-gCZ" eventType="touchDown" id="hDJ-On-A0Q"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1165,8 +1154,6 @@ please apply for an invitation on trykinkedin.com</string>
                             <constraint firstItem="9Hf-LM-hgv" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="385" id="CN2-V5-7El"/>
                             <constraint firstAttribute="trailing" secondItem="gQH-Bg-gnD" secondAttribute="trailing" id="NjJ-kh-WsJ"/>
                             <constraint firstAttribute="trailing" secondItem="cyK-FT-Fq7" secondAttribute="trailing" id="PdO-68-Ekl"/>
-                            <constraint firstItem="cMl-Xx-wq7" firstAttribute="top" secondItem="uhp-gj-OKn" secondAttribute="bottom" constant="385" id="QvJ-ZC-IPd"/>
-                            <constraint firstItem="9Hf-LM-hgv" firstAttribute="leading" secondItem="cMl-Xx-wq7" secondAttribute="trailing" constant="16" id="QyP-Bh-L3R"/>
                             <constraint firstAttribute="trailing" secondItem="Rv6-U5-Xzt" secondAttribute="trailing" constant="15" id="Wyz-R9-LZJ"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="top" secondItem="qOH-Un-9Lu" secondAttribute="top" id="Yew-yT-6le"/>
                             <constraint firstItem="cyK-FT-Fq7" firstAttribute="leading" secondItem="qOH-Un-9Lu" secondAttribute="leading" id="hBr-bY-QYt"/>
@@ -1179,7 +1166,6 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="bioExcerpt" destination="v5G-vK-aiS" id="Zb6-jg-vgI"/>
                         <outlet property="bioTab" destination="gQH-Bg-gnD" id="AtQ-T1-uY4"/>
                         <outlet property="fadeGradient" destination="hpo-LJ-LPr" id="WKU-Qp-o6m"/>
-                        <outlet property="hideUser" destination="cMl-Xx-wq7" id="IBN-JZ-hbp"/>
                         <outlet property="kinksCount" destination="Zku-wK-z1y" id="DYB-fV-e93"/>
                         <outlet property="likeUser" destination="Rv6-U5-Xzt" id="Af4-3T-wKi"/>
                         <outlet property="preferredName" destination="b8b-R5-Zzx" id="1Th-Nn-cO5"/>
@@ -1197,7 +1183,6 @@ please apply for an invitation on trykinkedin.com</string>
     </scenes>
     <resources>
         <image name="Fade" width="2" height="50"/>
-        <image name="HideUser" width="39" height="37"/>
         <image name="KinkDefaultBg" width="371" height="198"/>
         <image name="LikeUser" width="99" height="96"/>
         <image name="Logo" width="195" height="195"/>

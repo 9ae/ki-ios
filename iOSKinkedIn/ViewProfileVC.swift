@@ -24,7 +24,6 @@ class ViewProfileVC: UIViewController {
     
     @IBOutlet var likeUser: UIButton?
     @IBOutlet var skipUser: UIButton?
-    @IBOutlet var hideUser: UIButton?
     
     static let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.regular)
     var blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -42,15 +41,12 @@ class ViewProfileVC: UIViewController {
         likeUser?.isEnabled = false
         skipUser?.isHidden = true
         skipUser?.isEnabled = false
-        hideUser?.isHidden = true
-        hideUser?.isEnabled = false
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
         self.blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         likeBtnOrigin = self.likeUser?.frame
-        hideBtnOrigin = self.hideUser?.frame
         skipBtnOrigin = self.skipUser?.frame
         
         let swipeUpRecog = UISwipeGestureRecognizer(target: self, action: #selector(swipedUp))
@@ -105,22 +101,17 @@ class ViewProfileVC: UIViewController {
         likeUser?.isEnabled = true
         skipUser?.isHidden = false
         skipUser?.isEnabled = true
-        hideUser?.isHidden = false
-        hideUser?.isEnabled = true
     }
     
     private func _buttonsBounceUp(){
         // TODO: Add bounce
         likeUser?.frame.origin.y = 2
         skipUser?.frame.origin.y = 2
-        hideUser?.frame.origin.y = 2
-    
     }
     
     private func _buttonsBounceBack() {
         likeUser?.frame = likeBtnOrigin!
         skipUser?.frame = skipBtnOrigin!
-        hideUser?.frame = hideBtnOrigin!
     }
     
     private func _animateUp(finished: Bool){
@@ -206,21 +197,13 @@ class ViewProfileVC: UIViewController {
         }
 
     }
-    
-    @IBAction func hide(_ sender: AnyObject) {
-        
-        guard let uuid = self.profile?.neoId else {
-            return
-        }
-        KinkedInAPI.markProfile(uuid, action: ProfileAction.hide)
-        _nextProfile()
-    }
+
     
     @IBAction func skip(_ sender: AnyObject) {
         guard let uuid = self.profile?.neoId else {
             return
         }
-        KinkedInAPI.markProfile(uuid, action: ProfileAction.skip)
+        KinkedInAPI.skipProfile(uuid)
         _nextProfile()
     }
     
