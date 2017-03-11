@@ -34,6 +34,10 @@ class DiscoverVC: UIViewController {
             selector: #selector(loadNextProfile), name: NOTIFY_NEXT_PROFILE, object: nil)
         NotificationCenter.default.addObserver(self,
            selector: #selector(reciprocalLike), name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
+        NotificationCenter.default.addObserver(self,
+            selector: #selector(profileLoaded), name: NOTIFY_PROFILE_LOADED, object: nil)
+        
+        self.view.makeToastActivity(.center)
         
         KinkedInAPI.listProfiles { uuids in
             self.profilesQueue = uuids
@@ -45,6 +49,10 @@ class DiscoverVC: UIViewController {
         
         todayMatches.delegate = dailyMatchesController
         todayMatches.dataSource = dailyMatchesController
+    }
+    
+    @objc func profileLoaded(){
+        self.view.hideToastActivity()
     }
     
     @objc func loadNextProfile() {

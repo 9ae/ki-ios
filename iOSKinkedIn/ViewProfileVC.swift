@@ -99,6 +99,8 @@ class ViewProfileVC: UIViewController {
         likeUser?.isEnabled = true
         skipUser?.isHidden = false
         skipUser?.isEnabled = true
+        
+        NotificationCenter.default.post(name: NOTIFY_PROFILE_LOADED, object: nil)
     }
     
     private func _buttonsBounceUp(){
