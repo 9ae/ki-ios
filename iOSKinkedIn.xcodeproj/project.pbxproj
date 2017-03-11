@@ -48,6 +48,7 @@
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
 		00ECC19B1E699B5A00CE7CB0 /* illusionist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
+		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
 		EB4D3BE2042256B198045EFE /* Pods_iOSKinkedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */; };
 		F0E30A0072FD34780B13D594 /* Pods_iOSKinkedInUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A43E642C023C6C0874ED96 /* Pods_iOSKinkedInUITests.framework */; };
@@ -133,6 +134,7 @@
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
 		00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = illusionist.swift; sourceTree = "<group>"; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
+		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,8 +204,8 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
-				00ED8A241E7437EB00096497 /* ui */,
 				006D50041E65810B005DAABE /* Assets.xcassets */,
+				00ED8A241E7437EB00096497 /* ui */,
 				001D21131E5A284A00317600 /* helpers */,
 				00171A541E5650D300640B09 /* models */,
 				00171A501E56461900640B09 /* providers */,
@@ -320,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				00ED8A1F1E74374800096497 /* ConnectionCell.swift */,
+				00ED8A261E7443BD00096497 /* ConnectionsVC.swift */,
 			);
 			name = connect;
 			sourceTree = "<group>";
@@ -689,6 +692,7 @@
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
+				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,

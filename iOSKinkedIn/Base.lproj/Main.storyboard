@@ -36,11 +36,11 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d7G-GZ-rmy" id="FSN-N1-r8I">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MpS-jK-skM">
-                                                    <rect key="frame" x="45" y="0.0" width="315" height="43.5"/>
+                                                    <rect key="frame" x="45" y="0.0" width="315" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -111,11 +111,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -274,11 +274,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPU-eb-oYq" id="FKg-Eb-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pYg-bb-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="323" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="323" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -367,11 +367,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                                         <rect key="frame" x="0.0" y="28" width="373" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYB-eB-QEz" id="Zk5-6X-axc">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vv6-qQ-RkR">
-                                                    <rect key="frame" x="15" y="0.0" width="343" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="343" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -815,28 +815,28 @@ please apply for an invitation on trykinkedin.com</string>
         <!--Connect-->
         <scene sceneID="wJQ-c5-6Cb">
             <objects>
-                <tableViewController id="5rh-F9-lVW" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBo-ho-fz6">
+                <tableViewController id="5rh-F9-lVW" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBo-ho-fz6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="80" id="4ed-Cx-LbM" customClass="ConnectionCell" customModule="iOSKinkedIn" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" rowHeight="80" id="4ed-Cx-LbM" customClass="ConnectionCell" customModule="iOSKinkedIn" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4ed-Cx-LbM" id="sy7-2D-crY">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4ed-Cx-LbM" id="sy7-2D-crY">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-Vr-rD6">
-                                            <rect key="frame" x="10" y="10" width="60" height="60"/>
+                                            <rect key="frame" x="10" y="13" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="LGa-50-aWZ"/>
                                                 <constraint firstAttribute="width" constant="60" id="VM8-DV-YhK"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv8-wT-dwa">
-                                            <rect key="frame" x="90" y="29" width="42" height="21"/>
+                                            <rect key="frame" x="90" y="32" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -861,6 +861,7 @@ please apply for an invitation on trykinkedin.com</string>
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Connect" image="connect" id="7qv-J8-nX7"/>
+                    <navigationItem key="navigationItem" title="Connect" id="gK3-zo-GcM"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggh-t0-Wg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -964,6 +965,8 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.72175717350000002" green="0.0" blue="0.1797026098" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rTP-2v-JDH" kind="relationship" relationship="viewControllers" id="Yj2-yY-kQe"/>
@@ -1138,8 +1141,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="n5w-4Q-t6v"/>
-        <segue reference="r6W-Lp-HEe"/>
+        <segue reference="LAg-aZ-ASG"/>
+        <segue reference="dR0-x4-1ic"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

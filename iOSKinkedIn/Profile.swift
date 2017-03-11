@@ -26,6 +26,7 @@ class Profile {
     var kinks: [Kinky]?
     var picture: String?
     var city: String?
+    var picture_public_id: String?
     
     init?(_ neoId: String, json: [String:Any]){
      
@@ -70,11 +71,14 @@ class Profile {
         
     }
     
-    init(neoId: String, name: String, age: Int){
+    init(neoId: String, name: String,
+         age: Int = 0,
+         picture_public_id: String? = nil){
         self.neoId = neoId
         self.name = name
         self.age = age
         self.kinksMatched = 0
+        self.picture_public_id = picture_public_id
     }
     
     
