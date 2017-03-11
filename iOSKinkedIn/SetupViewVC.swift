@@ -14,5 +14,11 @@ class SetupViewVC: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
         return false
     }
+    
+    func alert(_ msg: String){
+        let alertController = UIAlertController(title: "Server Timeout", message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+        self.present(alertController, animated:false)
+    }
 
 }

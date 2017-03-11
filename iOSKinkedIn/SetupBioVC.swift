@@ -23,11 +23,8 @@ class SetupBioVC: SetupViewVC {
     }
     
     @IBAction func completeSetup(_ sender: AnyObject){
-        let params: [String:Any] = [
-            "setup_complete" : true,
-            "bio" : bioField?.text ?? ""
-            ]
-        KinkedInAPI.updateProfile(params)
+        KinkedInAPI.updateProfile(["bio": bioField?.text ?? ""])
+        KinkedInAPI.updateProfile(["setup_complete" : true])
         
         NotificationCenter.default.post(name: NOTIFY_PROFILE_SETUP_COMPLETE, object: nil)
     }

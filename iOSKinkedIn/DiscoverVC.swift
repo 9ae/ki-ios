@@ -51,10 +51,11 @@ class DiscoverVC: UIViewController {
     }
     
     @objc func reciprocalLike(){
+        /*
         UIView.animate(withDuration: 0.25, animations: {
             self.todayMatches?.frame.origin.y += 90
         })
-        
+        */
         //TODO add cropped image to today's matches
     }
     

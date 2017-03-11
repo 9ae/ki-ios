@@ -224,7 +224,7 @@ class KinkedInAPI {
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
-        get("discover/profile/\(uuid)"){ json in
+        get("profile/\(uuid)"){ json in
             if let user = Profile(uuid, json: json) {
                 callback(user)
             } else {
@@ -236,7 +236,7 @@ class KinkedInAPI {
     
     static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool)->Void ){
         let params : Parameters = [ "likes": true ]
-        post("discover/profile/\(uuid)", parameters: params){ json in
+        post("profile/\(uuid)", parameters: params){ json in
             let reciprocal = (json["reciprocal"] as? Bool) ?? false
             callback(reciprocal)
         }
@@ -244,7 +244,7 @@ class KinkedInAPI {
     
     static func skipProfile(_ uuid: String){
         let params : Parameters = [ "likes": false ]
-        post("discover/profile/\(uuid)", parameters: params){ json in
+        post("profile/\(uuid)", parameters: params){ json in
             // assert json["success"] == true
         }
     }
@@ -288,5 +288,5 @@ class KinkedInAPI {
             print(json)
         }
     }
-
+    
 }
