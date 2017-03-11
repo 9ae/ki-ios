@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class DiscoverVC: UIViewController {
     
@@ -57,19 +58,16 @@ class DiscoverVC: UIViewController {
         })
         */
         //TODO add cropped image to today's matches
+        _showPopup(true)
     }
     
     //TODO figure out disappearing bug
 
     private func _showPopup(_ done: Bool) {
-        /*
-        let popTip = AMPopTip()
-        popTip.shouldDismissOnTap = true
-        popTip.popoverColor = UIColor.init(white: 0, alpha: 0.6)
-        popTip.textColor = UIColor.white
-        popTip.showText("The feelings are mutual! Start chatting!", direction: .down,
-                        maxWidth: 300, in: self.view, fromFrame: self.todayMatches.frame)
-        */
+        var style = ToastStyle()
+        style.backgroundColor = ThemeColors.action
+        
+        self.view.makeToast("The feelings are mutual! Start chatting!", duration: 3, position: .top, style: style)
     }
     
     private func _popProfile(){
