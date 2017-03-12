@@ -14,6 +14,7 @@ class ConnectionCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     
     func setProfilePicture(_ publicId: String){
+        /*
         let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_120,w_120/\(publicId)"
         let imgURL = URL(string: url)
         do {
@@ -24,6 +25,6 @@ class ConnectionCell: UITableViewCell {
             // TODO: use put in place holder image
             print("error loading profile picture")
         }
-        
+        */
     }
 }

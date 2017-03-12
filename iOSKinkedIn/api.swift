@@ -289,4 +289,31 @@ class KinkedInAPI {
         }
     }
     
+    static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
+        get("/self/connections"){ json in
+            
+            var profiles = [Profile]()
+            guard let reciprocals = json["reciprocals"] as? [Any] else {
+                print("list not found")
+                return
+            }
+            
+            for r in reciprocals {
+                guard let rc = r as? [String:Any] else {
+                    print("can't get json object")
+                    continue
+                }
+                guard let name = rc["name"] as? String,
+                let neo_id = rc["neo_id"] as? String,
+                    let image_id = rc["image_id"] as? String else {
+                        print("can't get profile values")
+                        continue
+                }
+                profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                
+            }
+            
+            callback(profiles)
+        }
+    }
 }

@@ -35,10 +35,7 @@ class ViewProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bioTab?.isHidden = true
-        likeUser?.isHidden = true
-        likeUser?.isEnabled = false
-        skipUser?.isHidden = true
-        skipUser?.isEnabled = false
+        enableActions(false)
         
         readLess?.isHidden = true
         self.blurEffectView.frame = self.view.bounds
@@ -52,6 +49,13 @@ class ViewProfileVC: UIViewController {
         swipeUpRecog.numberOfTouchesRequired = 1
         
         bioTab?.addGestureRecognizer(swipeUpRecog)
+    }
+    
+    func enableActions(_ enable: Bool){
+        likeUser?.isHidden = !enable
+        likeUser?.isEnabled = enable
+        skipUser?.isHidden = !enable
+        skipUser?.isEnabled = enable
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,23 +98,44 @@ class ViewProfileVC: UIViewController {
                 print("error loading profile picture")
             }
         }
-        bioTab?.isHidden = false
-        likeUser?.isHidden = false
-        likeUser?.isEnabled = true
-        skipUser?.isHidden = false
-        skipUser?.isEnabled = true
         
+        var bioText = ""
+        if (!profile.kinks.isEmpty){
+            var kinksDetail = [String]()
+            for i in (0...5){
+                let llv = profile.kinks[i]
+                if(llv.isEmpty){
+                    continue
+                }
+                let desc = experiences[i] + ": " + llv.joined(separator: ", ")
+                kinksDetail.append(desc)
+            }
+            if (!kinksDetail.isEmpty){
+                bioText = kinksDetail.joined(separator: "\n\n") + "\n\n\n"
+            }
+        }
+        bioText += profile.bio!
+        bioExcerpt?.text = bioText
+        
+        bioTab?.isHidden = false
+        enableActions(true)
         NotificationCenter.default.post(name: NOTIFY_PROFILE_LOADED, object: nil)
     }
     
     private func _buttonsBounceUp(){
         // TODO: Add bounce
+        if likeUser?.isHidden ?? true {
+            return
+        }
         likeUser?.frame.origin.y = 2
         skipUser?.frame.origin.y = 2
         
     }
     
     private func _buttonsBounceBack() {
+        if likeUser?.isHidden ?? true {
+            return
+        }
         likeUser?.frame.origin = likeBtnOrigin
         skipUser?.frame.origin = skipBtnOrigin
         
@@ -165,12 +190,21 @@ class ViewProfileVC: UIViewController {
         readMore?.isHidden = true
         fadeGradient?.isHidden = true
         self.readMore?.isEnabled = false
+        
+        self.bioExcerpt?.heightAnchor.constraint(equalToConstant: self.view.frame.size.height - 200)
+        
+        self.bioExcerpt?.isScrollEnabled = true
+        self.bioExcerpt?.showsVerticalScrollIndicator = true
+        
         UIView.animate(withDuration: 1, animations: _buttonsBounceUp, completion: _animateUp)
     }
     
     @IBAction func hideBio(_ sender: AnyObject) {
         self.readLess?.isHidden = true
         self.readLess?.isEnabled = false
+        
+        self.bioExcerpt?.isScrollEnabled = false
+        self.bioExcerpt?.showsVerticalScrollIndicator = false
         
         UIView.animate(withDuration: 1, animations: {
             self.bioTab?.alpha = 1.0

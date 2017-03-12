@@ -20,8 +20,6 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     var kinkInFocus: Kink?
     var gradient = CAGradientLayer()
     var dataChanged = false
-    
-    let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
 
     override func viewDidLoad() {
         super.viewDidLoad()

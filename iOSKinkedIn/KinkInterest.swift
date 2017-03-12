@@ -9,6 +9,8 @@
 import Foundation
 import RealmSwift
 
+let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
+
 class Kink {
     var label: String
     var id: Int

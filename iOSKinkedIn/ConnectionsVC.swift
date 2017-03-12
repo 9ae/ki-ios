@@ -10,14 +10,23 @@ import UIKit
 
 class ConnectionsVC: UITableViewController {
     
-    var reciprocals: [Profile] = [
+    var reciprocals: [Profile] =
+        //[Profile]()
+     [
         Profile(neoId: "7c37b494-05ea-409b-86ed-09fe6a2f0a22", name: "Evony", picture_public_id: "0d9881bb-6c40-4781-bdc8-850c3fd2583b"),
         Profile(neoId: "0df5be91-32a9-466a-8453-c66d0943f2cd", name: "Hale",
                 picture_public_id: "a93a89ba-9174-40ef-a9e8-614ab073e3f6")]
 
+    var selectedProfile: Profile?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        /*
+        KinkedInAPI.connections { profiles in
+            self.reciprocals = profiles
+            self.tableView.reloadData()
+        }
+        */
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -55,6 +64,10 @@ class ConnectionsVC: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        self.selectedProfile = reciprocals[indexPath.row]
+        return indexPath
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -91,14 +104,17 @@ class ConnectionsVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if(segue.identifier == "connect2profile") {
+            if let vc = segue.destination as? (CProfile){
+                vc.profile = self.selectedProfile
+            }
+        }
     }
-    */
+    
 
 }

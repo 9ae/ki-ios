@@ -8,12 +8,6 @@
 
 import Foundation
 
-struct Kinky {
-    var label: String
-    var ways: [String]
-    var level: Int
-}
-
 class Profile {
     var neoId: String
     var name: String
@@ -23,7 +17,7 @@ class Profile {
     var bio: String?
     var genders: [String] = [String]()
     var roles: [String]?
-    var kinks: [Kinky]?
+    var kinks = [[String]]()
     var picture: String?
     var city: String?
     var picture_public_id: String?
@@ -65,6 +59,13 @@ class Profile {
         if let _pictures = profile["pictures"] as? [String] {
             if(_pictures.count > 0){
                 self.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
+            }
+        }
+        
+        if let _kinks = profile["kinks"] as? [Any] {
+            for klv in _kinks {
+                let kinksAtLevel: [String] = (klv as? [String]) ?? [String]()
+                self.kinks.append(kinksAtLevel)
             }
         }
         
