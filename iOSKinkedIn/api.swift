@@ -141,6 +141,23 @@ class KinkedInAPI {
         }
     }
     
+    static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
+        var kinks = [Kink]()
+        print("fetchink \(form) kinks")
+        get("kinks/\(form)", requiresToken: false){ json in
+            if let list = json["kinks"] as? [Any] {
+                for li in list {
+                    if let kd = li as? [String:Any] {
+                        if let k = Kink(json:kd){
+                            kinks.append(k)
+                        }
+                    }
+                }
+            }
+            callback(kinks)
+        }
+    }
+    
     static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
         var roles = [Role]()
         

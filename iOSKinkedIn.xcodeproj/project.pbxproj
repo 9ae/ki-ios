@@ -43,6 +43,10 @@
 		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
 		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
+		00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */; };
+		00BA528F1E758B8C00EE20E4 /* KinksGridVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528E1E758B8C00EE20E4 /* KinksGridVC.swift */; };
+		00BA52911E75904500EE20E4 /* KinkTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA52901E75904500EE20E4 /* KinkTagCell.swift */; };
+		00BA52931E75958A00EE20E4 /* KinkTagNormal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA52921E75958A00EE20E4 /* KinkTagNormal.swift */; };
 		00D193AF1E5B945A0010C34C /* SetKinkPrefsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */; };
 		00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* KinkInterest.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
@@ -130,6 +134,10 @@
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
+		00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksWizardVC.swift; sourceTree = "<group>"; };
+		00BA528E1E758B8C00EE20E4 /* KinksGridVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinksGridVC.swift; sourceTree = "<group>"; };
+		00BA52901E75904500EE20E4 /* KinkTagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkTagCell.swift; sourceTree = "<group>"; };
+		00BA52921E75958A00EE20E4 /* KinkTagNormal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkTagNormal.swift; sourceTree = "<group>"; };
 		00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetKinkPrefsVC.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* KinkInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkInterest.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -292,6 +300,10 @@
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
 				00D193AE1E5B945A0010C34C /* SetKinkPrefsVC.swift */,
 				005FA4481E6C376E00D7CC9C /* KinkDetailCell.swift */,
+				00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */,
+				00BA528E1E758B8C00EE20E4 /* KinksGridVC.swift */,
+				00BA52901E75904500EE20E4 /* KinkTagCell.swift */,
+				00BA52921E75958A00EE20E4 /* KinkTagNormal.swift */,
 			);
 			name = setup;
 			sourceTree = "<group>";
@@ -695,12 +707,16 @@
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
+				00BA528F1E758B8C00EE20E4 /* KinksGridVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
+				00BA52931E75958A00EE20E4 /* KinkTagNormal.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
+				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
 				0038FAF01E57DC7E00C160B6 /* SetupKinksVC.swift in Sources */,
+				00BA52911E75904500EE20E4 /* KinkTagCell.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

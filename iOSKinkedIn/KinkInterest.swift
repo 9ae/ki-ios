@@ -13,27 +13,20 @@ let experiences = ["curious about", "dabbled with", "learning", "practicing", "s
 
 class Kink {
     var label: String
-    var id: Int
+    var code: String
     var popularity: Int
-    var ways: [String]
     var checked: Bool
     var likeWay: String
     var exp: Int
 
     init?(json: [String:Any]){
         guard let _label = json["label"] as? String,
-            let _id = json["id"] as? Int
+            let _id = json["code"] as? String
             else {
                 return nil
         }
         self.label = _label
-        self.id = _id
-        
-        if let _ways = json["ways"] as? [String] {
-            self.ways = _ways
-        } else {
-            self.ways = [String]()
-        }
+        self.code = _id
         
         if let _pop = json["popularity"] as? Int {
             self.popularity = _pop
@@ -46,20 +39,23 @@ class Kink {
     }
 }
 
+/*
 class KinkInterest: Object {
     
-    dynamic var label = ""
-    dynamic var compactWays = ""
+    dynamic var code = ""
+    dynamic var way = 0
+    dynamic var form = ""
     
-    
-    static func getOrCreate(_label: String) -> KinkInterest {
+    static func addKink(_ code: String, way: Int, form: String) {
         let realm = RealmDB.instance()
-        
-        let predicate = NSPredicate(format: "label = %@", _label)
+        let predicate = NSPredicate(format: "code = %@", code)
         let results = realm.objects(KinkInterest.self).filter(predicate)
         
         if (results.count==1){
-            return results[0]
+            let ki = results[0]
+            if (ki.form in ("SERVICE", "WEARABLE")){
+                ki.way += way
+            }
         } else {
             let ki = KinkInterest()
             ki.label = _label
@@ -68,13 +64,15 @@ class KinkInterest: Object {
             try! realm.commitWrite()
             return ki
         }
+
     }
     
     static func has(_label: String) -> Bool {
         let realm = RealmDB.instance()
         
-        let predicate = NSPredicate(format: "label = %@", _label)
+        let predicate = NSPredicate(format: "code = %@", _label)
         let results = realm.objects(KinkInterest.self).filter(predicate)
         return results.count==1
     }
 }
+*/

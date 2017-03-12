@@ -38,7 +38,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         kinkLabel?.text = lbl
         
         // setupGradient()
-        
+        /*
         if(!kink.likeWay.isEmpty) {
         for i in 0...2 {
             if(kink.ways[i] == kink.likeWay){
@@ -47,7 +47,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         }
-        
+        */
         let expIndex = IndexPath(row: kink.exp, section: 1)
         waysTable?.selectRow(at: expIndex, animated: false, scrollPosition: .none)
     }
@@ -93,10 +93,8 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     private func wayNumberOfRowsInSection() -> Int {
-        guard let ways = kinkInFocus?.ways.count else {
-            return 0
-        }
-        return ways
+
+        return 0
     }
     
     private func expNumberOfRowsInSection() -> Int {
@@ -115,7 +113,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let row = indexPath.row
         switch(indexPath.section){
         case 0:
-            label = (kinkInFocus?.ways[row])!
+            label = "" //(kinkInFocus?.ways[row])!
         case 1:
             label = experiences[row]
         default:
@@ -150,6 +148,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     private func wayDidSelectRowAt(_ indexPath: IndexPath){
+        /*
         guard let wayLabel = kinkInFocus?.ways[indexPath.row] else {
             return
         }
@@ -159,6 +158,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             kinkInFocus?.likeWay = wayLabel
         }
+        */
     }
     
     private func expDidSelectRowAt(_ indexPath: IndexPath){
@@ -175,7 +175,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
             return
         }
         let hasKink: Bool = !kink.likeWay.isEmpty
-        
+        /*
         //TODO include experience
         if(kink.checked){
             if(hasKink){ //update
@@ -191,7 +191,7 @@ class SetKinkPrefsVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 KinkedInAPI.addKink(kink.id, way: kink.likeWay, exp: kink.exp)
             }
         }
-        
+        */
         kinkInFocus?.checked = hasKink
         
     }
