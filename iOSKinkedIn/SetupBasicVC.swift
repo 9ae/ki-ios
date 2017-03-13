@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Toast_Swift
 
 class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
@@ -59,8 +58,9 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
     
     func missingFields(_ missing: [String]){
         let message = "Please provide us with your: "+missing.joined(separator: ", ")
-        self.view.makeToast(message)
+        self.alert(message, title: "Missing Info")
     }
+ 
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
@@ -111,5 +111,5 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
 
         KinkedInAPI.updateProfile(params)
     }
-    
+
 }

@@ -15,9 +15,9 @@ class SetupViewVC: UIViewController, UITextFieldDelegate {
         return false
     }
     
-    func alert(_ msg: String){
-        let alertController = UIAlertController(title: "Server Timeout", message: msg, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+    func alert(_ msg: String, title: String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated:false)
     }
 

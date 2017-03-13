@@ -20,10 +20,14 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
     @IBOutlet weak var wearQuestion: UILabel!
     @IBOutlet weak var actQuestion: UILabel!
     
+    @IBOutlet weak var okBtn: UIBarButtonItem!
+    @IBOutlet weak var nextQ: UIBarButtonItem!
+    
     @IBOutlet weak var tlv: TagListView!
     var questions: [UILabel]!
     var kinksMap = [String:Kink]()
     var q = 0
+
     
     required init?(coder aDecoder: NSCoder) {
         // self.kinksGridVC = KinksGridVC()
@@ -37,6 +41,8 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
         
         self.questions = [omakeQuestion, RServiceQuestion, PServiceQuestion, wearQuestion, actQuestion]
         nextQuestion(self)
+        
+        okBtn.isEnabled = false
     }
     
     func kinksDidLoad(kinks: [Kink], updateMap: Bool){
@@ -46,6 +52,7 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
             }
             tlv.addTag(k.label)
         }
+        self.view.hideToastActivity()
     }
 
     override func didReceiveMemoryWarning() {
@@ -137,7 +144,6 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
             
         }
         
-        print(json)
         return json
     }
     
@@ -156,7 +162,7 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
             pq.text = pq.text?.replacingOccurrences(of: "___", with: tags.joined(separator: ", "))
         }
         
-        questions[q].textColor = ThemeColors.secondary
+        questions[q].textColor = ThemeColors.primary
         questions[q].font = UIFont.boldSystemFont(ofSize: 18)
         
         switch(q){
@@ -165,6 +171,7 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
             KinkedInAPI.kinks(form: "service"){ kinks in
                 self.kinksDidLoad(kinks: kinks, updateMap: true)
             }
+            self.view.makeToastActivity(.center)
         case 2:
             deselectAll()
         case 3:
@@ -175,10 +182,14 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
             KinkedInAPI.kinks(form: "act"){ kinks in
                 self.kinksDidLoad(kinks: kinks, updateMap: true)
             }
+            self.view.makeToastActivity(.center)
+            okBtn.isEnabled = true
+            nextQ.isEnabled = false
         default:
             KinkedInAPI.kinks(form: "omake"){ kinks in
                 self.kinksDidLoad(kinks: kinks, updateMap: true)
             }
+            self.view.makeToastActivity(.center)
         }
         q += 1
     }
