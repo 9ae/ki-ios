@@ -17,7 +17,7 @@ class Profile {
     var bio: String?
     var genders: [String] = [String]()
     var roles: [String]?
-    var kinks = [[String]]()
+    var kinks = [String]()
     var picture: String?
     var city: String?
     var picture_public_id: String?
@@ -63,9 +63,12 @@ class Profile {
         }
         
         if let _kinks = profile["kinks"] as? [Any] {
-            for klv in _kinks {
-                let kinksAtLevel: [String] = (klv as? [String]) ?? [String]()
-                self.kinks.append(kinksAtLevel)
+            for kink in _kinks {
+                if let jsonKink = kink as? [String:Any] {
+                    if let kinkLabel = jsonKink["label"] as? String {
+                        self.kinks.append(kinkLabel)
+                    }
+                }
             }
         }
         

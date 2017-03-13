@@ -9,8 +9,8 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://private-859cb-theash.apiary-mock.com/"
-//"https://kinkedin-dev.herokuapp.com/"
+let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
+//"https://private-859cb-theash.apiary-mock.com/"
 //"https://dev.kinkd.in/"
 
 enum ProfileAction: Int {
@@ -35,7 +35,7 @@ class KinkedInAPI {
             if let JSON = response.result.value as? [String:Any] {
                 callback(JSON)
             } else {
-                print(url)
+                print("GET \(url)")
                 print("error parsing json")
             }
         }
@@ -56,7 +56,7 @@ class KinkedInAPI {
                 if let JSON = response.result.value as? [String:Any] {
                     callback(JSON)
                 } else {
-                    print(url)
+                    print("POST \(url)")
                     print("error parsing json")
                 }
         }
@@ -77,7 +77,7 @@ class KinkedInAPI {
                             if let JSON = response.result.value as? [String:Any] {
                                 callback(JSON)
                             } else {
-                                print(url)
+                                print("PUT \(url)")
                                 print("error parsing json")
                             }
         }
@@ -96,7 +96,7 @@ class KinkedInAPI {
                             if let JSON = response.result.value as? [String:Any] {
                                 callback(JSON)
                             } else {
-                                print(url)
+                                print("DEL \(url)")
                                 print("error parsing json")
                             }
         }
@@ -278,6 +278,12 @@ class KinkedInAPI {
             print(json)
         }
     
+    }
+    
+    static func addKinks(_ body:[String: Any]){
+        post("self/kinks", parameters: body){json in
+            print(json)
+        }
     }
     
     static func addKink(_ id: Int, way: String, exp: Int){
