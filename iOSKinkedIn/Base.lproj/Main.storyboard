@@ -51,7 +51,7 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
+                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
                                 <rect key="frame" x="152" y="630" width="71" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -230,15 +230,15 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Stl-Tx-hDL" kind="relationship" relationship="rootViewController" id="N0c-0c-f8j"/>
                         <segue destination="FOy-dc-EyP" kind="showDetail" identifier="setup2app" animates="NO" id="Agg-jq-c8I"/>
+                        <segue destination="foG-02-y3o" kind="relationship" relationship="rootViewController" id="uua-qp-n7X"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vv1-ii-gL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1054" y="194"/>
         </scene>
-        <!--Setup Kinks WizardVC-->
+        <!--Select Kinks-->
         <scene sceneID="Oc4-wl-uKG">
             <objects>
                 <viewController id="L15-wi-fVb" customClass="SetupKinksWizardVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
@@ -247,11 +247,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="SZA-Rg-e80"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J6O-5P-a1G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-fN-5uh">
-                                <rect key="frame" x="8" y="28" width="359" height="117.5"/>
+                                <rect key="frame" x="8" y="8" width="359" height="117.5"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am turned on by ___" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91t-Al-Ceh">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="19.5"/>
@@ -298,7 +298,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </constraints>
                             </stackView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uc9-pl-6ga">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="kez-X5-iy3"/>
                                 </constraints>
@@ -311,7 +311,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </items>
                             </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-9a-aeX">
-                                <rect key="frame" x="1" y="176" width="373" height="447"/>
+                                <rect key="frame" x="1" y="156" width="373" height="403"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-86-JN8" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
@@ -354,6 +354,12 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="p7e-Cr-mID">
+                                        <rect key="frame" x="167" y="366" width="39" height="37"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    </pageControl>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="MQ1-86-JN8" firstAttribute="leading" secondItem="tol-9a-aeX" secondAttribute="leading" constant="15" id="1vk-4V-ZOt"/>
@@ -377,6 +383,14 @@ Your bio will be visislbe to all KinkedIn users</string>
                             <constraint firstItem="DHe-fN-5uh" firstAttribute="top" secondItem="e2j-b4-Mn7" secondAttribute="bottom" constant="8" id="zML-Bm-txH"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Select Kinks" id="krs-UQ-xpt">
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="Si1-Av-ekJ">
+                            <connections>
+                                <segue destination="ftr-md-waT" kind="show" identifier="kinks2genders" id="uRU-U5-fkh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="PServiceQuestion" destination="jvf-VH-7W9" id="D0K-dz-Yub"/>
                         <outlet property="RServiceQuestion" destination="ZpW-pm-oV1" id="Zlw-14-b1c"/>
@@ -388,178 +402,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJd-gC-AM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.8" y="207.34632683658174"/>
-        </scene>
-        <!--Select Kinks-->
-        <scene sceneID="ePW-qG-tZi">
-            <objects>
-                <viewController storyboardIdentifier="vcSetupKinks" title="Select Kinks" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Stl-Tx-hDL" customClass="SetupKinksVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xyX-5T-vfb"/>
-                        <viewControllerLayoutGuide type="bottom" id="Qjr-AO-3Uh"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1hd-eZ-Do4">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-23-4pY">
-                                <rect key="frame" x="87" y="94" width="201" height="29"/>
-                                <segments>
-                                    <segment title="Alphabetically"/>
-                                    <segment title="Popularity"/>
-                                </segments>
-                                <connections>
-                                    <action selector="indexChanged:" destination="Stl-Tx-hDL" eventType="primaryActionTriggered" id="iE0-8h-7Mk"/>
-                                </connections>
-                            </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select all you are interested in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yam-VB-5ze">
-                                <rect key="frame" x="16" y="142" width="229" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5pD-AS-wrh">
-                                <rect key="frame" x="1" y="183" width="373" height="484"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cellKinks" textLabel="pYg-bb-CyH" style="IBUITableViewCellStyleDefault" id="nPU-eb-oYq">
-                                        <rect key="frame" x="0.0" y="28" width="373" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nPU-eb-oYq" id="FKg-Eb-Z7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pYg-bb-CyH">
-                                                    <rect key="frame" x="15" y="0.0" width="323" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-ab-zr5">
-                                <rect key="frame" x="152" y="630" width="71" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.66939252614974976" green="0.59080362319946289" blue="0.79067707061767578" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994752883911" green="0.19659152626991272" blue="0.99855035543441772" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="icQ-23-4pY" firstAttribute="top" secondItem="xyX-5T-vfb" secondAttribute="bottom" constant="30" id="1Pe-hu-zRW"/>
-                            <constraint firstItem="5pD-AS-wrh" firstAttribute="leading" secondItem="1hd-eZ-Do4" secondAttribute="leadingMargin" constant="-15" id="JDb-2D-pVb"/>
-                            <constraint firstAttribute="bottom" secondItem="TSK-ab-zr5" secondAttribute="bottom" id="PRm-47-Sss"/>
-                            <constraint firstItem="TSK-ab-zr5" firstAttribute="centerX" secondItem="1hd-eZ-Do4" secondAttribute="centerX" id="Rxu-ry-hB3"/>
-                            <constraint firstItem="icQ-23-4pY" firstAttribute="centerX" secondItem="1hd-eZ-Do4" secondAttribute="centerX" id="Ubq-dl-gpF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="5pD-AS-wrh" secondAttribute="trailing" constant="-15" id="Wen-HU-0Q9"/>
-                            <constraint firstItem="5pD-AS-wrh" firstAttribute="top" secondItem="yam-VB-5ze" secondAttribute="bottom" constant="20" id="XvV-KD-sl2"/>
-                            <constraint firstItem="yam-VB-5ze" firstAttribute="leading" secondItem="1hd-eZ-Do4" secondAttribute="leadingMargin" id="Zlj-3n-HUX"/>
-                            <constraint firstItem="Qjr-AO-3Uh" firstAttribute="top" secondItem="5pD-AS-wrh" secondAttribute="bottom" id="e8r-M4-VQa"/>
-                            <constraint firstItem="yam-VB-5ze" firstAttribute="top" secondItem="icQ-23-4pY" secondAttribute="bottom" constant="20" id="sbf-py-pft"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Kinks" id="cdC-nf-Th1">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="P7Y-kN-nyn">
-                            <connections>
-                                <segue destination="foG-02-y3o" kind="show" identifier="kinks2basic" animates="NO" id="GYJ-QD-HD0"/>
-                            </connections>
-                        </barButtonItem>
-                        <connections>
-                            <outlet property="rightBarButtonItem" destination="P7Y-kN-nyn" id="26a-28-XZ0"/>
-                        </connections>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="kinksTableView" destination="5pD-AS-wrh" id="nVc-ZL-5E8"/>
-                        <outlet property="segmentControl" destination="icQ-23-4pY" id="jMc-Ke-5NJ"/>
-                        <segue destination="VBk-kb-7OT" kind="show" identifier="kinkprefs" animates="NO" id="6AG-rD-6Zc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CN8-PV-OG3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="775" y="1754"/>
-        </scene>
-        <!--Kink Preferences-->
-        <scene sceneID="mtH-kg-Lgd">
-            <objects>
-                <viewController title="Kink Preferences" id="VBk-kb-7OT" customClass="SetKinkPrefsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="kmJ-RZ-41W"/>
-                        <viewControllerLayoutGuide type="bottom" id="dwY-oH-RSW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ggd-An-QOU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ny-8O-qvn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="198"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0Q-We-wD1">
-                                        <rect key="frame" x="142" y="125" width="91" height="43"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="36"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="375" id="Tss-8T-edk"/>
-                                    <constraint firstAttribute="height" constant="198" id="aOY-eU-g0T"/>
-                                    <constraint firstAttribute="bottom" secondItem="W0Q-We-wD1" secondAttribute="bottom" constant="30" id="cLH-bf-heo"/>
-                                    <constraint firstItem="W0Q-We-wD1" firstAttribute="centerX" secondItem="7Ny-8O-qvn" secondAttribute="centerX" id="uvw-80-hIm"/>
-                                </constraints>
-                            </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cAP-tb-Yxl">
-                                <rect key="frame" x="1" y="262" width="373" height="405"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="kinkyWay" textLabel="Vv6-qQ-RkR" style="IBUITableViewCellStyleDefault" id="zYB-eB-QEz" customClass="KinkDetailCell" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="373" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zYB-eB-QEz" id="Zk5-6X-axc">
-                                            <rect key="frame" x="0.0" y="0.0" width="373" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vv6-qQ-RkR">
-                                                    <rect key="frame" x="15" y="0.0" width="343" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <sections/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="7Ny-8O-qvn" secondAttribute="trailing" id="E4x-nQ-uat"/>
-                            <constraint firstItem="dwY-oH-RSW" firstAttribute="top" secondItem="cAP-tb-Yxl" secondAttribute="bottom" id="PvD-tB-QD3"/>
-                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leadingMargin" constant="-15" id="TK6-BN-DhW"/>
-                            <constraint firstItem="dwY-oH-RSW" firstAttribute="top" secondItem="cAP-tb-Yxl" secondAttribute="bottom" id="XHC-Zn-MzM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cAP-tb-Yxl" secondAttribute="trailing" constant="-15" id="hAu-kr-G0f"/>
-                            <constraint firstItem="cAP-tb-Yxl" firstAttribute="top" secondItem="7Ny-8O-qvn" secondAttribute="bottom" id="qdh-J4-pdQ"/>
-                            <constraint firstItem="7Ny-8O-qvn" firstAttribute="leading" secondItem="Ggd-An-QOU" secondAttribute="leading" id="vP2-Py-FVb"/>
-                            <constraint firstItem="7Ny-8O-qvn" firstAttribute="top" secondItem="kmJ-RZ-41W" secondAttribute="bottom" id="y70-Z4-eQp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Define Preferences" id="fRt-cj-NoA">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="OYF-0S-Dyz"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="headerView" destination="7Ny-8O-qvn" id="ohY-Dq-vC5"/>
-                        <outlet property="kinkLabel" destination="W0Q-We-wD1" id="Ph6-Ne-4B4"/>
-                        <outlet property="waysTable" destination="cAP-tb-Yxl" id="0R6-zr-Md6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bBH-cK-hs5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2450" y="1779"/>
+            <point key="canvasLocation" x="1834" y="942"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="f2S-JO-gAt">
@@ -922,7 +765,7 @@ please apply for an invitation on trykinkedin.com</string>
                     <navigationItem key="navigationItem" title="About You" id="bUt-Te-lTE">
                         <barButtonItem key="rightBarButtonItem" title="OK" id="JJO-Ha-89P">
                             <connections>
-                                <segue destination="ftr-md-waT" kind="show" identifier="basic2genders" animates="NO" id="sHx-wk-YYl"/>
+                                <segue destination="L15-wi-fVb" kind="show" identifier="basic2kinks" id="4sk-Ae-P6H"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -934,7 +777,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y1Z-V3-Rmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5999999999999" y="936.88155922038993"/>
+            <point key="canvasLocation" x="1054" y="937"/>
         </scene>
         <!--Adjust-->
         <scene sceneID="BAi-zF-SIi">
@@ -1353,7 +1196,7 @@ please apply for an invitation on trykinkedin.com</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r6W-Lp-HEe"/>
-        <segue reference="n5w-4Q-t6v"/>
+        <segue reference="Agg-jq-c8I"/>
         <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>

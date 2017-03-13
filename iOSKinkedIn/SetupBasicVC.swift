@@ -65,7 +65,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         var missing = [String]()
-        if(identifier=="basic2genders"){
+        if(identifier=="basic2kinks"){
             if((fieldName?.text?.isEmpty)!){
                 missing.append("preferred name")
             }

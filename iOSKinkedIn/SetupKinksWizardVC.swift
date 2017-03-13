@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class SetupKinksWizardVC: UIViewController, TagListViewDelegate {
+class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
 
    // @IBOutlet weak var kinksGrid: UICollectionView!
    // var kinksGridVC: KinksGridVC
@@ -109,7 +109,6 @@ class SetupKinksWizardVC: UIViewController, TagListViewDelegate {
     }
     
     private func loadWearables(){
-        tlv.removeAllTags()
         for (_ , value) in kinksMap {
             if(value.form == .wearable) {
                 tlv.addTag(value.label)
@@ -143,7 +142,6 @@ class SetupKinksWizardVC: UIViewController, TagListViewDelegate {
     }
     
     @IBAction func nextQuestion(_ sender: Any){
-        compileAnswers()
         if(q==questions.count){
             return
         }
@@ -185,14 +183,9 @@ class SetupKinksWizardVC: UIViewController, TagListViewDelegate {
         q += 1
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        super.prepare(for: segue, sender: sender)
+        KinkedInAPI.addKinks(compileAnswers())
     }
-    */
 
 }

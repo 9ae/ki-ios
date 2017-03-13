@@ -212,7 +212,6 @@ class KinkedInAPI {
             "password": password,
             "invite_code": inviteCode
         ]
-        
         post("register", parameters: params, requiresToken: false){ json in
             if let success = json["success"] as? Bool {
                 callback(success)
