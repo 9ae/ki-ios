@@ -14,15 +14,24 @@ let experiences = ["curious about", "dabbled with", "learning", "practicing", "s
 class Kink {
     var label: String
     var code: String
-    var popularity: Int
-    var checked: Bool
-    var likeWay: String
+    
+    var form: KinkForm
     var exp: Int
+    
+    var likesGive = false
+    var likesGet = false
+    var likesBoth = false
+    
+    // to deprecate?
+    var likeWay: String
+    var checked: Bool
+    var popularity: Int
+
 
     init?(json: [String:Any]){
         guard let _label = json["label"] as? String,
             let _id = json["code"] as? String
-            else {
+        else {
                 return nil
         }
         self.label = _label
@@ -33,40 +42,39 @@ class Kink {
         } else {
             self.popularity = 0
         }
+        
+        if let _form = json["form"] as? String {
+            self.form = KinkForm.init(rawValue: _form) ?? KinkForm.other
+        } else {
+            self.form = KinkForm.other
+        }
+        
         self.checked = false
         self.likeWay = ""
         self.exp = 0
     }
+    
+
+}
+
+enum KinkForm: String {
+    case service = "SERVICE"
+    case wearable = "WEARABLE"
+    case act = "ACT"
+    case other = "OTHER"
+    case accessory = "ACCESSORY"
+    case aphrodisiac = "APHRODISIAC"
 }
 
 /*
 class KinkInterest: Object {
     
     dynamic var code = ""
+    dynamic var label = ""
     dynamic var way = 0
-    dynamic var form = ""
+    dynamic var form = 0
     
-    static func addKink(_ code: String, way: Int, form: String) {
-        let realm = RealmDB.instance()
-        let predicate = NSPredicate(format: "code = %@", code)
-        let results = realm.objects(KinkInterest.self).filter(predicate)
-        
-        if (results.count==1){
-            let ki = results[0]
-            if (ki.form in ("SERVICE", "WEARABLE")){
-                ki.way += way
-            }
-        } else {
-            let ki = KinkInterest()
-            ki.label = _label
-            realm.beginWrite()
-            realm.add(ki)
-            try! realm.commitWrite()
-            return ki
-        }
-
-    }
-    
+    /*
     static func has(_label: String) -> Bool {
         let realm = RealmDB.instance()
         
@@ -74,5 +82,6 @@ class KinkInterest: Object {
         let results = realm.objects(KinkInterest.self).filter(predicate)
         return results.count==1
     }
+    */
 }
 */
