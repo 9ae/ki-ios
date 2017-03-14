@@ -1,8 +1,8 @@
 //
-//  tags.swift
+//  Gender.swift
 //  iOSKinkedIn
 //
-//  Created by alice on 2/16/17.
+//  Created by alice on 3/14/17.
 //  Copyright © 2017 KinkedIn. All rights reserved.
 //
 
@@ -15,24 +15,17 @@ struct Gender {
 extension Gender {
     init?(json: [String: Any]){
         guard let _label = json["label"] as? String
-        else {
-            return nil
-        }
-        self.label = _label
-    }
-}
-
-
-struct Role {
-    var label: String
-}
-
-extension Role {
-    init?(json: [String: Any]){
-        guard let _label = json["label"] as? String
-        else {
+            else {
                 return nil
         }
         self.label = _label
+    }
+    
+    static func parseJsonList(_ list: [String]) -> [Gender] {
+        var genders = [Gender]()
+        for li in list {
+            genders.append(Gender(label: li))
+        }
+        return genders
     }
 }

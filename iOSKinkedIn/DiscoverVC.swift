@@ -76,6 +76,10 @@ class DiscoverVC: UIViewController {
         style.backgroundColor = ThemeColors.action
         
         self.view.makeToast("The feelings are mutual! Start chatting!", duration: 3, position: .top, style: style)
+        Timer.scheduledTimer(timeInterval: 3,
+                             target: self,
+                             selector: #selector(self.loadNextProfile),
+                             userInfo: nil, repeats: false);
     }
     
     private func _popProfile(){

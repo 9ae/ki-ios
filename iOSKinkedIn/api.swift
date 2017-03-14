@@ -17,6 +17,76 @@ enum ProfileAction: Int {
     case hide=0, skip, like
 }
 
+class Woz {
+    var id: String
+    var complete: Bool
+    var result: Any?
+    
+    private var its = 0
+    private var timer: Timer?
+    private var requiresToken = true
+    
+    private var completeCallback: ((Any?) -> Void)?
+    
+    init(_ json:[String: Any], callback: @escaping (Any?) -> Void){
+        if let _id = json["job_id"] as? String {
+            self.id = _id
+            if let _complete = json["complete"] as? Bool {
+                self.complete = _complete
+            } else {
+                self.complete = false
+            }
+            self.result = json["result"]
+            self.completeCallback = callback
+        } else{
+            self.id = ""
+            self.complete = true
+            self.result = nil
+            self.completeCallback = nil
+        }
+    }
+
+    
+    func run(requiresToken: Bool){
+        if(self.complete){
+            doFinale()
+        }
+        else {
+            self.requiresToken = requiresToken
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.checkJob), userInfo: nil, repeats: true)
+        }
+    }
+    
+    private func responder(json: [String: Any]){
+        self.complete = (json["complete"] as? Bool) ?? false
+        if(self.complete){
+            self.timer?.invalidate()
+            self.result = json["result"]
+
+            self.completeCallback?(self.result)
+
+            print("job completes after \(its) iterations")
+        }
+    }
+    
+    @objc
+    func checkJob(){
+        if(its > 30){
+            self.timer?.invalidate()
+        }
+ 
+        let path = (requiresToken ? "self/" : "" ) + "job/\(self.id)"
+        KinkedInAPI.get(path, requiresToken: requiresToken, callback: self.responder)
+        
+        its += 1
+    }
+    
+    func doFinale(){
+        self.completeCallback?(self.result)
+    }
+    
+}
+
 class KinkedInAPI {
     
     static var token: String = ""
@@ -109,67 +179,45 @@ class KinkedInAPI {
     }
     
     static func genders(_ callback:@escaping(_ results:[Gender])->Void ) {
-        var genders = [Gender]()
-        
         get("list/genders", requiresToken: false){ json in
-            if let list = json["genders"] as? [Any] {
-                for li in list {
-                    if let gd = li as? String{
-                        genders.append(Gender(label: gd))
+            let job = Woz(json){ result in
+                if let list = result as? [String] {
+                    let genders = Gender.parseJsonList(list)
+                    callback(genders)
+                }
+            }
 
-                    }
-                }
-            }
-            callback(genders)
+            job.run(requiresToken: false)
         }
     }
-    
-    static func kinks(_ callback: @escaping(_ results:[Kink]) -> Void) {
-        var kinks = [Kink]()
-        
-        get("kinks", requiresToken: false){ json in
-            if let list = json["kinks"] as? [Any] {
-                for li in list {
-                    if let kd = li as? [String:Any] {
-                        if let k = Kink(json:kd){
-                            kinks.append(k)
-                        }
-                    }
-                }
-            }
-            callback(kinks)
-        }
-    }
-    
+
     static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
-        var kinks = [Kink]()
-        print("fetchink \(form) kinks")
+        
+        print("fetching \(form) kinks")
         get("kinks/\(form)", requiresToken: false){ json in
-            if let list = json["kinks"] as? [Any] {
-                for li in list {
-                    if let kd = li as? [String:Any] {
-                        if let k = Kink(json:kd){
-                            kinks.append(k)
-                        }
-                    }
+            let job = Woz(json, callback: { result in
+                if let list = result as? [Any] {
+                    let kinks = Kink.parseJsonList(list)
+                    callback(kinks)
                 }
-            }
-            callback(kinks)
+            })
+            
+
+            job.run(requiresToken: false)
         }
     }
     
     static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
-        var roles = [Role]()
         
         get("list/roles", requiresToken: false){ json in
-            if let list = json["roles"] as? [Any] {
-                for li in list {
-                    if let gd = li as? String {
-                            roles.append(Role(label: gd))
-                        }
+            let job = Woz(json){ result in
+                if let list = result as? [String] {
+                    let roles = Role.parseJsonList(list)
+                    callback(roles)
                 }
             }
-            callback(roles)
+            
+            job.run(requiresToken: false)
         }
         
     }
@@ -213,55 +261,58 @@ class KinkedInAPI {
             "invite_code": inviteCode
         ]
         post("register", parameters: params, requiresToken: false){ json in
-            if let success = json["success"] as? Bool {
-                callback(success)
-                /* set token somewhere if need be
-                 if let neoId = json["neo_id"] as? String {
-                 callback(neoId)
-                 }
-                 */
-            } else {
-                callback(false)
+            let job = Woz(json){ result in
+                if let token = result as? String {
+                    Login.setToken(token)
+                    self.setToken(token)
+                    callback(true)
+                } else {
+                    callback(false)
+                }
             }
+            job.run(requiresToken: false)
+            
         }
     }
     
     static func listProfiles(callback: @escaping(_ uuids: [String])->Void ){
         get("discover/profiles"){ json in
-            let count = (json["count"] as? Int) ?? 0
-            if(count>0){
-                if let uuids = json["users"] as? [String] {
-                    callback(uuids)
-                }
-            } else {
-                callback([])
+            let job = Woz(json){ result in
+                let uuids = result as? [String] ?? []
+                callback(uuids)
             }
+            job.run(requiresToken: true)
         }
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
         get("profile/\(uuid)"){ json in
-            if let user = Profile(uuid, json: json) {
-                callback(user)
-            } else {
-                print("request error in readProfile")
-                // TODO: throws error
+            let job = Woz(json){ result in
+                if let user = Profile(uuid, json: result as! [String:Any]) {
+                    callback(user)
+                } else {
+                    print("error in parsing profile")
+                }
             }
+            job.run(requiresToken: true)
         }
     }
     
     static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool)->Void ){
         let params : Parameters = [ "likes": true ]
         post("profile/\(uuid)", parameters: params){ json in
-            let reciprocal = (json["reciprocal"] as? Bool) ?? false
-            callback(reciprocal)
+            let job = Woz(json){ result in
+                let reciprocal = (result as? Bool) ?? false
+                callback(reciprocal)
+            }
+            job.run(requiresToken: true)
         }
     }
     
     static func skipProfile(_ uuid: String){
         let params : Parameters = [ "likes": false ]
         post("profile/\(uuid)", parameters: params){ json in
-            // assert json["success"] == true
+            print(json)
         }
     }
     
@@ -285,57 +336,35 @@ class KinkedInAPI {
         }
     }
     
-    static func addKink(_ id: Int, way: String, exp: Int){
-        let params: [String: Any] = [
-            "ways": way,
-            "exp": exp
-        ]
-        post("self/kinks/\(id)", parameters: params){json in
-            print(json)
-        }
-    }
-    
-    static func updateKink(_ id: Int, way: String, exp: Int){
-        let params: [String: Any] = [
-            "ways": way,
-            "exp": exp
-        ]
-        put("self/kinks/\(id)", parameters: params){json in
-            print(json)
-        }
-    }
-    
-    static func deleteKink(_ id: Int){
-        delete("self/kinks/\(id)"){ json in
-            print(json)
-        }
-    }
-    
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
         get("/self/connections"){ json in
-            
-            var profiles = [Profile]()
-            guard let reciprocals = json["reciprocals"] as? [Any] else {
-                print("list not found")
-                return
-            }
-            
-            for r in reciprocals {
-                guard let rc = r as? [String:Any] else {
-                    print("can't get json object")
-                    continue
+            let job = Woz(json){ result in
+                var profiles = [Profile]()
+                guard let reciprocals = result as? [Any] else {
+                    print("failed to cast list")
+                    return
                 }
-                guard let name = rc["name"] as? String,
-                let neo_id = rc["neo_id"] as? String,
-                    let image_id = rc["image_id"] as? String else {
-                        print("can't get profile values")
-                        continue
-                }
-                profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
                 
+                for r in reciprocals {
+                    guard let rc = r as? [String:Any] else {
+                        print("can't get json object")
+                        continue
+                    }
+                    guard let name = rc["name"] as? String,
+                        let neo_id = rc["neo_id"] as? String,
+                        let image_id = rc["image_id"] as? String else {
+                            print("can't get profile values")
+                            continue
+                    }
+                    profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                    
+                }
+                
+                callback(profiles)
+
             }
+            job.run(requiresToken: true)
             
-            callback(profiles)
         }
     }
 }
