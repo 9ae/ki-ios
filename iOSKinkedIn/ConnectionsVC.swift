@@ -10,28 +10,22 @@ import UIKit
 
 class ConnectionsVC: UITableViewController {
     
-    var reciprocals: [Profile] =
-        //[Profile]()
-     [
+    var reciprocals: [Profile] = [Profile]()
+    /* [
         Profile(neoId: "7c37b494-05ea-409b-86ed-09fe6a2f0a22", name: "Evony", picture_public_id: "0d9881bb-6c40-4781-bdc8-850c3fd2583b"),
         Profile(neoId: "0df5be91-32a9-466a-8453-c66d0943f2cd", name: "Hale",
-                picture_public_id: "a93a89ba-9174-40ef-a9e8-614ab073e3f6")]
+                picture_public_id: "a93a89ba-9174-40ef-a9e8-614ab073e3f6")]*/
 
     var selectedProfile: Profile?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         KinkedInAPI.connections { profiles in
             self.reciprocals = profiles
             self.tableView.reloadData()
         }
-        */
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
 
     override func didReceiveMemoryWarning() {

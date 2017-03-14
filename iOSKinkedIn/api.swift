@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
+let HOST_URL = "https://kinkedin-staging.herokuapp.com/"
 //"https://private-859cb-theash.apiary-mock.com/"
 //"https://dev.kinkd.in/"
 
