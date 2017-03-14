@@ -42,6 +42,8 @@ class CProfile: UIViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier == "connectProfile"){
             profileView = segue.destination as? ViewProfileVC
+            profileView?.enableActions(false)
+            profileView?.isReadOnly = true
         }
     }
     

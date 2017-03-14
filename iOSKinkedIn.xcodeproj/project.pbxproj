@@ -16,7 +16,6 @@
 		00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A371E56384500640B09 /* iOSKinkedInTests.swift */; };
 		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
-		00171A561E5650FD00640B09 /* tags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A551E5650FD00640B09 /* tags.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* SetupRolesVC.swift */; };
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
@@ -38,11 +37,13 @@
 		00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7A1E56CF5E00D39CD8 /* Login.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
+		00B978591E780E4300B7B4FA /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B978581E780E4300B7B4FA /* Role.swift */; };
+		00B9785B1E780E5900B7B4FA /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9785A1E780E5900B7B4FA /* Gender.swift */; };
 		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
 		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
 		00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */; };
-		00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* KinkInterest.swift */; };
+		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
 		00ECC19B1E699B5A00CE7CB0 /* illusionist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
@@ -101,7 +102,6 @@
 		00171A421E56384500640B09 /* iOSKinkedInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKinkedInUITests.swift; sourceTree = "<group>"; };
 		00171A441E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
-		00171A551E5650FD00640B09 /* tags.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tags.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21181E5A4B1300317600 /* SetupRolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupRolesVC.swift; sourceTree = "<group>"; };
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
@@ -123,11 +123,13 @@
 		00A0CD7A1E56CF5E00D39CD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		00B978581E780E4300B7B4FA /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		00B9785A1E780E5900B7B4FA /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
 		00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksWizardVC.swift; sourceTree = "<group>"; };
-		00D193B11E5BA4FE0010C34C /* KinkInterest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinkInterest.swift; sourceTree = "<group>"; };
+		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
 		00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = illusionist.swift; sourceTree = "<group>"; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
@@ -246,10 +248,11 @@
 		00171A541E5650D300640B09 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				00171A551E5650FD00640B09 /* tags.swift */,
 				00A0CD7A1E56CF5E00D39CD8 /* Login.swift */,
-				00D193B11E5BA4FE0010C34C /* KinkInterest.swift */,
+				00D193B11E5BA4FE0010C34C /* Kink.swift */,
 				0051D1FD1E62D3DC004ABBF6 /* Profile.swift */,
+				00B978581E780E4300B7B4FA /* Role.swift */,
+				00B9785A1E780E5900B7B4FA /* Gender.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -662,7 +665,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00D193B21E5BA4FE0010C34C /* KinkInterest.swift in Sources */,
+				00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */,
 				00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */,
 				0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
@@ -678,13 +681,14 @@
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,
 				00ECC19B1E699B5A00CE7CB0 /* illusionist.swift in Sources */,
-				00171A561E5650FD00640B09 /* tags.swift in Sources */,
+				00B9785B1E780E5900B7B4FA /* Gender.swift in Sources */,
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
+				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,

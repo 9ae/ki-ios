@@ -463,11 +463,8 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5XM-Fz-Vih">
-                                <rect key="frame" x="16" y="315" width="343" height="2"/>
-                            </progressView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="58.5" y="367" width="258" height="26"/>
+                                <rect key="frame" x="58.5" y="345" width="258" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="If you already have an account, you can Login">
@@ -483,7 +480,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                <rect key="frame" x="51" y="443" width="273" height="31"/>
+                                <rect key="frame" x="51" y="421" width="273" height="31"/>
                                 <string key="text">If you would like an invite code,
 please apply for an invitation on trykinkedin.com</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -491,7 +488,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="138.5" y="494" width="98" height="30"/>
+                                <rect key="frame" x="138.5" y="472" width="98" height="30"/>
                                 <state key="normal" title="Request Invite"/>
                             </button>
                         </subviews>
@@ -502,14 +499,11 @@ please apply for an invitation on trykinkedin.com</string>
                             <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="9c8-YI-k5R"/>
                             <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="CMo-j6-gQ7"/>
                             <constraint firstItem="N7n-dS-83Y" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="D8O-PF-7WK"/>
-                            <constraint firstItem="5XM-Fz-Vih" firstAttribute="top" secondItem="lRc-E2-Vyw" secondAttribute="bottom" constant="20" id="GBq-8O-xpy"/>
                             <constraint firstItem="Yya-WJ-WzH" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="H19-G7-6Df"/>
-                            <constraint firstItem="5XM-Fz-Vih" firstAttribute="trailing" secondItem="I89-hD-rUV" secondAttribute="trailingMargin" id="MwR-1t-cl9"/>
+                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="lRc-E2-Vyw" secondAttribute="bottom" constant="50" id="Ki9-gx-Huo"/>
+                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="50" id="PGR-cr-enL"/>
                             <constraint firstItem="jwn-bZ-yU1" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="12" id="QN5-sZ-0PQ"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="5XM-Fz-Vih" secondAttribute="bottom" constant="50" id="QhH-aw-aDf"/>
-                            <constraint firstItem="5XM-Fz-Vih" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" id="VIy-pW-SEG"/>
                             <constraint firstItem="Ekf-cw-t7d" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="VdE-AV-s9V"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="50" id="XXS-z2-J18"/>
                             <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="jwn-bZ-yU1" secondAttribute="leading" id="i59-c5-7eN"/>
                             <constraint firstItem="xF5-W4-76e" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="oPL-1N-CVF"/>
                             <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="12" id="qol-KB-mt6"/>
@@ -523,7 +517,6 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="goToLogin" destination="N7n-dS-83Y" id="9AL-Zo-2EK"/>
                         <outlet property="inviteCode" destination="lRc-E2-Vyw" id="epU-Kl-1xu"/>
                         <outlet property="password" destination="jwn-bZ-yU1" id="Kbc-LP-Bxq"/>
-                        <outlet property="progressBar" destination="5XM-Fz-Vih" id="X34-do-0yz"/>
                         <outlet property="requestInvite" destination="f5c-8S-Fv6" id="wgq-qr-3b9"/>
                         <outlet property="signup" destination="HoB-Vf-Nu2" id="pjZ-vs-0Lw"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="register2setup" animates="NO" id="2WY-ZT-It8"/>
@@ -725,7 +718,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
+                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
                                 <rect key="frame" x="144" y="630" width="87" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1196,8 +1189,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r6W-Lp-HEe"/>
         <segue reference="Agg-jq-c8I"/>
+        <segue reference="2WY-ZT-It8"/>
         <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
