@@ -54,7 +54,19 @@ class Kink {
         self.exp = 0
     }
     
-
+    static func parseJsonList(_ list: [Any]) -> [Kink] {
+        var kinks = [Kink]()
+        
+        for li in list {
+                if let kd = li as? [String:Any] {
+                    if let k = Kink(json:kd){
+                        kinks.append(k)
+                    }
+                }
+            }
+        
+        return kinks
+    }
 }
 
 enum KinkForm: String {

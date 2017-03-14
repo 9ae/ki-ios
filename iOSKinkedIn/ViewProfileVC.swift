@@ -31,6 +31,8 @@ class ViewProfileVC: UIViewController {
     var skipBtnOrigin = CGPoint()
 
     var profile: Profile?
+    
+    var isReadOnly = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -122,7 +124,9 @@ class ViewProfileVC: UIViewController {
         bioExcerpt?.text = bioText
         
         bioTab?.isHidden = false
-        enableActions(true)
+        if(!isReadOnly){
+            enableActions(true)
+        }
         NotificationCenter.default.post(name: NOTIFY_PROFILE_LOADED, object: nil)
     }
     
@@ -237,6 +241,8 @@ class ViewProfileVC: UIViewController {
         KinkedInAPI.likeProfile(uuid) { reciprocal in
             if(reciprocal) {
                 NotificationCenter.default.post(name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
+            } else {
+                self._nextProfile()
             }
         }
 

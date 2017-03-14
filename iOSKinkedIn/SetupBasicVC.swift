@@ -61,7 +61,7 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
         self.alert(message, title: "Missing Info")
     }
  
-    
+  
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
         var missing = [String]()
