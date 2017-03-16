@@ -859,8 +859,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1664908-d376-4c94-9096-3186f6272018";
-				PROVISIONING_PROFILE_SPECIFIER = "Self Deploy Dev";
+				PROVISIONING_PROFILE = "126c75cc-d08a-4ce6-984b-8306910e6c33";
+				PROVISIONING_PROFILE_SPECIFIER = "KinkedIn Alpha";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -881,8 +881,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1664908-d376-4c94-9096-3186f6272018";
-				PROVISIONING_PROFILE_SPECIFIER = "Self Deploy Dev";
+				PROVISIONING_PROFILE = "126c75cc-d08a-4ce6-984b-8306910e6c33";
+				PROVISIONING_PROFILE_SPECIFIER = "KinkedIn Alpha";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

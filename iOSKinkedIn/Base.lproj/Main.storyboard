@@ -417,46 +417,38 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
-                                <rect key="frame" x="37.5" y="70" width="300" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="Wox-Ar-Erh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                <rect key="frame" x="37.5" y="121" width="300" height="50"/>
+                                <rect key="frame" x="36" y="253" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Ntc-ji-Ic6"/>
-                                    <constraint firstAttribute="width" constant="300" id="d8m-Mk-GL4"/>
+                                    <constraint firstAttribute="width" constant="300" id="1mf-4t-fR5"/>
+                                    <constraint firstAttribute="height" constant="40" id="IvH-zE-Oz2"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
-                                <rect key="frame" x="37.5" y="183" width="300" height="50"/>
+                                <rect key="frame" x="36" y="313" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="p0Q-yZ-enO"/>
+                                    <constraint firstAttribute="width" constant="300" id="iaz-6r-WT0"/>
+                                    <constraint firstAttribute="height" constant="40" id="rCj-CW-VuY"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                <rect key="frame" x="37.5" y="245" width="200" height="50"/>
+                                <rect key="frame" x="36" y="370" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3nH-Mg-ULa"/>
-                                    <constraint firstAttribute="width" constant="200" id="Fe3-ty-cdU"/>
+                                    <constraint firstAttribute="width" constant="200" id="VDA-OE-44s"/>
+                                    <constraint firstAttribute="height" constant="40" id="kAG-Oh-zBk"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
-                                <rect key="frame" x="257.5" y="253" width="64" height="34"/>
+                                <rect key="frame" x="256" y="373" width="64" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
@@ -464,7 +456,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="58.5" y="345" width="258" height="26"/>
+                                <rect key="frame" x="59" y="460" width="258" height="26"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle">
                                         <fragment content="If you already have an account, you can Login">
@@ -480,7 +472,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                <rect key="frame" x="51" y="421" width="273" height="31"/>
+                                <rect key="frame" x="51" y="536" width="273" height="31"/>
                                 <string key="text">If you would like an invite code,
 please apply for an invitation on trykinkedin.com</string>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -488,28 +480,33 @@ please apply for an invitation on trykinkedin.com</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="138.5" y="472" width="98" height="30"/>
+                                <rect key="frame" x="139" y="587" width="98" height="30"/>
                                 <state key="normal" title="Request Invite"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
+                                <rect key="frame" x="44" y="194" width="287" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="leading" secondItem="xF5-W4-76e" secondAttribute="leading" id="4DD-Zk-oeS"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="top" secondItem="NC5-bg-bRY" secondAttribute="bottom" constant="50" id="6zi-AG-h84"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="centerY" secondItem="lRc-E2-Vyw" secondAttribute="centerY" id="81B-69-vgQ"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="9c8-YI-k5R"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="CMo-j6-gQ7"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="D8O-PF-7WK"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="H19-G7-6Df"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="lRc-E2-Vyw" secondAttribute="bottom" constant="50" id="Ki9-gx-Huo"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="50" id="PGR-cr-enL"/>
-                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="12" id="QN5-sZ-0PQ"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="VdE-AV-s9V"/>
-                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="jwn-bZ-yU1" secondAttribute="leading" id="i59-c5-7eN"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="oPL-1N-CVF"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="12" id="qol-KB-mt6"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="s1V-lC-BKA"/>
-                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="top" secondItem="jwn-bZ-yU1" secondAttribute="bottom" constant="12" id="yCN-yj-cRQ"/>
-                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="trailing" secondItem="xF5-W4-76e" secondAttribute="trailing" id="zVh-zy-yc3"/>
+                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="20" id="AhV-jP-FN2"/>
+                            <constraint firstItem="N7n-dS-83Y" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="Dg4-ON-2RV"/>
+                            <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="20" id="KR1-uM-prl"/>
+                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="centerY" secondItem="lRc-E2-Vyw" secondAttribute="centerY" id="NQ1-1q-vse"/>
+                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="cnk-0O-5oQ"/>
+                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="20" id="g8y-Tf-OBz"/>
+                            <constraint firstItem="xF5-W4-76e" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="20" id="glq-TL-JEo"/>
+                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="50" id="kys-t8-mUe"/>
+                            <constraint firstItem="BvI-b4-sA7" firstAttribute="top" secondItem="f5c-8S-Fv6" secondAttribute="bottom" constant="50" id="mab-eU-7oM"/>
+                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="leading" secondItem="I89-hD-rUV" secondAttribute="leadingMargin" constant="20" id="mdl-jM-rxy"/>
+                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="uR6-Ta-1PQ"/>
+                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="top" secondItem="jwn-bZ-yU1" secondAttribute="bottom" constant="20" id="vBu-fu-DeR"/>
+                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="Yya-WJ-WzH" secondAttribute="centerX" id="vQb-pe-eYF"/>
+                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="vj7-s6-lmL"/>
+                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="xB4-Dp-FI0"/>
+                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="lRc-E2-Vyw" secondAttribute="bottom" constant="50" id="xdq-5e-wiW"/>
                         </constraints>
                     </view>
                     <connections>
@@ -538,37 +535,28 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your email and password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-gp-bPQ">
-                                <rect key="frame" x="37.5" y="70" width="300" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="eTG-o1-bpE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYp-Eb-ZM2">
-                                <rect key="frame" x="37.5" y="121" width="300" height="50"/>
+                                <rect key="frame" x="36" y="440" width="300" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="aw8-sD-ihw"/>
-                                    <constraint firstAttribute="height" constant="50" id="v6q-tc-0Al"/>
+                                    <constraint firstAttribute="width" constant="300" id="MCW-o2-77r"/>
+                                    <constraint firstAttribute="height" constant="40" id="SYe-Ii-pUi"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
-                                <rect key="frame" x="37.5" y="183" width="200" height="50"/>
+                                <rect key="frame" x="36" y="497" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="yOb-bS-jEc"/>
-                                    <constraint firstAttribute="height" constant="50" id="yrg-La-dN2"/>
+                                    <constraint firstAttribute="height" constant="40" id="BtD-3t-pLR"/>
+                                    <constraint firstAttribute="width" constant="200" id="dpy-fO-VwB"/>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-bW-Jyq">
-                                <rect key="frame" x="257.5" y="191" width="45" height="34"/>
+                                <rect key="frame" x="256" y="500" width="45" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
@@ -576,22 +564,28 @@ please apply for an invitation on trykinkedin.com</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrZ-7C-rK6">
-                                <rect key="frame" x="126" y="283" width="123" height="30"/>
+                                <rect key="frame" x="126" y="587" width="123" height="30"/>
                                 <state key="normal" title="Forgot Password?"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your email and password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zx5-gp-bPQ">
+                                <rect key="frame" x="52" y="381" width="271" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SKY-tc-4v2" firstAttribute="leading" secondItem="dYp-Eb-ZM2" secondAttribute="leading" id="9qg-eW-sCR"/>
-                            <constraint firstItem="zx5-gp-bPQ" firstAttribute="top" secondItem="CgY-oQ-gEE" secondAttribute="bottom" constant="50" id="AIy-N7-SPG"/>
-                            <constraint firstItem="zx5-gp-bPQ" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="AcN-7b-Aob"/>
-                            <constraint firstItem="dYp-Eb-ZM2" firstAttribute="top" secondItem="zx5-gp-bPQ" secondAttribute="bottom" constant="12" id="AgQ-cv-rUN"/>
-                            <constraint firstItem="SKY-tc-4v2" firstAttribute="top" secondItem="dYp-Eb-ZM2" secondAttribute="bottom" constant="12" id="a5y-7D-TYo"/>
-                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="centerY" secondItem="SKY-tc-4v2" secondAttribute="centerY" id="alJ-d8-h6P"/>
-                            <constraint firstItem="rrZ-7C-rK6" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="iNn-Jk-KCf"/>
-                            <constraint firstItem="dYp-Eb-ZM2" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="oLZ-Gf-xu6"/>
-                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="leading" secondItem="SKY-tc-4v2" secondAttribute="trailing" constant="20" id="sMm-84-B7p"/>
-                            <constraint firstItem="rrZ-7C-rK6" firstAttribute="top" secondItem="SKY-tc-4v2" secondAttribute="bottom" constant="50" id="tFX-gS-ruc"/>
+                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="top" secondItem="dYp-Eb-ZM2" secondAttribute="bottom" constant="20" id="1Ni-gy-FdN"/>
+                            <constraint firstItem="SKY-tc-4v2" firstAttribute="leading" secondItem="Z1n-rS-jhZ" secondAttribute="leadingMargin" constant="20" id="35v-Xg-JRb"/>
+                            <constraint firstItem="zx5-gp-bPQ" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="5xE-4p-XAc"/>
+                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="centerY" secondItem="SKY-tc-4v2" secondAttribute="centerY" id="6J0-Ak-Vji"/>
+                            <constraint firstItem="rrZ-7C-rK6" firstAttribute="top" secondItem="SKY-tc-4v2" secondAttribute="bottom" constant="50" id="WK4-5M-LYI"/>
+                            <constraint firstItem="dfx-47-dXg" firstAttribute="top" secondItem="rrZ-7C-rK6" secondAttribute="bottom" constant="50" id="X3x-A6-Ncu"/>
+                            <constraint firstItem="dYp-Eb-ZM2" firstAttribute="leading" secondItem="Z1n-rS-jhZ" secondAttribute="leadingMargin" constant="20" id="ZlE-8f-sU8"/>
+                            <constraint firstItem="dYp-Eb-ZM2" firstAttribute="top" secondItem="zx5-gp-bPQ" secondAttribute="bottom" constant="20" id="h3C-UU-W2q"/>
+                            <constraint firstItem="0Qf-bW-Jyq" firstAttribute="leading" secondItem="SKY-tc-4v2" secondAttribute="trailing" constant="20" id="qeU-V7-U2G"/>
+                            <constraint firstItem="rrZ-7C-rK6" firstAttribute="centerX" secondItem="Z1n-rS-jhZ" secondAttribute="centerX" id="uca-Uw-jqd"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1189,8 +1183,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Agg-jq-c8I"/>
-        <segue reference="2WY-ZT-It8"/>
+        <segue reference="LAg-aZ-ASG"/>
+        <segue reference="dR0-x4-1ic"/>
         <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
