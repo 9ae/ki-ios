@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "appsplashx0.5.jpg",
+      "filename" : "appsplash2.jpg",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "appsplash.jpg",
+      "filename" : "appsplash2x2.jpg",
       "scale" : "2x"
     },
     {
