@@ -310,7 +310,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="DYf-Ht-PVP">
                                         <pageControl key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" id="p7e-Cr-mID">
-                                            <rect key="frame" x="135" y="4" width="71" height="37"/>
+                                            <rect key="frame" x="135" y="3.5" width="71" height="37"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -769,34 +769,6 @@ please apply for an invitation on trykinkedin.com</string>
             </objects>
             <point key="canvasLocation" x="1054" y="937"/>
         </scene>
-        <!--Adjust-->
-        <scene sceneID="BAi-zF-SIi">
-            <objects>
-                <viewController id="Jqg-yr-4hZ" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="oPP-cD-caS"/>
-                        <viewControllerLayoutGuide type="bottom" id="CfG-4j-OqX"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1Zo-Or-LYg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coming soon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwS-fK-CO8">
-                                <rect key="frame" x="30" y="45" width="101" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Adjust" image="adjust" id="Wom-sS-2ZW"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WDH-Kd-Xrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1284" y="3154.2728635682161"/>
-        </scene>
         <!--Connect-->
         <scene sceneID="wJQ-c5-6Cb">
             <objects>
@@ -888,6 +860,23 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK8-J1-sv1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1168" y="3159"/>
+        </scene>
+        <!--Change-->
+        <scene sceneID="faw-b8-EGr">
+            <objects>
+                <navigationController id="Sxr-z2-cqB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Change" image="adjust" id="AcC-YD-d4O"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qB3-zf-bhY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="smX-CW-ckN" kind="relationship" relationship="rootViewController" id="Bfe-xb-bSq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqz-ty-11U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1334" y="3229"/>
         </scene>
         <!--Connect-->
         <scene sceneID="Twt-b6-xt1">
@@ -1001,6 +990,322 @@ please apply for an invitation on trykinkedin.com</string>
             </objects>
             <point key="canvasLocation" x="-2244" y="3744"/>
         </scene>
+        <!--Change-->
+        <scene sceneID="1Zq-mD-D4S">
+            <objects>
+                <collectionViewController id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nI8-jT-fwX">
+                            <size key="itemSize" width="150" height="150"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="changeProfile" id="P6L-8h-alb">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-Ej-k6R">
+                                            <rect key="frame" x="48" y="121" width="55" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <segue destination="kd1-fX-t1d" kind="show" id="Xyh-rF-CH0"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="changePreferences" id="vKa-Fy-eob">
+                                <rect key="frame" x="225" y="0.0" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preferences" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jav-gQ-cgF">
+                                            <rect key="frame" x="29" y="121" width="92" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="changeSettings" id="ktk-HR-vQG">
+                                <rect key="frame" x="0.0" y="160" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="App Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BrS-8O-G2I">
+                                            <rect key="frame" x="26" y="121" width="99" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="changePrivacy" id="9OR-Rx-5lp">
+                                <rect key="frame" x="225" y="160" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Privacy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-kp-MoC">
+                                            <rect key="frame" x="47" y="121" width="56" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="smX-CW-ckN" id="Nqe-Z8-QRv"/>
+                            <outlet property="delegate" destination="smX-CW-ckN" id="mBd-g4-jdk"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Change" id="Q0P-g3-0a3"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0ji-kO-Tlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1327.2" y="3962.9685157421291"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JmT-W3-JfR">
+            <objects>
+                <viewController id="cCO-TQ-xTD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1oY-HT-uFN"/>
+                        <viewControllerLayoutGuide type="bottom" id="yc2-hP-P8X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vbp-em-WMM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUZ-HI-kVT">
+                                <rect key="frame" x="148" y="235" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Vouch"/>
+                                <connections>
+                                    <segue destination="0aC-gg-h6v" kind="show" id="cu0-iC-a7W"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="UsJ-Ft-IiP">
+                        <barButtonItem key="backBarButtonItem" title="Nevermind" id="M46-jL-CYV"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xa-to-49N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2141" y="4646"/>
+        </scene>
+        <!--Vouching-->
+        <scene sceneID="dFI-ex-Usi">
+            <objects>
+                <viewController title="Vouching" id="0aC-gg-h6v" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qT0-Wf-9Iu"/>
+                        <viewControllerLayoutGuide type="bottom" id="UJH-8r-JSK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mpS-ye-9Ez">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-RH-Cl2">
+                                <rect key="frame" x="15" y="114" width="345" height="122"/>
+                                <string key="text">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Showed to respect mutual consent  2. Respect boundaries  3. Are open and honest in their communication" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thi-ZA-c6L">
+                                <rect key="frame" x="15" y="248" width="345" height="81.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKz-9O-qcV">
+                                <rect key="frame" x="53" y="349.5" width="269" height="30"/>
+                                <state key="normal" title="Yes, I feel qualified to vouch for [User]?"/>
+                                <connections>
+                                    <segue destination="gL8-Jb-9cL" kind="show" id="Cgq-dx-J6Q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uUi-cQ-anN">
+                                <rect key="frame" x="15" y="410" width="345" height="54"/>
+                                <string key="text">Your feedback will not negatively hurt [User]'s reputation. But if there is a case of abuse by [User] we would like you to inform us though ____.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="uUi-cQ-anN" firstAttribute="top" secondItem="rKz-9O-qcV" secondAttribute="bottom" constant="30" id="1S2-9T-Uhy"/>
+                            <constraint firstAttribute="trailing" secondItem="Vox-RH-Cl2" secondAttribute="trailing" constant="15" id="2GF-2a-2CR"/>
+                            <constraint firstAttribute="trailing" secondItem="uUi-cQ-anN" secondAttribute="trailing" constant="15" id="CGG-ex-QWN"/>
+                            <constraint firstItem="Vox-RH-Cl2" firstAttribute="top" secondItem="qT0-Wf-9Iu" secondAttribute="bottom" constant="50" id="JXc-DB-5uh"/>
+                            <constraint firstItem="uUi-cQ-anN" firstAttribute="leading" secondItem="mpS-ye-9Ez" secondAttribute="leading" constant="15" id="Jux-3m-x2b"/>
+                            <constraint firstItem="rKz-9O-qcV" firstAttribute="top" secondItem="thi-ZA-c6L" secondAttribute="bottom" constant="20" id="Vo6-yF-yHw"/>
+                            <constraint firstItem="Vox-RH-Cl2" firstAttribute="leading" secondItem="mpS-ye-9Ez" secondAttribute="leading" constant="15" id="Vxv-dY-n4L"/>
+                            <constraint firstItem="thi-ZA-c6L" firstAttribute="leading" secondItem="mpS-ye-9Ez" secondAttribute="leading" constant="15" id="Y8z-KN-CMd"/>
+                            <constraint firstAttribute="trailing" secondItem="thi-ZA-c6L" secondAttribute="trailing" constant="15" id="dvs-ms-aWH"/>
+                            <constraint firstItem="rKz-9O-qcV" firstAttribute="centerX" secondItem="mpS-ye-9Ez" secondAttribute="centerX" id="kIe-ya-5Lm"/>
+                            <constraint firstItem="thi-ZA-c6L" firstAttribute="top" secondItem="Vox-RH-Cl2" secondAttribute="bottom" constant="12" id="mUN-Vy-ixv"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <navigationItem key="navigationItem" title="Vouching" id="kLE-jQ-E9L">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="1gm-if-zbs"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aji-ua-aNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1036" y="4876.9115442278862"/>
+        </scene>
+        <!--Vouch for [User]-->
+        <scene sceneID="cue-hg-04k">
+            <objects>
+                <viewController title="Vouch for [User]" id="gL8-Jb-9cL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AqU-G0-IBm"/>
+                        <viewControllerLayoutGuide type="bottom" id="1mW-Sh-Xeh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggI-FB-5ye">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was [user] honest in the information (photos and text) they provided in their profile?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Np-Nt-38n">
+                                <rect key="frame" x="15" y="114" width="345" height="42.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="VbN-gQ-d6O">
+                                <rect key="frame" x="310" y="168.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was [user] an good communicator?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OE-Nm-5W4">
+                                <rect key="frame" x="16" y="229.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tne-Yg-FDa">
+                                <rect key="frame" x="310" y="262.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Was [user] respectful of your boundaries?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pq9-Hh-3PK">
+                                <rect key="frame" x="16" y="323.5" width="343" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4nl-3z-y77">
+                                <rect key="frame" x="311" y="356.5" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By submitting you are saying that the feedback you provide is based on your interactions with [user]." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKU-Wb-Xtt">
+                                <rect key="frame" x="15" y="437.5" width="345" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n55-xc-NIA">
+                                <rect key="frame" x="163" y="518.5" width="49" height="30"/>
+                                <state key="normal" title="Submit"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PKU-Wb-Xtt" firstAttribute="leading" secondItem="ggI-FB-5ye" secondAttribute="leading" constant="15" id="5NX-vM-o39"/>
+                            <constraint firstItem="PKU-Wb-Xtt" firstAttribute="top" secondItem="4nl-3z-y77" secondAttribute="bottom" constant="50" id="8Bi-vg-Szf"/>
+                            <constraint firstItem="VbN-gQ-d6O" firstAttribute="top" secondItem="3Np-Nt-38n" secondAttribute="bottom" constant="12" id="8N6-Rj-jtc"/>
+                            <constraint firstItem="4nl-3z-y77" firstAttribute="top" secondItem="Pq9-Hh-3PK" secondAttribute="bottom" constant="12" id="8oW-8M-YsM"/>
+                            <constraint firstItem="Pq9-Hh-3PK" firstAttribute="top" secondItem="Tne-Yg-FDa" secondAttribute="bottom" constant="30" id="B3l-CA-M6E"/>
+                            <constraint firstItem="2OE-Nm-5W4" firstAttribute="trailing" secondItem="ggI-FB-5ye" secondAttribute="trailingMargin" id="F4X-t4-iSQ"/>
+                            <constraint firstAttribute="trailing" secondItem="4nl-3z-y77" secondAttribute="trailing" constant="15" id="J7a-kN-oPo"/>
+                            <constraint firstItem="Tne-Yg-FDa" firstAttribute="trailing" secondItem="ggI-FB-5ye" secondAttribute="trailingMargin" id="NY8-Hd-xy5"/>
+                            <constraint firstItem="VbN-gQ-d6O" firstAttribute="trailing" secondItem="ggI-FB-5ye" secondAttribute="trailingMargin" id="NpF-V4-8IY"/>
+                            <constraint firstAttribute="trailing" secondItem="PKU-Wb-Xtt" secondAttribute="trailing" constant="15" id="Sdq-3W-MJo"/>
+                            <constraint firstItem="n55-xc-NIA" firstAttribute="centerX" secondItem="ggI-FB-5ye" secondAttribute="centerX" id="TgQ-5d-7ui"/>
+                            <constraint firstItem="2OE-Nm-5W4" firstAttribute="leading" secondItem="ggI-FB-5ye" secondAttribute="leadingMargin" id="V1f-Ue-NXC"/>
+                            <constraint firstItem="3Np-Nt-38n" firstAttribute="top" secondItem="AqU-G0-IBm" secondAttribute="bottom" constant="50" id="aDq-IH-iMk"/>
+                            <constraint firstItem="2OE-Nm-5W4" firstAttribute="top" secondItem="VbN-gQ-d6O" secondAttribute="bottom" constant="30" id="aNA-Cm-ktr"/>
+                            <constraint firstItem="3Np-Nt-38n" firstAttribute="leading" secondItem="ggI-FB-5ye" secondAttribute="leading" constant="15" id="d3X-Pe-Fed"/>
+                            <constraint firstItem="n55-xc-NIA" firstAttribute="top" secondItem="PKU-Wb-Xtt" secondAttribute="bottom" constant="20" id="ddk-OE-fHj"/>
+                            <constraint firstAttribute="trailing" secondItem="3Np-Nt-38n" secondAttribute="trailing" constant="15" id="f85-pu-Owy"/>
+                            <constraint firstItem="Tne-Yg-FDa" firstAttribute="top" secondItem="2OE-Nm-5W4" secondAttribute="bottom" constant="12" id="g7c-ng-mQg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pq9-Hh-3PK" secondAttribute="trailing" id="nS8-De-aco"/>
+                            <constraint firstItem="Pq9-Hh-3PK" firstAttribute="leading" secondItem="ggI-FB-5ye" secondAttribute="leadingMargin" id="o3Y-5M-sPG"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ikT-xr-SZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-210.40000000000001" y="4885.9070464767619"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="asr-BS-BeT">
+            <objects>
+                <navigationController id="f1D-dx-1lL" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cXH-AV-AVp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cCO-TQ-xTD" kind="relationship" relationship="rootViewController" id="wI4-Bq-5mG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8A-nl-ipt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3278" y="4684"/>
+        </scene>
+        <!--Change Profile-->
+        <scene sceneID="mmz-fu-M9v">
+            <objects>
+                <viewController id="kd1-fX-t1d" customClass="ChangeProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PRG-XZ-JhT"/>
+                        <viewControllerLayoutGuide type="bottom" id="puh-dg-zfH"/>
+                    </layoutGuides>
+                    <scrollView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" id="tJI-Da-liR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHf-WF-6L7">
+                                <rect key="frame" x="337" y="19" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="enterPartnerWithSender:" destination="kd1-fX-t1d" eventType="touchDown" id="b3n-3z-dri"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </scrollView>
+                    <navigationItem key="navigationItem" title="Change Profile" id="YEl-8M-5ms"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8f-LJ-0tu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-503.19999999999999" y="3962.9685157421291"/>
+        </scene>
         <!--KinkedIn-->
         <scene sceneID="UFz-jF-esF">
             <objects>
@@ -1014,9 +1319,9 @@ please apply for an invitation on trykinkedin.com</string>
                     </tabBar>
                     <connections>
                         <segue destination="rTP-2v-JDH" kind="relationship" relationship="viewControllers" id="Yj2-yY-kQe"/>
-                        <segue destination="Jqg-yr-4hZ" kind="relationship" relationship="viewControllers" id="eZY-mu-2hi"/>
                         <segue destination="EMa-3y-ECG" kind="relationship" relationship="viewControllers" id="sDt-1n-kJl"/>
                         <segue destination="f5k-fM-Ulm" kind="relationship" relationship="viewControllers" id="dYP-Gv-LLY"/>
+                        <segue destination="Sxr-z2-cqB" kind="relationship" relationship="viewControllers" id="PiQ-sr-twK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUI-Rn-N6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1032,17 +1337,17 @@ please apply for an invitation on trykinkedin.com</string>
                         <viewControllerLayoutGuide type="bottom" id="hLv-nz-USx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qOH-Un-9Lu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="598"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-FT-Fq7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
+                                <rect key="frame" x="0.0" y="0.0" width="373" height="415"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="415" id="P3a-Yz-yPA"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-Bg-gnD">
-                                <rect key="frame" x="0.0" y="400" width="375" height="154"/>
+                                <rect key="frame" x="0.0" y="400" width="373" height="198"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-R5-Zzx">
                                         <rect key="frame" x="30" y="40" width="53" height="24"/>
@@ -1051,13 +1356,13 @@ please apply for an invitation on trykinkedin.com</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
-                                        <rect key="frame" x="238" y="49" width="107" height="15"/>
+                                        <rect key="frame" x="236" y="49" width="107" height="15"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
-                                        <rect key="frame" x="15" y="84" width="345" height="15"/>
+                                        <rect key="frame" x="15" y="84" width="343" height="15"/>
                                         <attributedString key="attributedText">
                                             <fragment content="age, city genders">
                                                 <attributes>
@@ -1068,20 +1373,20 @@ please apply for an invitation on trykinkedin.com</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5G-vK-aiS">
-                                        <rect key="frame" x="15" y="124" width="345" height="159.5"/>
+                                        <rect key="frame" x="15" y="124" width="343" height="159.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fade" translatesAutoresizingMaskIntoConstraints="NO" id="hpo-LJ-LPr">
-                                        <rect key="frame" x="0.0" y="104" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="148" width="373" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PM5-29-Kgl"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3A-4p-kUO">
-                                        <rect key="frame" x="273" y="124" width="87" height="30"/>
+                                        <rect key="frame" x="271" y="168" width="87" height="30"/>
                                         <state key="normal" title="Read More..."/>
                                         <connections>
                                             <action selector="showBio:" destination="uL9-GD-gCZ" eventType="touchDown" id="9xe-fH-XLP"/>
@@ -1117,7 +1422,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv6-U5-Xzt">
-                                <rect key="frame" x="310" y="370" width="50" height="50"/>
+                                <rect key="frame" x="308" y="370" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IDf-V0-Q6a"/>
                                     <constraint firstAttribute="width" constant="50" id="l7m-Dz-Ukb"/>
@@ -1128,7 +1433,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hf-LM-hgv">
-                                <rect key="frame" x="264" y="385" width="30" height="30"/>
+                                <rect key="frame" x="262" y="385" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="L1E-Ip-1B5"/>
                                     <constraint firstAttribute="width" constant="30" id="YyC-NN-Vh6"/>
@@ -1188,7 +1493,7 @@ please apply for an invitation on trykinkedin.com</string>
     <inferredMetricsTieBreakers>
         <segue reference="r6W-Lp-HEe"/>
         <segue reference="n5w-4Q-t6v"/>
-        <segue reference="zGX-bB-pEm"/>
+        <segue reference="YsC-KU-QWO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

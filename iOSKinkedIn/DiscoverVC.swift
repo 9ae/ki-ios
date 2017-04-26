@@ -83,9 +83,18 @@ class DiscoverVC: UIViewController {
     }
     
     private func _popProfile(){
-        if(self.profileViewController == nil){
+        if (self.profileViewController == nil) {
             return
         }
+        
+        if (self.profilesQueue.isEmpty) {
+            self.view.hideToastActivity()
+            self.view.makeToast(
+                "[TEMP COPY] Wow! What are tiger! You went through all the profiles already. Take some time to chat with the people you matched with.",
+                duration: 3, position: .top)
+            return
+        }
+        
         print("load next profile")
         //let profile = self.fakeProfiles.removeFirst()
         //self.profileViewController?.setProfile(profile)

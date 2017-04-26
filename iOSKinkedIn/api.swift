@@ -9,9 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://kinkedin-staging.herokuapp.com/"
-//"https://private-859cb-theash.apiary-mock.com/"
-//"https://dev.kinkd.in/"
+let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
 
 enum ProfileAction: Int {
     case hide=0, skip, like
@@ -98,7 +96,12 @@ class KinkedInAPI {
     static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
         var url = HOST_URL+path
         if(requiresToken){
-            url += "?token=\(token)"
+            if(path.contains("?")){
+                url += "&token=\(token)"
+            } else {
+                url += "?token=\(token)"
+            }
+            
         }
         Alamofire.request(url).responseJSON { response in
             
@@ -337,7 +340,7 @@ class KinkedInAPI {
     }
     
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
-        get("/self/connections"){ json in
+        get("self/connections"){ json in
             let job = Woz(json){ result in
                 var profiles = [Profile]()
                 guard let reciprocals = result as? [Any] else {
@@ -365,6 +368,23 @@ class KinkedInAPI {
             }
             job.run(requiresToken: true)
             
+        }
+    }
+    
+    private static func makePartnerRequest(partnerId: String){
+        let params = ["partner_uuid": partnerId]
+        print("POST self/partner_requests")
+        print(params)
+    }
+    
+    static func addPartner(_ email: String, callback: @escaping(_ partnerFound: Bool)->Void){
+        get("self/find_user?email=\(email)"){ json in
+            if let partnerId = json["partner_uuid"] as? String {
+                callback(true)
+                makePartnerRequest(partnerId: partnerId)
+            } else {
+                callback(false)
+            }
         }
     }
 }

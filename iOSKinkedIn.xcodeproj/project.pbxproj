@@ -32,10 +32,12 @@
 		0070C3701E569E11000D5BA0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0070C3731E569E23000D5BA0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C3721E569E23000D5BA0 /* RealmSwift.framework */; };
 		0070C3741E569E23000D5BA0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C3721E569E23000D5BA0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		008597251EA3628900583621 /* StaticMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008597241EA3628900583621 /* StaticMasterVC.swift */; };
 		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
 		00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7A1E56CF5E00D39CD8 /* Login.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
+		00B50D301EB0CF0000CA6744 /* ChangeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B50D2F1EB0CF0000CA6744 /* ChangeProfileVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00B978591E780E4300B7B4FA /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B978581E780E4300B7B4FA /* Role.swift */; };
 		00B9785B1E780E5900B7B4FA /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9785A1E780E5900B7B4FA /* Gender.swift */; };
@@ -118,10 +120,12 @@
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		0070C3721E569E23000D5BA0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		008597241EA3628900583621 /* StaticMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMasterVC.swift; sourceTree = "<group>"; };
 		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
 		00A0CD7A1E56CF5E00D39CD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		00B50D2F1EB0CF0000CA6744 /* ChangeProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeProfileVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00B978581E780E4300B7B4FA /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		00B9785A1E780E5900B7B4FA /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -270,6 +274,15 @@
 			name = helpers;
 			sourceTree = "<group>";
 		};
+		008597231EA3623B00583621 /* change */ = {
+			isa = PBXGroup;
+			children = (
+				008597241EA3628900583621 /* StaticMasterVC.swift */,
+				00B50D2F1EB0CF0000CA6744 /* ChangeProfileVC.swift */,
+			);
+			name = change;
+			sourceTree = "<group>";
+		};
 		00ED8A211E74376800096497 /* auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +320,7 @@
 		00ED8A241E7437EB00096497 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				008597231EA3623B00583621 /* change */,
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				006D50061E658635005DAABE /* AppTabVC.swift */,
 				00ED8A231E7437A000096497 /* discover */,
@@ -685,12 +699,14 @@
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
+				00B50D301EB0CF0000CA6744 /* ChangeProfileVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
+				008597251EA3628900583621 /* StaticMasterVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
