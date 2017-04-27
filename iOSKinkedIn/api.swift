@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import PusherSwift
 
 let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
 
@@ -91,6 +92,7 @@ class KinkedInAPI {
     
     static func setToken(_ t: String){
         token = t
+        setChannel()
     }
 
     static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
@@ -246,17 +248,7 @@ class KinkedInAPI {
             //TODO #2 login failed messages via notification system
         }
     }
-   /*
-    static func validate(_ token: String, callback:@escaping (_ neoId: String)->Void) {
-        
-        get("self/validate"){ json in
-            if let neoId = json["neo_id"] as? String {
-                callback(neoId)
-            }
-        }
-        
-    }
-    */
+    
     static func register(email: String, password: String, inviteCode: String, callback: @escaping(_ success:Bool)->Void){
         let params: Parameters = [
             "email": email,
@@ -276,6 +268,17 @@ class KinkedInAPI {
             job.run(requiresToken: false)
             
         }
+    }
+    
+    private static func setChannel() {
+        print("subscribe to my own channel")
+        get("self/pusheen"){ json in
+            if let neoId = json["my_channel"] as? String {
+                let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
+                pusher.nativePusher.subscribe(interestName: neoId)
+            }
+        }
+        
     }
     
     static func listProfiles(callback: @escaping(_ uuids: [String])->Void ){

@@ -38,12 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         pusher.nativePusher.subscribe(interestName: "pusheen")
     }
     
-    
-//    func application(application: UIApplication, didReceiveRemoteNotification notification : [NSObject : AnyObject]) {
-//        print("didReceiveRemoteNotification")
-//        print(notification)
-//    }
-    
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
         print(userInfo)
