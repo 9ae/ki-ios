@@ -91,6 +91,7 @@
 /* Begin PBXFileReference section */
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
+		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00171A241E56384500640B09 /* SetupGendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGendersVC.swift; sourceTree = "<group>"; };
@@ -208,6 +209,7 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */,
 				006D50041E65810B005DAABE /* Assets.xcassets */,
 				00ED8A241E7437EB00096497 /* ui */,
 				001D21131E5A284A00317600 /* helpers */,
@@ -450,6 +452,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8UP95RYJ9H;
 						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					00171A321E56384500640B09 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -864,6 +871,7 @@
 			baseConfigurationReference = CF5E3ADA76DA88C2CEB48970 /* Pods-iOSKinkedIn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8UP95RYJ9H;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -875,7 +883,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "f33390b8-19d0-4649-a9d2-7f01ab4d2250";
+				PROVISIONING_PROFILE = "ea698f03-ec0e-4c62-b11f-9bd6376a7905";
 				PROVISIONING_PROFILE_SPECIFIER = "KinkedIn Alpha";
 				SWIFT_VERSION = 3.0;
 			};
@@ -886,6 +894,7 @@
 			baseConfigurationReference = 69D2489DAE1A30E827A6EA1A /* Pods-iOSKinkedIn.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 8UP95RYJ9H;
 				FRAMEWORK_SEARCH_PATHS = (

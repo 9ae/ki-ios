@@ -13,6 +13,7 @@ target 'iOSKinkedIn' do
   pod 'Atributika'
   pod 'Cloudinary', '~> 2.0'
   pod 'TagListView', '~> 1.1.0'
+  pod 'PusherSwift'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths
