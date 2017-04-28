@@ -16,7 +16,7 @@ import UserNotifications
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
+    //let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -44,9 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken")
-        pusher.nativePusher.register(deviceToken: deviceToken)
-        pusher.nativePusher.subscribe(interestName: "pusheen")
-        pusher.nativePusher.subscribe(interestName: "cbecb318a721409d8ce64f371bff288d")
+        KinkedInAPI.deviceToken = deviceToken
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {

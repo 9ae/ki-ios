@@ -19,7 +19,6 @@
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* SetupRolesVC.swift */; };
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
-		002E78671EB2E413009B60E8 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E78661EB2E413009B60E8 /* NotificationService.swift */; };
 		002E786B1EB2E413009B60E8 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 002E78641EB2E412009B60E8 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
@@ -129,9 +128,6 @@
 		001D21181E5A4B1300317600 /* SetupRolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupRolesVC.swift; sourceTree = "<group>"; };
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		002E78641EB2E412009B60E8 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		002E78661EB2E413009B60E8 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
-		002E78681EB2E413009B60E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		002E78701EB2F68C009B60E8 /* NotificationService.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NotificationService.entitlements; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
@@ -221,7 +217,6 @@
 				00171A211E56384500640B09 /* iOSKinkedIn */,
 				00171A361E56384500640B09 /* iOSKinkedInTests */,
 				00171A411E56384500640B09 /* iOSKinkedInUITests */,
-				002E78651EB2E412009B60E8 /* NotificationService */,
 				00171A201E56384500640B09 /* Products */,
 				B625CE8D8B53D2A949D116E8 /* Pods */,
 				60EDCD05462830E481D434C8 /* Frameworks */,
@@ -307,16 +302,6 @@
 				003B15941E6D1E3200BE2F82 /* graphics.swift */,
 			);
 			name = helpers;
-			sourceTree = "<group>";
-		};
-		002E78651EB2E412009B60E8 /* NotificationService */ = {
-			isa = PBXGroup;
-			children = (
-				002E78701EB2F68C009B60E8 /* NotificationService.entitlements */,
-				002E78661EB2E413009B60E8 /* NotificationService.swift */,
-				002E78681EB2E413009B60E8 /* Info.plist */,
-			);
-			path = NotificationService;
 			sourceTree = "<group>";
 		};
 		008597231EA3623B00583621 /* change */ = {
@@ -827,7 +812,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				002E78671EB2E413009B60E8 /* NotificationService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -966,7 +950,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF5E3ADA76DA88C2CEB48970 /* Pods-iOSKinkedIn.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -990,7 +973,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 69D2489DAE1A30E827A6EA1A /* Pods-iOSKinkedIn.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -1140,6 +1122,7 @@
 				002E786E1EB2E413009B60E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

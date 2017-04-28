@@ -545,7 +545,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="SKY-tc-4v2">
                                 <rect key="frame" x="47.5" y="497" width="200" height="40"/>
@@ -555,7 +555,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qf-bW-Jyq">
                                 <rect key="frame" x="267" y="500" width="45" height="34"/>
@@ -1491,8 +1491,8 @@ please apply for an invitation on trykinkedin.com</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r6W-Lp-HEe"/>
-        <segue reference="n5w-4Q-t6v"/>
+        <segue reference="dR0-x4-1ic"/>
+        <segue reference="LAg-aZ-ASG"/>
         <segue reference="YsC-KU-QWO"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
