@@ -92,7 +92,7 @@ class KinkedInAPI {
     
     static func setToken(_ t: String){
         token = t
-        setChannel()
+        // setChannel()
     }
 
     static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
@@ -276,6 +276,7 @@ class KinkedInAPI {
             if let neoId = json["my_channel"] as? String {
                 let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
                 pusher.nativePusher.subscribe(interestName: neoId)
+                print("subscribed to "+neoId)
             }
         }
         

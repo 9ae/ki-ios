@@ -25,17 +25,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let center = UNUserNotificationCenter.current()
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
-            // Enable or disable features based on authorization.
+            if(granted){
+                print("register categories")
+                center.setNotificationCategories([self.partnershipCat()])
+            }
         }
 
         application.registerForRemoteNotifications()
         return true
     }
     
+    private func partnershipCat() -> UNNotificationCategory {
+        let confirm = UNNotificationAction(identifier: "partner_confirm", title: "Confirm")
+        let deny = UNNotificationAction(identifier: "partner_deny", title: "Deny")
+        let ignore = UNNotificationAction(identifier: "partner_ignore", title: "Ignore")
+        return UNNotificationCategory(identifier: "partner_request", actions: [confirm, deny, ignore], intentIdentifiers: [])
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken")
         pusher.nativePusher.register(deviceToken: deviceToken)
         pusher.nativePusher.subscribe(interestName: "pusheen")
+        pusher.nativePusher.subscribe(interestName: "cbecb318a721409d8ce64f371bff288d")
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
