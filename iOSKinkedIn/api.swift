@@ -399,8 +399,10 @@ class KinkedInAPI {
     
     private static func makePartnerRequest(partnerId: String){
         let params = ["partner_uuid": partnerId]
-        print("POST self/partner_requests")
-        print(params)
+        post("self/partner_requests", parameters: params){ json in
+            print("POST self/partner_requests")
+            print(json)
+        }
     }
     
     static func addPartner(_ email: String, callback: @escaping(_ partnerFound: Bool)->Void){
