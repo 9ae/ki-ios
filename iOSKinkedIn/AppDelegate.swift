@@ -24,15 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         let center = UNUserNotificationCenter.current()
-        center.delegate = self
+        //center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if(granted){
-                print("register categories")
-                center.setNotificationCategories([self.partnershipCat()])
+                // print("register categories")
+                //center.setNotificationCategories([self.partnershipCat()])
             }
         }
 
         application.registerForRemoteNotifications()
+        
         return true
     }
     
@@ -52,6 +53,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
+        //print(userInfo)
+        /*
+        if let aps = userInfo["aps"] as? [AnyHashable: Any] {
+            if let category = aps["category"] as String {
+                if(category == "partner_requests"){
+                    
+                }
+            }
+        }
+        */
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -78,6 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+/*
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -104,4 +116,4 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         
     }
 }
-
+*/
