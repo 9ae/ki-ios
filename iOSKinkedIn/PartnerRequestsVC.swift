@@ -78,8 +78,9 @@ class PartnerRequestsVC: UITableViewController {
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
         let confirm = UITableViewRowAction(style: .normal, title: "Confirm") { action, index in
-            KinkedInAPI.replyPartnerRequest(self.prequests[index.row].id, confirm: true)
-            self.deleteRequest(index.row)
+            let req = self.prequests[index.row]
+            KinkedInAPI.replyPartnerRequest(req.id, confirm: true)
+            self.vouchFor(req.from_uuid, name: req.from_name, index: index.row)
             
         }
         confirm.backgroundColor = UIColor.green
@@ -95,6 +96,26 @@ class PartnerRequestsVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath){
         
+    }
+    
+    private func vouchFor(_ userid: String, name: String, index: Int){
+        let alert = UIAlertController(title: "Vouch for partner", message: "Would you like to vouch for \(name)?", preferredStyle: .alert)
+        let noVouch = UIAlertAction(title: "Not now", style: .default){ action in
+            print("not vouching now")
+        }
+        let yesVouch = UIAlertAction(title: "Yes", style: .default){ action in
+            let params = [
+                "uuid": userid,
+                "name": name
+            ]
+            self.performSegue(withIdentifier: "pr2vouchIntro", sender: params)
+        }
+        alert.addAction(noVouch)
+        alert.addAction(yesVouch)
+        
+        present(alert, animated: false) { 
+            self.deleteRequest(index)
+        }
     }
     
     private func deleteRequest(_ atRow: Int){
@@ -129,14 +150,17 @@ class PartnerRequestsVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier=="pr2vouchIntro"){
+            //pass params
+        }
     }
-    */
+    
 
 }

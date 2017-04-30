@@ -1140,41 +1140,13 @@ please apply for an invitation on trykinkedin.com</string>
                             <outlet property="delegate" destination="zvn-D5-WKW" id="NLe-K5-UTd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="0aC-gg-h6v" kind="show" identifier="pr2vouchIntro" id="0DF-ET-PRJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16c-1y-UkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1322.4000000000001" y="4750.0749625187409"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="JmT-W3-JfR">
-            <objects>
-                <viewController id="cCO-TQ-xTD" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1oY-HT-uFN"/>
-                        <viewControllerLayoutGuide type="bottom" id="yc2-hP-P8X"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="vbp-em-WMM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUZ-HI-kVT">
-                                <rect key="frame" x="148" y="235" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Vouch"/>
-                                <connections>
-                                    <segue destination="0aC-gg-h6v" kind="show" id="cu0-iC-a7W"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="UsJ-Ft-IiP">
-                        <barButtonItem key="backBarButtonItem" title="Nevermind" id="M46-jL-CYV"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Xa-to-49N" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2508" y="5541"/>
         </scene>
         <!--Vouching-->
         <scene sceneID="dFI-ex-Usi">
@@ -1184,8 +1156,8 @@ please apply for an invitation on trykinkedin.com</string>
                         <viewControllerLayoutGuide type="top" id="qT0-Wf-9Iu"/>
                         <viewControllerLayoutGuide type="bottom" id="UJH-8r-JSK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mpS-ye-9Ez">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <view key="view" contentMode="scaleToFill" id="mpS-ye-9Ez" customClass="UIScrollView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vox-RH-Cl2">
@@ -1238,7 +1210,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aji-ua-aNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1092" y="5712"/>
+            <point key="canvasLocation" x="-1335" y="5584"/>
         </scene>
         <!--Vouch for [User]-->
         <scene sceneID="cue-hg-04k">
@@ -1248,7 +1220,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <viewControllerLayoutGuide type="top" id="AqU-G0-IBm"/>
                         <viewControllerLayoutGuide type="bottom" id="1mW-Sh-Xeh"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ggI-FB-5ye">
+                    <view key="view" contentMode="scaleToFill" id="ggI-FB-5ye" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1317,23 +1289,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikT-xr-SZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-166" y="5712"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="asr-BS-BeT">
-            <objects>
-                <navigationController id="f1D-dx-1lL" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cXH-AV-AVp">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="cCO-TQ-xTD" kind="relationship" relationship="rootViewController" id="wI4-Bq-5mG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="H8A-nl-ipt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3748" y="5605"/>
+            <point key="canvasLocation" x="-271" y="5530"/>
         </scene>
         <!--Change Profile-->
         <scene sceneID="mmz-fu-M9v">
