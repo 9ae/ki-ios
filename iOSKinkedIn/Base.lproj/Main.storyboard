@@ -994,7 +994,7 @@ please apply for an invitation on trykinkedin.com</string>
         <scene sceneID="1Zq-mD-D4S">
             <objects>
                 <collectionViewController id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1076,6 +1076,26 @@ please apply for an invitation on trykinkedin.com</string>
                                     </subviews>
                                 </view>
                             </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="partnerRequests" id="2J8-GD-H3S">
+                                <rect key="frame" x="0.0" y="320" width="150" height="150"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Partner Requests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-hG-RKg">
+                                            <rect key="frame" x="8" y="115" width="142" height="27"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <segue destination="zvn-D5-WKW" kind="show" id="eHy-xi-FeJ"/>
+                                </connections>
+                            </collectionViewCell>
                         </cells>
                         <connections>
                             <outlet property="dataSource" destination="smX-CW-ckN" id="Nqe-Z8-QRv"/>
@@ -1087,6 +1107,43 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ji-kO-Tlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1327.2" y="3962.9685157421291"/>
+        </scene>
+        <!--Partner Requests-->
+        <scene sceneID="Kzm-uQ-I02">
+            <objects>
+                <tableViewController storyboardIdentifier="partnerRequests" title="Partner Requests" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zvn-D5-WKW" customClass="PartnerRequestsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="BnC-Ql-j5J">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="partnerRequestCell" textLabel="PCM-e0-te3" style="IBUITableViewCellStyleDefault" id="foz-FJ-Puj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foz-FJ-Puj" id="3dr-Hg-RlE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PCM-e0-te3">
+                                            <rect key="frame" x="15" y="0.0" width="345" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zvn-D5-WKW" id="WY5-wG-zkI"/>
+                            <outlet property="delegate" destination="zvn-D5-WKW" id="NLe-K5-UTd"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="16c-1y-UkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1322.4000000000001" y="4750.0749625187409"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="JmT-W3-JfR">
@@ -1117,7 +1174,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xa-to-49N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2141" y="4646"/>
+            <point key="canvasLocation" x="-2508" y="5541"/>
         </scene>
         <!--Vouching-->
         <scene sceneID="dFI-ex-Usi">
@@ -1181,7 +1238,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aji-ua-aNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1036" y="4876.9115442278862"/>
+            <point key="canvasLocation" x="-1092" y="5712"/>
         </scene>
         <!--Vouch for [User]-->
         <scene sceneID="cue-hg-04k">
@@ -1260,7 +1317,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ikT-xr-SZw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-210.40000000000001" y="4885.9070464767619"/>
+            <point key="canvasLocation" x="-166" y="5712"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="asr-BS-BeT">
@@ -1276,7 +1333,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8A-nl-ipt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3278" y="4684"/>
+            <point key="canvasLocation" x="-3748" y="5605"/>
         </scene>
         <!--Change Profile-->
         <scene sceneID="mmz-fu-M9v">

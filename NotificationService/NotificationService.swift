@@ -20,7 +20,7 @@ class NotificationService: UNNotificationServiceExtension {
         if let bestAttemptContent = bestAttemptContent {
             if let notificationData = request.content.userInfo["data"] as? [String: Any]{
                 if let request_id = notificationData["data"] as? Int {
-                    bestAttemptContent.userInfo["request_id"] = request_id
+                    //bestAttemptContent.userInfo["request_id"] = request_id
                 }
             }
             contentHandler(bestAttemptContent)

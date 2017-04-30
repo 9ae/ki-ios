@@ -383,6 +383,20 @@ class KinkedInAPI {
         }
     }
     
+    static func partnerRequests(callback: @escaping(_ prs: [PartnerRequest]) ->Void){
+        get("self/partner_requests"){ json in
+            var prequests : [PartnerRequest] = []
+            if let list = json["partner_requests"] as? [Any] {
+                for jpr in list {
+                    if let req = PartnerRequest(json: (jpr as? [String:Any])!) {
+                        prequests.append(req)
+                    }
+                }
+            }
+            callback(prequests)
+        }
+    }
+    
     private static func makePartnerRequest(partnerId: String){
         let params = ["partner_uuid": partnerId]
         print("POST self/partner_requests")
@@ -398,5 +412,15 @@ class KinkedInAPI {
                 callback(false)
             }
         }
+    }
+    
+    static func replyPartnerRequest(_ request_id: Int, confirm: Bool){
+        let action = confirm ? "confirm" : "deny"
+        let route = "self/partner_requests/\(request_id)/\(action)"
+        post(route, parameters: Parameters()){ json in
+            print("POST \(route)")
+            print(json)
+        }
+        
     }
 }

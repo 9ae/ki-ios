@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.with([Crashlytics.self])
         
         let center = UNUserNotificationCenter.current()
+        center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if(granted){
                 print("register categories")
@@ -38,8 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func partnershipCat() -> UNNotificationCategory {
         let confirm = UNNotificationAction(identifier: "partner_confirm", title: "Confirm")
         let deny = UNNotificationAction(identifier: "partner_deny", title: "Deny")
-        let ignore = UNNotificationAction(identifier: "partner_ignore", title: "Ignore")
+        let ignore = UNNotificationAction(identifier: "partner_ignore", title: "Ignore",
+                                          options: [.destructive] )
         return UNNotificationCategory(identifier: "partner_request", actions: [confirm, deny, ignore], intentIdentifiers: [])
+        //TODO: attach to action or now should probably just
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
@@ -49,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
-        print(userInfo)
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -74,6 +76,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
 
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        guard let data = response.notification.request.content.userInfo["data"] as? [String: Any] else {
+            return
+        }
+        
+        guard let request_id = data["request_id"] as? Int else {
+            return
+        }
+        
+        switch(response.actionIdentifier){
+            case "partner_confirm":
+                print("yes we are partners!")
+                KinkedInAPI.replyPartnerRequest(request_id, confirm: true)
+            case "partner_deny":
+                print("no who is this?")
+                KinkedInAPI.replyPartnerRequest(request_id, confirm: false)
+            default:
+                //go to partner requests screen
+                break
+        }
+        
+    }
 }
 

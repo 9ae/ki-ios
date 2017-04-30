@@ -10,7 +10,7 @@ import UIKit
 
 class StaticMasterVC: UICollectionViewController {
     
-    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "changeSettings", "changePrivacy"]
+    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "changeSettings", "changePrivacy", "partnerRequests"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +42,7 @@ class StaticMasterVC: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 4
+        return 5
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
