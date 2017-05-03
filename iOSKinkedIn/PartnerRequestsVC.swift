@@ -158,7 +158,11 @@ class PartnerRequestsVC: UITableViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if(segue.identifier=="pr2vouchIntro"){
-            //pass params
+            if let vouch = segue.destination as? VouchIntroVC,
+            let params = sender as? [String: String] {
+                vouch.subjectName = params["name"]
+                vouch.subjectUUID = params["uuid"]
+            }
         }
     }
     
