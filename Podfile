@@ -14,6 +14,7 @@ target 'iOSKinkedIn' do
   pod 'Cloudinary', '~> 2.0'
   pod 'TagListView', '~> 1.1.0'
   pod 'PusherSwift'
+  pod 'HyphenateLite', '~> 3.2.3'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

@@ -22,7 +22,7 @@
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
-		002E786B1EB2E413009B60E8 /* NotificationService.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 002E78641EB2E412009B60E8 /* NotificationService.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0036ED241EBB0AED00A253A0 /* hyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036ED231EBB0AED00A253A0 /* hyp.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
@@ -78,13 +78,6 @@
 			remoteGlobalIDString = 00171A1E1E56384500640B09;
 			remoteInfo = iOSKinkedIn;
 		};
-		002E78691EB2E413009B60E8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 00171A171E56384500640B09 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 002E78631EB2E412009B60E8;
-			remoteInfo = NotificationService;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -94,7 +87,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				002E786B1EB2E413009B60E8 /* NotificationService.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,7 +128,7 @@
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
-		002E78641EB2E412009B60E8 /* NotificationService.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NotificationService.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0036ED231EBB0AED00A253A0 /* hyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hyp.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
@@ -210,13 +202,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		002E78611EB2E412009B60E8 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -242,7 +227,6 @@
 				00171A1F1E56384500640B09 /* iOSKinkedIn.app */,
 				00171A331E56384500640B09 /* iOSKinkedInTests.xctest */,
 				00171A3E1E56384500640B09 /* iOSKinkedInUITests.xctest */,
-				002E78641EB2E412009B60E8 /* NotificationService.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,6 +272,7 @@
 				00171A521E56468700640B09 /* api.swift */,
 				00A0CD761E56CCA000D39CD8 /* localdb.swift */,
 				00DED11B1E6D837300402FA8 /* cloudinary.swift */,
+				0036ED231EBB0AED00A253A0 /* hyp.swift */,
 			);
 			name = providers;
 			sourceTree = "<group>";
@@ -450,7 +435,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				002E786A1EB2E413009B60E8 /* PBXTargetDependency */,
 			);
 			name = iOSKinkedIn;
 			productName = iOSKinkedIn;
@@ -499,23 +483,6 @@
 			productReference = 00171A3E1E56384500640B09 /* iOSKinkedInUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		002E78631EB2E412009B60E8 /* NotificationService */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 002E786C1EB2E413009B60E8 /* Build configuration list for PBXNativeTarget "NotificationService" */;
-			buildPhases = (
-				002E78601EB2E412009B60E8 /* Sources */,
-				002E78611EB2E412009B60E8 /* Frameworks */,
-				002E78621EB2E412009B60E8 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NotificationService;
-			productName = NotificationService;
-			productReference = 002E78641EB2E412009B60E8 /* NotificationService.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -552,16 +519,6 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 00171A1E1E56384500640B09;
 					};
-					002E78631EB2E412009B60E8 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8UP95RYJ9H;
-						ProvisioningStyle = Automatic;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 0;
-							};
-						};
-					};
 				};
 			};
 			buildConfigurationList = 00171A1A1E56384500640B09 /* Build configuration list for PBXProject "iOSKinkedIn" */;
@@ -580,7 +537,6 @@
 				00171A1E1E56384500640B09 /* iOSKinkedIn */,
 				00171A321E56384500640B09 /* iOSKinkedInTests */,
 				00171A3D1E56384500640B09 /* iOSKinkedInUITests */,
-				002E78631EB2E412009B60E8 /* NotificationService */,
 			);
 		};
 /* End PBXProject section */
@@ -605,13 +561,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		00171A3C1E56384500640B09 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		002E78621EB2E412009B60E8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -825,6 +774,7 @@
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
+				0036ED241EBB0AED00A253A0 /* hyp.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
@@ -848,13 +798,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		002E78601EB2E412009B60E8 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -867,11 +810,6 @@
 			isa = PBXTargetDependency;
 			target = 00171A1E1E56384500640B09 /* iOSKinkedIn */;
 			targetProxy = 00171A3F1E56384500640B09 /* PBXContainerItemProxy */;
-		};
-		002E786A1EB2E413009B60E8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 002E78631EB2E412009B60E8 /* NotificationService */;
-			targetProxy = 002E78691EB2E413009B60E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1090,32 +1028,6 @@
 			};
 			name = Release;
 		};
-		002E786D1EB2E413009B60E8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 8UP95RYJ9H;
-				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn.NotificationService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Debug;
-		};
-		002E786E1EB2E413009B60E8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DEVELOPMENT_TEAM = 8UP95RYJ9H;
-				INFOPLIST_FILE = NotificationService/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn.NotificationService;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1151,15 +1063,6 @@
 			buildConfigurations = (
 				00171A4E1E56384500640B09 /* Debug */,
 				00171A4F1E56384500640B09 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		002E786C1EB2E413009B60E8 /* Build configuration list for PBXNativeTarget "NotificationService" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				002E786D1EB2E413009B60E8 /* Debug */,
-				002E786E1EB2E413009B60E8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

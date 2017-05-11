@@ -431,4 +431,12 @@ class KinkedInAPI {
             print(json)
         }
     }
+    
+    static func messageLogin(callback: @escaping(_ username: String, _ pwd: String)->Void){
+        get("self/message_key"){ json in
+            if let lock = json["lock"] as? String, let key = json["key"] as? String {
+                callback(lock, key)
+            }
+        }
+    }
 }

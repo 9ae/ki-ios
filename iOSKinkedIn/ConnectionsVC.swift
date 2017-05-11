@@ -21,6 +21,8 @@ class ConnectionsVC: UITableViewController {
             self.tableView.reloadData()
         }
         
+        Hyp.start()
+        
     }
 
     override func didReceiveMemoryWarning() {
