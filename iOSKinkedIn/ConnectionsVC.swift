@@ -21,8 +21,7 @@ class ConnectionsVC: UITableViewController {
             self.tableView.reloadData()
         }
         
-        Hyp.start()
-        
+        LayerHelper.auth()
     }
 
     override func didReceiveMemoryWarning() {

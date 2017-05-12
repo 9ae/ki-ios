@@ -432,10 +432,10 @@ class KinkedInAPI {
         }
     }
     
-    static func messageLogin(callback: @escaping(_ username: String, _ pwd: String)->Void){
-        get("self/message_key"){ json in
-            if let lock = json["lock"] as? String, let key = json["key"] as? String {
-                callback(lock, key)
+    static func messageLogin(_ nonce: String, callback: @escaping(_ identity_token: String)->Void){
+        get("self/message_key/\(nonce)"){ json in
+            if let token = json["identity_token"] as? String{
+                callback(token)
             }
         }
     }

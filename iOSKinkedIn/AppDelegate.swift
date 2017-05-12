@@ -7,31 +7,34 @@
 //
 
 import UIKit
+import UserNotifications
+
 import RealmSwift
 import Fabric
 import Crashlytics
 import PusherSwift
-import UserNotifications
-import HyphenateLite
+import LayerKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    //let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
-    let hypKey = "valour#kidev"
-    let hypPushCert = "kiapnsdev"
+class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
+    let layerID = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c"
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         Fabric.with([Crashlytics.self])
         
-        if let hypOptions = EMOptions(appkey: hypKey) {
-            hypOptions.apnsCertName = hypPushCert
-            EMClient.shared().initializeSDK(with: hypOptions)
+        let layerURL = URL(string: layerID)
+        LayerHelper.client = LYRClient(appID: layerURL!, delegate: self, options: nil)
+        LayerHelper.client?.connect { (success, error) in
+            if(success){
+                print("layer connected")
+            } else {
+                print("layer failed")
+                print(error.debugDescription)
+            }
         }
-
         let center = UNUserNotificationCenter.current()
         //center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -82,12 +85,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        EMClient.shared().applicationDidEnterBackground(application)
+        
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        EMClient.shared().applicationWillEnterForeground(application)
+
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -96,6 +99,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    func layerClient(_ client: LYRClient, didReceiveAuthenticationChallengeWithNonce nonce: String){
+        LayerHelper.authCallback(client, nonce)
     }
   
     /*

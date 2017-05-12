@@ -22,7 +22,6 @@
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
-		0036ED241EBB0AED00A253A0 /* hyp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0036ED231EBB0AED00A253A0 /* hyp.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
@@ -56,6 +55,7 @@
 		00ECC19B1E699B5A00CE7CB0 /* illusionist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
+		00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1C6C01EC5A63100A295C0 /* layerhelper.swift */; };
 		00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F36C4E1E74F04F0061905D /* CProfile.swift */; };
 		00F6534D1EB3304C00164C30 /* NotificationService in Resources */ = {isa = PBXBuildFile; fileRef = 00F6534C1EB3304C00164C30 /* NotificationService */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
@@ -128,7 +128,6 @@
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
-		0036ED231EBB0AED00A253A0 /* hyp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hyp.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		00ECC19A1E699B5A00CE7CB0 /* illusionist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = illusionist.swift; sourceTree = "<group>"; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
+		00F1C6C01EC5A63100A295C0 /* layerhelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layerhelper.swift; sourceTree = "<group>"; };
 		00F36C4E1E74F04F0061905D /* CProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProfile.swift; sourceTree = "<group>"; };
 		00F6534C1EB3304C00164C30 /* NotificationService */ = {isa = PBXFileReference; lastKnownFileType = folder; path = NotificationService; sourceTree = SOURCE_ROOT; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 				00171A521E56468700640B09 /* api.swift */,
 				00A0CD761E56CCA000D39CD8 /* localdb.swift */,
 				00DED11B1E6D837300402FA8 /* cloudinary.swift */,
-				0036ED231EBB0AED00A253A0 /* hyp.swift */,
+				00F1C6C01EC5A63100A295C0 /* layerhelper.swift */,
 			);
 			name = providers;
 			sourceTree = "<group>";
@@ -623,7 +623,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		572C0F37553B239836B367FF /* [CP] Copy Pods Resources */ = {
@@ -683,7 +683,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		911324DA39F32A9B128E0F8B /* [CP] Copy Pods Resources */ = {
@@ -728,7 +728,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -762,6 +762,7 @@
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */,
+				00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
 				00B50D301EB0CF0000CA6744 /* ChangeProfileVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
@@ -774,7 +775,6 @@
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
-				0036ED241EBB0AED00A253A0 /* hyp.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
