@@ -27,6 +27,7 @@
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
 		0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */; };
+		0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */; };
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
 		006D50071E658635005DAABE /* AppTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D50061E658635005DAABE /* AppTabVC.swift */; };
@@ -133,6 +134,7 @@
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
+		0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -386,6 +388,7 @@
 				00ED8A1F1E74374800096497 /* ConnectionCell.swift */,
 				00ED8A261E7443BD00096497 /* ConnectionsVC.swift */,
 				00F36C4E1E74F04F0061905D /* CProfile.swift */,
+				0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */,
 			);
 			name = connect;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
+				0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,

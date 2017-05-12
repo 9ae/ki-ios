@@ -61,10 +61,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken")
         KinkedInAPI.deviceToken = deviceToken
+        try! LayerHelper.client?.updateRemoteNotificationDeviceToken(deviceToken)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
+        LayerHelper.client?.synchronize(withRemoteNotification: userInfo, completion: { (conversation, message, error) in
+            if((error) != nil){
+                print(error?.localizedDescription)
+            } else {
+                print("layer notification recieved")
+                //TODO launch convo
+            }
+        })
         //print(userInfo)
         /*
         if let aps = userInfo["aps"] as? [AnyHashable: Any] {
