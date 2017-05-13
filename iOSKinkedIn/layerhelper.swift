@@ -18,6 +18,10 @@ class LayerHelper {
     static var client: LYRClient?
     
     static func authCallback(_ client: LYRClient, _ nonce: String){
+        if (KinkedInAPI.token == ""){
+            print("Kiapi token not ready yet, can't auth with Layer yet")
+            return
+        }
         print("layer to call kiapi with \(nonce)")
         KinkedInAPI.messageLogin(nonce, callback: { (token) in
             client.authenticate(withIdentityToken: token, completion: { (authenticatedUser, error) in

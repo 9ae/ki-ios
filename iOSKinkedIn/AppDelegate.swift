@@ -46,6 +46,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
 
         application.registerForRemoteNotifications()
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.kiapiAccessTokenSet), name: NOTIFY_TOKEN_SET, object: nil)
+        
         return true
     }
     
@@ -68,7 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         print("didReceiveRemoteNotification")
         LayerHelper.client?.synchronize(withRemoteNotification: userInfo, completion: { (conversation, message, error) in
             if((error) != nil){
-                print(error?.localizedDescription)
+                print(error?.localizedDescription ?? "Layer notification error")
             } else {
                 print("layer notification recieved")
                 //TODO launch convo
@@ -112,6 +114,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     func layerClient(_ client: LYRClient, didReceiveAuthenticationChallengeWithNonce nonce: String){
         LayerHelper.authCallback(client, nonce)
+    }
+    
+    @objc func kiapiAccessTokenSet(){
+        print("access token set. prefeform listener functions")
+        
+        if let deviceToken = KinkedInAPI.deviceToken {
+            print("Pusher subscribe to my personal channel")
+            let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
+            KinkedInAPI.get("self/pusheen"){ json in
+                if let neoId = json["my_channel"] as? String {
+                    pusher.nativePusher.register(deviceToken: deviceToken)
+                    pusher.nativePusher.subscribe(interestName: neoId)
+                }
+            }
+        }
+        
+        if let layerClient = LayerHelper.client {
+            if (layerClient.isConnected && layerClient.authenticatedUser == nil){
+                print("Layer auth user")
+                LayerHelper.auth()
+            }
+        }
+        
+        
     }
   
     /*

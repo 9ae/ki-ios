@@ -20,8 +20,7 @@ class ConnectionsVC: UITableViewController {
             self.reciprocals = profiles
             self.tableView.reloadData()
         }
-        
-        LayerHelper.auth()
+
     }
 
     override func didReceiveMemoryWarning() {
