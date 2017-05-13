@@ -11,7 +11,7 @@ import Atlas
 
 class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
     
-    var dateFormatter = DateFormatter()
+    private var dateFormatter = DateFormatter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +20,8 @@ class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataS
         
         self.dataSource = self
 
-        // Do any additional setup after loading the view.
+        self.messageInputToolbar.displaysRightAccessoryImage = false
+        self.messageInputToolbar.leftAccessoryButton = nil
     }
 
     override func didReceiveMemoryWarning() {

@@ -62,6 +62,7 @@ class ConnectionsVC: UITableViewController {
         let profile = reciprocals[indexPath.row]
         do {
             let convo = ConvoVC(layerClient: LayerHelper.client!)
+            convo.title = profile.name
             convo.displaysAddressBar = false
             convo.conversation = try LayerHelper.startConvo(withUser: profile.neoId)
             self.navigationController?.pushViewController(convo, animated: false)
