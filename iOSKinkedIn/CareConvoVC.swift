@@ -15,6 +15,7 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         print("client ready \(LayerHelper.client != nil)")
         do {
@@ -28,30 +29,27 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
         self.displaysAddressBar = false
-
+        
+        self.navigationItem.title = "Aftercare"
+        /*
+        let backItem = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(self.returnToApp))
+        self.navigationItem.setLeftBarButton(backItem, animated: false)
+        */
         self.dataSource = self
         
         self.messageInputToolbar.displaysRightAccessoryImage = false
         self.messageInputToolbar.leftAccessoryButton = nil
-        self.messageInputToolbar.alpha = 0.5
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        print("msg box frame \(self.messageInputToolbar.frame)")
-        
-        /*
-        let bottomConst = NSLayoutConstraint(item: self.messageInputToolbar, attribute: NSLayoutAttribute.bottom, relatedBy: NSLayoutRelation.equal, toItem: self.view, attribute: NSLayoutAttribute.bottom, multiplier: 1, constant: 50)
-        
-        self.view.addConstraint(bottomConst)
-        */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc
+    private func returnToApp(_ sender: Any?){
+        print("return to app")
     }
     
     public func conversationViewController(_ conversationViewController: ATLConversationViewController, participantFor identity: LYRIdentity) -> ATLParticipant {

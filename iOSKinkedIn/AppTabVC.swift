@@ -12,8 +12,9 @@ class AppTabVC: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectedIndex = 3
+        self.selectedIndex = 1
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -37,6 +37,7 @@ class DiscoverVC: UIViewController {
         NotificationCenter.default.addObserver(self,
             selector: #selector(profileLoaded), name: NOTIFY_PROFILE_LOADED, object: nil)
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.view.makeToastActivity(.center)
         
         KinkedInAPI.listProfiles { uuids in

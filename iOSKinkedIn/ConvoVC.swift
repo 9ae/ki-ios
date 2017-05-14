@@ -17,7 +17,7 @@ class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataS
         super.viewDidLoad()
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .short
-        
+        self.hidesBottomBarWhenPushed = true
         self.dataSource = self
 
         self.messageInputToolbar.displaysRightAccessoryImage = false
