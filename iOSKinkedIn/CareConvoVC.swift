@@ -42,6 +42,47 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
         self.messageInputToolbar.displaysRightAccessoryImage = false
         self.messageInputToolbar.leftAccessoryButton = nil
         
+        updateReplyState(state: .none)
+        makeOptionsView()
+    }
+    
+    private func makeOptionsView() {
+        let LABEL_HEIGHT = 20
+        let LABEL_PADDING = 8
+        let opts: [String] = ["Yes", "No"]
+        var uiOpts: [UIView] = []
+        
+        for o in opts {
+            let lbl = UILabel()
+            lbl.text = o
+            lbl.textColor = UIColor.white
+            lbl.backgroundColor = UIColor.blue
+            lbl.textAlignment = .center
+            lbl.translatesAutoresizingMaskIntoConstraints = false
+            uiOpts.append(lbl)
+        }
+        
+        let stack = UIStackView(arrangedSubviews: uiOpts)
+        stack.axis = .vertical
+        stack.alignment = .trailing
+        stack.distribution = .fillEqually
+        stack.spacing = 8.0
+        
+        //self.view.translatesAutoresizingMaskIntoConstraints = false
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(stack)
+        
+        let stackHeight = (LABEL_HEIGHT*uiOpts.count) + (LABEL_PADDING*(uiOpts.count-1))
+        
+        let ypos = NSLayoutConstraint(item: stack, attribute: .bottom, relatedBy: .equal,
+                                      toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)
+        let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
+                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(stackHeight))
+        let xa = NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal,
+                                    toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
+        let xe = NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal,
+                                    toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
+        self.view.addConstraints([ypos, height, xa, xe])
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +112,9 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
     
     public func updateReplyState(state: ReplyType){
         self.replyState = state
+        
+        //TODO close keyboard
+        
         switch (state){
         case .text:
             self.messageInputToolbar.isHidden = false

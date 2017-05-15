@@ -26,6 +26,7 @@
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
+		004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E786F1EC9AA0100306EEA /* TempViewController.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
 		0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */; };
 		0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */; };
@@ -134,6 +135,7 @@
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
+		004E786F1EC9AA0100306EEA /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoVC.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 				00ED8A221E74377800096497 /* setup */,
 				00ED8A251E74386E00096497 /* connect */,
 				001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */,
+				004E786F1EC9AA0100306EEA /* TempViewController.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -768,6 +771,7 @@
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
+				004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */,
 				0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,
