@@ -9,9 +9,14 @@
 import UIKit
 import Atlas
 
-class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
+enum ReplyType {
+    case none, text, choice
+}
+
+class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource, ATLConversationViewControllerDelegate {
     
     private var dateFormatter = DateFormatter()
+    private var replyState: ReplyType = .text
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +36,8 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
         self.displaysAddressBar = false
         
         self.navigationItem.title = "Aftercare"
-        /*
-        let backItem = UIBarButtonItem(title: "Close", style: UIBarButtonItemStyle.plain, target: nil, action: #selector(self.returnToApp))
-        self.navigationItem.setLeftBarButton(backItem, animated: false)
-        */
         self.dataSource = self
+        self.delegate = self
         
         self.messageInputToolbar.displaysRightAccessoryImage = false
         self.messageInputToolbar.leftAccessoryButton = nil
@@ -45,11 +47,6 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @objc
-    private func returnToApp(_ sender: Any?){
-        print("return to app")
     }
     
     public func conversationViewController(_ conversationViewController: ATLConversationViewController, participantFor identity: LYRIdentity) -> ATLParticipant {
@@ -68,6 +65,21 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
         return NSAttributedString(string: "", attributes: [:])
     }
     
+    public func conversationViewController(_ viewController: ATLConversationViewController, didSend message: LYRMessage) {
+        updateReplyState(state: .none)
+    }
+    
+    public func updateReplyState(state: ReplyType){
+        self.replyState = state
+        switch (state){
+        case .text:
+            self.messageInputToolbar.isHidden = false
+        case .choice:
+            self.messageInputToolbar.isHidden = true
+        default:
+            self.messageInputToolbar.isHidden = true
+        }
+    }
 
     /*
     // MARK: - Navigation
