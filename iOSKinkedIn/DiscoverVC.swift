@@ -16,7 +16,6 @@ class DiscoverVC: UIViewController {
     var dailyMatchesController: DailyMatchesVC
     
     var profilesQueue = [String]()
-    //var fakeProfiles = [Profile]()
     
     required init?(coder aDecoder: NSCoder) {
         self.dailyMatchesController = DailyMatchesVC()
@@ -40,13 +39,12 @@ class DiscoverVC: UIViewController {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.view.makeToastActivity(.center)
         
+        /* comment out when not testing discover
         KinkedInAPI.listProfiles { uuids in
             self.profilesQueue = uuids
             self._popProfile()
         }
-        
-        //fakeProfiles = ShadowUsers().users
-        //self._popProfile()
+        */
         
         todayMatches.delegate = dailyMatchesController
         todayMatches.dataSource = dailyMatchesController

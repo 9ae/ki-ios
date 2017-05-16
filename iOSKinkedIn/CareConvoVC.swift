@@ -17,6 +17,11 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
     
     private var dateFormatter = DateFormatter()
     private var replyState: ReplyType = .text
+    private var stack = UIStackView()
+    private var stackHeightConstraint: NSLayoutConstraint?
+    
+    private let LABEL_HEIGHT = 30
+    private let LABEL_PADDING = 8
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,47 +47,60 @@ class CareConvoVC: ATLConversationViewController, ATLConversationViewControllerD
         self.messageInputToolbar.displaysRightAccessoryImage = false
         self.messageInputToolbar.leftAccessoryButton = nil
         
-        updateReplyState(state: .none)
-        makeOptionsView()
+        _makeOptionsView()
+        _setOptions(["No", "Never"])
     }
     
-    private func makeOptionsView() {
-        let LABEL_HEIGHT = 20
-        let LABEL_PADDING = 8
-        let opts: [String] = ["Yes", "No"]
-        var uiOpts: [UIView] = []
-        
-        for o in opts {
-            let lbl = UILabel()
-            lbl.text = o
-            lbl.textColor = UIColor.white
-            lbl.backgroundColor = UIColor.blue
-            lbl.textAlignment = .center
-            lbl.translatesAutoresizingMaskIntoConstraints = false
-            uiOpts.append(lbl)
-        }
-        
-        let stack = UIStackView(arrangedSubviews: uiOpts)
+    private func _makeOptionsView() {
         stack.axis = .vertical
         stack.alignment = .trailing
         stack.distribution = .fillEqually
         stack.spacing = 8.0
         
-        //self.view.translatesAutoresizingMaskIntoConstraints = false
         stack.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stack)
-        
-        let stackHeight = (LABEL_HEIGHT*uiOpts.count) + (LABEL_PADDING*(uiOpts.count-1))
         
         let ypos = NSLayoutConstraint(item: stack, attribute: .bottom, relatedBy: .equal,
                                       toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)
         let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
-                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(stackHeight))
+                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
         let xa = NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal,
                                     toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
         let xe = NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal,
                                     toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
-        self.view.addConstraints([ypos, height, xa, xe])
+        view.addConstraints([ypos, height, xa, xe])
+        stackHeightConstraint = height
+    }
+    
+    private func _setOptions(_ opts: [String]){
+        // Remove exsiting elements not tested yet
+        for sv in stack.arrangedSubviews {
+            sv.removeFromSuperview()
+        }
+        
+        for o in opts {
+            let lbl = UIButton()
+            lbl.setTitle(o, for: .normal)
+            lbl.setTitleColor(UIColor.white, for: .normal)
+            lbl.backgroundColor = UIColor.blue
+            lbl.translatesAutoresizingMaskIntoConstraints = false
+            lbl.frame.size.height = CGFloat(LABEL_HEIGHT)
+            lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
+            stack.addArrangedSubview(lbl)
+        }
+        let stackHeight = (LABEL_HEIGHT*opts.count) + (LABEL_PADDING*(opts.count-1))
+        let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
+                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(stackHeight))
+        if let _oldHeight = self.stackHeightConstraint {
+            view.removeConstraint(_oldHeight)
+        }
+        view.addConstraint(height)
+        stackHeightConstraint = height
+        updateReplyState(state: .choice)
+    }
+    
+    func optionTapped(_ sender: UIButton){
+        print("response \(sender.title(for: .normal))")
     }
 
     override func didReceiveMemoryWarning() {
