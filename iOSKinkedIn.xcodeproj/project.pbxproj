@@ -38,6 +38,7 @@
 		0070C3701E569E11000D5BA0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0070C3731E569E23000D5BA0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C3721E569E23000D5BA0 /* RealmSwift.framework */; };
 		0070C3741E569E23000D5BA0 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C3721E569E23000D5BA0 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */; };
 		008597251EA3628900583621 /* StaticMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008597241EA3628900583621 /* StaticMasterVC.swift */; };
 		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
@@ -147,6 +148,7 @@
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		0070C3721E569E23000D5BA0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpIntroVC.swift; sourceTree = "<group>"; };
 		008597241EA3628900583621 /* StaticMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMasterVC.swift; sourceTree = "<group>"; };
 		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */,
+				007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */,
 			);
 			name = aftercare;
 			sourceTree = "<group>";
@@ -780,6 +783,7 @@
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */,
+				007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */,
 				00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */,
 				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
 				00B50D301EB0CF0000CA6744 /* ChangeProfileVC.swift in Sources */,

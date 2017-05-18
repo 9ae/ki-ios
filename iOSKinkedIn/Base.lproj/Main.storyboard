@@ -927,7 +927,7 @@ please apply for an invitation on trykinkedin.com</string>
         <!--I Need Help-->
         <scene sceneID="y73-sa-QX2">
             <objects>
-                <viewController title="I Need Help" id="kd2-52-VNb" sceneMemberID="viewController">
+                <viewController title="I Need Help" id="kd2-52-VNb" customClass="HelpIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luB-mU-FhJ"/>
                         <viewControllerLayoutGuide type="bottom" id="6xY-Aw-hS1"/>
@@ -953,7 +953,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="10.5" y="60" width="197" height="30"/>
                                         <state key="normal" title="Issue regarding another user"/>
                                         <connections>
-                                            <segue destination="rTP-2v-JDH" kind="show" id="lAY-hF-MAk"/>
+                                            <action selector="chatWithKia:" destination="kd2-52-VNb" eventType="touchUpInside" id="PPc-G4-a1U"/>
                                         </connections>
                                     </button>
                                 </subviews>
