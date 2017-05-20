@@ -24,7 +24,8 @@ class HelpIntroVC: UIViewController {
     @IBAction func chatWithKia(_ sender: Any) {
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
-            convo.conversation = try LayerHelper.startConvo(withUser: "aftercare")
+            convo.conversation = try LayerHelper.startConvo(withUser: "aftercare", distinct: false)
+            try convo.conversation.synchronizeAllMessages(.toFirstUnread)
             convo.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(convo, animated: false)
         } catch {

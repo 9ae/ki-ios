@@ -162,12 +162,18 @@ class CareConvoVC: ATLConversationViewController,
     
     public func conversationViewController(_ viewController: ATLConversationViewController, didSend message: LYRMessage) {
         //updateReplyState(state: .none)
+        print("LYR didSend")
+    }
+    
+    public func conversationViewController(_ viewController: ATLConversationViewController, didFailSending message: LYRMessage, error: Error) {
+        print("LYR didFailSending")
+        print(error.localizedDescription)
     }
     
     public func updateReplyState(state: ReplyType){
         self.replyState = state
         
-        //TODO close keyboard
+        self.messageInputToolbar.resignFirstResponder()
         
         switch (state){
         case .text:
@@ -177,6 +183,7 @@ class CareConvoVC: ATLConversationViewController,
         default:
             self.messageInputToolbar.isHidden = true
         }
+
     }
     
     func didReceiveLayerObjectsDidChangeNotification(_ notification: NSNotification){

@@ -53,13 +53,13 @@ class LayerHelper {
         }
     }
     
-    static func startConvo(withUser: String) throws -> LYRConversation {
+    static func startConvo(withUser: String, distinct: Bool = true) throws -> LYRConversation {
         let people : Set<String> = [withUser]
         guard let _client = LayerHelper.client else {
             throw LayerError.CLIENT_NO_SET
         }
         let opts = LYRConversationOptions()
-        opts.distinctByParticipants = true
+        opts.distinctByParticipants = distinct
         
         do {
          let convo = try _client.newConversation(withParticipants: people, options: opts)
