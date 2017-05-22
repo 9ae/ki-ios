@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class RegisterVC: UIViewController, UITextFieldDelegate {
+class RegisterVC: ScrollTextInputVC {
     
     
     @IBOutlet weak var email: UITextField!
@@ -49,11 +49,6 @@ class RegisterVC: UIViewController, UITextFieldDelegate {
                 }
         }
         self.view.makeToastActivity(.center)
-    }
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

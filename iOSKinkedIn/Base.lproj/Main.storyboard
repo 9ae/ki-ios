@@ -412,103 +412,123 @@ Your bio will be visislbe to all KinkedIn users</string>
             <objects>
                 <viewController id="66D-tV-fYN" customClass="RegisterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="NC5-bg-bRY"/>
-                        <viewControllerLayoutGuide type="bottom" id="BvI-b4-sA7"/>
+                        <viewControllerLayoutGuide type="top" id="SQz-3H-4HN"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zg0-ES-uoo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I89-hD-rUV" customClass="UIScrollView">
+                    <view key="view" contentMode="scaleToFill" id="Y0O-nc-WDH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                <rect key="frame" x="47.5" y="253" width="280" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="IvH-zE-Oz2"/>
-                                    <constraint firstAttribute="width" constant="280" id="ZFs-Za-2nF"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
-                                <rect key="frame" x="47.5" y="313" width="280" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="fZD-ud-ZWN"/>
-                                    <constraint firstAttribute="height" constant="40" id="rCj-CW-VuY"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                <rect key="frame" x="47.5" y="370" width="200" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="VDA-OE-44s"/>
-                                    <constraint firstAttribute="height" constant="40" id="kAG-Oh-zBk"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
-                                <rect key="frame" x="267.5" y="373" width="64" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Sign Up"/>
-                                <connections>
-                                    <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                <rect key="frame" x="58.5" y="460" width="258" height="26"/>
-                                <state key="normal">
-                                    <attributedString key="attributedTitle">
-                                        <fragment content="If you already have an account, you can Login">
-                                            <attributes>
-                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
-                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                            </attributes>
-                                        </fragment>
-                                    </attributedString>
-                                </state>
-                                <connections>
-                                    <segue destination="GoA-mT-FEQ" kind="show" identifier="register2login" animates="NO" id="kyl-qd-fTz"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                <rect key="frame" x="50.5" y="536" width="273" height="31"/>
-                                <string key="text">If you would like an invite code,
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-5A-H1d">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-OX-i81">
+                                        <rect key="frame" x="0.0" y="200" width="280" height="405.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qfQ-GA-MwU">
+                                                <rect key="frame" x="0.0" y="0.0" width="280" height="218.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="38.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
+                                                        <rect key="frame" x="0.0" y="58.5" width="280" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="IvH-zE-Oz2"/>
+                                                            <constraint firstAttribute="width" constant="280" id="ZFs-Za-2nF"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
+                                                        <rect key="frame" x="0.0" y="118.5" width="280" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="280" id="fZD-ud-ZWN"/>
+                                                            <constraint firstAttribute="height" constant="40" id="rCj-CW-VuY"/>
+                                                        </constraints>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ago-iQ-LHG">
+                                                        <rect key="frame" x="0.0" y="178.5" width="280" height="40"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
+                                                                <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="160" id="0rI-lB-D7i"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="7Zy-ki-Wle"/>
+                                                                </constraints>
+                                                                <nil key="textColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                                            </textField>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2">
+                                                                <rect key="frame" x="160" y="3" width="120" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <state key="normal" title="Sign Up"/>
+                                                                <connections>
+                                                                    <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
+                                                <rect key="frame" x="0.0" y="268.5" width="280" height="26.5"/>
+                                                <state key="normal">
+                                                    <attributedString key="attributedTitle">
+                                                        <fragment content="If you already have an account, you can Login">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="GoA-mT-FEQ" kind="show" identifier="register2login" animates="NO" id="kyl-qd-fTz"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yi5-a5-hML">
+                                                <rect key="frame" x="0.0" y="345" width="280" height="60.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
+                                                        <rect key="frame" x="3.5" y="0.0" width="273" height="30.5"/>
+                                                        <string key="text">If you would like an invite code,
 please apply for an invitation on trykinkedin.com</string>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                <rect key="frame" x="138.5" y="587" width="98" height="30"/>
-                                <state key="normal" title="Request Invite"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
-                                <rect key="frame" x="6.5" y="213.5" width="362" height="19.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
+                                                        <rect key="frame" x="91" y="30.5" width="98" height="30"/>
+                                                        <state key="normal" title="Request Invite"/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="eh1-OX-i81" firstAttribute="leading" secondItem="o5b-5A-H1d" secondAttribute="leading" id="5PS-wj-k1n"/>
+                                    <constraint firstAttribute="trailing" secondItem="eh1-OX-i81" secondAttribute="trailing" id="cee-Bm-Jo3"/>
+                                    <constraint firstAttribute="bottom" secondItem="eh1-OX-i81" secondAttribute="bottom" constant="40" id="gjh-BG-M6C"/>
+                                    <constraint firstItem="eh1-OX-i81" firstAttribute="top" secondItem="o5b-5A-H1d" secondAttribute="top" constant="200" id="kl8-tQ-6Hs"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="top" secondItem="xF5-W4-76e" secondAttribute="bottom" constant="20" id="AhV-jP-FN2"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="Dg4-ON-2RV"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="F3m-UR-CrZ"/>
-                            <constraint firstItem="xF5-W4-76e" firstAttribute="top" secondItem="Ekf-cw-t7d" secondAttribute="bottom" constant="20" id="KR1-uM-prl"/>
-                            <constraint firstItem="jwn-bZ-yU1" firstAttribute="leading" secondItem="xF5-W4-76e" secondAttribute="leading" id="L2u-Y0-f7c"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="centerY" secondItem="lRc-E2-Vyw" secondAttribute="centerY" id="NQ1-1q-vse"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="cnk-0O-5oQ"/>
-                            <constraint firstItem="Yya-WJ-WzH" firstAttribute="top" secondItem="N7n-dS-83Y" secondAttribute="bottom" constant="50" id="kys-t8-mUe"/>
-                            <constraint firstItem="BvI-b4-sA7" firstAttribute="top" secondItem="f5c-8S-Fv6" secondAttribute="bottom" constant="50" id="mab-eU-7oM"/>
-                            <constraint firstItem="lRc-E2-Vyw" firstAttribute="leading" secondItem="jwn-bZ-yU1" secondAttribute="leading" id="twx-lr-esU"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="top" secondItem="Yya-WJ-WzH" secondAttribute="bottom" constant="20" id="uR6-Ta-1PQ"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="top" secondItem="jwn-bZ-yU1" secondAttribute="bottom" constant="20" id="vBu-fu-DeR"/>
-                            <constraint firstItem="f5c-8S-Fv6" firstAttribute="centerX" secondItem="Yya-WJ-WzH" secondAttribute="centerX" id="vQb-pe-eYF"/>
-                            <constraint firstItem="Ekf-cw-t7d" firstAttribute="centerX" secondItem="I89-hD-rUV" secondAttribute="centerX" id="vj7-s6-lmL"/>
-                            <constraint firstItem="HoB-Vf-Nu2" firstAttribute="leading" secondItem="lRc-E2-Vyw" secondAttribute="trailing" constant="20" id="xB4-Dp-FI0"/>
-                            <constraint firstItem="N7n-dS-83Y" firstAttribute="top" secondItem="lRc-E2-Vyw" secondAttribute="bottom" constant="50" id="xdq-5e-wiW"/>
+                            <constraint firstItem="Zg0-ES-uoo" firstAttribute="top" secondItem="o5b-5A-H1d" secondAttribute="bottom" id="50F-DB-osh"/>
+                            <constraint firstItem="o5b-5A-H1d" firstAttribute="top" secondItem="SQz-3H-4HN" secondAttribute="bottom" id="UTF-Mr-toA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="o5b-5A-H1d" secondAttribute="trailing" id="mw8-9H-nxm"/>
+                            <constraint firstItem="o5b-5A-H1d" firstAttribute="leading" secondItem="Y0O-nc-WDH" secondAttribute="leadingMargin" id="p1I-HP-x6t"/>
                         </constraints>
                     </view>
                     <connections>
@@ -517,6 +537,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="inviteCode" destination="lRc-E2-Vyw" id="epU-Kl-1xu"/>
                         <outlet property="password" destination="jwn-bZ-yU1" id="Kbc-LP-Bxq"/>
                         <outlet property="requestInvite" destination="f5c-8S-Fv6" id="wgq-qr-3b9"/>
+                        <outlet property="scrollView" destination="o5b-5A-H1d" id="BSK-GT-joZ"/>
                         <outlet property="signup" destination="HoB-Vf-Nu2" id="pjZ-vs-0Lw"/>
                         <segue destination="CxT-oB-BvI" kind="show" identifier="register2setup" animates="NO" id="2WY-ZT-It8"/>
                     </connections>
@@ -1637,7 +1658,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dR0-x4-1ic"/>
+        <segue reference="2WY-ZT-It8"/>
         <segue reference="4B1-dj-yOf"/>
         <segue reference="V9a-fD-EEd"/>
         <segue reference="YsC-KU-QWO"/>
