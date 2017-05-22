@@ -41,6 +41,8 @@
 		007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */; };
 		008597251EA3628900583621 /* StaticMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008597241EA3628900583621 /* StaticMasterVC.swift */; };
 		009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009347441ED2A24500E35057 /* ScrollTextInputVC.swift */; };
+		0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */; };
+		009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009840A01ED2EAEB0024EC27 /* ProfileCell.swift */; };
 		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
 		00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7A1E56CF5E00D39CD8 /* Login.swift */; };
@@ -152,6 +154,8 @@
 		007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpIntroVC.swift; sourceTree = "<group>"; };
 		008597241EA3628900583621 /* StaticMasterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StaticMasterVC.swift; sourceTree = "<group>"; };
 		009347441ED2A24500E35057 /* ScrollTextInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextInputVC.swift; sourceTree = "<group>"; };
+		0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryListVC.swift; sourceTree = "<group>"; };
+		009840A01ED2EAEB0024EC27 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
 		00A0CD7A1E56CF5E00D39CD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -379,6 +383,8 @@
 				0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */,
 				0041D5B61E685C4E006DD440 /* DiscoverVC.swift */,
 				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
+				0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */,
+				009840A01ED2EAEB0024EC27 /* ProfileCell.swift */,
 			);
 			name = discover;
 			sourceTree = "<group>";
@@ -772,6 +778,7 @@
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
+				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
@@ -805,6 +812,7 @@
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
+				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 			);

@@ -13,6 +13,7 @@ class Profile {
     var name: String
     var age: Int
     var kinksMatched: Int
+    var vouches: Int
     
     var bio: String?
     var genders: [String] = [String]()
@@ -43,6 +44,7 @@ class Profile {
             print("can't read kinks matched")
             return nil
         }
+        
         self.neoId = neoId
         self.name = _name
         self.age = _age
@@ -60,6 +62,12 @@ class Profile {
             if(_pictures.count > 0){
                 self.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
             }
+        }
+        
+        if let _vouches = profile["vouches"] as? Int {
+            self.vouches = _vouches
+        } else {
+            self.vouches = 0
         }
         
         if let _kinks = profile["kinks"] as? [Any] {
@@ -82,6 +90,7 @@ class Profile {
         self.name = name
         self.age = age
         self.kinksMatched = 0
+        self.vouches = 0
         self.picture_public_id = picture_public_id
     }
     
