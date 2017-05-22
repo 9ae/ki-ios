@@ -15,7 +15,7 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         KinkedInAPI.test { ok in
             if(ok){
                 self.allowGo()
@@ -26,6 +26,8 @@ class SplashVC: UIViewController {
                                                               userInfo: nil, repeats: true);
             }
         }
+        */
+        allowGo()
     }
     
     func allowGo(){
@@ -53,6 +55,7 @@ class SplashVC: UIViewController {
     }
     
     @IBAction func go(_ sender: AnyObject){
+        
         if let token = Login.getToken(){
             KinkedInAPI.setToken(token)
             KinkedInAPI.checkProfileSetup(){ step in
@@ -65,6 +68,7 @@ class SplashVC: UIViewController {
         } else {
             self.performSegue(withIdentifier: "splash2register", sender: sender)
         }
+ 
     }
 
 
