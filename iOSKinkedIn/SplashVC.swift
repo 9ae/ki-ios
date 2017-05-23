@@ -15,18 +15,21 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
+        
         KinkedInAPI.test { ok in
             if(ok){
                 self.allowGo()
             } else {
+                print("Server is down")
+                /*
                 self.waitForReadyTimer = Timer.scheduledTimer(timeInterval: 3,
                                                               target: self,
                                                               selector: #selector(self.pingServer),
                                                               userInfo: nil, repeats: true);
+                */
             }
         }
-        */
+        
         allowGo()
     }
     
@@ -55,7 +58,7 @@ class SplashVC: UIViewController {
     }
     
     @IBAction func go(_ sender: AnyObject){
-        
+        iConsent.isEnabled = false
         if let token = Login.getToken(){
             KinkedInAPI.setToken(token)
             KinkedInAPI.checkProfileSetup(){ step in

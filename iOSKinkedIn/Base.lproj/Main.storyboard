@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -879,6 +880,9 @@ please apply for an invitation on trykinkedin.com</string>
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-eX-3rG">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="180"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rz-c4-EAk">
                                             <rect key="frame" x="8" y="151" width="100" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -905,29 +909,34 @@ please apply for an invitation on trykinkedin.com</string>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MX-Nh-mM2">
-                                            <rect key="frame" x="237" y="95.5" width="13" height="24"/>
+                                            <rect key="frame" x="237" y="96" width="13" height="24"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="e3Z-7n-sza" firstAttribute="trailing" secondItem="Uem-eW-qhQ" secondAttribute="trailingMargin" id="1gG-x9-nUB"/>
+                                    <constraint firstItem="Fz5-eX-3rG" firstAttribute="top" secondItem="Uem-eW-qhQ" secondAttribute="topMargin" constant="-8" id="7Td-04-gpz"/>
                                     <constraint firstItem="LM1-EC-acl" firstAttribute="trailing" secondItem="Uem-eW-qhQ" secondAttribute="trailingMargin" id="AvW-ei-WkS"/>
                                     <constraint firstItem="e3Z-7n-sza" firstAttribute="bottom" secondItem="Uem-eW-qhQ" secondAttribute="bottomMargin" id="H6Y-NR-k5V"/>
                                     <constraint firstItem="LM1-EC-acl" firstAttribute="firstBaseline" secondItem="2MX-Nh-mM2" secondAttribute="firstBaseline" id="IUf-PC-R5S"/>
                                     <constraint firstItem="LM1-EC-acl" firstAttribute="leading" secondItem="2MX-Nh-mM2" secondAttribute="leading" id="JmQ-H5-98h"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Fz5-eX-3rG" secondAttribute="trailing" constant="-8" id="YD9-uO-lp5"/>
                                     <constraint firstItem="QRD-uU-5mp" firstAttribute="top" secondItem="LM1-EC-acl" secondAttribute="bottom" constant="5" id="bWK-P1-GAd"/>
                                     <constraint firstItem="e3Z-7n-sza" firstAttribute="firstBaseline" secondItem="QRD-uU-5mp" secondAttribute="firstBaseline" id="bc4-m2-1vi"/>
+                                    <constraint firstItem="Fz5-eX-3rG" firstAttribute="leading" secondItem="Uem-eW-qhQ" secondAttribute="leadingMargin" constant="-8" id="pnd-VN-XCW"/>
                                     <constraint firstItem="e3Z-7n-sza" firstAttribute="leading" secondItem="QRD-uU-5mp" secondAttribute="leading" id="xjZ-n7-Rrt"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Fz5-eX-3rG" secondAttribute="bottom" constant="-8" id="zRb-1a-lmA"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="kinksValue" destination="QRD-uU-5mp" id="xmx-Kh-zRS"/>
                                     <outlet property="nameLabel" destination="1Rz-c4-EAk" id="n7C-h3-8ON"/>
+                                    <outlet property="picture" destination="Fz5-eX-3rG" id="3Xy-c0-VkL"/>
                                     <outlet property="vouchedLabel" destination="LM1-EC-acl" id="FPC-2q-DwW"/>
                                     <outlet property="vouchedValue" destination="2MX-Nh-mM2" id="s8u-MF-WDd"/>
+                                    <segue destination="cbf-D5-saE" kind="show" identifier="discoverProfile" id="Qrl-so-9dI"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -941,6 +950,119 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89X-XA-4cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-380" y="3194.7526236881563"/>
+        </scene>
+        <!--Discover Profile-->
+        <scene sceneID="xdJ-bd-7UV">
+            <objects>
+                <viewController id="cbf-D5-saE" customClass="DiscoverProfile" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BeP-Ua-o2L"/>
+                        <viewControllerLayoutGuide type="bottom" id="cNh-k3-POC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QOb-jX-E6P">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xHF-Ke-v0S">
+                                <rect key="frame" x="1" y="0.0" width="373" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="5aW-j5-Tie"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-6g-Vl6">
+                                <rect key="frame" x="16" y="300" width="343" height="234"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F0R-9x-z7E">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="19.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Kinks in common" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTQ-OZ-3kh">
+                                                <rect key="frame" x="0.0" y="0.0" width="169" height="19.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vouched by # users " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJm-9k-YlR">
+                                                <rect key="frame" x="174" y="0.0" width="169" height="19.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07b-5H-xvu">
+                                        <rect key="frame" x="0.0" y="39.5" width="343" height="17"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Short bio">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-39-Rp6">
+                                        <rect key="frame" x="0.0" y="76.5" width="343" height="157.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment>
+                                                <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="07b-5H-xvu" secondAttribute="trailing" id="4tv-L5-DXL"/>
+                                    <constraint firstItem="eyK-39-Rp6" firstAttribute="leading" secondItem="kqQ-6g-Vl6" secondAttribute="leading" id="FXT-3x-jQD"/>
+                                    <constraint firstAttribute="trailing" secondItem="F0R-9x-z7E" secondAttribute="trailing" id="W9y-GH-3Ex"/>
+                                    <constraint firstItem="07b-5H-xvu" firstAttribute="leading" secondItem="kqQ-6g-Vl6" secondAttribute="leading" id="aKz-cA-h3k"/>
+                                    <constraint firstItem="F0R-9x-z7E" firstAttribute="leading" secondItem="kqQ-6g-Vl6" secondAttribute="leading" id="fAn-MA-sfd"/>
+                                    <constraint firstAttribute="trailing" secondItem="eyK-39-Rp6" secondAttribute="trailing" id="sUk-8I-zov"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xHF-Ke-v0S" firstAttribute="leading" secondItem="QOb-jX-E6P" secondAttribute="leadingMargin" constant="-15" id="BRU-Lf-BAI"/>
+                            <constraint firstItem="kqQ-6g-Vl6" firstAttribute="top" secondItem="BeP-Ua-o2L" secondAttribute="bottom" constant="300" id="V14-fO-TgN"/>
+                            <constraint firstItem="kqQ-6g-Vl6" firstAttribute="leading" secondItem="QOb-jX-E6P" secondAttribute="leadingMargin" id="ZLe-8H-Ayy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xHF-Ke-v0S" secondAttribute="trailing" constant="-15" id="Zht-2Q-3PD"/>
+                            <constraint firstItem="kqQ-6g-Vl6" firstAttribute="trailing" secondItem="QOb-jX-E6P" secondAttribute="trailingMargin" id="cC3-Cs-hzk"/>
+                            <constraint firstItem="cNh-k3-POC" firstAttribute="top" secondItem="kqQ-6g-Vl6" secondAttribute="bottom" constant="20" id="jLd-QQ-iJz"/>
+                            <constraint firstItem="xHF-Ke-v0S" firstAttribute="top" secondItem="BeP-Ua-o2L" secondAttribute="bottom" id="v9n-0f-FmR"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <navigationItem key="navigationItem" id="uHl-c4-d4G">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Like" id="oi9-iz-Lvh">
+                                <color key="tintColor" red="0.72175717350000002" green="0.0" blue="0.1797026098" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="like:" destination="cbf-D5-saE" id="VBT-PN-G96"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Hide" id="PK2-Qc-ozr">
+                                <color key="tintColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="skip:" destination="cbf-D5-saE" id="QY3-NO-KhJ"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="kinks" destination="wTQ-OZ-3kh" id="4Tu-lz-wFd"/>
+                        <outlet property="longBio" destination="eyK-39-Rp6" id="Eog-Iw-wOz"/>
+                        <outlet property="picture" destination="xHF-Ke-v0S" id="mc7-Cb-Rac"/>
+                        <outlet property="shortBio" destination="07b-5H-xvu" id="xDQ-23-CPm"/>
+                        <outlet property="vouches" destination="gJm-9k-YlR" id="3Mj-D3-BF4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iM-uQ-bdX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="3195"/>
         </scene>
         <!--Profile-->
         <scene sceneID="17H-u1-xPh">
@@ -1590,17 +1712,17 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="hLv-nz-USx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qOH-Un-9Lu">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cyK-FT-Fq7">
-                                <rect key="frame" x="0.0" y="0.0" width="373" height="415"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="415"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="415" id="P3a-Yz-yPA"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="top" translatesAutoresizingMaskIntoConstraints="NO" id="gQH-Bg-gnD">
-                                <rect key="frame" x="0.0" y="400" width="373" height="247"/>
+                                <rect key="frame" x="0.0" y="400" width="375" height="247"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8b-R5-Zzx">
                                         <rect key="frame" x="30" y="40" width="53" height="24"/>
@@ -1609,13 +1731,13 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# kinks in matched" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zku-wK-z1y">
-                                        <rect key="frame" x="236" y="49" width="107" height="15"/>
+                                        <rect key="frame" x="238" y="49" width="107" height="15"/>
                                         <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="12"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D91-AZ-shp">
-                                        <rect key="frame" x="15" y="84" width="343" height="15"/>
+                                        <rect key="frame" x="15" y="84" width="345" height="15"/>
                                         <attributedString key="attributedText">
                                             <fragment content="age, city genders">
                                                 <attributes>
@@ -1626,20 +1748,20 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5G-vK-aiS">
-                                        <rect key="frame" x="15" y="124" width="343" height="159.5"/>
+                                        <rect key="frame" x="15" y="124" width="345" height="159.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fade" translatesAutoresizingMaskIntoConstraints="NO" id="hpo-LJ-LPr">
-                                        <rect key="frame" x="0.0" y="197" width="373" height="50"/>
+                                        <rect key="frame" x="0.0" y="197" width="375" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="PM5-29-Kgl"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I3A-4p-kUO">
-                                        <rect key="frame" x="271" y="217" width="87" height="30"/>
+                                        <rect key="frame" x="273" y="217" width="87" height="30"/>
                                         <state key="normal" title="Read More..."/>
                                         <connections>
                                             <action selector="showBio:" destination="uL9-GD-gCZ" eventType="touchDown" id="9xe-fH-XLP"/>
@@ -1675,7 +1797,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rv6-U5-Xzt">
-                                <rect key="frame" x="308" y="370" width="50" height="50"/>
+                                <rect key="frame" x="310" y="370" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="IDf-V0-Q6a"/>
                                     <constraint firstAttribute="width" constant="50" id="l7m-Dz-Ukb"/>
@@ -1686,7 +1808,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hf-LM-hgv">
-                                <rect key="frame" x="262" y="385" width="30" height="30"/>
+                                <rect key="frame" x="264" y="385" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="L1E-Ip-1B5"/>
                                     <constraint firstAttribute="width" constant="30" id="YyC-NN-Vh6"/>
@@ -1747,7 +1869,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <segue reference="2WY-ZT-It8"/>
         <segue reference="4B1-dj-yOf"/>
         <segue reference="V9a-fD-EEd"/>
-        <segue reference="YsC-KU-QWO"/>
+        <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
+		001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* SetupGendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
@@ -116,6 +117,7 @@
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
+		0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverProfile.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00171A241E56384500640B09 /* SetupGendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGendersVC.swift; sourceTree = "<group>"; };
@@ -385,6 +387,7 @@
 				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
 				0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */,
 				009840A01ED2EAEB0024EC27 /* ProfileCell.swift */,
+				0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */,
 			);
 			name = discover;
 			sourceTree = "<group>";
@@ -776,6 +779,7 @@
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
+				001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,

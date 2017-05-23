@@ -14,7 +14,7 @@ class ProfileCell: UICollectionViewCell {
     @IBOutlet var kinksValue: UILabel!
     @IBOutlet var vouchedLabel: UILabel!
     @IBOutlet var vouchedValue: UILabel!
-    
+    @IBOutlet var picture: UIImageView!
     
     var profile: Profile?
     
@@ -29,6 +29,17 @@ class ProfileCell: UICollectionViewCell {
         } else {
             vouchedValue.isHidden = true
             vouchedLabel.isHidden = true
+        }
+        
+        if let pictureURL = profile.picture {
+            let imgURL = URL(string: pictureURL)
+            do {
+                let imgData = try Data(contentsOf: imgURL!)
+                picture.image = UIImage(data: imgData)
+            } catch {
+                // TODO: use put in place holder image
+                print("error loading profile picture")
+            }
         }
         
     }

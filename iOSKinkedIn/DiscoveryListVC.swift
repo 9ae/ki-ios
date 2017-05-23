@@ -14,6 +14,8 @@ class DiscoveryListVC: UICollectionViewController {
     
     var profilesQueue = [String]()
     var profiles = [Profile]()
+    
+    var selectedProfile : Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +42,6 @@ class DiscoveryListVC: UICollectionViewController {
     }
     
     private func _popProfile(){
-        if profiles.count > 1 {
-            return
-        }
-        
         if profilesQueue.isEmpty {
             return
         }
@@ -59,15 +57,17 @@ class DiscoveryListVC: UICollectionViewController {
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        
+        if let discoverProfile = segue.destination as? DiscoverProfile {
+            discoverProfile.setProfile(selectedProfile!)
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -90,7 +90,7 @@ class DiscoveryListVC: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDelegate
-
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
@@ -98,12 +98,13 @@ class DiscoveryListVC: UICollectionViewController {
     }
     */
 
-    /*
+    
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        selectedProfile = profiles[indexPath.row]
         return true
     }
-    */
+    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
