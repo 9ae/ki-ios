@@ -19,7 +19,7 @@ class ScheduleDateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventLabel.text = "Meet \(withUserName)"
+        eventLabel.text = "Meet \(withUserName!)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,30 +27,31 @@ class ScheduleDateVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func registerNotification(_ trigger: UNCalendarNotificationTrigger){
+    func registerNotification(_ date: Date){
+        let dateComp = datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+        //UNTimeIntervalNotificationTrigger(timeInterval: 30, repeats: false)
+        
         let content = UNMutableNotificationContent()
         content.title = "KinkedIn Aftercare"
-        content.body = "How was are you feeliong about your date with \(withUserName)?"
+        content.body = "How was are you feeling about your date with \(withUserName!)?"
         content.sound = .default()
         
-        let request = UNNotificationRequest(identifier: "KiAftercareCheck", content: content, trigger: trigger)
+        let id = "KiAftercareCheck\(date.description)"
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(request) { (error) in
             if error != nil {
                 print(error?.localizedDescription)
-            } else {
-                print("we will checkin with you after then")
             }
-            self.navigationController?.popViewController(animated: false)
         }
+        self.navigationController?.popViewController(animated: false)
     }
     
     @IBAction func onSaveDate(_ sender: AnyObject){
         if(checkinOption.isOn){
-            let date = datePicker.date.addingTimeInterval(15) // in sections
-            let dateComp = datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
-            registerNotification(trigger)
+            let date = datePicker.date.addingTimeInterval(30) // in sections
+            registerNotification(date)
         }
     }
 
