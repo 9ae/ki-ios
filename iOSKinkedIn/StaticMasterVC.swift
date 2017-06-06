@@ -10,7 +10,7 @@ import UIKit
 
 class StaticMasterVC: UICollectionViewController {
     
-    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "changeSettings", "changePrivacy", "partnerRequests"]
+    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "changePrivacy", "partnerRequests"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
