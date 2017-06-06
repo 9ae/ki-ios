@@ -37,7 +37,7 @@ class ScheduleDateVC: UIViewController {
         content.body = "How was are you feeling about your date with \(withUserName!)?"
         content.sound = .default()
         
-        let id = "KiAftercareCheck\(date.description)"
+        let id = "KIA \(date.description)"
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
         center.add(request) { (error) in
