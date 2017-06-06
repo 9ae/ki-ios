@@ -12,7 +12,6 @@ import Atlas
 class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
     
     private var dateFormatter = DateFormatter()
-    private let eventStore = EKEventStore()
 
     override func viewDidLoad() {
         super.viewDidLoad()
