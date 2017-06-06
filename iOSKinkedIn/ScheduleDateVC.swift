@@ -50,7 +50,7 @@ class ScheduleDateVC: UIViewController {
     
     @IBAction func onSaveDate(_ sender: AnyObject){
         if(checkinOption.isOn){
-            let date = datePicker.date.addingTimeInterval(30) // in sections
+            let date = datePicker.date.addingTimeInterval(43200) // in sections
             registerNotification(date)
         }
     }
