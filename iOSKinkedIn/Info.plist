@@ -38,8 +38,6 @@
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>To set your profile pictures</string>
-	<key>NSCalendarsUsageDescription</key>
-	<string>We need to access your calendar tp help you keep track of your dates</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

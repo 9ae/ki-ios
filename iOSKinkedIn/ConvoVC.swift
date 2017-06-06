@@ -8,7 +8,6 @@
 
 import UIKit
 import Atlas
-import EventKit
 
 class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
     
@@ -33,47 +32,15 @@ class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataS
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    func checkCalendarAuthorizationStatus(){
-        let status = EKEventStore.authorizationStatus(for: .event)
-        switch (status){
-        case .notDetermined:
-            requestAccessToCalendar()
-        case .authorized:
-            goToScheduleScreen()
-        default:
-            requireCalendarAccess()
-        }
-    }
-    
-    func requireCalendarAccess(){
-        let alert = UIAlertController(title: "Requires Calendar Access", message:
-            "For us to help you schedule dates we would need calendar acesss", preferredStyle: .alert)
-        self.present(alert, animated: true, completion: nil)
-    }
-    
+
     func goToScheduleScreen(){
         let scheduleScreen = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
         scheduleScreen.withUserName = self.title
         self.navigationController?.pushViewController(scheduleScreen, animated: false)
     }
     
-    func requestAccessToCalendar(){
-        eventStore.requestAccess(to: .event) { (accessGranted, error) in
-            if(accessGranted){
-                DispatchQueue.main.async {
-                    self.goToScheduleScreen()
-                }
-            } else {
-                DispatchQueue.main.async {
-                    self.requireCalendarAccess()
-                }
-            }
-        }
-    }
-    
     func onScheduleDate(_ sender: AnyObject){
-        checkCalendarAuthorizationStatus()
+        goToScheduleScreen()
     }
     
     public func conversationViewController(_ conversationViewController: ATLConversationViewController, participantFor identity: LYRIdentity) -> ATLParticipant {
