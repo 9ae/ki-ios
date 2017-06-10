@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
     let layerID = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c"
-    var notificationLaunchOptions : [String:String?] = ["category": nil, "identifier": nil]
+    var notificationLaunchOptions : [String:Any?] = ["category": nil, "identifier": nil]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -119,22 +119,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         print("applicationDidBecomeActive")
         
-        guard let category = self.notificationLaunchOptions["category"] else {
+        guard let category = self.notificationLaunchOptions["category"] as? String else {
+            print("category is not nil")
             return
         }
         
-        if(category == NOTECAT_AFTERCARE){
-            print("launch aftercare")
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
+        self.window?.rootViewController = navCtrl
+        self.window?.makeKeyAndVisible()
             
-            self.window = UIWindow(frame: UIScreen.main.bounds)
-            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-            let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
-            self.window?.rootViewController = navCtrl
-            self.window?.makeKeyAndVisible()
-            navCtrl.pushViewController(LayerHelper.makeAftercareVC(), animated: true)
+        switch(category){
+            case NOTECAT_AFTERCARE:
+                navCtrl.pushViewController(LayerHelper.makeAftercareVC(), animated: false)
+            case NOTECAT_PARTNER_REQUEST:
+                let vc = storyboard.instantiateViewController(withIdentifier: "partnerRequests") as! PartnerRequestsVC
+                navCtrl.pushViewController(vc, animated: false)
+                print("lauch partner request screen")
+            default:
+                print("not sure what to do")
+                
         }
-
+            
+        self.notificationLaunchOptions["category"] = nil
         
+
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
