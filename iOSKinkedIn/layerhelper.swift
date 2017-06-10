@@ -74,4 +74,16 @@ class LayerHelper {
         }
     }
     
+    static func makeAftercareVC() -> CareConvoVC {
+        let convo = CareConvoVC(layerClient: LayerHelper.client!)
+        do{
+            convo.conversation = try LayerHelper.startConvo(withUser: "aftercare", distinct: false)
+            try convo.conversation.synchronizeAllMessages(.toFirstUnread)
+            convo.hidesBottomBarWhenPushed = true
+        } catch {
+            print("failed to start aftercare convo")
+        }
+        return convo
+    }
+    
 }

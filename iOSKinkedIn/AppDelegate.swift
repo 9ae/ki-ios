@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
     let layerID = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c"
+    var notificationLaunchOptions : [String:String?] = ["category": nil, "identifier": nil]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -36,28 +37,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             }
         }
         let center = UNUserNotificationCenter.current()
-        //center.delegate = self
+        center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if(granted){
                 // print("register categories")
-                //center.setNotificationCategories([self.partnershipCat()])
+                center.setNotificationCategories([self.partnershipCat(), self.aftercareCat()])
             }
         }
 
         application.registerForRemoteNotifications()
-        
         NotificationCenter.default.addObserver(self, selector: #selector(self.kiapiAccessTokenSet), name: NOTIFY_TOKEN_SET, object: nil)
+        
+        print("didFinishLaunchingWithOptions")
         
         return true
     }
     
     private func partnershipCat() -> UNNotificationCategory {
-        let confirm = UNNotificationAction(identifier: "partner_confirm", title: "Confirm")
-        let deny = UNNotificationAction(identifier: "partner_deny", title: "Deny")
+        //let confirm = UNNotificationAction(identifier: "partner_confirm", title: "Confirm")
+        //let deny = UNNotificationAction(identifier: "partner_deny", title: "Deny")
+        let view = UNNotificationAction(identifier: "partner_view", title: "View", options: [.foreground])
         let ignore = UNNotificationAction(identifier: "partner_ignore", title: "Ignore",
                                           options: [.destructive] )
-        return UNNotificationCategory(identifier: "partner_request", actions: [confirm, deny, ignore], intentIdentifiers: [])
+        return UNNotificationCategory(identifier: NOTECAT_PARTNER_REQUEST, actions: [view, ignore], intentIdentifiers: [])
         //TODO: attach to action or now should probably just
+    }
+    
+    private func aftercareCat() -> UNNotificationCategory {
+        let talk = UNNotificationAction(identifier: NOTIACT_TALK, title: "Answer", options: [.foreground])
+        let ignore = UNNotificationAction(identifier: NOTIACT_IGNORE, title: "Ignore")
+        return UNNotificationCategory(identifier: NOTECAT_AFTERCARE, actions: [talk, ignore], intentIdentifiers: [])
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
@@ -101,11 +110,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-
+        print("applicationWillEnterForeground")
+        
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        print("applicationDidBecomeActive")
+        
+        guard let category = self.notificationLaunchOptions["category"] else {
+            return
+        }
+        
+        if(category == NOTECAT_AFTERCARE){
+            print("launch aftercare")
+            
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
+            self.window?.rootViewController = navCtrl
+            self.window?.makeKeyAndVisible()
+            navCtrl.pushViewController(LayerHelper.makeAftercareVC(), animated: true)
+        }
+
+        
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -160,15 +189,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     */
 }
 
-/*
+
 extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+        /*
         guard let data = response.notification.request.content.userInfo["data"] as? [String: Any] else {
             return
         }
+        */
+        // print("notification recieved: \(response)");
+        //print(data);
         
+        self.notificationLaunchOptions["category"] = response.notification.request.content.categoryIdentifier
+        
+        /*
+        switch(category){
+            case "aftercare_checkin":
+                print("launch aftercare")
+                self.notificationLaunchOptions["category"] = category
+            
+            case "partner_request":
+                print("show partner request")
+            default:
+                print("unhandled category \(category)")
+        }
+        */
+        
+        completionHandler();
+        /*
         guard let request_id = data["request_id"] as? Int else {
             return
         }
@@ -184,7 +233,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 //go to partner requests screen
                 break
         }
-        
+        */
     }
 }
-*/
+

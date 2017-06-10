@@ -36,6 +36,7 @@ class ScheduleDateVC: UIViewController {
         content.title = "KinkedIn Aftercare"
         content.body = "How was are you feeling about your date with \(withUserName!)?"
         content.sound = .default()
+        content.categoryIdentifier = NOTECAT_AFTERCARE
         
         let id = "KIA \(date.description)"
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
@@ -50,7 +51,7 @@ class ScheduleDateVC: UIViewController {
     
     @IBAction func onSaveDate(_ sender: AnyObject){
         if(checkinOption.isOn){
-            let date = datePicker.date.addingTimeInterval(43200) // in sections
+            let date = datePicker.date.addingTimeInterval(30) // in sections 12 hrs = 43200
             registerNotification(date)
         }
     }

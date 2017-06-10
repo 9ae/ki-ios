@@ -29,11 +29,13 @@ class DiscoveryListVC: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         self.view.makeToastActivity(.center)
+        
         KinkedInAPI.listProfiles { uuids in
             self.profilesQueue = uuids
             print("Got \(uuids.count) profiles")
             self._popProfile()
         }
+ 
     }
 
     override func didReceiveMemoryWarning() {
