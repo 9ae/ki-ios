@@ -37,6 +37,11 @@ class RegisterVC: ScrollTextInputVC {
     }
     
     @IBAction func register(_ sender: AnyObject) {
+        signup.isEnabled = false
+        UIView.animate(withDuration: 0.5) { 
+            self.signup.alpha = 0.1
+        }
+        
         KinkedInAPI.register(
             email: email.text!,
             password: password.text!,

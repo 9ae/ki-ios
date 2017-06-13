@@ -14,7 +14,7 @@ class LoginVC: ScrollTextInputVC {
     @IBOutlet var fieldEmail: UITextField!
     @IBOutlet var fieldPassword: UITextField!
     
-    var loginBtnSender: AnyObject?
+    var loginBtnSender: UIButton?
     var userNeoId: String?
 
     override func viewDidLoad() {
@@ -33,7 +33,11 @@ class LoginVC: ScrollTextInputVC {
     }
     
     @IBAction func login(_ sender: AnyObject){
-        loginBtnSender = sender
+        loginBtnSender = sender as? UIButton
+        loginBtnSender?.isEnabled = false
+        UIView.animate(withDuration: 0.5){
+            self.loginBtnSender?.alpha = 0.1
+        }
         if let email = fieldEmail.text,
             let password = fieldPassword.text {
             KinkedInAPI.login(email: email, password: password, callback: checkProfileCreated)

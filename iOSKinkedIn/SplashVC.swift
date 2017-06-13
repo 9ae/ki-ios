@@ -59,6 +59,9 @@ class SplashVC: UIViewController {
     
     @IBAction func go(_ sender: AnyObject){
         iConsent.isEnabled = false
+        UIView.animate(withDuration: 0.5){
+            self.iConsent.alpha = 0.1
+        }
         if let token = Login.getToken(){
             KinkedInAPI.setToken(token)
             KinkedInAPI.checkProfileSetup(){ step in
