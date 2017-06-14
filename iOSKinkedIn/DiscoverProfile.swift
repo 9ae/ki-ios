@@ -71,11 +71,15 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
         longBio.attributedText = bioText.attributedString
     }
     
-    func setProfile(_ profile: Profile){
+    func setProfile(_ profile: Profile, isDiscoverMode: Bool = true){
         self._profile = profile
         
         self.title = profile.name
         self.navigationItem.title = profile.name
+        
+        if(!isDiscoverMode){
+            self.navigationItem.setRightBarButtonItems([], animated: false)
+        }
         
     }
 

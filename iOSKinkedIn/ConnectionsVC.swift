@@ -65,6 +65,7 @@ class ConnectionsVC: UITableViewController {
             convo.title = profile.name
             convo.displaysAddressBar = false
             convo.conversation = try LayerHelper.startConvo(withUser: profile.neoId)
+            convo.profile = profile
             self.navigationController?.pushViewController(convo, animated: false)
         } catch {
             print("layer failed to start convo")

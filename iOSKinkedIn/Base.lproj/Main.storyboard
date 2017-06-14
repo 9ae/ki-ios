@@ -972,7 +972,7 @@ please apply for an invitation on trykinkedin.com</string>
         <!--Discover Profile-->
         <scene sceneID="xdJ-bd-7UV">
             <objects>
-                <viewController id="cbf-D5-saE" customClass="DiscoverProfile" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="discoverProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cbf-D5-saE" customClass="DiscoverProfile" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BeP-Ua-o2L"/>
                         <viewControllerLayoutGuide type="bottom" id="cNh-k3-POC"/>
