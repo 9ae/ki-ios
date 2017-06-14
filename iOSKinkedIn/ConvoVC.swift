@@ -23,8 +23,9 @@ class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataS
         self.messageInputToolbar.displaysRightAccessoryImage = false
         self.messageInputToolbar.leftAccessoryButton = nil
         
-        let scheduleEvent = UIBarButtonItem.init(title: "Set Date", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
-        self.navigationItem.rightBarButtonItem = scheduleEvent
+        let scheduleEvent = UIBarButtonItem.init(image: #imageLiteral(resourceName: "calendar"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
+        let viewProfile = UIBarButtonItem.init(image: #imageLiteral(resourceName: "info"), style: .plain, target: self, action: #selector(self.onViewProfile))
+        self.navigationItem.setRightBarButtonItems([viewProfile, scheduleEvent], animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +37,10 @@ class ConvoVC: ATLConversationViewController, ATLConversationViewControllerDataS
         let scheduleScreen = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
         scheduleScreen.withUserName = self.title
         self.navigationController?.pushViewController(scheduleScreen, animated: false)
+    }
+    
+    func onViewProfile(_ sender: AnyObject){
+        
     }
     
     func onScheduleDate(_ sender: AnyObject){
