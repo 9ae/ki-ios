@@ -420,4 +420,15 @@ class KinkedInAPI {
             }
         }
     }
+    
+    static func partners(callback: @escaping(_ ids: [String]) -> Void){
+        get("self/partners"){ json in
+            let job = Woz(json){ result in
+                if let uuids = result as? [String] {
+                    callback(uuids)
+                }
+            }
+            job.run(requiresToken: true)
+        }
+    }
 }
