@@ -438,4 +438,11 @@ class KinkedInAPI {
             job.run(requiresToken: true)
         }
     }
+    
+    static func removePartner(_ uuid: String){
+        delete("self/partners/\(uuid)") { json in
+            print(json)
+        }
+    }
+    
 }

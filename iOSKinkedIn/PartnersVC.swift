@@ -94,14 +94,41 @@ class PartnersVC: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let uuid = self.partners[indexPath.row].neoId
+        
+        self.view.makeToastActivity(.center)
+        
+        KinkedInAPI.readProfile(uuid) { profile in
+            let profileView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "discoverProfileVC") as! DiscoverProfile
+            profileView.setProfile(profile, isDiscoverMode: false)
+            self.view.hideToastActivity()
+            self.navigationController?.pushViewController(profileView, animated: false)
+        }
+    }
+    
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    
+        let remove = UITableViewRowAction(style: .destructive, title: "Remove") { action, index in
+            let ind = index.row
+            let uuid = self.partners[ind].neoId
+            KinkedInAPI.removePartner(uuid)
+            self.partners.remove(at: ind)
+            self.tableView.reloadData()
+            
+        }
+        remove.backgroundColor = UIColor.red
+
+        return [remove]
+    }
 
     /*
     // Override to support editing the table view.

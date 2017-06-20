@@ -345,7 +345,6 @@
 			isa = PBXGroup;
 			children = (
 				008597241EA3628900583621 /* StaticMasterVC.swift */,
-				00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */,
 			);
 			name = change;
 			sourceTree = "<group>";
@@ -353,6 +352,7 @@
 		00BF02461EB5A60600A7DF1B /* partners */ = {
 			isa = PBXGroup;
 			children = (
+				00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */,
 				00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */,
 			);
 			name = partners;
