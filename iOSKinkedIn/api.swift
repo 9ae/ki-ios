@@ -421,12 +421,19 @@ class KinkedInAPI {
         }
     }
     
-    static func partners(callback: @escaping(_ ids: [String]) -> Void){
+    static func partners(callback: @escaping(_ users: [SimpleProfile]) -> Void){
         get("self/partners"){ json in
             let job = Woz(json){ result in
-                if let uuids = result as? [String] {
-                    callback(uuids)
+                if let resArray = result as? [Any] {
+                    var users: [SimpleProfile] = []
+                    for usr in resArray {
+                        if let pro = SimpleProfile((usr as? [String: Any])!){
+                            users.append(pro)
+                        }
+                    }
+                    callback(users)
                 }
+                
             }
             job.run(requiresToken: true)
         }

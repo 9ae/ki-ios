@@ -8,6 +8,26 @@
 
 import Foundation
 
+class SimpleProfile {
+    var neoId: String
+    var name: String
+    
+    init?(_ json: [String:Any]){
+        guard let _id = json["uuid"] as? String else {
+            return nil
+        }
+        
+        guard let _name = json["name"] as? String else {
+            return nil
+        }
+        
+        self.neoId = _id
+        self.name = _name
+        
+    }
+    
+}
+
 class Profile {
     var neoId: String
     var name: String

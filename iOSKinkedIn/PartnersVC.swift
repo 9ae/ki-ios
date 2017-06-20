@@ -10,14 +10,14 @@ import UIKit
 
 class PartnersVC: UITableViewController {
     
-    var partnerUUIDS: [String] = []
+    var partners: [SimpleProfile] = []
     var newPartnersEmail: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         KinkedInAPI.partners { (result) in
-            self.partnerUUIDS = result
+            self.partners = result
             self.tableView.reloadData()
         }
     }
@@ -36,13 +36,13 @@ class PartnersVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return self.partnerUUIDS.count
+        return self.partners.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getOrCreateCell("partnerNameCell")
-        cell.textLabel?.text = partnerUUIDS[indexPath.row]
+        cell.textLabel?.text = self.partners[indexPath.row].name
         return cell
     }
     

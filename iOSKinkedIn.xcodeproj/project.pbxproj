@@ -67,6 +67,7 @@
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
 		00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1C6C01EC5A63100A295C0 /* layerhelper.swift */; };
 		00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F36C4E1E74F04F0061905D /* CProfile.swift */; };
+		00FD2A751EF6FB190015749A /* BasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD2A741EF6FB190015749A /* BasicVC.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
 		EB4D3BE2042256B198045EFE /* Pods_iOSKinkedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */; };
 		F0E30A0072FD34780B13D594 /* Pods_iOSKinkedInUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A43E642C023C6C0874ED96 /* Pods_iOSKinkedInUITests.framework */; };
@@ -182,6 +183,7 @@
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
 		00F1C6C01EC5A63100A295C0 /* layerhelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layerhelper.swift; sourceTree = "<group>"; };
 		00F36C4E1E74F04F0061905D /* CProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProfile.swift; sourceTree = "<group>"; };
+		00FD2A741EF6FB190015749A /* BasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicVC.swift; sourceTree = "<group>"; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedIn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -396,6 +398,7 @@
 		00ED8A241E7437EB00096497 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				00FD2A731EF6FAF60015749A /* profile */,
 				0035F4A91EC70A7F0002C7A6 /* aftercare */,
 				0025651E1EB839C900B7BF2A /* vouch */,
 				00BF02461EB5A60600A7DF1B /* partners */,
@@ -423,6 +426,14 @@
 				006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */,
 			);
 			name = connect;
+			sourceTree = "<group>";
+		};
+		00FD2A731EF6FAF60015749A /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				00FD2A741EF6FB190015749A /* BasicVC.swift */,
+			);
+			name = profile;
 			sourceTree = "<group>";
 		};
 		60EDCD05462830E481D434C8 /* Frameworks */ = {
@@ -823,6 +834,7 @@
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
+				00FD2A751EF6FB190015749A /* BasicVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
