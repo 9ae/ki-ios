@@ -10,7 +10,7 @@ import UIKit
 
 class PartnersVC: UITableViewController {
     
-    var partners: [SimpleProfile] = []
+    var partners: [Profile] = []
     var newPartnersEmail: String?
 
     override func viewDidLoad() {

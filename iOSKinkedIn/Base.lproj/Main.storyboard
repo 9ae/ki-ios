@@ -718,42 +718,6 @@ please apply for an invitation on trykinkedin.com</string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPW-46-tDZ">
-                                <rect key="frame" x="16" y="440" width="343" height="88"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="niJ-zB-hFR"/>
-                                </constraints>
-                                <date key="date" timeIntervalSinceReferenceDate="-343256826.81762791">
-                                    <!--1990-02-15 02:52:53 +0000-->
-                                </date>
-                            </datePicker>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="owY-1y-tUv">
-                                <rect key="frame" x="30" y="345" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="K2s-0w-eyt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to be called?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8MV-Tp-WoN">
-                                <rect key="frame" x="31" y="310" width="178" height="15"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your birthday?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdl-gI-oTO">
-                                <rect key="frame" x="31" y="405" width="131" height="15"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
-                                <rect key="frame" x="144" y="630" width="87" height="37"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-vh-X1Z">
                                 <rect key="frame" x="100" y="250" width="175" height="30"/>
                                 <state key="normal" title="Select Photo from Library"/>
@@ -762,27 +726,35 @@ please apply for an invitation on trykinkedin.com</string>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qb-Jf0">
-                                <rect key="frame" x="137.5" y="94" width="100" height="136"/>
+                                <rect key="frame" x="138" y="94" width="100" height="136"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="DcD-gH-8PF"/>
                                     <constraint firstAttribute="height" constant="136" id="QK0-kC-sL1"/>
                                 </constraints>
                             </imageView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-qk-b8u">
+                                <rect key="frame" x="16" y="300" width="343" height="330"/>
+                                <connections>
+                                    <segue destination="ZeK-JH-Ubf" kind="embed" identifier="proBasicCreate" id="OqW-3u-gFh"/>
+                                </connections>
+                            </containerView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
+                                <rect key="frame" x="152" y="630" width="71" height="37"/>
+                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pPW-46-tDZ" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="11U-aS-Zm3"/>
                             <constraint firstItem="zPg-qb-Jf0" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="5TM-AM-qSY"/>
                             <constraint firstItem="bFN-vh-X1Z" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="7x1-N2-jGE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="pPW-46-tDZ" secondAttribute="trailing" id="8UG-W0-GAn"/>
-                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" constant="15" id="BE6-SO-Y4j"/>
-                            <constraint firstItem="pPW-46-tDZ" firstAttribute="top" secondItem="Gdl-gI-oTO" secondAttribute="bottom" constant="20" id="CCX-fR-q8e"/>
+                            <constraint firstItem="aw9-vC-09a" firstAttribute="top" secondItem="hNE-qk-b8u" secondAttribute="bottom" id="EAU-7K-LPG"/>
                             <constraint firstItem="bFN-vh-X1Z" firstAttribute="top" secondItem="zPg-qb-Jf0" secondAttribute="bottom" constant="20" id="I8k-gG-XHN"/>
-                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="top" secondItem="bFN-vh-X1Z" secondAttribute="bottom" constant="30" id="PJF-dd-TcY"/>
-                            <constraint firstItem="8MV-Tp-WoN" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" constant="15" id="Sem-jS-81C"/>
-                            <constraint firstItem="Gdl-gI-oTO" firstAttribute="top" secondItem="owY-1y-tUv" secondAttribute="bottom" constant="30" id="fln-3B-qBg"/>
-                            <constraint firstItem="owY-1y-tUv" firstAttribute="top" secondItem="8MV-Tp-WoN" secondAttribute="bottom" constant="20" id="ihl-7i-FK7"/>
-                            <constraint firstItem="owY-1y-tUv" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leading" constant="30" id="sf4-kg-Pws"/>
+                            <constraint firstItem="aw9-vC-09a" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="Qgi-ZU-2jh"/>
+                            <constraint firstItem="hNE-qk-b8u" firstAttribute="top" secondItem="bFN-vh-X1Z" secondAttribute="bottom" constant="20" id="h5U-7Y-9tL"/>
+                            <constraint firstItem="Rst-Kc-agM" firstAttribute="top" secondItem="aw9-vC-09a" secondAttribute="bottom" id="icN-pJ-lW4"/>
+                            <constraint firstItem="hNE-qk-b8u" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="ik9-AZ-W9B"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hNE-qk-b8u" secondAttribute="trailing" id="jhK-oM-mGa"/>
                             <constraint firstItem="zPg-qb-Jf0" firstAttribute="top" secondItem="sEi-in-SRW" secondAttribute="bottom" constant="30" id="wd8-3L-7Wa"/>
                         </constraints>
                     </view>
@@ -794,8 +766,6 @@ please apply for an invitation on trykinkedin.com</string>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="fieldBirthday" destination="pPW-46-tDZ" id="5Lq-jw-DKV"/>
-                        <outlet property="fieldName" destination="owY-1y-tUv" id="c5G-1c-gq4"/>
                         <outlet property="imagePicked" destination="zPg-qb-Jf0" id="Jbr-0F-xKh"/>
                     </connections>
                 </viewController>
@@ -1198,67 +1168,6 @@ please apply for an invitation on trykinkedin.com</string>
             </objects>
             <point key="canvasLocation" x="-380" y="1700"/>
         </scene>
-        <!--BasicVC-->
-        <scene sceneID="z7O-Ze-v97">
-            <objects>
-                <viewController id="ec4-2d-2JB" customClass="BasicVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3uJ-dF-OCj"/>
-                        <viewControllerLayoutGuide type="bottom" id="3aK-1b-gk5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QCc-a5-iJ3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-Zu-GzA">
-                                <rect key="frame" x="24" y="28" width="327" height="321"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to be called?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-uv-HeS">
-                                        <rect key="frame" x="0.0" y="0.0" width="327" height="14.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMS-DN-yHd">
-                                        <rect key="frame" x="0.0" y="26.5" width="327" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="di2-2b-rf4"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your birthday?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drn-jA-PLh">
-                                        <rect key="frame" x="0.0" y="78.5" width="327" height="14.5"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P74-kw-uza">
-                                        <rect key="frame" x="0.0" y="105" width="327" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="-343256826.81762791">
-                                            <!--1990-02-15 02:52:53 +0000-->
-                                        </date>
-                                    </datePicker>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="leading" secondItem="QCc-a5-iJ3" secondAttribute="leadingMargin" constant="8" id="6w2-nz-jpp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Xeh-Zu-GzA" secondAttribute="trailing" constant="8" id="Q6D-6D-cYx"/>
-                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="top" secondItem="3uJ-dF-OCj" secondAttribute="bottom" constant="8" id="oVz-up-nkm"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="birthdayField" destination="P74-kw-uza" id="k6p-t2-DNc"/>
-                        <outlet property="nameField" destination="bMS-DN-yHd" id="ZVc-qS-pb3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="shF-De-6Vt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1053.5999999999999" y="1629.5352323838083"/>
-        </scene>
         <!--Discover-->
         <scene sceneID="X9a-Hs-gcS">
             <objects>
@@ -1651,6 +1560,9 @@ please apply for an invitation on trykinkedin.com</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="bHM-ti-Wem" kind="show" id="mcd-T0-ciB"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Een-FH-419" detailTextLabel="Q6L-v6-0ot" style="IBUITableViewCellStyleValue1" id="qg3-gW-2zM">
                                         <rect key="frame" x="0.0" y="244" width="375" height="44"/>
@@ -1749,6 +1661,40 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-8a-KOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-609" y="3963"/>
+        </scene>
+        <!--Edit Profile-->
+        <scene sceneID="0i6-Ff-a1j">
+            <objects>
+                <viewController id="bHM-ti-Wem" customClass="EditBasicVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N2k-ej-eRo"/>
+                        <viewControllerLayoutGuide type="bottom" id="fD1-RZ-b7n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mSy-9l-1Eu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-Wn-U4r">
+                                <rect key="frame" x="16" y="84" width="343" height="534"/>
+                                <connections>
+                                    <segue destination="ZeK-JH-Ubf" kind="embed" identifier="proBasicEdit" id="yZe-BP-Euf"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ekp-Wn-U4r" firstAttribute="top" secondItem="N2k-ej-eRo" secondAttribute="bottom" constant="20" id="1qe-Ns-GWu"/>
+                            <constraint firstItem="ekp-Wn-U4r" firstAttribute="leading" secondItem="mSy-9l-1Eu" secondAttribute="leadingMargin" id="hXn-hH-ZnR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ekp-Wn-U4r" secondAttribute="trailing" id="qIj-4y-nb3"/>
+                            <constraint firstItem="fD1-RZ-b7n" firstAttribute="top" secondItem="ekp-Wn-U4r" secondAttribute="bottom" id="rCj-1P-Kf9"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Edit Profile" id="RXT-T0-WhU"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fT-LI-3Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="266" y="3970"/>
         </scene>
         <!--Temp View Controller-->
         <scene sceneID="iWL-tf-IEc">
@@ -2189,6 +2135,67 @@ Respected boundaries &amp; were open and honest in their communication</string>
             </objects>
             <point key="canvasLocation" x="-380" y="2480.9595202398805"/>
         </scene>
+        <!--Basic ProfileVC-->
+        <scene sceneID="06S-Q1-MaB">
+            <objects>
+                <viewController id="ZeK-JH-Ubf" customClass="BasicProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2NB-ey-PxZ"/>
+                        <viewControllerLayoutGuide type="bottom" id="fMH-TO-2Ol"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rOI-aG-OSs">
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="534"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-Zu-GzA">
+                                <rect key="frame" x="0.0" y="0.0" width="343" height="321"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to be called?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-uv-HeS">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMS-DN-yHd">
+                                        <rect key="frame" x="0.0" y="26.5" width="343" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="di2-2b-rf4"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your birthday?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drn-jA-PLh">
+                                        <rect key="frame" x="0.0" y="78.5" width="343" height="14.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P74-kw-uza">
+                                        <rect key="frame" x="0.0" y="105" width="343" height="216"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="-343256826.81762791">
+                                            <!--1990-02-15 02:52:53 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="top" secondItem="rOI-aG-OSs" secondAttribute="top" id="Fai-WI-l1U"/>
+                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="leading" secondItem="rOI-aG-OSs" secondAttribute="leading" id="PvQ-vZ-JOt"/>
+                            <constraint firstAttribute="trailing" secondItem="Xeh-Zu-GzA" secondAttribute="trailing" id="VOt-Qb-3u4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="birthdayField" destination="P74-kw-uza" id="QJL-3k-nBc"/>
+                        <outlet property="nameField" destination="bMS-DN-yHd" id="5y0-K8-6L3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bjU-av-qY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1054" y="3969"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Fade" width="2" height="50"/>
@@ -2202,10 +2209,11 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="4B1-dj-yOf"/>
-        <segue reference="2WY-ZT-It8"/>
-        <segue reference="V9a-fD-EEd"/>
         <segue reference="zGX-bB-pEm"/>
+        <segue reference="2WY-ZT-It8"/>
+        <segue reference="4B1-dj-yOf"/>
+        <segue reference="V9a-fD-EEd"/>
+        <segue reference="yZe-BP-Euf"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

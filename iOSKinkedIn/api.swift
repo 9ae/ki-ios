@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://kinkedin-dev.herokuapp.com/"
+let HOST_URL = "https://hms-staging.herokuapp.com/"
 
 enum ProfileAction: Int {
     case hide=0, skip, like
@@ -319,6 +319,26 @@ class KinkedInAPI {
         }
     }
     
+    /*
+    static func myProfile(_ callback: @escaping(_ profile: Profile)->Void){
+        get("self/profile"){ json in
+            let job = Woz(json){ result in
+                guard let pro = result as? [String: Any] else {
+                    return
+                }
+                
+                guard let name = pro["name"] as? String else {
+                    return
+                }
+                
+                let profile = Profile(neoId: KinkedInAPI.token, name: name)
+                callback(profile)
+            }
+            job.run(requiresToken: true)
+        }
+    }
+    */
+    
     static func updateProfile(_ body: [String: Any]) {
         put("self/profile", parameters: body){ json in
             print(json)
@@ -421,15 +441,18 @@ class KinkedInAPI {
         }
     }
     
-    static func partners(callback: @escaping(_ users: [SimpleProfile]) -> Void){
+    static func partners(callback: @escaping(_ users: [Profile]) -> Void){
         get("self/partners"){ json in
             let job = Woz(json){ result in
                 if let resArray = result as? [Any] {
-                    var users: [SimpleProfile] = []
+                    var users: [Profile] = []
                     for usr in resArray {
-                        if let pro = SimpleProfile((usr as? [String: Any])!){
-                            users.append(pro)
+                        if let profile = usr as? [String:Any] {
+                            if let pro = Profile(profile){
+                                users.append(pro)
+                            }
                         }
+                        
                     }
                     callback(users)
                 }

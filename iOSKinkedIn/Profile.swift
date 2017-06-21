@@ -8,26 +8,6 @@
 
 import Foundation
 
-class SimpleProfile {
-    var neoId: String
-    var name: String
-    
-    init?(_ json: [String:Any]){
-        guard let _id = json["uuid"] as? String else {
-            return nil
-        }
-        
-        guard let _name = json["name"] as? String else {
-            return nil
-        }
-        
-        self.neoId = _id
-        self.name = _name
-        
-    }
-    
-}
-
 class Profile {
     var neoId: String
     var name: String
@@ -42,6 +22,23 @@ class Profile {
     var picture: String?
     var city: String?
     var picture_public_id: String?
+    var birthday: Date?
+    
+    init?(_ json: [String:Any]){
+        guard let _id = json["uuid"] as? String else {
+            return nil
+        }
+        
+        guard let _name = json["name"] as? String else {
+            return nil
+        }
+        
+        self.neoId = _id
+        self.name = _name
+        self.age = 0
+        self.kinksMatched = 0
+        self.vouches = 0
+    }
     
     init?(_ neoId: String, json: [String:Any]){
      
@@ -112,6 +109,12 @@ class Profile {
         self.kinksMatched = 0
         self.vouches = 0
         self.picture_public_id = picture_public_id
+    }
+    
+    func setBirthday(_ date: String){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        self.birthday = dateFormatter.date(from: date)
     }
     
     

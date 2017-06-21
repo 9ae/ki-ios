@@ -8,12 +8,7 @@
 
 import UIKit
 
-class SetupViewVC: UIViewController, UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        self.view.endEditing(true)
-        return false
-    }
+class SetupViewVC: UIViewController {
     
     func alert(_ msg: String, title: String){
         let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)

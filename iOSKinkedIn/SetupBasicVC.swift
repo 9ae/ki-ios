@@ -10,22 +10,13 @@ import UIKit
 
 class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    @IBOutlet var fieldName: UITextField?
-    @IBOutlet var fieldBirthday: UIDatePicker?
     @IBOutlet weak var imagePicked: UIImageView!
+    var basicVC: BasicProfileVC?
     
     var imageUpdated = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        fieldName?.delegate = self
-        
-        let today = Date()
-        var dc = DateComponents()
-        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        dc.year = -18
-        fieldBirthday?.maximumDate = calendar.date(byAdding: dc, to: today)
         
     }
     
@@ -64,15 +55,18 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
   
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         
-        var missing = [String]()
         if(identifier=="basic2kinks"){
-            if((fieldName?.text?.isEmpty)!){
+            var missing = [String]()
+            if let isName = basicVC?.isNameSet() {
+                print(isName)
+            } else {
                 missing.append("preferred name")
             }
             
             if(!imageUpdated) {
                 missing.append("profile picture")
             }
+            
             if(missing.count>0){
                 missingFields(missing)
                 return false
@@ -81,35 +75,28 @@ class SetupBasicVC: SetupViewVC, UIImagePickerControllerDelegate, UINavigationCo
             }
         }
         
-        return false
+        return true
     }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        if let image = self.imagePicked.image, let data = UIImageJPEGRepresentation(image, 1.0){
-            print("Converted image to data of width:\(image.size.width)")
-            let cloud = CloudNine(data)
-            cloud.startUpload()
-        } else {
-            print("Unable to convert image")
-        }
-
-        var params = [String:Any]()
         
-        if let name = fieldName?.text {
-            params["name"] = name
+        if (segue.identifier == "proBasicCreate"){
+            basicVC = segue.destination as? BasicProfileVC
+        } else if(segue.identifier == "basic2kinks") {
+            if let image = self.imagePicked.image, let data = UIImageJPEGRepresentation(image, 1.0){
+                print("Converted image to data of width:\(image.size.width)")
+                let cloud = CloudNine(data)
+                cloud.startUpload()
+            } else {
+                print("Unable to convert image")
+            }
+            basicVC?.post()
         }
         
-        if let birthday = fieldBirthday?.date, let calendar = fieldBirthday?.calendar {
-            params["birthday"] = [
-                "year": calendar.component(.year, from: birthday),
-                "month": calendar.component(.month, from: birthday),
-                "date": calendar.component(.day, from: birthday)
-            ]
-        }
+        
 
-        KinkedInAPI.updateProfile(params)
     }
 
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BasicVC: UIViewController {
+class BasicProfileVC: UIViewController {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var birthdayField: UIDatePicker!
@@ -30,7 +30,12 @@ class BasicVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func values() -> [String: Any] {
+    func update(name: String, birthday: Date){
+        nameField.text = name
+        birthdayField.date = birthday
+    }
+    
+    func post() {
         var params = [String:Any]()
         
         if let name = nameField?.text {
@@ -44,11 +49,11 @@ class BasicVC: UIViewController {
                 "date": calendar.component(.day, from: birthday)
             ]
         }
-        return params
+        KinkedInAPI.updateProfile(params)
     }
     
-    func hasName() -> Bool {
-        return nameField?.text != nil
+    func isNameSet() -> Bool {
+        return nameField.text != nil
     }
     
 
