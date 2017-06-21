@@ -64,13 +64,7 @@ class SplashVC: UIViewController {
         }
         if let token = Login.getToken(){
             KinkedInAPI.setToken(token)
-            KinkedInAPI.checkProfileSetup(){ step in
-                if(step == 0){
-                    self.performSegue(withIdentifier: "splash2setup", sender: sender)
-                } else {
-                    self.performSegue(withIdentifier: "splash2app", sender: sender)
-                }
-            }
+            self.performSegue(withIdentifier: "splash2app", sender: sender)
         } else {
             self.performSegue(withIdentifier: "splash2register", sender: sender)
         }

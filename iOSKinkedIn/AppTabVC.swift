@@ -9,11 +9,19 @@
 import UIKit
 
 class AppTabVC: UITabBarController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.selectedIndex = 2
-        // Do any additional setup after loading the view.
+        KinkedInAPI.checkProfileSetup(){ step in
+            if(step == 0){
+                self.selectedIndex = 1
+                if let changeVC = self.selectedViewController as? StaticMasterVC {
+                    changeVC.toEditProfile()
+                }
+            } else {
+                self.selectedIndex = 2
+            }
+        }
         
     }
 

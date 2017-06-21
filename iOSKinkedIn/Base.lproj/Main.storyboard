@@ -541,7 +541,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="requestInvite" destination="f5c-8S-Fv6" id="wgq-qr-3b9"/>
                         <outlet property="scrollView" destination="o5b-5A-H1d" id="BSK-GT-joZ"/>
                         <outlet property="signup" destination="HoB-Vf-Nu2" id="pjZ-vs-0Lw"/>
-                        <segue destination="CxT-oB-BvI" kind="show" identifier="register2setup" animates="NO" id="2WY-ZT-It8"/>
+                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="register2app" id="wD5-Qq-Cqx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NcM-LK-Wkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -627,7 +627,6 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="fieldEmail" destination="dFb-tZ-FDH" id="WKA-kv-GS1"/>
                         <outlet property="fieldPassword" destination="dc4-13-kDD" id="Ac3-RP-YYM"/>
                         <outlet property="scrollView" destination="Md2-Ih-8gc" id="e6U-8K-5hh"/>
-                        <segue destination="CxT-oB-BvI" kind="show" identifier="login2setup" animates="NO" id="dR0-x4-1ic"/>
                         <segue destination="BXg-oS-gY0" kind="showDetail" identifier="login2app" action="showViewController:sender:" id="4B1-dj-yOf"/>
                     </connections>
                 </viewController>
@@ -1335,7 +1334,7 @@ please apply for an invitation on trykinkedin.com</string>
                                     <constraint firstAttribute="bottom" secondItem="V7N-Ej-k6R" secondAttribute="bottom" constant="8" id="vyg-cF-1KE"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="dKl-OU-aUA" kind="show" id="pth-27-PC0"/>
+                                    <segue destination="dKl-OU-aUA" kind="show" identifier="editProfile" animates="NO" id="pth-27-PC0"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="changePreferences" id="vKa-Fy-eob">
@@ -1510,12 +1509,12 @@ please apply for an invitation on trykinkedin.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wGH-ad-pQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-610" y="4810"/>
+            <point key="canvasLocation" x="-486" y="4816"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="6cb-nu-OjA">
             <objects>
-                <tableViewController title="Edit Profile" id="dKl-OU-aUA" sceneMemberID="viewController">
+                <tableViewController title="Edit Profile" id="dKl-OU-aUA" customClass="EditProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqD-y0-Rm8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1530,7 +1529,7 @@ please apply for an invitation on trykinkedin.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">
                                                     <rect key="frame" x="8" y="23" width="359" height="161"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="120" id="4HN-cg-Bob"/>
@@ -1571,15 +1570,39 @@ please apply for an invitation on trykinkedin.com</string>
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I am ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Een-FH-419">
-                                                    <rect key="frame" x="15" y="11" width="51" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I identify as" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Een-FH-419">
+                                                    <rect key="frame" x="15" y="11" width="88" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Genders, Roles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q6L-v6-0ot">
-                                                    <rect key="frame" x="224" y="11" width="116" height="21"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Genders" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q6L-v6-0ot">
+                                                    <rect key="frame" x="275" y="11" width="65" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="bsX-Z1-mM4" detailTextLabel="3Ur-4V-AXW" style="IBUITableViewCellStyleValue1" id="lO1-TO-XqN">
+                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lO1-TO-XqN" id="DCV-zH-AcY">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I play as ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bsX-Z1-mM4">
+                                                    <rect key="frame" x="15" y="11" width="81" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Roles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Ur-4V-AXW">
+                                                    <rect key="frame" x="298" y="11" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1589,7 +1612,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="wVG-D8-MDH" detailTextLabel="BzE-gU-Fhs" style="IBUITableViewCellStyleValue1" id="ZIp-Ak-syH">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZIp-Ak-syH" id="6cI-Sj-2Bt">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -1613,7 +1636,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="cxE-5Y-iyI" style="IBUITableViewCellStyleDefault" id="npX-c6-7m6">
-                                        <rect key="frame" x="0.0" y="332" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="376" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="npX-c6-7m6" id="29n-m5-pml">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -1630,7 +1653,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pN9-p1-AmU" style="IBUITableViewCellStyleDefault" id="XHU-wr-y52">
-                                        <rect key="frame" x="0.0" y="376" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="420" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHU-wr-y52" id="nfP-ac-g0Y">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
@@ -1660,7 +1683,7 @@ please apply for an invitation on trykinkedin.com</string>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-8a-KOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-609" y="3963"/>
+            <point key="canvasLocation" x="-486" y="3963"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="0i6-Ff-a1j">
@@ -2144,7 +2167,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="fMH-TO-2Ol"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rOI-aG-OSs">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="534"/>
+                        <rect key="frame" x="0.0" y="0.0" width="343" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-Zu-GzA">
@@ -2210,10 +2233,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zGX-bB-pEm"/>
-        <segue reference="2WY-ZT-It8"/>
-        <segue reference="4B1-dj-yOf"/>
+        <segue reference="wD5-Qq-Cqx"/>
         <segue reference="V9a-fD-EEd"/>
-        <segue reference="yZe-BP-Euf"/>
+        <segue reference="OqW-3u-gFh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>

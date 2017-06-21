@@ -52,6 +52,10 @@ class StaticMasterVC: UICollectionViewController {
     
         return cell
     }
+    
+    func toEditProfile(){
+        self.performSegue(withIdentifier: "editProfile", sender: self)
+    }
 
     // MARK: UICollectionViewDelegate
 

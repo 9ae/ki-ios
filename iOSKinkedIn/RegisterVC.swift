@@ -48,7 +48,7 @@ class RegisterVC: ScrollTextInputVC {
             inviteCode: inviteCode.text!) { success in
                 self.view.hideToastActivity()
                 if(success){
-                    self.performSegue(withIdentifier: "register2setup", sender: self)
+                    self.performSegue(withIdentifier: "register2app", sender: self)
                 } else {
                     self.view.makeToast("Error in creating your account. Please check your email and invite code combo, or contact Alice")
                 }

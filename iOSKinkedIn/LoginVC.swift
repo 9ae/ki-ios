@@ -47,14 +47,7 @@ class LoginVC: ScrollTextInputVC {
     }
     
     func checkProfileCreated(_ token: String) {
-        KinkedInAPI.checkProfileSetup(){ step in
-            if(step == 0){
-                self.performSegue(withIdentifier: "login2setup", sender: self.loginBtnSender!)
-            } else {
-                self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
-            }
-        }
-        
+        self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
     }
     
     
