@@ -53,7 +53,7 @@ class StaticMasterVC: UICollectionViewController {
         return cell
     }
     
-    func toEditProfile(){
+    func toSetupProfile(){
         self.performSegue(withIdentifier: "editProfile", sender: self)
     }
 

@@ -16,6 +16,7 @@ struct KiSignature {
     var timestamp: NSNumber
     
     init?(json: [String: Any]){
+        
         guard let _sign = json["signature"] as? String,
         let _key = json["api_key"] as? String,
         let _id = json["public_id"] as? String,

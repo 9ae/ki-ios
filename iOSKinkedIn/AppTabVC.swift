@@ -16,7 +16,7 @@ class AppTabVC: UITabBarController {
             if(step == 0){
                 self.selectedIndex = 1
                 if let changeVC = self.selectedViewController as? StaticMasterVC {
-                    changeVC.toEditProfile()
+                    changeVC.toSetupProfile()
                 }
             } else {
                 self.selectedIndex = 2

@@ -1680,6 +1680,9 @@ please apply for an invitation on trykinkedin.com</string>
                             <outlet property="delegate" destination="dKl-OU-aUA" id="Heq-gl-53l"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="defaultPicture" destination="fVS-xi-vML" id="7OK-73-R9Z"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-8a-KOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

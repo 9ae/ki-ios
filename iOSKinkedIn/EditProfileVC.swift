@@ -11,7 +11,9 @@ import UIKit
 class EditProfileVC: UITableViewController {
     
     var me: Profile?
-
+    @IBOutlet var defaultPicture: UIImageView!
+    var imageUpdated = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -32,6 +34,12 @@ class EditProfileVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 7
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if(indexPath.row == 0){
+            self.prepareImagePicker()
+        }
     }
 
     /*
@@ -89,4 +97,40 @@ class EditProfileVC: UITableViewController {
     }
     */
 
+}
+
+extension EditProfileVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func prepareImagePicker(){
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.allowsEditing = false
+            self.present(imagePicker, animated: false, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                               didFinishPickingMediaWithInfo info: [String : Any]) {
+        picker.dismiss(animated: false) {
+            //UIImagePickerControllerReferenceURL
+            var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
+            selectImage = selectImage?.scaledTo(width: 375.0)
+            self.defaultPicture.image = selectImage
+            self.imageUpdated = true
+            self.uploadImage()
+        }
+        
+    }
+    
+    func uploadImage(){
+        if let image = self.defaultPicture.image, let data = UIImageJPEGRepresentation(image, 1.0){
+            print("Converted image to data of width:\(image.size.width)")
+            let cloud = CloudNine(data)
+            cloud.startUpload()
+        } else {
+            print("Unable to convert image")
+        }
+    }
 }
