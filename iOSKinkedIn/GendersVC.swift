@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
+class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     let CELL_ID = "cellGender"
     @IBOutlet var tableView: UITableView?
@@ -74,13 +74,11 @@ class SetupGendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         let params = ["genders": Array(selectedGenders)]
         KinkedInAPI.updateProfile(params)
     }
-    
-    
-    
     
 }

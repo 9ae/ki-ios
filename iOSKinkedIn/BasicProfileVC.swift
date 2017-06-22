@@ -56,6 +56,11 @@ class BasicProfileVC: UIViewController {
         return nameField.text != nil
     }
     
+    override func viewWillDisappear(_ animated: Bool){
+        post()
+        super.viewWillDisappear(animated)
+    }
+    
 
     /*
     // MARK: - Navigation

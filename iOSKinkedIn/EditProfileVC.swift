@@ -37,8 +37,23 @@ class EditProfileVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if(indexPath.row == 0){
+        switch(indexPath.row){
+        case 0:
             self.prepareImagePicker()
+        case 1:
+            self.performSegue(withIdentifier: "editBasic", sender: self)
+        case 2:
+            self.performSegue(withIdentifier: "editGenders", sender: self)
+        case 3:
+            print("editRoles")
+        case 4:
+            print("editKinks")
+        case 5:
+            print("editBio")
+        case 6:
+            print("partners")
+        default:
+            print("do nothing")
         }
     }
 

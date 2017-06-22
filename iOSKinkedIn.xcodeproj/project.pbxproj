@@ -11,7 +11,7 @@
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
-		00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* SetupGendersVC.swift */; };
+		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
 		00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A2B1E56384500640B09 /* LaunchScreen.storyboard */; };
 		00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A371E56384500640B09 /* iOSKinkedInTests.swift */; };
@@ -46,7 +46,6 @@
 		009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009347441ED2A24500E35057 /* ScrollTextInputVC.swift */; };
 		0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */; };
 		009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009840A01ED2EAEB0024EC27 /* ProfileCell.swift */; };
-		009C609F1EF8D4010068A015 /* EditBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C609E1EF8D4010068A015 /* EditBasicVC.swift */; };
 		009C60A11EF8DD950068A015 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C60A01EF8DD950068A015 /* EditProfileVC.swift */; };
 		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
@@ -124,7 +123,7 @@
 		0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverProfile.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00171A241E56384500640B09 /* SetupGendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGendersVC.swift; sourceTree = "<group>"; };
+		00171A241E56384500640B09 /* GendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GendersVC.swift; sourceTree = "<group>"; };
 		00171A271E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00171A2C1E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00171A2E1E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +163,6 @@
 		009347441ED2A24500E35057 /* ScrollTextInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextInputVC.swift; sourceTree = "<group>"; };
 		0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryListVC.swift; sourceTree = "<group>"; };
 		009840A01ED2EAEB0024EC27 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
-		009C609E1EF8D4010068A015 /* EditBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBasicVC.swift; sourceTree = "<group>"; };
 		009C60A01EF8DD950068A015 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
@@ -349,7 +347,6 @@
 			isa = PBXGroup;
 			children = (
 				008597241EA3628900583621 /* StaticMasterVC.swift */,
-				009C609E1EF8D4010068A015 /* EditBasicVC.swift */,
 				009C60A01EF8DD950068A015 /* EditProfileVC.swift */,
 			);
 			name = change;
@@ -378,7 +375,6 @@
 			children = (
 				0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */,
 				00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */,
-				00171A241E56384500640B09 /* SetupGendersVC.swift */,
 				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,
 				001D21181E5A4B1300317600 /* SetupRolesVC.swift */,
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
@@ -437,6 +433,7 @@
 		00FD2A731EF6FAF60015749A /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				00171A241E56384500640B09 /* GendersVC.swift */,
 				00FD2A741EF6FB190015749A /* BasicProfileVC.swift */,
 			);
 			name = profile;
@@ -802,7 +799,6 @@
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				00BEECBD1EF615E7005EDF36 /* PartnersVC.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
-				009C609F1EF8D4010068A015 /* EditBasicVC.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
@@ -823,7 +819,7 @@
 				00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */,
 				007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */,
 				00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */,
-				00171A251E56384500640B09 /* SetupGendersVC.swift in Sources */,
+				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,

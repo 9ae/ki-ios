@@ -15,23 +15,23 @@
         <!--Genders-->
         <scene sceneID="LO8-zV-vjC">
             <objects>
-                <viewController storyboardIdentifier="vcSetupGenders" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ftr-md-waT" customClass="SetupGendersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcSetupGenders" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ftr-md-waT" customClass="GendersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EkO-u0-WnA"/>
                         <viewControllerLayoutGuide type="bottom" id="qhr-tb-4Qa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fN2-8b-wUr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What gender(s) do you identify with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myD-Jj-PoF">
-                                <rect key="frame" x="16" y="94" width="343" height="21"/>
+                                <rect key="frame" x="16" y="30" width="343" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-t6-la7">
-                                <rect key="frame" x="0.0" y="135" width="375" height="532"/>
+                                <rect key="frame" x="0.0" y="71" width="375" height="483"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellGender" textLabel="MpS-jK-skM" style="IBUITableViewCellStyleDefault" id="d7G-GZ-rmy">
@@ -53,39 +53,27 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="gAG-D8-JUf">
-                                <rect key="frame" x="152" y="630" width="71" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="myD-Jj-PoF" firstAttribute="top" secondItem="EkO-u0-WnA" secondAttribute="bottom" constant="30" id="4av-VW-074"/>
-                            <constraint firstItem="qhr-tb-4Qa" firstAttribute="top" secondItem="gAG-D8-JUf" secondAttribute="bottom" id="6gO-cF-aGU"/>
                             <constraint firstItem="Zb1-t6-la7" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leading" id="Cra-B4-e4S"/>
                             <constraint firstAttribute="trailing" secondItem="Zb1-t6-la7" secondAttribute="trailing" id="L6R-uW-rQD"/>
                             <constraint firstItem="myD-Jj-PoF" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leadingMargin" id="fgt-LT-K0M"/>
                             <constraint firstItem="qhr-tb-4Qa" firstAttribute="top" secondItem="Zb1-t6-la7" secondAttribute="bottom" id="gGE-MR-nQ8"/>
-                            <constraint firstItem="gAG-D8-JUf" firstAttribute="centerX" secondItem="fN2-8b-wUr" secondAttribute="centerX" id="hMF-VV-VdG"/>
                             <constraint firstItem="Zb1-t6-la7" firstAttribute="top" secondItem="myD-Jj-PoF" secondAttribute="bottom" constant="20" id="jAI-So-bIQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="myD-Jj-PoF" secondAttribute="trailing" id="toU-vT-6Sk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Genders" id="YHP-GV-HdC">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="oTh-Tf-b7t">
-                            <connections>
-                                <segue destination="tJp-8Y-k5q" kind="show" identifier="genders2roles" animates="NO" id="sC5-gk-jgd"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Genders" id="YHP-GV-HdC"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="Zb1-t6-la7" id="Zee-7D-cBT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DjU-pN-oi5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2640.8000000000002" y="936.88155922038993"/>
+            <point key="canvasLocation" x="1434" y="3963"/>
         </scene>
         <!--Roles-->
         <scene sceneID="p1W-Zd-mvv">
@@ -113,11 +101,11 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -388,11 +376,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Kinks" id="krs-UQ-xpt">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="Si1-Av-ekJ">
-                            <connections>
-                                <segue destination="ftr-md-waT" kind="show" identifier="kinks2genders" id="uRU-U5-fkh"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="OK" id="Si1-Av-ekJ"/>
                     </navigationItem>
                     <connections>
                         <outlet property="PServiceQuestion" destination="jvf-VH-7W9" id="D0K-dz-Yub"/>
@@ -733,9 +717,6 @@ please apply for an invitation on trykinkedin.com</string>
                             </imageView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-qk-b8u">
                                 <rect key="frame" x="16" y="300" width="343" height="330"/>
-                                <connections>
-                                    <segue destination="ZeK-JH-Ubf" kind="embed" identifier="proBasicCreate" id="OqW-3u-gFh"/>
-                                </connections>
                             </containerView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
                                 <rect key="frame" x="152" y="630" width="71" height="37"/>
@@ -785,7 +766,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4ed-Cx-LbM" id="sy7-2D-crY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-Vr-rD6">
@@ -1438,11 +1419,11 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="62"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foz-FJ-Puj" id="3dr-Hg-RlE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PCM-e0-te3">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="61"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="61.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -1478,11 +1459,11 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gtR-RG-FwE" id="zJa-VH-owc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xkh-Qd-WWy">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                             <nil key="textColor"/>
@@ -1526,7 +1507,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vA4-JN-UFp" id="nBV-7A-xdC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">
@@ -1547,11 +1528,11 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deC-ff-dMb" id="TwV-mN-fuT">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Name, Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ckh-8R-G96">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1559,26 +1540,23 @@ please apply for an invitation on trykinkedin.com</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="bHM-ti-Wem" kind="show" id="mcd-T0-ciB"/>
-                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Een-FH-419" detailTextLabel="Q6L-v6-0ot" style="IBUITableViewCellStyleValue1" id="qg3-gW-2zM">
                                         <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qg3-gW-2zM" id="BYB-QU-Veb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I identify as" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Een-FH-419">
-                                                    <rect key="frame" x="15" y="11" width="88" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="87.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Genders" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Q6L-v6-0ot">
-                                                    <rect key="frame" x="275" y="11" width="65" height="21"/>
+                                                    <rect key="frame" x="275" y="12" width="65" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1591,18 +1569,18 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="288" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lO1-TO-XqN" id="DCV-zH-AcY">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I play as ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bsX-Z1-mM4">
-                                                    <rect key="frame" x="15" y="11" width="81" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="80.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Roles" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3Ur-4V-AXW">
-                                                    <rect key="frame" x="298" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="298" y="12" width="42" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1615,18 +1593,18 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="332" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZIp-Ak-syH" id="6cI-Sj-2Bt">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="I am into..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wVG-D8-MDH">
-                                                    <rect key="frame" x="15" y="11" width="79" height="21"/>
+                                                    <rect key="frame" x="15" y="12" width="79" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Kinks" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BzE-gU-Fhs">
-                                                    <rect key="frame" x="298" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="298.5" y="12" width="41.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1639,11 +1617,11 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="376" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="npX-c6-7m6" id="29n-m5-pml">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bio Questions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cxE-5Y-iyI">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1656,11 +1634,11 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="420" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHU-wr-y52" id="nfP-ac-g0Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pN9-p1-AmU">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -1682,45 +1660,13 @@ please apply for an invitation on trykinkedin.com</string>
                     </tableView>
                     <connections>
                         <outlet property="defaultPicture" destination="fVS-xi-vML" id="7OK-73-R9Z"/>
+                        <segue destination="ZeK-JH-Ubf" kind="show" identifier="editBasic" id="Kb0-tW-kuf"/>
+                        <segue destination="ftr-md-waT" kind="show" identifier="editGenders" id="byy-d2-8RY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-8a-KOK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-486" y="3963"/>
-        </scene>
-        <!--Edit Profile-->
-        <scene sceneID="0i6-Ff-a1j">
-            <objects>
-                <viewController id="bHM-ti-Wem" customClass="EditBasicVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="N2k-ej-eRo"/>
-                        <viewControllerLayoutGuide type="bottom" id="fD1-RZ-b7n"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mSy-9l-1Eu">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ekp-Wn-U4r">
-                                <rect key="frame" x="16" y="84" width="343" height="534"/>
-                                <connections>
-                                    <segue destination="ZeK-JH-Ubf" kind="embed" identifier="proBasicEdit" id="yZe-BP-Euf"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ekp-Wn-U4r" firstAttribute="top" secondItem="N2k-ej-eRo" secondAttribute="bottom" constant="20" id="1qe-Ns-GWu"/>
-                            <constraint firstItem="ekp-Wn-U4r" firstAttribute="leading" secondItem="mSy-9l-1Eu" secondAttribute="leadingMargin" id="hXn-hH-ZnR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ekp-Wn-U4r" secondAttribute="trailing" id="qIj-4y-nb3"/>
-                            <constraint firstItem="fD1-RZ-b7n" firstAttribute="top" secondItem="ekp-Wn-U4r" secondAttribute="bottom" id="rCj-1P-Kf9"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Edit Profile" id="RXT-T0-WhU"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6fT-LI-3Sr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="266" y="3970"/>
         </scene>
         <!--Temp View Controller-->
         <scene sceneID="iWL-tf-IEc">
@@ -2170,20 +2116,20 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="fMH-TO-2Ol"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rOI-aG-OSs">
-                        <rect key="frame" x="0.0" y="0.0" width="343" height="330"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-Zu-GzA">
-                                <rect key="frame" x="0.0" y="0.0" width="343" height="321"/>
+                                <rect key="frame" x="8" y="0.0" width="359" height="321"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What do you want to be called?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uyw-uv-HeS">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="14.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Preferred Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bMS-DN-yHd">
-                                        <rect key="frame" x="0.0" y="26.5" width="343" height="40"/>
+                                        <rect key="frame" x="0.0" y="26.5" width="359" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="di2-2b-rf4"/>
                                         </constraints>
@@ -2192,13 +2138,13 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When is your birthday?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drn-jA-PLh">
-                                        <rect key="frame" x="0.0" y="78.5" width="343" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="78.5" width="359" height="14.5"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P74-kw-uza">
-                                        <rect key="frame" x="0.0" y="105" width="343" height="216"/>
+                                        <rect key="frame" x="0.0" y="105" width="359" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="-343256826.81762791">
                                             <!--1990-02-15 02:52:53 +0000-->
                                         </date>
@@ -2209,10 +2155,12 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Xeh-Zu-GzA" firstAttribute="top" secondItem="rOI-aG-OSs" secondAttribute="top" id="Fai-WI-l1U"/>
-                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="leading" secondItem="rOI-aG-OSs" secondAttribute="leading" id="PvQ-vZ-JOt"/>
-                            <constraint firstAttribute="trailing" secondItem="Xeh-Zu-GzA" secondAttribute="trailing" id="VOt-Qb-3u4"/>
+                            <constraint firstItem="Xeh-Zu-GzA" firstAttribute="leading" secondItem="rOI-aG-OSs" secondAttribute="leading" constant="8" id="PvQ-vZ-JOt"/>
+                            <constraint firstAttribute="trailing" secondItem="Xeh-Zu-GzA" secondAttribute="trailing" constant="8" id="VOt-Qb-3u4"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="birthdayField" destination="P74-kw-uza" id="QJL-3k-nBc"/>
                         <outlet property="nameField" destination="bMS-DN-yHd" id="5y0-K8-6L3"/>
@@ -2220,7 +2168,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjU-av-qY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1054" y="3969"/>
+            <point key="canvasLocation" x="524" y="3963"/>
         </scene>
     </scenes>
     <resources>
@@ -2235,10 +2183,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zGX-bB-pEm"/>
-        <segue reference="wD5-Qq-Cqx"/>
         <segue reference="V9a-fD-EEd"/>
-        <segue reference="OqW-3u-gFh"/>
+        <segue reference="wD5-Qq-Cqx"/>
+        <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
 </document>
