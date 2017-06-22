@@ -319,25 +319,20 @@ class KinkedInAPI {
         }
     }
     
-    /*
-    static func myProfile(_ callback: @escaping(_ profile: Profile)->Void){
+    
+    static func myself(_ callback: @escaping(_ profile: Profile)->Void){
         get("self/profile"){ json in
             let job = Woz(json){ result in
                 guard let pro = result as? [String: Any] else {
                     return
                 }
-                
-                guard let name = pro["name"] as? String else {
-                    return
-                }
-                
-                let profile = Profile(neoId: KinkedInAPI.token, name: name)
+                let profile = Profile.parseSelf(pro)
                 callback(profile)
             }
             job.run(requiresToken: true)
         }
     }
-    */
+    
     
     static func updateProfile(_ body: [String: Any]) {
         put("self/profile", parameters: body){ json in

@@ -9,7 +9,7 @@
 import UIKit
 import Toast_Swift
 
-class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
+class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     let CELL_ID = "cellRole"
     @IBOutlet var tableView: UITableView?
@@ -72,8 +72,8 @@ class SetupRolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
         let params = ["roles" : Array(selectedRoles) ]
         KinkedInAPI.updateProfile(params)
 

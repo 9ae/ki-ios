@@ -78,34 +78,34 @@
         <!--Roles-->
         <scene sceneID="p1W-Zd-mvv">
             <objects>
-                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJp-8Y-k5q" customClass="SetupRolesVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJp-8Y-k5q" customClass="RolesVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ObL-Xf-R8Q"/>
                         <viewControllerLayoutGuide type="bottom" id="JPL-8v-GEz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sZp-CO-JcF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What roles(s) do you identify with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IF-3f-Hsv">
-                                <rect key="frame" x="16" y="94" width="343" height="21"/>
+                                <rect key="frame" x="16" y="30" width="343" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-1z-CRY">
-                                <rect key="frame" x="16" y="135" width="343" height="532"/>
+                                <rect key="frame" x="16" y="71" width="343" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="cellRole" textLabel="PAM-6K-EuA" style="IBUITableViewCellStyleDefault" id="NwL-ET-BFj">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NwL-ET-BFj" id="liJ-xF-tYH">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PAM-6K-EuA">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="43.5"/>
+                                                    <rect key="frame" x="15" y="0.0" width="313" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
@@ -116,18 +116,11 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="ZTC-Zi-zy8">
-                                <rect key="frame" x="152" y="630" width="71" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4IF-3f-Hsv" firstAttribute="leading" secondItem="sZp-CO-JcF" secondAttribute="leadingMargin" id="4Bm-Np-ajW"/>
-                            <constraint firstItem="JPL-8v-GEz" firstAttribute="top" secondItem="ZTC-Zi-zy8" secondAttribute="bottom" id="4I3-xX-pbO"/>
                             <constraint firstItem="tL3-1z-CRY" firstAttribute="top" secondItem="4IF-3f-Hsv" secondAttribute="bottom" constant="20" id="Bie-3y-jye"/>
-                            <constraint firstItem="ZTC-Zi-zy8" firstAttribute="centerX" secondItem="sZp-CO-JcF" secondAttribute="centerX" id="CT5-qF-GBy"/>
                             <constraint firstItem="4IF-3f-Hsv" firstAttribute="top" secondItem="ObL-Xf-R8Q" secondAttribute="bottom" constant="30" id="EUK-nm-0Qg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4IF-3f-Hsv" secondAttribute="trailing" id="Xx4-kr-5IR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tL3-1z-CRY" secondAttribute="trailing" id="apo-DQ-YI3"/>
@@ -135,20 +128,15 @@
                             <constraint firstAttribute="bottomMargin" secondItem="tL3-1z-CRY" secondAttribute="bottom" id="neq-u9-IoB"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Roles" id="Sew-gp-7DB">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="Qwe-FE-OIZ">
-                            <connections>
-                                <segue destination="Dtf-H8-yzL" kind="show" identifier="roles2bio" animates="NO" id="h1b-vI-Pcg"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Roles" id="Sew-gp-7DB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="tL3-1z-CRY" id="ylM-s1-67K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zKu-OQ-yNo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3504" y="943"/>
+            <point key="canvasLocation" x="2314" y="3963"/>
         </scene>
         <!--More About You-->
         <scene sceneID="dAs-el-b8Z">
@@ -209,39 +197,22 @@ Your bio will be visislbe to all KinkedIn users</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nt3-cK-Px6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4231" y="942"/>
-        </scene>
-        <!--Setup PageNC-->
-        <scene sceneID="iwG-2B-kqQ">
-            <objects>
-                <navigationController id="CxT-oB-BvI" customClass="SetupPageNC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zor-rz-SdI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="foG-02-y3o" kind="relationship" relationship="rootViewController" id="uua-qp-n7X"/>
-                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="setup2app" action="showViewController:sender:" id="v8z-vW-Run"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vv1-ii-gL0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1054" y="194"/>
+            <point key="canvasLocation" x="1433" y="4802"/>
         </scene>
         <!--Select Kinks-->
         <scene sceneID="Oc4-wl-uKG">
             <objects>
-                <viewController id="L15-wi-fVb" customClass="SetupKinksWizardVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="L15-wi-fVb" customClass="KinksVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="e2j-b4-Mn7"/>
                         <viewControllerLayoutGuide type="bottom" id="SZA-Rg-e80"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J6O-5P-a1G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-fN-5uh">
-                                <rect key="frame" x="8" y="72" width="359" height="117.5"/>
+                                <rect key="frame" x="8" y="8" width="359" height="117.5"/>
                                 <subviews>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I am turned on by ___" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91t-Al-Ceh">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="19.5"/>
@@ -287,29 +258,8 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     <constraint firstItem="IQX-4F-IZX" firstAttribute="leading" secondItem="DHe-fN-5uh" secondAttribute="leading" id="rwI-eh-3sp"/>
                                 </constraints>
                             </stackView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uc9-pl-6ga">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="kez-X5-iy3"/>
-                                </constraints>
-                                <items>
-                                    <barButtonItem title="Next Question" id="4o0-MF-sF5">
-                                        <connections>
-                                            <action selector="nextQuestion:" destination="L15-wi-fVb" id="9Fy-RM-rDF"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" id="DYf-Ht-PVP">
-                                        <pageControl key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" currentPage="1" id="p7e-Cr-mID">
-                                            <rect key="frame" x="135" y="3.5" width="71" height="37"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        </pageControl>
-                                    </barButtonItem>
-                                </items>
-                            </toolbar>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-9a-aeX">
-                                <rect key="frame" x="1" y="220" width="373" height="403"/>
+                                <rect key="frame" x="1" y="156" width="373" height="398"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-86-JN8" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
@@ -364,26 +314,27 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DHe-fN-5uh" firstAttribute="leading" secondItem="J6O-5P-a1G" secondAttribute="leading" constant="8" id="0J4-97-iG6"/>
-                            <constraint firstItem="Uc9-pl-6ga" firstAttribute="top" secondItem="tol-9a-aeX" secondAttribute="bottom" id="5F3-Xa-yrA"/>
                             <constraint firstAttribute="trailing" secondItem="DHe-fN-5uh" secondAttribute="trailing" constant="8" id="6qp-M8-7mT"/>
+                            <constraint firstItem="SZA-Rg-e80" firstAttribute="top" secondItem="tol-9a-aeX" secondAttribute="bottom" id="QY9-gu-ZNa"/>
                             <constraint firstItem="tol-9a-aeX" firstAttribute="top" secondItem="DHe-fN-5uh" secondAttribute="bottom" constant="30" id="c0G-Mh-JqX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tol-9a-aeX" secondAttribute="trailing" constant="-15" id="dT9-xd-Qbq"/>
-                            <constraint firstItem="SZA-Rg-e80" firstAttribute="top" secondItem="Uc9-pl-6ga" secondAttribute="bottom" id="fPg-Z6-WRW"/>
-                            <constraint firstItem="Uc9-pl-6ga" firstAttribute="leading" secondItem="J6O-5P-a1G" secondAttribute="leading" id="pJ8-FV-Zwf"/>
-                            <constraint firstAttribute="trailing" secondItem="Uc9-pl-6ga" secondAttribute="trailing" id="suc-PB-Liz"/>
                             <constraint firstItem="tol-9a-aeX" firstAttribute="leading" secondItem="J6O-5P-a1G" secondAttribute="leadingMargin" constant="-15" id="xSL-GB-bY9"/>
                             <constraint firstItem="DHe-fN-5uh" firstAttribute="top" secondItem="e2j-b4-Mn7" secondAttribute="bottom" constant="8" id="zML-Bm-txH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Select Kinks" id="krs-UQ-xpt">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="Si1-Av-ekJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="4o0-MF-sF5">
+                            <connections>
+                                <action selector="nextQuestion:" destination="L15-wi-fVb" id="9Fy-RM-rDF"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="PServiceQuestion" destination="jvf-VH-7W9" id="D0K-dz-Yub"/>
                         <outlet property="RServiceQuestion" destination="ZpW-pm-oV1" id="Zlw-14-b1c"/>
                         <outlet property="actQuestion" destination="IQX-4F-IZX" id="DnI-r3-nL9"/>
                         <outlet property="nextQ" destination="4o0-MF-sF5" id="yfc-dL-Skp"/>
-                        <outlet property="okBtn" destination="Si1-Av-ekJ" id="Kul-C2-wAM"/>
                         <outlet property="omakeQuestion" destination="91t-Al-Ceh" id="t6y-Wu-O6W"/>
                         <outlet property="tlv" destination="MQ1-86-JN8" id="zlI-FE-N4J"/>
                         <outlet property="wearQuestion" destination="tn3-Mx-Myf" id="aDX-vV-PUQ"/>
@@ -391,7 +342,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJd-gC-AM1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1834" y="942"/>
+            <point key="canvasLocation" x="400.80000000000001" y="4815.7421289355325"/>
         </scene>
         <!--RegisterVC-->
         <scene sceneID="f2S-JO-gAt">
@@ -680,7 +631,6 @@ please apply for an invitation on trykinkedin.com</string>
                     </view>
                     <connections>
                         <outlet property="iConsent" destination="QLX-ng-anD" id="Bkd-BP-Qg3"/>
-                        <segue destination="CxT-oB-BvI" kind="show" identifier="splash2setup" animates="NO" id="r6W-Lp-HEe"/>
                         <segue destination="66D-tV-fYN" kind="show" identifier="splash2register" animates="NO" id="5CI-cq-ggq"/>
                         <segue destination="BXg-oS-gY0" kind="showDetail" identifier="splash2app" action="showViewController:sender:" id="8hc-Ov-0AX"/>
                     </connections>
@@ -688,70 +638,6 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1284" y="1011.544227886057"/>
-        </scene>
-        <!--About You-->
-        <scene sceneID="Mrs-cP-ls9">
-            <objects>
-                <viewController storyboardIdentifier="vcSetupBasic" useStoryboardIdentifierAsRestorationIdentifier="YES" id="foG-02-y3o" customClass="SetupBasicVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sEi-in-SRW"/>
-                        <viewControllerLayoutGuide type="bottom" id="Rst-Kc-agM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="0BH-bw-o0R">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFN-vh-X1Z">
-                                <rect key="frame" x="100" y="250" width="175" height="30"/>
-                                <state key="normal" title="Select Photo from Library"/>
-                                <connections>
-                                    <action selector="selectPhotoWith_sender:" destination="foG-02-y3o" eventType="touchDown" id="K0K-y8-wJX"/>
-                                </connections>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="zPg-qb-Jf0">
-                                <rect key="frame" x="138" y="94" width="100" height="136"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="DcD-gH-8PF"/>
-                                    <constraint firstAttribute="height" constant="136" id="QK0-kC-sL1"/>
-                                </constraints>
-                            </imageView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hNE-qk-b8u">
-                                <rect key="frame" x="16" y="300" width="343" height="330"/>
-                            </containerView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="aw9-vC-09a">
-                                <rect key="frame" x="152" y="630" width="71" height="37"/>
-                                <color key="pageIndicatorTintColor" red="0.6693925261" green="0.59080362320000002" blue="0.79067707060000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="currentPageIndicatorTintColor" red="0.50851994749999996" green="0.19659152630000001" blue="0.99855035540000003" alpha="1" colorSpace="calibratedRGB"/>
-                            </pageControl>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="zPg-qb-Jf0" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="5TM-AM-qSY"/>
-                            <constraint firstItem="bFN-vh-X1Z" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="7x1-N2-jGE"/>
-                            <constraint firstItem="aw9-vC-09a" firstAttribute="top" secondItem="hNE-qk-b8u" secondAttribute="bottom" id="EAU-7K-LPG"/>
-                            <constraint firstItem="bFN-vh-X1Z" firstAttribute="top" secondItem="zPg-qb-Jf0" secondAttribute="bottom" constant="20" id="I8k-gG-XHN"/>
-                            <constraint firstItem="aw9-vC-09a" firstAttribute="centerX" secondItem="0BH-bw-o0R" secondAttribute="centerX" id="Qgi-ZU-2jh"/>
-                            <constraint firstItem="hNE-qk-b8u" firstAttribute="top" secondItem="bFN-vh-X1Z" secondAttribute="bottom" constant="20" id="h5U-7Y-9tL"/>
-                            <constraint firstItem="Rst-Kc-agM" firstAttribute="top" secondItem="aw9-vC-09a" secondAttribute="bottom" id="icN-pJ-lW4"/>
-                            <constraint firstItem="hNE-qk-b8u" firstAttribute="leading" secondItem="0BH-bw-o0R" secondAttribute="leadingMargin" id="ik9-AZ-W9B"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hNE-qk-b8u" secondAttribute="trailing" id="jhK-oM-mGa"/>
-                            <constraint firstItem="zPg-qb-Jf0" firstAttribute="top" secondItem="sEi-in-SRW" secondAttribute="bottom" constant="30" id="wd8-3L-7Wa"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="About You" id="bUt-Te-lTE">
-                        <barButtonItem key="rightBarButtonItem" title="OK" id="JJO-Ha-89P">
-                            <connections>
-                                <segue destination="L15-wi-fVb" kind="show" identifier="basic2kinks" id="4sk-Ae-P6H"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="imagePicked" destination="zPg-qb-Jf0" id="Jbr-0F-xKh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y1Z-V3-Rmi" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1054" y="937"/>
         </scene>
         <!--Connect-->
         <scene sceneID="wJQ-c5-6Cb">
@@ -1503,7 +1389,7 @@ please apply for an invitation on trykinkedin.com</string>
                         <sections>
                             <tableViewSection id="AHh-eZ-Hej">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="200" id="vA4-JN-UFp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="proPicCell" rowHeight="200" id="vA4-JN-UFp">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vA4-JN-UFp" id="nBV-7A-xdC">
@@ -1524,7 +1410,7 @@ please apply for an invitation on trykinkedin.com</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="ckh-8R-G96" style="IBUITableViewCellStyleDefault" id="deC-ff-dMb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="proBasicCell" textLabel="ckh-8R-G96" style="IBUITableViewCellStyleDefault" id="deC-ff-dMb">
                                         <rect key="frame" x="0.0" y="200" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="deC-ff-dMb" id="TwV-mN-fuT">
@@ -1541,7 +1427,7 @@ please apply for an invitation on trykinkedin.com</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Een-FH-419" detailTextLabel="Q6L-v6-0ot" style="IBUITableViewCellStyleValue1" id="qg3-gW-2zM">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="proDetailCell" textLabel="Een-FH-419" detailTextLabel="Q6L-v6-0ot" style="IBUITableViewCellStyleValue1" id="qg3-gW-2zM">
                                         <rect key="frame" x="0.0" y="244" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qg3-gW-2zM" id="BYB-QU-Veb">
@@ -1646,9 +1532,6 @@ please apply for an invitation on trykinkedin.com</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="txh-Nc-2dD" kind="show" id="tMb-3X-WH8"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1662,6 +1545,9 @@ please apply for an invitation on trykinkedin.com</string>
                         <outlet property="defaultPicture" destination="fVS-xi-vML" id="7OK-73-R9Z"/>
                         <segue destination="ZeK-JH-Ubf" kind="show" identifier="editBasic" id="Kb0-tW-kuf"/>
                         <segue destination="ftr-md-waT" kind="show" identifier="editGenders" id="byy-d2-8RY"/>
+                        <segue destination="tJp-8Y-k5q" kind="show" identifier="editRoles" id="sbP-fI-Kao"/>
+                        <segue destination="txh-Nc-2dD" kind="show" identifier="myPartners" id="WRm-k2-oTl"/>
+                        <segue destination="L15-wi-fVb" kind="show" identifier="editKinks" id="9wF-aR-BBh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zTQ-8a-KOK" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -9,7 +9,7 @@
 import UIKit
 
 class EditProfileVC: UITableViewController {
-    
+
     var me: Profile?
     @IBOutlet var defaultPicture: UIImageView!
     var imageUpdated = false
@@ -17,6 +17,17 @@ class EditProfileVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        KinkedInAPI.myself { profile in
+            self.me = profile
+            print("profile loaded")
+            self.updateTableWithInfo()
+        }
+    }
+    
+    func updateTableWithInfo(){
+        let basicCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))
+        
+        basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,27 +56,17 @@ class EditProfileVC: UITableViewController {
         case 2:
             self.performSegue(withIdentifier: "editGenders", sender: self)
         case 3:
-            print("editRoles")
+            self.performSegue(withIdentifier: "editRoles", sender: self)
         case 4:
-            print("editKinks")
+            self.performSegue(withIdentifier: "editKinks", sender: self)
         case 5:
             print("editBio")
         case 6:
-            print("partners")
+            self.performSegue(withIdentifier: "myPartners", sender: self)
         default:
             print("do nothing")
         }
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -102,15 +103,19 @@ class EditProfileVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "editBasic"){
+            if let vc = segue.destination as? BasicProfileVC {
+                vc.name = me?.name
+            }
+        }
     }
-    */
 
 }
 

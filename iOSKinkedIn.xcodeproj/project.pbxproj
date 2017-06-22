@@ -18,7 +18,7 @@
 		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
-		001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* SetupRolesVC.swift */; };
+		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
@@ -36,7 +36,6 @@
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
 		006D50071E658635005DAABE /* AppTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D50061E658635005DAABE /* AppTabVC.swift */; };
-		0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */; };
 		0070C36F1E569E11000D5BA0 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; };
 		0070C3701E569E11000D5BA0 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C36E1E569E11000D5BA0 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		0070C3731E569E23000D5BA0 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0070C3721E569E23000D5BA0 /* RealmSwift.framework */; };
@@ -47,7 +46,6 @@
 		0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */; };
 		009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009840A01ED2EAEB0024EC27 /* ProfileCell.swift */; };
 		009C60A11EF8DD950068A015 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009C60A01EF8DD950068A015 /* EditProfileVC.swift */; };
-		00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */; };
 		00A0CD771E56CCA000D39CD8 /* localdb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD761E56CCA000D39CD8 /* localdb.swift */; };
 		00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7A1E56CF5E00D39CD8 /* Login.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
@@ -57,7 +55,7 @@
 		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
 		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
-		00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */; };
+		00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* KinksVC.swift */; };
 		00BEECBD1EF615E7005EDF36 /* PartnersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */; };
 		00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */; };
 		00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */; };
@@ -135,7 +133,7 @@
 		00171A441E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
-		001D21181E5A4B1300317600 /* SetupRolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupRolesVC.swift; sourceTree = "<group>"; };
+		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
@@ -154,7 +152,6 @@
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006D50061E658635005DAABE /* AppTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabVC.swift; sourceTree = "<group>"; };
-		0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupPageNC.swift; sourceTree = "<group>"; };
 		0070C36A1E569DEA000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../poison/realm-swift-2.4.2/ios/swift-3.0.2/Realm.framework"; sourceTree = "<group>"; };
 		0070C36E1E569E11000D5BA0 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		0070C3721E569E23000D5BA0 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
@@ -164,7 +161,6 @@
 		0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryListVC.swift; sourceTree = "<group>"; };
 		009840A01ED2EAEB0024EC27 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		009C60A01EF8DD950068A015 /* EditProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
-		00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBasicVC.swift; sourceTree = "<group>"; };
 		00A0CD761E56CCA000D39CD8 /* localdb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = localdb.swift; sourceTree = "<group>"; };
 		00A0CD7A1E56CF5E00D39CD8 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -174,7 +170,7 @@
 		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
-		00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupKinksWizardVC.swift; sourceTree = "<group>"; };
+		00BA528C1E75744300EE20E4 /* KinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinksVC.swift; sourceTree = "<group>"; };
 		00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersVC.swift; sourceTree = "<group>"; };
 		00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequestsVC.swift; sourceTree = "<group>"; };
 		00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequests.swift; sourceTree = "<group>"; };
@@ -373,12 +369,8 @@
 		00ED8A221E74377800096497 /* setup */ = {
 			isa = PBXGroup;
 			children = (
-				0070C3681E568A6F000D5BA0 /* SetupPageNC.swift */,
-				00A0CD741E56A2CA00D39CD8 /* SetupBasicVC.swift */,
 				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,
-				001D21181E5A4B1300317600 /* SetupRolesVC.swift */,
 				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
-				00BA528C1E75744300EE20E4 /* SetupKinksWizardVC.swift */,
 			);
 			name = setup;
 			sourceTree = "<group>";
@@ -433,6 +425,8 @@
 		00FD2A731EF6FAF60015749A /* profile */ = {
 			isa = PBXGroup;
 			children = (
+				00BA528C1E75744300EE20E4 /* KinksVC.swift */,
+				001D21181E5A4B1300317600 /* RolesVC.swift */,
 				00171A241E56384500640B09 /* GendersVC.swift */,
 				00FD2A741EF6FB190015749A /* BasicProfileVC.swift */,
 			);
@@ -794,13 +788,12 @@
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
-				0070C3691E568A6F000D5BA0 /* SetupPageNC.swift in Sources */,
 				001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				00BEECBD1EF615E7005EDF36 /* PartnersVC.swift in Sources */,
 				00A0CD7B1E56CF5E00D39CD8 /* Login.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
-				001D21191E5A4B1300317600 /* SetupRolesVC.swift in Sources */,
+				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				00287BAC1EF07A07009C1442 /* FadeToBlackButton.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
@@ -828,7 +821,6 @@
 				0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
-				00A0CD751E56A2CA00D39CD8 /* SetupBasicVC.swift in Sources */,
 				008597251EA3628900583621 /* StaticMasterVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
@@ -836,7 +828,7 @@
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
-				00BA528D1E75744300EE20E4 /* SetupKinksWizardVC.swift in Sources */,
+				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,
 			);

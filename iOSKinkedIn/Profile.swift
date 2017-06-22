@@ -24,6 +24,32 @@ class Profile {
     var picture_public_id: String?
     var birthday: Date?
     
+    static func parseSelf(_ json: [String:Any]) -> Profile {
+        let pro = Profile(neoId: "", name: "", age: 0)
+        
+        if let _name = json["name"] as? String {
+            pro.name = _name
+        }
+        
+        if let _age = json["age"] as? Int {
+            pro.age = _age
+        }
+        
+        if let _genders = json["genders"] as? [String] {
+            pro.genders = _genders
+        }
+        
+        if let _roles = json["roles"] as? [String] {
+            pro.roles = _roles
+        }
+        /*
+        if let _birthday = json["birthday"] as? String {
+            pro.birthday =
+        }
+        */
+        return pro
+    }
+    
     init?(_ json: [String:Any]){
         guard let _id = json["uuid"] as? String else {
             return nil

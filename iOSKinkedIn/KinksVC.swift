@@ -9,7 +9,7 @@
 import UIKit
 import TagListView
 
-class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
+class KinksVC: SetupViewVC, TagListViewDelegate {
 
    // @IBOutlet weak var kinksGrid: UICollectionView!
    // var kinksGridVC: KinksGridVC
@@ -20,7 +20,6 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
     @IBOutlet weak var wearQuestion: UILabel!
     @IBOutlet weak var actQuestion: UILabel!
     
-    @IBOutlet weak var okBtn: UIBarButtonItem!
     @IBOutlet weak var nextQ: UIBarButtonItem!
     
     @IBOutlet weak var tlv: TagListView!
@@ -42,7 +41,6 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
         self.questions = [omakeQuestion, RServiceQuestion, PServiceQuestion, wearQuestion, actQuestion]
         nextQuestion(self)
         
-        okBtn.isEnabled = false
     }
     
     func kinksDidLoad(kinks: [Kink], updateMap: Bool){
@@ -183,7 +181,6 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
                 self.kinksDidLoad(kinks: kinks, updateMap: true)
             }
             self.view.makeToastActivity(.center)
-            okBtn.isEnabled = true
             nextQ.isEnabled = false
         default:
             KinkedInAPI.kinks(form: "omake"){ kinks in
@@ -194,8 +191,8 @@ class SetupKinksWizardVC: SetupViewVC, TagListViewDelegate {
         q += 1
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        super.prepare(for: segue, sender: sender)
+    override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
         KinkedInAPI.addKinks(compileAnswers())
     }
 

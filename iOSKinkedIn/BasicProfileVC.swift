@@ -12,7 +12,7 @@ class BasicProfileVC: UIViewController {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var birthdayField: UIDatePicker!
-    
+    var name: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,15 +24,15 @@ class BasicProfileVC: UIViewController {
         birthdayField?.maximumDate = calendar.date(byAdding: dc, to: today)
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.nameField.text = name
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func update(name: String, birthday: Date){
-        nameField.text = name
-        birthdayField.date = birthday
     }
     
     func post() {
