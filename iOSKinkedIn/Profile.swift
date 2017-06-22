@@ -24,32 +24,6 @@ class Profile {
     var picture_public_id: String?
     var birthday: Date?
     
-    static func parseSelf(_ json: [String:Any]) -> Profile {
-        let pro = Profile(neoId: "", name: "", age: 0)
-        
-        if let _name = json["name"] as? String {
-            pro.name = _name
-        }
-        
-        if let _age = json["age"] as? Int {
-            pro.age = _age
-        }
-        
-        if let _genders = json["genders"] as? [String] {
-            pro.genders = _genders
-        }
-        
-        if let _roles = json["roles"] as? [String] {
-            pro.roles = _roles
-        }
-        /*
-        if let _birthday = json["birthday"] as? String {
-            pro.birthday =
-        }
-        */
-        return pro
-    }
-    
     init?(_ json: [String:Any]){
         guard let _id = json["uuid"] as? String else {
             return nil
@@ -141,6 +115,46 @@ class Profile {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         self.birthday = dateFormatter.date(from: date)
+    }
+    
+    func hasName() -> Bool{
+        return self.name != ""
+    }
+    
+    func hasAge() -> Bool{
+        return self.age != 0
+    }
+    
+    static func parseSelf(_ json: [String:Any]) -> Profile {
+        let pro = Profile(neoId: "", name: "", age: 0)
+        
+        if let _name = json["name"] as? String {
+            pro.name = _name
+        }
+        
+        if let _age = json["age"] as? Int {
+            pro.age = _age
+        }
+        
+        if let _genders = json["genders"] as? [String] {
+            pro.genders = _genders
+        }
+        
+        if let _roles = json["roles"] as? [String] {
+            pro.roles = _roles
+        }
+        
+        if let _birthday = json["birthday"] as? String {
+           pro.setBirthday(_birthday)
+        }
+        
+        if let _pictures = json["pictures"] as? [String] {
+            if(_pictures.count > 0){
+                pro.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
+            }
+        }
+        
+        return pro
     }
     
     

@@ -16,6 +16,10 @@ class EditProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         KinkedInAPI.myself { profile in
             self.me = profile
@@ -25,9 +29,31 @@ class EditProfileVC: UITableViewController {
     }
     
     func updateTableWithInfo(){
-        let basicCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))
         
-        basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0)"
+        let pictureCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        if(me?.picture != nil){
+            pictureCell?.backgroundColor = UIColor.white
+            let imgURL = URL(string: (me?.picture)!)
+            do {
+                let imgData = try Data(contentsOf: imgURL!)
+                defaultPicture.image = UIImage(data: imgData)
+            } catch {
+                // TODO: use put in place holder image
+                print("error loading profile picture")
+            }
+        } else {
+            pictureCell?.backgroundColor = UIColor.red
+        }
+        
+        let basicCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))
+        if((me?.hasName())! && (me?.hasAge())! && me?.birthday != nil){
+            basicCell?.backgroundColor = UIColor.white
+            basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0)"
+        } else {
+            basicCell?.backgroundColor = UIColor.red
+        }
+        
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -113,6 +139,7 @@ class EditProfileVC: UITableViewController {
         if(segue.identifier == "editBasic"){
             if let vc = segue.destination as? BasicProfileVC {
                 vc.name = me?.name
+                vc.birthday = me?.birthday
             }
         }
     }

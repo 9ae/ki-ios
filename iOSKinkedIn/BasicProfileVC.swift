@@ -13,6 +13,7 @@ class BasicProfileVC: UIViewController {
     @IBOutlet var nameField: UITextField!
     @IBOutlet var birthdayField: UIDatePicker!
     var name: String?
+    var birthday: Date?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +29,9 @@ class BasicProfileVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.nameField.text = name
+        if (birthday != nil){
+            self.birthdayField.setDate(self.birthday!, animated: false)
+        }
     }
 
     override func didReceiveMemoryWarning() {
