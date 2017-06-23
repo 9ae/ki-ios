@@ -96,7 +96,7 @@ class EditProfileVC: UITableViewController {
         } else {
             kinksCell?.backgroundColor = UIColor.red
         }
-        kinksCell?.detailTextLabel?.text = shortJoin((me?.kinks ?? [String]()))
+        kinksCell?.detailTextLabel?.text = shortJoin((me?.kinkLabels() ?? [String]()))
         
     }
 

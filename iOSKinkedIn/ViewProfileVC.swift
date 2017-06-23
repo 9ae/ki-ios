@@ -103,7 +103,8 @@ class ViewProfileVC: UIViewController {
         
         var bioText = ""
         if (!profile.kinks.isEmpty){
-            bioText = "I am into " + profile.kinks.joined(separator: ", ")
+            let kinks : [String] = profile.kinkLabels()
+            bioText = "I am into " + kinks.joined(separator: ", ")
             /*
             var kinksDetail = [String]()
             for i in (0...5){

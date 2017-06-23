@@ -20,14 +20,9 @@ class Kink {
     var likesGive = false
     var likesGet = false
     var likesBoth = false
-    
-    // to deprecate?
-    var likeWay: String
-    var checked: Bool
-    var popularity: Int
 
 
-    init?(json: [String:Any]){
+    init?(_ json: [String:Any]){
         guard let _label = json["label"] as? String,
             let _id = json["code"] as? String
         else {
@@ -36,21 +31,29 @@ class Kink {
         self.label = _label
         self.code = _id
         
-        if let _pop = json["popularity"] as? Int {
-            self.popularity = _pop
-        } else {
-            self.popularity = 0
-        }
-        
         if let _form = json["form"] as? String {
             self.form = KinkForm.init(rawValue: _form) ?? KinkForm.other
         } else {
             self.form = KinkForm.other
         }
         
-        self.checked = false
-        self.likeWay = ""
-        self.exp = 0
+        if let _exp =  json["exp"] as? Int {
+            self.exp = _exp
+        } else {
+            self.exp = 0
+        }
+        
+        if let _ways = json["ways"] as? String {
+            switch(_ways){
+                case "GIVE":
+                    self.likesGive = true
+                case "GET":
+                    self.likesGet = true
+                default:
+                    self.likesBoth = true
+            }
+        }
+        
     }
     
     static func parseJsonList(_ list: [Any]) -> [Kink] {
@@ -58,7 +61,7 @@ class Kink {
         
         for li in list {
                 if let kd = li as? [String:Any] {
-                    if let k = Kink(json:kd){
+                    if let k = Kink(kd){
                         kinks.append(k)
                     }
                 }

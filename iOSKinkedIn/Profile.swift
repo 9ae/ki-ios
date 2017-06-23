@@ -18,7 +18,7 @@ class Profile {
     var bio: String?
     var genders: [String] = [String]()
     var roles: [String] = [String]()
-    var kinks = [String]()
+    var kinks = [Kink]()
     var picture: String?
     var city: String?
     var picture_public_id: String?
@@ -94,8 +94,8 @@ class Profile {
         if let _kinks = profile["kinks"] as? [Any] {
             for kink in _kinks {
                 if let jsonKink = kink as? [String:Any] {
-                    if let kinkLabel = jsonKink["label"] as? String {
-                        self.kinks.append(kinkLabel)
+                    if let k = Kink(jsonKink) {
+                        self.kinks.append(k)
                     }
                 }
             }
@@ -113,6 +113,13 @@ class Profile {
         self.kinksMatched = 0
         self.vouches = 0
         self.picture_public_id = picture_public_id
+    }
+    
+    func kinkLabels() -> [String] {
+        let labels : [String] = self.kinks.map({ (kink: Kink) -> String in
+            return kink.label
+        })
+        return labels
     }
     
     func setBirthday(_ date: String){
@@ -161,8 +168,8 @@ class Profile {
         if let _kinks = json["kinks"] as? [Any] {
             for kink in _kinks {
                 if let jsonKink = kink as? [String:Any] {
-                    if let kinkLabel = jsonKink["label"] as? String {
-                        pro.kinks.append(kinkLabel)
+                    if let k = Kink(jsonKink) {
+                        pro.kinks.append(k)
                     }
                 }
             }
