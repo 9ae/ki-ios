@@ -21,13 +21,15 @@ class EditProfileVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.view.makeToastActivity(.center)
         KinkedInAPI.myself { profile in
             self.me = profile
             print("profile loaded")
             self.updateTableWithInfo()
+            self.view.hideToastActivity()
         }
     }
-    
+
     func updateTableWithInfo(){
         
         let pictureCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
@@ -53,7 +55,30 @@ class EditProfileVC: UITableViewController {
             basicCell?.backgroundColor = UIColor.red
         }
         
-    
+        let gendersCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0))
+        if((me?.genders.count ?? 0) > 0){
+            gendersCell?.backgroundColor = UIColor.white
+        } else {
+            gendersCell?.backgroundColor = UIColor.red
+        }
+        gendersCell?.detailTextLabel?.text = shortJoin((me?.genders ?? [String]()))
+        
+        let rolesCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0))
+        if((me?.roles.count ?? 0) > 0){
+            rolesCell?.backgroundColor = UIColor.white
+        } else {
+            rolesCell?.backgroundColor = UIColor.red
+        }
+        rolesCell?.detailTextLabel?.text = shortJoin((me?.roles ?? [String]()))
+        
+        let kinksCell = tableView.cellForRow(at: IndexPath(row: 4, section: 0))
+        if((me?.kinks.count ?? 0) > 0){
+            kinksCell?.backgroundColor = UIColor.white
+        } else {
+            kinksCell?.backgroundColor = UIColor.red
+        }
+        kinksCell?.detailTextLabel?.text = shortJoin((me?.kinks ?? [String]()))
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,7 +17,7 @@ class Profile {
     
     var bio: String?
     var genders: [String] = [String]()
-    var roles: [String]?
+    var roles: [String] = [String]()
     var kinks = [String]()
     var picture: String?
     var city: String?
@@ -69,6 +69,10 @@ class Profile {
         
         if let _genders = profile["genders"] as? [String] {
             self.genders = _genders
+        }
+        
+        if let _roles = profile["roles"] as? [String] {
+            self.roles = _roles
         }
         
         if let _bio = profile["bio"] as? String {
@@ -151,6 +155,16 @@ class Profile {
         if let _pictures = json["pictures"] as? [String] {
             if(_pictures.count > 0){
                 pro.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
+            }
+        }
+        
+        if let _kinks = json["kinks"] as? [Any] {
+            for kink in _kinks {
+                if let jsonKink = kink as? [String:Any] {
+                    if let kinkLabel = jsonKink["label"] as? String {
+                        pro.kinks.append(kinkLabel)
+                    }
+                }
             }
         }
         

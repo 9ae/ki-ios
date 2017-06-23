@@ -26,3 +26,16 @@ func joinStrings(_ strings: [String]) -> String {
 func splitStrings(_ str: String) -> [String] {
     return str.characters.split(separator: ",").map(String.init)
 }
+
+func shortJoin(_ strings: [String]) -> String {
+    if(strings.isEmpty){
+        return ""
+    }
+    else if (strings.count > 3){
+        let concatStrings = strings[0...2]
+        let joined = concatStrings.joined(separator: ", ")
+        return "\(joined) ..."
+    } else {
+        return strings.joined(separator: ", ")
+    }
+}
