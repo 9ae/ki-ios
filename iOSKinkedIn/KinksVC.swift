@@ -9,24 +9,34 @@
 import UIKit
 import TagListView
 
+enum QuestionForm: Int {
+    case omake = 0
+    case get_service
+    case give_service
+    case wear
+    case act
+}
+
 class KinksVC: SetupViewVC, TagListViewDelegate {
 
-   // @IBOutlet weak var kinksGrid: UICollectionView!
-   // var kinksGridVC: KinksGridVC
+    let questions : [String] = [
+        "I am turned on by",
+        "I want to receive",
+        "I can provide you with",
+        "I like to wear",
+        "I fantasize about"]
     
-    @IBOutlet weak var omakeQuestion: UILabel!
-    @IBOutlet weak var RServiceQuestion: UILabel!
-    @IBOutlet weak var PServiceQuestion: UILabel!
-    @IBOutlet weak var wearQuestion: UILabel!
-    @IBOutlet weak var actQuestion: UILabel!
+    var onQuestion: UIButton?
+    var q : QuestionForm = .omake
     
-    @IBOutlet weak var nextQ: UIBarButtonItem!
-    
+    @IBOutlet var qstack: UIStackView!
     @IBOutlet weak var tlv: TagListView!
-    var questions: [UILabel]!
+    
+    
     var kinksMap = [String:Kink]()
-    var q = 0
-
+    var omakeFetched = false
+    var actsFetched = false
+    var servicesFetched = false
     
     required init?(coder aDecoder: NSCoder) {
         // self.kinksGridVC = KinksGridVC()
@@ -38,19 +48,79 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         tlv.delegate = self
         tlv.textFont = UIFont.systemFont(ofSize: 20)
         
-        self.questions = [omakeQuestion, RServiceQuestion, PServiceQuestion, wearQuestion, actQuestion]
-        nextQuestion(self)
+        if qstack.arrangedSubviews.count > 0 {
+            if let firstQuestion = qstack.arrangedSubviews[0] as? UIButton {
+                onOmake(firstQuestion)
+            }
+        }
         
     }
     
-    func kinksDidLoad(kinks: [Kink], updateMap: Bool){
+    func kinksDidLoad(kinks: [Kink]){
+        tlv.removeAllTags()
         for k in kinks {
-            if( updateMap && !kinksMap.keys.contains(k.label)){
+            if(!kinksMap.keys.contains(k.label)){
                 kinksMap[k.label] = k
             }
             tlv.addTag(k.label)
         }
-        self.view.hideToastActivity()
+    }
+    
+    private func loadActs(){
+        if(actsFetched){
+            tlv.removeAllTags()
+            for (_ , value) in kinksMap {
+                if(value.form == .act) {
+                    tlv.addTag(value.label)
+                }
+            }
+        } else {
+            KinkedInAPI.kinks(form: "act"){ kinks in
+                self.kinksDidLoad(kinks: kinks)
+                self.actsFetched = true
+            }
+        }
+    }
+    
+    private func loadServices(){
+        if(servicesFetched){
+            tlv.removeAllTags()
+            for (_ , value) in kinksMap {
+                if(value.form == .service) {
+                    tlv.addTag(value.label)
+                }
+            }
+        } else {
+            KinkedInAPI.kinks(form: "service", callback: { kinks in
+                self.kinksDidLoad(kinks: kinks)
+                self.servicesFetched = true
+            })
+        }
+    }
+    
+    private func loadOmake(){
+        if(omakeFetched){
+            tlv.removeAllTags()
+            for (_ , value) in kinksMap {
+                if(value.form != .act && value.form != .service) {
+                    tlv.addTag(value.label)
+                }
+            }
+        } else {
+            KinkedInAPI.kinks(form: "omake", callback: { kinks in
+                self.kinksDidLoad(kinks: kinks)
+                self.omakeFetched = true
+            })
+        }
+    }
+    
+    private func loadWearables(){
+        tlv.removeAllTags()
+        for (_ , value) in kinksMap {
+            if(value.form == .wearable) {
+                tlv.addTag(value.label)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,17 +130,17 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     
     func addKinkWay(_ kink: Kink){
         switch(q){
-        case 1:
+        case .get_service:
             if(kink.form == .wearable){
                 kink.likesGet = true
             } else {
                 kink.likesBoth = true
             }
-        case 2:
+        case .give_service:
             kink.likesGet = true
-        case 3:
+        case .wear:
             kink.likesGive = true
-        case 4:
+        case .act:
             kink.likesGive = true
         default:
             kink.likesBoth = true
@@ -79,17 +149,17 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     
     func rmKinkWay(_ kink: Kink){
         switch(q){
-        case 1:
+        case .get_service:
             if(kink.form == .wearable){
                 kink.likesGet = false
             } else {
                 kink.likesBoth = false
             }
-        case 2:
+        case .give_service:
             kink.likesGet = false
-        case 3:
+        case .wear:
             kink.likesGive = false
-        case 4:
+        case .act:
             kink.likesGive = false
         default:
             kink.likesBoth = false
@@ -110,14 +180,6 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     private func deselectAll(){
         for tv in tlv.tagViews {
             tv.isSelected = false
-        }
-    }
-    
-    private func loadWearables(){
-        for (_ , value) in kinksMap {
-            if(value.form == .wearable) {
-                tlv.addTag(value.label)
-            }
         }
     }
     
@@ -144,8 +206,9 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
         return json
     }
-    
+    /*
     @IBAction func nextQuestion(_ sender: Any){
+        
         if(q==questions.count){
             return
         }
@@ -190,6 +253,58 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         }
         q += 1
     }
+    */
+    
+    func updateQuestionReference(_ sender: Any){
+        onQuestion?.setTitleColor(UIColor.gray, for: .normal)
+        
+        if let button = sender as? UIButton {
+            button.setTitleColor(ThemeColors.primary, for: .normal)
+            onQuestion = button
+        }
+    }
+    
+    @IBAction func onOmake(_ sender: Any) {
+        updateQuestionReference(sender)
+        loadOmake()
+        q = .omake
+    }
+    
+    @IBAction func onGetService(_ sender: Any) {
+        updateQuestionReference(sender)
+        if(q == .give_service){
+            deselectAll()
+        } else {
+            loadServices()
+        }
+        
+        q = .get_service
+    }
+    
+    @IBAction func onGiveService(_ sender: Any) {
+        updateQuestionReference(sender)
+        
+        if(q == .get_service){
+            deselectAll()
+        } else {
+            loadServices()
+        }
+        
+        q = .give_service
+    }
+    
+    @IBAction func onWear(_ sender: Any) {
+        updateQuestionReference(sender)
+        loadWearables()
+        q = .wear
+    }
+    
+    @IBAction func onActs(_ sender: Any) {
+        updateQuestionReference(sender)
+        loadActs()
+        q = .act
+    }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
