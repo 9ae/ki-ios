@@ -9,7 +9,6 @@
 import UIKit
 import UserNotifications
 
-import RealmSwift
 import Fabric
 import Crashlytics
 import PusherSwift

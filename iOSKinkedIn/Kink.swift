@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
 
