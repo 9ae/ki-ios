@@ -11,11 +11,11 @@ import Toast_Swift
 
 class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
-    let CELL_ID = "cellGender"
+    private let CELL_ID = "cellGender"
     @IBOutlet var tableView: UITableView?
     
-    var genders = [Gender]()
-    var selectedGenders = Set<String>()
+    private var genders = [String]()
+    private var selectedGenders = Set<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +32,16 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    private func _loadGenders(_ results: [Gender]){
+    private func _loadGenders(_ results: [String]){
         self.genders = results
         tableView?.reloadData()
         self.view.hideToastActivity()
+    }
+    
+    func setSelectedGenders(_ sgenders: [String]){
+        for g in sgenders {
+            selectedGenders.insert(g)
+        }
     }
     
     // MARK: Table View Data Source Methods
@@ -45,7 +51,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getOrCreateCell(CELL_ID)
-        let label = genders[indexPath.row].label
+        let label = genders[indexPath.row]
         cell.textLabel?.text = label
         if(selectedGenders.contains(label)){
             CellStyles.select(cell, check: true)
@@ -56,7 +62,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let label = genders[indexPath.row].label
+        let label = genders[indexPath.row]
         if(selectedGenders.contains(label)){
             selectedGenders.remove(label)
             tableView.reloadRows(at: [indexPath], with: .none)
@@ -69,7 +75,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        let label = genders[indexPath.row].label
+        let label = genders[indexPath.row]
         selectedGenders.insert(label)
         tableView.reloadRows(at: [indexPath], with: .none)
     }

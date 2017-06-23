@@ -14,8 +14,8 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     let CELL_ID = "cellRole"
     @IBOutlet var tableView: UITableView?
     
-    var roles = [Role]()
-    var selectedRoles = Set<String>()
+    private var roles = [Role]()
+    private var selectedRoles = Set<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()

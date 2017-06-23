@@ -8,6 +8,25 @@
 
 import UIKit
 
+enum ProfileDetailSegue : String {
+    case basic = "editBasic"
+    case genders = "editGenders"
+    case roles = "editRoles"
+    case kinks = "editKinks"
+    case bio = "editBio"
+    case partners = "myPartners"
+}
+
+enum ProfileDetailRow : Int {
+    case picture = 0
+    case basic = 1
+    case genders = 2
+    case roles = 3
+    case kinks = 4
+    case bio = 5
+    case partners = 6
+}
+
 class EditProfileVC: UITableViewController {
 
     var me: Profile?
@@ -32,7 +51,7 @@ class EditProfileVC: UITableViewController {
 
     func updateTableWithInfo(){
         
-        let pictureCell = tableView.cellForRow(at: IndexPath(row: 0, section: 0))
+        let pictureCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.picture.rawValue, section: 0))
         if(me?.picture != nil){
             pictureCell?.backgroundColor = UIColor.white
             let imgURL = URL(string: (me?.picture)!)
@@ -47,7 +66,7 @@ class EditProfileVC: UITableViewController {
             pictureCell?.backgroundColor = UIColor.red
         }
         
-        let basicCell = tableView.cellForRow(at: IndexPath(row: 1, section: 0))
+        let basicCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.basic.rawValue, section: 0))
         if((me?.hasName())! && (me?.hasAge())! && me?.birthday != nil){
             basicCell?.backgroundColor = UIColor.white
             basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0)"
@@ -55,7 +74,7 @@ class EditProfileVC: UITableViewController {
             basicCell?.backgroundColor = UIColor.red
         }
         
-        let gendersCell = tableView.cellForRow(at: IndexPath(row: 2, section: 0))
+        let gendersCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.genders.rawValue, section: 0))
         if((me?.genders.count ?? 0) > 0){
             gendersCell?.backgroundColor = UIColor.white
         } else {
@@ -63,7 +82,7 @@ class EditProfileVC: UITableViewController {
         }
         gendersCell?.detailTextLabel?.text = shortJoin((me?.genders ?? [String]()))
         
-        let rolesCell = tableView.cellForRow(at: IndexPath(row: 3, section: 0))
+        let rolesCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.roles.rawValue, section: 0))
         if((me?.roles.count ?? 0) > 0){
             rolesCell?.backgroundColor = UIColor.white
         } else {
@@ -71,7 +90,7 @@ class EditProfileVC: UITableViewController {
         }
         rolesCell?.detailTextLabel?.text = shortJoin((me?.roles ?? [String]()))
         
-        let kinksCell = tableView.cellForRow(at: IndexPath(row: 4, section: 0))
+        let kinksCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.kinks.rawValue, section: 0))
         if((me?.kinks.count ?? 0) > 0){
             kinksCell?.backgroundColor = UIColor.white
         } else {
@@ -100,20 +119,20 @@ class EditProfileVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch(indexPath.row){
-        case 0:
+        case ProfileDetailRow.picture.rawValue:
             self.prepareImagePicker()
-        case 1:
-            self.performSegue(withIdentifier: "editBasic", sender: self)
-        case 2:
-            self.performSegue(withIdentifier: "editGenders", sender: self)
-        case 3:
-            self.performSegue(withIdentifier: "editRoles", sender: self)
-        case 4:
-            self.performSegue(withIdentifier: "editKinks", sender: self)
-        case 5:
+        case ProfileDetailRow.basic.rawValue:
+            self.performSegue(withIdentifier: ProfileDetailSegue.basic.rawValue, sender: self)
+        case ProfileDetailRow.genders.rawValue:
+            self.performSegue(withIdentifier: ProfileDetailSegue.genders.rawValue, sender: self)
+        case ProfileDetailRow.roles.rawValue:
+            self.performSegue(withIdentifier: ProfileDetailSegue.roles.rawValue, sender: self)
+        case ProfileDetailRow.kinks.rawValue:
+            self.performSegue(withIdentifier: ProfileDetailSegue.kinks.rawValue, sender: self)
+        case ProfileDetailRow.bio.rawValue:
             print("editBio")
-        case 6:
-            self.performSegue(withIdentifier: "myPartners", sender: self)
+        case ProfileDetailRow.partners.rawValue:
+            self.performSegue(withIdentifier: ProfileDetailSegue.partners.rawValue, sender: self)
         default:
             print("do nothing")
         }
@@ -161,10 +180,16 @@ class EditProfileVC: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "editBasic"){
+        if(segue.identifier == ProfileDetailSegue.basic.rawValue){
             if let vc = segue.destination as? BasicProfileVC {
                 vc.name = me?.name
                 vc.birthday = me?.birthday
+            }
+        }
+        
+        if(segue.identifier == ProfileDetailSegue.genders.rawValue){
+            if let vc = segue.destination as? GendersVC, let genders = me?.genders {
+                vc.setSelectedGenders(genders)
             }
         }
     }
