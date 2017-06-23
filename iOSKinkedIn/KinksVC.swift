@@ -39,7 +39,6 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     var servicesFetched = false
     
     required init?(coder aDecoder: NSCoder) {
-        // self.kinksGridVC = KinksGridVC()
         super.init(coder: aDecoder)
     }
     
@@ -56,13 +55,40 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
     }
     
+    func setExistingKinks(_ kinks: [Kink]){
+        for k in kinks {
+            kinksMap[k.label] = k
+        }
+    }
+    
+    private func hangTag(_ kink: Kink){
+        let tagView = tlv.addTag(kink.label)
+        
+        switch(q){
+        case .get_service:
+            tagView.isSelected = kink.likesGet || kink.likesBoth
+        case .give_service:
+            tagView.isSelected = kink.likesGive || kink.likesBoth
+        case .wear:
+            tagView.isSelected = kink.likesGive || kink.likesBoth
+        case .act:
+            tagView.isSelected = kink.likesBoth
+        default:
+            if(kink.form == .wearable){
+                tagView.isSelected = kink.likesGet || kink.likesBoth
+            } else {
+                tagView.isSelected = kink.likesBoth
+            }
+        }
+    }
+    
     func kinksDidLoad(kinks: [Kink]){
         tlv.removeAllTags()
         for k in kinks {
             if(!kinksMap.keys.contains(k.label)){
                 kinksMap[k.label] = k
             }
-            tlv.addTag(k.label)
+            hangTag(kinksMap[k.label]!)
         }
     }
     
@@ -71,7 +97,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
             tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form == .act) {
-                    tlv.addTag(value.label)
+                    hangTag(value)
                 }
             }
         } else {
@@ -87,7 +113,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
             tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form == .service) {
-                    tlv.addTag(value.label)
+                    hangTag(value)
                 }
             }
         } else {
@@ -103,7 +129,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
             tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form != .act && value.form != .service) {
-                    tlv.addTag(value.label)
+                    hangTag(value)
                 }
             }
         } else {
@@ -118,7 +144,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         tlv.removeAllTags()
         for (_ , value) in kinksMap {
             if(value.form == .wearable) {
-                tlv.addTag(value.label)
+                hangTag(value)
             }
         }
     }
@@ -131,38 +157,38 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     func addKinkWay(_ kink: Kink){
         switch(q){
         case .get_service:
+            kink.likesGet = true
+        case .give_service:
+            kink.likesGive = true
+        case .wear:
+            kink.likesGive = true
+        case .act:
+            kink.likesBoth = true
+        default:
             if(kink.form == .wearable){
                 kink.likesGet = true
             } else {
                 kink.likesBoth = true
             }
-        case .give_service:
-            kink.likesGet = true
-        case .wear:
-            kink.likesGive = true
-        case .act:
-            kink.likesGive = true
-        default:
-            kink.likesBoth = true
         }
     }
     
     func rmKinkWay(_ kink: Kink){
         switch(q){
         case .get_service:
+            kink.likesGet = false
+        case .give_service:
+            kink.likesGive = false
+        case .wear:
+            kink.likesGive = false
+        case .act:
+            kink.likesBoth = false
+        default:
             if(kink.form == .wearable){
                 kink.likesGet = false
             } else {
                 kink.likesBoth = false
             }
-        case .give_service:
-            kink.likesGet = false
-        case .wear:
-            kink.likesGive = false
-        case .act:
-            kink.likesGive = false
-        default:
-            kink.likesBoth = false
         }
     }
 
@@ -206,57 +232,14 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
         return json
     }
-    /*
-    @IBAction func nextQuestion(_ sender: Any){
-        
-        if(q==questions.count){
-            return
-        }
-        
-        if(q>0){
-            let pq = questions[q-1]
-            pq.textColor = UIColor.lightGray
-            pq.font = UIFont.systemFont(ofSize: 16)
-            let tags: [String] = tlv.selectedTags().map({ tag -> String in
-                return tag.currentTitle!
-            })
-            pq.text = pq.text?.replacingOccurrences(of: "___", with: tags.joined(separator: ", "))
-        }
-        
-        questions[q].textColor = ThemeColors.primary
-        questions[q].font = UIFont.boldSystemFont(ofSize: 18)
-        
-        switch(q){
-        case 1:
-            tlv.removeAllTags()
-            KinkedInAPI.kinks(form: "service"){ kinks in
-                self.kinksDidLoad(kinks: kinks, updateMap: true)
-            }
-            self.view.makeToastActivity(.center)
-        case 2:
-            deselectAll()
-        case 3:
-            tlv.removeAllTags()
-            loadWearables()
-        case 4:
-            tlv.removeAllTags()
-            KinkedInAPI.kinks(form: "act"){ kinks in
-                self.kinksDidLoad(kinks: kinks, updateMap: true)
-            }
-            self.view.makeToastActivity(.center)
-            nextQ.isEnabled = false
-        default:
-            KinkedInAPI.kinks(form: "omake"){ kinks in
-                self.kinksDidLoad(kinks: kinks, updateMap: true)
-            }
-            self.view.makeToastActivity(.center)
-        }
-        q += 1
-    }
-    */
     
     func updateQuestionReference(_ sender: Any){
         onQuestion?.setTitleColor(UIColor.gray, for: .normal)
+        let tags: [String] = tlv.selectedTags().map({ tag -> String in
+            return tag.currentTitle!
+        })
+        let newText = "\(questions[q.rawValue]) \(shortJoin(tags))"
+        onQuestion?.setTitle(newText, for: .normal)
         
         if let button = sender as? UIButton {
             button.setTitleColor(ThemeColors.primary, for: .normal)
@@ -266,19 +249,23 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     
     @IBAction func onOmake(_ sender: Any) {
         updateQuestionReference(sender)
-        loadOmake()
+        
         q = .omake
+        loadOmake()
     }
     
     @IBAction func onGetService(_ sender: Any) {
         updateQuestionReference(sender)
+        
         if(q == .give_service){
             deselectAll()
+            q = .get_service
         } else {
+            q = .get_service
             loadServices()
         }
         
-        q = .get_service
+        
     }
     
     @IBAction func onGiveService(_ sender: Any) {
@@ -286,23 +273,28 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
         if(q == .get_service){
             deselectAll()
+            q = .give_service
         } else {
+            q = .give_service
             loadServices()
         }
         
-        q = .give_service
+        
     }
     
     @IBAction func onWear(_ sender: Any) {
         updateQuestionReference(sender)
-        loadWearables()
+        
         q = .wear
+        loadWearables()
+        
     }
     
     @IBAction func onActs(_ sender: Any) {
         updateQuestionReference(sender)
-        loadActs()
+        
         q = .act
+        loadActs()
     }
     
     

@@ -214,7 +214,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-fN-5uh">
                                 <rect key="frame" x="8" y="8" width="359" height="170"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LP-Pl-05p">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1LP-Pl-05p">
                                         <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
                                         <state key="normal" title="I am turned on by">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,7 +223,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             <action selector="onOmake:" destination="L15-wi-fVb" eventType="touchUpInside" id="bNl-ew-PdP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-dM-FRW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOw-dM-FRW">
                                         <rect key="frame" x="0.0" y="35" width="359" height="30"/>
                                         <state key="normal" title="I want to receive">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -232,7 +232,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             <action selector="onGetService:" destination="L15-wi-fVb" eventType="touchUpInside" id="vEg-bt-1wK"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQi-2t-cOI">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DQi-2t-cOI">
                                         <rect key="frame" x="0.0" y="70" width="359" height="30"/>
                                         <state key="normal" title="I can provide you with">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -241,7 +241,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             <action selector="onGiveService:" destination="L15-wi-fVb" eventType="touchUpInside" id="H9Z-8q-3NH"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cu-1x-nYD">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4cu-1x-nYD">
                                         <rect key="frame" x="0.0" y="105" width="359" height="30"/>
                                         <state key="normal" title="I like to wear">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -250,7 +250,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             <action selector="onWear:" destination="L15-wi-fVb" eventType="touchUpInside" id="wwV-rG-4Rq"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-jy-HJu">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhd-jy-HJu">
                                         <rect key="frame" x="0.0" y="140" width="359" height="30"/>
                                         <state key="normal" title="I fantasize about">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1385,7 +1385,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vA4-JN-UFp" id="nBV-7A-xdC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">

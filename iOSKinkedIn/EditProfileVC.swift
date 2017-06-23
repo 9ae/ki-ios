@@ -198,6 +198,12 @@ class EditProfileVC: UITableViewController {
                 vc.setSelectedRoles(roles)
             }
         }
+        
+        if(segue.identifier == ProfileDetailSegue.kinks.rawValue){
+            if let vc = segue.destination as? KinksVC, let kinks = me?.kinks {
+                vc.setExistingKinks(kinks)
+            }
+        }
     }
 
 }
