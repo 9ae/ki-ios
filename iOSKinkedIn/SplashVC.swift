@@ -62,15 +62,14 @@ class SplashVC: UIViewController {
         UIView.animate(withDuration: 0.5){
             self.iConsent.alpha = 0.1
         }
-        self.performSegue(withIdentifier: "splash2register", sender: sender)
-        /*
-        if let token = Login.getToken(){
+
+        if let token = KeychainWrapper.standard.string(forKey: "kiToken", withAccessibility: .whenUnlocked) {
             KinkedInAPI.setToken(token)
             self.performSegue(withIdentifier: "splash2app", sender: sender)
         } else {
             self.performSegue(withIdentifier: "splash2register", sender: sender)
         }
-        */
+        
     }
 
 

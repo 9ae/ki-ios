@@ -237,7 +237,7 @@ class KinkedInAPI {
         
         post("login", parameters: params, requiresToken: false){ json in
             if let token = json["token"] as? String {
-                
+                KeychainWrapper.standard.set(token, forKey: "kiToken")
                 self.setToken(token)
                 callback(token)
             }
@@ -259,6 +259,7 @@ class KinkedInAPI {
         post("register", parameters: params, requiresToken: false){ json in
             let job = Woz(json){ result in
                 if let token = result as? String {
+                    KeychainWrapper.standard.set(token, forKey: "kiToken")
                     self.setToken(token)
                     callback(true)
                 } else {
