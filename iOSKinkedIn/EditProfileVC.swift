@@ -192,6 +192,12 @@ class EditProfileVC: UITableViewController {
                 vc.setSelectedGenders(genders)
             }
         }
+        
+        if(segue.identifier == ProfileDetailSegue.roles.rawValue){
+            if let vc = segue.destination as? RolesVC, let roles = me?.roles {
+                vc.setSelectedRoles(roles)
+            }
+        }
     }
 
 }

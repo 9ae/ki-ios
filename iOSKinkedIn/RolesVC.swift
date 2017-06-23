@@ -11,16 +11,16 @@ import Toast_Swift
 
 class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
-    let CELL_ID = "cellRole"
+    private let CELL_ID = "cellRole"
     @IBOutlet var tableView: UITableView?
     
-    private var roles = [Role]()
+    private var roles = [String]()
     private var selectedRoles = Set<String>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KinkedInAPI.roles { (results: [Role]) in
+        KinkedInAPI.roles { (results: [String]) in
             self.roles = results
             self.tableView?.reloadData()
             self.view.hideToastActivity()
@@ -37,6 +37,12 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func setSelectedRoles(_ sroles: [String]){
+        for r in sroles {
+            selectedRoles.insert(r)
+        }
+    }
+    
     // MARK: Table View Data Source Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return roles.count
@@ -44,7 +50,7 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.getOrCreateCell(CELL_ID)
-        let label = roles[indexPath.row].label
+        let label = roles[indexPath.row]
         cell.textLabel?.text = label
         if(selectedRoles.contains(label)){
             CellStyles.select(cell, check: true)
@@ -55,7 +61,7 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        let label = roles[indexPath.row].label
+        let label = roles[indexPath.row]
         if(selectedRoles.contains(label)){
             selectedRoles.remove(label)
             tableView.reloadRows(at: [indexPath], with: .none)
@@ -68,7 +74,7 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    didSelectRowAt indexPath: IndexPath){
-        selectedRoles.insert(roles[indexPath.row].label)
+        selectedRoles.insert(roles[indexPath.row])
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     

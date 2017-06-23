@@ -212,13 +212,12 @@ class KinkedInAPI {
         }
     }
     
-    static func roles(_ callback:@escaping(_ results:[Role])->Void ) {
+    static func roles(_ callback:@escaping(_ results:[String])->Void ) {
         
         get("list/roles", requiresToken: false){ json in
             let job = Woz(json){ result in
                 if let list = result as? [String] {
-                    let roles = Role.parseJsonList(list)
-                    callback(roles)
+                    callback(list)
                 }
             }
             
