@@ -8,12 +8,23 @@
 
 import UIKit
 
-class BasicProfileVC: UIViewController {
+class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var birthdayField: UIDatePicker!
+    @IBOutlet var expField: UIPickerView!
+    
+    let expTitles = [
+        "curious about",
+        "dabbled with",
+        "learning about",
+        "experienced in",
+        "very experienced in"
+    ]
+    
     var name: String?
     var birthday: Date?
+    var exp: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +34,9 @@ class BasicProfileVC: UIViewController {
         let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
         dc.year = -18
         birthdayField?.maximumDate = calendar.date(byAdding: dc, to: today)
+        
+        expField.delegate = self
+        expField.dataSource = self
 
     }
     
@@ -32,12 +46,26 @@ class BasicProfileVC: UIViewController {
         if (birthday != nil){
             self.birthdayField.setDate(self.birthday!, animated: false)
         }
+        expField.selectRow(exp, inComponent: 0, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return expTitles.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return expTitles[row]
+    }
+    
     
     func post() {
         var params = [String:Any]()
@@ -53,6 +81,9 @@ class BasicProfileVC: UIViewController {
                 "date": calendar.component(.day, from: birthday)
             ]
         }
+        
+        params["exp"] = expField.selectedRow(inComponent: 0)
+        
         KinkedInAPI.updateProfile(params)
     }
     

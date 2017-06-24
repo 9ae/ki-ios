@@ -10,7 +10,7 @@ import UIKit
 
 class StaticMasterVC: UICollectionViewController {
     
-    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "changePrivacy", "partnerRequests"]
+    private let CELL_IDENTIFIERS = ["changeProfile","changePreferences", "partnerRequests", "logout"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,15 +22,18 @@ class StaticMasterVC: UICollectionViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "logout2register"){
+            KeychainWrapper.standard.removeObject(forKey: "kiToken")
+        }
     }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 

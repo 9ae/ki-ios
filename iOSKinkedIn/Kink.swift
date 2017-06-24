@@ -69,6 +69,22 @@ class Kink {
         
         return kinks
     }
+    
+    func way() -> String? {
+        if(!self.likesBoth && !self.likesGive && !self.likesGet){
+            return nil
+        }
+
+        if(self.likesGet && self.likesGive){
+            return "BOTH"
+        } else if (self.likesGive){
+            return "GIVE"
+        } else if (self.likesGet){
+            return "GET"
+        } else {
+            return "BOTH"
+        }
+    }
 }
 
 enum KinkForm: String {

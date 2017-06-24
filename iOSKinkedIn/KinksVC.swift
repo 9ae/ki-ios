@@ -58,7 +58,9 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     func setExistingKinks(_ kinks: [Kink]){
         for k in kinks {
             kinksMap[k.label] = k
+            //TODO append to question buttons
         }
+
     }
     
     private func hangTag(_ kink: Kink){
@@ -83,7 +85,6 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     }
     
     func kinksDidLoad(kinks: [Kink]){
-        tlv.removeAllTags()
         for k in kinks {
             if(!kinksMap.keys.contains(k.label)){
                 kinksMap[k.label] = k
@@ -93,8 +94,8 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     }
     
     private func loadActs(){
+        tlv.removeAllTags()
         if(actsFetched){
-            tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form == .act) {
                     hangTag(value)
@@ -109,8 +110,8 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     }
     
     private func loadServices(){
+        tlv.removeAllTags()
         if(servicesFetched){
-            tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form == .service) {
                     hangTag(value)
@@ -125,8 +126,8 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     }
     
     private func loadOmake(){
+        tlv.removeAllTags()
         if(omakeFetched){
-            tlv.removeAllTags()
             for (_ , value) in kinksMap {
                 if(value.form != .act && value.form != .service) {
                     hangTag(value)
@@ -213,20 +214,10 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         var json = [String: Any]()
         
         for (_, kink) in kinksMap {
-            if(!kink.likesBoth && !kink.likesGive && !kink.likesGet){
-                continue
+            
+            if let way = kink.way() {
+                json[kink.code] = ["way": way]
             }
-            var way: String
-            if(kink.likesGet && kink.likesGive){
-                way = "BOTH"
-            } else if (kink.likesGive){
-                way = "GIVE"
-            } else if (kink.likesGet){
-                way = "GET"
-            } else {
-                way = "BOTH"
-            }
-            json[kink.code] = ["way": way]
             
         }
         

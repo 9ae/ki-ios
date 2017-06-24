@@ -24,6 +24,10 @@ class Profile {
     var picture_public_id: String?
     var birthday: Date?
     
+    var setup_complete: Bool = false
+    var expLv: Int?
+    var exp: String?
+    
     init?(_ json: [String:Any]){
         guard let _id = json["uuid"] as? String else {
             return nil
@@ -173,6 +177,18 @@ class Profile {
                     }
                 }
             }
+        }
+        
+        if let _step = json["setup_complete"] as? Bool {
+            pro.setup_complete = _step
+        }
+        
+        if let _expLv = json["exp_level"] as? Int {
+            pro.expLv = _expLv
+        }
+        
+        if let _exp = json["exp"] as? String {
+            pro.exp = _exp
         }
         
         return pro

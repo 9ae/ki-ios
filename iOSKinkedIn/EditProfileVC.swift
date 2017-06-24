@@ -69,7 +69,7 @@ class EditProfileVC: UITableViewController {
         let basicCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.basic.rawValue, section: 0))
         if((me?.hasName())! && (me?.hasAge())! && me?.birthday != nil){
             basicCell?.backgroundColor = UIColor.white
-            basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0)"
+            basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0) years old, \((me?.exp ?? "experience with")) BDSM"
         } else {
             basicCell?.backgroundColor = UIColor.red
         }
@@ -83,11 +83,6 @@ class EditProfileVC: UITableViewController {
         gendersCell?.detailTextLabel?.text = shortJoin((me?.genders ?? [String]()))
         
         let rolesCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.roles.rawValue, section: 0))
-        if((me?.roles.count ?? 0) > 0){
-            rolesCell?.backgroundColor = UIColor.white
-        } else {
-            rolesCell?.backgroundColor = UIColor.red
-        }
         rolesCell?.detailTextLabel?.text = shortJoin((me?.roles ?? [String]()))
         
         let kinksCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.kinks.rawValue, section: 0))
@@ -98,6 +93,7 @@ class EditProfileVC: UITableViewController {
         }
         kinksCell?.detailTextLabel?.text = shortJoin((me?.kinkLabels() ?? [String]()))
         
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +106,17 @@ class EditProfileVC: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if let complete = me?.setup_complete, section == 0{
+            if(complete){
+                return "Your profile is published!"
+            } else {
+                return "Please complete highlighted fields"
+            }
+        }
+        return nil
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -137,6 +144,8 @@ class EditProfileVC: UITableViewController {
             print("do nothing")
         }
     }
+    
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -184,6 +193,7 @@ class EditProfileVC: UITableViewController {
             if let vc = segue.destination as? BasicProfileVC {
                 vc.name = me?.name
                 vc.birthday = me?.birthday
+                vc.exp = (me?.expLv) ?? 0
             }
         }
         
