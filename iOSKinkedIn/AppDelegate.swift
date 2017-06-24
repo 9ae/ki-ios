@@ -151,6 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     }
     
     func layerClient(_ client: LYRClient, didReceiveAuthenticationChallengeWithNonce nonce: String){
+        print("layer didReceiveAuthenticationChallengeWithNonce")
         LayerHelper.authCallback(client, nonce)
     }
     
@@ -169,7 +170,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         }
         
         if let layerClient = LayerHelper.client {
-            if (layerClient.isConnected && layerClient.authenticatedUser == nil){
+            if (layerClient.isConnected){
                 print("Layer auth user")
                 LayerHelper.auth()
             }

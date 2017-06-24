@@ -63,7 +63,7 @@ class SplashVC: UIViewController {
             self.iConsent.alpha = 0.1
         }
 
-        if let token = KeychainWrapper.standard.string(forKey: "kiToken", withAccessibility: .whenUnlocked) {
+        if let token = KeychainWrapper.standard.string(forKey: "kiToken") {
             KinkedInAPI.setToken(token)
             self.performSegue(withIdentifier: "splash2app", sender: sender)
         } else {

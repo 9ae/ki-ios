@@ -65,7 +65,7 @@ class CareConvoVC: ATLConversationViewController,
             object: self.layerClient)
         
         _makeOptionsView()
-        
+        sendText("Case created on \(Date().description)")
     }
     
     private func _makeOptionsView() {
@@ -117,11 +117,22 @@ class CareConvoVC: ATLConversationViewController,
         }
         view.addConstraint(height)
         stackHeightConstraint = height
+        stack.isHidden = false
         updateReplyState(state: .choice)
     }
     
+    func sendText(_ text: String){
+        let part = LYRMessagePart(text: text)
+        do {
+            let msg = try layerClient.newMessage(with: [part], options: nil)
+            try self.conversation.send(msg)
+        } catch {
+            print("error in sending text message")
+        }
+    }
+    
     func optionTapped(_ sender: UIButton){
-        print("response \(sender.title(for: .normal))")
+
         guard let text = sender.title(for: .normal) else {
             print("cant find")
             return
@@ -162,7 +173,6 @@ class CareConvoVC: ATLConversationViewController,
     
     public func conversationViewController(_ viewController: ATLConversationViewController, didSend message: LYRMessage) {
         //updateReplyState(state: .none)
-        print("LYR didSend")
     }
     
     public func conversationViewController(_ viewController: ATLConversationViewController, didFailSending message: LYRMessage, error: Error) {
@@ -173,14 +183,15 @@ class CareConvoVC: ATLConversationViewController,
     public func updateReplyState(state: ReplyType){
         self.replyState = state
         
-        self.messageInputToolbar.resignFirstResponder()
-        
         switch (state){
         case .text:
+            self.messageInputToolbar.becomeFirstResponder()
             self.messageInputToolbar.isHidden = false
         case .choice:
+            self.messageInputToolbar.resignFirstResponder()
             self.messageInputToolbar.isHidden = true
         default:
+            self.messageInputToolbar.resignFirstResponder()
             self.messageInputToolbar.isHidden = true
         }
 
