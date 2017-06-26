@@ -13,6 +13,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     private let CELL_ID = "cellGender"
     @IBOutlet var tableView: UITableView?
+    var profile: Profile?
     
     private var genders = [String]()
     private var selectedGenders = Set<String>()
@@ -22,6 +23,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         
         KinkedInAPI.genders(_loadGenders)
+        setSelectedGenders()
         tableView?.dataSource = self
         tableView?.delegate = self
         self.view.makeToastActivity(.center)
@@ -38,9 +40,11 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         self.view.hideToastActivity()
     }
     
-    func setSelectedGenders(_ sgenders: [String]){
-        for g in sgenders {
-            selectedGenders.insert(g)
+    private func setSelectedGenders(){
+        if let _genders = profile?.genders {
+            for g in _genders {
+                selectedGenders.insert(g)
+            }
         }
     }
     
@@ -83,7 +87,9 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        let params = ["genders": Array(selectedGenders)]
+        let newGenders = Array(selectedGenders)
+        profile?.genders = newGenders
+        let params = ["genders": newGenders]
         KinkedInAPI.updateProfile(params)
     }
     

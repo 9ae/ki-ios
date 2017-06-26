@@ -35,17 +35,20 @@ class EditProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.makeToastActivity(.center)
+        KinkedInAPI.myself { profile in
+            self.me = profile
+            self.updateTableWithInfo()
+            self.view.hideToastActivity()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.view.makeToastActivity(.center)
-        KinkedInAPI.myself { profile in
-            self.me = profile
-            print("profile loaded")
-            self.updateTableWithInfo()
-            self.view.hideToastActivity()
+        if(me != nil){
+            updateTableWithInfo()
         }
     }
 
@@ -93,7 +96,6 @@ class EditProfileVC: UITableViewController {
         }
         kinksCell?.detailTextLabel?.text = shortJoin((me?.kinkLabels() ?? [String]()))
         
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -191,21 +193,19 @@ class EditProfileVC: UITableViewController {
         // Pass the selected object to the new view controller.
         if(segue.identifier == ProfileDetailSegue.basic.rawValue){
             if let vc = segue.destination as? BasicProfileVC {
-                vc.name = me?.name
-                vc.birthday = me?.birthday
-                vc.exp = (me?.expLv) ?? 0
+                vc.profile = me
             }
         }
         
         if(segue.identifier == ProfileDetailSegue.genders.rawValue){
             if let vc = segue.destination as? GendersVC, let genders = me?.genders {
-                vc.setSelectedGenders(genders)
+                vc.profile = me
             }
         }
         
         if(segue.identifier == ProfileDetailSegue.roles.rawValue){
             if let vc = segue.destination as? RolesVC, let roles = me?.roles {
-                vc.setSelectedRoles(roles)
+                vc.profile = me
             }
         }
         

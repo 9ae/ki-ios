@@ -226,6 +226,22 @@ class KinkedInAPI {
         
     }
     
+    static func experienceLevels(_ callback:@escaping(_ results:[String])->Void) {
+        get("exp", requiresToken: false){ json in
+            if let names = json["exp_names"] as? [String] {
+                callback(names)
+            }
+        }
+    }
+    
+    static func bioPrompts(_ callback:@escaping(_ results:[String])->Void) {
+        get("prompts", requiresToken: false){ json in
+            if let titles = json["prompts"] as? [String] {
+                callback(titles)
+            }
+        }
+    }
+    
     static func login(email: String, password: String, callback: @escaping(_ token: String)->Void){
         
         let params: Parameters = [

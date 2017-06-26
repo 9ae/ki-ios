@@ -16,6 +16,8 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     private var roles = [String]()
     private var selectedRoles = Set<String>()
+    
+    var profile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
             self.tableView?.reloadData()
             self.view.hideToastActivity()
         }
+        setSelectedRoles()
         tableView?.delegate = self
         tableView?.dataSource = self
         self.view.makeToastActivity(.center)
@@ -37,9 +40,11 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func setSelectedRoles(_ sroles: [String]){
-        for r in sroles {
-            selectedRoles.insert(r)
+    private func setSelectedRoles(){
+        if let _roles = profile?.roles {
+            for r in _roles {
+                selectedRoles.insert(r)
+            }
         }
     }
     
@@ -80,7 +85,9 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        let params = ["roles" : Array(selectedRoles) ]
+        let newRoles =  Array(selectedRoles)
+        profile?.roles = newRoles
+        let params = ["roles" : newRoles ]
         KinkedInAPI.updateProfile(params)
 
     }

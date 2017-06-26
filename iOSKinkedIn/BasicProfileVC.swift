@@ -14,17 +14,9 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet var birthdayField: UIDatePicker!
     @IBOutlet var expField: UIPickerView!
     
-    let expTitles = [
-        "curious about",
-        "dabbled with",
-        "learning about",
-        "experienced in",
-        "very experienced in"
-    ]
+    var expTitles = [String]()
     
-    var name: String?
-    var birthday: Date?
-    var exp: Int = 0
+    var profile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,16 +29,21 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         expField.delegate = self
         expField.dataSource = self
+        
+        KinkedInAPI.experienceLevels { results in
+            self.expTitles = results
+            self.expField.reloadComponent(0)
+            self.expField.selectRow((self.profile?.expLv!)!, inComponent: 0, animated: false)
+        }
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.nameField.text = name
-        if (birthday != nil){
-            self.birthdayField.setDate(self.birthday!, animated: false)
+        self.nameField.text = profile?.name
+        if (profile?.birthday != nil){
+            self.birthdayField.setDate((profile?.birthday!)!, animated: false)
         }
-        expField.selectRow(exp, inComponent: 0, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,18 +68,29 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         var params = [String:Any]()
         
         if let name = nameField?.text {
-            params["name"] = name
+            if profile?.name != name {
+                params["name"] = name
+                profile?.name = name
+            }
         }
         
         if let birthday = birthdayField?.date, let calendar = birthdayField?.calendar {
-            params["birthday"] = [
-                "year": calendar.component(.year, from: birthday),
-                "month": calendar.component(.month, from: birthday),
-                "date": calendar.component(.day, from: birthday)
-            ]
+            if profile?.birthday != birthday {
+                params["birthday"] = [
+                    "year": calendar.component(.year, from: birthday),
+                    "month": calendar.component(.month, from: birthday),
+                    "date": calendar.component(.day, from: birthday)
+                ]
+                profile?.birthday = birthday
+            }
         }
         
-        params["exp"] = expField.selectedRow(inComponent: 0)
+        let exp = expField.selectedRow(inComponent: 0)
+        if profile?.expLv != exp {
+            params["exp"] = exp
+            profile?.expLv = exp
+            profile?.exp = expTitles[exp]
+        }
         
         KinkedInAPI.updateProfile(params)
     }
