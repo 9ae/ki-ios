@@ -32,8 +32,8 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     @IBOutlet var qstack: UIStackView!
     @IBOutlet weak var tlv: TagListView!
     
-    
-    var kinksMap = [String:Kink]()
+    var profile: Profile?
+    private var kinksMap = [String:Kink]()
     var omakeFetched = false
     var actsFetched = false
     var servicesFetched = false
@@ -47,6 +47,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         tlv.delegate = self
         tlv.textFont = UIFont.systemFont(ofSize: 20)
         
+        setExistingKinks()
         if qstack.arrangedSubviews.count > 0 {
             if let firstQuestion = qstack.arrangedSubviews[0] as? UIButton {
                 onOmake(firstQuestion)
@@ -55,12 +56,13 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
     }
     
-    func setExistingKinks(_ kinks: [Kink]){
+    private func setExistingKinks(){
+        if let kinks = profile?.kinks {
         for k in kinks {
             kinksMap[k.label] = k
             //TODO append to question buttons
         }
-
+        }
     }
     
     private func hangTag(_ kink: Kink){
@@ -213,13 +215,16 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     func compileAnswers() -> [String: Any]{
         var json = [String: Any]()
         
+        var kinksArray = [Kink]()
         for (_, kink) in kinksMap {
             
             if let way = kink.way() {
                 json[kink.code] = ["way": way]
+                kinksArray.append(kink)
             }
             
         }
+        profile?.kinks = kinksArray
         
         return json
     }

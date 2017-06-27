@@ -198,20 +198,20 @@ class EditProfileVC: UITableViewController {
         }
         
         if(segue.identifier == ProfileDetailSegue.genders.rawValue){
-            if let vc = segue.destination as? GendersVC, let genders = me?.genders {
+            if let vc = segue.destination as? GendersVC {
                 vc.profile = me
             }
         }
         
         if(segue.identifier == ProfileDetailSegue.roles.rawValue){
-            if let vc = segue.destination as? RolesVC, let roles = me?.roles {
+            if let vc = segue.destination as? RolesVC {
                 vc.profile = me
             }
         }
         
         if(segue.identifier == ProfileDetailSegue.kinks.rawValue){
-            if let vc = segue.destination as? KinksVC, let kinks = me?.kinks {
-                vc.setExistingKinks(kinks)
+            if let vc = segue.destination as? KinksVC{
+                vc.profile = me
             }
         }
     }
