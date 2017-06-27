@@ -139,7 +139,7 @@ class EditProfileVC: UITableViewController {
         case ProfileDetailRow.kinks.rawValue:
             self.performSegue(withIdentifier: ProfileDetailSegue.kinks.rawValue, sender: self)
         case ProfileDetailRow.bio.rawValue:
-            print("editBio")
+            self.performSegue(withIdentifier: ProfileDetailSegue.bio.rawValue, sender: self)
         case ProfileDetailRow.partners.rawValue:
             self.performSegue(withIdentifier: ProfileDetailSegue.partners.rawValue, sender: self)
         default:
@@ -210,7 +210,13 @@ class EditProfileVC: UITableViewController {
         }
         
         if(segue.identifier == ProfileDetailSegue.kinks.rawValue){
-            if let vc = segue.destination as? KinksVC{
+            if let vc = segue.destination as? KinksVC {
+                vc.profile = me
+            }
+        }
+        
+        if(segue.identifier == ProfileDetailSegue.bio.rawValue){
+            if let vc = segue.destination as? PromptVC {
                 vc.profile = me
             }
         }

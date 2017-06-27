@@ -8,6 +8,22 @@
 
 import Foundation
 
+struct BioPrompt {
+    
+    var title: String
+    var answer: String?
+    var show: Bool = false
+    
+    func objectify() -> [String: Any?]{
+        return [
+            "title": self.title,
+            "show": self.show,
+            "answer": self.answer
+        ]
+    }
+    
+}
+
 class Profile {
     var neoId: String
     var name: String
@@ -23,6 +39,7 @@ class Profile {
     var city: String?
     var picture_public_id: String?
     var birthday: Date?
+    var prompts : [BioPrompt]?
     
     var setup_complete: Bool = false
     var expLv: Int?
@@ -191,7 +208,39 @@ class Profile {
             pro.exp = _exp
         }
         
+        if let _prompts = json["prompts"] as? [Any] {
+            pro.prompts = Profile.parsePrompts(_prompts)
+        }
+        
         return pro
+    }
+    
+    static func parsePrompts(_ arr: [Any]) -> [BioPrompt]? {
+        var results = [BioPrompt]()
+        for _pr in arr {
+            if let _p = _pr as? [String: Any] {
+                guard let _title = _p["title"] as? String else {
+                    continue
+                }
+                
+                guard let _show = _p["show"] as? Bool else {
+                    continue
+                }
+                
+                guard let _answer = _p["answer"] as? String else {
+                    continue
+                }
+                
+                let bp = BioPrompt(title: _title, answer: _answer, show: _show)
+                results.append(bp)
+            }
+        }
+        
+        if(results.count>0){
+            return results
+        } else {
+            return nil
+        }
     }
     
     
