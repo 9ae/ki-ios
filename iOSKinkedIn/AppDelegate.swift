@@ -49,7 +49,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         
         print("didFinishLaunchingWithOptions")
         
+        loadDefaults()
+        
         return true
+    }
+    
+    private func loadDefaults(){
+        let defaults = UserDefaults.standard
+        let checkinHours = defaults.integer(forKey: UD_CHECKIN_TIME)
+        if checkinHours == 0 {
+            defaults.set(UD_CHECKIN_TIME_VALUE, forKey: UD_CHECKIN_TIME)
+        }
     }
     
     private func partnershipCat() -> UNNotificationCategory {
