@@ -105,10 +105,9 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
         KinkedInAPI.likeProfile(uuid) { reciprocal in
             if(reciprocal) {
                 NotificationCenter.default.post(name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
-            } else {
-                self.back()
             }
         }
+        back()
         
     }
     
