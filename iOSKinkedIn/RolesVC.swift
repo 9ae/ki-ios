@@ -13,11 +13,12 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     private let CELL_ID = "cellRole"
     @IBOutlet var tableView: UITableView?
-    
+
     private var roles = [String]()
     private var selectedRoles = Set<String>()
     
     var profile: Profile?
+    var updatePreferencesMode: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,15 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
             self.tableView?.reloadData()
             self.view.hideToastActivity()
         }
-        setSelectedRoles()
+        
+        if(updatePreferencesMode){
+            self.setSelectedRoles(profile?.preferences?.roles ?? [String]() )
+             self.navigationItem.prompt = "Show me people who are..."
+        } else {
+            self.setSelectedRoles(profile?.roles ?? [String]() )
+            self.navigationItem.prompt = "I identify as..."
+        }
+        
         tableView?.delegate = self
         tableView?.dataSource = self
         self.view.makeToastActivity(.center)
@@ -40,11 +49,9 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    private func setSelectedRoles(){
-        if let _roles = profile?.roles {
-            for r in _roles {
-                selectedRoles.insert(r)
-            }
+    private func setSelectedRoles(_ sr: [String]){
+        for r in sr {
+            selectedRoles.insert(r)
         }
     }
     
@@ -85,10 +92,19 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         let newRoles =  Array(selectedRoles)
-        profile?.roles = newRoles
-        let params = ["roles" : newRoles ]
-        KinkedInAPI.updateProfile(params)
+        
+        if(updatePreferencesMode){
+            profile?.preferences?.roles = newRoles
+            let params = ["prefers" :["roles" : newRoles ] ]
+            KinkedInAPI.updateProfile(params)
+        } else {
+            profile?.roles = newRoles
+            let params = ["roles" : newRoles ]
+            KinkedInAPI.updateProfile(params)
+        }
+    
 
     }
 

@@ -24,6 +24,15 @@ struct BioPrompt {
     
 }
 
+struct PreferenceFilters {
+    
+    var minAge: Int
+    var maxAge: Int
+    var genders: [String]
+    var roles: [String]
+
+}
+
 class Profile {
     var neoId: String
     var name: String
@@ -44,6 +53,8 @@ class Profile {
     var setup_complete: Bool = false
     var expLv: Int?
     var exp: String?
+    
+    var preferences: PreferenceFilters?
     
     init?(_ json: [String:Any]){
         guard let _id = json["uuid"] as? String else {
@@ -210,6 +221,14 @@ class Profile {
         
         if let _prompts = json["prompts"] as? [Any] {
             pro.prompts = Profile.parsePrompts(_prompts)
+        }
+        
+        if let _prefers = json["prefers"] as? [String:Any]{
+            let minAge = (_prefers["min_age"] as? Int) ?? 0
+            let maxAge = (_prefers["max_age"] as? Int) ?? 0
+            let genders = (_prefers["genders"] as? [String]) ?? [String]()
+            let roles = (_prefers["roles"] as? [String]) ?? [String]()
+            pro.preferences = PreferenceFilters(minAge: minAge, maxAge: maxAge, genders: genders, roles: roles)
         }
         
         return pro

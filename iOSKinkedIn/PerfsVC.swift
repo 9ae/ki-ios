@@ -14,6 +14,8 @@ class PerfsVC: UITableViewController {
     @IBOutlet var maxAge: UITextField!
     @IBOutlet var checkinHours: UITextField!
     
+    var preferences: PreferenceFilters?
+    var profile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +24,14 @@ class PerfsVC: UITableViewController {
         if(checkinTime == 0){
             checkinTime = UD_CHECKIN_TIME_VALUE
         }
-        checkinHours.text = "\(checkinTime)"
+        checkinHours.text = String(describing: checkinTime)
+        
+        KinkedInAPI.myself{ profile in
+            let preferences = profile.preferences
+            self.minAge.text = String(describing: preferences?.minAge ?? 0)
+            self.maxAge.text = String(describing: preferences?.maxAge ?? 0)
+            self.profile = profile
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +58,19 @@ class PerfsVC: UITableViewController {
         if let checkinTime = Int(checkinHours.text!) {
             UserDefaults.standard.set(checkinTime, forKey: UD_CHECKIN_TIME)
         }
+        
+        var prefers = [String:Any]()
+        if let min_age = Int(minAge.text!) {
+            prefers["min_age"] = min_age
+        }
+        
+        if let max_age = Int(maxAge.text!) {
+            prefers["max_age"] = max_age
+        }
+        
+        let params = ["prefers": prefers]
+        KinkedInAPI.updateProfile(params)
+        
     }
 
     /*
@@ -96,14 +118,25 @@ class PerfsVC: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier=="prefGenders", let vc = segue.destination as? GendersVC {
+            vc.profile = profile
+            vc.updatePreferencesMode = true
+        }
+        
+        if segue.identifier=="prefRoles", let vc = segue.destination as? RolesVC {
+            vc.profile = profile
+            vc.updatePreferencesMode = true
+        }
+        
+        
     }
-    */
+    
 
 }

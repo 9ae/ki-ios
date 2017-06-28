@@ -24,14 +24,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What gender(s) do you identify with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myD-Jj-PoF">
-                                <rect key="frame" x="16" y="30" width="343" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-t6-la7">
-                                <rect key="frame" x="0.0" y="71" width="375" height="532"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellGender" textLabel="MpS-jK-skM" style="IBUITableViewCellStyleDefault" id="d7G-GZ-rmy">
@@ -56,13 +50,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="myD-Jj-PoF" firstAttribute="top" secondItem="EkO-u0-WnA" secondAttribute="bottom" constant="30" id="4av-VW-074"/>
                             <constraint firstItem="Zb1-t6-la7" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leading" id="Cra-B4-e4S"/>
                             <constraint firstAttribute="trailing" secondItem="Zb1-t6-la7" secondAttribute="trailing" id="L6R-uW-rQD"/>
-                            <constraint firstItem="myD-Jj-PoF" firstAttribute="leading" secondItem="fN2-8b-wUr" secondAttribute="leadingMargin" id="fgt-LT-K0M"/>
                             <constraint firstItem="qhr-tb-4Qa" firstAttribute="top" secondItem="Zb1-t6-la7" secondAttribute="bottom" id="gGE-MR-nQ8"/>
-                            <constraint firstItem="Zb1-t6-la7" firstAttribute="top" secondItem="myD-Jj-PoF" secondAttribute="bottom" constant="20" id="jAI-So-bIQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="myD-Jj-PoF" secondAttribute="trailing" id="toU-vT-6Sk"/>
+                            <constraint firstItem="Zb1-t6-la7" firstAttribute="top" secondItem="EkO-u0-WnA" secondAttribute="bottom" id="kAn-Bs-5Pg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Genders" id="YHP-GV-HdC"/>
@@ -87,14 +78,8 @@
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What roles(s) do you identify with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4IF-3f-Hsv">
-                                <rect key="frame" x="16" y="30" width="343" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-1z-CRY">
-                                <rect key="frame" x="16" y="71" width="343" height="532"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="cellRole" textLabel="PAM-6K-EuA" style="IBUITableViewCellStyleDefault" id="NwL-ET-BFj">
@@ -119,10 +104,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="4IF-3f-Hsv" firstAttribute="leading" secondItem="sZp-CO-JcF" secondAttribute="leadingMargin" id="4Bm-Np-ajW"/>
-                            <constraint firstItem="tL3-1z-CRY" firstAttribute="top" secondItem="4IF-3f-Hsv" secondAttribute="bottom" constant="20" id="Bie-3y-jye"/>
-                            <constraint firstItem="4IF-3f-Hsv" firstAttribute="top" secondItem="ObL-Xf-R8Q" secondAttribute="bottom" constant="30" id="EUK-nm-0Qg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4IF-3f-Hsv" secondAttribute="trailing" id="Xx4-kr-5IR"/>
+                            <constraint firstItem="tL3-1z-CRY" firstAttribute="top" secondItem="ObL-Xf-R8Q" secondAttribute="bottom" id="XRT-Qo-UYl"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tL3-1z-CRY" secondAttribute="trailing" id="apo-DQ-YI3"/>
                             <constraint firstItem="tL3-1z-CRY" firstAttribute="leading" secondItem="sZp-CO-JcF" secondAttribute="leadingMargin" id="i5H-c9-Hcn"/>
                             <constraint firstAttribute="bottomMargin" secondItem="tL3-1z-CRY" secondAttribute="bottom" id="neq-u9-IoB"/>
@@ -212,7 +194,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5cO-gN-BQL" id="cLF-Jw-ELZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bhair rw ok now something we has this one bu skd saass hrrr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-5a-5e3">
@@ -716,7 +698,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4ed-Cx-LbM" id="sy7-2D-crY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-Vr-rD6">
@@ -1465,7 +1447,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vA4-JN-UFp" id="nBV-7A-xdC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">
@@ -1703,10 +1685,10 @@ Respected boundaries &amp; were open and honest in their communication</string>
             </objects>
             <point key="canvasLocation" x="-1322.4000000000001" y="5529.9850074962524"/>
         </scene>
-        <!--PerfsVC-->
+        <!--Preferences-->
         <scene sceneID="gxU-Np-AOl">
             <objects>
-                <tableViewController id="3CP-jS-J61" customClass="PerfsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Preferences" id="3CP-jS-J61" customClass="PerfsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ON-Zl-xCz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1718,7 +1700,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ImM-aw-Er6" id="GaY-eW-7pv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-Yj-FEF">
@@ -1749,7 +1731,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0T0-qa-BV9" id="3vm-1J-nbF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-tE-RW7">
@@ -1792,6 +1774,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ftr-md-waT" kind="show" identifier="prefGenders" id="It0-5f-dhq"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BWS-7M-q3S" style="IBUITableViewCellStyleDefault" id="0p9-3i-YVY">
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
@@ -1809,6 +1794,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="tJp-8Y-k5q" kind="show" identifier="prefRoles" id="0Ba-NB-9fe"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1818,7 +1806,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDb-Gr-ypy" id="R2b-Fc-D1X">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours to check-in on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pP-Sm-BPl">
@@ -2320,9 +2308,11 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V9a-fD-EEd"/>
         <segue reference="wD5-Qq-Cqx"/>
         <segue reference="hKV-n1-KO7"/>
+        <segue reference="V9a-fD-EEd"/>
+        <segue reference="0Ba-NB-9fe"/>
+        <segue reference="It0-5f-dhq"/>
         <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>
