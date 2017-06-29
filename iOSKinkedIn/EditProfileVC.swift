@@ -14,7 +14,6 @@ enum ProfileDetailSegue : String {
     case roles = "editRoles"
     case kinks = "editKinks"
     case bio = "editBio"
-    case partners = "myPartners"
 }
 
 enum ProfileDetailRow : Int {
@@ -24,7 +23,6 @@ enum ProfileDetailRow : Int {
     case roles = 3
     case kinks = 4
     case bio = 5
-    case partners = 6
 }
 
 class EditProfileVC: UITableViewController {
@@ -123,7 +121,7 @@ class EditProfileVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 7
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -140,8 +138,6 @@ class EditProfileVC: UITableViewController {
             self.performSegue(withIdentifier: ProfileDetailSegue.kinks.rawValue, sender: self)
         case ProfileDetailRow.bio.rawValue:
             self.performSegue(withIdentifier: ProfileDetailSegue.bio.rawValue, sender: self)
-        case ProfileDetailRow.partners.rawValue:
-            self.performSegue(withIdentifier: ProfileDetailSegue.partners.rawValue, sender: self)
         default:
             print("do nothing")
         }

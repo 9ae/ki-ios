@@ -1356,7 +1356,7 @@ please apply for an invitation on trykinkedin.com</string>
         <!--Partners-->
         <scene sceneID="bl2-by-lga">
             <objects>
-                <viewController id="91R-vE-cG2" customClass="MasterPartnersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="partnersVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="91R-vE-cG2" customClass="MasterPartnersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="req-ov-GAe"/>
                         <viewControllerLayoutGuide type="bottom" id="jaU-B0-Pdd"/>
@@ -1423,89 +1423,6 @@ please apply for an invitation on trykinkedin.com</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2p-L8-QPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2287.1999999999998" y="4742.8785607196405"/>
-        </scene>
-        <!--Partner Requests-->
-        <scene sceneID="Kzm-uQ-I02">
-            <objects>
-                <tableViewController storyboardIdentifier="partnerRequests" title="Partner Requests" useStoryboardIdentifierAsRestorationIdentifier="YES" id="zvn-D5-WKW" customClass="PartnerRequestsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="62" sectionHeaderHeight="28" sectionFooterHeight="28" id="BnC-Ql-j5J">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="partnerRequestCell" textLabel="PCM-e0-te3" style="IBUITableViewCellStyleDefault" id="foz-FJ-Puj">
-                                <rect key="frame" x="0.0" y="28" width="375" height="62"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="foz-FJ-Puj" id="3dr-Hg-RlE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PCM-e0-te3">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="61.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zvn-D5-WKW" id="WY5-wG-zkI"/>
-                            <outlet property="delegate" destination="zvn-D5-WKW" id="NLe-K5-UTd"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="16c-1y-UkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1322.4000000000001" y="4750.0749625187409"/>
-        </scene>
-        <!--My Partners-->
-        <scene sceneID="tfV-HD-VQr">
-            <objects>
-                <tableViewController title="My Partners" id="txh-Nc-2dD" customClass="PartnersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Wg-HR-98B">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerNameCell" textLabel="Xkh-Qd-WWy" style="IBUITableViewCellStyleDefault" id="gtR-RG-FwE">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gtR-RG-FwE" id="zJa-VH-owc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xkh-Qd-WWy">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="txh-Nc-2dD" id="4lj-J0-RNh"/>
-                            <outlet property="delegate" destination="txh-Nc-2dD" id="y7c-MK-Um7"/>
-                        </connections>
-                    </tableView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="My Partners" id="qFE-DP-kuO">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="U2d-pl-ODe">
-                            <connections>
-                                <action selector="enterPartnerWithSender:" destination="txh-Nc-2dD" id="Klg-oF-WWJ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wGH-ad-pQ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-486" y="4816"/>
         </scene>
         <!--Edit Profile-->
         <scene sceneID="6cb-nu-OjA">
@@ -1645,23 +1562,6 @@ please apply for an invitation on trykinkedin.com</string>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="pN9-p1-AmU" style="IBUITableViewCellStyleDefault" id="XHU-wr-y52">
-                                        <rect key="frame" x="0.0" y="420" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XHU-wr-y52" id="nfP-ac-g0Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="My Partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="pN9-p1-AmU">
-                                                    <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -1675,7 +1575,6 @@ please apply for an invitation on trykinkedin.com</string>
                         <segue destination="ZeK-JH-Ubf" kind="show" identifier="editBasic" id="Kb0-tW-kuf"/>
                         <segue destination="ftr-md-waT" kind="show" identifier="editGenders" id="byy-d2-8RY"/>
                         <segue destination="tJp-8Y-k5q" kind="show" identifier="editRoles" id="sbP-fI-Kao"/>
-                        <segue destination="txh-Nc-2dD" kind="show" identifier="myPartners" id="WRm-k2-oTl"/>
                         <segue destination="L15-wi-fVb" kind="show" identifier="editKinks" id="9wF-aR-BBh"/>
                         <segue destination="gxL-0v-kkg" kind="show" identifier="editBio" id="7sh-sa-ufE"/>
                     </connections>
@@ -2386,8 +2285,8 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <segue reference="wD5-Qq-Cqx"/>
         <segue reference="hKV-n1-KO7"/>
         <segue reference="IOD-UG-XJy"/>
-        <segue reference="It0-5f-dhq"/>
-        <segue reference="0Ba-NB-9fe"/>
+        <segue reference="byy-d2-8RY"/>
+        <segue reference="sbP-fI-Kao"/>
         <segue reference="zGX-bB-pEm"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.72175717353820801" green="0.0" blue="0.17970260977745056" alpha="1" colorSpace="calibratedRGB"/>

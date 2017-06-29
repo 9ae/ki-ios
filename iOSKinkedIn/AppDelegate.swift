@@ -143,7 +143,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             case NOTECAT_AFTERCARE:
                 navCtrl.pushViewController(LayerHelper.makeAftercareVC(), animated: false)
             case NOTECAT_PARTNER_REQUEST:
-                let vc = storyboard.instantiateViewController(withIdentifier: "partnerRequests") as! PartnerRequestsVC
+                let vc = storyboard.instantiateViewController(withIdentifier: "partnersVC") as! MasterPartnersVC
                 navCtrl.pushViewController(vc, animated: false)
                 print("lauch partner request screen")
             default:

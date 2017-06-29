@@ -57,8 +57,6 @@
 		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
 		00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* KinksVC.swift */; };
-		00BEECBD1EF615E7005EDF36 /* PartnersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */; };
-		00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */; };
 		00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */; };
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
@@ -164,8 +162,6 @@
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
 		00BA528C1E75744300EE20E4 /* KinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinksVC.swift; sourceTree = "<group>"; };
-		00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnersVC.swift; sourceTree = "<group>"; };
-		00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequestsVC.swift; sourceTree = "<group>"; };
 		00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequests.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -343,15 +339,6 @@
 			name = change;
 			sourceTree = "<group>";
 		};
-		00BF02461EB5A60600A7DF1B /* partners */ = {
-			isa = PBXGroup;
-			children = (
-				00BEECBC1EF615E7005EDF36 /* PartnersVC.swift */,
-				00BF02471EB5A68C00A7DF1B /* PartnerRequestsVC.swift */,
-			);
-			name = partners;
-			sourceTree = "<group>";
-		};
 		00ED8A211E74376800096497 /* auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,7 +377,6 @@
 				00FD2A731EF6FAF60015749A /* profile */,
 				0035F4A91EC70A7F0002C7A6 /* aftercare */,
 				0025651E1EB839C900B7BF2A /* vouch */,
-				00BF02461EB5A60600A7DF1B /* partners */,
 				008597231EA3623B00583621 /* change */,
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				006D50061E658635005DAABE /* AppTabVC.swift */,
@@ -774,7 +760,6 @@
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
-				00BEECBD1EF615E7005EDF36 /* PartnersVC.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
@@ -796,7 +781,6 @@
 				0044DFB91EFD79DC001F1299 /* KeychainWrapper.swift in Sources */,
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
-				00BF02481EB5A68C00A7DF1B /* PartnerRequestsVC.swift in Sources */,
 				007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */,
 				00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */,
 				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
