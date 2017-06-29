@@ -242,7 +242,7 @@ class KinkedInAPI {
         }
     }
     
-    static func login(email: String, password: String, callback: @escaping(_ token: String)->Void){
+    static func login(email: String, password: String, callback: @escaping(_ success: Bool)->Void){
         
         let params: Parameters = [
             "email": email,
@@ -253,7 +253,9 @@ class KinkedInAPI {
             if let token = json["token"] as? String {
                 KeychainWrapper.standard.set(token, forKey: "kiToken")
                 self.setToken(token)
-                callback(token)
+                callback(true)
+            } else {
+                callback(false)
             }
             /*
             if let neoId = json["neo_id"] as? String {

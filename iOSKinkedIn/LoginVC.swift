@@ -39,16 +39,27 @@ class LoginVC: ScrollTextInputVC {
         }
         if let email = fieldEmail.text,
             let password = fieldPassword.text {
-            KinkedInAPI.login(email: email, password: password, callback: checkProfileCreated)
+            KinkedInAPI.login(email: email, password: password){ success in
+                if success {
+                    self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
+                } else {
+                    self.wrongAlert()
+                }
+            }
             
         }
         
     }
     
-    func checkProfileCreated(_ token: String) {
-        self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
+    private func wrongAlert(){
+        let alert = UIAlertController(title: "Incorrect Information", message: "Incorrect e-mail and password combo. Please double check both fields", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default){ action in
+            self.loginBtnSender?.isEnabled = true
+            self.loginBtnSender?.alpha = 1.0
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
-    
     
     // MARK: - Navigation
 

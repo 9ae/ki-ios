@@ -82,6 +82,9 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                     "date": calendar.component(.day, from: birthday)
                 ]
                 profile?.birthday = birthday
+                
+                let today = Date()
+                profile?.age = calendar.dateComponents([.year], from: birthday, to: today).year ?? 0 
             }
         }
         

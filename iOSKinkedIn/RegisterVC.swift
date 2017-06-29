@@ -50,10 +50,23 @@ class RegisterVC: ScrollTextInputVC {
                 if(success){
                     self.performSegue(withIdentifier: "register2app", sender: self)
                 } else {
-                    self.view.makeToast("Error in creating your account. Please check your email and invite code combo, or contact Alice")
+                    self.wrongAlert()
                 }
         }
         self.view.makeToastActivity(.center)
+    }
+    
+    private func wrongAlert(){
+        let alert = UIAlertController(
+            title: "Incorrect Information",
+            message: "Error in creating your account. Please check your email and invite code combo, or contact Alice",
+            preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default){ action in
+            self.signup?.isEnabled = true
+            self.signup?.alpha = 1.0
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
