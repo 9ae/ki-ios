@@ -34,6 +34,12 @@ class HelpIntroVC: UIViewController {
         
     }
     
+    
+    @IBAction func previousConvos(_ sender: Any) {
+        let listVC = CaseList(layerClient: LayerHelper.client!)
+        self.navigationController?.pushViewController(listVC, animated: false)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

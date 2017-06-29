@@ -194,7 +194,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5cO-gN-BQL" id="cLF-Jw-ELZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bhair rw ok now something we has this one bu skd saass hrrr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEZ-5a-5e3">
@@ -698,7 +698,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4ed-Cx-LbM" id="sy7-2D-crY">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YzJ-Vr-rD6">
@@ -1153,11 +1153,11 @@ please apply for an invitation on trykinkedin.com</string>
                         <viewControllerLayoutGuide type="bottom" id="6xY-Aw-hS1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6eg-Cf-g87">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aSB-eu-VRS">
-                                <rect key="frame" x="35" y="70" width="305" height="123"/>
+                                <rect key="frame" x="35" y="50" width="305" height="123"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can we help you today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-00-mpw">
                                         <rect key="frame" x="43.5" y="0.0" width="218" height="41"/>
@@ -1180,18 +1180,25 @@ please apply for an invitation on trykinkedin.com</string>
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v61-wV-WQL">
+                                <rect key="frame" x="88.5" y="203" width="198" height="30"/>
+                                <state key="normal" title="View Previous Conversations"/>
+                                <connections>
+                                    <action selector="previousConvos:" destination="kd2-52-VNb" eventType="touchUpInside" id="3UO-oc-JjQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="centerX" secondItem="6eg-Cf-g87" secondAttribute="centerX" id="48Z-Pm-M9K"/>
+                            <constraint firstItem="v61-wV-WQL" firstAttribute="top" secondItem="aSB-eu-VRS" secondAttribute="bottom" constant="30" id="CR8-80-woO"/>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="top" secondItem="luB-mU-FhJ" secondAttribute="bottom" constant="50" id="IQx-Mw-D5N"/>
+                            <constraint firstItem="v61-wV-WQL" firstAttribute="centerX" secondItem="6eg-Cf-g87" secondAttribute="centerX" id="Y16-vc-YAy"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <tabBarItem key="tabBarItem" title="I need help" image="ihelp" id="QgW-9A-k1e"/>
-                    <navigationItem key="navigationItem" title="Help" id="5Lp-Ew-aj2">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="gCk-4s-B8P"/>
-                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dwr-pu-t0V" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1447,7 +1454,7 @@ please apply for an invitation on trykinkedin.com</string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vA4-JN-UFp" id="nBV-7A-xdC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="PicturePlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="fVS-xi-vML">
@@ -1700,7 +1707,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ImM-aw-Er6" id="GaY-eW-7pv">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8C-Yj-FEF">
@@ -1731,7 +1738,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0T0-qa-BV9" id="3vm-1J-nbF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Age" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Edl-tE-RW7">
@@ -1806,7 +1813,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                         <rect key="frame" x="0.0" y="232" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDb-Gr-ypy" id="R2b-Fc-D1X">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours to check-in on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pP-Sm-BPl">
