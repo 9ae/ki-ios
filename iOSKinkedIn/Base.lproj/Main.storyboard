@@ -1294,7 +1294,7 @@ please apply for an invitation on trykinkedin.com</string>
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-hG-RKg">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partners" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-hG-RKg">
                                             <rect key="frame" x="8" y="21" width="134" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -1376,7 +1376,7 @@ please apply for an invitation on trykinkedin.com</string>
                                 <rect key="frame" x="0.0" y="44" width="375" height="559"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerNameCell" textLabel="2Ct-VZ-WXE" style="IBUITableViewCellStyleDefault" id="s75-7O-Rcn">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerBasicCell" textLabel="2Ct-VZ-WXE" style="IBUITableViewCellStyleDefault" id="s75-7O-Rcn">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s75-7O-Rcn" id="amr-Oz-hfM">
@@ -1417,6 +1417,7 @@ please apply for an invitation on trykinkedin.com</string>
                     <connections>
                         <outlet property="segment" destination="YSR-Dw-pAl" id="l24-Ap-vyC"/>
                         <outlet property="tableView" destination="NkP-c4-ebe" id="jKL-l9-2hL"/>
+                        <segue destination="LGX-8O-5A9" kind="show" identifier="partners2vouch" id="zKw-KN-u9f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a2p-L8-QPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1455,9 +1456,6 @@ please apply for an invitation on trykinkedin.com</string>
                             <outlet property="delegate" destination="zvn-D5-WKW" id="NLe-K5-UTd"/>
                         </connections>
                     </tableView>
-                    <connections>
-                        <segue destination="LGX-8O-5A9" kind="show" identifier="pr2vouchIntro" id="oRa-AO-xm3"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16c-1y-UkT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
