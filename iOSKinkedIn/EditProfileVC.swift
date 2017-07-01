@@ -40,6 +40,7 @@ class EditProfileVC: UITableViewController {
             self.updateTableWithInfo()
             self.view.hideToastActivity()
         }
+        self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
     }
     
     override func viewWillAppear(_ animated: Bool) {
