@@ -20,12 +20,12 @@
                         <viewControllerLayoutGuide type="top" id="EkO-u0-WnA"/>
                         <viewControllerLayoutGuide type="bottom" id="qhr-tb-4Qa"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fN2-8b-wUr">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="fN2-8b-wUr">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-t6-la7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellGender" textLabel="MpS-jK-skM" style="IBUITableViewCellStyleDefault" id="d7G-GZ-rmy">
@@ -74,7 +74,7 @@
                         <viewControllerLayoutGuide type="top" id="ObL-Xf-R8Q"/>
                         <viewControllerLayoutGuide type="bottom" id="JPL-8v-GEz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sZp-CO-JcF">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="sZp-CO-JcF">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -185,8 +185,8 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="het-sg-Z83">
             <objects>
                 <tableViewController id="gxL-0v-kkg" customClass="PromptVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pd-Yf-uZC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pd-Yf-uZC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -316,7 +316,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-9a-aeX">
-                                <rect key="frame" x="1" y="208" width="373" height="395"/>
+                                <rect key="frame" x="1" y="208" width="373" height="346"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-86-JN8" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
@@ -727,8 +727,8 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="wJQ-c5-6Cb">
             <objects>
                 <tableViewController title="Connect" id="5rh-F9-lVW" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBo-ho-fz6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBo-ho-fz6">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -782,7 +782,7 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="on3-4m-nIX">
             <objects>
                 <collectionViewController id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1259,7 +1259,7 @@ Your bio will be visislbe to all KinkedIn users</string>
             <objects>
                 <collectionViewController title="Change" id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nI8-jT-fwX">
@@ -1385,7 +1385,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" tag="3" title="Change" image="adjust" id="wFW-tu-KWb"/>
-                    <navigationItem key="navigationItem" title="Change" id="Q0P-g3-0a3"/>
+                    <navigationItem key="navigationItem" title="Change" id="Q0P-g3-0a3">
+                        <barButtonItem key="backBarButtonItem" title="Change" id="znx-GU-trW"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ji-kO-Tlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1411,7 +1413,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NkP-c4-ebe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerBasicCell" textLabel="2Ct-VZ-WXE" style="IBUITableViewCellStyleDefault" id="s75-7O-Rcn">
@@ -1466,8 +1468,8 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="6cb-nu-OjA">
             <objects>
                 <tableViewController title="Edit Profile" id="dKl-OU-aUA" customClass="EditProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqD-y0-Rm8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqD-y0-Rm8">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1638,11 +1640,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="YiI-eh-fBY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ilZ-zd-EER">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E5-q0-bcS">
-                                <rect key="frame" x="15" y="50" width="345" height="115"/>
+                                <rect key="frame" x="15" y="30" width="345" height="115"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they: 
@@ -1657,14 +1659,14 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 <string key="userLabel">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:  Respected boundaries &amp; were open and honest in their communication</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orn-16-kv7">
-                                <rect key="frame" x="173" y="185" width="30" height="30"/>
+                                <rect key="frame" x="173" y="165" width="30" height="30"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <segue destination="kUi-2x-GYB" kind="show" id="xOd-Ux-e96"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deB-eb-Edv">
-                                <rect key="frame" x="16" y="225" width="343" height="15"/>
+                                <rect key="frame" x="16" y="205" width="343" height="15"/>
                                 <attributedString key="attributedText">
                                     <fragment content="catch statement">
                                         <attributes>
@@ -1872,29 +1874,29 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="S6U-Nb-qXg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KVD-ha-8NB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] honest in the information (photos and text) they provided in their profile?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-Ux-Nix">
-                                <rect key="frame" x="16" y="50" width="343" height="43"/>
+                                <rect key="frame" x="16" y="30" width="343" height="43"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] an good communicator?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZJ-Sc-fSo">
-                                <rect key="frame" x="16" y="262" width="343" height="21"/>
+                                <rect key="frame" x="16" y="242" width="343" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] respectful of your boundaries?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-Er-WXw">
-                                <rect key="frame" x="16" y="167" width="343" height="21"/>
+                                <rect key="frame" x="16" y="147" width="343" height="21"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E83-x6-6s4">
-                                <rect key="frame" x="46" y="200" width="283" height="32"/>
+                                <rect key="frame" x="46" y="180" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0L-dC-Z8b" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1921,7 +1923,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lnJ-C7-iB3">
-                                <rect key="frame" x="46" y="105" width="283" height="32"/>
+                                <rect key="frame" x="46" y="85" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9at-cE-6dn" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1948,7 +1950,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s8y-fu-bAa">
-                                <rect key="frame" x="46" y="295" width="283" height="32"/>
+                                <rect key="frame" x="46" y="275" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STl-Ms-yGv" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1975,7 +1977,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By submitting you are saying that the feedback you provide is based on your interactions with [user]." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfo-Zr-wsx">
-                                <rect key="frame" x="16" y="377" width="343" height="31"/>
+                                <rect key="frame" x="16" y="357" width="343" height="31"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2053,10 +2055,8 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <scene sceneID="UFz-jF-esF">
             <objects>
                 <tabBarController title="KinkedIn" id="FOy-dc-EyP" customClass="AppTabVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="KinkedIn" id="G0r-A4-4ZB">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="b2x-Hc-PHZ"/>
-                    </navigationItem>
-                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationItem key="navigationItem" id="G0r-A4-4ZB"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Qmt-1b-gDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
@@ -2320,12 +2320,12 @@ Respected boundaries &amp; were open and honest in their communication</string>
         <image name="splash1" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IOD-UG-XJy"/>
-        <segue reference="byy-d2-8RY"/>
-        <segue reference="sbP-fI-Kao"/>
-        <segue reference="wD5-Qq-Cqx"/>
-        <segue reference="5CI-cq-ggq"/>
         <segue reference="zGX-bB-pEm"/>
+        <segue reference="wD5-Qq-Cqx"/>
+        <segue reference="hKV-n1-KO7"/>
+        <segue reference="V9a-fD-EEd"/>
+        <segue reference="sbP-fI-Kao"/>
+        <segue reference="byy-d2-8RY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.59187859300000001" green="0.29522007700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

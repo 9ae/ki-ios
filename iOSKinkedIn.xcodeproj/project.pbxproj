@@ -25,7 +25,6 @@
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
-		00287BAC1EF07A07009C1442 /* FadeToBlackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00287BAB1EF07A07009C1442 /* FadeToBlackButton.swift */; };
 		0035F4AB1EC70A9D0002C7A6 /* CareConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
@@ -130,7 +129,6 @@
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
-		00287BAB1EF07A07009C1442 /* FadeToBlackButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeToBlackButton.swift; sourceTree = "<group>"; };
 		0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareConvoVC.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 				00ED8A251E74386E00096497 /* connect */,
 				001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */,
 				004E786F1EC9AA0100306EEA /* TempViewController.swift */,
-				00287BAB1EF07A07009C1442 /* FadeToBlackButton.swift */,
 				00CA86161F06DCF200ED281A /* RoundButton.swift */,
 			);
 			name = ui;
@@ -767,7 +764,6 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
-				00287BAC1EF07A07009C1442 /* FadeToBlackButton.swift in Sources */,
 				0019CB391F04A61900724FD2 /* CaseList.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,

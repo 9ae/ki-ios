@@ -14,7 +14,11 @@ class StaticMasterVC: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +36,8 @@ class StaticMasterVC: UICollectionViewController {
         if(segue.identifier == "logout2register"){
             KeychainWrapper.standard.removeObject(forKey: "kiToken")
         }
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 

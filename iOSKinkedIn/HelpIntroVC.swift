@@ -15,6 +15,11 @@ class HelpIntroVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.title = "Aftercare"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -22,7 +22,7 @@ class AppTabVC: UITabBarController {
                 self.selectedIndex = 1
             }
         }
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

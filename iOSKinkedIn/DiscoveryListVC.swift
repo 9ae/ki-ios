@@ -37,6 +37,11 @@ class DiscoveryListVC: UICollectionViewController {
         }
  
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -68,6 +73,8 @@ class DiscoveryListVC: UICollectionViewController {
         if let discoverProfile = segue.destination as? DiscoverProfile {
             discoverProfile.setProfile(selectedProfile!)
         }
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 
