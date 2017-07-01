@@ -72,7 +72,7 @@ class DiscoverVC: UIViewController {
 
     private func _showPopup(_ done: Bool) {
         var style = ToastStyle()
-        style.backgroundColor = ThemeColors.action
+        style.backgroundColor = ThemeColors.primaryDark
         
         self.view.makeToast("The feelings are mutual! Start chatting!", duration: 3, position: .top, style: style)
         Timer.scheduledTimer(timeInterval: 3,
