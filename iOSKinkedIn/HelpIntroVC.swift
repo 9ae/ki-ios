@@ -27,7 +27,11 @@ class HelpIntroVC: UIViewController {
     }
     
     @IBAction func reportBug(_ sender: Any) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "https://www.trykinkedin.com")!)
+        if let url = URL(string: "http://bugs.trykinkedin.com") {
+        UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
+            print("open bug page in safari \(success)")
+        })
+        }
     }
     
     
