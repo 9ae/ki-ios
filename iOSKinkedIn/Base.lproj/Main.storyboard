@@ -1197,26 +1197,26 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="aSB-eu-VRS">
-                                <rect key="frame" x="35" y="50" width="305" height="123"/>
+                                <rect key="frame" x="49" y="50" width="277" height="123"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How can we help you today?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-00-mpw">
-                                        <rect key="frame" x="43.5" y="0.0" width="218" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you having problems with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-00-mpw">
+                                        <rect key="frame" x="0.0" y="0.0" width="277" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZW-SM-NAI">
-                                        <rect key="frame" x="26.5" y="41" width="252" height="41"/>
+                                        <rect key="frame" x="45" y="41" width="187" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Issue regarding the app"/>
+                                        <state key="normal" title="The KinkedIn app"/>
                                         <connections>
                                             <action selector="reportBug:" destination="kd2-52-VNb" eventType="touchUpInside" id="AGK-lc-A0b"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11b-LN-9Rh">
-                                        <rect key="frame" x="0.0" y="82" width="305" height="41"/>
+                                        <rect key="frame" x="70" y="82" width="137" height="41"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Issue regarding another user"/>
+                                        <state key="normal" title="A fellow user"/>
                                         <connections>
                                             <action selector="chatWithKia:" destination="kd2-52-VNb" eventType="touchUpInside" id="PPc-G4-a1U"/>
                                         </connections>
@@ -1224,8 +1224,8 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v61-wV-WQL">
-                                <rect key="frame" x="89" y="203" width="198" height="30"/>
-                                <state key="normal" title="View Previous Conversations"/>
+                                <rect key="frame" x="59" y="474" width="256" height="30"/>
+                                <state key="normal" title="Read previous Support conversations"/>
                                 <connections>
                                     <action selector="previousConvos:" destination="kd2-52-VNb" eventType="touchUpInside" id="3UO-oc-JjQ"/>
                                 </connections>
@@ -1234,9 +1234,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="centerX" secondItem="6eg-Cf-g87" secondAttribute="centerX" id="48Z-Pm-M9K"/>
-                            <constraint firstItem="v61-wV-WQL" firstAttribute="top" secondItem="aSB-eu-VRS" secondAttribute="bottom" constant="30" id="CR8-80-woO"/>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="top" secondItem="luB-mU-FhJ" secondAttribute="bottom" constant="50" id="IQx-Mw-D5N"/>
                             <constraint firstItem="v61-wV-WQL" firstAttribute="centerX" secondItem="6eg-Cf-g87" secondAttribute="centerX" id="Y16-vc-YAy"/>
+                            <constraint firstItem="6xY-Aw-hS1" firstAttribute="top" secondItem="v61-wV-WQL" secondAttribute="bottom" constant="50" id="ZZN-J2-obh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
