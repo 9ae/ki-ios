@@ -18,12 +18,14 @@ class CaseList: ATLConversationListViewController,
         self.delegate = self
         self.dataSource = self
         self.hidesBottomBarWhenPushed = false
+        self.setTitleToAll("Support Conversations")
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.leftItemsSupplementBackButton = true
+        
     }
 
     override func didReceiveMemoryWarning() {

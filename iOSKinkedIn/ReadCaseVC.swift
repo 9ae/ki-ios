@@ -23,6 +23,10 @@ class ReadCaseVC: ATLConversationViewController,
         
         self.messageInputToolbar.isHidden = true
         self.messageInputToolbar.resignFirstResponder()
+        
+        if let dateTitle = self.conversation.createdAt?.description {
+            self.setTitleToAll(dateTitle)
+        }
     }
 
     override func didReceiveMemoryWarning() {

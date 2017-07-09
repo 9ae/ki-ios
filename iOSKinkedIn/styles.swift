@@ -36,3 +36,12 @@ class CellStyles {
         }
     }
 }
+
+extension UIViewController {
+    
+    func setTitleToAll(_ title: String){
+        self.title = title
+        self.navigationItem.title = title
+    }
+
+}
