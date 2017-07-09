@@ -26,6 +26,11 @@ class HelpIntroVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func reportBug(_ sender: Any) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "https://www.trykinkedin.com")!)
+    }
+    
+    
     @IBAction func chatWithKia(_ sender: Any) {
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
@@ -38,7 +43,6 @@ class HelpIntroVC: UIViewController {
         }
         
     }
-    
     
     @IBAction func previousConvos(_ sender: Any) {
         let listVC = CaseList(layerClient: LayerHelper.client!)

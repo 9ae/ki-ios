@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "161A5885EE4AB922D47BB4093F8CFADFCE1F684C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4401B4BEBD7FF0D694B967993B28D6AF19058E4D" : 9223372036854775807,
+    "161A5885EE4AB922D47BB4093F8CFADFCE1F684C" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0CED4897-EE22-4728-9158-1FF24D77218B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4401B4BEBD7FF0D694B967993B28D6AF19058E4D" : "..\/poison\/Hyphenate-EaseUI-iOS",
+    "161A5885EE4AB922D47BB4093F8CFADFCE1F684C" : "iOSKinkedIn\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "iOSKinkedIn",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "iOSKinkedIn.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "gitlab.com:mistress\/iOSKinkedIn.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "161A5885EE4AB922D47BB4093F8CFADFCE1F684C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/HyphenateInc\/Hyphenate-EaseUI-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4401B4BEBD7FF0D694B967993B28D6AF19058E4D"
+    }
+  ]
+}
