@@ -133,6 +133,10 @@ class Profile {
             }
         }
         
+        if let _prompts = profile["prompts"] as? [Any] {
+            self.prompts = Profile.parsePrompts(_prompts)
+        }
+        
         
     }
     

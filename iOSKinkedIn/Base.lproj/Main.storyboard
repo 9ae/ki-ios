@@ -822,9 +822,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                                                     <color key="textColor" red="0.59929060940000001" green="0.48481193179999998" blue="0.81576776500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MX-Nh-mM2">
-                                                    <rect key="frame" x="155" y="3.5" width="13" height="24"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MX-Nh-mM2">
+                                                    <rect key="frame" x="155" y="7" width="10.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -834,9 +834,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                                                     <color key="textColor" red="0.59929060940000001" green="0.48481193179999998" blue="0.81576776500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRD-uU-5mp">
-                                                    <rect key="frame" x="230" y="3.5" width="13" height="24"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="right" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRD-uU-5mp">
+                                                    <rect key="frame" x="230" y="6.5" width="10.5" height="20.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -923,17 +923,17 @@ Your bio will be visislbe to all KinkedIn users</string>
                                             <stackView contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kqQ-6g-Vl6">
                                                 <rect key="frame" x="16" y="320" width="343" height="700"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F0R-9x-z7E">
-                                                        <rect key="frame" x="0.0" y="0.0" width="290.5" height="0.0"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="F0R-9x-z7E">
+                                                        <rect key="frame" x="0.0" y="0.0" width="343" height="19.5"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Kinks in common" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTQ-OZ-3kh">
-                                                                <rect key="frame" x="0.0" y="0.0" width="137.5" height="0.0"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Kinks in common" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTQ-OZ-3kh">
+                                                                <rect key="frame" x="0.0" y="0.0" width="169" height="19.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                 <color key="textColor" red="0.4274110794" green="0.42747646569999997" blue="0.42739671470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vouched by # users " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJm-9k-YlR">
-                                                                <rect key="frame" x="142.5" y="0.0" width="148" height="0.0"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vouched by # users " textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJm-9k-YlR">
+                                                                <rect key="frame" x="174" y="0.0" width="169" height="19.5"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
                                                                 <color key="textColor" red="0.4274110794" green="0.42747646569999997" blue="0.42739671470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -941,7 +941,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="07b-5H-xvu">
-                                                        <rect key="frame" x="0.0" y="20" width="59.5" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="39.5" width="59.5" height="40.5"/>
                                                         <attributedString key="attributedText">
                                                             <fragment content="Short bio">
                                                                 <attributes>
@@ -951,13 +951,17 @@ Your bio will be visislbe to all KinkedIn users</string>
                                                         </attributedString>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-39-Rp6">
-                                                        <rect key="frame" x="0.0" y="40" width="343" height="660"/>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" usesAttributedText="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyK-39-Rp6">
+                                                        <rect key="frame" x="0.0" y="100" width="342.5" height="600"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="600" id="qZh-IZ-MXi"/>
+                                                        </constraints>
                                                         <attributedString key="attributedText">
                                                             <fragment>
                                                                 <string key="content">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                                 <attributes>
-                                                                    <font key="NSFont" metaFont="menu" size="14"/>
+                                                                    <font key="NSFont" size="14" name=".AppleSystemUIFont"/>
+                                                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                                 </attributes>
                                                             </fragment>
                                                         </attributedString>
@@ -966,7 +970,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="F0R-9x-z7E" firstAttribute="leading" secondItem="kqQ-6g-Vl6" secondAttribute="leading" id="bP8-Wz-VY3"/>
                                                     <constraint firstAttribute="height" constant="700" id="eqR-ZJ-VID"/>
+                                                    <constraint firstAttribute="trailing" secondItem="F0R-9x-z7E" secondAttribute="trailing" id="j7y-oy-pEH"/>
                                                 </constraints>
                                             </stackView>
                                         </subviews>
@@ -1002,13 +1008,13 @@ Your bio will be visislbe to all KinkedIn users</string>
                     <navigationItem key="navigationItem" id="uHl-c4-d4G">
                         <rightBarButtonItems>
                             <barButtonItem image="ic_like" style="plain" id="oi9-iz-Lvh">
-                                <color key="tintColor" red="0.72175717350000002" green="0.0" blue="0.1797026098" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.68943893909999998" green="0.2337536365" blue="0.34908863899999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="like:" destination="cbf-D5-saE" id="VBT-PN-G96"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="ic_hide" style="plain" id="PK2-Qc-ozr">
-                                <color key="tintColor" red="0.72175717350000002" green="0.0" blue="0.1797026098" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.59929060940000001" green="0.48481193179999998" blue="0.81576776500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <action selector="skip:" destination="cbf-D5-saE" id="QY3-NO-KhJ"/>
                                 </connections>
@@ -2027,7 +2033,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.72175717350000002" green="0.0" blue="0.1797026098" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
                         <segue destination="kd2-52-VNb" kind="relationship" relationship="viewControllers" id="9vn-Wn-a5i"/>

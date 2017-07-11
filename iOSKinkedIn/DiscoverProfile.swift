@@ -46,14 +46,14 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
             }
         }
         
-        kinks.text = "\(profile.kinksMatched) kinks matched".uppercased()
+        kinks.text = "\(profile.kinksMatched) kinks matched"
         if profile.vouches > 0 {
-            vouches.text = "vouched by \(profile.vouches) users".uppercased()
+            vouches.text = "vouched by \(profile.vouches) users"
         } else {
             vouches.isHidden = true
         }
         
-        let baseStyle = Style("p").foregroundColor(ThemeColors.text)
+        let baseStyle = Style().foregroundColor(ThemeColors.text)
         
         let b = Style("b")
             .foregroundColor(ThemeColors.primaryDark)
@@ -76,9 +76,17 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
         let shortBioAS = shortBioText.style(tags: b).styleAll(baseStyle)
         shortBio?.attributedText = shortBioAS.attributedString
         
-        let i = Style("i").expansion(0.5)
-        let bioText = (profile.bio ?? "").style(tags: i)
-        longBio.attributedText = bioText.attributedString
+        if let prompts = profile.prompts {
+            let i = Style("i").obliqueness(0.2)
+            let questions = prompts.map({ p -> String in
+                return "<i>\(p.title)</i>\n \(p.answer ?? "")"
+            })
+            let bioText = (questions.joined(separator: "\n\n")).style(tags: i).styleAll(baseStyle)
+            longBio.attributedText = bioText.attributedString
+        } else {
+            longBio.attributedText = NSAttributedString(string: "", attributes: [:])
+        }
+        
     }
     
     func setProfile(_ profile: Profile, isDiscoverMode: Bool = true){
