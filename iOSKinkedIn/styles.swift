@@ -9,11 +9,13 @@
 import UIKit
 
 class ThemeColors {
-    static let no = #colorLiteral(red: 0.7474038005, green: 0.1815122068, blue: 0.3448296785, alpha: 1)
+    static let no = #colorLiteral(red: 0.7486211658, green: 0.1837137341, blue: 0.34523803, alpha: 1)
     static let yes = #colorLiteral(red: 0.2670845985, green: 0.747251451, blue: 0.5655201674, alpha: 1)
     static let primary = #colorLiteral(red: 0.591878593, green: 0.295220077, blue: 1, alpha: 1)
     static let primaryFade = #colorLiteral(red: 0.6225335002, green: 0.4816721082, blue: 0.8395491838, alpha: 1)
     static let primaryDark = #colorLiteral(red: 0.3744569421, green: 0.2795264721, blue: 0.5165044665, alpha: 1)
+    static let msgIn = #colorLiteral(red: 0.6541200876, green: 0.4371238351, blue: 0.9467149377, alpha: 1)
+    static let msgOut = #colorLiteral(red: 0.2290466428, green: 0.5670731664, blue: 0.9126873016, alpha: 1)
 
 }
 

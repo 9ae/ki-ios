@@ -803,10 +803,14 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fz5-eX-3rG">
                                             <rect key="frame" x="8" y="8" width="284" height="144"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="144" id="IgU-Iy-JwQ"/>
+                                                <constraint firstAttribute="width" constant="284" id="PAs-cT-Ad7"/>
+                                            </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFB-Ik-UKc">
                                             <rect key="frame" x="8" y="132" width="284" height="40"/>
-                                            <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" red="0.65412008759999996" green="0.43712383510000002" blue="0.94671493770000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="40" id="s8Y-yF-73f"/>
                                             </constraints>

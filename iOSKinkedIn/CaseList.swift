@@ -26,6 +26,7 @@ class CaseList: ATLConversationListViewController,
         self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.leftItemsSupplementBackButton = true
         
+        self.addTopSpace()
     }
 
     override func didReceiveMemoryWarning() {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
+		000A81511F14577D00B20F1E /* KiConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000A81501F14577D00B20F1E /* KiConvoVC.swift */; };
 		001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
@@ -107,6 +108,7 @@
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
+		000A81501F14577D00B20F1E /* KiConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiConvoVC.swift; sourceTree = "<group>"; };
 		0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverProfile.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				0044DFB81EFD79DC001F1299 /* KeychainWrapper.swift */,
 				0044DFBA1EFD7A64001F1299 /* KeychainItemAccessibility.swift */,
 				00FA104E1F04262D007BEEE3 /* constantine.swift */,
+				000A81501F14577D00B20F1E /* KiConvoVC.swift */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -767,6 +770,7 @@
 				0019CB391F04A61900724FD2 /* CaseList.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
+				000A81511F14577D00B20F1E /* KiConvoVC.swift in Sources */,
 				004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */,
 				009C60A11EF8DD950068A015 /* EditProfileVC.swift in Sources */,
 				009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */,

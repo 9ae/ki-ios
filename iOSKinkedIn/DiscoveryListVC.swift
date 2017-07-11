@@ -41,6 +41,7 @@ class DiscoveryListVC: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
+        addTopSpace()
     }
 
     override func didReceiveMemoryWarning() {

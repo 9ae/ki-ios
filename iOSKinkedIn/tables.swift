@@ -20,3 +20,21 @@ extension UITableView {
     }
 
 }
+
+extension UIViewController {
+    func addTopSpace(){
+        self.view.layoutMargins = UIEdgeInsetsMake(40, 0, 0, 0)
+    }
+}
+
+extension UITableViewController {
+    override func addTopSpace(){
+        self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+    }
+}
+
+extension UICollectionViewController {
+    override func addTopSpace() {
+        self.collectionView?.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+    }
+}
