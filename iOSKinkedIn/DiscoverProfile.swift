@@ -27,6 +27,9 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+
+        self.navigationController?.navigationBar.alpha = 0.89
+        self.navigationController?.navigationBar.backgroundColor = UIColor.white
         
         guard let profile = _profile else {
             return
@@ -50,6 +53,8 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
             vouches.isHidden = true
         }
         
+        let baseStyle = Style("p").foregroundColor(ThemeColors.text)
+        
         let b = Style("b")
             .foregroundColor(ThemeColors.primaryDark)
         var shortBioText = "<b>\(profile.age)</b> years old"
@@ -58,12 +63,17 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
             shortBioText += ", living in <b>\(city)</b>"
         }
         if profile.genders.count > 0 {
-            var joined = profile.genders.joined(separator: ", ")
+            let genders = profile.genders.map({ (str) -> String in
+                return "<b>\(str)</b>"
+            })
+            var joined = genders.joined(separator: ", ")
             joined = joined.lowercased()
             shortBioText += "\nIdentifies as: "+joined
         }
         
-        let shortBioAS = shortBioText.style(tags: b)
+        //shortBioText = "<p>"+shortBioText+"</p>"
+        
+        let shortBioAS = shortBioText.style(tags: b).styleAll(baseStyle)
         shortBio?.attributedText = shortBioAS.attributedString
         
         let i = Style("i").expansion(0.5)

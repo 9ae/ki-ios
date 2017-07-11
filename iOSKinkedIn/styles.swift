@@ -16,6 +16,7 @@ class ThemeColors {
     static let primaryDark = #colorLiteral(red: 0.3744569421, green: 0.2795264721, blue: 0.5165044665, alpha: 1)
     static let msgIn = #colorLiteral(red: 0.6541200876, green: 0.4371238351, blue: 0.9467149377, alpha: 1)
     static let msgOut = #colorLiteral(red: 0.2290466428, green: 0.5670731664, blue: 0.9126873016, alpha: 1)
+    static let text = #colorLiteral(red: 0.4274110794, green: 0.4274764657, blue: 0.4273967147, alpha: 1)
 
 }
 
