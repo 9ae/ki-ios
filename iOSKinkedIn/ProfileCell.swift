@@ -18,6 +18,11 @@ class ProfileCell: UICollectionViewCell {
     
     var profile: Profile?
     
+    override func draw(_ rect: CGRect) {
+        layer.cornerRadius = 6
+        clipsToBounds = true
+    }
+    
     func setContent(_ profile: Profile){
         self.profile = profile
         
