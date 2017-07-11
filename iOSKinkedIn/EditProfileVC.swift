@@ -50,6 +50,13 @@ class EditProfileVC: UITableViewController {
             updateTableWithInfo()
         }
     }
+    
+    func incompleteStyle(_ view: UITableViewCell){
+        let layer = view.layer
+        layer.borderColor = ThemeColors.no.cgColor
+        layer.borderWidth = 2.0
+        view.textLabel?.textColor = ThemeColors.no
+    }
 
     func updateTableWithInfo(){
         
@@ -65,7 +72,7 @@ class EditProfileVC: UITableViewController {
                 print("error loading profile picture")
             }
         } else {
-            pictureCell?.backgroundColor = UIColor.red
+            incompleteStyle(pictureCell!)
         }
         
         let basicCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.basic.rawValue, section: 0))
@@ -73,14 +80,14 @@ class EditProfileVC: UITableViewController {
             basicCell?.backgroundColor = UIColor.white
             basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0) years old, \((me?.exp ?? "experience with")) BDSM"
         } else {
-            basicCell?.backgroundColor = UIColor.red
+            incompleteStyle(basicCell!)
         }
         
         let gendersCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.genders.rawValue, section: 0))
         if((me?.genders.count ?? 0) > 0){
             gendersCell?.backgroundColor = UIColor.white
         } else {
-            gendersCell?.backgroundColor = UIColor.red
+            incompleteStyle(gendersCell!)
         }
         gendersCell?.detailTextLabel?.text = shortJoin((me?.genders ?? [String]()))
         
@@ -91,7 +98,7 @@ class EditProfileVC: UITableViewController {
         if((me?.kinks.count ?? 0) > 0){
             kinksCell?.backgroundColor = UIColor.white
         } else {
-            kinksCell?.backgroundColor = UIColor.red
+            incompleteStyle(kinksCell!)
         }
         kinksCell?.detailTextLabel?.text = shortJoin((me?.kinkLabels() ?? [String]()))
         
