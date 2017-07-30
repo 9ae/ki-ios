@@ -479,4 +479,10 @@ class KinkedInAPI {
         }
     }
     
+    static func invitePartner(_ partner_email: String){
+        post("self/invite_partner", parameters: ["email": partner_email]){json in
+            print(json)
+        }
+    }
+    
 }

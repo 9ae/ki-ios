@@ -211,7 +211,10 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
                 self.addPartner(sender: action)
             }
             
-            let invite = UIAlertAction(title: "Invite Partner", style: .default, handler: nil)
+            let invite = UIAlertAction(title: "Invite Partner", style: .default){ action in
+                print("send partner an invite")
+                KinkedInAPI.invitePartner(email)
+            }
             
             invitePartnerAlert.addAction(reenter)
             invitePartnerAlert.addAction(invite)

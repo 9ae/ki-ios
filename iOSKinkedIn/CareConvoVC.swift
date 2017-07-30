@@ -19,7 +19,7 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
     private var stack = UIStackView()
     private var stackHeightConstraint: NSLayoutConstraint?
     
-    private let LABEL_HEIGHT = 30
+    private let LABEL_HEIGHT = 40
     private let LABEL_PADDING = 8
     
     private var currentQuestion: [String: Any]? = nil
@@ -55,13 +55,13 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         self.view.addSubview(stack)
         
         let ypos = NSLayoutConstraint(item: stack, attribute: .bottom, relatedBy: .equal,
-                                      toItem: self.view, attribute: .bottom, multiplier: 1, constant: 0)
+                                      toItem: self.view, attribute: .bottom, multiplier: 1, constant: -8)
         let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
                                         toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
         let xa = NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal,
                                     toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
         let xe = NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal,
-                                    toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0)
+                                    toItem: self.view, attribute: .trailing, multiplier: 1, constant: -8)
         view.addConstraints([ypos, height, xa, xe])
         stackHeightConstraint = height
     }
@@ -78,15 +78,20 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         for o in opts {
             let lbl = UIButton()
-            lbl.setTitle(o, for: .normal)
             lbl.setTitleColor(UIColor.white, for: .normal)
-            lbl.backgroundColor = UIColor.blue
+            lbl.backgroundColor = ThemeColors.msgBtn
+            lbl.titleEdgeInsets = UIEdgeInsets(top: 0.5 , left: 0.0, bottom: 0.5, right: 0.0)
+            lbl.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0)
+            lbl.layer.cornerRadius = 10
+            lbl.clipsToBounds = true
             lbl.translatesAutoresizingMaskIntoConstraints = false
             lbl.frame.size.height = CGFloat(LABEL_HEIGHT)
             lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
+            lbl.setTitle(o, for: .normal)
+            lbl.sizeToFit()
             stack.addArrangedSubview(lbl)
         }
-        let stackHeight = (LABEL_HEIGHT*opts.count) + (LABEL_PADDING*(opts.count-1))
+        let stackHeight = (LABEL_HEIGHT*opts.count) + (3*LABEL_PADDING*(opts.count-1))
         let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
                                         toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(stackHeight))
         if let _oldHeight = self.stackHeightConstraint {
