@@ -1194,7 +1194,7 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="1Zq-mD-D4S">
             <objects>
                 <collectionViewController title="Change" id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
