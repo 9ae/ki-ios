@@ -68,6 +68,7 @@
 		00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F36C4E1E74F04F0061905D /* CProfile.swift */; };
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
 		00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA10501F042731007BEEE3 /* PerfsVC.swift */; };
+		00FD15801F6D610A00357860 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD157F1F6D610A00357860 /* Auth.storyboard */; };
 		00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD2A741EF6FB190015749A /* BasicProfileVC.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
 		EB4D3BE2042256B198045EFE /* Pods_iOSKinkedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */; };
@@ -174,6 +175,7 @@
 		00F36C4E1E74F04F0061905D /* CProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProfile.swift; sourceTree = "<group>"; };
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
 		00FA10501F042731007BEEE3 /* PerfsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfsVC.swift; sourceTree = "<group>"; };
+		00FD157F1F6D610A00357860 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		00FD2A741EF6FB190015749A /* BasicProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicProfileVC.swift; sourceTree = "<group>"; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,6 +243,7 @@
 			children = (
 				000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */,
 				006D50041E65810B005DAABE /* Assets.xcassets */,
+				00ED8A211E74376800096497 /* Auth */,
 				00ED8A241E7437EB00096497 /* ui */,
 				001D21131E5A284A00317600 /* helpers */,
 				00171A541E5650D300640B09 /* models */,
@@ -249,6 +252,7 @@
 				00171A261E56384500640B09 /* Main.storyboard */,
 				00171A2B1E56384500640B09 /* LaunchScreen.storyboard */,
 				00171A2E1E56384500640B09 /* Info.plist */,
+				00FD157F1F6D610A00357860 /* Auth.storyboard */,
 			);
 			path = iOSKinkedIn;
 			sourceTree = "<group>";
@@ -342,13 +346,13 @@
 			name = change;
 			sourceTree = "<group>";
 		};
-		00ED8A211E74376800096497 /* auth */ = {
+		00ED8A211E74376800096497 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
 				00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */,
 				006B263A1E67C3DE002DC302 /* RegisterVC.swift */,
 			);
-			name = auth;
+			name = Auth;
 			sourceTree = "<group>";
 		};
 		00ED8A221E74377800096497 /* setup */ = {
@@ -384,7 +388,6 @@
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				006D50061E658635005DAABE /* AppTabVC.swift */,
 				00ED8A231E7437A000096497 /* discover */,
-				00ED8A211E74376800096497 /* auth */,
 				00ED8A221E74377800096497 /* setup */,
 				00ED8A251E74386E00096497 /* connect */,
 				001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */,
@@ -573,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00FD15801F6D610A00357860 /* Auth.storyboard in Resources */,
 				00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */,
 				006D50051E65810B005DAABE /* Assets.xcassets in Resources */,
 				00171A281E56384500640B09 /* Main.storyboard in Resources */,

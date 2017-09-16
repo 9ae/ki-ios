@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,11 +20,11 @@
                         <viewControllerLayoutGuide type="bottom" id="qhr-tb-4Qa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="fN2-8b-wUr">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zb1-t6-la7">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellGender" textLabel="MpS-jK-skM" style="IBUITableViewCellStyleDefault" id="d7G-GZ-rmy">
@@ -74,11 +74,11 @@
                         <viewControllerLayoutGuide type="bottom" id="JPL-8v-GEz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sZp-CO-JcF">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tL3-1z-CRY">
-                                <rect key="frame" x="16" y="0.0" width="343" height="603"/>
+                                <rect key="frame" x="16" y="0.0" width="343" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="cellRole" textLabel="PAM-6K-EuA" style="IBUITableViewCellStyleDefault" id="NwL-ET-BFj">
@@ -185,7 +185,7 @@ Your bio will be visislbe to all KinkedIn users</string>
             <objects>
                 <tableViewController id="gxL-0v-kkg" customClass="PromptVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" id="8pd-Yf-uZC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -261,7 +261,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="SZA-Rg-e80"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="J6O-5P-a1G">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="DHe-fN-5uh">
@@ -315,7 +315,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </subviews>
                             </stackView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tol-9a-aeX">
-                                <rect key="frame" x="1" y="208" width="373" height="395"/>
+                                <rect key="frame" x="1" y="208" width="373" height="346"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-86-JN8" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
@@ -389,269 +389,6 @@ Your bio will be visislbe to all KinkedIn users</string>
             </objects>
             <point key="canvasLocation" x="510" y="3833"/>
         </scene>
-        <!--RegisterVC-->
-        <scene sceneID="f2S-JO-gAt">
-            <objects>
-                <viewController id="66D-tV-fYN" customClass="RegisterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SQz-3H-4HN"/>
-                        <viewControllerLayoutGuide type="bottom" id="Zg0-ES-uoo"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Y0O-nc-WDH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-5A-H1d">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l98-9h-Eg6">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="eh1-OX-i81">
-                                                <rect key="frame" x="48" y="200" width="280" height="407.5"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qfQ-GA-MwU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="221"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your e-mail and invite code" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ekf-cw-t7d">
-                                                                <rect key="frame" x="0.0" y="0.0" width="280" height="41"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" red="0.18048423529999999" green="0.1719750166" blue="0.2009343505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="highlightedColor" red="0.50975722074508667" green="0.50983387231826782" blue="0.50974047183990479" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                            </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xF5-W4-76e">
-                                                                <rect key="frame" x="0.0" y="61" width="280" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="IvH-zE-Oz2"/>
-                                                                    <constraint firstAttribute="width" constant="280" id="ZFs-Za-2nF"/>
-                                                                </constraints>
-                                                                <color key="textColor" red="0.37445694210000002" green="0.27952647209999998" blue="0.51650446650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress"/>
-                                                            </textField>
-                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jwn-bZ-yU1">
-                                                                <rect key="frame" x="0.0" y="121" width="280" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="280" id="fZD-ud-ZWN"/>
-                                                                    <constraint firstAttribute="height" constant="40" id="rCj-CW-VuY"/>
-                                                                </constraints>
-                                                                <color key="textColor" red="0.37445694210000002" green="0.27952647209999998" blue="0.51650446650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                                            </textField>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ago-iQ-LHG">
-                                                                <rect key="frame" x="0.0" y="181" width="280" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Invite Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lRc-E2-Vyw">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="160" height="40"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="width" constant="160" id="0rI-lB-D7i"/>
-                                                                            <constraint firstAttribute="height" constant="40" id="7Zy-ki-Wle"/>
-                                                                        </constraints>
-                                                                        <color key="textColor" red="0.37445694210000002" green="0.27952647209999998" blue="0.51650446650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
-                                                                    </textField>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HoB-Vf-Nu2" customClass="RoundButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                                                        <rect key="frame" x="168" y="0.0" width="112" height="40"/>
-                                                                        <color key="backgroundColor" red="0.59187859300000001" green="0.29522007700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="40" id="4t3-lN-K90"/>
-                                                                        </constraints>
-                                                                        <state key="normal" title="Sign Up">
-                                                                            <color key="titleColor" red="0.99194461107254028" green="0.99615627527236938" blue="0.99600595235824585" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        </state>
-                                                                        <connections>
-                                                                            <action selector="register:" destination="66D-tV-fYN" eventType="touchDown" id="aY0-Ia-nRo"/>
-                                                                        </connections>
-                                                                    </button>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N7n-dS-83Y">
-                                                        <rect key="frame" x="0.0" y="271" width="280" height="26"/>
-                                                        <state key="normal">
-                                                            <attributedString key="attributedTitle">
-                                                                <fragment content="If you already have an account, you can Login">
-                                                                    <attributes>
-                                                                        <font key="NSFont" size="12" name=".SFNSText"/>
-                                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                                    </attributes>
-                                                                </fragment>
-                                                            </attributedString>
-                                                        </state>
-                                                        <connections>
-                                                            <segue destination="GoA-mT-FEQ" kind="show" identifier="register2login" animates="NO" id="kyl-qd-fTz"/>
-                                                        </connections>
-                                                    </button>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yi5-a5-hML">
-                                                        <rect key="frame" x="0.0" y="347" width="280" height="60.5"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you would like an invite code, please apply for an invitation on trykinkedin.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yya-WJ-WzH">
-                                                                <rect key="frame" x="3.5" y="0.0" width="273.5" height="30.5"/>
-                                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                                                <color key="textColor" red="0.18048423529999999" green="0.1719750166" blue="0.2009343505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5c-8S-Fv6">
-                                                                <rect key="frame" x="91" y="30.5" width="98" height="30"/>
-                                                                <state key="normal" title="Request Invite"/>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <color key="tintColor" red="0.59187859300000001" green="0.29522007700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="oQe-SQ-jZ6"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="eh1-OX-i81" firstAttribute="top" secondItem="l98-9h-Eg6" secondAttribute="top" constant="200" id="JnH-kS-WPx"/>
-                                            <constraint firstAttribute="height" constant="1000" id="T43-bZ-Ird"/>
-                                            <constraint firstItem="eh1-OX-i81" firstAttribute="centerX" secondItem="l98-9h-Eg6" secondAttribute="centerX" id="fbN-te-iYv"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="l98-9h-Eg6" firstAttribute="leading" secondItem="o5b-5A-H1d" secondAttribute="leading" id="17H-R5-YiY"/>
-                                    <constraint firstAttribute="trailing" secondItem="l98-9h-Eg6" secondAttribute="trailing" id="TRn-DX-5uE"/>
-                                    <constraint firstItem="l98-9h-Eg6" firstAttribute="top" secondItem="o5b-5A-H1d" secondAttribute="top" id="aKP-yx-6Nn"/>
-                                    <constraint firstAttribute="bottom" secondItem="l98-9h-Eg6" secondAttribute="bottom" id="bsc-co-MP8"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="o5b-5A-H1d" secondAttribute="trailing" id="DYF-SE-SK0"/>
-                            <constraint firstItem="Zg0-ES-uoo" firstAttribute="top" secondItem="o5b-5A-H1d" secondAttribute="bottom" id="Fc7-qF-802"/>
-                            <constraint firstItem="o5b-5A-H1d" firstAttribute="top" secondItem="SQz-3H-4HN" secondAttribute="bottom" id="hsH-Tg-EE1"/>
-                            <constraint firstItem="o5b-5A-H1d" firstAttribute="leading" secondItem="Y0O-nc-WDH" secondAttribute="leading" id="rN3-oV-xpx"/>
-                            <constraint firstItem="l98-9h-Eg6" firstAttribute="width" secondItem="Y0O-nc-WDH" secondAttribute="width" id="zqD-vR-ocb"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="email" destination="xF5-W4-76e" id="FNN-he-Oyq"/>
-                        <outlet property="goToLogin" destination="N7n-dS-83Y" id="9AL-Zo-2EK"/>
-                        <outlet property="inviteCode" destination="lRc-E2-Vyw" id="epU-Kl-1xu"/>
-                        <outlet property="password" destination="jwn-bZ-yU1" id="Kbc-LP-Bxq"/>
-                        <outlet property="requestInvite" destination="f5c-8S-Fv6" id="wgq-qr-3b9"/>
-                        <outlet property="scrollView" destination="o5b-5A-H1d" id="BSK-GT-joZ"/>
-                        <outlet property="signup" destination="HoB-Vf-Nu2" id="pjZ-vs-0Lw"/>
-                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="register2app" id="wD5-Qq-Cqx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NcM-LK-Wkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1322.4000000000001" y="158.77061469265368"/>
-        </scene>
-        <!--LoginVC-->
-        <scene sceneID="X3E-GM-5DH">
-            <objects>
-                <viewController id="GoA-mT-FEQ" customClass="LoginVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CgY-oQ-gEE"/>
-                        <viewControllerLayoutGuide type="bottom" id="dfx-47-dXg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="TDZ-a3-0wf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Md2-Ih-8gc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKB-Bd-OW4">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
-                                        <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FHt-ss-aSH">
-                                                <rect key="frame" x="48" y="200" width="280" height="158.5"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome! Please enter your email and password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fM-FY-CIE">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="38.5"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
-                                                        <color key="textColor" red="0.18048423529999999" green="0.1719750166" blue="0.2009343505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dFb-tZ-FDH">
-                                                        <rect key="frame" x="0.0" y="58.5" width="280" height="40"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="40" id="7gW-dM-MHf"/>
-                                                        </constraints>
-                                                        <color key="textColor" red="0.37445694210000002" green="0.27952647209999998" blue="0.51650446650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                                                    </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dJM-8l-L4C">
-                                                        <rect key="frame" x="0.0" y="118.5" width="280" height="40"/>
-                                                        <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dc4-13-kDD">
-                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="200" id="CMm-aa-ISI"/>
-                                                                    <constraint firstAttribute="height" constant="40" id="JcJ-Wv-m6C"/>
-                                                                </constraints>
-                                                                <color key="textColor" red="0.37445694210000002" green="0.27952647209999998" blue="0.51650446650000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
-                                                            </textField>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oaZ-V8-V2i" customClass="RoundButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                                                <rect key="frame" x="208" y="0.0" width="72" height="40"/>
-                                                                <color key="backgroundColor" red="0.59187859300000001" green="0.29522007700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="tintColor" red="0.59187859300000001" green="0.29522007700000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <state key="normal" title="Login">
-                                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="login:" destination="GoA-mT-FEQ" eventType="touchDown" id="Kjd-Eh-RoY"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="280" id="06Z-Ro-Hgx"/>
-                                                    <constraint firstItem="dJM-8l-L4C" firstAttribute="top" secondItem="dFb-tZ-FDH" secondAttribute="bottom" constant="20" id="1oO-5m-rkI"/>
-                                                    <constraint firstItem="dFb-tZ-FDH" firstAttribute="top" secondItem="9fM-FY-CIE" secondAttribute="bottom" constant="20" id="mDf-ls-jAe"/>
-                                                </constraints>
-                                            </stackView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="FHt-ss-aSH" firstAttribute="top" secondItem="aKB-Bd-OW4" secondAttribute="top" constant="200" id="Hpy-im-RhQ"/>
-                                            <constraint firstAttribute="height" constant="1000" id="PsR-vi-pFx"/>
-                                            <constraint firstItem="FHt-ss-aSH" firstAttribute="centerX" secondItem="aKB-Bd-OW4" secondAttribute="centerX" id="mQ5-gh-dCl"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="aKB-Bd-OW4" firstAttribute="leading" secondItem="Md2-Ih-8gc" secondAttribute="leading" id="5EQ-RL-ZG5"/>
-                                    <constraint firstAttribute="trailing" secondItem="aKB-Bd-OW4" secondAttribute="trailing" id="Hhv-Vg-CKF"/>
-                                    <constraint firstAttribute="bottom" secondItem="aKB-Bd-OW4" secondAttribute="bottom" id="T4h-Uj-zp4"/>
-                                    <constraint firstItem="aKB-Bd-OW4" firstAttribute="top" secondItem="Md2-Ih-8gc" secondAttribute="top" id="gQQ-KI-I71"/>
-                                </constraints>
-                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="aKB-Bd-OW4" firstAttribute="width" secondItem="TDZ-a3-0wf" secondAttribute="width" id="Fxt-wZ-UW9"/>
-                            <constraint firstItem="Md2-Ih-8gc" firstAttribute="leading" secondItem="TDZ-a3-0wf" secondAttribute="leading" id="HoW-8W-eE5"/>
-                            <constraint firstItem="dfx-47-dXg" firstAttribute="top" secondItem="Md2-Ih-8gc" secondAttribute="bottom" id="PW5-W1-quN"/>
-                            <constraint firstAttribute="trailing" secondItem="Md2-Ih-8gc" secondAttribute="trailing" id="TMp-oF-fLR"/>
-                            <constraint firstItem="Md2-Ih-8gc" firstAttribute="top" secondItem="TDZ-a3-0wf" secondAttribute="top" id="Ylu-PX-umc"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="fieldEmail" destination="dFb-tZ-FDH" id="WKA-kv-GS1"/>
-                        <outlet property="fieldPassword" destination="dc4-13-kDD" id="Ac3-RP-YYM"/>
-                        <outlet property="scrollView" destination="Md2-Ih-8gc" id="e6U-8K-5hh"/>
-                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="login2app" action="showViewController:sender:" id="4B1-dj-yOf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="AMw-SC-Hiu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-504.34782608695656" y="158.1521739130435"/>
-        </scene>
         <!--SplashVC-->
         <scene sceneID="2X6-69-L7j">
             <objects>
@@ -714,20 +451,28 @@ Your bio will be visislbe to all KinkedIn users</string>
                     </view>
                     <connections>
                         <outlet property="iConsent" destination="QLX-ng-anD" id="Bkd-BP-Qg3"/>
-                        <segue destination="66D-tV-fYN" kind="show" identifier="splash2register" animates="NO" id="5CI-cq-ggq"/>
                         <segue destination="BXg-oS-gY0" kind="showDetail" identifier="splash2app" action="showViewController:sender:" id="8hc-Ov-0AX"/>
+                        <segue destination="5wS-0H-REe" kind="show" identifier="splash2auth" id="uGM-UB-WBk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="1011.544227886057"/>
+            <point key="canvasLocation" x="-3186" y="1651"/>
+        </scene>
+        <!--Auth-->
+        <scene sceneID="xNh-qX-OIf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" id="5wS-0H-REe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JEp-wl-Ia4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2287" y="1363"/>
         </scene>
         <!--Connect-->
         <scene sceneID="wJQ-c5-6Cb">
             <objects>
                 <tableViewController title="Connect" id="5rh-F9-lVW" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="LBo-ho-fz6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -782,7 +527,7 @@ Your bio will be visislbe to all KinkedIn users</string>
         <scene sceneID="on3-4m-nIX">
             <objects>
                 <collectionViewController id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
                         <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -905,11 +650,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="cNh-k3-POC"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QOb-jX-E6P">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w9G-2w-KE8">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="puw-UZ-ddz">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -1195,7 +940,7 @@ Your bio will be visislbe to all KinkedIn users</string>
             <objects>
                 <collectionViewController title="Change" id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nI8-jT-fwX">
@@ -1342,9 +1087,6 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     <constraint firstItem="05X-2p-iS3" firstAttribute="centerX" secondItem="9OR-Rx-5lp" secondAttribute="centerX" id="sgp-KM-IAn"/>
                                     <constraint firstAttribute="bottom" secondItem="XwZ-kp-MoC" secondAttribute="bottom" constant="8" id="wYn-fQ-IGr"/>
                                 </constraints>
-                                <connections>
-                                    <segue destination="66D-tV-fYN" kind="showDetail" identifier="logout2register" animates="NO" id="hKV-n1-KO7"/>
-                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -1371,7 +1113,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="jaU-B0-Pdd"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TA6-Vv-Psa">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YSR-Dw-pAl">
@@ -1382,7 +1124,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NkP-c4-ebe">
-                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="510"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerBasicCell" textLabel="2Ct-VZ-WXE" style="IBUITableViewCellStyleDefault" id="s75-7O-Rcn">
@@ -1438,7 +1180,7 @@ Your bio will be visislbe to all KinkedIn users</string>
             <objects>
                 <tableViewController title="Edit Profile" id="dKl-OU-aUA" customClass="EditProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lqD-y0-Rm8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1609,11 +1351,11 @@ Your bio will be visislbe to all KinkedIn users</string>
                         <viewControllerLayoutGuide type="bottom" id="YiI-eh-fBY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ilZ-zd-EER">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9E5-q0-bcS">
-                                <rect key="frame" x="15" y="50" width="345" height="114.5"/>
+                                <rect key="frame" x="15" y="30" width="345" height="114.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they: 
@@ -1628,14 +1370,14 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 <string key="userLabel">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:  Respected boundaries &amp; were open and honest in their communication</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="orn-16-kv7">
-                                <rect key="frame" x="173" y="184.5" width="30" height="30"/>
+                                <rect key="frame" x="173" y="164.5" width="30" height="30"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <segue destination="kUi-2x-GYB" kind="show" id="xOd-Ux-e96"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deB-eb-Edv">
-                                <rect key="frame" x="16" y="224.5" width="343" height="15"/>
+                                <rect key="frame" x="16" y="204.5" width="343" height="15"/>
                                 <attributedString key="attributedText">
                                     <fragment content="catch statement">
                                         <attributes>
@@ -1673,7 +1415,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
             <objects>
                 <tableViewController title="Preferences" id="3CP-jS-J61" customClass="PerfsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ON-Zl-xCz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1843,29 +1585,29 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="S6U-Nb-qXg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KVD-ha-8NB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] honest in the information (photos and text) they provided in their profile?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pa8-Ux-Nix">
-                                <rect key="frame" x="16" y="50" width="343" height="42.5"/>
+                                <rect key="frame" x="16" y="30" width="343" height="42.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] an good communicator?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZJ-Sc-fSo">
-                                <rect key="frame" x="16" y="261" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="241" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] respectful of your boundaries?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Au-Er-WXw">
-                                <rect key="frame" x="16" y="166.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="146.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="E83-x6-6s4">
-                                <rect key="frame" x="46" y="199" width="283" height="32"/>
+                                <rect key="frame" x="46" y="179" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J0L-dC-Z8b" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1892,7 +1634,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lnJ-C7-iB3">
-                                <rect key="frame" x="46" y="104.5" width="283" height="32"/>
+                                <rect key="frame" x="46" y="84.5" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9at-cE-6dn" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1919,7 +1661,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="s8y-fu-bAa">
-                                <rect key="frame" x="46" y="293.5" width="283" height="32"/>
+                                <rect key="frame" x="46" y="273.5" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="STl-Ms-yGv" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -1946,7 +1688,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By submitting you are saying that the feedback you provide is based on your interactions with [user]." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dfo-Zr-wsx">
-                                <rect key="frame" x="16" y="375.5" width="343" height="30.5"/>
+                                <rect key="frame" x="16" y="355.5" width="343" height="30.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2055,7 +1797,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="fMH-TO-2Ol"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="rOI-aG-OSs">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Xeh-Zu-GzA">
@@ -2147,10 +1889,8 @@ Respected boundaries &amp; were open and honest in their communication</string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="V9a-fD-EEd"/>
-        <segue reference="4B1-dj-yOf"/>
-        <segue reference="hKV-n1-KO7"/>
-        <segue reference="byy-d2-8RY"/>
         <segue reference="sbP-fI-Kao"/>
+        <segue reference="byy-d2-8RY"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
 </document>
