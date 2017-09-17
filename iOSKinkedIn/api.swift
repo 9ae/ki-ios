@@ -185,6 +185,7 @@ class KinkedInAPI {
     }
     
     static func genders(_ callback:@escaping(_ results:[String])->Void ) {
+        
         get("list/genders", requiresToken: false){ json in
             let job = Woz(json){ result in
                 if let list = result as? [String] {

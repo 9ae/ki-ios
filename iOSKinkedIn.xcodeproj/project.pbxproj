@@ -69,6 +69,8 @@
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
 		00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA10501F042731007BEEE3 /* PerfsVC.swift */; };
 		00FD15801F6D610A00357860 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD157F1F6D610A00357860 /* Auth.storyboard */; };
+		00FD15821F6D685700357860 /* mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD15811F6D685700357860 /* mock.swift */; };
+		00FD15841F6D6D1100357860 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD15831F6D6D1100357860 /* MyProfile.storyboard */; };
 		00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD2A741EF6FB190015749A /* BasicProfileVC.swift */; };
 		343EFE1E4516B5F59C0AF25D /* Pods_iOSKinkedInTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */; };
 		EB4D3BE2042256B198045EFE /* Pods_iOSKinkedIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A4761DAC1B81773B2C3BB9C /* Pods_iOSKinkedIn.framework */; };
@@ -176,6 +178,8 @@
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
 		00FA10501F042731007BEEE3 /* PerfsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfsVC.swift; sourceTree = "<group>"; };
 		00FD157F1F6D610A00357860 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		00FD15811F6D685700357860 /* mock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mock.swift; sourceTree = "<group>"; };
+		00FD15831F6D6D1100357860 /* MyProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		00FD2A741EF6FB190015749A /* BasicProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicProfileVC.swift; sourceTree = "<group>"; };
 		256DEDFCB6A5AE4A369B3527 /* Pods-iOSKinkedInUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedInUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSKinkedInUITests/Pods-iOSKinkedInUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		549545132AB193F67E3EB8D0 /* Pods_iOSKinkedInTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -241,8 +245,9 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
-				000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */,
-				006D50041E65810B005DAABE /* Assets.xcassets */,
+				00FD15831F6D6D1100357860 /* MyProfile.storyboard */,
+				00FD15851F6D732D00357860 /* MyProfile */,
+				00FD157F1F6D610A00357860 /* Auth.storyboard */,
 				00ED8A211E74376800096497 /* Auth */,
 				00ED8A241E7437EB00096497 /* ui */,
 				001D21131E5A284A00317600 /* helpers */,
@@ -251,8 +256,9 @@
 				00171A221E56384500640B09 /* AppDelegate.swift */,
 				00171A261E56384500640B09 /* Main.storyboard */,
 				00171A2B1E56384500640B09 /* LaunchScreen.storyboard */,
+				006D50041E65810B005DAABE /* Assets.xcassets */,
 				00171A2E1E56384500640B09 /* Info.plist */,
-				00FD157F1F6D610A00357860 /* Auth.storyboard */,
+				000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */,
 			);
 			path = iOSKinkedIn;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 				00171A521E56468700640B09 /* api.swift */,
 				00DED11B1E6D837300402FA8 /* cloudinary.swift */,
 				00F1C6C01EC5A63100A295C0 /* layerhelper.swift */,
+				00FD15811F6D685700357860 /* mock.swift */,
 			);
 			name = providers;
 			sourceTree = "<group>";
@@ -339,7 +346,6 @@
 			isa = PBXGroup;
 			children = (
 				008597241EA3628900583621 /* StaticMasterVC.swift */,
-				009C60A01EF8DD950068A015 /* EditProfileVC.swift */,
 				00FA10501F042731007BEEE3 /* PerfsVC.swift */,
 				008365A91F054B3700D16F93 /* MasterPartnersVC.swift */,
 			);
@@ -381,7 +387,6 @@
 		00ED8A241E7437EB00096497 /* ui */ = {
 			isa = PBXGroup;
 			children = (
-				00FD2A731EF6FAF60015749A /* profile */,
 				0035F4A91EC70A7F0002C7A6 /* aftercare */,
 				0025651E1EB839C900B7BF2A /* vouch */,
 				008597231EA3623B00583621 /* change */,
@@ -409,9 +414,10 @@
 			name = connect;
 			sourceTree = "<group>";
 		};
-		00FD2A731EF6FAF60015749A /* profile */ = {
+		00FD15851F6D732D00357860 /* MyProfile */ = {
 			isa = PBXGroup;
 			children = (
+				009C60A01EF8DD950068A015 /* EditProfileVC.swift */,
 				00BA528C1E75744300EE20E4 /* KinksVC.swift */,
 				001D21181E5A4B1300317600 /* RolesVC.swift */,
 				00171A241E56384500640B09 /* GendersVC.swift */,
@@ -419,7 +425,7 @@
 				004BBBED1F02BC43009AD970 /* PromptVC.swift */,
 				004BBBEF1F02DECC009AD970 /* PromptCell.swift */,
 			);
-			name = profile;
+			name = MyProfile;
 			sourceTree = "<group>";
 		};
 		60EDCD05462830E481D434C8 /* Frameworks */ = {
@@ -579,6 +585,7 @@
 				00FD15801F6D610A00357860 /* Auth.storyboard in Resources */,
 				00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */,
 				006D50051E65810B005DAABE /* Assets.xcassets in Resources */,
+				00FD15841F6D6D1100357860 /* MyProfile.storyboard in Resources */,
 				00171A281E56384500640B09 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -800,6 +807,7 @@
 				00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
+				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				008597251EA3628900583621 /* StaticMasterVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
