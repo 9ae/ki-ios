@@ -18,6 +18,7 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
     private var replyState: ReplyType = .text
     private var stack = UIStackView()
     private var stackHeightConstraint: NSLayoutConstraint?
+    private var scrollOffsetConstraint: NSLayoutConstraint?
     
     private let LABEL_HEIGHT = 40
     private let LABEL_PADDING = 8
@@ -43,6 +44,10 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         _makeOptionsView()
         sendText("Case created on \(Date().description)")
+//        self.collectionView.contentInset.bottom = 100
+//        print("content inset \(self.collectionView.contentInset)")
+//        print("constraints \(self.collectionView.constraints)")
+//        print("collectionViewContentSize \(self.collectionView.collectionViewLayout.collectionViewContentSize)")
     }
     
     private func _makeOptionsView() {
@@ -72,6 +77,11 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
             sv.removeFromSuperview()
         }
         stack.isHidden = true
+        
+        if let _oldOffset = self.scrollOffsetConstraint {
+            view.removeConstraint(_oldOffset)
+        }
+        self.scrollOffsetConstraint = nil
     }
     
     private func _setOptions(_ opts: [String]){
@@ -91,15 +101,29 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
             lbl.sizeToFit()
             stack.addArrangedSubview(lbl)
         }
-        let stackHeight = (LABEL_HEIGHT*opts.count) + (3*LABEL_PADDING*(opts.count-1))
+        let stackHeight = CGFloat( (LABEL_HEIGHT*opts.count) + (3*LABEL_PADDING*(opts.count-1)) )
         let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
-                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: CGFloat(stackHeight))
+                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: stackHeight)
+        let offset = NSLayoutConstraint(
+            item: self.collectionView,
+            attribute: .bottom,
+            relatedBy: .equal,
+            toItem: self.bottomLayoutGuide,
+            attribute: .top,
+            multiplier: 1,
+            constant: -stackHeight)
         if let _oldHeight = self.stackHeightConstraint {
             view.removeConstraint(_oldHeight)
         }
+        if let _oldOffset = self.scrollOffsetConstraint {
+            view.removeConstraint(_oldOffset)
+        }
         view.addConstraint(height)
+        view.addConstraint(offset)
         stackHeightConstraint = height
+        scrollOffsetConstraint = offset
         stack.isHidden = false
+
         updateReplyState(state: .choice)
     }
     
