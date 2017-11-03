@@ -983,7 +983,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "ea698f03-ec0e-4c62-b11f-9bd6376a7905";
+				PROVISIONING_PROFILE = "3562a85a-7173-4bd3-9839-7d095fceb9ac";
 				PROVISIONING_PROFILE_SPECIFIER = "KinkedIn Alpha";
 				SWIFT_VERSION = 3.0;
 			};

@@ -191,8 +191,8 @@ class ViewProfileVC: UIViewController {
         )
     }
     
-    private func _nextProfile(){
-        NotificationCenter.default.post(name: NOTIFY_NEXT_PROFILE, object: nil)
+    private func _nextProfile(_ action: ActionOnUser){
+        NotificationCenter.default.post(name: NOTIFY_NEXT_PROFILE, object: action)
     }
     
     @IBAction func showBio(_ sender: AnyObject) {
@@ -243,7 +243,7 @@ class ViewProfileVC: UIViewController {
             if(reciprocal) {
                 NotificationCenter.default.post(name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
             } else {
-                self._nextProfile()
+                self._nextProfile(.like)
             }
         }
 
@@ -255,7 +255,7 @@ class ViewProfileVC: UIViewController {
             return
         }
         KinkedInAPI.skipProfile(uuid)
-        _nextProfile()
+        _nextProfile(.skip)
     }
     
     @objc func swipedUp(recog: UISwipeGestureRecognizer) {

@@ -10,3 +10,7 @@ import Foundation
 
 let UD_CHECKIN_TIME = "checkinTime"
 let UD_CHECKIN_TIME_VALUE = 12
+
+enum ActionOnUser : Int {
+    case skip = 0, like, block
+}

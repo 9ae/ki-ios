@@ -10,7 +10,7 @@ target 'iOSKinkedIn' do
   pod 'Toast-Swift', '~> 2.0.0'
   pod 'Fabric'
   pod 'Crashlytics'
-  pod 'Atributika'
+  pod 'Atributika', :git => 'https://github.com/psharanda/Atributika.git', :branch => 'swift-3.2'
   pod 'Cloudinary', '~> 2.0'
   pod 'TagListView', '~> 1.1.0'
   pod 'PusherSwift'

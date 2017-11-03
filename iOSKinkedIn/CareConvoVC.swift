@@ -150,20 +150,26 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         switch (state){
         case .text:
+            print("show keyboard")
+            self.view.endEditing(false)
+            self.view.becomeFirstResponder()
             self.messageInputToolbar.becomeFirstResponder()
             self.messageInputToolbar.isHidden = false
         case .choice:
-            self.messageInputToolbar.resignFirstResponder()
-            self.messageInputToolbar.isHidden = true
+            print("hide keyboard")
+            hideKeyboard()
         default:
-            self.messageInputToolbar.resignFirstResponder()
-            self.messageInputToolbar.isHidden = true
+            print("do nothing")
         }
-
+    }
+    
+    func hideKeyboard(){
+        self.view.endEditing(true)
+        self.messageInputToolbar.resignFirstResponder()
+        self.messageInputToolbar.isHidden = true
     }
     
     func didReceiveLayerObjectsDidChangeNotification(_ notification: NSNotification){
-        print("something change")
         guard let info = notification.userInfo else {
             return
         }
