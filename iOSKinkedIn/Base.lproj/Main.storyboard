@@ -605,7 +605,7 @@
                                     <constraint firstAttribute="bottom" secondItem="V7N-Ej-k6R" secondAttribute="bottom" constant="8" id="vyg-cF-1KE"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="rUx-7g-Ycv" kind="show" id="OvZ-f0-bJk"/>
+                                    <segue destination="rUx-7g-Ycv" kind="show" identifier="editProfile" id="OvZ-f0-bJk"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="changePreferences" id="vKa-Fy-eob">
@@ -709,6 +709,9 @@
                                     <constraint firstItem="05X-2p-iS3" firstAttribute="centerX" secondItem="9OR-Rx-5lp" secondAttribute="centerX" id="sgp-KM-IAn"/>
                                     <constraint firstAttribute="bottom" secondItem="XwZ-kp-MoC" secondAttribute="bottom" constant="8" id="wYn-fQ-IGr"/>
                                 </constraints>
+                                <connections>
+                                    <segue destination="kml-WL-DCz" kind="showDetail" identifier="logout2register" action="showViewController:sender:" id="JfT-7G-1P5"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -733,6 +736,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oR2-Xz-N8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-592" y="3776"/>
+        </scene>
+        <!--Auth-->
+        <scene sceneID="Kuz-7g-5e6">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Auth" id="kml-WL-DCz" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XdS-3I-HFu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-615" y="4025"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d13-m1-r6C">

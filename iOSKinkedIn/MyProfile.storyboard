@@ -69,7 +69,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Boy-Nv-hT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-951" y="5188"/>
+            <point key="canvasLocation" x="-359" y="5210"/>
         </scene>
         <!--PromptVC-->
         <scene sceneID="KG6-8c-TNg">

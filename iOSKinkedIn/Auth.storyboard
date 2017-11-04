@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OTl-Kt-gq9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OTl-Kt-gq9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="9cV-py-rjn">
-                                                <rect key="frame" x="48" y="200" width="280" height="407.5"/>
+                                                <rect key="frame" x="48" y="200" width="280" height="377"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hCo-Yf-rbR">
                                                         <rect key="frame" x="0.0" y="0.0" width="280" height="221"/>
@@ -106,16 +106,16 @@
                                                         </connections>
                                                     </button>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="PcK-Ib-fUv">
-                                                        <rect key="frame" x="0.0" y="347" width="280" height="60.5"/>
+                                                        <rect key="frame" x="0.0" y="347" width="280" height="30"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you would like an invite code, please apply for an invitation on trykinkedin.com" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LmL-uw-TEl">
-                                                                <rect key="frame" x="3.5" y="0.0" width="273.5" height="30.5"/>
+                                                                <rect key="frame" x="-48" y="0.0" width="0.0" height="0.0"/>
                                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                                 <color key="textColor" red="0.18048423529999999" green="0.1719750166" blue="0.2009343505" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W4P-sh-lBc">
-                                                                <rect key="frame" x="91" y="30.5" width="98" height="30"/>
+                                                                <rect key="frame" x="91" y="0.0" width="98" height="30"/>
                                                                 <state key="normal" title="Request Invite"/>
                                                             </button>
                                                         </subviews>
@@ -272,11 +272,20 @@
                         <outlet property="fieldEmail" destination="7uw-2i-usR" id="vh4-7R-FTs"/>
                         <outlet property="fieldPassword" destination="fIj-cn-nR7" id="IMO-d2-big"/>
                         <outlet property="scrollView" destination="hqK-go-7On" id="OUN-2E-Llw"/>
+                        <segue destination="TqB-f5-5YT" kind="showDetail" identifier="login2app" id="uHL-7m-eaJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYp-cH-tsy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-504.34782608695656" y="158.1521739130435"/>
+        </scene>
+        <!--appNaviCtrl-->
+        <scene sceneID="SlM-tG-0s5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="appNaviCtrl" id="TqB-f5-5YT" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MyN-Om-25W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-871" y="660"/>
         </scene>
     </scenes>
 </document>

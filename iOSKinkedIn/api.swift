@@ -179,7 +179,9 @@ class KinkedInAPI {
     }
     
     static func test(_ callback:@escaping(_ success:Bool)->Void ){
+        print("testing server \(HOST_URL)")
         Alamofire.request(HOST_URL).response { defaultDataResponse in
+            print(defaultDataResponse)
             callback( defaultDataResponse.error == nil)
         }
     }

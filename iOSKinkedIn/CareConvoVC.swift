@@ -44,10 +44,6 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         _makeOptionsView()
         sendText("Case created on \(Date().description)")
-//        self.collectionView.contentInset.bottom = 100
-//        print("content inset \(self.collectionView.contentInset)")
-//        print("constraints \(self.collectionView.constraints)")
-//        print("collectionViewContentSize \(self.collectionView.collectionViewLayout.collectionViewContentSize)")
     }
     
     private func _makeOptionsView() {
@@ -114,9 +110,6 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
             constant: -stackHeight)
         if let _oldHeight = self.stackHeightConstraint {
             view.removeConstraint(_oldHeight)
-        }
-        if let _oldOffset = self.scrollOffsetConstraint {
-            view.removeConstraint(_oldOffset)
         }
         view.addConstraint(height)
         view.addConstraint(offset)

@@ -20,13 +20,11 @@ class SplashVC: UIViewController {
             if(ok){
                 self.allowGo()
             } else {
-                print("Server is down")
-                /*
                 self.waitForReadyTimer = Timer.scheduledTimer(timeInterval: 3,
                                                               target: self,
                                                               selector: #selector(self.pingServer),
                                                               userInfo: nil, repeats: true);
-                */
+                
             }
         }
         */
