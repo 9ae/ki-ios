@@ -11,7 +11,7 @@ import UserNotifications
 
 class ScheduleDateVC: UIViewController {
     
-    var withUserName: String?
+    var withUser: Profile?
     @IBOutlet var eventLabel: UILabel!
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var checkinOption: UISwitch!
@@ -19,7 +19,7 @@ class ScheduleDateVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        eventLabel.text = "Meet \(withUserName!)"
+        eventLabel.text = "Meet \(withUser!.name)"
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,9 +34,13 @@ class ScheduleDateVC: UIViewController {
         
         let content = UNMutableNotificationContent()
         content.title = "KinkedIn Aftercare"
-        content.body = "How was are you feeling about your date with \(withUserName!)?"
+        content.body = "How was are you feeling about your date with \(withUser!.name)?"
         content.sound = .default()
         content.categoryIdentifier = NOTECAT_AFTERCARE
+        content.userInfo = [
+            "meeting_dt": date,
+            "with_user_id": withUser!.neoId
+        ]
         
         let id = "KIA \(date.description)"
         let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
@@ -57,7 +61,8 @@ class ScheduleDateVC: UIViewController {
         }
         
         if(checkinOption.isOn){
-            let date = datePicker.date.addingTimeInterval(TimeInterval(3600*checkinHours))
+            // 3600*checkinHours
+            let date = datePicker.date.addingTimeInterval(TimeInterval(30))
             registerNotification(date)
         }
     }

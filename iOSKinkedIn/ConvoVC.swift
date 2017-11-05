@@ -17,7 +17,7 @@ class ConvoVC: KiConvoVC {
         super.viewDidLoad()
 
         self.hidesBottomBarWhenPushed = true
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         let scheduleEvent = UIBarButtonItem(image: #imageLiteral(resourceName: "calendar"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
         let viewProfile = UIBarButtonItem(image: #imageLiteral(resourceName: "info"), style: .plain, target: self, action: #selector(self.onViewProfile))
         self.navigationItem.setRightBarButtonItems([viewProfile, scheduleEvent], animated: false)
@@ -33,7 +33,7 @@ class ConvoVC: KiConvoVC {
 
     func goToScheduleScreen(){
         let scheduleScreen = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
-        scheduleScreen.withUserName = self.title
+        scheduleScreen.withUser = profile
         self.navigationController?.pushViewController(scheduleScreen, animated: false)
     }
     

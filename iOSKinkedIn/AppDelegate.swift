@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
     let layerID = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c"
-    var notificationLaunchOptions : [String:Any?] = ["category": nil, "identifier": nil]
+    var notificationLaunchOptions : [String:Any?] = ["category": nil, "identifier": nil, "user_info": nil]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -91,19 +91,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
                 print(error?.localizedDescription ?? "Layer notification error")
             } else {
                 print("layer notification recieved")
-                //TODO launch convo
             }
         })
-        //print(userInfo)
-        /*
-        if let aps = userInfo["aps"] as? [AnyHashable: Any] {
-            if let category = aps["category"] as String {
-                if(category == "partner_requests"){
-                    
-                }
-            }
-        }
-        */
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -132,7 +121,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             print("category is not nil")
             return
         }
-        
+
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
@@ -141,7 +130,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             
         switch(category){
             case NOTECAT_AFTERCARE:
-                navCtrl.pushViewController(LayerHelper.makeAftercareVC(), animated: false)
+                if let userInfo = self.notificationLaunchOptions["user_info"] as? [AnyHashable: Any] {
+                    let convo = LayerHelper.makeAftercareVC(userInfo: userInfo)
+                    navCtrl.pushViewController(convo, animated: false)
+                }
             case NOTECAT_PARTNER_REQUEST:
                 let vc = storyboard.instantiateViewController(withIdentifier: "partnersVC") as! MasterPartnersVC
                 navCtrl.pushViewController(vc, animated: false)
@@ -220,8 +212,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         */
         // print("notification recieved: \(response)");
         //print(data);
-        
-        self.notificationLaunchOptions["category"] = response.notification.request.content.categoryIdentifier
+        let content = response.notification.request.content
+        self.notificationLaunchOptions["category"] = content.categoryIdentifier
+        self.notificationLaunchOptions["user_info"] = content.userInfo
         
         /*
         switch(category){

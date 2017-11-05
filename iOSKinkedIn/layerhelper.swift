@@ -74,12 +74,13 @@ class LayerHelper {
         }
     }
     
-    static func makeAftercareVC() -> CareConvoVC {
+    static func makeAftercareVC(userInfo: [AnyHashable : Any]) -> CareConvoVC {
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
             convo.conversation = try LayerHelper.startConvo(withUser: "aftercare", distinct: false)
             try convo.conversation.synchronizeAllMessages(.toFirstUnread)
             convo.hidesBottomBarWhenPushed = true
+            convo.conversation.setValuesForMetadataKeyPathsWith(["about_user_id": userInfo["with_user_id"]], merge: true)
         } catch {
             print("failed to start aftercare convo")
         }
