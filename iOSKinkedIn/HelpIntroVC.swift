@@ -26,6 +26,8 @@ class HelpIntroVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @IBAction func reportBug(_ sender: Any) {
         if let url = URL(string: "http://bugs.trykinkedin.com") {
         UIApplication.shared.open(url, options: [:], completionHandler: { (success) in
@@ -34,11 +36,37 @@ class HelpIntroVC: UIViewController {
         }
     }
     
-    
     @IBAction func chatWithKia(_ sender: Any) {
+        self.navigationController?.isNavigationBarHidden = false
+        self.view.makeToastActivity(.center)
+        KinkedInAPI.connections { profiles in
+            self.view.hideToastActivity()
+            let selectUserVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AbstractUserListVC") as! AbstractUserListVC
+            selectUserVC.profiles.append(contentsOf: profiles)
+            selectUserVC.setMultiSelect(false)
+            selectUserVC.doneCallbackSingle = self.userSelected
+            selectUserVC.navigationItem.title = "Issue with which user?"
+            
+            self.navigationController?.pushViewController(selectUserVC, animated: false)
+        }
+    }
+    
+    @IBAction func previousConvos(_ sender: Any) {
+        let listVC = CaseList(layerClient: LayerHelper.client!)
+        self.navigationController?.pushViewController(listVC, animated: false)
+    }
+    
+    func userSelected(_ selected: Profile) {
+        print("selected \(selected.name)")
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
-            convo.conversation = try LayerHelper.startConvo(withUser: "aftercare", distinct: false)
+            convo.conversation = try LayerHelper.startConvo(
+                withUser: "aftercare",
+                distinct: false,
+                metadata: [
+                    "about_user_id": selected.neoId,
+                    "case_type": "report"
+                ])
             try convo.conversation.synchronizeAllMessages(.toFirstUnread)
             convo.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(convo, animated: false)
@@ -46,11 +74,6 @@ class HelpIntroVC: UIViewController {
             print("failed to start aftercare convo")
         }
         
-    }
-    
-    @IBAction func previousConvos(_ sender: Any) {
-        let listVC = CaseList(layerClient: LayerHelper.client!)
-        self.navigationController?.pushViewController(listVC, animated: false)
     }
     
     // MARK: - Navigation

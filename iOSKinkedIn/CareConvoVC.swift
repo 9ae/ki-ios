@@ -26,6 +26,8 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
     private var currentQuestion: [String: Any]? = nil
     private var tempQ: String? = nil
     
+    private var isKeyboardHidden = false
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
@@ -44,6 +46,7 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         _makeOptionsView()
         sendText("Case created on \(Date().description)")
+        hideKeyboard()
     }
     
     private func _makeOptionsView() {
@@ -165,25 +168,44 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
     public func updateReplyState(state: ReplyType){
         self.replyState = state
         
+        if (state == .text) {
+            showKeyboard()
+        } else {
+            hideKeyboard()
+        }
+        /*
         switch (state){
         case .text:
             print("show keyboard")
-            self.view.endEditing(false)
-            self.view.becomeFirstResponder()
-            self.messageInputToolbar.becomeFirstResponder()
-            self.messageInputToolbar.isHidden = false
+            showKeyboard()
         case .choice:
             print("hide keyboard")
             hideKeyboard()
         default:
             print("do nothing")
         }
+        */
     }
     
     func hideKeyboard(){
+        if (self.isKeyboardHidden) {
+            return
+        }
         self.view.endEditing(true)
         self.messageInputToolbar.resignFirstResponder()
         self.messageInputToolbar.isHidden = true
+        self.isKeyboardHidden = true
+    }
+    
+    func showKeyboard(){
+        if (!self.isKeyboardHidden) {
+            return
+        }
+        self.view.endEditing(false)
+        self.view.becomeFirstResponder()
+        self.messageInputToolbar.becomeFirstResponder()
+        self.messageInputToolbar.isHidden = false
+        self.isKeyboardHidden = false
     }
     
     func didReceiveLayerObjectsDidChangeNotification(_ notification: NSNotification){
