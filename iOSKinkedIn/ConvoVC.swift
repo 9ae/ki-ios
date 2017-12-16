@@ -18,10 +18,17 @@ class ConvoVC: KiConvoVC {
 
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        let scheduleEvent = UIBarButtonItem(image: #imageLiteral(resourceName: "calendar"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
-        let viewProfile = UIBarButtonItem(image: #imageLiteral(resourceName: "info"), style: .plain, target: self, action: #selector(self.onViewProfile))
-        self.navigationItem.setRightBarButtonItems([viewProfile, scheduleEvent], animated: false)
-        
+        //let scheduleEvent = UIBarButtonItem(image: #imageLiteral(resourceName: "calendar"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
+        //let viewProfile = UIBarButtonItem(image: #imageLiteral(resourceName: "info"), style: .plain, target: self, action: #selector(self.onViewProfile))
+        //self.navigationItem.setRightBarButtonItems([viewProfile, scheduleEvent], animated: false)
+
+        self.navigationItem.setRightBarButton(
+            UIBarButtonItem(
+                barButtonSystemItem: .action,
+                target: self,
+                action: #selector(self.actionSheetButtonPressed)
+            ),
+            animated: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Chat", style: .plain, target: nil, action: nil)
         
     }
@@ -30,6 +37,32 @@ class ConvoVC: KiConvoVC {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func actionSheetButtonPressed(sender: UIButton) {
+        let alert =  UIAlertController(title: "More Options", message: "", preferredStyle: .actionSheet)
+        let viewProfile = UIAlertAction(title: "View Profile", style: .default) { (alert: UIAlertAction!) -> Void in
+            self.goToViewProfile()
+        }
+        
+        let scheduleDate = UIAlertAction(title: "Schedule Date", style: .default) { (alert: UIAlertAction!) -> Void in
+            self.goToScheduleScreen()
+        }
+        
+        let block = UIAlertAction(title: "Disconnect", style: .destructive) { (alert: UIAlertAction!) -> Void in
+            self.blockUser()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction!) -> Void in
+            print("do nothing")
+        }
+        
+        alert.addAction(viewProfile)
+        alert.addAction(scheduleDate)
+        alert.addAction(block)
+        alert.addTopSpace()
+        alert.addAction(cancel)
+        present(alert, animated: false)
+    }
 
     func goToScheduleScreen(){
         let scheduleScreen = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
@@ -37,7 +70,7 @@ class ConvoVC: KiConvoVC {
         self.navigationController?.pushViewController(scheduleScreen, animated: false)
     }
     
-    func onViewProfile(_ sender: AnyObject){
+    func goToViewProfile(){
         
         if let uuid = profile?.neoId {
             
@@ -51,11 +84,13 @@ class ConvoVC: KiConvoVC {
             }
         
         }
-        
     }
     
-    func onScheduleDate(_ sender: AnyObject){
-        goToScheduleScreen()
+    func blockUser(){
+        if let uuid = profile?.neoId {
+            KinkedInAPI.blockUser(uuid)
+        }
+        self.navigationController?.popViewController(animated: false)
     }
     
 }

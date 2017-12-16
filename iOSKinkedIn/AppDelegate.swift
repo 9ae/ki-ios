@@ -18,7 +18,7 @@ import LayerKit
 class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
-    let layerID = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c"
+    let layerID = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b"
     var notificationLaunchOptions : [String:Any?] = ["category": nil, "identifier": nil, "user_info": nil]
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

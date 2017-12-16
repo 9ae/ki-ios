@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://hms-staging.herokuapp.com/"
+let HOST_URL = "https://hms-dev.herokuapp.com/"
 
 enum ProfileAction: Int {
     case hide=0, skip, like
@@ -484,6 +484,18 @@ class KinkedInAPI {
     
     static func invitePartner(_ partner_email: String){
         post("self/invite_partner", parameters: ["email": partner_email]){json in
+            print(json)
+        }
+    }
+    
+    static func blockUser(_ uuid: String){
+        post("self/block/\(uuid)", parameters: [:]) { json in
+            print(json)
+        }
+    }
+    
+    static func unblockUser(_ uuid: String){
+        delete("self/block/\(uuid)") { json in
             print(json)
         }
     }

@@ -255,12 +255,26 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
                             updateReplyState(state: .text)
                         }
                     }
+                    let isEnd = currentQuestion?["is_end"] as! Bool
+                    if isEnd {
+                        convoEndedAlert()
+                    }
                 } catch {
                     print(error)
                 }
             }
             
         }
+    }
+    
+    private func convoEndedAlert(){
+        let alert = UIAlertController(title: "Aftercare Complete", message: "Thank you for sharing with us your thoughts and concerns", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "Return to App", style: .default){ action in
+            let app = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabAppView")
+            self.navigationController?.pushViewController(app, animated: false)
+        }
+        alert.addAction(ok)
+        self.present(alert, animated: false)
     }
 
     /*
