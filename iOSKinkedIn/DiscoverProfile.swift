@@ -16,7 +16,8 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
     @IBOutlet var shortBio: UILabel!
     @IBOutlet var longBio: UITextView!
     @IBOutlet var picture: UIImageView!
-
+    @IBOutlet var kinksBio: UILabel!
+    
     private var _profile: Profile?
     
     override func viewDidLoad() {
@@ -76,8 +77,18 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
         let shortBioAS = shortBioText.style(tags: b).styleAll(baseStyle)
         shortBio?.attributedText = shortBioAS.attributedString
         
+        let i = Style("i").obliqueness(0.2)
+        
+        if (!profile.kinks.isEmpty) {
+            let kinksText = profile.kinks.map{ki in ki.label}
+            let kinksAttr = ("<i>Kinks I like</i>\n" + kinksText.joined(separator: ", ")).style(tags: i).styleAll(baseStyle)
+            kinksBio.attributedText = kinksAttr.attributedString
+            kinksBio.isHidden = false
+        } else {
+            kinksBio.isHidden = true
+        }
+        
         if let prompts = profile.prompts {
-            let i = Style("i").obliqueness(0.2)
             let questions = prompts.map({ p -> String in
                 return "<i>\(p.title)</i>\n \(p.answer ?? "")"
             })
