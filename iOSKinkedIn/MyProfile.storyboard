@@ -365,7 +365,7 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="115-SY-j2N">
                                         <rect key="frame" x="0.0" y="70" width="359" height="30"/>
-                                        <state key="normal" title="I can provide you with">
+                                        <state key="normal" title="I want to give you">
                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -392,10 +392,10 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
                                 <rect key="frame" x="1" y="208" width="373" height="395"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
+                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">

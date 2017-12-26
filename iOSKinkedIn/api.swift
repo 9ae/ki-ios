@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://hms-dev.herokuapp.com/"
+let HOST_URL = "https://hms-staging.herokuapp.com/"
 
 enum ProfileAction: Int {
     case hide=0, skip, like

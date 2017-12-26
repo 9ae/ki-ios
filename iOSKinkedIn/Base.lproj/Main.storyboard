@@ -40,21 +40,14 @@
                                     <action selector="go:" destination="eZa-Es-J1g" eventType="touchDown" id="yX0-Zy-8Jg"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
-                                <rect key="frame" x="38" y="502.5" width="300" height="64.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
+                                <rect key="frame" x="38" y="501.5" width="300" height="65.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="F6h-sM-tfQ"/>
                                 </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">KinkedIn is NOT for people under the age of 18, or for anyone who is NOT thoroughly interested in communication, respecting boundaries, and enthusiastic consent.</string>
-                                        <attributes>
-                                            <color key="NSColor" red="0.99195677042007446" green="0.99622899293899536" blue="0.99192315340042114" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="14" name="Helvetica-Light"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
+                                <string key="text">KinkedIn is for people over the age of 18 and for anyone who is thoroughly interested in communication, respecting boundaries, and enthusiastic consent</string>
+                                <fontDescription key="fontDescription" name=".SFNSText" family=".SF NS Text" pointSize="14"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
