@@ -131,6 +131,7 @@ class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataS
         let city = self.cities[cityIndex]
         if profile?.city != city.label {
             params["city"] = city.code
+            profile?.city = city.label
         }
         
         KinkedInAPI.updateProfile(params)
