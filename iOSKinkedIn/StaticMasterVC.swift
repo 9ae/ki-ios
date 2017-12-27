@@ -37,7 +37,7 @@ class StaticMasterVC: UICollectionViewController {
             KeychainWrapper.standard.removeObject(forKey: "kiToken")
         }
         
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
 
