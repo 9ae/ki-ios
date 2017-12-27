@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://hms-staging.herokuapp.com/"
+let HOST_URL = "https://hms-dev.herokuapp.com/"
 
 enum ProfileAction: Int {
     case hide=0, skip, like
@@ -242,6 +242,21 @@ class KinkedInAPI {
             if let titles = json["prompts"] as? [String] {
                 callback(titles)
             }
+        }
+    }
+    
+    static func cities(_ callback:@escaping(_ results:[City])->Void) {
+        get("cities", requiresToken: false){json in
+            var cities = [City]()
+            if let arr = json["results"] as? [[String:Any]] {
+                for e in arr {
+                    if let code = e["code"] as? String,
+                        let label = e["label"] as? String {
+                        cities.append(City(code: code, label: label))
+                    }
+                }
+            }
+            callback(cities)
         }
     }
     

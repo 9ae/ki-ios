@@ -8,13 +8,15 @@
 
 import UIKit
 
-class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet var nameField: UITextField!
     @IBOutlet var birthdayField: UIDatePicker!
     @IBOutlet var expField: UIPickerView!
+    @IBOutlet var cityField: UIPickerView!
     
     var expTitles = [String]()
+    var cities = [City]()
     
     var profile: Profile?
 
@@ -29,11 +31,28 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         expField.delegate = self
         expField.dataSource = self
+        nameField.delegate = self
+        cityField.delegate = self
         
         KinkedInAPI.experienceLevels { results in
             self.expTitles = results
             self.expField.reloadComponent(0)
             self.expField.selectRow((self.profile?.expLv!)!, inComponent: 0, animated: false)
+        }
+        
+        KinkedInAPI.cities { results in
+            self.cities = results
+            self.cityField.reloadComponent(0)
+            if let city = self.profile?.city {
+                var r = 0
+                for (i, c) in self.cities.enumerated() {
+                    if c.label == city {
+                        r = i
+                        break
+                    }
+                }
+                self.cityField.selectRow(r, inComponent: 0, animated: false)
+            }
         }
 
     }
@@ -56,11 +75,24 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return expTitles.count
+        if(pickerView.isEqual(expField)) {
+            return expTitles.count
+        } else if (pickerView.isEqual(cityField)) {
+            return cities.count
+        } else {
+            return 0
+        }
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return expTitles[row]
+        if(pickerView.isEqual(expField)) {
+            return expTitles[row]
+        } else if (pickerView.isEqual(cityField)) {
+            return cities[row].label
+        } else {
+            return "..."
+        }
+        
     }
     
     
@@ -93,6 +125,12 @@ class BasicProfileVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             params["exp"] = exp
             profile?.expLv = exp
             profile?.exp = expTitles[exp]
+        }
+        
+        let cityIndex = cityField.selectedRow(inComponent: 0)
+        let city = self.cities[cityIndex]
+        if profile?.city != city.label {
+            params["city"] = city.code
         }
         
         KinkedInAPI.updateProfile(params)

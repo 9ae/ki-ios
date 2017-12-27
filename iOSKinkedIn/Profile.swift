@@ -33,6 +33,11 @@ struct PreferenceFilters {
 
 }
 
+struct City {
+    var code: String
+    var label: String
+}
+
 class Profile {
     var neoId: String
     var name: String
@@ -233,6 +238,10 @@ class Profile {
             let genders = (_prefers["genders"] as? [String]) ?? [String]()
             let roles = (_prefers["roles"] as? [String]) ?? [String]()
             pro.preferences = PreferenceFilters(minAge: minAge, maxAge: maxAge, genders: genders, roles: roles)
+        }
+        
+        if let _city = json["city"] as? String {
+            pro.city = _city
         }
         
         return pro
