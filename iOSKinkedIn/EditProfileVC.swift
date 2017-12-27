@@ -33,6 +33,7 @@ class EditProfileVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         self.view.makeToastActivity(.center)
         KinkedInAPI.myself { profile in
