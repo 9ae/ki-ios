@@ -503,6 +503,27 @@ class KinkedInAPI {
         }
     }
     
+    static func blockedUsers(_ callback: @escaping(_ profiles: [Profile])-> Void){
+        get("self/blocks"){ json in
+            let job = Woz(json) { result in
+                if let resArray = result as? [[String:Any]] {
+                    var users: [Profile] = []
+                    for e in resArray {
+                        guard let name = e["name"] as? String,
+                            let neo_id = e["neo_id"] as? String,
+                            let image_id = e["image_id"] as? String else {
+                                print("can't get profile values")
+                                continue
+                        }
+                        users.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                    }
+                    callback(users)
+                }
+            }
+            job.run(requiresToken: true)
+        }
+    }
+    
     static func blockUser(_ uuid: String){
         post("self/block/\(uuid)", parameters: [:]) { json in
             print(json)

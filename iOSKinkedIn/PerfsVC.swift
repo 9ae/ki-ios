@@ -41,15 +41,22 @@ class PerfsVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 2
+    override func numberOfSections(in tableView: UITableView) -> Int { 
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        if(section==0){ return 4 }
-        else { return 1 }
+        
+        switch section {
+        case 0:
+            return 4
+        case 1:
+            return 1
+        case 2:
+            return 1
+        default:
+            return 0
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -72,7 +79,34 @@ class PerfsVC: UITableViewController {
         KinkedInAPI.updateProfile(params)
         
     }
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (indexPath.section == 2 && indexPath.row == 0) {
+            self.goToBlockedUsers()
+        }
+    }
+    
+    func unblockUsers(_ selected: [Profile]) {
+        for user in selected {
+            KinkedInAPI.unblockUser(user.neoId)
+        }
+        self.navigationController?.popViewController(animated: false)
+    }
+    
+    func goToBlockedUsers(){
+        self.view.makeToastActivity(.center)
+        KinkedInAPI.blockedUsers { profiles in
+            let blockUserVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AbstractUserListVC") as! AbstractUserListVC
+            blockUserVC.profiles.append(contentsOf: profiles)
+            blockUserVC.setMultiSelect(true)
+            blockUserVC.doneCallbackMulti = self.unblockUsers
+            blockUserVC.navigationItem.rightBarButtonItem?.title = "Reconnect"
+            blockUserVC.navigationItem.title = "Disconnected"
+            self.view.hideToastActivity()
+            self.navigationController?.pushViewController(blockUserVC, animated: false)
+        }
+    }
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
