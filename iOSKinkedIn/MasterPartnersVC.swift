@@ -21,6 +21,7 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         
         self.tableView.dataSource = self
         self.tableView.delegate = self
