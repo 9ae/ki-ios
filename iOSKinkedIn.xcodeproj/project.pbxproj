@@ -996,6 +996,8 @@
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				KI_API = "https://hms-dev.herokuapp.com/";
+				LAYER_APP = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1020,6 +1022,8 @@
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				KI_API = "https://hms-staging.herokuapp.com/";
+				LAYER_APP = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";

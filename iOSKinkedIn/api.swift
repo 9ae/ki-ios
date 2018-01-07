@@ -9,8 +9,6 @@
 import Foundation
 import Alamofire
 
-let HOST_URL = "https://hms-dev.herokuapp.com/"
-
 enum ProfileAction: Int {
     case hide=0, skip, like
 }
@@ -89,6 +87,7 @@ class KinkedInAPI {
     
     static var token: String = ""
     static var deviceToken: Data?
+    static let HOST_URL = Bundle.main.infoDictionary!["KI_API"] as! String
     
     static func setToken(_ t: String){
         token = t

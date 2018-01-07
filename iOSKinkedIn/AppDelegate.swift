@@ -18,7 +18,7 @@ import LayerKit
 class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     var window: UIWindow?
-    let layerID = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b"
+    let layerID = Bundle.main.infoDictionary!["LAYER_APP"] as! String
     
     var notificationLaunchOptions : [String:Any?] = ["category": nil, "identifier": nil, "user_info": nil]
 
