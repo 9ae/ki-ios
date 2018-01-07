@@ -15,7 +15,7 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         KinkedInAPI.test { ok in
             if(ok){
                 self.allowGo()
@@ -27,7 +27,7 @@ class SplashVC: UIViewController {
                 
             }
         }
-        
+        */
         allowGo()
     }
     
