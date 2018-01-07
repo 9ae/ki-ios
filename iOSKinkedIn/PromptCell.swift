@@ -14,7 +14,7 @@ class PromptCell: UITableViewCell, UITextViewDelegate {
     @IBOutlet var title: UILabel!
     @IBOutlet var show: UISwitch!
     @IBOutlet var answer: UITextView!
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -32,7 +32,13 @@ class PromptCell: UITableViewCell, UITextViewDelegate {
         if(!textView.text.isEmpty){
             self.show.isOn = true
         }
+        
     }
+    /*
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        self.setEditing(true, animated: false)
+    }
+    */
     
     
 

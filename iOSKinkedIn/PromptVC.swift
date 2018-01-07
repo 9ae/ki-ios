@@ -54,15 +54,23 @@ class PromptVC: UITableViewController {
         let cell = tableView.getOrCreateCell(CELL_ID)
 
         if let _promptCell = cell as? PromptCell {
-            _promptCell.setContent(prompts[indexPath.row])
+            let prompt = prompts[indexPath.row]
+            _promptCell.setContent(prompt)
         }
         
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let promptCell = cell as? PromptCell {
+            prompts[indexPath.row].answer = promptCell.answer.text
+            prompts[indexPath.row].show = promptCell.show.isOn
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool){
         super.viewWillDisappear(animated)
-        
+
         var i = 0
         while i < prompts.count {
             if let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? PromptCell {
@@ -71,7 +79,7 @@ class PromptVC: UITableViewController {
             }
             i = i + 1
         }
-        
+ 
         profile?.prompts = prompts
         
         let params = [
