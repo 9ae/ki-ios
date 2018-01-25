@@ -255,7 +255,7 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
                             updateReplyState(state: .text)
                         }
                     }
-                    let isEnd = currentQuestion?["is_end"] as! Bool
+                    let isEnd = (currentQuestion?["is_end"] as? Bool) ?? false
                     if isEnd {
                         convoEndedAlert()
                     }
