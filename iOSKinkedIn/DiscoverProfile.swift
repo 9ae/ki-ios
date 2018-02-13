@@ -145,11 +145,11 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
     
     private func updateMatchLimits(match_limit: Int, matches_today: Int) {
         let defaults = UserDefaults.standard
-        defaults.set(matches_today, forKey: "matches_today")
-        defaults.set(matches_today < match_limit, forKey: "can_like")
-        let existing_limit = defaults.integer(forKey: "match_limit")
+        defaults.set(matches_today, forKey: UD_MATCHES_TODAY)
+        defaults.set(matches_today < match_limit, forKey: UD_CAN_LIKE)
+        let existing_limit = defaults.integer(forKey: UD_MATCH_LIMIT)
         if (existing_limit != match_limit) {
-            defaults.set(match_limit, forKey: "match_limit")
+            defaults.set(match_limit, forKey: UD_MATCH_LIMIT)
         }
     }
     

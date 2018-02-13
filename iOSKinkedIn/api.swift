@@ -346,8 +346,8 @@ class KinkedInAPI {
                 }
                 
                 let requited = res["requited"] as? Bool ?? false
-                let match_limit = res["match_limit"] as? Int ?? 7
-                let matches_today = res["matches_today"] as? Int ?? 0
+                let match_limit = res["match_limit"] as? Int ?? UD_MATCH_LIMIT_VALUE
+                let matches_today = res["matches_today"] as? Int ?? UD_MATCHES_TODAY_VALUE
                 if requited {
                     callback(requited, match_limit, matches_today)
                 }
