@@ -130,13 +130,27 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
             return
         }
         
-        KinkedInAPI.likeProfile(uuid) { reciprocal in
+        KinkedInAPI.likeProfile(uuid) { reciprocal, match_limit, matches_today in
             if(reciprocal) {
-                NotificationCenter.default.post(name: NOTIFY_RECIPROCAL_FEEFEE, object: nil)
+                self.updateMatchLimits(match_limit: match_limit, matches_today: matches_today)
+                NotificationCenter.default.post(
+                    name: NOTIFY_RECIPROCAL_FEEFEE,
+                    object: nil
+                )
             }
         }
         back()
         
+    }
+    
+    private func updateMatchLimits(match_limit: Int, matches_today: Int) {
+        let defaults = UserDefaults.standard
+        defaults.set(matches_today, forKey: "matches_today")
+        defaults.set(matches_today < match_limit, forKey: "can_like")
+        let existing_limit = defaults.integer(forKey: "match_limit")
+        if (existing_limit != match_limit) {
+            defaults.set(match_limit, forKey: "match_limit")
+        }
     }
     
     

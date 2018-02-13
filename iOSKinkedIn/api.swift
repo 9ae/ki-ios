@@ -327,12 +327,30 @@ class KinkedInAPI {
         }
     }
     
-    static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool)->Void ){
+    static func likeProfile(_ uuid: String,callback: @escaping(_ reciprocal: Bool,
+        _ match_limit: Int, _ matches_today: Int)->Void ){
         let params : Parameters = [ "likes": true ]
         post("profile/\(uuid)", parameters: params){ json in
             let job = Woz(json){ result in
-                let reciprocal = (result as? Bool) ?? false
-                callback(reciprocal)
+                //TODO respond to this api endpoint. If requited, expect additional data.
+                /*
+                 {
+                 "is_still_free" = 1;
+                 "match_limit" = 7;
+                 "matches_today" = 2;
+                 requited = 1;
+                 }
+                */
+                guard let res = result as? [String: Any] else {
+                    return
+                }
+                
+                let requited = res["requited"] as? Bool ?? false
+                let match_limit = res["match_limit"] as? Int ?? 7
+                let matches_today = res["matches_today"] as? Int ?? 0
+                if requited {
+                    callback(requited, match_limit, matches_today)
+                }
             }
             job.run(requiresToken: true)
         }
