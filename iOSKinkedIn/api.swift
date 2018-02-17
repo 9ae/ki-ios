@@ -553,4 +553,44 @@ class KinkedInAPI {
         }
     }
     
+    static func dailyLimits(_ callback: @escaping(_ limit: Int, _ matchesToday: Int) -> Void){
+        get("self/daily/limits"){ json in
+            guard let matchLimit = json["match_limit"] as? Int,
+            let matchesToday = json["matches_today"] as? Int
+            else {
+                // TODO throw error
+                return
+            }
+            callback(matchLimit, matchesToday)
+        }
+    }
+    
+    static func dailyMatches(callback: @escaping(_ profiles: [Profile])-> Void) {
+        get("self/daily/matches"){ json in
+            var profiles = [Profile]()
+            guard let reciprocals = json["matches"] as? [Any] else {
+                print("failed to cast list")
+                return
+            }
+            
+            for r in reciprocals {
+                guard let rc = r as? [String:Any] else {
+                    print("can't get json object")
+                    continue
+                }
+                guard let name = rc["name"] as? String,
+                    let neo_id = rc["neo_id"] as? String,
+                    let image_id = rc["image_id"] as? String else {
+                        print("can't get profile values")
+                        continue
+                }
+                profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                
+            }
+            
+            callback(profiles)
+        }
+    }
+    
+    
 }

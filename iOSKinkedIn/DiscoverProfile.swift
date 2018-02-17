@@ -126,6 +126,10 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
     
     @IBAction func like(_ sender: AnyObject) {
         
+        if !UserDefaults.standard.bool(forKey: UD_CAN_LIKE) {
+            return
+        }
+        
         guard let uuid = self._profile?.neoId else {
             return
         }

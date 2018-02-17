@@ -61,14 +61,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         if checkinHours == 0 {
             defaults.set(UD_CHECKIN_TIME_VALUE, forKey: UD_CHECKIN_TIME)
         }
-        let matchLimit = defaults.integer(forKey: UD_MATCH_LIMIT)
-        if matchLimit == 0 {
-            defaults.set(UD_MATCH_LIMIT_VALUE, forKey: UD_MATCH_LIMIT)
-        }
-        let canLike = defaults.bool(forKey: UD_CAN_LIKE)
-        let matchesToday = defaults.integer(forKey: UD_MATCHES_TODAY)
-        if !canLike && matchesToday < matchLimit {
-            defaults.set(UD_CAN_LIKE_VALUE, forKey: UD_CAN_LIKE)
+        
+        KinkedInAPI.dailyLimits { (limit, matches) in
+            defaults.set(limit, forKey: UD_MATCH_LIMIT)
+            defaults.set(matches, forKey: UD_MATCHES_TODAY)
+            defaults.set(matches < limit, forKey: UD_CAN_LIKE)
         }
     }
     
