@@ -59,16 +59,8 @@ class ConnectionsVC: UITableViewController {
     }
     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let profile = reciprocals[indexPath.row]
-        do {
-            let convo = ConvoVC(layerClient: LayerHelper.client!)
-            convo.title = profile.name
-            convo.displaysAddressBar = false
-            convo.conversation = try LayerHelper.startConvo(withUser: profile.neoId)
-            convo.profile = profile
-            self.navigationController?.pushViewController(convo, animated: false)
-        } catch {
-            print("layer failed to start convo")
+        if let convoVC = LayerHelper.makeConvoVC(reciprocals[indexPath.row]) {
+            self.navigationController?.pushViewController(convoVC, animated: false)
         }
     }
 

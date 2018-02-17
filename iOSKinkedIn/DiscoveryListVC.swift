@@ -10,6 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "profileCell"
 private let matchesCellIdentifier = "thMatch"
+private let textNoteIdentifier = "textNote"
 
 class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
@@ -18,6 +19,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     var todayMatches = [Profile]()
     
     var selectedProfile : Profile?
+    var isMatchLimitReached = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +42,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             }
         } else {
             self.view.hideToastActivity()
-            // TODO text view with link that takes them to their connections screen
-            print("In text: Daily match limit reached, spend time getting to know your new connections")
+            isMatchLimitReached = true
         }
         
         KinkedInAPI.dailyMatches(){ matches in
@@ -55,9 +56,14 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         addTopSpace()
         //TODO check daily match limit not reached
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,9 +112,13 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
             //TODO get from user default limits
-            return UD_MATCH_LIMIT_VALUE
+            return UserDefaults.standard.integer(forKey: UD_MATCH_LIMIT)
+        } else {
+            if isMatchLimitReached {
+                return 1
+            }
+            return profiles.count
         }
-        return profiles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -119,12 +129,15 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 cell.setImage(profile.picture_public_id!)
             }
             return cell
-        }
+        } else if isMatchLimitReached {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
+        } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         
         cell.setContent(profiles[indexPath.row])
     
         return cell
+        }
     }
 
     // MARK: UICollectionViewDelegate
@@ -139,7 +152,11 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        if(indexPath.section == 1){
+        if indexPath.section == 0 {
+            if(indexPath.row < todayMatches.count){
+                onDailyMatchTouched(todayMatches[indexPath.row])
+            }
+        } else if !isMatchLimitReached {
             selectedProfile = profiles[indexPath.row]
         }
         return true
@@ -159,6 +176,38 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             height = 185
         }
         return CGSize(width: width, height: height)
+    }
+    
+    func onDailyMatchTouched(_ profile: Profile) {
+        let alert =  UIAlertController(title: profile.name, message: "What would you like to do?", preferredStyle: .actionSheet)
+        let viewProfile = UIAlertAction(title: "See profile", style: .default) { (alert: UIAlertAction!) -> Void in
+            self.view.makeToastActivity(.center)
+            
+            KinkedInAPI.readProfile(profile.neoId) { profile in
+                let profileView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "discoverProfileVC") as! DiscoverProfile
+                profileView.setProfile(profile, isDiscoverMode: false)
+                self.view.hideToastActivity()
+                self.navigationController?.pushViewController(profileView, animated: false)
+            }
+        }
+        let talkTo = UIAlertAction(title: "Start chatting", style: .default) { (alert: UIAlertAction!) -> Void in
+            print("start convo with new friend")
+            if let convo = LayerHelper.makeConvoVC(profile) {
+                self.navigationController?.pushViewController(convo, animated: false)
+            } else {
+                print("something went wrong in attempt to start convo with \(profile.name)")
+            }
+        }
+        let cancel = UIAlertAction(title: "Nothing", style: .cancel) { (alert: UIAlertAction!) -> Void in
+            print("do nothing")
+        }
+        
+        alert.addAction(viewProfile)
+        alert.addAction(talkTo)
+        alert.addTopSpace()
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
     }
     
 

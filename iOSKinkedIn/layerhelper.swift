@@ -94,4 +94,17 @@ class LayerHelper {
         return convo
     }
     
+    static func makeConvoVC(_ profile: Profile) -> ConvoVC? {
+        do {
+        let convo = ConvoVC(layerClient: LayerHelper.client!)
+        convo.title = profile.name
+        convo.displaysAddressBar = false
+        convo.conversation = try LayerHelper.startConvo(withUser: profile.neoId)
+        convo.profile = profile
+            return convo
+        } catch {
+            return nil
+        }
+    }
+    
 }
