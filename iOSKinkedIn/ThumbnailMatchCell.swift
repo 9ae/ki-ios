@@ -27,7 +27,6 @@ class ThumbnailMatchCell: UICollectionViewCell {
         context.fillPath()
         strokeColor.setStroke()
         context.strokeEllipse(in: rect)
-        
     }
 
     

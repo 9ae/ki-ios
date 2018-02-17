@@ -9,8 +9,9 @@
 import UIKit
 
 private let reuseIdentifier = "profileCell"
+private let matchesCellIdentifier = "thMatch"
 
-class DiscoveryListVC: UICollectionViewController {
+class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     var profilesQueue = [String]()
     var profiles = [Profile]()
@@ -29,12 +30,20 @@ class DiscoveryListVC: UICollectionViewController {
         // Do any additional setup after loading the view.
         
         self.view.makeToastActivity(.center)
-        
-        KinkedInAPI.listProfiles { uuids in
-            self.profilesQueue = uuids
-            print("Got \(uuids.count) profiles")
-            self._popProfile()
+        let isCanLike = UserDefaults.standard.bool(forKey: UD_CAN_LIKE)
+        if isCanLike {
+            KinkedInAPI.listProfiles { uuids in
+                self.profilesQueue = uuids
+                print("Got \(uuids.count) profiles")
+                self._popProfile()
+            }
+        } else {
+            self.view.hideToastActivity()
+            // TODO text view with link that takes them to their connections screen
+            print("In text: Daily match limit reached, spend time getting to know your new connections")
         }
+        
+        self.collectionView!.register(ThumbnailMatchCell.self, forCellWithReuseIdentifier: matchesCellIdentifier)
  
     }
     
@@ -42,6 +51,7 @@ class DiscoveryListVC: UICollectionViewController {
         super.viewWillAppear(animated)
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         addTopSpace()
+        //TODO check daily match limit not reached
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,15 +93,21 @@ class DiscoveryListVC: UICollectionViewController {
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 2
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if section == 0 {
+            return 7
+        }
         return profiles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        if(indexPath.section == 0) {
+            return collectionView.dequeueReusableCell(withReuseIdentifier: matchesCellIdentifier, for: indexPath)
+        }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         
         cell.setContent(profiles[indexPath.row])
@@ -111,8 +127,26 @@ class DiscoveryListVC: UICollectionViewController {
     
     // Uncomment this method to specify if the specified item should be selected
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        selectedProfile = profiles[indexPath.row]
+        if(indexPath.section == 1){
+            selectedProfile = profiles[indexPath.row]
+        }
         return true
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width : CGFloat
+        let height : CGFloat
+        
+        if indexPath.section == 0 {
+            width = 40
+            height = 40
+        } else {
+            width = 300
+            height = 185
+        }
+        return CGSize(width: width, height: height)
     }
     
 
