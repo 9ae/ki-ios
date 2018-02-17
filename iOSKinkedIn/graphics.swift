@@ -28,3 +28,16 @@ extension UIImage {
         return scaledTo(size: CGSize(width: width, height: height))
     }
 }
+
+extension UIView {
+    
+    func circle(borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) {
+        let radius = self.bounds.width / 2
+        self.layer.cornerRadius = radius
+        self.layer.masksToBounds = true
+        
+        self.layer.borderWidth = borderWidth
+        self.layer.borderColor = borderColor.cgColor
+    }
+    
+}

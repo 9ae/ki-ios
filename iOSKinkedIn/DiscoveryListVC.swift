@@ -15,6 +15,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     var profilesQueue = [String]()
     var profiles = [Profile]()
+    var todayMatches = [Profile]()
     
     var selectedProfile : Profile?
 
@@ -41,6 +42,11 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             self.view.hideToastActivity()
             // TODO text view with link that takes them to their connections screen
             print("In text: Daily match limit reached, spend time getting to know your new connections")
+        }
+        
+        KinkedInAPI.dailyMatches(){ matches in
+            self.todayMatches = matches
+            self.collectionView?.reloadData()
         }
         
         self.collectionView!.register(ThumbnailMatchCell.self, forCellWithReuseIdentifier: matchesCellIdentifier)
@@ -99,14 +105,20 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            return 7
+            //TODO get from user default limits
+            return UD_MATCH_LIMIT_VALUE
         }
         return profiles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.section == 0) {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: matchesCellIdentifier, for: indexPath)
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: matchesCellIdentifier, for: indexPath) as! ThumbnailMatchCell
+            if(indexPath.row < todayMatches.count){
+                let profile = todayMatches[indexPath.row]
+                cell.setImage(profile.picture_public_id!)
+            }
+            return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         
