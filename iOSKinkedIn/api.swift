@@ -93,6 +93,11 @@ class KinkedInAPI {
         token = t
         
         NotificationCenter.default.post(name: NOTIFY_TOKEN_SET, object: nil)
+        dailyLimits { (limit, matches) in
+            UserDefaults.standard.set(limit, forKey: UD_MATCH_LIMIT)
+            UserDefaults.standard.set(matches, forKey: UD_MATCHES_TODAY)
+            UserDefaults.standard.set(matches < limit, forKey: UD_CAN_LIKE)
+        }
     }
 
     static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
@@ -554,14 +559,14 @@ class KinkedInAPI {
     }
     
     static func dailyLimits(_ callback: @escaping(_ limit: Int, _ matchesToday: Int) -> Void){
+        print("VEX dailyLimits")
         get("self/daily/limits"){ json in
-            guard let matchLimit = json["match_limit"] as? Int,
-            let matchesToday = json["matches_today"] as? Int
-            else {
-                // TODO throw error
-                return
+            print(json)
+            if let matchLimit = json["match_limit"] as? Int,
+            let matchesToday = json["matches_today"] as? Int {
+                print("VEX self/daily/limits -> \(matchesToday)/\(matchLimit)")
+               callback(matchLimit, matchesToday)
             }
-            callback(matchLimit, matchesToday)
         }
     }
     
