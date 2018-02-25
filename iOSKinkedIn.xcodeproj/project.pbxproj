@@ -30,7 +30,6 @@
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
 		0035F4AB1EC70A9D0002C7A6 /* CareConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
-		0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5B61E685C4E006DD440 /* DiscoverVC.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
 		0044DFB91EFD79DC001F1299 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044DFB81EFD79DC001F1299 /* KeychainWrapper.swift */; };
 		0044DFBB1EFD7A64001F1299 /* KeychainItemAccessibility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044DFBA1EFD7A64001F1299 /* KeychainItemAccessibility.swift */; };
@@ -38,7 +37,6 @@
 		004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BBBEF1F02DECC009AD970 /* PromptCell.swift */; };
 		004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E786F1EC9AA0100306EEA /* TempViewController.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
-		0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */; };
 		0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */; };
 		006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */; };
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
@@ -67,7 +65,6 @@
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
 		00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1C6C01EC5A63100A295C0 /* layerhelper.swift */; };
-		00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F36C4E1E74F04F0061905D /* CProfile.swift */; };
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
 		00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA10501F042731007BEEE3 /* PerfsVC.swift */; };
 		00FD15801F6D610A00357860 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD157F1F6D610A00357860 /* Auth.storyboard */; };
@@ -140,7 +137,6 @@
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareConvoVC.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
-		0041D5B61E685C4E006DD440 /* DiscoverVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
 		0044DFB81EFD79DC001F1299 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
 		0044DFBA1EFD7A64001F1299 /* KeychainItemAccessibility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainItemAccessibility.swift; sourceTree = "<group>"; };
@@ -148,7 +144,6 @@
 		004BBBEF1F02DECC009AD970 /* PromptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCell.swift; sourceTree = "<group>"; };
 		004E786F1EC9AA0100306EEA /* TempViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
-		0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
 		006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDateVC.swift; sourceTree = "<group>"; };
@@ -178,7 +173,6 @@
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
 		00F1C6C01EC5A63100A295C0 /* layerhelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layerhelper.swift; sourceTree = "<group>"; };
-		00F36C4E1E74F04F0061905D /* CProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CProfile.swift; sourceTree = "<group>"; };
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
 		00FA10501F042731007BEEE3 /* PerfsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfsVC.swift; sourceTree = "<group>"; };
 		00FD157F1F6D610A00357860 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
@@ -387,8 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */,
-				0051D1FF1E62E85C004ABBF6 /* ViewProfileVC.swift */,
-				0041D5B61E685C4E006DD440 /* DiscoverVC.swift */,
 				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
 				0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */,
 				009840A01ED2EAEB0024EC27 /* ProfileCell.swift */,
@@ -421,7 +413,6 @@
 			children = (
 				00ED8A1F1E74374800096497 /* ConnectionCell.swift */,
 				00ED8A261E7443BD00096497 /* ConnectionsVC.swift */,
-				00F36C4E1E74F04F0061905D /* CProfile.swift */,
 				0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */,
 				006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */,
 			);
@@ -777,9 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */,
-				00F36C4F1E74F04F0061905D /* CProfile.swift in Sources */,
 				00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */,
-				0051D2001E62E85C004ABBF6 /* ViewProfileVC.swift in Sources */,
 				00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */,
 				0019CB3B1F04ACCB00724FD2 /* ReadCaseVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
@@ -800,7 +789,6 @@
 				004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */,
 				009C60A11EF8DD950068A015 /* EditProfileVC.swift in Sources */,
 				009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */,
-				0041D5B71E685C4E006DD440 /* DiscoverVC.swift in Sources */,
 				008365AA1F054B3700D16F93 /* MasterPartnersVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,

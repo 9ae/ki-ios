@@ -15,7 +15,7 @@ class ConnectionsVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+
         KinkedInAPI.connections { profiles in
             self.reciprocals = profiles
             self.tableView.reloadData()
@@ -104,11 +104,7 @@ class ConnectionsVC: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if(segue.identifier == "connect2profile") {
-            if let vc = segue.destination as? (CProfile){
-                vc.setProfile(profile: self.selectedProfile!)
-            }
-        }
+        
     }
     
 

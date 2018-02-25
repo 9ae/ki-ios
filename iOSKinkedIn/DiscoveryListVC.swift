@@ -44,26 +44,14 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             self.view.hideToastActivity()
             isMatchLimitReached = true
         }
-        
+
         KinkedInAPI.dailyMatches(){ matches in
             self.todayMatches = matches
             self.collectionView?.reloadData()
         }
-        
+
         self.collectionView!.register(ThumbnailMatchCell.self, forCellWithReuseIdentifier: matchesCellIdentifier)
  
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        addTopSpace()
-        //TODO check daily match limit not reached
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,7 +85,6 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             discoverProfile.setProfile(selectedProfile!)
         }
         
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
 
@@ -111,8 +98,8 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            //TODO get from user default limits
-            return UserDefaults.standard.integer(forKey: UD_MATCH_LIMIT)
+            return UD_MATCH_LIMIT_VALUE
+            //return UserDefaults.standard.integer(forKey: UD_MATCH_LIMIT)
         } else {
             if isMatchLimitReached {
                 return 1
@@ -179,6 +166,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     }
     
     func onDailyMatchTouched(_ profile: Profile) {
+        print("open action sheet")
         let alert =  UIAlertController(title: profile.name, message: "What would you like to do?", preferredStyle: .actionSheet)
         let viewProfile = UIAlertAction(title: "See profile", style: .default) { (alert: UIAlertAction!) -> Void in
             self.view.makeToastActivity(.center)
@@ -191,19 +179,16 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             }
         }
         let talkTo = UIAlertAction(title: "Start chatting", style: .default) { (alert: UIAlertAction!) -> Void in
-            print("start convo with new friend")
             if let convo = LayerHelper.makeConvoVC(profile) {
                 self.navigationController?.pushViewController(convo, animated: false)
             } else {
                 print("something went wrong in attempt to start convo with \(profile.name)")
             }
         }
-        let cancel = UIAlertAction(title: "Nothing", style: .cancel) { (alert: UIAlertAction!) -> Void in
-            print("do nothing")
-        }
+        let cancel = UIAlertAction(title: "Nothing", style: .cancel)
         
-        alert.addAction(viewProfile)
         alert.addAction(talkTo)
+        alert.addAction(viewProfile)
         alert.addTopSpace()
         alert.addAction(cancel)
         

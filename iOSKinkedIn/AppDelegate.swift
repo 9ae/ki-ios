@@ -61,7 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         if checkinHours == 0 {
             defaults.set(UD_CHECKIN_TIME_VALUE, forKey: UD_CHECKIN_TIME)
         }
-        
         KinkedInAPI.dailyLimits { (limit, matches) in
             defaults.set(limit, forKey: UD_MATCH_LIMIT)
             defaults.set(matches, forKey: UD_MATCHES_TODAY)

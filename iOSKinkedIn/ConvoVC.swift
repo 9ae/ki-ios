@@ -17,7 +17,6 @@ class ConvoVC: KiConvoVC {
         super.viewDidLoad()
 
         self.hidesBottomBarWhenPushed = true
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         //let scheduleEvent = UIBarButtonItem(image: #imageLiteral(resourceName: "calendar"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.onScheduleDate))
         //let viewProfile = UIBarButtonItem(image: #imageLiteral(resourceName: "info"), style: .plain, target: self, action: #selector(self.onViewProfile))
         //self.navigationItem.setRightBarButtonItems([viewProfile, scheduleEvent], animated: false)

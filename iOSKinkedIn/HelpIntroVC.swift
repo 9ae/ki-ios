@@ -15,18 +15,11 @@ class HelpIntroVC: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     @IBAction func reportBug(_ sender: Any) {
         if let url = URL(string: "http://bugs.trykinkedin.com") {
@@ -37,7 +30,6 @@ class HelpIntroVC: UIViewController {
     }
     
     @IBAction func chatWithKia(_ sender: Any) {
-        self.navigationController?.isNavigationBarHidden = false
         self.view.makeToastActivity(.center)
         KinkedInAPI.connections { profiles in
             self.view.hideToastActivity()

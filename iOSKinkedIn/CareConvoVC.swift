@@ -37,8 +37,6 @@ class CareConvoVC: KiConvoVC, ATLConversationViewControllerDelegate {
         
         self.delegate = self
         
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        
         NotificationCenter.default.addObserver(self,
             selector: #selector(didReceiveLayerObjectsDidChangeNotification),
             name: NSNotification.Name.LYRClientObjectsDidChange,

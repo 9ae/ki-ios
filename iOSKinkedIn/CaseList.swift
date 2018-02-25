@@ -23,7 +23,6 @@ class CaseList: ATLConversationListViewController,
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
         self.navigationItem.leftItemsSupplementBackButton = true
         
         self.addTopSpace()

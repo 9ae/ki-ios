@@ -22,9 +22,9 @@ class AppTabVC: UITabBarController {
                 self.selectedIndex = 1
             }
         }
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

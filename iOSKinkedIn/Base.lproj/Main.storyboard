@@ -90,6 +90,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" rowHeight="80" id="4ed-Cx-LbM" customClass="ConnectionCell" customModule="iOSKinkedIn" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
@@ -130,22 +131,24 @@
                             <outlet property="delegate" destination="5rh-F9-lVW" id="uHJ-hS-DaT"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" tag="4" title="Connect" image="connect" selectedImage="connect_select" id="7qv-J8-nX7"/>
-                    <navigationItem key="navigationItem" title="Connect" id="gK3-zo-GcM"/>
+                    <navigationItem key="navigationItem" title="Connect" largeTitleDisplayMode="never" id="gK3-zo-GcM"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ggh-t0-Wg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1284" y="3222"/>
         </scene>
-        <!--Discover Matches-->
+        <!--Discover-->
         <scene sceneID="on3-4m-nIX">
             <objects>
-                <collectionViewController id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Discover" id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="1" id="6Dx-oC-bZm">
                             <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -275,12 +278,10 @@
                             <outlet property="delegate" destination="enA-Xb-554" id="l1T-w6-jTi"/>
                         </connections>
                     </collectionView>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <tabBarItem key="tabBarItem" title="Discover" image="discover" selectedImage="discover_select" id="YKi-RP-iNM"/>
-                    <navigationItem key="navigationItem" title="Discover Matches" id="F8C-2D-U92">
-                        <barButtonItem key="rightBarButtonItem" title="Filter" id="T2O-Pp-2Et"/>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationItem key="navigationItem" title="Discover" largeTitleDisplayMode="never" id="gbi-Xh-AVQ"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89X-XA-4cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -520,10 +521,10 @@
             </objects>
             <point key="canvasLocation" x="1207" y="3195"/>
         </scene>
-        <!--I Need Help-->
+        <!--Help-->
         <scene sceneID="y73-sa-QX2">
             <objects>
-                <viewController title="I Need Help" id="kd2-52-VNb" customClass="HelpIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Help" id="kd2-52-VNb" customClass="HelpIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="luB-mU-FhJ"/>
                         <viewControllerLayoutGuide type="bottom" id="6xY-Aw-hS1"/>
@@ -567,7 +568,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="centerX" secondItem="6eg-Cf-g87" secondAttribute="centerX" id="48Z-Pm-M9K"/>
                             <constraint firstItem="aSB-eu-VRS" firstAttribute="top" secondItem="luB-mU-FhJ" secondAttribute="bottom" constant="50" id="IQx-Mw-D5N"/>
@@ -576,7 +577,7 @@
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="I need help" image="aftercare" selectedImage="aftercare_select" id="QgW-9A-k1e"/>
+                    <tabBarItem key="tabBarItem" title="Help" image="aftercare" selectedImage="aftercare_select" id="QgW-9A-k1e"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </viewController>
@@ -603,7 +604,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nI8-jT-fwX">
                             <size key="itemSize" width="150" height="150"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -759,9 +760,7 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" tag="3" title="Change" image="change" selectedImage="change_select" id="wFW-tu-KWb"/>
-                    <navigationItem key="navigationItem" title="Change" id="Q0P-g3-0a3">
-                        <barButtonItem key="backBarButtonItem" title="Change" id="znx-GU-trW"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Change" largeTitleDisplayMode="never" id="Q0P-g3-0a3"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ji-kO-Tlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
