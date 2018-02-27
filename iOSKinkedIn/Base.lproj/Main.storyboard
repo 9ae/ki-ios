@@ -602,7 +602,7 @@
             <objects>
                 <collectionViewController title="Change" id="smX-CW-ckN" customClass="StaticMasterVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" prefetchingEnabled="NO" id="VdK-Sf-GKl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nI8-jT-fwX">
@@ -620,7 +620,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7N-Ej-k6R">
-                                            <rect key="frame" x="8" y="-29" width="134" height="21"/>
+                                            <rect key="frame" x="8" y="28" width="134" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="CrG-ca-bEP"/>
                                             </constraints>
@@ -656,7 +656,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preferences" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jav-gQ-cgF">
-                                            <rect key="frame" x="8" y="-29" width="134" height="21"/>
+                                            <rect key="frame" x="8" y="28" width="134" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="ZeI-HY-5ui"/>
                                             </constraints>
@@ -692,7 +692,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Partners" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bEq-hG-RKg">
-                                            <rect key="frame" x="8" y="-29" width="134" height="21"/>
+                                            <rect key="frame" x="8" y="28" width="134" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.59929060940000001" green="0.48481193179999998" blue="0.81576776500000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <nil key="highlightedColor"/>
@@ -725,7 +725,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XwZ-kp-MoC">
-                                            <rect key="frame" x="8" y="-29" width="134" height="21"/>
+                                            <rect key="frame" x="8" y="28" width="134" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="hfb-Ae-KoD"/>
                                             </constraints>
@@ -760,7 +760,7 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" tag="3" title="Change" image="change" selectedImage="change_select" id="wFW-tu-KWb"/>
-                    <navigationItem key="navigationItem" title="Change" largeTitleDisplayMode="never" id="Q0P-g3-0a3"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ji-kO-Tlv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -988,7 +988,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
             <objects>
                 <tableViewController title="Preferences" id="3CP-jS-J61" customClass="PerfsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="4ON-Zl-xCz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -1366,10 +1366,10 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <color key="selectedImageTintColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="kd2-52-VNb" kind="relationship" relationship="viewControllers" id="9vn-Wn-a5i"/>
-                        <segue destination="smX-CW-ckN" kind="relationship" relationship="viewControllers" id="V9a-fD-EEd"/>
                         <segue destination="enA-Xb-554" kind="relationship" relationship="viewControllers" id="byc-8u-lmf"/>
                         <segue destination="5rh-F9-lVW" kind="relationship" relationship="viewControllers" id="ZnM-eH-bFT"/>
+                        <segue destination="kd2-52-VNb" kind="relationship" relationship="viewControllers" id="9vn-Wn-a5i"/>
+                        <segue destination="smX-CW-ckN" kind="relationship" relationship="viewControllers" id="V9a-fD-EEd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qUI-Rn-N6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
