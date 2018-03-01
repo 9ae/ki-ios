@@ -9,6 +9,16 @@
 import UIKit
 
 class HelpIntroVC: UIViewController {
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        super.viewWillDisappear(animated)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
