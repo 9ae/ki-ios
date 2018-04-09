@@ -597,5 +597,10 @@ class KinkedInAPI {
         }
     }
     
+    static func checkPhoneNo(callback: @escaping(_ isPhoneNoFound: Bool) -> Void) {
+        // get("self/check_phone"){ json in callback((json["is_phoneno_found"] as Bool) ?? false)}
+        return callback(false)
+    }
+    
     
 }

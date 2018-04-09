@@ -454,7 +454,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="odf-NQ-MKI">
-                                <rect key="frame" x="0.0" y="50" width="375" height="342"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="377.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IiR-b0-YQA">
                                         <rect key="frame" x="166.5" y="0.0" width="42" height="20.5"/>
@@ -482,16 +482,56 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cye-cg-Zmd">
+                                        <rect key="frame" x="8" y="327.5" width="359" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jda-nZ-Snu">
+                                                <rect key="frame" x="0.0" y="0.0" width="84.5" height="30"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z6N-Ux-HLR">
+                                                <rect key="frame" x="92.5" y="0.0" width="226.5" height="30"/>
+                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8n3-uR-bla">
+                                                <rect key="frame" x="327" y="0.0" width="32" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="32" id="ML0-jC-M9Y"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="onPhoneInfo:" destination="Z3J-ba-YYu" eventType="touchUpInside" id="Nwp-hC-VW9"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid phone number. Put in the format of..." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TX0-RB-Fxt">
+                                        <rect key="frame" x="8" y="367.5" width="359" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="mm1-hU-Lxe"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will check in with you 12 hours after your scheduled date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X91-8N-QtF">
-                                        <rect key="frame" x="0.0" y="327.5" width="0.0" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="377.5" width="0.0" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cye-cg-Zmd" secondAttribute="trailing" constant="8" id="FiN-72-a5i"/>
+                                    <constraint firstItem="cye-cg-Zmd" firstAttribute="leading" secondItem="odf-NQ-MKI" secondAttribute="leading" constant="8" id="IZN-Vg-ocF"/>
+                                    <constraint firstAttribute="trailing" secondItem="TX0-RB-Fxt" secondAttribute="trailing" constant="8" id="Uzg-0j-3jk"/>
                                     <constraint firstAttribute="trailing" secondItem="NQ3-T3-h7j" secondAttribute="trailing" constant="8" id="XoO-OB-Gha"/>
                                     <constraint firstItem="NQ3-T3-h7j" firstAttribute="leading" secondItem="odf-NQ-MKI" secondAttribute="leading" constant="8" id="Z6f-91-W8C"/>
+                                    <constraint firstItem="TX0-RB-Fxt" firstAttribute="leading" secondItem="odf-NQ-MKI" secondAttribute="leading" constant="8" id="dqe-ge-ISJ"/>
+                                    <constraint firstAttribute="bottom" secondItem="cye-cg-Zmd" secondAttribute="bottom" constant="20" id="rYe-2U-SWd"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -515,6 +555,9 @@
                         <outlet property="checkinOption" destination="DZa-Qx-jSc" id="IRu-vr-2OI"/>
                         <outlet property="datePicker" destination="G9s-6G-cbg" id="08p-CM-2P3"/>
                         <outlet property="eventLabel" destination="IiR-b0-YQA" id="36E-8D-rxL"/>
+                        <outlet property="phoneField" destination="Z6N-Ux-HLR" id="bHJ-jL-X5Z"/>
+                        <outlet property="phoneGroup" destination="cye-cg-Zmd" id="5XH-eT-2wV"/>
+                        <outlet property="phoneInvalid" destination="TX0-RB-Fxt" id="xKn-jx-P8e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1cb-XF-PiM" userLabel="First Responder" sceneMemberID="firstResponder"/>

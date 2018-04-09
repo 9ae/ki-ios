@@ -16,10 +16,19 @@ class ScheduleDateVC: UIViewController {
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var checkinOption: UISwitch!
     
+    @IBOutlet var phoneGroup: UIStackView!
+    @IBOutlet var phoneField: UITextField!
+    @IBOutlet var phoneInvalid: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         eventLabel.text = "Meet \(withUser!.name)"
+        
+        KinkedInAPI.checkPhoneNo { isPhoneNoFound in
+            self.phoneGroup.isHidden = isPhoneNoFound
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,6 +36,14 @@ class ScheduleDateVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onPhoneInfo(_ sender: Any) {
+        let phoneInfoAlert = UIAlertController(
+            title: "Why we need your phone number?",
+            message: "Just in case you will want a free counselling session from our Aftercare counsellors, we would like a way to reach you.",
+            preferredStyle: .alert)
+        phoneInfoAlert.show(self, sender: sender)
+    }
+
     func registerNotification(_ date: Date){
         let dateComp = datePicker.calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
@@ -54,6 +71,16 @@ class ScheduleDateVC: UIViewController {
     }
     
     @IBAction func onSaveDate(_ sender: AnyObject){
+        
+        if let phoneNumber = phoneField.text {
+            print("RRR updating profile's phone number field")
+            if !ScheduleDateVC.isPhoneNoValid(phoneNumber) {
+                phoneInvalid.isHidden = false
+                return
+            }
+            KinkedInAPI.updateProfile(["phone": phoneNumber])
+        }
+        
         let defaults = UserDefaults.standard
         var checkinHours = defaults.integer(forKey: UD_CHECKIN_TIME)
         if(checkinHours==0){
@@ -65,6 +92,11 @@ class ScheduleDateVC: UIViewController {
             let date = datePicker.date.addingTimeInterval(TimeInterval(30))
             registerNotification(date)
         }
+    }
+    
+    static func isPhoneNoValid(_ text: String) -> Bool {
+        //TODO validate phone number
+        return false
     }
 
     /*
