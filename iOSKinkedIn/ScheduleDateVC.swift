@@ -72,7 +72,7 @@ class ScheduleDateVC: UIViewController {
     
     @IBAction func onSaveDate(_ sender: AnyObject){
         
-        if let phoneNumber = phoneField.text {
+        if let phoneNumber = phoneField.text, !phoneNumber.isEmpty {
             print("RRR updating profile's phone number field")
             if !ScheduleDateVC.isPhoneNoValid(phoneNumber) {
                 phoneInvalid.isHidden = false
@@ -88,15 +88,14 @@ class ScheduleDateVC: UIViewController {
         }
         
         if(checkinOption.isOn){
-            // 3600*checkinHours
-            let date = datePicker.date.addingTimeInterval(TimeInterval(30))
+            let date = datePicker.date.addingTimeInterval(TimeInterval(3600*checkinHours))
             registerNotification(date)
         }
     }
     
     static func isPhoneNoValid(_ text: String) -> Bool {
         //TODO validate phone number
-        return false
+        return true
     }
 
     /*

@@ -503,7 +503,7 @@
                                                     <constraint firstAttribute="width" constant="32" id="ML0-jC-M9Y"/>
                                                 </constraints>
                                                 <connections>
-                                                    <action selector="onPhoneInfo:" destination="Z3J-ba-YYu" eventType="touchUpInside" id="Nwp-hC-VW9"/>
+                                                    <action selector="onPhoneInfo:" destination="Z3J-ba-YYu" eventType="touchUpInside" id="I97-hc-Cdm"/>
                                                 </connections>
                                             </button>
                                         </subviews>
