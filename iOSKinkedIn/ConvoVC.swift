@@ -47,6 +47,27 @@ class ConvoVC: KiConvoVC {
             self.goToScheduleScreen()
         }
         
+        let report = UIAlertAction(title: "Raise Issue", style: .default) { (alert: UIAlertAction!) -> Void in
+            guard let user_uuid = self.profile?.neoId else {
+                return
+            }
+            let convo = CareConvoVC(layerClient: LayerHelper.client!)
+            do{
+                convo.conversation = try LayerHelper.startConvo(
+                    withUser: "aftercare",
+                    distinct: false,
+                    metadata: [
+                        "about_user_id": user_uuid,
+                        "case_type": "report"
+                    ])
+                try convo.conversation.synchronizeAllMessages(.toFirstUnread)
+                convo.hidesBottomBarWhenPushed = true
+                self.navigationController?.pushViewController(convo, animated: false)
+            } catch {
+                print("failed to start aftercare convo")
+            }
+        }
+        
         let block = UIAlertAction(title: "Disconnect", style: .destructive) { (alert: UIAlertAction!) -> Void in
             self.blockUser()
         }
@@ -57,6 +78,7 @@ class ConvoVC: KiConvoVC {
         
         alert.addAction(viewProfile)
         alert.addAction(scheduleDate)
+        alert.addAction(report)
         alert.addAction(block)
         alert.addTopSpace()
         alert.addAction(cancel)

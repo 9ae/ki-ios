@@ -390,9 +390,9 @@ class KinkedInAPI {
     }
     
     
-    static func updateProfile(_ body: [String: Any]) {
+    static func updateProfile(_ body: [String: Any], callback: ((_ json: [String: Any]) -> Void)? = nil) {
         put("self/profile", parameters: body){ json in
-            print(json)
+            callback?(json)
         }
     
     }
