@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OTl-Kt-gq9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="OTl-Kt-gq9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -159,6 +159,7 @@
                         <outlet property="requestInvite" destination="W4P-sh-lBc" id="A9g-YB-Iod"/>
                         <outlet property="scrollView" destination="VhO-5p-X7L" id="dWj-eH-8II"/>
                         <outlet property="signup" destination="Zaw-jQ-a9n" id="hQi-9F-W7P"/>
+                        <segue destination="TqB-f5-5YT" kind="showDetail" identifier="register2app" id="VRH-7M-Cva"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAV-of-XEC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -238,9 +239,6 @@
                                                 <rect key="frame" x="117" y="366" width="112" height="30"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Back to Register"/>
-                                                <connections>
-                                                    <segue destination="OTl-Kt-gq9" kind="showDetail" animates="NO" action="showViewController:sender:" id="1Bx-or-D9x"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -288,4 +286,7 @@
             <point key="canvasLocation" x="-871" y="660"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="VRH-7M-Cva"/>
+    </inferredMetricsTieBreakers>
 </document>
