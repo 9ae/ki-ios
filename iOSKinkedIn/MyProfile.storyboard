@@ -146,7 +146,7 @@ Your bio will be visislbe to all KinkedIn users</string>
         <!--Roles-->
         <scene sceneID="ePO-Xd-Kaa">
             <objects>
-                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myc-TK-knf" customClass="RolesVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myc-TK-knf" customClass="RolesVC" customModule="iOSKinkedIn" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Iuv-D3-1Pq"/>
                         <viewControllerLayoutGuide type="bottom" id="v9w-Gr-JRQ"/>

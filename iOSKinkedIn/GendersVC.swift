@@ -27,6 +27,10 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         if(updatePreferencesMode){
             setSelectedGenders(profile?.preferences?.genders ?? [String]())
             self.navigationItem.prompt = "Show me people who are..."
+            
+            self.navigationItem.hidesBackButton = true
+            let buttonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.updatePreferences))
+            self.navigationItem.setRightBarButton(buttonItem, animated: false)
         } else {
             setSelectedGenders(profile?.genders ?? [String]())
             self.navigationItem.prompt = "I identify as..."
@@ -34,6 +38,7 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         tableView?.dataSource = self
         tableView?.delegate = self
         self.view.makeToastActivity(.center)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -89,19 +94,20 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+    func updatePreferences(_ sender: Any) {
+        let newGenders = Array(selectedGenders)
+        profile?.preferences?.genders = newGenders
+        let params = ["prefers": ["genders": newGenders] ]
+        KinkedInAPI.updateProfile(params)
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
         let newGenders = Array(selectedGenders)
-        if(updatePreferencesMode){
-            profile?.preferences?.genders = newGenders
-            let params = ["prefers": ["genders": newGenders] ]
-            KinkedInAPI.updateProfile(params)
-        } else {
-            profile?.genders = newGenders
-            let params = ["genders": newGenders]
-            KinkedInAPI.updateProfile(params)
-        }
+        profile?.genders = newGenders
+        let params = ["genders": newGenders]
+        KinkedInAPI.updateProfile(params)
     }
     
 }

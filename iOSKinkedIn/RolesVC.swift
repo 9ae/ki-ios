@@ -32,6 +32,10 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         if(updatePreferencesMode){
             self.setSelectedRoles(profile?.preferences?.roles ?? [String]() )
              self.navigationItem.prompt = "Show me people who are..."
+            
+            self.navigationItem.hidesBackButton = true
+            let buttonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(self.updatePreferences))
+            self.navigationItem.setRightBarButton(buttonItem, animated: false)
         } else {
             self.setSelectedRoles(profile?.roles ?? [String]() )
             self.navigationItem.prompt = "I identify as..."
@@ -90,20 +94,21 @@ class RolesVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
         tableView.reloadRows(at: [indexPath], with: .none)
     }
     
+    func updatePreferences(_ sender: Any) {
+        let newRoles =  Array(selectedRoles)
+        profile?.preferences?.roles = newRoles
+        let params = ["prefers" :["roles" : newRoles ] ]
+        KinkedInAPI.updateProfile(params)
+        self.navigationController?.popViewController(animated: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         let newRoles =  Array(selectedRoles)
-        
-        if(updatePreferencesMode){
-            profile?.preferences?.roles = newRoles
-            let params = ["prefers" :["roles" : newRoles ] ]
-            KinkedInAPI.updateProfile(params)
-        } else {
-            profile?.roles = newRoles
-            let params = ["roles" : newRoles ]
-            KinkedInAPI.updateProfile(params)
-        }
+        profile?.roles = newRoles
+        let params = ["roles" : newRoles ]
+        KinkedInAPI.updateProfile(params)
     
 
     }

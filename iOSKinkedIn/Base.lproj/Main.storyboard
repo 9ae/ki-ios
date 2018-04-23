@@ -1115,6 +1115,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="B1H-9G-0ET" kind="show" identifier="prefGenders" animates="NO" id="ryQ-7E-rub"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="BWS-7M-q3S" style="IBUITableViewCellStyleDefault" id="0p9-3i-YVY">
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
@@ -1132,6 +1135,9 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="iDi-mZ-Utb" kind="show" identifier="prefRoles" animates="NO" id="kwR-2R-yUS"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -1376,6 +1382,22 @@ Respected boundaries &amp; were open and honest in their communication</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iul-pL-2A8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-591.20000000000005" y="5532.6836581709149"/>
+        </scene>
+        <!--vcSetupGenders-->
+        <scene sceneID="k3r-Hc-bFg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyProfile" referencedIdentifier="vcSetupGenders" id="B1H-9G-0ET" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tkE-ks-8PU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="6003"/>
+        </scene>
+        <!--vcSetupRoles-->
+        <scene sceneID="lz2-zz-HwR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyProfile" referencedIdentifier="vcSetupRoles" id="iDi-mZ-Utb" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DYd-1e-Tdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-458" y="6070"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hG9-ws-Oud">

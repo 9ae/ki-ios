@@ -31,7 +31,7 @@ class PerfsVC: UITableViewController {
         checkinHours.text = String(describing: checkinTime)
         valCheckinHours = checkinTime
         
-        KinkedInAPI.myself{ profile in
+        KinkedInAPI.myself { profile in
             let preferences = profile.preferences
             self.valMinAge = preferences?.minAge ?? 0
             self.valMaxAge = preferences?.maxAge ?? 0
@@ -63,7 +63,7 @@ class PerfsVC: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int { 
         return 3
     }
-
+    /*
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         switch section {
@@ -77,7 +77,7 @@ class PerfsVC: UITableViewController {
             return 0
         }
     }
-    
+    */
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
@@ -158,13 +158,6 @@ class PerfsVC: UITableViewController {
             return
         }
     }
-    /*
-    func keyboardDone(sender: UITextField){
-        if sender == minAge {
-            
-        }
-    }
-    */
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
