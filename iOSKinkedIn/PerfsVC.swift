@@ -13,7 +13,11 @@ class PerfsVC: UITableViewController {
     @IBOutlet var minAge: UITextField!
     @IBOutlet var maxAge: UITextField!
     @IBOutlet var checkinHours: UITextField!
+    let numberToolbar: UIToolbar = UIToolbar()
     
+    var valMinAge = 0
+    var valMaxAge = 0
+    var valCheckinHours = 0
     var preferences: PreferenceFilters?
     var profile: Profile?
 
@@ -25,13 +29,28 @@ class PerfsVC: UITableViewController {
             checkinTime = UD_CHECKIN_TIME_VALUE
         }
         checkinHours.text = String(describing: checkinTime)
+        valCheckinHours = checkinTime
         
         KinkedInAPI.myself{ profile in
             let preferences = profile.preferences
-            self.minAge.text = String(describing: preferences?.minAge ?? 0)
-            self.maxAge.text = String(describing: preferences?.maxAge ?? 0)
+            self.valMinAge = preferences?.minAge ?? 0
+            self.valMaxAge = preferences?.maxAge ?? 0
+            self.minAge.text = String(describing: self.valMinAge)
+            self.maxAge.text = String(describing: self.valMaxAge)
             self.profile = profile
         }
+        
+        numberToolbar.barStyle = .default
+        numberToolbar.items = [
+            UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.keyboardClose)),
+            UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.keyboardDone))
+        ]
+        numberToolbar.sizeToFit()
+        
+        minAge.inputAccessoryView = numberToolbar
+        maxAge.inputAccessoryView = numberToolbar
+        checkinHours.inputAccessoryView = numberToolbar
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,19 +80,12 @@ class PerfsVC: UITableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
-        if let checkinTime = Int(checkinHours.text!) {
-            UserDefaults.standard.set(checkinTime, forKey: UD_CHECKIN_TIME)
-        }
+
+        UserDefaults.standard.set(valCheckinHours, forKey: UD_CHECKIN_TIME)
         
         var prefers = [String:Any]()
-        if let min_age = Int(minAge.text!) {
-            prefers["min_age"] = min_age
-        }
-        
-        if let max_age = Int(maxAge.text!) {
-            prefers["max_age"] = max_age
-        }
+        prefers["min_age"] = valMinAge
+        prefers["max_age"] = valMaxAge
         
         let params = ["prefers": prefers]
         KinkedInAPI.updateProfile(params)
@@ -106,6 +118,53 @@ class PerfsVC: UITableViewController {
             self.navigationController?.pushViewController(blockUserVC, animated: false)
         }
     }
+    
+    func keyboardClose(_ sender: AnyObject){
+        if self.minAge.isFirstResponder {
+            self.minAge.text = String(describing: valMinAge)
+            self.minAge.resignFirstResponder()
+            return
+        }
+        
+        if self.maxAge.isFirstResponder {
+            self.maxAge.text = String(describing: valMaxAge)
+            self.maxAge.resignFirstResponder()
+            return
+        }
+        
+        if self.checkinHours.isFirstResponder {
+            self.checkinHours.text = String(describing: valCheckinHours)
+            self.checkinHours.resignFirstResponder()
+            return
+        }
+    }
+    
+    func keyboardDone(_ sender: AnyObject){
+        if self.minAge.isFirstResponder {
+            valMinAge = Int(self.minAge.text ?? "0")!
+            self.minAge.resignFirstResponder()
+            return
+        }
+        
+        if self.maxAge.isFirstResponder {
+            valMaxAge = Int(self.maxAge.text ?? "0")!
+            self.maxAge.resignFirstResponder()
+            return
+        }
+        
+        if self.checkinHours.isFirstResponder {
+            valCheckinHours = Int(self.checkinHours.text ?? "0")!
+            self.checkinHours.resignFirstResponder()
+            return
+        }
+    }
+    /*
+    func keyboardDone(sender: UITextField){
+        if sender == minAge {
+            
+        }
+    }
+    */
     
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
