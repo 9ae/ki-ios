@@ -1150,27 +1150,38 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours to check-in on" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pP-Sm-BPl">
-                                                    <rect key="frame" x="24" y="11" width="160" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="preferCheckinHoursInput" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHh-5c-eDb">
-                                                    <rect key="frame" x="317" y="8" width="50" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="50" id="BSE-Oz-3Dr"/>
-                                                    </constraints>
-                                                    <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qcw-3z-93L">
+                                                    <rect key="frame" x="8" y="0.0" width="359" height="43.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours until check in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pP-Sm-BPl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="151.5" height="43.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Tp-Vu-9b9">
+                                                            <rect key="frame" x="151.5" y="0.0" width="157.5" height="43.5"/>
+                                                            <connections>
+                                                                <action selector="checkinInfo:" destination="3CP-jS-J61" eventType="touchDown" id="ubR-c9-akZ"/>
+                                                            </connections>
+                                                        </button>
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="preferCheckinHoursInput" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HHh-5c-eDb">
+                                                            <rect key="frame" x="309" y="0.0" width="50" height="43.5"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="50" id="wbj-nL-Vii"/>
+                                                            </constraints>
+                                                            <nil key="textColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                        </textField>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="HHh-5c-eDb" firstAttribute="baseline" secondItem="1pP-Sm-BPl" secondAttribute="baseline" id="4H4-FO-Ge1"/>
-                                                <constraint firstAttribute="trailing" secondItem="HHh-5c-eDb" secondAttribute="trailing" constant="8" id="4uj-dU-cFA"/>
-                                                <constraint firstItem="1pP-Sm-BPl" firstAttribute="leading" secondItem="R2b-Fc-D1X" secondAttribute="leadingMargin" constant="8" id="8kb-pD-mlu"/>
-                                                <constraint firstItem="1pP-Sm-BPl" firstAttribute="centerY" secondItem="R2b-Fc-D1X" secondAttribute="centerY" id="MsZ-9d-nkL"/>
+                                                <constraint firstAttribute="trailing" secondItem="qcw-3z-93L" secondAttribute="trailing" constant="8" id="07F-ud-shP"/>
+                                                <constraint firstItem="qcw-3z-93L" firstAttribute="leading" secondItem="R2b-Fc-D1X" secondAttribute="leading" constant="8" id="C7T-Yn-VpT"/>
+                                                <constraint firstAttribute="bottom" secondItem="qcw-3z-93L" secondAttribute="bottom" id="RTc-v6-pDJ"/>
+                                                <constraint firstItem="qcw-3z-93L" firstAttribute="top" secondItem="R2b-Fc-D1X" secondAttribute="top" id="nbS-fU-9Fm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>

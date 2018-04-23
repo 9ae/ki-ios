@@ -159,6 +159,15 @@ class PerfsVC: UITableViewController {
         }
     }
     
+    @IBAction func checkinInfo(_ sender: UIButton) {
+        let alert = UIAlertController(title: "About Aftercare Checkin",
+        message: "Our Care Team wants to make sure you feel great & supported. How soon after your date should we should check in on you?", preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(ok)
+        self.present(alert, animated: false)
+    }
+    
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
