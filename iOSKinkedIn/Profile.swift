@@ -39,7 +39,7 @@ struct City {
 }
 
 class Profile {
-    var neoId: String
+    var uuid: String
     var name: String
     var age: Int
     var kinksMatched: Int
@@ -70,14 +70,14 @@ class Profile {
             return nil
         }
         
-        self.neoId = _id
+        self.uuid = _id
         self.name = _name
         self.age = 0
         self.kinksMatched = 0
         self.vouches = 0
     }
     
-    init?(_ neoId: String, json: [String:Any]){
+    init?(_ uuid: String, json: [String:Any]){
      
         guard let profile = json["profile"] as? [String:Any] else {
             print("can't parse profile obj")
@@ -99,7 +99,7 @@ class Profile {
             return nil
         }
         
-        self.neoId = neoId
+        self.uuid = uuid
         self.name = _name
         self.age = _age
         self.kinksMatched = _kic
@@ -145,10 +145,10 @@ class Profile {
         
     }
     
-    init(neoId: String, name: String,
+    init(uuid: String, name: String,
          age: Int = 0,
          picture_public_id: String? = nil){
-        self.neoId = neoId
+        self.uuid = uuid
         self.name = name
         self.age = age
         self.kinksMatched = 0
@@ -178,7 +178,7 @@ class Profile {
     }
     
     static func parseSelf(_ json: [String:Any]) -> Profile {
-        let pro = Profile(neoId: "", name: "", age: 0)
+        let pro = Profile(uuid: "", name: "", age: 0)
         
         if let _name = json["name"] as? String {
             pro.name = _name

@@ -100,7 +100,7 @@ class PerfsVC: UITableViewController {
     
     func unblockUsers(_ selected: [Profile]) {
         for user in selected {
-            KinkedInAPI.unblockUser(user.neoId)
+            KinkedInAPI.unblockUser(user.uuid)
         }
         self.navigationController?.popViewController(animated: false)
     }

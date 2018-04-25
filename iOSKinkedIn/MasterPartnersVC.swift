@@ -90,7 +90,7 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let uuid = isInRequestMode() ? self.requests[indexPath.row].from_uuid : self.partners[indexPath.row].neoId
+        let uuid = isInRequestMode() ? self.requests[indexPath.row].from_uuid : self.partners[indexPath.row].uuid
         
         self.view.makeToastActivity(.center)
         KinkedInAPI.readProfile(uuid) { profile in
@@ -138,7 +138,7 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
     private func makePartnerActionRemove() -> UITableViewRowAction {
         let remove = UITableViewRowAction(style: .destructive, title: "Remove") { action, index in
             let ind = index.row
-            let uuid = self.partners[ind].neoId
+            let uuid = self.partners[ind].uuid
             KinkedInAPI.removePartner(uuid)
             self.partners.remove(at: ind)
             self.refreshTable()

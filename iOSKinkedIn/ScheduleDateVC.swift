@@ -77,7 +77,7 @@ class ScheduleDateVC: UIViewController {
         content.categoryIdentifier = NOTECAT_AFTERCARE
         content.userInfo = [
             "meeting_dt": date,
-            "with_user_id": withUser!.neoId
+            "with_user_id": withUser!.uuid
         ]
         registerNotification(scheduleDT, content: content)
     }

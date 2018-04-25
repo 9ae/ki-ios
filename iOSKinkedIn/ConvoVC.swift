@@ -48,7 +48,7 @@ class ConvoVC: KiConvoVC {
         }
         
         let report = UIAlertAction(title: "Raise Issue", style: .default) { (alert: UIAlertAction!) -> Void in
-            guard let user_uuid = self.profile?.neoId else {
+            guard let user_uuid = self.profile?.uuid else {
                 return
             }
             let convo = CareConvoVC(layerClient: LayerHelper.client!)
@@ -93,7 +93,7 @@ class ConvoVC: KiConvoVC {
     
     func goToViewProfile(){
         
-        if let uuid = profile?.neoId {
+        if let uuid = profile?.uuid {
             
             self.view.makeToastActivity(.center)
             
@@ -108,7 +108,7 @@ class ConvoVC: KiConvoVC {
     }
     
     func blockUser(){
-        if let uuid = profile?.neoId {
+        if let uuid = profile?.uuid {
             KinkedInAPI.blockUser(uuid)
         }
         self.navigationController?.popViewController(animated: false)

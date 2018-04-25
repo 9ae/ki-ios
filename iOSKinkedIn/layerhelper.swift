@@ -99,7 +99,7 @@ class LayerHelper {
         let convo = ConvoVC(layerClient: LayerHelper.client!)
         convo.title = profile.name
         convo.displaysAddressBar = false
-        convo.conversation = try LayerHelper.startConvo(withUser: profile.neoId)
+        convo.conversation = try LayerHelper.startConvo(withUser: profile.uuid)
         convo.profile = profile
             return convo
         } catch {

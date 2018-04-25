@@ -130,7 +130,7 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
             return
         }
         
-        guard let uuid = self._profile?.neoId else {
+        guard let uuid = self._profile?.uuid else {
             return
         }
         
@@ -159,7 +159,7 @@ class DiscoverProfile: UIViewController, UITextViewDelegate {
     
     
     @IBAction func skip(_ sender: AnyObject) {
-        guard let uuid = self._profile?.neoId else {
+        guard let uuid = self._profile?.uuid else {
             return
         }
         KinkedInAPI.skipProfile(uuid)

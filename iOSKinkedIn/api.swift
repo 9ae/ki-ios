@@ -279,12 +279,6 @@ class KinkedInAPI {
             } else {
                 callback(false)
             }
-            /*
-            if let neoId = json["neo_id"] as? String {
-                callback(neoId)
-            }
-            */
-            //TODO #2 login failed messages via notification system
         }
     }
     
@@ -418,12 +412,12 @@ class KinkedInAPI {
                         continue
                     }
                     guard let name = rc["name"] as? String,
-                        let neo_id = rc["neo_id"] as? String,
+                        let uuid = rc["uuid"] as? String,
                         let image_id = rc["image_id"] as? String else {
                             print("can't get profile values")
                             continue
                     }
-                    profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                    profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                     
                 }
                 
@@ -532,12 +526,12 @@ class KinkedInAPI {
                     var users: [Profile] = []
                     for e in resArray {
                         guard let name = e["name"] as? String,
-                            let neo_id = e["neo_id"] as? String,
+                            let uuid = e["uuid"] as? String,
                             let image_id = e["image_id"] as? String else {
                                 print("can't get profile values")
                                 continue
                         }
-                        users.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                        users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                     }
                     callback(users)
                 }
@@ -584,12 +578,12 @@ class KinkedInAPI {
                     continue
                 }
                 guard let name = rc["name"] as? String,
-                    let neo_id = rc["neo_id"] as? String,
+                    let uuid = rc["uuid"] as? String,
                     let image_id = rc["image_id"] as? String else {
                         print("can't get profile values")
                         continue
                 }
-                profiles.append(Profile(neoId: neo_id, name: name, picture_public_id: image_id))
+                profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                 
             }
             

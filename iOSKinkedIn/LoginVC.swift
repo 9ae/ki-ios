@@ -14,7 +14,7 @@ class LoginVC: ScrollTextInputVC {
     @IBOutlet var fieldPassword: UITextField!
     
     var loginBtnSender: UIButton?
-    var userNeoId: String?
+    var userId: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()

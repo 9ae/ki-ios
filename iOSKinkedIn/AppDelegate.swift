@@ -165,9 +165,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             print("Pusher subscribe to my personal channel")
             let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
             KinkedInAPI.get("self/pusheen"){ json in
-                if let neoId = json["my_channel"] as? String {
+                if let uuid = json["my_channel"] as? String {
                     pusher.nativePusher.register(deviceToken: deviceToken)
-                    pusher.nativePusher.subscribe(interestName: neoId)
+                    pusher.nativePusher.subscribe(interestName: uuid)
                 }
             }
         }

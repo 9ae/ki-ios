@@ -181,7 +181,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         let viewProfile = UIAlertAction(title: "See profile", style: .default) { (alert: UIAlertAction!) -> Void in
             self.view.makeToastActivity(.center)
             
-            KinkedInAPI.readProfile(profile.neoId) { profile in
+            KinkedInAPI.readProfile(profile.uuid) { profile in
                 let profileView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "discoverProfileVC") as! DiscoverProfile
                 profileView.setProfile(profile, isDiscoverMode: false)
                 self.view.hideToastActivity()

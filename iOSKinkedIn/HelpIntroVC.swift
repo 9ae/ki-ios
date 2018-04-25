@@ -66,7 +66,7 @@ class HelpIntroVC: UIViewController {
                 withUser: "aftercare",
                 distinct: false,
                 metadata: [
-                    "about_user_id": selected.neoId,
+                    "about_user_id": selected.uuid,
                     "case_type": "report"
                 ])
             try convo.conversation.synchronizeAllMessages(.toFirstUnread)
