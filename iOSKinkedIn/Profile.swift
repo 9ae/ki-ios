@@ -75,6 +75,14 @@ class Profile {
         self.age = 0
         self.kinksMatched = 0
         self.vouches = 0
+        
+        if let kic = json["kinks_matched"] as? Int {
+            self.kinksMatched = kic
+        }
+        
+        if let image_url = json["image_url"] as? String {
+            self.picture = image_url.replacingOccurrences(of: "http:", with: "https:")
+        }
     }
     
     init?(_ uuid: String, json: [String:Any]){

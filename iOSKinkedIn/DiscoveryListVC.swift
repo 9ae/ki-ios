@@ -12,9 +12,10 @@ private let reuseIdentifier = "profileCell"
 private let matchesCellIdentifier = "thMatch"
 private let textNoteIdentifier = "textNote"
 
+private let SEGUE_TO_READ_PROFILE = "revealProfile"
+
 class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var profilesQueue = [String]()
     var profiles = [Profile]()
     var todayMatches = [Profile]()
     
@@ -45,10 +46,10 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         self.view.makeToastActivity(.center)
         let isCanLike = UserDefaults.standard.bool(forKey: UD_CAN_LIKE)
         if isCanLike {
-            KinkedInAPI.listProfiles { uuids in
-                self.profilesQueue = uuids
-                print("Got \(uuids.count) profiles")
-                self._popProfile()
+            KinkedInAPI.listProfiles { profiles in
+                self.profiles = profiles
+                self.collectionView?.reloadData()
+                self.view.hideToastActivity()
             }
         } else {
             self.view.hideToastActivity()
@@ -69,25 +70,6 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         // Dispose of any resources that can be recreated.
     }
     
-    private func _popProfile(){
-        if profilesQueue.isEmpty {
-            return
-        }
-        
-        let profile_uuid = self.profilesQueue.removeFirst()
-        KinkedInAPI.readProfile(profile_uuid) { profile in
-            self.profiles.append(profile)
-            if(self.profiles.count == 1){
-                self.view.hideToastActivity()
-            }
-            self.collectionView?.reloadData()
-            self._popProfile()
-        }
-    }
-
-    
-    // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -154,7 +136,11 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 onDailyMatchTouched(todayMatches[indexPath.row])
             }
         } else if !isMatchLimitReached {
-            selectedProfile = profiles[indexPath.row]
+            let profileUUID = profiles[indexPath.row].uuid
+            KinkedInAPI.readProfile(profileUUID, callback: { profile in
+                self.selectedProfile = profile
+                self.performSegue(withIdentifier: SEGUE_TO_READ_PROFILE, sender: self)
+            })
         }
         return true
     }

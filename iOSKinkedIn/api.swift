@@ -303,13 +303,17 @@ class KinkedInAPI {
         }
     }
     
-    static func listProfiles(callback: @escaping(_ uuids: [String])->Void ){
+    static func listProfiles(callback: @escaping(_ profiles: [Profile])->Void ){
         get("discover/profiles"){ json in
-            let job = Woz(json){ result in
-                let uuids = result as? [String] ?? []
-                callback(uuids)
+            if let simple_profiles = json["result"] as? [Any] {
+                var profiles = [Profile]()
+                for pro in simple_profiles {
+                    if let parsedProfile = Profile(pro as! [String:Any]) {
+                        profiles.append(parsedProfile)
+                    }
+                }
+                callback(profiles)
             }
-            job.run(requiresToken: true)
         }
     }
     

@@ -248,7 +248,6 @@
                                     <outlet property="picture" destination="Fz5-eX-3rG" id="3Xy-c0-VkL"/>
                                     <outlet property="vouchedLabel" destination="LM1-EC-acl" id="FPC-2q-DwW"/>
                                     <outlet property="vouchedValue" destination="2MX-Nh-mM2" id="s8u-MF-WDd"/>
-                                    <segue destination="cbf-D5-saE" kind="show" identifier="discoverProfile" id="Qrl-so-9dI"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="textNote" id="A4q-VV-XMg">
@@ -283,6 +282,9 @@
                     <navigationItem key="navigationItem" title="Discover" largeTitleDisplayMode="never" id="gbi-Xh-AVQ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <segue destination="cbf-D5-saE" kind="show" identifier="revealProfile" id="Aoc-hv-pt0"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89X-XA-4cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
