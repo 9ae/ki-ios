@@ -83,6 +83,10 @@ class Profile {
         if let image_url = json["image_url"] as? String {
             self.picture = image_url.replacingOccurrences(of: "http:", with: "https:")
         }
+        
+        if let _vouches = json["vouches"] as? Int {
+            self.vouches = _vouches
+        }
     }
     
     init?(_ uuid: String, json: [String:Any]){
