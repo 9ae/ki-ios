@@ -14,12 +14,12 @@ class AppTabVC: UITabBarController {
         super.viewDidLoad()
         KinkedInAPI.checkProfileSetup(){ step in
             if(step == 0){
-                self.selectedIndex = 1
+                self.selectedIndex = 3
                 if let changeVC = self.selectedViewController as? StaticMasterVC {
                     changeVC.toSetupProfile()
                 }
             } else {
-                self.selectedIndex = 1
+                self.selectedIndex = 0
             }
         }
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)

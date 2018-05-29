@@ -595,8 +595,10 @@ class KinkedInAPI {
         }
     }
     
-    static func checkPhoneNo(callback: @escaping(_ isPhoneNoFound: Bool) -> Void) {
-        return get("self/check_phone"){ json in callback((json["is_phoneno_found"] as? Bool) ?? false)}
+    static func loadProps(props: [String], callback: @escaping(_ json: [String:Any]) -> Void) {
+        get("self/load?props=\(props.joined(separator: ","))"){ json in
+            callback(json)
+        }
     }
     
     

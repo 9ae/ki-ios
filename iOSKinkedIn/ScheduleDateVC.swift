@@ -28,10 +28,11 @@ class ScheduleDateVC: UIViewController {
         
         eventLabel.text = "Meet \(withUser!.name)"
         
-        KinkedInAPI.checkPhoneNo { isPhoneNoFound in
-            self.phoneGroup.isHidden = isPhoneNoFound
-            if (!isPhoneNoFound){
-                self.phoneField.placeholder = "xxx-xxx-xxxx"
+        KinkedInAPI.loadProps(props: ["phone"]) { json in
+            if let phone = json["phone"] as? String {
+                self.isPhoneValid = true
+                self.phoneField.text = phone
+            } else {
                 self.isPhoneValid = false
             }
         }
@@ -109,7 +110,7 @@ class ScheduleDateVC: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
-    func validatePhoneNumber(isFromSave: Bool = false){
+    func validatePhoneNumber(){
         if let phoneNumber = phoneField.text, !phoneNumber.isEmpty {
             self.view.makeToastActivity(.center)
             KinkedInAPI.updateProfile(["phone": phoneNumber], callback: { json in
@@ -118,9 +119,7 @@ class ScheduleDateVC: UIViewController {
                         self.phoneInvalid.isHidden = false
                     } else {
                         self.isPhoneValid = true
-                        if isFromSave {
-                            self.prepNotifications()
-                        }
+                        self.prepNotifications()
                     }
                     self.view.hideToastActivity()
                 }
