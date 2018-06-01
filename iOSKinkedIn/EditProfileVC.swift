@@ -57,6 +57,13 @@ class EditProfileVC: UITableViewController {
         layer.borderWidth = 2.0
         view.textLabel?.textColor = ThemeColors.no
     }
+    
+    func completeStyle(_ view: UITableViewCell){
+         let layer = view.layer
+        layer.borderColor = UIColor.clear.cgColor
+        layer.borderWidth = 0
+        view.textLabel?.textColor = UIColor.black
+    }
 
     func updateTableWithInfo(){
         
@@ -79,6 +86,7 @@ class EditProfileVC: UITableViewController {
         if((me?.hasName())! && (me?.hasAge())! && me?.birthday != nil){
             basicCell?.backgroundColor = UIColor.white
             basicCell?.textLabel?.text = "\(me?.name ?? "Name"), \(me?.age ?? 0) years old, \((me?.exp ?? "experience with")) BDSM"
+            completeStyle(basicCell!)
         } else {
             incompleteStyle(basicCell!)
         }
@@ -86,6 +94,7 @@ class EditProfileVC: UITableViewController {
         let gendersCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.genders.rawValue, section: 0))
         if((me?.genders.count ?? 0) > 0){
             gendersCell?.backgroundColor = UIColor.white
+            completeStyle(gendersCell!)
         } else {
             incompleteStyle(gendersCell!)
         }
@@ -97,6 +106,7 @@ class EditProfileVC: UITableViewController {
         let kinksCell = tableView.cellForRow(at: IndexPath(row: ProfileDetailRow.kinks.rawValue, section: 0))
         if((me?.kinks.count ?? 0) > 0){
             kinksCell?.backgroundColor = UIColor.white
+            completeStyle(kinksCell!)
         } else {
             incompleteStyle(kinksCell!)
         }
