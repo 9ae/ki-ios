@@ -78,6 +78,7 @@ class EditProfileVC: UITableViewController {
                 // TODO: use put in place holder image
                 print("error loading profile picture")
             }
+            completeStyle(pictureCell!)
         } else {
             incompleteStyle(pictureCell!)
         }
@@ -267,6 +268,9 @@ extension EditProfileVC : UIImagePickerControllerDelegate, UINavigationControlle
         if let image = self.defaultPicture.image, let data = UIImageJPEGRepresentation(image, 1.0){
             print("Converted image to data of width:\(image.size.width)")
             let cloud = CloudNine(data)
+            cloud.completionHandler = { imageUrl in
+                self.me?.picture = imageUrl
+            }
             cloud.startUpload()
         } else {
             print("Unable to convert image")

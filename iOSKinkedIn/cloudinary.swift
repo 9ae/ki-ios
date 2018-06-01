@@ -36,6 +36,7 @@ struct KiSignature {
 class CloudNine {
     
     var imageData: Data
+    var completionHandler: ((String)->Void)?
     
     init(_ data: Data){
         self.imageData = data
@@ -43,7 +44,6 @@ class CloudNine {
     
     private func confirmUpload(_ public_id: String, url: String){
         KinkedInAPI.post("self/picture", parameters: ["public_id": public_id, "url": url]){ json in
-            print(json)
         }
     }
     
@@ -89,6 +89,9 @@ class CloudNine {
             let url = response?.url {
             print("Cloudinary Response")
             confirmUpload(publicId, url: url)
+            if let handler = self.completionHandler {
+                handler(url)
+            }
         }
     }
     
