@@ -270,6 +270,7 @@ extension EditProfileVC : UIImagePickerControllerDelegate, UINavigationControlle
             let cloud = CloudNine(data)
             cloud.completionHandler = { imageUrl in
                 self.me?.picture = imageUrl
+                self.updateTableWithInfo()
             }
             cloud.startUpload()
         } else {
