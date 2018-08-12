@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Atlas
 
 enum ReplyType {
     case none, text, choice

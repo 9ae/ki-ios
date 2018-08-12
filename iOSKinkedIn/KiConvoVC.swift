@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Atlas
 
 class KiConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
 

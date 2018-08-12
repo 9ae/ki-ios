@@ -11,7 +11,7 @@ import UserNotifications
 
 import Fabric
 import Crashlytics
-import PusherSwift
+// import PusherSwift
 import LayerKit
 
 @UIApplicationMain
@@ -162,12 +162,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         print("access token set. prefeform listener functions")
         
         if let deviceToken = KinkedInAPI.deviceToken {
-            print("Pusher subscribe to my personal channel")
-            let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
+            // print("Pusher subscribe to my personal channel")
+            // let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
             KinkedInAPI.get("self/pusheen"){ json in
                 if let uuid = json["my_channel"] as? String {
-                    pusher.nativePusher.register(deviceToken: deviceToken)
-                    pusher.nativePusher.subscribe(interestName: uuid)
+                   // pusher.nativePusher.register(deviceToken: deviceToken)
+                   // pusher.nativePusher.subscribe(interestName: uuid)
                 }
             }
         }

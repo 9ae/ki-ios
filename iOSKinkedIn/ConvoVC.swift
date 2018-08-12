@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Atlas
 
 class ConvoVC: KiConvoVC {
     
