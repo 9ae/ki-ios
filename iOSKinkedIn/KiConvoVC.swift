@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import LayerXDK.LayerXDKUI
 
-class KiConvoVC: ATLConversationViewController, ATLConversationViewControllerDataSource {
+class KiConvoVC: UIViewController {
 
     private var dateFormatter = DateFormatter()
     
+    override func loadView() {
+        super.loadView()
+        if let config = LayerHelper.config {
+            self.view = LYRUIConversationView(configuration: config)
+        } else {
+            print ("layer config not init")
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         self.dataSource = self
         
         dateFormatter.dateStyle = .short
@@ -29,15 +40,14 @@ class KiConvoVC: ATLConversationViewController, ATLConversationViewControllerDat
         
         ATLOutgoingMessageCollectionViewCell.appearance().bubbleViewColor = ThemeColors.msgOut
         ATLOutgoingMessageCollectionViewCell.appearance().messageTextColor = UIColor.white
-
+        */
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
+    /*
     public func conversationViewController(_ conversationViewController: ATLConversationViewController, participantFor identity: LYRIdentity) -> ATLParticipant {
         return identity
     }
@@ -53,5 +63,5 @@ class KiConvoVC: ATLConversationViewController, ATLConversationViewControllerDat
     public func conversationViewController(_ conversationViewController: ATLConversationViewController, attributedStringForDisplayOfRecipientStatus recipientStatus: [AnyHashable : Any]) -> NSAttributedString {
         return NSAttributedString(string: "", attributes: [:])
     }
-
+     */
 }

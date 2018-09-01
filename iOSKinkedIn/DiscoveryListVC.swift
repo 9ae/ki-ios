@@ -175,11 +175,11 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             }
         }
         let talkTo = UIAlertAction(title: "Start chatting", style: .default) { (alert: UIAlertAction!) -> Void in
-            if let convo = LayerHelper.makeConvoVC(profile) {
+            let convo = LayerHelper.makeConvoVC(profile)
                 self.navigationController?.pushViewController(convo, animated: false)
-            } else {
-                print("something went wrong in attempt to start convo with \(profile.name)")
-            }
+//            } else {
+//                print("something went wrong in attempt to start convo with \(profile.name)")
+//            }
         }
         let cancel = UIAlertAction(title: "Nothing", style: .cancel)
         

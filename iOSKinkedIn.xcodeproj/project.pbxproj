@@ -19,8 +19,6 @@
 		00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A371E56384500640B09 /* iOSKinkedInTests.swift */; };
 		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
-		0019CB391F04A61900724FD2 /* CaseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019CB381F04A61900724FD2 /* CaseList.swift */; };
-		0019CB3B1F04ACCB00724FD2 /* ReadCaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0019CB3A1F04ACCB00724FD2 /* ReadCaseVC.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
 		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
@@ -29,7 +27,6 @@
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
 		0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */; };
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
-		0035F4AB1EC70A9D0002C7A6 /* CareConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
 		0044DFB91EFD79DC001F1299 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0044DFB81EFD79DC001F1299 /* KeychainWrapper.swift */; };
@@ -125,8 +122,6 @@
 		00171A421E56384500640B09 /* iOSKinkedInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKinkedInUITests.swift; sourceTree = "<group>"; };
 		00171A441E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
-		0019CB381F04A61900724FD2 /* CaseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaseList.swift; sourceTree = "<group>"; };
-		0019CB3A1F04ACCB00724FD2 /* ReadCaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadCaseVC.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
 		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
@@ -135,7 +130,6 @@
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
 		0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserListVC.swift; sourceTree = "<group>"; };
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
-		0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CareConvoVC.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
 		0044DFB81EFD79DC001F1299 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -339,10 +333,7 @@
 		0035F4A91EC70A7F0002C7A6 /* aftercare */ = {
 			isa = PBXGroup;
 			children = (
-				0035F4AA1EC70A9D0002C7A6 /* CareConvoVC.swift */,
 				007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */,
-				0019CB381F04A61900724FD2 /* CaseList.swift */,
-				0019CB3A1F04ACCB00724FD2 /* ReadCaseVC.swift */,
 			);
 			name = aftercare;
 			sourceTree = "<group>";
@@ -701,6 +692,7 @@
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
 				"${PODS_ROOT}/LayerKit/LayerKit.framework",
+				"${BUILT_PRODUCTS_DIR}/LayerXDK/LayerXDK.framework",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
@@ -710,6 +702,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayerKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LayerXDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
@@ -794,7 +787,6 @@
 				00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */,
 				00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */,
 				00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */,
-				0019CB3B1F04ACCB00724FD2 /* ReadCaseVC.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
@@ -806,7 +798,6 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
-				0019CB391F04A61900724FD2 /* CaseList.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				000A81511F14577D00B20F1E /* KiConvoVC.swift in Sources */,
@@ -827,7 +818,6 @@
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
-				0035F4AB1EC70A9D0002C7A6 /* CareConvoVC.swift in Sources */,
 				0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
 				0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */,

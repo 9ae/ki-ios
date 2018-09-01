@@ -208,7 +208,7 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             let invitePartnerAlert = UIAlertController(title: "E-mail not found",
                                                        message: "Please make sure \(email) is the e-mail they used for KinkedIn. If your partner is not currently a KinkedIn member, would you like us to invite them to join on your behalf.", preferredStyle: .alert)
             let reenter = UIAlertAction(title: "Fix E-mail Address", style: .default){ (action) in
-                self.addPartner(sender: action)
+                self.addPartner(action)
             }
             
             let invite = UIAlertAction(title: "Invite Partner", style: .default){ action in

@@ -7,10 +7,37 @@
 //
 
 import UIKit
+import LayerXDK.LayerXDKUI
 
-class ConvoVC: KiConvoVC {
+class ConvoVC: UIViewController {
     
     var profile: Profile?
+    var config: LYRUIConfiguration?
+    
+    override func loadView() {
+        super.loadView()
+        
+        guard let _config = self.config else {
+            print("ERR: config nil")
+            return
+        }
+        
+        guard let _profile = self.profile else {
+            print("ERR: profile nil")
+            return
+        }
+        
+        let cv = LYRUIConversationView(configuration: _config)
+        
+        do {
+            cv.conversation = try LayerHelper.startConvo(withUser: _profile.uuid)
+        } catch {
+            print("unable to init covo")
+        }
+        
+        self.view = cv
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +77,7 @@ class ConvoVC: KiConvoVC {
             guard let user_uuid = self.profile?.uuid else {
                 return
             }
+            /*
             let convo = CareConvoVC(layerClient: LayerHelper.client!)
             do{
                 convo.conversation = try LayerHelper.startConvo(
@@ -65,6 +93,7 @@ class ConvoVC: KiConvoVC {
             } catch {
                 print("failed to start aftercare convo")
             }
+            */
         }
         
         let block = UIAlertAction(title: "Disconnect", style: .destructive) { (alert: UIAlertAction!) -> Void in

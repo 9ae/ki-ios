@@ -77,9 +77,8 @@ class ConnectionsVC: UITableViewController {
     }
     */
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let convoVC = LayerHelper.makeConvoVC(reciprocals[indexPath.row]) {
+        let convoVC = LayerHelper.makeConvoVC(reciprocals[indexPath.row])
             self.navigationController?.pushViewController(convoVC, animated: false)
-        }
     }
 
     /*

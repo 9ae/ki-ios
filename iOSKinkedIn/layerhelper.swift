@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import LayerKit
+import LayerXDK.LayerXDKUI
 
 enum LayerError: Error {
     case CLIENT_NO_SET
@@ -16,6 +16,17 @@ enum LayerError: Error {
 class LayerHelper {
     
     static var client: LYRClient?
+    static var config: LYRUIConfiguration?
+    
+    static func createClient(_ appID: URL, _ delegate: LYRClientDelegate) -> LYRClient {
+        var client = LayerHelper.client
+        if !(client != nil) {
+            client = LYRClient(appID: appID, delegate: delegate, options: nil)
+            LayerHelper.client = client
+            LayerHelper.config = LYRUIConfiguration(layerClient: client!)
+        }
+        return client!
+    }
     
     static func authCallback(_ client: LYRClient, _ nonce: String){
         if (KinkedInAPI.token == ""){
@@ -74,7 +85,7 @@ class LayerHelper {
             }
         }
     }
-    
+    /*
     static func makeAftercareVC(userInfo: [AnyHashable : Any]) -> CareConvoVC {
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
@@ -93,18 +104,13 @@ class LayerHelper {
         }
         return convo
     }
-    
-    static func makeConvoVC(_ profile: Profile) -> ConvoVC? {
-        do {
-        let convo = ConvoVC(layerClient: LayerHelper.client!)
-        convo.title = profile.name
-        convo.displaysAddressBar = false
-        convo.conversation = try LayerHelper.startConvo(withUser: profile.uuid)
+    */
+    static func makeConvoVC(_ profile: Profile) -> ConvoVC {
+        let convo = ConvoVC()
         convo.profile = profile
-            return convo
-        } catch {
-            return nil
-        }
+        convo.config = LayerHelper.config
+        convo.title = profile.name
+        return convo
     }
     
 }

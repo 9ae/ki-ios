@@ -26,16 +26,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         
         Fabric.with([Crashlytics.self])
         
-        let layerURL = URL(string: layerID)
-        LayerHelper.client = LYRClient(appID: layerURL!, delegate: self, options: nil)
-        LayerHelper.client?.connect { (success, error) in
-            if(success){
-                print("layer connected")
-            } else {
-                print("layer failed")
-                print(error.debugDescription)
+        if let layerURL = URL(string: layerID){
+            LayerHelper.client = LayerHelper.createClient(layerURL, self)
+            LayerHelper.client?.connect { (success, error) in
+                if(success){
+                    print("ERR: layer connected")
+                } else {
+                    print("ERR: layer failed")
+                    print(error.debugDescription)
+                }
             }
+        } else {
+            print("ERR: invalid URL")
         }
+
         let center = UNUserNotificationCenter.current()
         center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
@@ -128,13 +132,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
         self.window?.rootViewController = navCtrl
         self.window?.makeKeyAndVisible()
-            
+            /*
         switch(category){
             case NOTECAT_AFTERCARE:
+                continue
+             
                 if let userInfo = self.notificationLaunchOptions["user_info"] as? [AnyHashable: Any] {
                     let convo = LayerHelper.makeAftercareVC(userInfo: userInfo)
                     navCtrl.pushViewController(convo, animated: false)
                 }
+
             case NOTECAT_PARTNER_REQUEST:
                 let vc = storyboard.instantiateViewController(withIdentifier: "partnersVC") as! MasterPartnersVC
                 navCtrl.pushViewController(vc, animated: false)
@@ -143,7 +150,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
                 print("not sure what to do")
                 
         }
-            
+        */
         self.notificationLaunchOptions["category"] = nil
         
 

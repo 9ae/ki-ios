@@ -14,6 +14,7 @@ target 'iOSKinkedIn' do
   pod 'Cloudinary', '~> 2.0'
   pod 'TagListView', '~> 1.1.0'
   pod 'LayerKit'
+  pod 'LayerXDK/UI'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

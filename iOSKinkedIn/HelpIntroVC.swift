@@ -40,6 +40,7 @@ class HelpIntroVC: UIViewController {
     }
     
     @IBAction func chatWithKia(_ sender: Any) {
+        /*
         self.view.makeToastActivity(.center)
         KinkedInAPI.connections { profiles in
             self.view.hideToastActivity()
@@ -51,14 +52,18 @@ class HelpIntroVC: UIViewController {
             
             self.navigationController?.pushViewController(selectUserVC, animated: false)
         }
+    */
     }
     
     @IBAction func previousConvos(_ sender: Any) {
+        /*
         let listVC = CaseList(layerClient: LayerHelper.client!)
         self.navigationController?.pushViewController(listVC, animated: false)
+        */
     }
     
     func userSelected(_ selected: Profile) {
+        /*
         print("selected \(selected.name)")
         let convo = CareConvoVC(layerClient: LayerHelper.client!)
         do{
@@ -75,7 +80,7 @@ class HelpIntroVC: UIViewController {
         } catch {
             print("failed to start aftercare convo")
         }
-        
+        */
     }
     
     // MARK: - Navigation
