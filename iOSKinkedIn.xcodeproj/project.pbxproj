@@ -36,6 +36,8 @@
 		004E78701EC9AA0100306EEA /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004E786F1EC9AA0100306EEA /* TempViewController.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
 		0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */; };
+		006A8088213C8D73006F6354 /* AftercareConvoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A8087213C8D73006F6354 /* AftercareConvoView.swift */; };
+		006A808A213C8F70006F6354 /* AftercareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006A8089213C8F70006F6354 /* AftercareVC.swift */; };
 		006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */; };
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
@@ -140,6 +142,8 @@
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		0053EB7D1EC5B1C20028B6CF /* ConvoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoVC.swift; sourceTree = "<group>"; };
 		005767C11E5827A60075665A /* AMPopTip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AMPopTip.framework; path = "Pods/../build/Debug-iphoneos/AMPopTip/AMPopTip.framework"; sourceTree = "<group>"; };
+		006A8087213C8D73006F6354 /* AftercareConvoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AftercareConvoView.swift; sourceTree = "<group>"; };
+		006A8089213C8F70006F6354 /* AftercareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AftercareVC.swift; sourceTree = "<group>"; };
 		006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDateVC.swift; sourceTree = "<group>"; };
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -236,6 +240,7 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				006A8086213C8C78006F6354 /* Aftercare */,
 				00FD15831F6D6D1100357860 /* MyProfile.storyboard */,
 				00FD15851F6D732D00357860 /* MyProfile */,
 				00FD157F1F6D610A00357860 /* Auth.storyboard */,
@@ -333,9 +338,18 @@
 		0035F4A91EC70A7F0002C7A6 /* aftercare */ = {
 			isa = PBXGroup;
 			children = (
-				007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */,
 			);
 			name = aftercare;
+			sourceTree = "<group>";
+		};
+		006A8086213C8C78006F6354 /* Aftercare */ = {
+			isa = PBXGroup;
+			children = (
+				007BC3ED1ECACC620069E1F3 /* HelpIntroVC.swift */,
+				006A8087213C8D73006F6354 /* AftercareConvoView.swift */,
+				006A8089213C8F70006F6354 /* AftercareVC.swift */,
+			);
+			name = Aftercare;
 			sourceTree = "<group>";
 		};
 		008597231EA3623B00583621 /* change */ = {
@@ -531,7 +545,7 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 8UP95RYJ9H;
 						LastSwiftMigration = 0920;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -792,6 +806,7 @@
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
 				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
+				006A8088213C8D73006F6354 /* AftercareConvoView.swift in Sources */,
 				001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
@@ -830,6 +845,7 @@
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
+				006A808A213C8F70006F6354 /* AftercareVC.swift in Sources */,
 				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
@@ -988,9 +1004,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8UP95RYJ9H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1003,8 +1019,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "803c44fa-8802-4e31-b878-83f705ec2569";
-				PROVISIONING_PROFILE_SPECIFIER = "Ki-dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};
@@ -1016,9 +1032,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = iOSKinkedIn/iOSKinkedIn.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 8UP95RYJ9H;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1031,8 +1047,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "803c44fa-8802-4e31-b878-83f705ec2569";
-				PROVISIONING_PROFILE_SPECIFIER = "Ki-dev";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

@@ -433,10 +433,10 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
                                 <rect key="frame" x="1" y="208" width="373" height="395"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -482,7 +482,9 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     <constraint firstAttribute="trailing" secondItem="VM7-X5-grq" secondAttribute="trailing" constant="30" id="LUK-SF-MJP"/>
                                     <constraint firstItem="VM7-X5-grq" firstAttribute="top" secondItem="DS4-kU-vrY" secondAttribute="top" id="O5O-Fp-AKq"/>
                                     <constraint firstAttribute="bottom" secondItem="VM7-X5-grq" secondAttribute="bottom" id="QqR-v5-71P"/>
+                                    <constraint firstAttribute="width" constant="373" id="f23-6c-fZn"/>
                                     <constraint firstItem="VM7-X5-grq" firstAttribute="leading" secondItem="DS4-kU-vrY" secondAttribute="leading" constant="15" id="h6B-mm-Vxo"/>
+                                    <constraint firstAttribute="height" constant="395" id="lq2-7I-DfS"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

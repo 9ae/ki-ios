@@ -85,26 +85,26 @@ class LayerHelper {
             }
         }
     }
-    /*
-    static func makeAftercareVC(userInfo: [AnyHashable : Any]) -> CareConvoVC {
-        let convo = CareConvoVC(layerClient: LayerHelper.client!)
+    
+    static func makeAftercareConvoVC(_ regardingUser: String) -> AftercareVC {
+        let convo = AftercareVC()
+        convo.config = LayerHelper.config
         do{
-            convo.conversation = try LayerHelper.startConvo(
+            convo.convo = try LayerHelper.startConvo(
                 withUser: "aftercare",
                 distinct: false,
                 metadata: [
-                    "about_user_id": userInfo["with_user_id"] as! String,
-                    "case_type": "checkin"
-                ]
-            )
-            try convo.conversation.synchronizeAllMessages(.toFirstUnread)
+                    "about_user_id": regardingUser,
+                    "case_type": "report"
+                ])
+            try convo.convo?.synchronizeAllMessages(.toFirstUnread)
             convo.hidesBottomBarWhenPushed = true
         } catch {
-            print("failed to start aftercare convo")
+            print("ERR: failed to start aftercare convo")
         }
         return convo
     }
-    */
+
     static func makeConvoVC(_ profile: Profile) -> ConvoVC {
         let convo = ConvoVC()
         convo.profile = profile
