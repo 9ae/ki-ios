@@ -17,6 +17,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
     
     private var state = ThumbnailState.EMPTY
     private var picture: UIImageView!
+    private var name: UILabel!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,6 +27,10 @@ class ThumbnailMatchCell: UICollectionViewCell {
         picture.isHidden = true
         picture.isOpaque = false
         contentView.addSubview(picture)
+        
+        name = UILabel()
+        contentView.addSubview(name)
+        
         contentView.backgroundColor = UIColor.clear
     }
     
@@ -60,7 +65,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
         }
     }
 
-    func setImage(_ publicId: String){
+    func setData(_ publicId: String, name: String){
         picture = UIImageView(frame: frame)
         contentView.addSubview(picture)
         let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_40,w_40/\(publicId)"
@@ -74,6 +79,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
             // TODO: use put in place holder image
             print("error loading profile picture")
         }
+        self.name.text = name
         state = ThumbnailState.FILLED
     }
 

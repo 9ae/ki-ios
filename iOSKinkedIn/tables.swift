@@ -38,3 +38,17 @@ extension UICollectionViewController {
         self.collectionView?.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
     }
 }
+
+func emptyList(
+    title: String,
+    msg: String,
+    actionLabel: String,
+    action: ((UIAlertAction) -> Swift.Void)? ) -> UIAlertController {
+    let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+    let ok = UIAlertAction(
+        title: actionLabel, style: UIAlertActionStyle.default, handler: action)
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+    alert.addAction(cancel)
+    alert.addAction(ok)
+    return alert
+}

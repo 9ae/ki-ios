@@ -15,5 +15,5 @@ class SetupViewVC: UIViewController {
         alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
         self.present(alertController, animated:false)
     }
-
+    
 }

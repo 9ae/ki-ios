@@ -21,10 +21,11 @@
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
-		001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D211A1E5A4B2D00317600 /* SetupBioVC.swift */; };
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
+		0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */; };
+		0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */; };
 		0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */; };
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
@@ -52,7 +53,6 @@
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00B978591E780E4300B7B4FA /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B978581E780E4300B7B4FA /* Role.swift */; };
 		00B9785B1E780E5900B7B4FA /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9785A1E780E5900B7B4FA /* Gender.swift */; };
-		00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */; };
 		00BA200D1E62B2F000D31F6F /* styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200C1E62B2F000D31F6F /* styles.swift */; };
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
 		00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* KinksVC.swift */; };
@@ -125,10 +125,11 @@
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
-		001D211A1E5A4B2D00317600 /* SetupBioVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupBioVC.swift; sourceTree = "<group>"; };
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
+		0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
+		0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserListVC.swift; sourceTree = "<group>"; };
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
@@ -157,7 +158,6 @@
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00B978581E780E4300B7B4FA /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		00B9785A1E780E5900B7B4FA /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
-		00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		00BA200C1E62B2F000D31F6F /* styles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = styles.swift; sourceTree = "<group>"; };
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
 		00BA528C1E75744300EE20E4 /* KinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinksVC.swift; sourceTree = "<group>"; };
@@ -333,13 +333,6 @@
 			path = AbstractUserList;
 			sourceTree = "<group>";
 		};
-		0035F4A91EC70A7F0002C7A6 /* aftercare */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = aftercare;
-			sourceTree = "<group>";
-		};
 		006A8086213C8C78006F6354 /* Aftercare */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,15 +361,6 @@
 			name = Auth;
 			sourceTree = "<group>";
 		};
-		00ED8A221E74377800096497 /* setup */ = {
-			isa = PBXGroup;
-			children = (
-				00BA13B91E57C08C00CC0BA8 /* SetupViewVC.swift */,
-				001D211A1E5A4B2D00317600 /* SetupBioVC.swift */,
-			);
-			name = setup;
-			sourceTree = "<group>";
-		};
 		00ED8A231E7437A000096497 /* discover */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,17 +377,16 @@
 			isa = PBXGroup;
 			children = (
 				0028CA251FB25420002CEC76 /* AbstractUserList */,
-				0035F4A91EC70A7F0002C7A6 /* aftercare */,
 				0025651E1EB839C900B7BF2A /* vouch */,
 				008597231EA3623B00583621 /* change */,
 				00B5659C1E57906100639B8E /* SplashVC.swift */,
 				006D50061E658635005DAABE /* AppTabVC.swift */,
 				00ED8A231E7437A000096497 /* discover */,
-				00ED8A221E74377800096497 /* setup */,
 				00ED8A251E74386E00096497 /* connect */,
 				001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */,
 				004E786F1EC9AA0100306EEA /* TempViewController.swift */,
 				00CA86161F06DCF200ED281A /* RoundButton.swift */,
+				0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -429,6 +412,7 @@
 				00FD2A741EF6FB190015749A /* BasicProfileVC.swift */,
 				004BBBED1F02BC43009AD970 /* PromptVC.swift */,
 				004BBBEF1F02DECC009AD970 /* PromptCell.swift */,
+				0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */,
 			);
 			name = MyProfile;
 			sourceTree = "<group>";
@@ -802,8 +786,8 @@
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
-				001D211B1E5A4B2D00317600 /* SetupBioVC.swift in Sources */,
 				001611501ED327A800CDCF98 /* DiscoverProfile.swift in Sources */,
+				0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
 				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
@@ -838,11 +822,11 @@
 				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				008597251EA3628900583621 /* StaticMasterVC.swift in Sources */,
+				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				006A808A213C8F70006F6354 /* AftercareVC.swift in Sources */,
-				00BA13BA1E57C08C00CC0BA8 /* SetupViewVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,

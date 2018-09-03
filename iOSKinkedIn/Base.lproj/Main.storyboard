@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ob4-rU-b3H">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -251,14 +251,14 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="textNote" id="A4q-VV-XMg">
-                                <rect key="frame" x="0.0" y="195" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="195" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Daily match limit reached. Spend time getting to know your new connections" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPZ-12-lH2">
-                                            <rect key="frame" x="29" y="18" width="42" height="21"/>
+                                            <rect key="frame" x="29" y="18" width="317" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -270,6 +270,7 @@
                                     <constraint firstAttribute="trailingMargin" secondItem="wPZ-12-lH2" secondAttribute="trailing" constant="21" id="Dtl-Cq-ipA"/>
                                     <constraint firstItem="wPZ-12-lH2" firstAttribute="top" secondItem="A4q-VV-XMg" secondAttribute="topMargin" constant="10" id="k61-9F-q5v"/>
                                 </constraints>
+                                <size key="customSize" width="375" height="100"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -828,10 +829,10 @@
             </objects>
             <point key="canvasLocation" x="-615" y="4025"/>
         </scene>
-        <!--Title-->
+        <!--AbstractListView-->
         <scene sceneID="iID-AY-ZAO">
             <objects>
-                <tableViewController storyboardIdentifier="AbstractUserListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ob4-rU-b3H" customClass="AbstractUserListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="AbstractUserListVC" title="AbstractListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ob4-rU-b3H" customClass="AbstractUserListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="erq-av-tdk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

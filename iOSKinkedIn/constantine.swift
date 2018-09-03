@@ -12,7 +12,7 @@ let UD_CHECKIN_TIME = "checkinTime"
 let UD_CHECKIN_TIME_VALUE = 12
 
 let UD_MATCH_LIMIT = "matchLimit"
-let UD_MATCH_LIMIT_VALUE = 7
+let UD_MATCH_LIMIT_VALUE = 3
 
 let UD_MATCHES_TODAY = "matchesToday"
 let UD_MATCHES_TODAY_VALUE = 0

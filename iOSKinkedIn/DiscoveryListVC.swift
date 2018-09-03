@@ -50,6 +50,15 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 self.profiles = profiles
                 self.collectionView?.reloadData()
                 self.view.hideToastActivity()
+                /*
+                if profiles.isEmpty {
+                    let alert = emptyList(
+                        title: "No matches yet",
+                        msg: "Maybe now is a good time to spend some time getting to know your Connections",
+                        actionLabel: "See Connections",
+                        action: nil)
+                    self.present(alert, animated: false)
+                } */
             }
         } else {
             self.view.hideToastActivity()
@@ -105,11 +114,12 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: matchesCellIdentifier, for: indexPath) as! ThumbnailMatchCell
             if(indexPath.row < todayMatches.count){
                 let profile = todayMatches[indexPath.row]
-                cell.setImage(profile.picture_public_id!)
+                cell.setData(profile.picture_public_id!, name: profile.name)
             }
             return cell
         } else if isMatchLimitReached {
-            return collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
+            let tv = collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
+            return tv
         } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         
@@ -190,7 +200,6 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         
         present(alert, animated: true)
     }
-    
 
     /*
     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
