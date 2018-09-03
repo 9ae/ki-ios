@@ -20,7 +20,7 @@ class AftercareVC: UIViewController {
     
     private var stack = UIStackView()
     private var stackHeightConstraint: NSLayoutConstraint?
-    private var scrollOffsetConstraint: NSLayoutConstraint?
+    private var composeBarHeightConstraint: NSLayoutConstraint?
     
     private let LABEL_HEIGHT = 40
     private let LABEL_PADDING = 8
@@ -59,7 +59,6 @@ class AftercareVC: UIViewController {
         super.viewDidLoad()
         
         sendText("Case created on \(Date().description)")
-        self._enableKeyboard(false)
         
         if let _client = self.config?.client {
         NotificationCenter.default.addObserver(self,
@@ -83,7 +82,6 @@ class AftercareVC: UIViewController {
             } catch {
                 print("ERR: sending message")
         }
-        _enableKeyboard(false)
     }
     
     func _enableKeyboard(_ isKeyboard: Bool) {
@@ -92,14 +90,38 @@ class AftercareVC: UIViewController {
             return
         }
         if isKeyboard {
-            composeBar.isHidden = false
+            self.view.endEditing(false)
             composeBar.becomeFirstResponder()
+//            let heightConst = NSLayoutConstraint(
+//                item: composeBar,
+//                attribute: .height,
+//                relatedBy: .equal,
+//                toItem: nil,
+//                attribute: .notAnAttribute,
+//                multiplier: 1,
+//                constant: 50)
+//            self.view.addConstraint(heightConst)
+//            composeBarHeightConstraint = heightConst
             print("LOG show keyboard")
         } else {
-            composeBar.isHidden = true
+            self.view.endEditing(true)
             composeBar.resignFirstResponder()
+            if let _const = self.composeBarHeightConstraint {
+                self.view.removeConstraint(_const)
+            }
+            let heightConst = NSLayoutConstraint(
+                item: composeBar,
+                attribute: .height,
+                relatedBy: .equal,
+                toItem: nil,
+                attribute: .notAnAttribute,
+                multiplier: 1,
+                constant: 0)
+            self.view.addConstraint(heightConst)
+            composeBarHeightConstraint = heightConst
             print("LOG hide keyboard")
         }
+        composeBar.isHidden = !isKeyboard
         self.isKeyboardHidden = !isKeyboard
     }
     
@@ -112,16 +134,52 @@ class AftercareVC: UIViewController {
         stack.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(stack)
         
-        let ypos = NSLayoutConstraint(item: stack, attribute: .bottom, relatedBy: .equal,
-                                      toItem: self.view, attribute: .bottom, multiplier: 1, constant: -8)
-        let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
-                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
-        let xa = NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal,
-                                    toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
-        let xe = NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal,
-                                    toItem: self.view, attribute: .trailing, multiplier: 1, constant: -8)
-        view.addConstraints([ypos, height, xa, xe])
-        stackHeightConstraint = height
+        if let cv = self.view as? LYRUIConversationView {
+//            let messagesView = cv.messageListView
+            let composeBar = cv.composeBar
+            
+            let anchors = cv.constraints
+            for an in anchors {
+                if an.firstAnchor == cv.bottomAnchor && an.secondAnchor == composeBar?.bottomAnchor {
+                    print("LOG found anchor")
+                    self.view.removeConstraint(an)
+                }
+                
+                if (an.firstItem?.isEqual(composeBar))!
+                    && an.firstAttribute == NSLayoutAttribute.height {
+                    print("LOG found composeBar height")
+                    composeBarHeightConstraint = an
+                }
+            }
+            
+            let y0 = NSLayoutConstraint(
+                item: stack,
+                attribute: .top,
+                relatedBy: .equal,
+                toItem: composeBar,
+                attribute: .bottom,
+                multiplier: 1, constant: 0
+            )
+            
+            let y1 = NSLayoutConstraint(
+                item: stack,
+                attribute: .bottom,
+                relatedBy: .equal,
+                toItem: cv,
+                attribute: .bottom,
+                multiplier: 1, constant: 0
+            )
+            
+            let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
+                                            toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+            let xa = NSLayoutConstraint(item: stack, attribute: .leading, relatedBy: .equal,
+                                        toItem: self.view, attribute: .leading, multiplier: 1, constant: 0)
+            let xe = NSLayoutConstraint(item: stack, attribute: .trailing, relatedBy: .equal,
+                                        toItem: self.view, attribute: .trailing, multiplier: 1, constant: -8)
+            view.addConstraints([y0, y1, height, xa, xe])
+            stackHeightConstraint = height
+        }
+        
     }
     
     private func _closeOptionsView(){
@@ -129,12 +187,15 @@ class AftercareVC: UIViewController {
         for sv in stack.arrangedSubviews {
             sv.removeFromSuperview()
         }
-        stack.isHidden = true
         
-        if let _oldOffset = self.scrollOffsetConstraint {
-            view.removeConstraint(_oldOffset)
+        if let _const = stackHeightConstraint {
+            view.removeConstraint(_const)
         }
-        self.scrollOffsetConstraint = nil
+        let height = NSLayoutConstraint(item: stack, attribute: .height, relatedBy: .equal,
+                                        toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 0)
+        view.addConstraint(height)
+        stackHeightConstraint = height
+        
         print("LOG close options view")
     }
     
@@ -164,21 +225,7 @@ class AftercareVC: UIViewController {
         }
         view.addConstraint(height)
         stackHeightConstraint = height
-        
-        if let messagesView = (self.view as? LYRUIConversationView)?.messageListView {
-            let offset = NSLayoutConstraint(
-                item: messagesView,
-                attribute: .bottom,
-                relatedBy: .equal,
-                toItem: self.bottomLayoutGuide,
-                attribute: .top,
-                multiplier: 1,
-                constant: -stackHeight)
-            view.addConstraint(offset)
-            scrollOffsetConstraint = offset
-        }
-        
-        stack.isHidden = false
+        print("LOG show options")
     }
     
     @objc func didReceiveLayerObjectsDidChangeNotification(_ notification: NSNotification){
@@ -214,8 +261,8 @@ class AftercareVC: UIViewController {
             print("ERR cant find text")
             return
         }
-        sendText(text)
         _closeOptionsView()
+        sendText(text)
     }
     
     private func isMessageRecieved(_ change: LYRObjectChange) -> LYRMessage? {
@@ -239,20 +286,18 @@ class AftercareVC: UIViewController {
             if let headerData = msgpart.data {
                 do {
                     currentQuestion = try JSONSerialization.jsonObject(with: headerData, options: .mutableContainers) as? [String: Any]
+                    print(currentQuestion)
                     if let responseType = currentQuestion?["response_type"] as? String {
                         if (responseType == "choice"){
                             if let options = currentQuestion?["options"] as? [String] {
-                                print("LOG reply options")
-                                _setOptions(options)
                                 _updateReplyState(state: .choice)
+                                _setOptions(options)
                             }
                         }
                         else if (responseType == "none"){
-                            print("LOG reply none")
                             _updateReplyState(state: .none)
                         }
                         else {
-                            print("LOG reply text")
                             _updateReplyState(state: .text)
                         }
                     }
