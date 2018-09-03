@@ -77,23 +77,8 @@ class ConvoVC: UIViewController {
             guard let user_uuid = self.profile?.uuid else {
                 return
             }
-            /*
-            let convo = CareConvoVC(layerClient: LayerHelper.client!)
-            do{
-                convo.conversation = try LayerHelper.startConvo(
-                    withUser: "aftercare",
-                    distinct: false,
-                    metadata: [
-                        "about_user_id": user_uuid,
-                        "case_type": "report"
-                    ])
-                try convo.conversation.synchronizeAllMessages(.toFirstUnread)
-                convo.hidesBottomBarWhenPushed = true
-                self.navigationController?.pushViewController(convo, animated: false)
-            } catch {
-                print("failed to start aftercare convo")
-            }
-            */
+            let convo = LayerHelper.makeAftercareConvoVC(user_uuid)
+            self.navigationController?.pushViewController(convo, animated: false)
         }
         
         let block = UIAlertAction(title: "Disconnect", style: .destructive) { (alert: UIAlertAction!) -> Void in
