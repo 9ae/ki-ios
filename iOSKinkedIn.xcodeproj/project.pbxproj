@@ -57,6 +57,8 @@
 		00BA200F1E62B8C200D31F6F /* tables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA200E1E62B8C200D31F6F /* tables.swift */; };
 		00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BA528C1E75744300EE20E4 /* KinksVC.swift */; };
 		00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */; };
+		00C08F3121445E69005098ED /* ProfileThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F3021445E69005098ED /* ProfileThumbnail.swift */; };
+		00C08F332144635E005098ED /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F322144635E005098ED /* DiscoverVC.swift */; };
 		00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA86161F06DCF200ED281A /* RoundButton.swift */; };
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
@@ -162,6 +164,8 @@
 		00BA200E1E62B8C200D31F6F /* tables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tables.swift; sourceTree = "<group>"; };
 		00BA528C1E75744300EE20E4 /* KinksVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KinksVC.swift; sourceTree = "<group>"; };
 		00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequests.swift; sourceTree = "<group>"; };
+		00C08F3021445E69005098ED /* ProfileThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThumbnail.swift; sourceTree = "<group>"; };
+		00C08F322144635E005098ED /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		00CA86161F06DCF200ED281A /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -238,6 +242,7 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				00C08F2F21445DF3005098ED /* Profile */,
 				006A8086213C8C78006F6354 /* Aftercare */,
 				00FD15831F6D6D1100357860 /* MyProfile.storyboard */,
 				00FD15851F6D732D00357860 /* MyProfile */,
@@ -352,6 +357,14 @@
 			name = change;
 			sourceTree = "<group>";
 		};
+		00C08F2F21445DF3005098ED /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				00C08F3021445E69005098ED /* ProfileThumbnail.swift */,
+			);
+			name = Profile;
+			sourceTree = "<group>";
+		};
 		00ED8A211E74376800096497 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +382,7 @@
 				0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */,
 				009840A01ED2EAEB0024EC27 /* ProfileCell.swift */,
 				0016114F1ED327A800CDCF98 /* DiscoverProfile.swift */,
+				00C08F322144635E005098ED /* DiscoverVC.swift */,
 			);
 			name = discover;
 			sourceTree = "<group>";
@@ -812,6 +826,7 @@
 				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
+				00C08F3121445E69005098ED /* ProfileThumbnail.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
@@ -821,6 +836,7 @@
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
 				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
+				00C08F332144635E005098ED /* DiscoverVC.swift in Sources */,
 				008597251EA3628900583621 /* StaticMasterVC.swift in Sources */,
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,

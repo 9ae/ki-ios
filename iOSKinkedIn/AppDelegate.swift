@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             LayerHelper.client = LayerHelper.createClient(layerURL, self)
             LayerHelper.client?.connect { (success, error) in
                 if(success){
-                    print("ERR: layer connected")
+                    print("LOG: layer connected")
                 } else {
                     print("ERR: layer failed")
                     print(error.debugDescription)
@@ -44,7 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         center.delegate = self
         center.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
             if(granted){
-                // print("register categories")
                 center.setNotificationCategories([self.partnershipCat(), self.aftercareCat()])
             }
         }
@@ -52,7 +51,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         application.registerForRemoteNotifications()
         NotificationCenter.default.addObserver(self, selector: #selector(self.kiapiAccessTokenSet), name: NOTIFY_TOKEN_SET, object: nil)
         
-        print("didFinishLaunchingWithOptions")
+        print("LOG: didFinishLaunchingWithOptions")
         
         loadDefaults()
         
@@ -122,17 +121,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
         print("applicationDidBecomeActive")
         
+        /*
         guard let category = self.notificationLaunchOptions["category"] as? String else {
-            print("category is not nil")
+            print("category is nil")
             return
         }
-
+ 
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
         self.window?.rootViewController = navCtrl
         self.window?.makeKeyAndVisible()
-            /*
+    
         switch(category){
             case NOTECAT_AFTERCARE:
                 continue
@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
                 
         }
         */
-        self.notificationLaunchOptions["category"] = nil
+        // self.notificationLaunchOptions["category"] = nil
         
 
     }
@@ -167,7 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     
     @objc func kiapiAccessTokenSet(){
         print("access token set. prefeform listener functions")
-        
+        /*
         if let deviceToken = KinkedInAPI.deviceToken {
             // print("Pusher subscribe to my personal channel")
             // let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
@@ -178,7 +178,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
                 }
             }
         }
-        
+        */
         if let layerClient = LayerHelper.client {
             if (layerClient.isConnected){
                 print("Layer auth user")

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ob4-rU-b3H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,9 +142,58 @@
             <point key="canvasLocation" x="-1284" y="3222"/>
         </scene>
         <!--Discover-->
+        <scene sceneID="cfu-Iz-YsO">
+            <objects>
+                <collectionViewController clearsSelectionOnViewWillAppear="NO" id="aGf-s8-M4v" customClass="DiscoverVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="ypd-LU-UUC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="0O5-Iv-IfB">
+                            <size key="itemSize" width="200" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="thProfile" id="8yb-Sa-S40" customClass="ProfileThumbnail" customModule="iOSKinkedIn" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MN-7h-ldD">
+                                            <rect key="frame" x="79" y="15" width="43" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <connections>
+                                    <outlet property="nameLabel" destination="2MN-7h-ldD" id="qv8-oN-Tqq"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="aGf-s8-M4v" id="fft-Vx-J2V"/>
+                            <outlet property="delegate" destination="aGf-s8-M4v" id="1eQ-04-sSX"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" selectedImage="discover_select" id="pan-Mb-K43"/>
+                    <navigationItem key="navigationItem" title="Discover" id="NkA-8Q-HFb"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tFP-vQ-j9e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-487" y="3227"/>
+        </scene>
+        <!--Discover 0-->
         <scene sceneID="on3-4m-nIX">
             <objects>
-                <collectionViewController title="Discover" id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Discover 0" id="enA-Xb-554" customClass="DiscoveryListVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" prefetchingEnabled="NO" id="TK1-Ta-wUn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="510"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -289,7 +338,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89X-XA-4cT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-380" y="3194.7526236881563"/>
+            <point key="canvasLocation" x="470" y="2415"/>
         </scene>
         <!--Discover Profile-->
         <scene sceneID="xdJ-bd-7UV">
@@ -1445,7 +1494,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <color key="selectedImageTintColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
-                        <segue destination="enA-Xb-554" kind="relationship" relationship="viewControllers" id="byc-8u-lmf"/>
+                        <segue destination="enA-Xb-554" kind="relationship" relationship="viewControllers" id="nAO-87-ePc"/>
                         <segue destination="5rh-F9-lVW" kind="relationship" relationship="viewControllers" id="ZnM-eH-bFT"/>
                         <segue destination="kd2-52-VNb" kind="relationship" relationship="viewControllers" id="9vn-Wn-a5i"/>
                         <segue destination="smX-CW-ckN" kind="relationship" relationship="viewControllers" id="V9a-fD-EEd"/>

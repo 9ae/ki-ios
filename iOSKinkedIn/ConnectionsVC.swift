@@ -33,9 +33,16 @@ class ConnectionsVC: UITableViewController {
             self.tableView.reloadData()
             
             if profiles.isEmpty {
-                let tv = UILabel()
-                tv.text = self.EMPTYSTATE_NOCONNECTIONS
-                self.view.addSubview(tv)
+                
+                let alert = emptyList(
+                    title: "No matches yet",
+                    msg: self.EMPTYSTATE_NOCONNECTIONS,
+                    actionLabel: "Discover!",
+                    action: { a in
+                        self.tabBarController?.selectedIndex = 1
+                })
+                
+                self.present(alert, animated: false)
             }
         }
 

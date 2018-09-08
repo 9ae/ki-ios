@@ -23,7 +23,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     var isMatchLimitReached = false
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
         super.viewWillAppear(animated)
     }
     
@@ -50,15 +50,18 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 self.profiles = profiles
                 self.collectionView?.reloadData()
                 self.view.hideToastActivity()
-                /*
+                
                 if profiles.isEmpty {
                     let alert = emptyList(
-                        title: "No matches yet",
+                        title: "No new profile",
                         msg: "Maybe now is a good time to spend some time getting to know your Connections",
                         actionLabel: "See Connections",
-                        action: nil)
+                        action: { a in
+                            self.tabBarController?.selectedIndex = 1
+                    })
+
                     self.present(alert, animated: false)
-                } */
+                }
             }
         } else {
             self.view.hideToastActivity()
@@ -118,8 +121,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             }
             return cell
         } else if isMatchLimitReached {
-            let tv = collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
-            return tv
+            return collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
         } else {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
         
@@ -174,6 +176,8 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     func onDailyMatchTouched(_ profile: Profile) {
         print("open action sheet")
         let alert =  UIAlertController(title: profile.name, message: "What would you like to do?", preferredStyle: .actionSheet)
+        
+
         let viewProfile = UIAlertAction(title: "See profile", style: .default) { (alert: UIAlertAction!) -> Void in
             self.view.makeToastActivity(.center)
             
