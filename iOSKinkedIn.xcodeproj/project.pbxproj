@@ -59,6 +59,9 @@
 		00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */; };
 		00C08F3121445E69005098ED /* ProfileThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F3021445E69005098ED /* ProfileThumbnail.swift */; };
 		00C08F332144635E005098ED /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F322144635E005098ED /* DiscoverVC.swift */; };
+		00C08F3521447D32005098ED /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C08F3421447D32005098ED /* Profile.storyboard */; };
+		00C08F3921448564005098ED /* AngleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F3821448564005098ED /* AngleView.swift */; };
+		00C08F3D21448FF8005098ED /* BaseProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F3C21448FF8005098ED /* BaseProfileVC.swift */; };
 		00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA86161F06DCF200ED281A /* RoundButton.swift */; };
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
@@ -166,6 +169,9 @@
 		00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequests.swift; sourceTree = "<group>"; };
 		00C08F3021445E69005098ED /* ProfileThumbnail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileThumbnail.swift; sourceTree = "<group>"; };
 		00C08F322144635E005098ED /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
+		00C08F3421447D32005098ED /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		00C08F3821448564005098ED /* AngleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleView.swift; sourceTree = "<group>"; };
+		00C08F3C21448FF8005098ED /* BaseProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProfileVC.swift; sourceTree = "<group>"; };
 		00CA86161F06DCF200ED281A /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -361,6 +367,9 @@
 			isa = PBXGroup;
 			children = (
 				00C08F3021445E69005098ED /* ProfileThumbnail.swift */,
+				00C08F3421447D32005098ED /* Profile.storyboard */,
+				00C08F3821448564005098ED /* AngleView.swift */,
+				00C08F3C21448FF8005098ED /* BaseProfileVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -589,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C08F3521447D32005098ED /* Profile.storyboard in Resources */,
 				00FD15801F6D610A00357860 /* Auth.storyboard in Resources */,
 				00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */,
 				006D50051E65810B005DAABE /* Assets.xcassets in Resources */,
@@ -795,6 +805,7 @@
 			files = (
 				00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */,
 				00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */,
+				00C08F3921448564005098ED /* AngleView.swift in Sources */,
 				00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
@@ -807,6 +818,7 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
+				00C08F3D21448FF8005098ED /* BaseProfileVC.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				000A81511F14577D00B20F1E /* KiConvoVC.swift in Sources */,

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base ProfileVC-->
+        <scene sceneID="apj-Sm-yI9">
+            <objects>
+                <viewController storyboardIdentifier="viewProfileVC" id="YhE-Hy-fN3" customClass="BaseProfileVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9Dr-7i-2NX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-N4-tah">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="StY-cy-K5W"/>
+                                </constraints>
+                            </imageView>
+                            <view opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sm-Vf-74v" customClass="AngleView" customModule="iOSKinkedIn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="top" axis="vertical" distribution="fillProportionally" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="PzO-vP-HTs">
+                                        <rect key="frame" x="20" y="20" width="375" height="426"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-qb-I4m">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="426"/>
+                                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PzO-vP-HTs" firstAttribute="centerY" secondItem="9sm-Vf-74v" secondAttribute="centerY" id="GAT-1N-7ol"/>
+                                    <constraint firstItem="PzO-vP-HTs" firstAttribute="top" secondItem="9sm-Vf-74v" secondAttribute="top" constant="20" id="X6o-8H-Bz5"/>
+                                    <constraint firstItem="PzO-vP-HTs" firstAttribute="leading" secondItem="9sm-Vf-74v" secondAttribute="leading" constant="20" id="gTk-nb-TPC"/>
+                                    <constraint firstAttribute="trailing" secondItem="PzO-vP-HTs" secondAttribute="trailing" constant="20" id="sNf-Ye-6AE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Uuz-N4-tah" firstAttribute="leading" secondItem="9sm-Vf-74v" secondAttribute="leading" id="2x4-30-ypY"/>
+                            <constraint firstItem="9sm-Vf-74v" firstAttribute="top" secondItem="LB5-3P-pst" secondAttribute="top" constant="180" id="9RM-jD-EIY"/>
+                            <constraint firstItem="Uuz-N4-tah" firstAttribute="trailing" secondItem="9sm-Vf-74v" secondAttribute="trailing" id="Ibn-as-4Mt"/>
+                            <constraint firstAttribute="trailing" secondItem="Uuz-N4-tah" secondAttribute="trailing" id="LZY-Yh-FLK"/>
+                            <constraint firstItem="9sm-Vf-74v" firstAttribute="bottom" secondItem="LB5-3P-pst" secondAttribute="bottom" id="Vzk-Nx-gh7"/>
+                            <constraint firstItem="Uuz-N4-tah" firstAttribute="top" secondItem="9Dr-7i-2NX" secondAttribute="top" id="a9d-nA-bkV"/>
+                            <constraint firstItem="Uuz-N4-tah" firstAttribute="leading" secondItem="9Dr-7i-2NX" secondAttribute="leading" id="x2s-gW-Yji"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LB5-3P-pst"/>
+                    </view>
+                    <connections>
+                        <outlet property="basicInfo" destination="Ccq-qb-I4m" id="IWN-ar-IKv"/>
+                        <outlet property="profileImage" destination="Uuz-N4-tah" id="sFf-Oe-hC7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F0T-6Z-2ZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-362.39999999999998" y="85.907046476761622"/>
+        </scene>
+    </scenes>
+</document>
