@@ -67,6 +67,8 @@
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
+		00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D2214D9325003D79C6 /* ViewProfileVC.swift */; };
+		00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D4214DB360003D79C6 /* CodeProfileVC.swift */; };
 		00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F1C6C01EC5A63100A295C0 /* layerhelper.swift */; };
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
 		00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA10501F042731007BEEE3 /* PerfsVC.swift */; };
@@ -177,6 +179,8 @@
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
+		00F073D2214D9325003D79C6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
+		00F073D4214DB360003D79C6 /* CodeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeProfileVC.swift; sourceTree = "<group>"; };
 		00F1C6C01EC5A63100A295C0 /* layerhelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = layerhelper.swift; sourceTree = "<group>"; };
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
 		00FA10501F042731007BEEE3 /* PerfsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfsVC.swift; sourceTree = "<group>"; };
@@ -370,6 +374,8 @@
 				00C08F3421447D32005098ED /* Profile.storyboard */,
 				00C08F3821448564005098ED /* AngleView.swift */,
 				00C08F3C21448FF8005098ED /* BaseProfileVC.swift */,
+				00F073D2214D9325003D79C6 /* ViewProfileVC.swift */,
+				00F073D4214DB360003D79C6 /* CodeProfileVC.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -846,6 +852,7 @@
 				00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
+				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
 				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00C08F332144635E005098ED /* DiscoverVC.swift in Sources */,
@@ -860,6 +867,7 @@
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
+				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

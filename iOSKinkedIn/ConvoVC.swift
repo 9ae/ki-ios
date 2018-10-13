@@ -111,8 +111,7 @@ class ConvoVC: UIViewController {
             self.view.makeToastActivity(.center)
             
             KinkedInAPI.readProfile(uuid) { profile in
-                let profileView = UIStoryboard(name: "Profile", bundle: Bundle.main).instantiateViewController(withIdentifier: "viewProfileVC") as! BaseProfileVC
-                profileView.setContent(profile)
+                let profileView = ViewProfileVC(profile)
                 self.view.hideToastActivity()
                 self.navigationController?.pushViewController(profileView, animated: false)
             }

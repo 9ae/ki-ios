@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import TagListView
 
 class BaseProfileVC: UIViewController {
     
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var basicInfo: UILabel!
+    @IBOutlet var countKinksMatched: UILabel!
+    @IBOutlet var countVouchedBy: UILabel!
+    @IBOutlet weak var identies: TagListView!
     
-    private var _profile: Profile?
+    var _profile: Profile?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +42,13 @@ class BaseProfileVC: UIViewController {
             basicText += "\n\(_city)"
         }
         basicInfo.text = basicText
+        
+        let ids = profile.genders + profile.roles
+        for i in ids {
+            identies.addTag(i)
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

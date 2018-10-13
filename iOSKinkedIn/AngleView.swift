@@ -18,10 +18,10 @@ class AngleView: UIView {
             return super.draw(rect)
         }
 
-        ctx.setFillColor(UIColor.gray.cgColor)
+        ctx.setFillColor(UIColor.lightGray.cgColor)
         ctx.beginPath()
         ctx.move(to: rect.origin)
-        let p1 = CGPoint(x: rect.maxX , y: rect.minY + 120.0)
+        let p1 = CGPoint(x: rect.maxX , y: rect.minY + 80.0)
         ctx.addLine(to: p1)
         ctx.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
         ctx.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
