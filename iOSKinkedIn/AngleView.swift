@@ -9,7 +9,8 @@
 import UIKit
 
 class AngleView: UIView {
-
+    
+    static let deltaY : CGFloat = 80.0
     
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -18,10 +19,10 @@ class AngleView: UIView {
             return super.draw(rect)
         }
 
-        ctx.setFillColor(UIColor.lightGray.cgColor)
+        ctx.setFillColor(UIColor.white.cgColor)
         ctx.beginPath()
         ctx.move(to: rect.origin)
-        let p1 = CGPoint(x: rect.maxX , y: rect.minY + 80.0)
+        let p1 = CGPoint(x: rect.maxX , y: rect.minY + AngleView.deltaY)
         ctx.addLine(to: p1)
         ctx.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
         ctx.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
