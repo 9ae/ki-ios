@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import Atributika
 import TagListView
 
 class CodeProfileVC: UIViewController {
@@ -26,6 +25,9 @@ class CodeProfileVC: UIViewController {
     var profile: Profile
     
     var matchedIds: [String] = ["pangender", "voyeur", "hedonist"]
+    
+    var topAnchor: NSLayoutConstraint?
+    var initPanPos: CGPoint = CGPoint(x: 0.0, y: 0.0)
     
     init(_ profile: Profile) {
         self.profile = profile
@@ -52,6 +54,10 @@ class CodeProfileVC: UIViewController {
         profile.city = "New York, NY"
         profile.vouches = 20
         
+        view.backgroundColor = UIColor.white
+        
+        angleView.isDirectionalLockEnabled = true
+        
         self.setConstraints()
         self.setData()
     }
@@ -73,22 +79,31 @@ class CodeProfileVC: UIViewController {
         
         view.addSubview(angleView)
         angleView.translatesAutoresizingMaskIntoConstraints = false
-        angleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: CodeProfileVC.imageHeight - AngleView.deltaY).isActive = true
-        angleView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        topAnchor = angleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: CodeProfileVC.imageHeight - AngleView.deltaY)
+        topAnchor?.isActive = true
         angleView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         angleView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         angleView.backgroundColor = UIColor.clear
-        
+        angleView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height).isActive = true
+
         angleView.addSubview(content)
         content.translatesAutoresizingMaskIntoConstraints = false
         content.topAnchor.constraint(equalTo: angleView.topAnchor, constant: 24).isActive = true
         content.bottomAnchor.constraint(equalTo: angleView.bottomAnchor).isActive = true
         content.leadingAnchor.constraint(equalTo: angleView.leadingAnchor, constant: 8).isActive = true
         content.trailingAnchor.constraint(equalTo: angleView.trailingAnchor, constant: -8).isActive = true
+        content.widthAnchor.constraint(equalTo: angleView.widthAnchor).isActive = true
         
         content.alignment = .top
         content.axis = .vertical
         content.spacing = 16
+        content.backgroundColor = UIColor.white
+        
+        angleView.isUserInteractionEnabled = true
+        let panner = UIPanGestureRecognizer.init(target: self, action: #selector(onPan))
+        panner.minimumNumberOfTouches = 1
+        panner.maximumNumberOfTouches = 1
+        angleView.addGestureRecognizer(panner)
         
         content.addArrangedSubview(basicInfo)
         
@@ -104,9 +119,6 @@ class CodeProfileVC: UIViewController {
         content.addArrangedSubview(countStack)
         
         content.addArrangedSubview(identies)
-        identies.alignment = .left
-        identies.leadingAnchor.constraint(equalTo: content.leadingAnchor).isActive = true
-        identies.trailingAnchor.constraint(equalTo: content.trailingAnchor).isActive = true
  
     }
     
@@ -139,26 +151,80 @@ class CodeProfileVC: UIViewController {
         
         let ids = profile.genders + profile.roles
         for id in ids {
-            let tagv = defaultTag(id)
+            let tagv = TagView(title: id)
             if matchedIds.contains(id) {
                 tagv.isHighlighted = true
             }
             identies.addTagView(tagv)
         }
+        identies.alignment = .left
+        identies.leadingAnchor.constraint(equalTo: content.leadingAnchor).isActive = true
+        identies.trailingAnchor.constraint(equalTo: content.trailingAnchor).isActive = true
+        identies.textFont = .systemFont(ofSize: 12)
+        identies.tagBackgroundColor = ThemeColors.primaryLight
+        identies.textColor = UIColor.black
+        identies.cornerRadius = 6
+        identies.paddingX = 4
+        identies.paddingY = 2
+        identies.tagHighlightedBackgroundColor = ThemeColors.primaryDark
+        
+        if let _prompts = profile.prompts {
+            for prompt in _prompts {
+                if let _answer = prompt.answer, prompt.show {
+                    let promptLabel = promptView(question: prompt.title, answer: _answer)
+                    content.addArrangedSubview(promptLabel)
+                }
+            }
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+        }
     }
     
-    private func defaultTag(_ tag: String) -> TagView {
-        let tagView = TagView(title: tag)
-        tagView.cornerRadius = 6
-        tagView.paddingX = 4
-        tagView.paddingY = 2
+    private func promptView(question: String, answer: String) -> UILabel {
+        let promptLabel = UILabel()
+        let q = NSAttributedString(
+            string: question,
+            attributes: [ NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14)])
+        let a = NSAttributedString(
+            string: " \(answer)",
+            attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14) ]
+        )
+        let b = NSMutableAttributedString()
+        b.append(q)
+        b.append(a)
+        promptLabel.attributedText = b
+        promptLabel.numberOfLines = 5
+        return promptLabel
+    }
+    
+    @objc func onPan(recoginzer: UIPanGestureRecognizer){
+        guard let _view = recoginzer.view else {return}
+        let translation  = recoginzer.translation(in: _view.superview)
         
-        tagView.tagBackgroundColor = ThemeColors.primaryLight
-        tagView.textColor = UIColor.black
+        if recoginzer.state == .began {
+            self.initPanPos = _view.center
+        }
         
-        tagView.highlightedBackgroundColor = ThemeColors.primary
-        
-        return tagView
+        if recoginzer.state != .cancelled {
+            /*
+            if let _oldAnchor = self.topAnchor {
+                angleView.removeConstraint(_oldAnchor)
+            }
+            
+            self.topAnchor = angleView.topAnchor.constraint(
+                equalTo: self.view.topAnchor,
+                constant: CodeProfileVC.imageHeight - AngleView.deltaY - translation.y
+            )
+            self.topAnchor?.isActive = true
+            */
+            let minY = _view.bounds.height / 2
+            
+            var newY = self.initPanPos.y + translation.y
+            newY = newY < minY ? minY : newY
+            _view.center = CGPoint(x: self.initPanPos.x, y: newY)
+        } else {
+            _view.center = self.initPanPos
+        }
     }
 
     /*

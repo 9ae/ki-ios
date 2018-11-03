@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AngleView: UIView {
+class AngleView: UIScrollView {
     
     static let deltaY : CGFloat = 80.0
     
