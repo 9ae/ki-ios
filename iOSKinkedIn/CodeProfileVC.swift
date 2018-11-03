@@ -21,13 +21,14 @@ class CodeProfileVC: UIViewController {
     private var kinksMatched: UILabel
     private var vouchedBy: UILabel
     private var identies: TagListView
+    private var showPic: UIBarButtonItem
     
     var profile: Profile
     
     var matchedIds: [String] = ["pangender", "voyeur", "hedonist"]
-    
-    var topAnchor: NSLayoutConstraint?
+
     var initPanPos: CGPoint = CGPoint(x: 0.0, y: 0.0)
+    var panner : UIPanGestureRecognizer?
     
     init(_ profile: Profile) {
         self.profile = profile
@@ -39,6 +40,7 @@ class CodeProfileVC: UIViewController {
         kinksMatched = UILabel()
         vouchedBy = UILabel()
         identies = TagListView()
+        showPic = UIBarButtonItem()
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -60,6 +62,9 @@ class CodeProfileVC: UIViewController {
         
         self.setConstraints()
         self.setData()
+        
+        showPic = UIBarButtonItem(title: "R", style: .plain, target: self, action: #selector(onShowPic))
+        self.navigationItem.setRightBarButton(showPic, animated: false)
     }
 
     override func didReceiveMemoryWarning() {
@@ -79,8 +84,7 @@ class CodeProfileVC: UIViewController {
         
         view.addSubview(angleView)
         angleView.translatesAutoresizingMaskIntoConstraints = false
-        topAnchor = angleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: CodeProfileVC.imageHeight - AngleView.deltaY)
-        topAnchor?.isActive = true
+        angleView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: CodeProfileVC.imageHeight - AngleView.deltaY).isActive = true
         angleView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         angleView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         angleView.backgroundColor = UIColor.clear
@@ -100,11 +104,8 @@ class CodeProfileVC: UIViewController {
         content.backgroundColor = UIColor.white
         
         angleView.isUserInteractionEnabled = true
-        let panner = UIPanGestureRecognizer.init(target: self, action: #selector(onPan))
-        panner.minimumNumberOfTouches = 1
-        panner.maximumNumberOfTouches = 1
-        angleView.addGestureRecognizer(panner)
-        
+        enablePan()
+
         content.addArrangedSubview(basicInfo)
         
         let countStack = UIStackView()
@@ -177,6 +178,24 @@ class CodeProfileVC: UIViewController {
             }
             content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
             content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
+            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
         }
     }
     
@@ -206,25 +225,58 @@ class CodeProfileVC: UIViewController {
         }
         
         if recoginzer.state != .cancelled {
-            /*
-            if let _oldAnchor = self.topAnchor {
-                angleView.removeConstraint(_oldAnchor)
-            }
-            
-            self.topAnchor = angleView.topAnchor.constraint(
-                equalTo: self.view.topAnchor,
-                constant: CodeProfileVC.imageHeight - AngleView.deltaY - translation.y
-            )
-            self.topAnchor?.isActive = true
-            */
             let minY = _view.bounds.height / 2
             
             var newY = self.initPanPos.y + translation.y
             newY = newY < minY ? minY : newY
+
             _view.center = CGPoint(x: self.initPanPos.x, y: newY)
+            
+            if (newY == minY && translation.y < 0){
+                disablePan(minY)
+            }
         } else {
             _view.center = self.initPanPos
         }
+    }
+    
+    @objc func onShowPic(_ sender: Any){
+        if (angleView.isScrollEnabled) {
+            angleView.scrollToTop()
+            enablePan()
+        }
+    }
+    
+    private func disablePan(_ topY : CGFloat){
+        guard let _panner = self.panner else {return}
+        
+        angleView.removeGestureRecognizer(_panner)
+        angleView.isScrollEnabled = true
+        angleView.center =  CGPoint(x: self.initPanPos.x, y: topY)
+        angleView.isAngled = false
+        angleView.setNeedsDisplay()
+        
+        showPic.isEnabled = true
+        
+    }
+    
+    private func enablePan(){
+        let _panner = self.panner ?? UIPanGestureRecognizer(target: self, action: #selector(onPan))
+
+        if self.panner == nil {
+            _panner.minimumNumberOfTouches = 1
+            _panner.maximumNumberOfTouches = 1
+            self.panner = _panner
+        } else {
+            angleView.center = self.initPanPos
+            angleView.isAngled = true
+            angleView.setNeedsDisplay()
+        }
+        
+        angleView.addGestureRecognizer(_panner)
+        angleView.isScrollEnabled = false
+        
+        showPic.isEnabled = false
     }
 
     /*
