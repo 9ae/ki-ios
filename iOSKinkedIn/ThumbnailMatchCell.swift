@@ -19,6 +19,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
     private var picture: UIImageView!
     private var name: UILabel!
     
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         picture = UIImageView()
@@ -29,19 +30,26 @@ class ThumbnailMatchCell: UICollectionViewCell {
         contentView.addSubview(picture)
         
         name = UILabel()
+        name.backgroundColor = UIColor.clear
         contentView.addSubview(name)
         
         contentView.backgroundColor = UIColor.clear
     }
+ 
     
     override func layoutSubviews() {
         super.layoutSubviews()
         var frame = picture.frame
         frame.size.height = self.frame.size.height
-        frame.size.width = self.frame.size.width
+        frame.size.width = self.frame.size.height
         frame.origin.x = 0
         frame.origin.y = 0
         picture.frame = frame
+        
+        name.translatesAutoresizingMaskIntoConstraints = false
+        name.centerYAnchor.constraint(equalTo: picture.centerYAnchor).isActive = true
+        name.leadingAnchor.constraint(equalTo: picture.trailingAnchor, constant: 8).isActive = true
+
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -53,21 +61,19 @@ class ThumbnailMatchCell: UICollectionViewCell {
         clipsToBounds = true
         if(state == ThumbnailState.EMPTY){
             guard let context = UIGraphicsGetCurrentContext() else {return}
-            let fillColor = UIColor(red: 0.80, green: 0.80, blue: 0.80, alpha: 0.6)
-            let strokeColor = UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 1.0)
+            let fillColor = ThemeColors.primaryLight
             
-            context.addEllipse(in: rect)
+            context.addRect(rect)
             fillColor.setFill()
             context.fillPath()
             
-            strokeColor.setStroke()
-            context.strokeEllipse(in: rect)
+        } else {
+            picture.layer.cornerRadius = 20
         }
+        
     }
 
     func setData(_ publicId: String, name: String){
-        picture = UIImageView(frame: frame)
-        contentView.addSubview(picture)
         let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_40,w_40/\(publicId)"
         let imgURL = URL(string: url)
         do {
@@ -79,6 +85,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
             // TODO: use put in place holder image
             print("error loading profile picture")
         }
+        
         self.name.text = name
         state = ThumbnailState.FILLED
     }

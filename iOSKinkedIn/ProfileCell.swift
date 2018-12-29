@@ -19,7 +19,7 @@ class ProfileCell: UICollectionViewCell {
     var profile: Profile?
     
     override func draw(_ rect: CGRect) {
-        layer.cornerRadius = 6
+        layer.cornerRadius = 0
         clipsToBounds = true
     }
     
@@ -47,5 +47,16 @@ class ProfileCell: UICollectionViewCell {
             }
         }
         
+    }
+    
+    @IBAction func skip(_ sender: AnyObject){
+        if let uuid = self.profile?.uuid {
+        KinkedInAPI.skipProfile(uuid)
+        NotificationCenter.default.post(
+            name: NOTIFY_SKIP_PROFILE,
+            object: nil,
+            userInfo: ["profile_uuid": uuid]
+        )
+        }
     }
 }

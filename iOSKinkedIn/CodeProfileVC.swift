@@ -21,11 +21,13 @@ class CodeProfileVC: UIViewController {
     private var kinksMatched: UILabel
     private var vouchedBy: UILabel
     private var identies: TagListView
+    var kinks: TagListView
     private var showPic: UIBarButtonItem
     
     var profile: Profile
     
-    var matchedIds: [String] = ["pangender", "voyeur", "hedonist"]
+    // TODO find matched Ids
+    var matchedIds: [String] = []
 
     var initPanPos: CGPoint = CGPoint(x: 0.0, y: 0.0)
     var panner : UIPanGestureRecognizer?
@@ -40,6 +42,7 @@ class CodeProfileVC: UIViewController {
         kinksMatched = UILabel()
         vouchedBy = UILabel()
         identies = TagListView()
+        kinks = TagListView()
         showPic = UIBarButtonItem()
         
         super.init(nibName: nil, bundle: nil)
@@ -63,7 +66,13 @@ class CodeProfileVC: UIViewController {
         self.setConstraints()
         self.setData()
         
-        showPic = UIBarButtonItem(title: "R", style: .plain, target: self, action: #selector(onShowPic))
+        showPic = UIBarButtonItem(
+            image: #imageLiteral(resourceName: "scroll_top"),
+            style: .plain,
+            target: self,
+            action: #selector(self.onShowPic)
+        )
+        showPic.isEnabled = false
         self.navigationItem.setRightBarButton(showPic, animated: false)
     }
 
@@ -92,7 +101,7 @@ class CodeProfileVC: UIViewController {
 
         angleView.addSubview(content)
         content.translatesAutoresizingMaskIntoConstraints = false
-        content.topAnchor.constraint(equalTo: angleView.topAnchor, constant: 24).isActive = true
+        content.topAnchor.constraint(equalTo: angleView.topAnchor, constant: 32).isActive = true
         content.bottomAnchor.constraint(equalTo: angleView.bottomAnchor).isActive = true
         content.leadingAnchor.constraint(equalTo: angleView.leadingAnchor, constant: 8).isActive = true
         content.trailingAnchor.constraint(equalTo: angleView.trailingAnchor, constant: -8).isActive = true
@@ -120,6 +129,11 @@ class CodeProfileVC: UIViewController {
         content.addArrangedSubview(countStack)
         
         content.addArrangedSubview(identies)
+        
+        let kinksLabel = UILabel()
+        kinksLabel.text = "I am into..."
+        content.addArrangedSubview(kinksLabel)
+        content.addArrangedSubview(kinks)
  
     }
     
@@ -169,6 +183,20 @@ class CodeProfileVC: UIViewController {
         identies.paddingY = 2
         identies.tagHighlightedBackgroundColor = ThemeColors.primaryDark
         
+        for k in profile.kinks {
+            kinks.addTag(k.label)
+        }
+        kinks.alignment = .left
+        kinks.leadingAnchor.constraint(equalTo: content.leadingAnchor).isActive = true
+        kinks.trailingAnchor.constraint(equalTo: content.trailingAnchor).isActive = true
+        kinks.textFont = .systemFont(ofSize: 12)
+        kinks.tagBackgroundColor = ThemeColors.primaryLight
+        kinks.textColor = UIColor.black
+        kinks.cornerRadius = 6
+        kinks.paddingX = 4
+        kinks.paddingY = 2
+        kinks.tagHighlightedBackgroundColor = ThemeColors.primaryDark
+        
         if let _prompts = profile.prompts {
             for prompt in _prompts {
                 if let _answer = prompt.answer, prompt.show {
@@ -176,26 +204,6 @@ class CodeProfileVC: UIViewController {
                     content.addArrangedSubview(promptLabel)
                 }
             }
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I wanna", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
-            content.addArrangedSubview(promptView(question: "I like", answer: "Go to sleep. Blah Rsh hfdjh jaska gfskdhk asfhfalhgafs!! Ajdfska hsadfi sdhha"))
         }
     }
     

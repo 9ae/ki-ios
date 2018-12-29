@@ -47,7 +47,7 @@ func emptyList(
     let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
     let ok = UIAlertAction(
         title: actionLabel, style: UIAlertActionStyle.default, handler: action)
-    let cancel = UIAlertAction(title: "Cancel", style: .cancel)
+    let cancel = UIAlertAction(title: "Not Now", style: .cancel)
     alert.addAction(cancel)
     alert.addAction(ok)
     return alert

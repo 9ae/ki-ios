@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : " Like Glass.png",
+      "filename" : "scroll_top.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : " Like Glass@2x.png",
+      "filename" : "scroll_top@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : " Like Glass@3x.png",
+      "filename" : "scroll_top@3x.png",
       "scale" : "3x"
     }
   ],

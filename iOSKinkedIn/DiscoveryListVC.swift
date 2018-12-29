@@ -24,6 +24,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
+                
         super.viewWillAppear(animated)
     }
     
@@ -53,8 +54,8 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 
                 if profiles.isEmpty {
                     let alert = emptyList(
-                        title: "No new profile",
-                        msg: "Maybe now is a good time to spend some time getting to know your Connections",
+                        title: "No new profiles",
+                        msg: "Now could be a great time to get to know your existing connections",
                         actionLabel: "See Connections",
                         action: { a in
                             self.tabBarController?.selectedIndex = 1
@@ -74,7 +75,8 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         }
 
         self.collectionView!.register(ThumbnailMatchCell.self, forCellWithReuseIdentifier: matchesCellIdentifier)
- 
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateProfilesList), name: NOTIFY_SKIP_PROFILE, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,9 +87,6 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if let discoverProfile = segue.destination as? DiscoverProfile {
-            discoverProfile.setProfile(selectedProfile!)
-        }
         
     }
     
@@ -123,11 +122,9 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         } else if isMatchLimitReached {
             return collectionView.dequeueReusableCell(withReuseIdentifier: textNoteIdentifier, for: indexPath)
         } else {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
-        
-        cell.setContent(profiles[indexPath.row])
-    
-        return cell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! ProfileCell
+            cell.setContent(profiles[indexPath.row])
+            return cell
         }
     }
 
@@ -148,10 +145,14 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
                 onDailyMatchTouched(todayMatches[indexPath.row])
             }
         } else if !isMatchLimitReached {
+            self.view.makeToastActivity(.center)
             let profileUUID = profiles[indexPath.row].uuid
             KinkedInAPI.readProfile(profileUUID, callback: { profile in
                 self.selectedProfile = profile
-                self.performSegue(withIdentifier: SEGUE_TO_READ_PROFILE, sender: self)
+                let profileView = DiscoverProfileVC(profile)
+                self.view.hideToastActivity()
+                self.navigationController?.pushViewController(profileView, animated: false)
+                //self.performSegue(withIdentifier: SEGUE_TO_READ_PROFILE, sender: self)
             })
         }
         return true
@@ -164,11 +165,11 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         let height : CGFloat
         
         if indexPath.section == 0 {
-            width = 40
+            width = 120
             height = 40
         } else {
-            width = 300
-            height = 185
+            width = self.view.frame.width - 10
+            height = width  / 1.62
         }
         return CGSize(width: width, height: height)
     }
@@ -182,9 +183,8 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
             self.view.makeToastActivity(.center)
             
             KinkedInAPI.readProfile(profile.uuid) { profile in
-                let profileView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "discoverProfileVC") as! DiscoverProfile
-                profileView.setProfile(profile, isDiscoverMode: false)
                 self.view.hideToastActivity()
+                let profileView = ViewProfileVC(profile)
                 self.navigationController?.pushViewController(profileView, animated: false)
             }
         }
@@ -203,6 +203,16 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
         alert.addAction(cancel)
         
         present(alert, animated: true)
+    }
+    
+    @objc func updateProfilesList(notification: NSNotification){
+        if let info = notification.userInfo {
+            if let uuid = info["profile_uuid"] as? String {
+                let np = profiles.filter({p in p.uuid != uuid})
+                self.profiles = np
+                self.collectionView?.reloadData()
+            }
+        }
     }
 
     /*

@@ -57,7 +57,12 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
         } else {
             if partners.isEmpty {
-                self.view.makeToast("No partners yet")
+                let alert = emptyList(
+                    title: "No partners yet",
+                    msg: "If you have existing partners, why not send them a partner request and invite them to KinkedIn?",
+                    actionLabel: "Invite Partner",
+                    action: { a in self.addPartner(self) })
+                self.present(alert, animated: false)
             } else {
                 self.view.makeToast("Swipe to remove a partner")
             }
@@ -94,8 +99,7 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
         
         self.view.makeToastActivity(.center)
         KinkedInAPI.readProfile(uuid) { profile in
-            let profileView = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "discoverProfileVC") as! DiscoverProfile
-            profileView.setProfile(profile, isDiscoverMode: false)
+            let profileView = ViewProfileVC(profile)
             self.view.hideToastActivity()
             self.navigationController?.pushViewController(profileView, animated: false)
         }
@@ -212,7 +216,6 @@ class MasterPartnersVC: UIViewController, UITableViewDelegate, UITableViewDataSo
             }
             
             let invite = UIAlertAction(title: "Invite Partner", style: .default){ action in
-                print("send partner an invite")
                 KinkedInAPI.invitePartner(email)
             }
             

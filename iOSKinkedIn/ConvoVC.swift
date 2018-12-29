@@ -49,7 +49,8 @@ class ConvoVC: UIViewController {
 
         self.navigationItem.setRightBarButton(
             UIBarButtonItem(
-                barButtonSystemItem: .action,
+                image: #imageLiteral(resourceName: "more"),
+                style: .plain,
                 target: self,
                 action: #selector(self.actionSheetButtonPressed)
             ),
@@ -63,7 +64,7 @@ class ConvoVC: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func actionSheetButtonPressed(sender: UIButton) {
+    @objc func actionSheetButtonPressed(sender: UIButton) {
         let alert =  UIAlertController(title: "More Options", message: "", preferredStyle: .actionSheet)
         let viewProfile = UIAlertAction(title: "View Profile", style: .default) { (alert: UIAlertAction!) -> Void in
             self.goToViewProfile()

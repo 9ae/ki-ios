@@ -13,8 +13,6 @@ class ConnectionsVC: UITableViewController {
     var reciprocals: [Profile] = [Profile]()
     var selectedProfile: Profile?
     
-    private var EMPTYSTATE_NOCONNECTIONS: String = "Don't have any connections yet. Discover kinky people near you."
-    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
@@ -30,19 +28,18 @@ class ConnectionsVC: UITableViewController {
 
         KinkedInAPI.connections { profiles in
             self.reciprocals = profiles
-            self.tableView.reloadData()
             
             if profiles.isEmpty {
-                
                 let alert = emptyList(
-                    title: "No matches yet",
-                    msg: self.EMPTYSTATE_NOCONNECTIONS,
+                    title: "No connections yet",
+                    msg: "Discover kinky people near you.",
                     actionLabel: "Discover!",
                     action: { a in
                         self.tabBarController?.selectedIndex = 1
                 })
-                
                 self.present(alert, animated: false)
+            } else {
+                self.tableView.reloadData()
             }
         }
 

@@ -115,7 +115,15 @@ class PerfsVC: UITableViewController {
             blockUserVC.navigationItem.rightBarButtonItem?.title = "Reconnect"
             blockUserVC.navigationItem.title = "Disconnected"
             self.view.hideToastActivity()
-            self.navigationController?.pushViewController(blockUserVC, animated: false)
+            
+            if profiles.isEmpty {
+                let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(alert, animated: false)
+            } else {
+                self.navigationController?.pushViewController(blockUserVC, animated: false)
+            }
+            
         }
     }
     
