@@ -76,7 +76,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
 
         self.collectionView!.register(ThumbnailMatchCell.self, forCellWithReuseIdentifier: matchesCellIdentifier)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.updateProfilesList), name: NOTIFY_SKIP_PROFILE, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.updateProfilesList), name: NOTIFY_CLOSE_PROFILE, object: nil)
     }
 
     override func didReceiveMemoryWarning() {

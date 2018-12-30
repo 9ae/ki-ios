@@ -53,7 +53,7 @@ class ProfileCell: UICollectionViewCell {
         if let uuid = self.profile?.uuid {
         KinkedInAPI.skipProfile(uuid)
         NotificationCenter.default.post(
-            name: NOTIFY_SKIP_PROFILE,
+            name: NOTIFY_CLOSE_PROFILE,
             object: nil,
             userInfo: ["profile_uuid": uuid]
         )

@@ -44,6 +44,11 @@ class DiscoverProfileVC: CodeProfileVC {
     
     private func back(){
         self.navigationController?.popViewController(animated: false)
+        NotificationCenter.default.post(
+            name: NOTIFY_CLOSE_PROFILE,
+            object: nil,
+            userInfo: ["profile_uuid": profile.uuid]
+        )
     }
     
     private func updateMatchLimits(match_limit: Int, matches_today: Int) {
@@ -64,10 +69,6 @@ class DiscoverProfileVC: CodeProfileVC {
         KinkedInAPI.likeProfile(self.profile.uuid) { reciprocal, match_limit, matches_today in
             if(reciprocal) {
                 self.updateMatchLimits(match_limit: match_limit, matches_today: matches_today)
-                NotificationCenter.default.post(
-                    name: NOTIFY_RECIPROCAL_FEEFEE,
-                    object: nil
-                )
             }
         }
         back()
@@ -77,9 +78,7 @@ class DiscoverProfileVC: CodeProfileVC {
         KinkedInAPI.skipProfile(self.profile.uuid)
         back()
     }
-    
-    
-    
+
 
     /*
     // MARK: - Navigation

@@ -13,7 +13,7 @@ let NOTIFY_NEXT_PROFILE = Notification.Name("KinkedInNextProfile")
 let NOTIFY_RECIPROCAL_FEEFEE = Notification.Name("KinkedInReciprocalFeefee")
 let NOTIFY_PROFILE_LOADED = Notification.Name("KinkedInProfileLoaded")
 let NOTIFY_TOKEN_SET = Notification.Name("KinkedInAccessTokenSet")
-let NOTIFY_SKIP_PROFILE = Notification.Name("KinkedInSkipProfile")
+let NOTIFY_CLOSE_PROFILE = Notification.Name("KinkedInXProfile")
 
 let NOTECAT_PARTNER_REQUEST = "partner_request"
 
