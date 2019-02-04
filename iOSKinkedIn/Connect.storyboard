@@ -16,13 +16,34 @@
             <objects>
                 <tableViewController title="Connect" id="NPD-dp-grv" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="2VU-Es-dzg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IxQ-IA-2Kw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
+                                    <rect key="frame" x="62.5" y="-14" width="250" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="250" id="pQ6-du-Fv8"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="Connections"/>
+                                        <segment title="Partners"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerX" secondItem="IxQ-IA-2Kw" secondAttribute="centerX" id="5Vw-lt-JWO"/>
+                                <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="6xD-tJ-8my"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" rowHeight="80" id="fOj-4Z-c4e" customClass="ConnectionCell" customModule="iOSKinkedIn" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="fOj-4Z-c4e" id="ZgT-H0-RVT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -60,15 +81,16 @@
                             <outlet property="delegate" destination="NPD-dp-grv" id="aa3-sh-qBh"/>
                         </connections>
                     </tableView>
-                    <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" tag="4" title="Connect" image="connect" selectedImage="connect_select" id="O2r-jO-H70"/>
-                    <navigationItem key="navigationItem" title="Connect" largeTitleDisplayMode="never" id="in3-Bj-Mx1"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <tabBarItem key="tabBarItem" title="Connect" image="connect" selectedImage="connect_select" id="kAo-HP-wek"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="segment" destination="5eA-Ud-ffh" id="sbO-Ns-Z5V"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lav-Rh-bZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1284" y="3222"/>
+            <point key="canvasLocation" x="-1284" y="3221.739130434783"/>
         </scene>
         <!--Schedule Date-->
         <scene sceneID="wz5-2k-TKa">
