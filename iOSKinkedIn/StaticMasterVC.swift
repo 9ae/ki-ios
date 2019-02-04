@@ -67,8 +67,15 @@ class StaticMasterVC: UICollectionViewController {
         return cell
     }
     
-    func toSetupProfile(){
-        self.performSegue(withIdentifier: "editProfile", sender: self)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (indexPath.row == 0) {
+            print("fetch my profile")
+            KinkedInAPI.myself { profile in
+                print("got my profile data")
+                let vc = MyProfileVC(profile)
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
+        }
     }
 
     // MARK: UICollectionViewDelegate

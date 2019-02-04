@@ -10,6 +10,8 @@ import UIKit
 
 class HelpIntroVC: UIViewController {
     
+    @IBOutlet var checkinHours: UITextField!
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
@@ -23,12 +25,32 @@ class HelpIntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.checkinHours.addTarget(self, action:#selector(textFieldDidChange(_:)), for: .editingDidEnd)
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editEditing)))
+        
+        var checkinTime = UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
+        if(checkinTime == 0){
+            checkinTime = UD_CHECKIN_TIME_VALUE
+        }
+        checkinHours.text = String(describing: checkinTime)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @objc
+    func textFieldDidChange(_ textField: UITextField) {
+        print("change checkin time to: " + (textField.text ?? "_"))
+        let valCheckinHours = Int(textField.text ?? "0") ?? UD_CHECKIN_TIME_VALUE
+        UserDefaults.standard.set(valCheckinHours, forKey: UD_CHECKIN_TIME)
+    }
+    
+    @objc func editEditing(){
+        checkinHours.endEditing(true)
+        checkinHours.resignFirstResponder()
+        view.endEditing(true)
     }
     
     @IBAction func reportBug(_ sender: Any) {
@@ -69,6 +91,17 @@ class HelpIntroVC: UIViewController {
         self.navigationController?.pushViewController(convo, animated: false)
         
     }
+    
+    @IBAction func checkinInfo(_ sender: UIButton) {
+        let alert = UIAlertController(
+            title: "About Aftercare Checkin",
+            message: "Our Care Team wants to make sure you feel great & supported. How soon after your date should we should check in on you?",
+            preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel)
+        alert.addAction(ok)
+        self.present(alert, animated: false)
+    }
+    
     
     // MARK: - Navigation
 

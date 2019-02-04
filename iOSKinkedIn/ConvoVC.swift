@@ -100,7 +100,7 @@ class ConvoVC: UIViewController {
     }
 
     func goToScheduleScreen(){
-        let scheduleScreen = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
+        let scheduleScreen = UIStoryboard(name: "Connect", bundle: Bundle.main).instantiateViewController(withIdentifier: "ScheduleDateVC") as! ScheduleDateVC
         scheduleScreen.withUser = profile
         self.navigationController?.pushViewController(scheduleScreen, animated: false)
     }

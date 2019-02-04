@@ -14,7 +14,7 @@ class ConnectionsVC: UITableViewController {
     var selectedProfile: Profile?
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        // self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
     }
     

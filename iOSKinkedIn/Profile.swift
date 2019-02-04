@@ -56,6 +56,7 @@ class Profile {
     var prompts : [BioPrompt]?
     
     var setup_complete: Bool = false
+    var is_myself: Bool = false
     var expLv: Int?
     var exp: String?
     

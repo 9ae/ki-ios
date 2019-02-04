@@ -17,9 +17,10 @@ class AppTabVC: UITabBarController {
             if(step == 0){
                 print("finish profile setup")
                 self.selectedIndex = 3
-                if let changeVC = self.selectedViewController as? StaticMasterVC {
-                    changeVC.toSetupProfile()
-                }
+                // TODO : MyProfile
+//                if let changeVC = self.selectedViewController as? StaticMasterVC {
+//                    changeVC.toSetupProfile()
+//                }
             } else {
                 print("discover view")
                 // TODO: check if users has connections
@@ -30,7 +31,6 @@ class AppTabVC: UITabBarController {
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 
     override func didReceiveMemoryWarning() {

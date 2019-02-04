@@ -17,9 +17,9 @@ class CodeProfileVC: UIViewController {
     private var angleView: AngleView
     private var content: UIStackView
     
-    private var basicInfo: UILabel
-    private var kinksMatched: UILabel
-    private var vouchedBy: UILabel
+    var basicInfo: UILabel
+    var kinksMatched: UILabel
+    var vouchedBy: UILabel
     private var identies: TagListView
     var kinks: TagListView
     private var showPic: UIBarButtonItem
@@ -57,7 +57,6 @@ class CodeProfileVC: UIViewController {
         
         // temp data
         profile.city = "New York, NY"
-        profile.vouches = 20
         
         view.backgroundColor = UIColor.white
         
@@ -117,16 +116,18 @@ class CodeProfileVC: UIViewController {
 
         content.addArrangedSubview(basicInfo)
         
-        let countStack = UIStackView()
-        countStack.alignment = .leading
-        countStack.axis = .horizontal
-        countStack.spacing = 8
-        countStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        countStack.addArrangedSubview(kinksMatched)
-        if profile.vouches > 0 {
-            countStack.addArrangedSubview(vouchedBy)
+        if (!profile.is_myself) {
+            let countStack = UIStackView()
+            countStack.alignment = .leading
+            countStack.axis = .horizontal
+            countStack.spacing = 8
+            countStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
+            countStack.addArrangedSubview(kinksMatched)
+            if profile.vouches > 0 {
+                countStack.addArrangedSubview(vouchedBy)
+            }
+            content.addArrangedSubview(countStack)
         }
-        content.addArrangedSubview(countStack)
         
         content.addArrangedSubview(identies)
         

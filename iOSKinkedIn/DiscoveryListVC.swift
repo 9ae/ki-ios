@@ -23,7 +23,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     var isMatchLimitReached = false
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
+       self.navigationController?.setNavigationBarHidden(true, animated: false)
                 
         super.viewWillAppear(animated)
     }
@@ -92,6 +92,25 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
     
 
     // MARK: UICollectionViewDataSource
+    override func collectionView(_ collectionView: UICollectionView,
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView
+    {
+//        if (indexPath.section == 1) {
+            return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "filterResize", for: indexPath)
+//        } else {
+//            let blankView = UICollectionReusableView()
+//            return blankView
+//        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if (section == 1) {
+            return CGSize(width: self.view.frame.size.width, height: 30)
+        } else {
+            return CGSize(width: 0, height: 0)
+        }
+    }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections

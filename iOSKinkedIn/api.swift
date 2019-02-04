@@ -381,6 +381,7 @@ class KinkedInAPI {
                     return
                 }
                 let profile = Profile.parseSelf(pro)
+                profile.is_myself = true
                 callback(profile)
             }
             job.run(requiresToken: true)

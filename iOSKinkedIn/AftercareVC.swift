@@ -323,8 +323,7 @@ class AftercareVC: UIViewController {
         alert.addAction(ok)
         self.present(alert, animated: false)
     }
-
-    
+        
 
     /*
     // MARK: - Navigation

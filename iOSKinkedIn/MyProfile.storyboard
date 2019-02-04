@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="KQd-To-btj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ng9-hi-ie3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -142,6 +142,35 @@ Your bio will be visislbe to all KinkedIn users</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbS-hq-0sh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1145" y="4605"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="JrT-GI-84j">
+            <objects>
+                <viewController id="Ng9-hi-ie3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oCA-wo-qAu"/>
+                        <viewControllerLayoutGuide type="bottom" id="fkN-3I-oGq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w3D-WO-xUc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit Profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qZ-uc-f2E">
+                                <rect key="frame" x="166" y="104" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="profile" selectedImage="profile_select" id="4gy-g0-jVW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="scX-Kv-kfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2078" y="4062"/>
         </scene>
         <!--Roles-->
         <scene sceneID="ePO-Xd-Kaa">
@@ -433,10 +462,10 @@ Your bio will be visislbe to all KinkedIn users</string>
                                     </button>
                                 </subviews>
                             </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
                                 <rect key="frame" x="1" y="208" width="373" height="395"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
+                                    <view contentMode="scaleToFill" ambiguous="YES" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
                                         <rect key="frame" x="15" y="0.0" width="300" height="20"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="textColor">
@@ -672,5 +701,7 @@ Your bio will be visislbe to all KinkedIn users</string>
     </scenes>
     <resources>
         <image name="PicturePlaceholder" width="200" height="300"/>
+        <image name="profile" width="32" height="32"/>
+        <image name="profile_select" width="32" height="32"/>
     </resources>
 </document>
