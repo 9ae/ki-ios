@@ -282,6 +282,12 @@ class KinkedInAPI {
         }
     }
     
+    static func logout(){
+        get("logout", requiresToken: true){ json in
+            print(json)
+        }
+    }
+    
     static func register(email: String, password: String, inviteCode: String, callback: @escaping(_ success:Bool)->Void){
         let params: Parameters = [
             "email": email,

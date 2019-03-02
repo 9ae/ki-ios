@@ -70,37 +70,7 @@ class PerfsVC: UITableViewController {
         KinkedInAPI.updateProfile(params)
         
     }
-    
-    func unblockUsers(_ selected: [Profile]) {
-        for user in selected {
-            KinkedInAPI.unblockUser(user.uuid)
-        }
-        self.navigationController?.popViewController(animated: false)
-    }
-    
-    /*
-    func goToBlockedUsers(){
-        self.view.makeToastActivity(.center)
-        KinkedInAPI.blockedUsers { profiles in
-            let blockUserVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AbstractUserListVC") as! AbstractUserListVC
-            blockUserVC.profiles.append(contentsOf: profiles)
-            blockUserVC.setMultiSelect(true)
-            blockUserVC.doneCallbackMulti = self.unblockUsers
-            blockUserVC.navigationItem.rightBarButtonItem?.title = "Reconnect"
-            blockUserVC.navigationItem.title = "Disconnected"
-            self.view.hideToastActivity()
-            
-            if profiles.isEmpty {
-                let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                self.present(alert, animated: false)
-            } else {
-                self.navigationController?.pushViewController(blockUserVC, animated: false)
-            }
-            
-        }
-    }
-    */
+
     @objc
     func keyboardClose(_ sender: AnyObject){
         if self.minAge.isFirstResponder {

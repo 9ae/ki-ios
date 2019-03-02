@@ -9,28 +9,32 @@
 import UIKit
 
 enum SegmentType {
-    case reciprocals, partners
+    case reciprocals, partners, disconnects, prequests
 }
 
 struct ProfileList {
     var isFetched = false
     var data = [Profile]()
 }
-
+ 
 class ConnectionsVC: UITableViewController {
     
-//    var reciprocals: [Profile] = [Profile]()
-    
     var segmentMode : SegmentType = .reciprocals
+    var newPartnersEmail: String?
     
     var profiles: [SegmentType: ProfileList] = [
         .reciprocals : ProfileList(),
-        .partners : ProfileList()
+        .partners : ProfileList(),
+        .prequests : ProfileList(),
+        .disconnects : ProfileList()
     ]
     
     var selectedProfile: Profile?
     
     @IBOutlet var segment: UISegmentedControl!
+    @IBOutlet var dcUsers: UIButton!
+    @IBOutlet var partnerRquest: UIButton!
+    @IBOutlet var partnerAdd: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -45,11 +49,19 @@ class ConnectionsVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        segment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
         loadReciprocals()
+        
+        segment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        partnerAdd.addTarget(self, action: #selector(addPartner), for: .touchUpInside)
+        dcUsers.addTarget(self, action: #selector(loadDC), for: .touchUpInside)
+        partnerRquest.addTarget(self, action: #selector(loadPRequests), for: .touchUpInside)
     }
     
     func loadReciprocals(){
+        dcUsers.isHidden = false
+        partnerRquest.isHidden = true
+        partnerAdd.isHidden = true
+        
         let isFetched = (self.profiles[.reciprocals]?.isFetched) ?? false
         
         if isFetched {
@@ -74,6 +86,10 @@ class ConnectionsVC: UITableViewController {
     }
     
     func loadPartners(){
+        dcUsers.isHidden = true
+        partnerRquest.isHidden = false
+        partnerAdd.isHidden = false
+
         let isFetched = (self.profiles[.partners]?.isFetched) ?? false
         
         if isFetched {
@@ -96,8 +112,39 @@ class ConnectionsVC: UITableViewController {
         }
     }
     
-    func addPartner(_ sender: Any) {
+    @objc func loadDC(){
+        segmentMode = .disconnects
+        let isFetched = (self.profiles[.disconnects]?.isFetched) ?? false
+        if isFetched {
+            self.tableView.reloadData()
+            return
+        }
+        KinkedInAPI.blockedUsers { profiles in
+            if profiles.isEmpty {
+                let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                self.present(alert, animated: false)
+            }
+            else {
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
+    @objc func loadPRequests(){
+        segmentMode = .prequests
+        self.tableView.reloadData()
         /*
+        KinkedInAPI.partnerRequests { profiles in
+            self.profiles[.prequests] = ProfileList(isFetched: true, data: profiles)
+            self.tableView.reloadData()
+        }
+    */
+    }
+    
+    @objc func addPartner(_ sender: Any) {
+
         var partnerEmail: UITextField?
         let addPartnerAlert = UIAlertController(title: "Add a partner",
                                                 message: "What is your partner's email?", preferredStyle: .alert)
@@ -118,7 +165,36 @@ class ConnectionsVC: UITableViewController {
         
         
         present(addPartnerAlert, animated: false, completion: nil)
-    */
+
+    }
+    
+    func findPartnerResult(found: Bool) {
+        if(!found){
+            let email : String = newPartnersEmail ?? ""
+            
+            let invitePartnerAlert = UIAlertController(title: "E-mail not found",
+                                                       message: "Please make sure \(email) is the e-mail they used for KinkedIn. If your partner is not currently a KinkedIn member, would you like us to invite them to join on your behalf.", preferredStyle: .alert)
+            let reenter = UIAlertAction(title: "Fix E-mail Address", style: .default){ (action) in
+                self.addPartner(action)
+            }
+            
+            let invite = UIAlertAction(title: "Invite Partner", style: .default){ action in
+                KinkedInAPI.invitePartner(email)
+            }
+            
+            invitePartnerAlert.addAction(reenter)
+            invitePartnerAlert.addAction(invite)
+            
+            
+            present(invitePartnerAlert, animated: false, completion: nil)
+        }
+        else {
+            newPartnersEmail = nil
+        }
+    }
+    
+    func unblock(_ user: Profile){
+        KinkedInAPI.unblockUser(user.uuid)
     }
 
     override func didReceiveMemoryWarning() {
@@ -153,22 +229,19 @@ class ConnectionsVC: UITableViewController {
 
         return cell
     }
-    /*
-    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        self.selectedProfile = reciprocals[indexPath.row]
-        return indexPath
-    }
-    */
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let p = self.profiles[segmentMode] else {
             return
         }
         
+        if (segmentMode == .partners || segmentMode == .reciprocals) {
         let convoVC = LayerHelper.makeConvoVC(p.data[indexPath.row])
             self.navigationController?.pushViewController(convoVC, animated: false)
+        }
     }
     
-    func segmentChanged(){
+    @objc func segmentChanged(){
         switch segment.selectedSegmentIndex {
         case 0:
             self.segmentMode = .reciprocals
