@@ -503,10 +503,14 @@ class KinkedInAPI {
                 if let resArray = result as? [Any] {
                     var users: [Profile] = []
                     for usr in resArray {
-                        if let profile = usr as? [String:Any] {
-                            if let pro = Profile(profile){
-                                users.append(pro)
+                        if let pj = usr as? [String:Any] {
+                            guard let name = pj["name"] as? String,
+                                let uuid = pj["uuid"] as? String,
+                                let image_id = pj["image_id"] as? String else {
+                                    print("can't get profile values")
+                                    continue
                             }
+                            users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                         }
                         
                     }

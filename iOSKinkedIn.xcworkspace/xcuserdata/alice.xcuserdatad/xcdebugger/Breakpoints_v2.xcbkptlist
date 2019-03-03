@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSKinkedIn/api.swift"
-            timestampString = "573262510.610594"
+            timestampString = "573282112.7420321"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "573"
-            endingLineNumber = "573"
+            startingLineNumber = "577"
+            endingLineNumber = "577"
             landmarkName = "dailyLimits(_:)"
             landmarkType = "7">
          </BreakpointContent>

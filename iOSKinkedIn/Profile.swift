@@ -168,6 +168,7 @@ class Profile {
         self.vouches = 0
         self.picture_public_id = picture_public_id
     }
+
     
     func kinkLabels() -> [String] {
         let labels : [String] = self.kinks.map({ (kink: Kink) -> String in

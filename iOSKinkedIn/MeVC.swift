@@ -86,17 +86,18 @@ class MeVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return 6
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let labelHeight: CGFloat = 30.0
 
         switch indexPath.row {
-        case 1: return genderTags.frame.height + labelHeight
-        case 2: return roleTags.frame.height + labelHeight
-        case 3: return kinksTags.bounds.height + labelHeight + 20
-        default: return 400
+        case 1: return 100
+        case 2: return genderTags.frame.height + labelHeight
+        case 3: return roleTags.frame.height + labelHeight
+        case 4: return kinksTags.bounds.height + labelHeight + 20
+        default: return 300
         }
         
     }

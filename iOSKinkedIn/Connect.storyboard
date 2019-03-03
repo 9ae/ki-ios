@@ -20,18 +20,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IxQ-IA-2Kw">
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="IxQ-IA-2Kw">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
-                                    <rect key="frame" x="62.5" y="-14" width="250" height="29"/>
+                                    <rect key="frame" x="63" y="8" width="250" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="250" id="pQ6-du-Fv8"/>
                                     </constraints>
                                     <segments>
                                         <segment title="Connections"/>
                                         <segment title="Partners"/>
+                                        <segment title="Disconnected"/>
                                     </segments>
                                 </segmentedControl>
                             </subviews>
@@ -39,36 +40,6 @@
                             <constraints>
                                 <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerX" secondItem="IxQ-IA-2Kw" secondAttribute="centerX" id="5Vw-lt-JWO"/>
                                 <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="6xD-tJ-8my"/>
-                            </constraints>
-                        </view>
-                        <view key="tableFooterView" contentMode="scaleToFill" misplaced="YES" id="BA5-qR-iha">
-                            <rect key="frame" x="0.0" y="152" width="375" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="j12-qr-8WC">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="0.0"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LNN-75-lwe">
-                                            <rect key="frame" x="0.0" y="0.0" width="125" height="0.0"/>
-                                            <state key="normal" title="Disconnected Users"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AAn-jy-EiW">
-                                            <rect key="frame" x="125" y="0.0" width="125" height="0.0"/>
-                                            <state key="normal" title="Partner Requests"/>
-                                        </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLF-KN-uVx">
-                                            <rect key="frame" x="250" y="0.0" width="125" height="0.0"/>
-                                            <state key="normal" title="Add Partner"/>
-                                        </button>
-                                    </subviews>
-                                </stackView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="j12-qr-8WC" secondAttribute="bottom" id="3sf-SW-ar6"/>
-                                <constraint firstAttribute="trailing" secondItem="j12-qr-8WC" secondAttribute="trailing" id="Luh-r0-c4D"/>
-                                <constraint firstItem="j12-qr-8WC" firstAttribute="leading" secondItem="BA5-qR-iha" secondAttribute="leading" id="Luw-NV-gzD"/>
-                                <constraint firstItem="j12-qr-8WC" firstAttribute="top" secondItem="BA5-qR-iha" secondAttribute="top" id="nJ3-sf-l64"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -115,9 +86,6 @@
                     <tabBarItem key="tabBarItem" title="Connect" image="connect" selectedImage="connect_select" id="kAo-HP-wek"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
-                        <outlet property="dcUsers" destination="LNN-75-lwe" id="jE1-z6-yek"/>
-                        <outlet property="partnerAdd" destination="CLF-KN-uVx" id="VG0-hH-Yqw"/>
-                        <outlet property="partnerRquest" destination="AAn-jy-EiW" id="nI3-gG-aRN"/>
                         <outlet property="segment" destination="5eA-Ud-ffh" id="sbO-Ns-Z5V"/>
                     </connections>
                 </tableViewController>
