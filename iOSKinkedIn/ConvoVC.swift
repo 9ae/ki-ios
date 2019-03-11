@@ -86,6 +86,10 @@ class ConvoVC: UIViewController {
             self.blockUser()
         }
         
+        let vouch = UIAlertAction(title: "Vouch", style: .default) {(alert: UIAlertAction!) -> Void in
+            self.vouch()
+        }
+        
         let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (alert: UIAlertAction!) -> Void in
             print("do nothing")
         }
@@ -95,6 +99,7 @@ class ConvoVC: UIViewController {
         alert.addAction(report)
         alert.addAction(block)
         alert.addTopSpace()
+        alert.addAction(vouch)
         alert.addAction(cancel)
         present(alert, animated: false)
     }
@@ -125,6 +130,13 @@ class ConvoVC: UIViewController {
             KinkedInAPI.blockUser(uuid)
         }
         self.navigationController?.popViewController(animated: false)
+    }
+    
+    func vouch(){
+        let vc = UIStoryboard(name: "Connect", bundle: Bundle.main).instantiateViewController(withIdentifier: "vouchIntro") as! VouchIntroVC
+        vc.subjectName = profile?.name
+        vc.subjectUUID = profile?.uuid
+        self.navigationController?.pushViewController(vc, animated: false)
     }
     
 }

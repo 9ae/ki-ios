@@ -16,7 +16,7 @@ class PartnersVC: UITableViewController {
     var partners = [Profile]()
     var requests = [PartnerRequest]()
     
-    private var isPartnersLoaded : Bool = false
+    private var isPartnersLoaded : Bool = true
     private var isRequestsLoaded : Bool = false
 
     override func viewDidLoad() {
@@ -153,23 +153,14 @@ class PartnersVC: UITableViewController {
     
     func loadPartners(){
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style: .plain, target: self, action: #selector(addPartner))
-        
-        if self.isPartnersLoaded {
-            return
-        }
 
-        KinkedInAPI.partners { profiles in
-            self.partners = profiles
-            self.isPartnersLoaded = true
-            self.tableView.reloadData()
-            if profiles.isEmpty {
-                let alert = emptyList(
-                    title: "No partners yet",
-                    msg: "If you have existing partners, why not send them a partner request and invite them to KinkedIn?",
-                    actionLabel: "Invite Partner",
-                    action: { a in self.addPartner()})
-                self.present(alert, animated: false)
-            }
+        if self.partners.isEmpty {
+            let alert = emptyList(
+                title: "No partners yet",
+                msg: "If you have existing partners, why not send them a partner request and invite them to KinkedIn?",
+                actionLabel: "Invite Partner",
+                action: { a in self.addPartner()})
+            self.present(alert, animated: false)
         }
     }
     

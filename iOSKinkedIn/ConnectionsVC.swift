@@ -30,6 +30,7 @@ class ConnectionsVC: UITableViewController {
     var selectedProfile: Profile?
     
     @IBOutlet var segment: UISegmentedControl!
+    @IBOutlet var editPartners: UIButton!
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -50,6 +51,10 @@ class ConnectionsVC: UITableViewController {
     }
     
     func loadReciprocals(){
+        segmentMode = .reciprocals
+        
+        editPartners.isEnabled = false
+        editPartners.isHidden = true
         
         let isFetched = (self.profiles[.reciprocals]?.isFetched) ?? false
         
@@ -75,6 +80,10 @@ class ConnectionsVC: UITableViewController {
     }
     
     func loadPartners(){
+        segmentMode = .partners
+        
+        editPartners.isEnabled = true
+        editPartners.isHidden = false
 
         let isFetched = (self.profiles[.partners]?.isFetched) ?? false
         
@@ -101,6 +110,10 @@ class ConnectionsVC: UITableViewController {
     
     func loadDC(){
         segmentMode = .disconnects
+        
+        editPartners.isEnabled = false
+        editPartners.isHidden = true
+        
         let isFetched = (self.profiles[.disconnects]?.isFetched) ?? false
         
         if isFetched {
@@ -226,7 +239,10 @@ class ConnectionsVC: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "connects2partners",
+            let vc = segue.destination as? PartnersVC {
+            vc.partners = (self.profiles[.partners]?.data)!
+        }
     }
     
 

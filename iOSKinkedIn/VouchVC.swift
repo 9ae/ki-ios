@@ -88,7 +88,7 @@ class VouchVC: UIViewController {
         
         if(subjectUUID != nil){
             KinkedInAPI.vouch(subjectUUID!, answers: answers)
-            self.performSegue(withIdentifier: "vouch2changes", sender: sender)
+            self.performSegue(withIdentifier: "vouch2connect", sender: sender)
         }
     }
     

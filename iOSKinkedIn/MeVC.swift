@@ -13,12 +13,14 @@ class MeVC: UITableViewController {
     
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var basicInfo: UILabel!
+    @IBOutlet var partnersContainer: UIView!
     
     @IBOutlet var genderTags: TagListView!
     @IBOutlet var roleTags: TagListView!
     @IBOutlet var kinksTags: TagListView!
     
     var me: Profile?
+    var partners: [Profile] = []
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
@@ -39,6 +41,43 @@ class MeVC: UITableViewController {
             self.updateContent(profile)
         }
         
+        KinkedInAPI.partners { profiles in
+            self.partners = profiles
+            self.updatePartnersView()
+        }
+        
+    }
+    
+    func updatePartnersView(){
+        var leadingOffset: CGFloat = 8.0;
+        for p in self.partners {
+            
+            guard let picture_id = p.picture_public_id else {
+                continue
+            }
+            let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_40,w_40/\(picture_id)"
+            let imgURL = URL(string: url)
+            
+            do {
+                let imgData = try Data(contentsOf: imgURL!)
+                let picture = UIImageView.init(image: UIImage(data: imgData))
+                picture.layer.cornerRadius = 20.0
+                picture.clipsToBounds = true
+                
+                self.partnersContainer.addSubview(picture)
+                
+                picture.translatesAutoresizingMaskIntoConstraints = false
+                picture.heightAnchor.constraint(equalToConstant: 40).isActive = true
+                picture.widthAnchor.constraint(equalToConstant: 40).isActive = true
+                picture.bottomAnchor.constraint(equalTo: self.partnersContainer.bottomAnchor, constant: 8).isActive = true
+                picture.leadingAnchor.constraint(equalTo: self.partnersContainer.leadingAnchor, constant: leadingOffset).isActive = true
+                
+                leadingOffset += 30.0;
+            } catch {
+                continue
+            }
+            
+        }
     }
     
     func updateContent(_ profile: Profile){
@@ -101,28 +140,6 @@ class MeVC: UITableViewController {
         }
         
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
-            switch indexPath.row {
-            case 1: return tableView.dequeueReusableCell(withIdentifier: "biogenders", for: indexPath)
-            case 2: return tableView.dequeueReusableCell(withIdentifier: "bioroles", for: indexPath)
-            case 3: return tableView.dequeueReusableCell(withIdentifier: "biokinks", for: indexPath)
-            default : return tableView.dequeueReusableCell(withIdentifier: "biobasics", for: indexPath)
-            }
-        }
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "bioprompt", for: indexPath)
-        
-        if let _promptCell = cell as? PromptCell,
-            let prompts = self.me?.prompts {
-            let prompt = prompts[indexPath.row]
-            _promptCell.setContent(prompt)
-        }
-        return cell
-    }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -192,6 +209,11 @@ class MeVC: UITableViewController {
         if segue.identifier == "editPicture",
             let vc = segue.destination as? PictureVC {
             vc.profile = me
+        }
+        
+        if segue.identifier == "editPartners",
+            let vc = segue.destination as? PartnersVC {
+            vc.partners = self.partners
         }
     }
     

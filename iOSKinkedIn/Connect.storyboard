@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="IxQ-IA-2Kw">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IxQ-IA-2Kw">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
-                                    <rect key="frame" x="63" y="8" width="250" height="29"/>
+                                    <rect key="frame" x="37.5" y="-14" width="300" height="29"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="250" id="pQ6-du-Fv8"/>
+                                        <constraint firstAttribute="width" constant="300" id="pQ6-du-Fv8"/>
                                     </constraints>
                                     <segments>
                                         <segment title="Connections"/>
@@ -35,11 +35,24 @@
                                         <segment title="Disconnected"/>
                                     </segments>
                                 </segmentedControl>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTf-OO-i27">
+                                    <rect key="frame" x="351" y="-8" width="16" height="16"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="16" id="Kxd-Zv-hVw"/>
+                                        <constraint firstAttribute="height" constant="16" id="fGT-G1-hlb"/>
+                                    </constraints>
+                                    <state key="normal" image="edit"/>
+                                    <connections>
+                                        <segue destination="3WK-cZ-7wW" kind="show" identifier="connects2partners" id="cp0-k8-ip8"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerX" secondItem="IxQ-IA-2Kw" secondAttribute="centerX" id="5Vw-lt-JWO"/>
                                 <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="6xD-tJ-8my"/>
+                                <constraint firstItem="XTf-OO-i27" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="htI-gw-qFQ"/>
+                                <constraint firstAttribute="trailing" secondItem="XTf-OO-i27" secondAttribute="trailing" constant="8" id="hxD-2I-2A8"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -86,12 +99,21 @@
                     <tabBarItem key="tabBarItem" title="Connect" image="connect" selectedImage="connect_select" id="kAo-HP-wek"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
+                        <outlet property="editPartners" destination="XTf-OO-i27" id="4jL-J3-zNN"/>
                         <outlet property="segment" destination="5eA-Ud-ffh" id="sbO-Ns-Z5V"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lav-Rh-bZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1284" y="3221.739130434783"/>
+        </scene>
+        <!--vcPartners-->
+        <scene sceneID="My8-RA-G0b">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyProfile" referencedIdentifier="vcPartners" id="3WK-cZ-7wW" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nv-d4-IYl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="3011"/>
         </scene>
         <!--Schedule Date-->
         <scene sceneID="wz5-2k-TKa">
@@ -215,96 +237,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxf-4h-ziM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-282" y="3222"/>
-        </scene>
-        <!--Partners-->
-        <scene sceneID="whh-h8-7Qo">
-            <objects>
-                <viewController storyboardIdentifier="partnersVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZN9-lL-Xzh" customClass="MasterPartnersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Hao-F3-8pQ"/>
-                        <viewControllerLayoutGuide type="bottom" id="K1i-b9-mHA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LFC-cf-2ft">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FHJ-N5-1YX">
-                                <rect key="frame" x="86" y="8" width="203" height="29"/>
-                                <segments>
-                                    <segment title="My Partners"/>
-                                    <segment title="New Requests"/>
-                                </segments>
-                            </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PsY-Wk-PBM">
-                                <rect key="frame" x="0.0" y="44" width="375" height="559"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="partnerBasicCell" textLabel="oaz-mr-r4U" style="IBUITableViewCellStyleDefault" id="UCc-nX-yKo">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UCc-nX-yKo" id="Idq-4W-8TT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oaz-mr-r4U">
-                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PsY-Wk-PBM" firstAttribute="top" secondItem="FHJ-N5-1YX" secondAttribute="bottom" constant="8" id="2rq-fo-miB"/>
-                            <constraint firstAttribute="trailing" secondItem="PsY-Wk-PBM" secondAttribute="trailing" id="8io-Yp-00G"/>
-                            <constraint firstItem="FHJ-N5-1YX" firstAttribute="centerX" secondItem="LFC-cf-2ft" secondAttribute="centerX" id="Fd1-ao-qtp"/>
-                            <constraint firstItem="FHJ-N5-1YX" firstAttribute="top" secondItem="Hao-F3-8pQ" secondAttribute="bottom" constant="8" id="KIE-Fk-3EE"/>
-                            <constraint firstItem="K1i-b9-mHA" firstAttribute="top" secondItem="PsY-Wk-PBM" secondAttribute="bottom" id="Kff-SI-s9K"/>
-                            <constraint firstItem="PsY-Wk-PBM" firstAttribute="leading" secondItem="LFC-cf-2ft" secondAttribute="leading" id="UDN-18-pxO"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Ru3-Iw-AJh"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Partners" id="Z3b-tg-si1">
-                        <barButtonItem key="rightBarButtonItem" title="Add" id="orb-Ib-1D2">
-                            <connections>
-                                <action selector="addPartner:" destination="ZN9-lL-Xzh" id="lQr-1e-sfQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="segment" destination="FHJ-N5-1YX" id="s0n-Bt-Dhk"/>
-                        <outlet property="tableView" destination="PsY-Wk-PBM" id="cbX-NL-OyV"/>
-                        <segue destination="idA-ud-ggy" kind="show" identifier="partners2vouch" id="psR-OZ-r8T">
-                            <nil key="action"/>
-                        </segue>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cVT-QO-xaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2191" y="4845"/>
+            <point key="canvasLocation" x="-1284" y="3903"/>
         </scene>
         <!--Vouch IntroVC-->
         <scene sceneID="mIQ-RL-afQ">
             <objects>
-                <viewController id="idA-ud-ggy" customClass="VouchIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="vouchIntro" id="idA-ud-ggy" customClass="VouchIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fYL-HN-GFd"/>
                         <viewControllerLayoutGuide type="bottom" id="lh8-Ox-L5S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="QhP-ot-wIF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-yd-21u">
-                                <rect key="frame" x="15" y="30" width="345" height="114.5"/>
+                                <rect key="frame" x="15" y="50" width="345" height="114.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
                                         <string key="content">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they: 
@@ -319,7 +267,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 <string key="userLabel">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:  Respected boundaries &amp; were open and honest in their communication</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-LO-shQ">
-                                <rect key="frame" x="173" y="164.5" width="30" height="30"/>
+                                <rect key="frame" x="173" y="184.5" width="30" height="30"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
                                     <segue destination="x6h-Zv-f1B" kind="show" id="qcN-Ro-nFt">
@@ -328,7 +276,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGW-LI-KrL">
-                                <rect key="frame" x="16" y="204.5" width="343" height="15"/>
+                                <rect key="frame" x="16" y="224.5" width="343" height="15"/>
                                 <attributedString key="attributedText">
                                     <fragment content="catch statement">
                                         <attributes>
@@ -360,7 +308,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mYm-7I-TP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2191" y="5636"/>
+            <point key="canvasLocation" x="-1284" y="4613"/>
         </scene>
         <!--Vouch for [user]-->
         <scene sceneID="XPl-Um-ICA">
@@ -371,29 +319,29 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <viewControllerLayoutGuide type="bottom" id="oW6-7T-bwg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VYc-QT-tAT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] honest in the information (photos and text) they provided in their profile?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-5v-ziO">
-                                <rect key="frame" x="16" y="30" width="343" height="42.5"/>
+                                <rect key="frame" x="16" y="50" width="343" height="42.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] an good communicator?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79L-G6-4q5">
-                                <rect key="frame" x="16" y="241" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="261" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] respectful of your boundaries?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-iD-ff8">
-                                <rect key="frame" x="16" y="146.5" width="343" height="20.5"/>
+                                <rect key="frame" x="16" y="166.5" width="343" height="20.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eHq-aa-XpK">
-                                <rect key="frame" x="46" y="179" width="283" height="32"/>
+                                <rect key="frame" x="46" y="199" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74j-0y-dPQ" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -420,7 +368,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-aE-qGN">
-                                <rect key="frame" x="46" y="84.5" width="283" height="32"/>
+                                <rect key="frame" x="46" y="104.5" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-cI-WCe" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -447,7 +395,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lCw-Ge-HSC">
-                                <rect key="frame" x="46" y="273.5" width="283" height="32"/>
+                                <rect key="frame" x="46" y="293.5" width="283" height="32"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-yN-JWY" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
@@ -474,7 +422,7 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By submitting you are saying that the feedback you provide is based on your interactions with [user]." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-5B-HH6">
-                                <rect key="frame" x="16" y="355.5" width="343" height="30.5"/>
+                                <rect key="frame" x="16" y="375.5" width="343" height="30.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -526,15 +474,17 @@ Respected boundaries &amp; were open and honest in their communication</string>
                         <outlet property="q3label" destination="79L-G6-4q5" id="Ta1-z7-yiv"/>
                         <outlet property="q3no" destination="0Ea-yN-JWY" id="rHq-Qd-g57"/>
                         <outlet property="q3yes" destination="fUx-Jq-KQf" id="p61-dV-nkD"/>
+                        <segue destination="NPD-dp-grv" kind="show" identifier="vouch2connect" id="T53-bs-DKk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g25-9k-yyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2191" y="6412"/>
+            <point key="canvasLocation" x="-598" y="4613"/>
         </scene>
     </scenes>
     <resources>
         <image name="connect" width="29" height="25"/>
         <image name="connect_select" width="32" height="30"/>
+        <image name="edit" width="32" height="32"/>
     </resources>
 </document>
