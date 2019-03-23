@@ -210,17 +210,17 @@ class CodeProfileVC: UIViewController {
     
     private func promptView(question: String, answer: String) -> UILabel {
         let promptLabel = UILabel()
-        let q = NSAttributedString(
-            string: question,
-            attributes: [ NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14)])
-        let a = NSAttributedString(
-            string: " \(answer)",
-            attributes: [ NSAttributedStringKey.font : UIFont.systemFont(ofSize: 14) ]
-        )
-        let b = NSMutableAttributedString()
-        b.append(q)
-        b.append(a)
-        promptLabel.attributedText = b
+//        let q = NSAttributedString(
+//            string: question,
+//            attributes: [ NSAttributedStringKey.font : UIFont.boldSystemFont(ofSize: 14)])
+//        let a = NSAttributedString(
+//            string: " \(answer)",
+//            attributes: [ NSAttributedStringKey.Key : UIFont.systemFont(ofSize: 14) ]
+//        )
+//        let b = NSMutableAttributedString()
+//        b.append(q)
+//        b.append(a)
+        promptLabel.text = "\(question): \(answer)"
         promptLabel.numberOfLines = 5
         return promptLabel
     }

@@ -25,7 +25,7 @@ class VouchIntroVC: UIViewController {
         
         let catchWording = "Your feedback will not negatively affect \(subjectName!)'s reputation, but if you need to talk to someone about your experience with \(subjectName!), you can do that <a>here.</a>"
         
-        let a = Style("a").foregroundColor(Color.blue).underlineStyle(NSUnderlineStyle.styleSingle)
+        let a = Style("a", style: Style.foregroundColor(Color.blue)).underlineStyle(NSUnderlineStyle.styleSingle)
         let catchStyles = catchWording.style(tags: [a])
         
         catchText.attributedText = catchStyles.attributedString
