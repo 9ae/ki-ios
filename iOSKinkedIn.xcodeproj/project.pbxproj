@@ -253,10 +253,10 @@
 				00FD15851F6D732D00357860 /* MyProfile */,
 				00ED8A231E7437A000096497 /* Discover */,
 				00ED8A211E74376800096497 /* Auth */,
+				00171A501E56461900640B09 /* providers */,
 				00ED8A241E7437EB00096497 /* ui */,
 				001D21131E5A284A00317600 /* helpers */,
 				00171A541E5650D300640B09 /* models */,
-				00171A501E56461900640B09 /* providers */,
 				00171A221E56384500640B09 /* AppDelegate.swift */,
 				00171A261E56384500640B09 /* Main.storyboard */,
 				00171A2B1E56384500640B09 /* LaunchScreen.storyboard */,
@@ -564,6 +564,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -951,7 +952,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				KI_API = "https://ki-slave.herokuapp.com/";
 				LAYER_APP = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -959,7 +960,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -979,7 +980,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				KI_API = "https://ki-mistress.herokuapp.com/";
 				LAYER_APP = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -987,7 +988,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

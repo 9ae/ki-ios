@@ -12,9 +12,14 @@ import Alamofire
 enum ProfileAction: Int {
     case hide=0, skip, like
 }
+/*
+enum WozMethod : Int {
+    case get, post, put, delete
+}
 
 class Woz {
-    var id: String
+    var url: String
+    var method : WozMethod
     var complete: Bool
     var result: Any?
     
@@ -24,22 +29,16 @@ class Woz {
     
     private var completeCallback: ((Any?) -> Void)?
     
-    init(_ json:[String: Any], callback: @escaping (Any?) -> Void){
-        if let _id = json["job_id"] as? String {
-            self.id = _id
-            if let _complete = json["complete"] as? Bool {
-                self.complete = _complete
-            } else {
-                self.complete = false
-            }
-            self.result = json["result"]
-            self.completeCallback = callback
-        } else{
-            self.id = ""
-            self.complete = true
-            self.result = nil
-            self.completeCallback = nil
+    init(_ json:[String: Any], url: String, method: WozMethod, callback: @escaping (Any?) -> Void){
+        self.url = url;
+        
+        if let _complete = json["complete"] as? Bool {
+            self.complete = _complete
+        } else {
+            self.complete = false
         }
+        self.result = json["result"]
+        self.completeCallback = callback
     }
 
     
@@ -82,7 +81,7 @@ class Woz {
     }
     
 }
-
+*/
 class KinkedInAPI {
     
     static var token: String = ""
@@ -100,7 +99,7 @@ class KinkedInAPI {
         }
     }
 
-    static func get(_ path: String, requiresToken: Bool = true, callback:@escaping (_ json: [String:Any])->Void){
+    static func get(_ path: String, requiresToken: Bool = true, isJob : Bool = false, it: Int = 0,  callback:@escaping (_ json: Any)->Void){
         var url = HOST_URL+path
         if(requiresToken){
             if(path.contains("?")){
@@ -110,51 +109,76 @@ class KinkedInAPI {
             }
             
         }
+        print("XX GET \(url)")
         Alamofire.request(url).responseJSON { response in
             
             if let JSON = response.result.value as? [String:Any] {
+                if(isJob && it < 20){
+                    let complete = JSON["complete"] as! Bool
+                    if !complete {
+                        get(path, requiresToken: requiresToken, isJob: isJob, it: it + 1, callback: callback)
+                    } else {
+                        callback(JSON["result"])
+                    }
+                }
                 callback(JSON)
             } else {
-                print("GET \(url)")
                 print("error parsing json")
             }
         }
     }
   
-    static func post(_ path: String, parameters: [String: Any], requiresToken: Bool = true,
-                     callback: @escaping (_ json: [String:Any])-> Void) {
+    static func post(_ path: String, parameters: [String: Any], requiresToken: Bool = true, isJob : Bool = false,  it: Int = 0,
+                     callback: @escaping (_ json: Any)-> Void) {
         let url = HOST_URL+path
         var params: Parameters = parameters
         if(requiresToken){
             params["token"] = token
         }
+        print("XX POST \(url)")
         Alamofire.request(url,
             method: .post,
             parameters: params,
             encoding: JSONEncoding.default).responseJSON { response in
                 
                 if let JSON = response.result.value as? [String:Any] {
+                    if(isJob && it < 20){
+                        let complete = JSON["complete"] as! Bool
+                        if !complete {
+                            post(path, parameters: parameters, requiresToken: requiresToken, isJob: isJob, it: it+1, callback: callback)
+                        } else {
+                            callback(JSON["result"])
+                        }
+                    }
                     callback(JSON)
                 } else {
-                    print("POST \(url)")
                     print("error parsing json")
                 }
         }
     }
     
-    static func put(_ path: String, parameters: [String: Any], requiresToken: Bool = true,
-                     callback: @escaping (_ json: [String:Any])-> Void) {
+    static func put(_ path: String, parameters: [String: Any], requiresToken: Bool = true, isJob : Bool = false,  it: Int = 0,
+                     callback: @escaping (_ json: Any)-> Void) {
         let url = HOST_URL+path
         var params: Parameters = parameters
         if(requiresToken){
             params["token"] = token
         }
+        print("XX PUT \(url)")
         Alamofire.request(url,
                           method: .put,
                           parameters: params,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let JSON = response.result.value as? [String:Any] {
+                                if(isJob && it < 20){
+                                    let complete = JSON["complete"] as! Bool
+                                    if !complete {
+                                        put(path, parameters: parameters, requiresToken: requiresToken, isJob: isJob, it: it+1, callback: callback)
+                                    } else {
+                                        callback(JSON["result"])
+                                    }
+                                }
                                 callback(JSON)
                             } else {
                                 print("PUT \(url)")
@@ -163,8 +187,8 @@ class KinkedInAPI {
         }
     }
     
-    static func delete(_ path: String, requiresToken: Bool = true,
-                    callback: @escaping (_ json: [String:Any])-> Void) {
+    static func delete(_ path: String, requiresToken: Bool = true, isJob : Bool = false,  it: Int = 0,
+                    callback: @escaping (_ json: Any)-> Void) {
         var url = HOST_URL+path
         if(requiresToken){
             url += "?token=\(token)"
@@ -174,6 +198,14 @@ class KinkedInAPI {
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let JSON = response.result.value as? [String:Any] {
+                                if(isJob && it < 20){
+                                    let complete = JSON["complete"] as! Bool
+                                    if !complete {
+                                        delete(path, requiresToken: requiresToken, isJob: isJob, it:it+1, callback: callback)
+                                    } else {
+                                        callback(JSON["result"])
+                                    }
+                                }
                                 callback(JSON)
                             } else {
                                 print("DEL \(url)")
@@ -192,49 +224,38 @@ class KinkedInAPI {
     
     static func genders(_ callback:@escaping(_ results:[String])->Void ) {
         
-        get("list/genders", requiresToken: false){ json in
-            let job = Woz(json){ result in
-                if let list = result as? [String] {
-                    callback(list)
-                }
+        get("list/genders", requiresToken: false, isJob: true){ json in
+            if let list = json as? [String] {
+                callback(list)
             }
-
-            job.run(requiresToken: false)
         }
     }
 
     static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
         
         print("fetching \(form) kinks")
-        get("kinks/\(form)", requiresToken: false){ json in
-            let job = Woz(json, callback: { result in
-                if let list = result as? [Any] {
-                    let kinks = Kink.parseJsonList(list)
-                    callback(kinks)
-                }
-            })
-            
-
-            job.run(requiresToken: false)
+        get("kinks/\(form)", requiresToken: false, isJob: true){ json in
+            if let list = json as? [Any] {
+                let kinks = Kink.parseJsonList(list)
+                callback(kinks)
+            }
         }
     }
     
     static func roles(_ callback:@escaping(_ results:[String])->Void ) {
         
-        get("list/roles", requiresToken: false){ json in
-            let job = Woz(json){ result in
-                if let list = result as? [String] {
-                    callback(list)
-                }
+        get("list/roles", requiresToken: false, isJob: true){ json in
+            if let list = json as? [String] {
+                callback(list)
             }
-            
-            job.run(requiresToken: false)
         }
         
     }
     
     static func experienceLevels(_ callback:@escaping(_ results:[String])->Void) {
-        get("exp", requiresToken: false){ json in
+        get("exp", requiresToken: false){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             if let names = json["exp_names"] as? [String] {
                 callback(names)
             }
@@ -242,7 +263,9 @@ class KinkedInAPI {
     }
     
     static func bioPrompts(_ callback:@escaping(_ results:[String])->Void) {
-        get("prompts", requiresToken: false){ json in
+        get("prompts", requiresToken: false){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             if let titles = json["prompts"] as? [String] {
                 callback(titles)
             }
@@ -250,8 +273,9 @@ class KinkedInAPI {
     }
     
     static func cities(_ callback:@escaping(_ results:[City])->Void) {
-        get("cities", requiresToken: false){json in
+        get("cities", requiresToken: false){_json in
             var cities = [City]()
+            guard let json = _json as? [String:Any] else { return }
             if let arr = json["results"] as? [[String:Any]] {
                 for e in arr {
                     if let code = e["code"] as? String,
@@ -271,7 +295,8 @@ class KinkedInAPI {
             "password": password
         ]
         
-        post("login", parameters: params, requiresToken: false){ json in
+        post("login", parameters: params, requiresToken: false){ _json in
+            guard let json = _json as? [String:Any] else { return }
             if let token = json["token"] as? String {
                 KeychainWrapper.standard.set(token, forKey: "kiToken")
                 self.setToken(token)
@@ -294,23 +319,22 @@ class KinkedInAPI {
             "password": password,
             "invite_code": inviteCode
         ]
-        post("register", parameters: params, requiresToken: false){ json in
-            let job = Woz(json){ result in
-                if let token = result as? String {
-                    KeychainWrapper.standard.set(token, forKey: "kiToken")
-                    self.setToken(token)
-                    callback(true)
-                } else {
-                    callback(false)
-                }
+        post("register", parameters: params, requiresToken: false, isJob: true){ json in
+
+            if let token = json as? String {
+                KeychainWrapper.standard.set(token, forKey: "kiToken")
+                self.setToken(token)
+                callback(true)
+            } else {
+                callback(false)
             }
-            job.run(requiresToken: false)
             
         }
     }
     
     static func listProfiles(callback: @escaping(_ profiles: [Profile])->Void ){
-        get("discover/profiles"){ json in
+        get("discover/profiles"){ _json in
+            guard let json = _json as? [String:Any] else { return }
             if let simple_profiles = json["result"] as? [Any] {
                 var profiles = [Profile]()
                 for pro in simple_profiles {
@@ -324,44 +348,32 @@ class KinkedInAPI {
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
-        get("profile/\(uuid)"){ json in
-            let job = Woz(json){ result in
-                if let user = Profile(uuid, json: result as! [String:Any]) {
-                    callback(user)
-                } else {
-                    print("error in parsing profile")
-                }
+        get("profile/\(uuid)", isJob: true){ json in
+
+            if let user = Profile(uuid, json: json as! [String:Any]) {
+                callback(user)
+            } else {
+                print("error in parsing profile")
             }
-            job.run(requiresToken: true)
         }
     }
     
     static func likeProfile(_ uuid: String,callback: @escaping(_ reciprocal: Bool,
         _ match_limit: Int, _ matches_today: Int)->Void ){
         let params : Parameters = [ "likes": true ]
-        post("profile/\(uuid)", parameters: params){ json in
-            let job = Woz(json){ result in
-                //TODO respond to this api endpoint. If requited, expect additional data.
-                /*
-                 {
-                 "is_still_free" = 1;
-                 "match_limit" = 7;
-                 "matches_today" = 2;
-                 requited = 1;
-                 }
-                */
-                guard let res = result as? [String: Any] else {
-                    return
-                }
-                
-                let requited = res["requited"] as? Bool ?? false
-                let match_limit = res["match_limit"] as? Int ?? UD_MATCH_LIMIT_VALUE
-                let matches_today = res["matches_today"] as? Int ?? UD_MATCHES_TODAY_VALUE
-                if requited {
-                    callback(requited, match_limit, matches_today)
-                }
+        post("profile/\(uuid)", parameters: params, isJob: true){ json in
+
+            guard let res = json as? [String: Any] else {
+                return
             }
-            job.run(requiresToken: true)
+            
+            let requited = res["requited"] as? Bool ?? false
+            let match_limit = res["match_limit"] as? Int ?? UD_MATCH_LIMIT_VALUE
+            let matches_today = res["matches_today"] as? Int ?? UD_MATCHES_TODAY_VALUE
+            if requited {
+                callback(requited, match_limit, matches_today)
+            }
+
         }
     }
     
@@ -373,7 +385,9 @@ class KinkedInAPI {
     }
     
     static func checkProfileSetup(callback: @escaping(_ step: Int)->Void ){
-        get("self/check_setup"){ json in
+        get("self/check_setup"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             let step = json["step"] as? Int ?? 0
             callback(step)
         }
@@ -381,22 +395,20 @@ class KinkedInAPI {
     
     
     static func myself(_ callback: @escaping(_ profile: Profile)->Void){
-        get("self/profile"){ json in
-            let job = Woz(json){ result in
-                guard let pro = result as? [String: Any] else {
-                    return
-                }
-                let profile = Profile.parseSelf(pro)
-                profile.is_myself = true
-                callback(profile)
+        get("self/profile", isJob: true){ json in
+            guard let pro = json as? [String: Any] else {
+                return
             }
-            job.run(requiresToken: true)
+            let profile = Profile.parseSelf(pro)
+            profile.is_myself = true
+            callback(profile)
         }
     }
     
     
     static func updateProfile(_ body: [String: Any], callback: ((_ json: [String: Any]) -> Void)? = nil) {
-        put("self/profile", parameters: body){ json in
+        put("self/profile", parameters: body){ _json in
+            guard let json = _json as? [String:Any] else { return }
             callback?(json)
         }
     
@@ -409,40 +421,40 @@ class KinkedInAPI {
     }
     
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
-        get("self/connections"){ json in
-            let job = Woz(json){ result in
-                var profiles = [Profile]()
-                guard let reciprocals = result as? [Any] else {
-                    print("failed to cast list")
-                    return
-                }
-                
-                for r in reciprocals {
-                    guard let rc = r as? [String:Any] else {
-                        print("can't get json object")
-                        continue
-                    }
-                    guard let name = rc["name"] as? String,
-                        let uuid = rc["uuid"] as? String,
-                        let image_id = rc["image_id"] as? String else {
-                            print("can't get profile values")
-                            continue
-                    }
-                    profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
-                    
-                }
-                
-                callback(profiles)
+        get("self/connections", isJob: true){ json in
 
+            var profiles = [Profile]()
+            guard let reciprocals = json as? [Any] else {
+                print("failed to cast list")
+                return
             }
-            job.run(requiresToken: true)
+            
+            for r in reciprocals {
+                guard let rc = r as? [String:Any] else {
+                    print("can't get json object")
+                    continue
+                }
+                guard let name = rc["name"] as? String,
+                    let uuid = rc["uuid"] as? String,
+                    let image_id = rc["image_id"] as? String else {
+                        print("can't get profile values")
+                        continue
+                }
+                profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+                
+            }
+            
+            callback(profiles)
             
         }
     }
     
     static func partnerRequests(callback: @escaping(_ prs: [PartnerRequest]) ->Void){
-        get("self/partner_requests"){ json in
+        get("self/partner_requests"){ _json in
             var prequests : [PartnerRequest] = []
+            
+            guard let json = _json as? [String:Any] else { return }
+            
             if let list = json["partner_requests"] as? [Any] {
                 for jpr in list {
                     if let req = PartnerRequest(json: (jpr as? [String:Any])!) {
@@ -463,7 +475,9 @@ class KinkedInAPI {
     }
     
     static func addPartner(_ email: String, callback: @escaping(_ partnerFound: Bool)->Void){
-        get("self/find_user?email=\(email)"){ json in
+        get("self/find_user?email=\(email)"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             if let partnerId = json["partner_uuid"] as? String {
                 callback(true)
                 makePartnerRequest(partnerId: partnerId)
@@ -490,7 +504,9 @@ class KinkedInAPI {
     }
     
     static func messageLogin(_ nonce: String, callback: @escaping(_ identity_token: String)->Void){
-        get("self/message_key/\(nonce)"){ json in
+        get("self/message_key/\(nonce)"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             if let token = json["identity_token"] as? String{
                 callback(token)
             }
@@ -498,27 +514,25 @@ class KinkedInAPI {
     }
     
     static func partners(callback: @escaping(_ users: [Profile]) -> Void){
-        get("self/partners"){ json in
-            let job = Woz(json){ result in
-                if let resArray = result as? [Any] {
-                    var users: [Profile] = []
-                    for usr in resArray {
-                        if let pj = usr as? [String:Any] {
-                            guard let name = pj["name"] as? String,
-                                let uuid = pj["uuid"] as? String,
-                                let image_id = pj["image_id"] as? String else {
-                                    print("can't get profile values")
-                                    continue
-                            }
-                            users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+        get("self/partners", isJob: true){ json in
+
+            if let resArray = json as? [Any] {
+                var users: [Profile] = []
+                for usr in resArray {
+                    if let pj = usr as? [String:Any] {
+                        guard let name = pj["name"] as? String,
+                            let uuid = pj["uuid"] as? String,
+                            let image_id = pj["image_id"] as? String else {
+                                print("can't get profile values")
+                                continue
                         }
-                        
+                        users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                     }
-                    callback(users)
+                    
                 }
-                
+                callback(users)
             }
-            job.run(requiresToken: true)
+            
         }
     }
     
@@ -535,23 +549,21 @@ class KinkedInAPI {
     }
     
     static func blockedUsers(_ callback: @escaping(_ profiles: [Profile])-> Void){
-        get("self/blocks"){ json in
-            let job = Woz(json) { result in
-                if let resArray = result as? [[String:Any]] {
-                    var users: [Profile] = []
-                    for e in resArray {
-                        guard let name = e["name"] as? String,
-                            let uuid = e["uuid"] as? String,
-                            let image_id = e["image_id"] as? String else {
-                                print("can't get profile values")
-                                continue
-                        }
-                        users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+        get("self/blocks", isJob: true){ json in
+
+            if let resArray = json as? [[String:Any]] {
+                var users: [Profile] = []
+                for e in resArray {
+                    guard let name = e["name"] as? String,
+                        let uuid = e["uuid"] as? String,
+                        let image_id = e["image_id"] as? String else {
+                            print("can't get profile values")
+                            continue
                     }
-                    callback(users)
+                    users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
                 }
+                callback(users)
             }
-            job.run(requiresToken: true)
         }
     }
     
@@ -568,9 +580,9 @@ class KinkedInAPI {
     }
     
     static func dailyLimits(_ callback: @escaping(_ limit: Int, _ matchesToday: Int) -> Void){
-        print("VEX dailyLimits")
-        get("self/daily/limits"){ json in
-            print(json)
+        get("self/daily/limits"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             if let matchLimit = json["match_limit"] as? Int,
             let matchesToday = json["matches_today"] as? Int {
                 print("VEX self/daily/limits -> \(matchesToday)/\(matchLimit)")
@@ -580,7 +592,9 @@ class KinkedInAPI {
     }
     
     static func dailyMatches(callback: @escaping(_ profiles: [Profile])-> Void) {
-        get("self/daily/matches"){ json in
+        get("self/daily/matches"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             var profiles = [Profile]()
             guard let reciprocals = json["matches"] as? [Any] else {
                 print("failed to cast list")
@@ -607,7 +621,9 @@ class KinkedInAPI {
     }
     
     static func loadProps(props: [String], callback: @escaping(_ json: [String:Any]) -> Void) {
-        get("self/load?props=\(props.joined(separator: ","))"){ json in
+        get("self/load?props=\(props.joined(separator: ","))"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            
             callback(json)
         }
     }

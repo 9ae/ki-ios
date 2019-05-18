@@ -74,7 +74,10 @@ class CloudNine {
     
     func startUpload(){
 
-        KinkedInAPI.get("self/picture", callback: self.performUpload)
+        KinkedInAPI.get("self/picture"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            self.performUpload(json: json)
+        }
     }
     
     private func completionHandler(_ response: CLDUploadResult?, _ error: NSError?){
