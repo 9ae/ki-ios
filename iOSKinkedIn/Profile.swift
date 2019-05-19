@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct BioPrompt {
+struct BioPrompt : Codable {
     
     var title: String
     var answer: String?
@@ -24,7 +24,7 @@ struct BioPrompt {
     
 }
 
-struct PreferenceFilters {
+struct PreferenceFilters : Codable {
     
     var minAge: Int
     var maxAge: Int
@@ -33,12 +33,12 @@ struct PreferenceFilters {
 
 }
 
-struct City {
+struct City : Codable {
     var code: String
     var label: String
 }
 
-class Profile {
+class Profile  : Codable {
     var uuid: String
     var name: String
     var age: Int

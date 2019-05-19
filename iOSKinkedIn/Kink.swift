@@ -10,7 +10,7 @@ import Foundation
 
 let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
 
-class Kink {
+class Kink : Codable {
     var label: String
     var code: String
     
@@ -20,6 +20,16 @@ class Kink {
     var likesGive = false
     var likesGet = false
     var likesBoth = false
+    
+    init(label: String, code: String, form: KinkForm, exp: Int, likesGive: Bool, likesGet: Bool, likesBoth: Bool){
+        self.label = label
+        self.code = code
+        self.form = form
+        self.exp = exp
+        self.likesGet = likesGet
+        self.likesGive = likesGive
+        self.likesBoth = likesBoth
+    }
 
 
     init?(_ json: [String:Any]){
@@ -87,7 +97,7 @@ class Kink {
     }
 }
 
-enum KinkForm: String {
+enum KinkForm: String, Codable {
     case service = "SERVICE"
     case wearable = "WEARABLE"
     case act = "ACT"

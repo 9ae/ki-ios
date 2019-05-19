@@ -8,85 +8,25 @@
 
 import Foundation
 import Alamofire
+import Cache
 
 enum ProfileAction: Int {
     case hide=0, skip, like
 }
-/*
-enum WozMethod : Int {
-    case get, post, put, delete
-}
 
-class Woz {
-    var url: String
-    var method : WozMethod
-    var complete: Bool
-    var result: Any?
-    
-    private var its = 0
-    private var timer: Timer?
-    private var requiresToken = true
-    
-    private var completeCallback: ((Any?) -> Void)?
-    
-    init(_ json:[String: Any], url: String, method: WozMethod, callback: @escaping (Any?) -> Void){
-        self.url = url;
-        
-        if let _complete = json["complete"] as? Bool {
-            self.complete = _complete
-        } else {
-            self.complete = false
-        }
-        self.result = json["result"]
-        self.completeCallback = callback
-    }
-
-    
-    func run(requiresToken: Bool){
-        if(self.complete){
-            doFinale()
-        }
-        else {
-            self.requiresToken = requiresToken
-            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(self.checkJob), userInfo: nil, repeats: true)
-        }
-    }
-    
-    private func responder(json: [String: Any]){
-        self.complete = (json["complete"] as? Bool) ?? false
-        if(self.complete){
-            self.timer?.invalidate()
-            self.result = json["result"]
-
-            self.completeCallback?(self.result)
-
-            print("job completes after \(its) iterations")
-        }
-    }
-    
-    @objc
-    func checkJob(){
-        if(its > 30){
-            self.timer?.invalidate()
-        }
- 
-        let path = (requiresToken ? "self/" : "" ) + "job/\(self.id)"
-        KinkedInAPI.get(path, requiresToken: requiresToken, callback: self.responder)
-        
-        its += 1
-    }
-    
-    func doFinale(){
-        self.completeCallback?(self.result)
-    }
-    
-}
-*/
 class KinkedInAPI {
     
     static var token: String = ""
     static var deviceToken: Data?
     static let HOST_URL = Bundle.main.infoDictionary!["KI_API"] as! String
+    
+    static let ds = try! Storage(
+        diskConfig: DiskConfig(name: "KiCache"),
+        memoryConfig: MemoryConfig(),
+        transformer: TransformerFactory.forData()
+    )
+    static let profileCache = ds.transformCodable(ofType: Profile.self)
+
     
     static let MAX_ITERATIONS = 20
     static let TIMER_DELAY = 2.0
@@ -362,13 +302,22 @@ class KinkedInAPI {
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
-        get("profile/\(uuid)", isJob: true){ json in
-
-            if let user = Profile(uuid, json: json as! [String:Any]) {
-                callback(user)
-            } else {
-                print("error in parsing profile")
+        do {
+            let cachedProfile = try profileCache.object(forKey: uuid)
+            print("YY found profile \(uuid) from cache")
+            callback(cachedProfile)
+        } catch {
+            print("YY not found \(uuid) in cache")
+            get("profile/\(uuid)", isJob: true){ json in
+                
+                if let user = Profile(uuid, json: json as! [String:Any]) {
+                    try? profileCache.setObject(user, forKey: uuid)
+                    callback(user)
+                } else {
+                    print("error in parsing profile")
+                }
             }
+            
         }
     }
     
@@ -409,18 +358,25 @@ class KinkedInAPI {
     
     
     static func myself(_ callback: @escaping(_ profile: Profile)->Void){
-        get("self/profile", isJob: true){ json in
-            guard let pro = json as? [String: Any] else {
-                return
+        do {
+            let cachedProfile = try profileCache.object(forKey: "myself")
+            callback(cachedProfile)
+        } catch {
+            get("self/profile", isJob: true){ json in
+                guard let pro = json as? [String: Any] else {
+                    return
+                }
+                let profile = Profile.parseSelf(pro)
+                profile.is_myself = true
+                try? profileCache.setObject(profile, forKey: "myself")
+                callback(profile)
             }
-            let profile = Profile.parseSelf(pro)
-            profile.is_myself = true
-            callback(profile)
         }
     }
     
     
     static func updateProfile(_ body: [String: Any], callback: ((_ json: [String: Any]) -> Void)? = nil) {
+        try? profileCache.removeObject(forKey: "myself")
         put("self/profile", parameters: body){ _json in
             guard let json = _json as? [String:Any] else { return }
             callback?(json)
