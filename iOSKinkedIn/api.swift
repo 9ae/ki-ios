@@ -88,6 +88,9 @@ class KinkedInAPI {
     static var deviceToken: Data?
     static let HOST_URL = Bundle.main.infoDictionary!["KI_API"] as! String
     
+    static let MAX_ITERATIONS = 20
+    static let TIMER_DELAY = 2.0
+    
     static func setToken(_ t: String){
         token = t
         
@@ -109,19 +112,21 @@ class KinkedInAPI {
             }
             
         }
-        print("XX GET \(url)")
+        print("XX GET [\(it)] \(url)")
         Alamofire.request(url).responseJSON { response in
             
             if let JSON = response.result.value as? [String:Any] {
-                if(isJob && it < 20){
+                if(isJob && it < MAX_ITERATIONS){
                     let complete = JSON["complete"] as! Bool
                     if !complete {
-                        get(path, requiresToken: requiresToken, isJob: isJob, it: it + 1, callback: callback)
+                        DispatchQueue.main.asyncAfter(deadline: .now() + TIMER_DELAY, execute: {
+                            get(path, requiresToken: requiresToken, isJob: isJob, it: it + 1, callback: callback)
+                        })
                     } else {
                         callback(JSON["result"])
                     }
                 }
-                callback(JSON)
+                else  { callback(JSON) }
             } else {
                 print("error parsing json")
             }
@@ -135,22 +140,25 @@ class KinkedInAPI {
         if(requiresToken){
             params["token"] = token
         }
-        print("XX POST \(url)")
+        print("XX POST [\(it)] \(url)")
         Alamofire.request(url,
             method: .post,
             parameters: params,
             encoding: JSONEncoding.default).responseJSON { response in
                 
                 if let JSON = response.result.value as? [String:Any] {
-                    if(isJob && it < 20){
+                    if(isJob && it < MAX_ITERATIONS){
                         let complete = JSON["complete"] as! Bool
                         if !complete {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + TIMER_DELAY, execute: {
                             post(path, parameters: parameters, requiresToken: requiresToken, isJob: isJob, it: it+1, callback: callback)
+                            })
+                            
                         } else {
                             callback(JSON["result"])
                         }
                     }
-                    callback(JSON)
+                    else { callback(JSON) }
                 } else {
                     print("error parsing json")
                 }
@@ -164,22 +172,25 @@ class KinkedInAPI {
         if(requiresToken){
             params["token"] = token
         }
-        print("XX PUT \(url)")
+        print("XX PUT [\(it)] \(url)")
         Alamofire.request(url,
                           method: .put,
                           parameters: params,
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let JSON = response.result.value as? [String:Any] {
-                                if(isJob && it < 20){
+                                if(isJob && it < MAX_ITERATIONS){
                                     let complete = JSON["complete"] as! Bool
                                     if !complete {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + TIMER_DELAY, execute: {
                                         put(path, parameters: parameters, requiresToken: requiresToken, isJob: isJob, it: it+1, callback: callback)
+                                        })
+                                        
                                     } else {
                                         callback(JSON["result"])
                                     }
                                 }
-                                callback(JSON)
+                                else { callback(JSON) }
                             } else {
                                 print("PUT \(url)")
                                 print("error parsing json")
@@ -198,15 +209,18 @@ class KinkedInAPI {
                           encoding: JSONEncoding.default).responseJSON { response in
                             
                             if let JSON = response.result.value as? [String:Any] {
-                                if(isJob && it < 20){
+                                if(isJob && it < MAX_ITERATIONS){
                                     let complete = JSON["complete"] as! Bool
                                     if !complete {
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + TIMER_DELAY, execute: {
                                         delete(path, requiresToken: requiresToken, isJob: isJob, it:it+1, callback: callback)
+                                        })
+                                        
                                     } else {
                                         callback(JSON["result"])
                                     }
                                 }
-                                callback(JSON)
+                                else { callback(JSON) }
                             } else {
                                 print("DEL \(url)")
                                 print("error parsing json")
