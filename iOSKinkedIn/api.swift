@@ -262,6 +262,7 @@ class KinkedInAPI {
     }
     
     static func logout(){
+        try? profileCache.removeAll()
         get("logout", requiresToken: true){ json in
             print(json)
         }
