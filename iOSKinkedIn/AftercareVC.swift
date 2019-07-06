@@ -146,7 +146,7 @@ class AftercareVC: UIViewController {
                 }
                 
                 if (an.firstItem?.isEqual(composeBar))!
-                    && an.firstAttribute == NSLayoutAttribute.height {
+                    && an.firstAttribute == NSLayoutConstraint.Attribute.height {
                     print("LOG found composeBar height")
                     composeBarHeightConstraint = an
                 }

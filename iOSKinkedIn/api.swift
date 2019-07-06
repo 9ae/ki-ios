@@ -93,12 +93,16 @@ class KinkedInAPI {
                             DispatchQueue.main.asyncAfter(deadline: .now() + TIMER_DELAY, execute: {
                             post(path, parameters: parameters, requiresToken: requiresToken, isJob: isJob, it: it+1, callback: callback)
                             })
-                            
+                            print("check again")
                         } else {
+                            print("job complete")
                             callback(JSON["result"])
                         }
                     }
-                    else { callback(JSON) }
+                    else {
+                        print("not a job")
+                        callback(JSON)
+                    }
                 } else {
                     print("error parsing json")
                 }
@@ -132,7 +136,6 @@ class KinkedInAPI {
                                 }
                                 else { callback(JSON) }
                             } else {
-                                print("PUT \(url)")
                                 print("error parsing json")
                             }
         }
@@ -275,12 +278,13 @@ class KinkedInAPI {
             "invite_code": inviteCode
         ]
         post("register", parameters: params, requiresToken: false, isJob: true){ json in
-
             if let token = json as? String {
                 KeychainWrapper.standard.set(token, forKey: "kiToken")
                 self.setToken(token)
+                print("set token \(token)")
                 callback(true)
             } else {
+                print("fail to parse token")
                 callback(false)
             }
             

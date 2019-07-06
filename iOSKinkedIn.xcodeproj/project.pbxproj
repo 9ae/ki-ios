@@ -15,8 +15,6 @@
 		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
 		00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A2B1E56384500640B09 /* LaunchScreen.storyboard */; };
-		00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A371E56384500640B09 /* iOSKinkedInTests.swift */; };
-		00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A421E56384500640B09 /* iOSKinkedInUITests.swift */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
@@ -122,11 +120,7 @@
 		00171A2C1E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00171A2E1E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A331E56384500640B09 /* iOSKinkedInTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKinkedInTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00171A371E56384500640B09 /* iOSKinkedInTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKinkedInTests.swift; sourceTree = "<group>"; };
-		00171A391E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A3E1E56384500640B09 /* iOSKinkedInUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSKinkedInUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		00171A421E56384500640B09 /* iOSKinkedInUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSKinkedInUITests.swift; sourceTree = "<group>"; };
-		00171A441E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
@@ -227,8 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				00171A211E56384500640B09 /* iOSKinkedIn */,
-				00171A361E56384500640B09 /* iOSKinkedInTests */,
-				00171A411E56384500640B09 /* iOSKinkedInUITests */,
 				00171A201E56384500640B09 /* Products */,
 				C9F9B480E8B7B337663DEAC1 /* Pods */,
 				7AC956CB442517C3531FD70B /* Frameworks */,
@@ -265,24 +257,6 @@
 				000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */,
 			);
 			path = iOSKinkedIn;
-			sourceTree = "<group>";
-		};
-		00171A361E56384500640B09 /* iOSKinkedInTests */ = {
-			isa = PBXGroup;
-			children = (
-				00171A371E56384500640B09 /* iOSKinkedInTests.swift */,
-				00171A391E56384500640B09 /* Info.plist */,
-			);
-			path = iOSKinkedInTests;
-			sourceTree = "<group>";
-		};
-		00171A411E56384500640B09 /* iOSKinkedInUITests */ = {
-			isa = PBXGroup;
-			children = (
-				00171A421E56384500640B09 /* iOSKinkedInUITests.swift */,
-				00171A441E56384500640B09 /* Info.plist */,
-			);
-			path = iOSKinkedInUITests;
 			sourceTree = "<group>";
 		};
 		00171A501E56461900640B09 /* providers */ = {
@@ -624,7 +598,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1257e2151f430516480031b723133bc75baaa64f 9faedfe048aa644ee7e7d9d26ec8c7db431a6938f528e676dac15840d1ac11ac";
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 1257e2151f430516480031b723133bc75baaa64f 9faedfe048aa644ee7e7d9d26ec8c7db431a6938f528e676dac15840d1ac11ac\n";
 		};
 		02B6A1802380E47EB9DFB715 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -799,7 +773,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00171A381E56384500640B09 /* iOSKinkedInTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,7 +780,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00171A431E56384500640B09 /* iOSKinkedInUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -962,7 +934,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -983,14 +955,14 @@
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
-				KI_API = "https://ki-mistress.herokuapp.com/";
+				KI_API = "https://api-mistress.kinkedin.app/";
 				LAYER_APP = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

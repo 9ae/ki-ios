@@ -41,10 +41,10 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     func prepareImagePicker(){
-        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerController.SourceType.photoLibrary) {
             let imagePicker = UIImagePickerController()
             imagePicker.delegate = self
-            imagePicker.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+            imagePicker.sourceType = UIImagePickerController.SourceType.photoLibrary;
             imagePicker.allowsEditing = false
             self.present(imagePicker, animated: false, completion: nil)
         }
@@ -64,7 +64,7 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     }
     
     func uploadImage(){
-        if let image = self.defaultPicture.image, let data = UIImageJPEGRepresentation(image, 1.0){
+        if let image = self.defaultPicture.image, let data = image.jpegData(compressionQuality: 1.0) {
             print("Converted image to data of width:\(image.size.width)")
             let cloud = CloudNine(data)
             cloud.completionHandler = { imageUrl in

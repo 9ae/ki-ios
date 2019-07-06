@@ -13,7 +13,7 @@ extension UITableView {
         guard let cell = self.dequeueReusableCell(withIdentifier: cellId)
         else {
             return UITableViewCell(
-                style: UITableViewCellStyle.default,
+                style: UITableViewCell.CellStyle.default,
                 reuseIdentifier: cellId)
         }
         return cell
@@ -23,19 +23,19 @@ extension UITableView {
 
 extension UIViewController {
     func addTopSpace(){
-        self.view.layoutMargins = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.view.layoutMargins = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
     }
 }
 
 extension UITableViewController {
     override func addTopSpace(){
-        self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.tableView.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
     }
 }
 
 extension UICollectionViewController {
     override func addTopSpace() {
-        self.collectionView?.contentInset = UIEdgeInsetsMake(40, 0, 0, 0)
+        self.collectionView?.contentInset = UIEdgeInsets(top: 40, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -46,7 +46,7 @@ func emptyList(
     action: ((UIAlertAction) -> Swift.Void)? ) -> UIAlertController {
     let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)
     let ok = UIAlertAction(
-        title: actionLabel, style: UIAlertActionStyle.default, handler: action)
+        title: actionLabel, style: UIAlertAction.Style.default, handler: action)
     let cancel = UIAlertAction(title: "Not Now", style: .cancel)
     alert.addAction(cancel)
     alert.addAction(ok)

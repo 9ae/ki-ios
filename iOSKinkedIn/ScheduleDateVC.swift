@@ -74,7 +74,7 @@ class ScheduleDateVC: UIViewController {
         let content = UNMutableNotificationContent()
         content.title = "KinkedIn Aftercare"
         content.body = "How was are you feeling about your date with \(withUser!.name)?"
-        content.sound = .default()
+        content.sound = .default
         content.categoryIdentifier = NOTECAT_AFTERCARE
         content.userInfo = [
             "meeting_dt": date,
@@ -88,7 +88,7 @@ class ScheduleDateVC: UIViewController {
         let content = UNMutableNotificationContent()
         content.title = "You've got a date!"
         content.body = "You are meeting with \(withUser!.name) in 2 hours."
-        content.sound = .default()
+        content.sound = .default
         content.categoryIdentifier = NOTECAT_DATE_REMINDER
         registerNotification(scheduleDT, content: content)
     }

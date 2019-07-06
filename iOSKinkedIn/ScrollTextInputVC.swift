@@ -18,10 +18,10 @@ class ScrollTextInputVC: UIViewController, UITextFieldDelegate {
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWasShown),
-                                               name: NSNotification.Name.UIKeyboardDidShow, object: nil)
+                                               name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillBeHidden),
-                                               name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,19 +38,19 @@ class ScrollTextInputVC: UIViewController, UITextFieldDelegate {
         focusedField = textField
     }
     
-    func keyboardWasShown(_ notification: NSNotification) {
+    @objc func keyboardWasShown(_ notification: NSNotification) {
         print("keyboard is shown")
         guard let info = notification.userInfo else {
             print("no user info")
             return
         }
-        guard let keyboardRect = info[UIKeyboardFrameBeginUserInfoKey] as? CGRect else {
+        guard let keyboardRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else {
             print("failed to cast as CGRect")
             return
         }
         
         let keyboardSize = keyboardRect.size
-        let contentInsets = UIEdgeInsetsMake(0.0, 0.0, keyboardSize.height, 0.0);
+        let contentInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: keyboardSize.height, right: 0.0);
         scrollView.contentInset = contentInsets;
         scrollView.scrollIndicatorInsets = contentInsets;
         

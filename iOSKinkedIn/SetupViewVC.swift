@@ -11,8 +11,8 @@ import UIKit
 class SetupViewVC: UIViewController {
     
     func alert(_ msg: String, title: String){
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.alert)
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default,handler: nil))
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
         self.present(alertController, animated:false)
     }
     

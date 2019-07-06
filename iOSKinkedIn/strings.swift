@@ -13,7 +13,7 @@ func joinIds(_ ids: [Int]) -> String {
 }
 
 func splitIds(_ str: String) -> [Int] {
-    return str.characters.split(separator: ",")
+    return str.split(separator: ",")
         .map(String.init)
         .map{ (c) -> Int in return Int(c, radix: 10)! }
     
@@ -24,7 +24,7 @@ func joinStrings(_ strings: [String]) -> String {
 }
 
 func splitStrings(_ str: String) -> [String] {
-    return str.characters.split(separator: ",").map(String.init)
+    return str.split(separator: ",").map(String.init)
 }
 
 func shortJoin(_ strings: [String]) -> String {

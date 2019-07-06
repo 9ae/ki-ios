@@ -23,31 +23,11 @@
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00171A321E56384500640B09"
-               BuildableName = "iOSKinkedInTests.xctest"
-               BlueprintName = "iOSKinkedInTests"
-               ReferencedContainer = "container:iOSKinkedIn.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "00171A3D1E56384500640B09"
-               BuildableName = "iOSKinkedInUITests.xctest"
-               BlueprintName = "iOSKinkedInUITests"
-               ReferencedContainer = "container:iOSKinkedIn.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

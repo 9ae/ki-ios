@@ -21,11 +21,11 @@ class VouchIntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goButton.setTitle("Yes, I feel qualified to vouch for \(subjectName!)?", for: UIControlState.normal)
+        goButton.setTitle("Yes, I feel qualified to vouch for \(subjectName!)?", for: UIControl.State.normal)
         
         let catchWording = "Your feedback will not negatively affect \(subjectName!)'s reputation, but if you need to talk to someone about your experience with \(subjectName!), you can do that <a>here.</a>"
         
-        let a = Style("a", style: Style.foregroundColor(Color.blue)).underlineStyle(NSUnderlineStyle.styleSingle)
+        let a = Style("a", style: Style.foregroundColor(Color.blue)).underlineStyle(NSUnderlineStyle.single)
         let catchStyles = catchWording.style(tags: [a])
         
         catchText.attributedText = catchStyles.attributedString
