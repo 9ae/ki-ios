@@ -19,8 +19,6 @@ class LoginVC: ScrollTextInputVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "splash3"))
-        
         fieldEmail.delegate = self
         fieldPassword.delegate = self
         

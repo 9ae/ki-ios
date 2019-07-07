@@ -24,8 +24,6 @@ class RegisterVC: ScrollTextInputVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: #imageLiteral(resourceName: "splash2"))
-        
         email?.delegate = self
         password?.delegate = self
         inviteCode?.delegate = self

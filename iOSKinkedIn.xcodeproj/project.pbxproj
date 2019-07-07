@@ -23,6 +23,9 @@
 		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
 		0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */; };
 		0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */; };
+		002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002879C722D162BF00DE9E64 /* AuthVC.swift */; };
+		002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002879C922D170D500DE9E64 /* KiStyles.swift */; };
+		002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */; };
 		0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */; };
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
@@ -129,6 +132,9 @@
 		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
 		0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
+		002879C722D162BF00DE9E64 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
+		002879C922D170D500DE9E64 /* KiStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiStyles.swift; sourceTree = "<group>"; };
+		002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiSegmentControl.swift; sourceTree = "<group>"; };
 		0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserListVC.swift; sourceTree = "<group>"; };
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
@@ -343,6 +349,7 @@
 				00FD157F1F6D610A00357860 /* Auth.storyboard */,
 				00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */,
 				006B263A1E67C3DE002DC302 /* RegisterVC.swift */,
+				002879C722D162BF00DE9E64 /* AuthVC.swift */,
 			);
 			name = Auth;
 			sourceTree = "<group>";
@@ -372,6 +379,8 @@
 				001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */,
 				00CA86161F06DCF200ED281A /* RoundButton.swift */,
 				0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */,
+				002879C922D170D500DE9E64 /* KiStyles.swift */,
+				002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -717,6 +726,8 @@
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
+				002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */,
+				002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
 				0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */,
@@ -757,6 +768,7 @@
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				006A808A213C8F70006F6354 /* AftercareVC.swift in Sources */,
+				002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
