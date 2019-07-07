@@ -472,6 +472,14 @@ class KinkedInAPI {
         
     }
     
+    static func unPartner(_ uuid: String){
+        let route = "self/partners/\(uuid)"
+        delete(route){ json in
+            print("delete parnter")
+            print(json)
+        }
+    }
+    
     static func vouch(_ userId: String, answers: [String: Any]){
         post("self/vouch/\(userId)", parameters: answers){ json in
             print(json)

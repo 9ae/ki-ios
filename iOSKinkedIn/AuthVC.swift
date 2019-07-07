@@ -12,8 +12,8 @@ class AuthVC: UIViewController {
     
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var container: UIView!
-    let underline = UIView()
     
+    let underline = UIView()
     var segmentItemWidth : CGFloat = 0.0
 
     override func viewDidLoad() {

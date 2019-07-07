@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NPD-dp-grv">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NPD-dp-grv">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IxQ-IA-2Kw">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="IxQ-IA-2Kw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
-                                    <rect key="frame" x="37.5" y="-14" width="300" height="29"/>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
+                                    <rect key="frame" x="37.5" y="4" width="300" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="pQ6-du-Fv8"/>
                                     </constraints>
@@ -36,28 +35,28 @@
                                     </segments>
                                 </segmentedControl>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTf-OO-i27">
-                                    <rect key="frame" x="351" y="-8" width="16" height="16"/>
+                                    <rect key="frame" x="351" y="8" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="Kxd-Zv-hVw"/>
                                         <constraint firstAttribute="height" constant="16" id="fGT-G1-hlb"/>
                                     </constraints>
+                                    <color key="tintColor" red="1" green="0.97755081460000004" blue="0.98390688820000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     <state key="normal" image="edit"/>
                                     <connections>
                                         <segue destination="3WK-cZ-7wW" kind="show" identifier="connects2partners" id="cp0-k8-ip8"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerX" secondItem="IxQ-IA-2Kw" secondAttribute="centerX" id="5Vw-lt-JWO"/>
-                                <constraint firstItem="5eA-Ud-ffh" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="6xD-tJ-8my"/>
                                 <constraint firstItem="XTf-OO-i27" firstAttribute="centerY" secondItem="IxQ-IA-2Kw" secondAttribute="centerY" id="htI-gw-qFQ"/>
                                 <constraint firstAttribute="trailing" secondItem="XTf-OO-i27" secondAttribute="trailing" constant="8" id="hxD-2I-2A8"/>
+                                <constraint firstAttribute="bottom" secondItem="5eA-Ud-ffh" secondAttribute="bottom" id="xG5-Dw-LEt"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="connectionCell" rowHeight="80" id="fOj-4Z-c4e" customClass="ConnectionCell" customModule="iOSKinkedIn" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="72" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="60" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="fOj-4Z-c4e" id="ZgT-H0-RVT">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
@@ -71,9 +70,9 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nl4-rn-xBi">
-                                            <rect key="frame" x="98" y="32" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <rect key="frame" x="98" y="25" width="71" height="36"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <color key="textColor" red="0.45453155589999999" green="0.2877587761" blue="0.60525470889999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -192,7 +191,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will check in with you 12 hours after your scheduled date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAP-2N-p0Z">
-                                        <rect key="frame" x="0.0" y="377.5" width="0.0" height="0.0"/>
+                                        <rect key="frame" x="16.5" y="377.5" width="342" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -267,16 +266,14 @@ Respected boundaries &amp; were open and honest in their communication</string>
                                 <string key="userLabel">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:  Respected boundaries &amp; were open and honest in their communication</string>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-LO-shQ">
-                                <rect key="frame" x="173" y="184.5" width="30" height="30"/>
+                                <rect key="frame" x="172.5" y="184.5" width="30" height="30"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
-                                    <segue destination="x6h-Zv-f1B" kind="show" id="qcN-Ro-nFt">
-                                        <nil key="action"/>
-                                    </segue>
+                                    <segue destination="x6h-Zv-f1B" kind="show" id="qcN-Ro-nFt"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGW-LI-KrL">
-                                <rect key="frame" x="16" y="224.5" width="343" height="15"/>
+                                <rect key="frame" x="16" y="224.5" width="343" height="14.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="catch statement">
                                         <attributes>

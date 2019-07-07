@@ -32,6 +32,9 @@ class ConnectionsVC: UITableViewController {
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var editPartners: UIButton!
     
+    let underline = UIView()
+    var segmentItemWidth : CGFloat = 0.0
+    
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
@@ -48,6 +51,22 @@ class ConnectionsVC: UITableViewController {
         loadReciprocals()
         
         segment.addTarget(self, action: #selector(segmentChanged), for: .valueChanged)
+        segment.backgroundColor = .clear
+        segment.tintColor = .clear
+        
+        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primaryFade], for: .normal)
+        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primary], for: .selected)
+        
+        underline.translatesAutoresizingMaskIntoConstraints = false
+        underline.backgroundColor = ThemeColors.primary
+        view.addSubview(underline)
+        underline.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: -3.0).isActive = true
+        underline.heightAnchor.constraint(equalToConstant: 3).isActive = true
+        underline.leftAnchor.constraint(equalTo: segment.leftAnchor).isActive = true
+        
+        segmentItemWidth = segment.frame.width / CGFloat(segment.numberOfSegments)
+        underline.widthAnchor.constraint(equalToConstant: segmentItemWidth ).isActive = true
+        underline.frame.origin.x = segment.frame.origin.x
     }
     
     func loadReciprocals(){
@@ -164,8 +183,7 @@ class ConnectionsVC: UITableViewController {
         
         if let cc = cell as? ConnectionCell, let p = self.profiles[segmentMode] {
             let profile = p.data[indexPath.row]
-            cc.name.text = profile.name
-            cc.setProfilePicture(profile.picture_public_id!)
+            cc.setData(profile)
         }
 
         return cell
@@ -183,6 +201,14 @@ class ConnectionsVC: UITableViewController {
     }
     
     @objc func segmentChanged(){
+        let x = segment.frame.origin.x + (segmentItemWidth * CGFloat(self.segment.selectedSegmentIndex))
+        
+        UIView.animate(withDuration: 0.2, animations: {
+            self.underline.frame.origin.x = x
+        }, completion: {ok in
+            self.underline.frame.origin.x = x
+        })
+        
         switch segment.selectedSegmentIndex {
         case 1:
             self.segmentMode = .partners
@@ -198,14 +224,92 @@ class ConnectionsVC: UITableViewController {
             break
         }
     }
+    
+    private func profileAt(_ index: Int) -> Profile? {
+        if let p = self.profiles[segmentMode] {
+            if p.isFetched {
+                return p.data[index]
+            }
+        }
+        return nil
+    }
+    
+    private func removeAt(_ index: Int) {
+        if let p = self.profiles[segmentMode] {
 
-    /*
+            if p.isFetched {
+               var data = p.data
+                data.remove(at: index)
+               self.profiles[segmentMode]?.data = data
+            }
+        }
+        tableView.reloadData()
+    }
+    
+    private func viewProfile(_ profile: Profile){
+        self.view.makeToastActivity(.center)
+        
+        KinkedInAPI.readProfile(profile.uuid) { profile in
+            let profileView = ViewProfileVC(profile)
+            self.view.hideToastActivity()
+            self.navigationController?.pushViewController(profileView, animated: false)
+        }
+    }
+    
+    private func disconnect(_ profile: Profile){
+        KinkedInAPI.blockUser(profile.uuid)
+    }
+    
+    private func reconnect(_ profile: Profile){}
+    
+    private func unpartner(_ profile: Profile){
+        KinkedInAPI.unPartner(profile.uuid)
+    }
+
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        var actions : [UITableViewRowAction] = []
+        let viewProfile = UITableViewRowAction(style: .normal, title: "View Profile"){ (action, indexPath) in
+            if let profile = self.profileAt(indexPath.row) { self.viewProfile(profile) }
+        }
+        actions.append(viewProfile)
+        
+        switch segmentMode {
+        case .partners:
+            actions.append(UITableViewRowAction(style: .destructive, title: "Unpartner"){ (action, indexPath) in
+                if let profile = self.profileAt(indexPath.row) {
+                    self.unpartner(profile)
+                    self.removeAt(indexPath.row)
+                }
+            })
+            break;
+        case .disconnects:
+            let recon = UITableViewRowAction(style: .normal, title: "Reconnect"){ (action, indexPath) in
+                if let profile = self.profileAt(indexPath.row) {
+                    self.reconnect(profile)
+                    self.removeAt(indexPath.row)
+                }
+            }
+            recon.backgroundColor = UIColor.green
+            actions.append(recon)
+            break;
+        default:
+            actions.append(UITableViewRowAction(style: .destructive, title: "Disconnect"){ (action, indexPath) in
+                 if let profile = self.profileAt(indexPath.row) {
+                    self.disconnect(profile)
+                    self.removeAt(indexPath.row)
+                }
+            })
+            break;
+        }
+        return actions
+    }
 
     /*
     // Override to support editing the table view.

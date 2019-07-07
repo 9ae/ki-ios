@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eZa-Es-J1g">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" alpha="0.10000000000000001" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLX-ng-anD">
-                                <rect key="frame" x="144" y="587" width="88" height="30"/>
+                                <rect key="frame" x="143.5" y="587" width="88" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="b4W-EZ-DNE"/>
                                 </constraints>
@@ -39,7 +39,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1V-me-kGo">
-                                <rect key="frame" x="38" y="501.5" width="300" height="65.5"/>
+                                <rect key="frame" x="37.5" y="501.5" width="300" height="65.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="F6h-sM-tfQ"/>
                                 </constraints>
@@ -64,7 +64,7 @@
                     </view>
                     <connections>
                         <outlet property="iConsent" destination="QLX-ng-anD" id="Bkd-BP-Qg3"/>
-                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="splash2app" action="showViewController:sender:" id="8hc-Ov-0AX"/>
+                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="splash2app" id="8hc-Ov-0AX"/>
                         <segue destination="5wS-0H-REe" kind="show" identifier="splash2auth" id="uGM-UB-WBk"/>
                     </connections>
                 </viewController>
@@ -213,12 +213,12 @@
                     <navigationItem key="navigationItem" id="G0r-A4-4ZB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="Qmt-1b-gDY">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Qmt-1b-gDY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="selectedImageTintColor" red="0.55206078290000005" green="0.31165581939999998" blue="0.96480035779999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.84952910958904104" green="0.2379208599027397" blue="0.41901662089315073" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="rUx-7g-Ycv" kind="relationship" relationship="viewControllers" id="s97-0d-vut"/>
