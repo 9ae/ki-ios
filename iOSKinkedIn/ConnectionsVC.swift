@@ -140,6 +140,7 @@ class ConnectionsVC: UITableViewController {
             return
         }
         KinkedInAPI.blockedUsers { profiles in
+            self.profiles[.disconnects] = ProfileList(isFetched: true, data: profiles)
             if profiles.isEmpty {
                 let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .cancel))
@@ -260,7 +261,9 @@ class ConnectionsVC: UITableViewController {
         KinkedInAPI.blockUser(profile.uuid)
     }
     
-    private func reconnect(_ profile: Profile){}
+    private func reconnect(_ profile: Profile){
+        KinkedInAPI.unblockUser(profile.uuid)
+    }
     
     private func unpartner(_ profile: Profile){
         KinkedInAPI.unPartner(profile.uuid)
