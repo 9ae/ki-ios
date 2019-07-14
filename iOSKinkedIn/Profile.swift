@@ -38,6 +38,12 @@ struct City : Codable {
     var label: String
 }
 
+struct ConvoPreview : Codable {
+    var timestamp: Date
+    var text: String
+    var isent: Bool
+}
+
 class Profile  : Codable {
     var uuid: String
     var name: String
@@ -59,6 +65,8 @@ class Profile  : Codable {
     var is_myself: Bool = false
     var expLv: Int?
     var exp: String?
+    
+    var convo: ConvoPreview?
     
     var preferences: PreferenceFilters?
     

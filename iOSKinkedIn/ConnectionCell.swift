@@ -12,6 +12,8 @@ class ConnectionCell: UITableViewCell {
 
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var timestamp: UILabel!
+    @IBOutlet weak var lastMsg: UILabel!
     
     private func setProfilePicture(_ publicId: String){
         
@@ -32,5 +34,10 @@ class ConnectionCell: UITableViewCell {
     func setData(_ profile : Profile){
         self.name.text = profile.name
         self.setProfilePicture(profile.picture_public_id!)
+        
+        if let convo = profile.convo {
+            lastMsg.text = convo.text
+            lastMsg.isHidden = false
+        }
     }
 }

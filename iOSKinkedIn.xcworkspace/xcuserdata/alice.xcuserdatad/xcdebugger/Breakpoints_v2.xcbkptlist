@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSKinkedIn/api.swift"
-            timestampString = "584769253.454868"
+            timestampString = "584778595.9493411"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616">
+            startingLineNumber = "624"
+            endingLineNumber = "624"
+            landmarkName = "loadProps(props:callback:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

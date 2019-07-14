@@ -202,6 +202,7 @@ class ConnectionsVC: UITableViewController {
     }
     
     @objc func segmentChanged(){
+        print("segment changed")
         let x = segment.frame.origin.x + (segmentItemWidth * CGFloat(self.segment.selectedSegmentIndex))
         
         UIView.animate(withDuration: 0.2, animations: {

@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="IxQ-IA-2Kw">
+                        <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="IxQ-IA-2Kw">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Ud-ffh">
-                                    <rect key="frame" x="37.5" y="4" width="300" height="29"/>
+                                    <rect key="frame" x="37.5" y="-28" width="300" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="300" id="pQ6-du-Fv8"/>
                                     </constraints>
@@ -35,7 +35,7 @@
                                     </segments>
                                 </segmentedControl>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XTf-OO-i27">
-                                    <rect key="frame" x="351" y="8" width="16" height="16"/>
+                                    <rect key="frame" x="351" y="-8" width="16" height="16"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="16" id="Kxd-Zv-hVw"/>
                                         <constraint firstAttribute="height" constant="16" id="fGT-G1-hlb"/>
@@ -70,22 +70,44 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nl4-rn-xBi">
-                                            <rect key="frame" x="98" y="25" width="71" height="36"/>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                            <rect key="frame" x="98" y="21" width="43.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" red="0.45453155589999999" green="0.2877587761" blue="0.60525470889999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="timestamp" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="igs-C5-pJt">
+                                            <rect key="frame" x="267" y="24.5" width="100" height="14"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="U5I-cq-Uny"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xz-aQ-QW6">
+                                            <rect key="frame" x="98" y="49.5" width="269" height="15"/>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                            <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="6xz-aQ-QW6" firstAttribute="top" secondItem="Nl4-rn-xBi" secondAttribute="bottom" constant="8" id="2XC-1F-MRL"/>
                                         <constraint firstItem="fIQ-ue-XSp" firstAttribute="leading" secondItem="ZgT-H0-RVT" secondAttribute="leadingMargin" constant="2" id="5IC-d6-X0f"/>
                                         <constraint firstItem="Nl4-rn-xBi" firstAttribute="leading" secondItem="fIQ-ue-XSp" secondAttribute="trailing" constant="20" id="AMS-43-DaP"/>
+                                        <constraint firstAttribute="trailing" secondItem="igs-C5-pJt" secondAttribute="trailing" constant="8" id="Rz5-2M-dxI"/>
                                         <constraint firstItem="fIQ-ue-XSp" firstAttribute="top" secondItem="ZgT-H0-RVT" secondAttribute="topMargin" constant="2" id="b1h-2B-9WO"/>
-                                        <constraint firstItem="Nl4-rn-xBi" firstAttribute="centerY" secondItem="fIQ-ue-XSp" secondAttribute="centerY" id="ioe-ui-G4L"/>
+                                        <constraint firstItem="Nl4-rn-xBi" firstAttribute="top" secondItem="fIQ-ue-XSp" secondAttribute="topMargin" id="dl0-eC-dDM"/>
+                                        <constraint firstItem="6xz-aQ-QW6" firstAttribute="leading" secondItem="fIQ-ue-XSp" secondAttribute="trailing" constant="20" id="sRH-Kb-lUB"/>
+                                        <constraint firstItem="igs-C5-pJt" firstAttribute="centerY" secondItem="Nl4-rn-xBi" secondAttribute="centerY" id="tZq-TQ-1Of"/>
+                                        <constraint firstAttribute="trailing" secondItem="6xz-aQ-QW6" secondAttribute="trailing" constant="8" id="ung-A7-hWQ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="lastMsg" destination="6xz-aQ-QW6" id="fmU-88-yyV"/>
                                     <outlet property="name" destination="Nl4-rn-xBi" id="6pr-SA-MQ8"/>
                                     <outlet property="picture" destination="fIQ-ue-XSp" id="KzR-I3-z89"/>
+                                    <outlet property="timestamp" destination="igs-C5-pJt" id="UQG-Ao-oed"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

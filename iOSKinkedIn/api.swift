@@ -415,7 +415,15 @@ class KinkedInAPI {
                         print("can't get profile values")
                         continue
                 }
-                profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+                let p = Profile(uuid: uuid, name: name, picture_public_id: image_id)
+                if let convo = rc["convo"] as? [String:Any] {
+                    if let ts = ISO8601DateFormatter().date(from: convo["timestamp"] as! String),
+                        let text = convo["text"] as? String
+                    {
+                     p.convo = ConvoPreview(timestamp: ts, text: text, isent: convo["isent"] as! Bool)
+                    }
+                }
+                profiles.append(p)
                 
             }
             
