@@ -129,7 +129,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
  
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let navCtrl = storyboard.instantiateViewController(withIdentifier: "appNaviCtrl") as! UINavigationController
+        let navCtrl = storyboard.instantiateViewController(withIdentifier: "TabAppView") as! UINavigationController
         self.window?.rootViewController = navCtrl
         self.window?.makeKeyAndVisible()
     

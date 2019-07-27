@@ -30,21 +30,21 @@ class ConnectionsVC: UITableViewController {
     var selectedProfile: Profile?
     
     @IBOutlet var segment: UISegmentedControl!
-    @IBOutlet var editPartners: UIButton!
     
     let underline = UIView()
     var segmentItemWidth : CGFloat = 0.0
+    var segmentX : CGFloat = 0.0
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        self.navigationController?.setNavigationBarHidden(false, animated: false)
-        super.viewWillDisappear(animated)
-    }
-    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
+//        super.viewWillAppear(animated)
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: false)
+//        super.viewWillDisappear(animated)
+//    }
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -59,21 +59,28 @@ class ConnectionsVC: UITableViewController {
         
         underline.translatesAutoresizingMaskIntoConstraints = false
         underline.backgroundColor = ThemeColors.primary
-        view.addSubview(underline)
+        navigationItem.titleView?.addSubview(underline)
         underline.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: -3.0).isActive = true
         underline.heightAnchor.constraint(equalToConstant: 3).isActive = true
-        underline.leftAnchor.constraint(equalTo: segment.leftAnchor).isActive = true
         
-        segmentItemWidth = segment.frame.width / CGFloat(segment.numberOfSegments)
+        if let leftAnchor = navigationItem.titleView?.leftAnchor {
+            underline.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        } else {
+            underline.leftAnchor.constraint(equalTo: segment.leftAnchor).isActive = true
+        }
+        
+        let totalWidth = navigationItem.titleView?.frame.width ?? 300.0
+        segmentItemWidth = totalWidth / CGFloat(segment.numberOfSegments)
         underline.widthAnchor.constraint(equalToConstant: segmentItemWidth ).isActive = true
-        underline.frame.origin.x = segment.frame.origin.x
+        segmentX = 0.0
+        underline.frame.origin.x = segmentX
     }
     
     func loadReciprocals(){
         segmentMode = .reciprocals
         
-        editPartners.isEnabled = false
-        editPartners.isHidden = true
+//        editPartners.isEnabled = false
+//        editPartners.isHidden = true
         
         let isFetched = (self.profiles[.reciprocals]?.isFetched) ?? false
         
@@ -101,8 +108,8 @@ class ConnectionsVC: UITableViewController {
     func loadPartners(){
         segmentMode = .partners
         
-        editPartners.isEnabled = true
-        editPartners.isHidden = false
+//        editPartners.isEnabled = true
+//        editPartners.isHidden = false
 
         let isFetched = (self.profiles[.partners]?.isFetched) ?? false
         
@@ -130,24 +137,24 @@ class ConnectionsVC: UITableViewController {
     func loadDC(){
         segmentMode = .disconnects
         
-        editPartners.isEnabled = false
-        editPartners.isHidden = true
+//        editPartners.isEnabled = false
+//        editPartners.isHidden = true
         
         let isFetched = (self.profiles[.disconnects]?.isFetched) ?? false
         
         if isFetched {
             self.tableView.reloadData()
-            return
-        }
-        KinkedInAPI.blockedUsers { profiles in
-            self.profiles[.disconnects] = ProfileList(isFetched: true, data: profiles)
-            if profiles.isEmpty {
-                let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .cancel))
-                self.present(alert, animated: false)
-            }
-            else {
-                self.tableView.reloadData()
+        } else {
+            KinkedInAPI.blockedUsers { profiles in
+                self.profiles[.disconnects] = ProfileList(isFetched: true, data: profiles)
+                if profiles.isEmpty {
+                    let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .cancel))
+                    self.present(alert, animated: false)
+                }
+                else {
+                    self.tableView.reloadData()
+                }
             }
         }
         
@@ -199,22 +206,22 @@ class ConnectionsVC: UITableViewController {
         let convoVC = LayerHelper.makeConvoVC(p.data[indexPath.row])
             self.navigationController?.pushViewController(convoVC, animated: false)
         }
+        underline.frame.origin.x = segmentX
     }
     
     @objc func segmentChanged(){
-        print("segment changed")
-        let x = segment.frame.origin.x + (segmentItemWidth * CGFloat(self.segment.selectedSegmentIndex))
+        segmentX = (segmentItemWidth * CGFloat(self.segment.selectedSegmentIndex))
         
         UIView.animate(withDuration: 0.2, animations: {
-            self.underline.frame.origin.x = x
+            self.underline.frame.origin.x = self.segmentX
         }, completion: {ok in
-            self.underline.frame.origin.x = x
+            self.underline.frame.origin.x = self.segmentX
         })
         
         switch segment.selectedSegmentIndex {
         case 1:
             self.segmentMode = .partners
-            loadPartners()
+            // loadPartners()
             break
         case 2:
             self.segmentMode = .disconnects
@@ -269,15 +276,29 @@ class ConnectionsVC: UITableViewController {
     private func unpartner(_ profile: Profile){
         KinkedInAPI.unPartner(profile.uuid)
     }
-
     
-    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        print("willDisplayHeaderView")
+    }
+
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
+        print("canEditRowAt")
+        underline.frame.origin.x = segmentX
         return true
     }
     
+    override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        print("willBeginEditingRowAt")
+        super.tableView(tableView, willBeginEditingRowAt: indexPath)
+        underline.frame.origin.x = segmentX
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        print("didEndEditingRowAt")
+    }
+    
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        print("editActionsForRowAt")
         var actions : [UITableViewRowAction] = []
         let viewProfile = UITableViewRowAction(style: .normal, title: "View Profile"){ (action, indexPath) in
             if let profile = self.profileAt(indexPath.row) { self.viewProfile(profile) }
@@ -324,21 +345,6 @@ class ConnectionsVC: UITableViewController {
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
     }
     */
 

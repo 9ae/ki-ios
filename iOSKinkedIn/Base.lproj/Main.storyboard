@@ -64,8 +64,8 @@
                     </view>
                     <connections>
                         <outlet property="iConsent" destination="QLX-ng-anD" id="Bkd-BP-Qg3"/>
-                        <segue destination="BXg-oS-gY0" kind="showDetail" identifier="splash2app" id="8hc-Ov-0AX"/>
                         <segue destination="5wS-0H-REe" kind="show" identifier="splash2auth" id="uGM-UB-WBk"/>
+                        <segue destination="FOy-dc-EyP" kind="show" identifier="splash2app" id="zWY-Wf-Q3Q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GIA-AQ-FFi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -189,28 +189,10 @@
             </objects>
             <point key="canvasLocation" x="-3186" y="3257"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="hG9-ws-Oud">
-            <objects>
-                <navigationController storyboardIdentifier="appNaviCtrl" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BXg-oS-gY0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="b7d-5V-ZkC">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="FOy-dc-EyP" kind="relationship" relationship="rootViewController" id="l8L-sS-A7a"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sJ4-3w-4O8" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3186" y="2481"/>
-        </scene>
         <!--KinkedIn-->
         <scene sceneID="UFz-jF-esF">
             <objects>
                 <tabBarController storyboardIdentifier="TabAppView" title="KinkedIn" id="FOy-dc-EyP" customClass="AppTabVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="G0r-A4-4ZB"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Qmt-1b-gDY">

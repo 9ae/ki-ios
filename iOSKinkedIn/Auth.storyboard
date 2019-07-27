@@ -251,10 +251,10 @@
             </objects>
             <point key="canvasLocation" x="-504.34782608695656" y="158.1521739130435"/>
         </scene>
-        <!--appNaviCtrl-->
+        <!--TabAppView-->
         <scene sceneID="SlM-tG-0s5">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="appNaviCtrl" id="TqB-f5-5YT" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardIdentifier="TabAppView" storyboardName="Main" referencedIdentifier="TabAppView" id="TqB-f5-5YT" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MyN-Om-25W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-871" y="660"/>
@@ -306,6 +306,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VRH-7M-Cva"/>
+        <segue reference="uHL-7m-eaJ"/>
     </inferredMetricsTieBreakers>
 </document>
