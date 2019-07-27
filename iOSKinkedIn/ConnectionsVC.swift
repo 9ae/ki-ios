@@ -55,25 +55,22 @@ class ConnectionsVC: UITableViewController {
         segment.tintColor = .clear
         
         segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primaryFade], for: .normal)
-        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primary], for: .selected)
+        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         underline.translatesAutoresizingMaskIntoConstraints = false
-        underline.backgroundColor = ThemeColors.primary
-        navigationItem.titleView?.addSubview(underline)
-        underline.topAnchor.constraint(equalTo: segment.bottomAnchor, constant: -3.0).isActive = true
+        underline.backgroundColor = ThemeColors.primaryLight
         underline.heightAnchor.constraint(equalToConstant: 3).isActive = true
         
-        if let leftAnchor = navigationItem.titleView?.leftAnchor {
-            underline.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-        } else {
-            underline.leftAnchor.constraint(equalTo: segment.leftAnchor).isActive = true
+        if let navView = navigationItem.titleView {
+            navView.addSubview(underline)
+            underline.leftAnchor.constraint(equalTo: navView.leftAnchor).isActive = true
+            underline.bottomAnchor.constraint(equalTo: navView.bottomAnchor, constant: 8.0).isActive = true
+            
+            segmentItemWidth = navView.frame.width / CGFloat(segment.numberOfSegments)
+            underline.widthAnchor.constraint(equalToConstant: segmentItemWidth ).isActive = true
+            segmentX = 0.0
+            underline.frame.origin.x = segmentX
         }
-        
-        let totalWidth = navigationItem.titleView?.frame.width ?? 300.0
-        segmentItemWidth = totalWidth / CGFloat(segment.numberOfSegments)
-        underline.widthAnchor.constraint(equalToConstant: segmentItemWidth ).isActive = true
-        segmentX = 0.0
-        underline.frame.origin.x = segmentX
     }
     
     func loadReciprocals(){

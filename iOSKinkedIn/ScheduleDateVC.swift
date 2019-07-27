@@ -12,43 +12,29 @@ import UserNotifications
 class ScheduleDateVC: UIViewController {
     
     var withUser: Profile?
-    @IBOutlet var eventLabel: UILabel!
+
     @IBOutlet var datePicker: UIDatePicker!
     @IBOutlet var checkinOption: UISwitch!
     
-    @IBOutlet var phoneGroup: UIStackView!
-    @IBOutlet var phoneField: UITextField!
-    @IBOutlet var phoneInvalid: UILabel!
+    @IBOutlet var hoursField: UITextField!
     
     private var isPhoneValid: Bool = true
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.titleView?.backgroundColor = ThemeColors.primaryDark
+        self.navigationItem.titleView?.tintColor = UIColor.white
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        eventLabel.text = "Meet \(withUser!.name)"
-        
-        KinkedInAPI.loadProps(props: ["phone"]) { json in
-            if let phone = json["phone"] as? String {
-                self.isPhoneValid = true
-                self.phoneField.text = phone
-            } else {
-                self.isPhoneValid = false
-            }
-        }
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func onPhoneInfo(_ sender: Any) {
-        let phoneInfoAlert = UIAlertController(
-            title: "Why we need your phone number?",
-            message: "Just in case you will want a free counselling session from our Aftercare counsellors, we would like a way to reach you.",
-            preferredStyle: .alert)
-        phoneInfoAlert.show(self, sender: sender)
     }
 
     func registerNotification(_ date: Date, content: UNMutableNotificationContent){
@@ -66,10 +52,12 @@ class ScheduleDateVC: UIViewController {
     }
     
     func scheduleCheckin(_ date: Date){
-        var checkinHours = UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
-        if(checkinHours==0){
+        var checkinHours = Int(hoursField?.text ?? "0") ?? UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
+        
+        if checkinHours == 0 {
             checkinHours = UD_CHECKIN_TIME_VALUE
         }
+        
         let scheduleDT = date.addingTimeInterval(TimeInterval(3600*checkinHours))
         let content = UNMutableNotificationContent()
         content.title = "KinkedIn Aftercare"
@@ -94,37 +82,12 @@ class ScheduleDateVC: UIViewController {
     }
     
     @IBAction func onSaveDate(_ sender: AnyObject){
-        if !isPhoneValid && checkinOption.isOn {
-            self.phoneInvalid.isHidden = false
-            self.validatePhoneNumber()
-            return
-        }
-        prepNotifications()
-    }
-    
-    func prepNotifications(){
         if(checkinOption.isOn){
             scheduleCheckin(datePicker.date)
+            //TODO get checkin time
         }
         scheduleDateReminder(datePicker.date)
         self.navigationController?.popViewController(animated: false)
-    }
-    
-    func validatePhoneNumber(){
-        if let phoneNumber = phoneField.text, !phoneNumber.isEmpty {
-            self.view.makeToastActivity(.center)
-            KinkedInAPI.updateProfile(["phone": phoneNumber], callback: { json in
-                if let invalidFields = json["invalid_fields"] as? [String] {
-                    if invalidFields.contains("phone") {
-                        self.phoneInvalid.isHidden = false
-                    } else {
-                        self.isPhoneValid = true
-                        self.prepNotifications()
-                    }
-                    self.view.hideToastActivity()
-                }
-            })
-        }
     }
 
     /*
