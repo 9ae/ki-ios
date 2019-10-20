@@ -218,7 +218,7 @@ class ConnectionsVC: UITableViewController {
         switch segment.selectedSegmentIndex {
         case 1:
             self.segmentMode = .partners
-            // loadPartners()
+            loadPartners()
             break
         case 2:
             self.segmentMode = .disconnects
@@ -229,6 +229,8 @@ class ConnectionsVC: UITableViewController {
             loadReciprocals()
             break
         }
+        
+        self.tableView.reloadData()
     }
     
     private func profileAt(_ index: Int) -> Profile? {
