@@ -10,12 +10,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSKinkedIn/api.swift"
-            timestampString = "593240158.952943"
+            timestampString = "593244561.752095"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "387"
             endingLineNumber = "387"
             landmarkName = "updateProfile(_:callback:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSKinkedIn/HelpVC.swift"
+            timestampString = "593244561.7522039"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "loadScheduledDates()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSKinkedIn.HelpVC.viewDidLoad() -&gt; ()"
+                  moduleName = "iOSKinkedIn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alice/ki/ios/iOSKinkedIn/HelpVC.swift"
+                  timestampString = "593241539.195236"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "626">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iOSKinkedIn.HelpVC.loadScheduledDates() -&gt; ()"
+                  moduleName = "iOSKinkedIn"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alice/ki/ios/iOSKinkedIn/HelpVC.swift"
+                  timestampString = "593241539.19733"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "130">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSKinkedIn/ScheduleDateVC.swift"
+            timestampString = "593244561.752288"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "scheduleDateReminder(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

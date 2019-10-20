@@ -622,4 +622,13 @@ class KinkedInAPI {
         }
     }
     
+    static func aftercareStats(callback: @escaping(_ reports: Int, _ checkins: Int) -> Void){
+        get("self/aftercare/stats"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            let reports = (json["report"] as? Int) ?? 0
+            let checkins = (json["checkin"] as? Int) ?? 0
+            callback(reports, checkins)
+        }
+    }
+    
 }

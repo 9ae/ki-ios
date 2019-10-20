@@ -79,12 +79,14 @@ class ScheduleDateVC: UIViewController {
         content.sound = .default
         content.categoryIdentifier = NOTECAT_DATE_REMINDER
         registerNotification(scheduleDT, content: content)
+        
+        let dates = UserDefaults.standard.integer(forKey: UD_SCH_DATES) + 1
+        UserDefaults.standard.set(dates, forKey: UD_SCH_DATES)
     }
     
     @IBAction func onSaveDate(_ sender: AnyObject){
         if(checkinOption.isOn){
             scheduleCheckin(datePicker.date)
-            //TODO get checkin time
         }
         scheduleDateReminder(datePicker.date)
         self.navigationController?.popViewController(animated: false)

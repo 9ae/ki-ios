@@ -20,6 +20,8 @@ let UD_MATCHES_TODAY_VALUE = 0
 let UD_CAN_LIKE = "canLike"
 let UD_CAN_LIKE_VALUE = true
 
+let UD_SCH_DATES = "scheduledDates"
+
 enum ActionOnUser : Int {
     case skip = 0, like, block
 }

@@ -22,16 +22,12 @@ class HelpVC: UITableViewController {
         
         self.fieldHours.addTarget(self, action:#selector(onHoursChanged(_:)), for: .editingDidEnd)
         self.fieldPhone.addTarget(self, action: #selector(onPhoneChanged(_:)), for: .editingDidEnd)
-        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editEditing)))
         
-        var checkinTime = UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
-        if(checkinTime == 0){
-            checkinTime = UD_CHECKIN_TIME_VALUE
-        }
-        fieldHours.text = String(describing: checkinTime)
-        getPhoneNumber()
-        //TODO update stats
+        loadCheckinHours()
+        loadPhoneNumber()
+        loadScheduledDates()
+        loadAftercareStats()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -47,11 +43,31 @@ class HelpVC: UITableViewController {
         }
     }
     
-    func getPhoneNumber(){
+    func loadCheckinHours(){
+        var checkinTime = UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
+        if(checkinTime == 0){
+            checkinTime = UD_CHECKIN_TIME_VALUE
+        }
+        fieldHours.text = String(describing: checkinTime)
+    }
+    
+    func loadPhoneNumber(){
         KinkedInAPI.loadProps(props: ["phone"]) { json in
             if let phone = json["phone"] as? String {
                 self.fieldPhone.text = phone
             }
+        }
+    }
+    
+    func loadScheduledDates(){
+        let dates = UserDefaults.standard.integer(forKey: UD_SCH_DATES)
+        countDatesScheduled.text = String(dates)
+    }
+    
+    func loadAftercareStats(){
+        KinkedInAPI.aftercareStats { (reports, checkins) in
+            self.countRepliedCheckins.text = String(checkins)
+            self.countRaisedIssues.text = String(reports)
         }
     }
 
