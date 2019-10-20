@@ -384,6 +384,7 @@ class KinkedInAPI {
         try? profileCache.removeObject(forKey: "myself")
         put("self/profile", parameters: body){ _json in
             guard let json = _json as? [String:Any] else { return }
+            print(json)
             callback?(json)
         }
     
@@ -526,7 +527,7 @@ class KinkedInAPI {
             }
             
         }
- */ callback([])
+        */ callback([])
     }
     
     static func removePartner(_ uuid: String){
@@ -620,6 +621,5 @@ class KinkedInAPI {
             callback(json)
         }
     }
-    
     
 }

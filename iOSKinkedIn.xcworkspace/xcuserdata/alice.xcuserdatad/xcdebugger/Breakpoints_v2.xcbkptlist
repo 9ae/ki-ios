@@ -10,11 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSKinkedIn/api.swift"
-            timestampString = "593228147.3730741"
+            timestampString = "593240158.952943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "626"
-            endingLineNumber = "626">
+            startingLineNumber = "387"
+            endingLineNumber = "387"
+            landmarkName = "updateProfile(_:callback:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

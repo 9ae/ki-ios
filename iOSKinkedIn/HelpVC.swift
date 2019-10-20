@@ -20,7 +20,9 @@ class HelpVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fieldHours.addTarget(self, action:#selector(textFieldDidChange(_:)), for: .editingDidEnd)
+        self.fieldHours.addTarget(self, action:#selector(onHoursChanged(_:)), for: .editingDidEnd)
+        self.fieldPhone.addTarget(self, action: #selector(onPhoneChanged(_:)), for: .editingDidEnd)
+        
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editEditing)))
         
         var checkinTime = UserDefaults.standard.integer(forKey: UD_CHECKIN_TIME)
@@ -28,8 +30,7 @@ class HelpVC: UITableViewController {
             checkinTime = UD_CHECKIN_TIME_VALUE
         }
         fieldHours.text = String(describing: checkinTime)
-        
-        //TODO update phone number
+        getPhoneNumber()
         //TODO update stats
     }
 
@@ -46,20 +47,42 @@ class HelpVC: UITableViewController {
         }
     }
     
+    func getPhoneNumber(){
+        KinkedInAPI.loadProps(props: ["phone"]) { json in
+            if let phone = json["phone"] as? String {
+                self.fieldPhone.text = phone
+            }
+        }
+    }
+
     @objc
-    func textFieldDidChange(_ textField: UITextField) {
-        print("change checkin time to: " + (textField.text ?? "_"))
+    func onHoursChanged(_ textField: UITextField) {
         let valCheckinHours = Int(textField.text ?? "0") ?? UD_CHECKIN_TIME_VALUE
         UserDefaults.standard.set(valCheckinHours, forKey: UD_CHECKIN_TIME)
+        print("XX checkin hours changed")
+    }
+    
+    @objc func onPhoneChanged (_ textField: UITextField){
+        print("XX phoneChanged")
+        if let phone = textField.text {
+            KinkedInAPI.updateProfile(["phone": phone])
+        }
     }
     
     @objc func editEditing(){
+        if fieldHours.isEditing {
         fieldHours.endEditing(true)
         fieldHours.resignFirstResponder()
+        }
+        
+        if fieldPhone.isEditing {
+            fieldPhone.endEditing(true)
+            fieldPhone.resignFirstResponder()
+        }
         view.endEditing(true)
     }
     
-    func chatWithKia() {
+    func chatWithKia(){
         
         self.view.makeToastActivity(.center)
         KinkedInAPI.connections { profiles in
@@ -91,12 +114,24 @@ class HelpVC: UITableViewController {
         
     }
     
+    func reportBug() {
+        if let url = URL(string: "http://bugs.trykinkedin.com") {
+            UIApplication.shared.open(url, options: [:])
+        }
+    }
+    
     func actionAt(_ indexPath: IndexPath){
+        if (indexPath.section == 0 && indexPath.row == 0) {
+            print("report bug")
+            reportBug()
+        }
         if (indexPath.section == 0 && indexPath.row == 1) {
+            print("issue with user")
             chatWithKia()
         }
         
         if (indexPath.section == 1 && indexPath.row == 4) {
+            print("load prev convos")
             previousConvos()
         }
     }
