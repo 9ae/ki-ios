@@ -506,7 +506,7 @@ class KinkedInAPI {
     }
     
     static func partners(callback: @escaping(_ users: [Profile]) -> Void){
-        /*
+        
         get("self/partners", isJob: true){ json in
 
             if let resArray = json as? [Any] {
@@ -527,7 +527,7 @@ class KinkedInAPI {
             }
             
         }
-        */ callback([])
+       // callback([])
     }
     
     static func removePartner(_ uuid: String){

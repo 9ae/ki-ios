@@ -116,10 +116,9 @@ class HelpVC: UITableViewController {
     
     func previousConvos() {
         print("load previous chat convos")
-        /*
-         let listVC = CaseList(layerClient: LayerHelper.client!)
-         self.navigationController?.pushViewController(listVC, animated: false)
-         */
+        
+//        let listVC = CaseListVC()
+//        self.navigationController?.pushViewController(listVC, animated: false)
     }
     
     func userSelected(_ selected: Profile) {
