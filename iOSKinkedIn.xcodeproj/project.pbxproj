@@ -62,6 +62,10 @@
 		00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */; };
 		00C08F3921448564005098ED /* AngleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C08F3821448564005098ED /* AngleView.swift */; };
 		00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CA86161F06DCF200ED281A /* RoundButton.swift */; };
+		00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB0A352364BFD100BCE8FA /* CaseCell.swift */; };
+		00CB0A382364C0CA00BCE8FA /* CasesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB0A372364C0CA00BCE8FA /* CasesVC.swift */; };
+		00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB0A392364C12200BCE8FA /* Case.swift */; };
+		00CB0A3C2364CFF700BCE8FA /* ReadConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CB0A3B2364CFF700BCE8FA /* ReadConvoVC.swift */; };
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD71BA22ECE83D0072A84B /* HelpVC.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
@@ -172,6 +176,10 @@
 		00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartnerRequests.swift; sourceTree = "<group>"; };
 		00C08F3821448564005098ED /* AngleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleView.swift; sourceTree = "<group>"; };
 		00CA86161F06DCF200ED281A /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		00CB0A352364BFD100BCE8FA /* CaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaseCell.swift; sourceTree = "<group>"; };
+		00CB0A372364C0CA00BCE8FA /* CasesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CasesVC.swift; sourceTree = "<group>"; };
+		00CB0A392364C12200BCE8FA /* Case.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case.swift; sourceTree = "<group>"; };
+		00CB0A3B2364CFF700BCE8FA /* ReadConvoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadConvoVC.swift; sourceTree = "<group>"; };
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DD71BA22ECE83D0072A84B /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
@@ -286,6 +294,7 @@
 				00B978581E780E4300B7B4FA /* Role.swift */,
 				00B9785A1E780E5900B7B4FA /* Gender.swift */,
 				00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */,
+				00CB0A392364C12200BCE8FA /* Case.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -332,6 +341,9 @@
 				006A8089213C8F70006F6354 /* AftercareVC.swift */,
 				0042DA662206AC6D00B85E5C /* Aftercare.storyboard */,
 				00DD71BA22ECE83D0072A84B /* HelpVC.swift */,
+				00CB0A352364BFD100BCE8FA /* CaseCell.swift */,
+				00CB0A372364C0CA00BCE8FA /* CasesVC.swift */,
+				00CB0A3B2364CFF700BCE8FA /* ReadConvoVC.swift */,
 			);
 			name = Aftercare;
 			sourceTree = "<group>";
@@ -740,6 +752,7 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
+				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				000A81511F14577D00B20F1E /* KiConvoVC.swift in Sources */,
@@ -753,11 +766,13 @@
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				007BC3EE1ECACC620069E1F3 /* HelpIntroVC.swift in Sources */,
 				00F1C6C11EC5A63100A295C0 /* layerhelper.swift in Sources */,
+				00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */,
 				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */,
+				00CB0A382364C0CA00BCE8FA /* CasesVC.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
 				0053EB7E1EC5B1C20028B6CF /* ConvoVC.swift in Sources */,
 				00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */,
@@ -780,6 +795,7 @@
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
 				000BF152221A189F00FAAD97 /* MeVC.swift in Sources */,
 				00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */,
+				00CB0A3C2364CFF700BCE8FA /* ReadConvoVC.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,
 				007F076E222B42720039DE76 /* PictureVC.swift in Sources */,
 			);

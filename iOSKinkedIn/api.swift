@@ -631,4 +631,21 @@ class KinkedInAPI {
         }
     }
     
+    static func aftercareCases(callback : @escaping(_ cases: [Case]) -> Void ){
+        get("self/aftercare/cases"){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            guard let jc = json["cases"] as? [Any] else { return }
+            var cases = [Case]()
+            for li in jc {
+                if let j = li as? [String:Any] {
+                    if let c = Case(j) {
+                        cases.append(c)
+                    }
+                }
+            }
+            print("cases", cases)
+            callback(cases)
+        }
+    }
+    
 }

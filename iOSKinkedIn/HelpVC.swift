@@ -117,6 +117,8 @@ class HelpVC: UITableViewController {
     func previousConvos() {
         print("load previous chat convos")
         
+        self.performSegue(withIdentifier: "help2Cases", sender: self)
+        
 //        let listVC = CaseListVC()
 //        self.navigationController?.pushViewController(listVC, animated: false)
     }
