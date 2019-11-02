@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -349,103 +348,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xOA-DQ-o7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3042.4000000000001" y="3760.5697151424292"/>
-        </scene>
-        <!--Help-->
-        <scene sceneID="uYe-Gd-wQ5">
-            <objects>
-                <viewController title="Help" id="aDD-WB-JUT" customClass="HelpIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Uqj-u4-Fzv"/>
-                        <viewControllerLayoutGuide type="bottom" id="1D5-cE-wi3"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1mh-jR-EW9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="spB-Fp-IEQ">
-                                <rect key="frame" x="49" y="50" width="277" height="123"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What are you having problems with?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azS-8b-QsE">
-                                        <rect key="frame" x="0.0" y="0.0" width="277" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.4274110794" green="0.42747646569999997" blue="0.42739671470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFg-V3-Bx7">
-                                        <rect key="frame" x="48" y="41" width="181" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="The KinkedIn app"/>
-                                        <connections>
-                                            <action selector="reportBug:" destination="aDD-WB-JUT" eventType="touchUpInside" id="7ws-3M-9kJ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXF-bf-gkf">
-                                        <rect key="frame" x="72.5" y="82" width="132" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="A fellow user"/>
-                                        <connections>
-                                            <action selector="chatWithKia:" destination="aDD-WB-JUT" eventType="touchUpInside" id="QJp-L8-jw5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jad-Jk-3Z4">
-                                <rect key="frame" x="8" y="193" width="359" height="30"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours until check in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDH-mh-BEq">
-                                        <rect key="frame" x="0.0" y="0.0" width="151.5" height="30"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERs-Nn-qjk">
-                                        <rect key="frame" x="151.5" y="0.0" width="157.5" height="30"/>
-                                        <connections>
-                                            <action selector="checkinInfo:" destination="aDD-WB-JUT" eventType="touchUpInside" id="ogV-V4-aa2"/>
-                                        </connections>
-                                    </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="preferCheckinHoursInput" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="6" borderStyle="roundedRect" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdi-nu-A7z">
-                                        <rect key="frame" x="309" y="0.0" width="50" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="50" id="6uB-jv-Xsw"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" returnKeyType="done" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lav-MH-qg8">
-                                <rect key="frame" x="59.5" y="474" width="256" height="30"/>
-                                <state key="normal" title="Read previous Support conversations"/>
-                                <connections>
-                                    <action selector="previousConvos:" destination="aDD-WB-JUT" eventType="touchUpInside" id="8YE-tV-51x"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.99991279840000002" green="1" blue="0.99988144639999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="spB-Fp-IEQ" firstAttribute="centerX" secondItem="1mh-jR-EW9" secondAttribute="centerX" id="3Ov-RQ-TLO"/>
-                            <constraint firstItem="Jad-Jk-3Z4" firstAttribute="leading" secondItem="0ux-MR-22L" secondAttribute="leading" constant="8" id="9pT-gR-vcJ"/>
-                            <constraint firstItem="1D5-cE-wi3" firstAttribute="top" secondItem="Lav-MH-qg8" secondAttribute="bottom" constant="50" id="OEp-Km-DHl"/>
-                            <constraint firstItem="Jad-Jk-3Z4" firstAttribute="top" secondItem="spB-Fp-IEQ" secondAttribute="bottom" constant="20" id="OJV-7S-QAO"/>
-                            <constraint firstItem="spB-Fp-IEQ" firstAttribute="top" secondItem="Uqj-u4-Fzv" secondAttribute="bottom" constant="50" id="V9T-mX-Gfl"/>
-                            <constraint firstItem="0ux-MR-22L" firstAttribute="trailing" secondItem="Jad-Jk-3Z4" secondAttribute="trailing" constant="8" id="mPK-db-Kjj"/>
-                            <constraint firstItem="Lav-MH-qg8" firstAttribute="centerX" secondItem="1mh-jR-EW9" secondAttribute="centerX" id="z1A-ZA-3Gk"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="0ux-MR-22L"/>
-                    </view>
-                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="BBW-2m-g0f"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
-                    <connections>
-                        <outlet property="checkinHours" destination="Mdi-nu-A7z" id="VcU-pe-m5x"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7AW-T8-vu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3842" y="4464"/>
         </scene>
         <!--Previous Conversations-->
         <scene sceneID="bD1-ss-vRY">

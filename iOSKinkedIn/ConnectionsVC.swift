@@ -200,8 +200,7 @@ class ConnectionsVC: UITableViewController {
         }
         
         if (segmentMode == .partners || segmentMode == .reciprocals) {
-        let convoVC = LayerHelper.makeConvoVC(p.data[indexPath.row])
-            self.navigationController?.pushViewController(convoVC, animated: false)
+        //TODO launch chat view
         }
         underline.frame.origin.x = segmentX
     }

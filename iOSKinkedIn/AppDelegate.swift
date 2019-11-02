@@ -12,10 +12,9 @@ import UserNotifications
 import Fabric
 import Crashlytics
 // import PusherSwift
-import LayerKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let layerID = Bundle.main.infoDictionary!["LAYER_APP"] as! String
@@ -25,20 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Fabric.with([Crashlytics.self])
-        
-        if let layerURL = URL(string: layerID){
-            LayerHelper.client = LayerHelper.createClient(layerURL, self)
-            LayerHelper.client?.connect { (success, error) in
-                if(success){
-                    print("LOG: layer connected")
-                } else {
-                    print("ERR: layer failed")
-                    print(error.debugDescription)
-                }
-            }
-        } else {
-            print("ERR: invalid URL")
-        }
 
         let center = UNUserNotificationCenter.current()
         center.delegate = self
@@ -85,18 +70,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken")
         KinkedInAPI.deviceToken = deviceToken
-        try! LayerHelper.client?.updateRemoteNotificationDeviceToken(deviceToken)
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
-        LayerHelper.client?.synchronize(withRemoteNotification: userInfo, completion: { (conversation, message, error) in
-            if((error) != nil){
-                print(error?.localizedDescription ?? "Layer notification error")
-            } else {
-                print("layer notification recieved")
-            }
-        })
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
@@ -160,11 +137,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func layerClient(_ client: LYRClient, didReceiveAuthenticationChallengeWithNonce nonce: String){
-        print("layer didReceiveAuthenticationChallengeWithNonce")
-        LayerHelper.authCallback(client, nonce)
-    }
-    
     @objc func kiapiAccessTokenSet(){
         print("access token set. prefeform listener functions")
         /*
@@ -179,13 +151,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LYRClientDelegate {
             }
         }
         */
-        if let layerClient = LayerHelper.client {
-            if (layerClient.isConnected){
-                print("Layer auth user")
-                LayerHelper.auth()
-            }
-        }
-        
         
     }
   

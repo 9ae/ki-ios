@@ -118,16 +118,13 @@ class HelpVC: UITableViewController {
         print("load previous chat convos")
         
         self.performSegue(withIdentifier: "help2Cases", sender: self)
-        
-//        let listVC = CaseListVC()
-//        self.navigationController?.pushViewController(listVC, animated: false)
     }
     
     func userSelected(_ selected: Profile) {
         
         print("selected \(selected.name)")
-        let convo = LayerHelper.makeAftercareConvoVC(selected.uuid)
-        self.navigationController?.pushViewController(convo, animated: false)
+        
+        //TODO launch new after care chat
         
     }
     

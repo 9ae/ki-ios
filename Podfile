@@ -13,8 +13,6 @@ target 'iOSKinkedIn' do
   pod 'Atributika'
   pod 'Cloudinary'
   pod 'TagListView'
-  pod 'LayerKit'
-  pod 'LayerXDK/UI'
   pod 'Cache'
 
   target 'iOSKinkedInTests' do
