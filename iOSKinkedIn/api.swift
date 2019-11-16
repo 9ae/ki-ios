@@ -543,21 +543,22 @@ class KinkedInAPI {
     }
     
     static func blockedUsers(_ callback: @escaping(_ profiles: [Profile])-> Void){
-        get("self/blocks", isJob: true){ json in
-
-            if let resArray = json as? [[String:Any]] {
-                var users: [Profile] = []
-                for e in resArray {
-                    guard let name = e["name"] as? String,
-                        let uuid = e["uuid"] as? String,
-                        let image_id = e["image_id"] as? String else {
-                            print("can't get profile values")
-                            continue
-                    }
-                    users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+        get("self/blocks", isJob: false){ _json in
+            guard let json = _json as? [String:Any] else { return }
+            guard let resArray = json["result"] as? [[String:Any]] else {return}
+            
+            var users: [Profile] = []
+            for e in resArray {
+                guard let name = e["name"] as? String,
+                    let uuid = e["uuid"] as? String,
+                    let image_id = e["image_id"] as? String else {
+                        print("can't get profile values")
+                        continue
                 }
-                callback(users)
+                users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
             }
+            callback(users)
+
         }
     }
     
