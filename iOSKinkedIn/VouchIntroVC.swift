@@ -21,7 +21,7 @@ class VouchIntroVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        goButton.setTitle("Yes, I feel qualified to vouch for \(subjectName!)?", for: UIControl.State.normal)
+        goButton.setTitle("Yes! I feel qualified to vouch for \(subjectName!)", for: UIControl.State.normal)
         
         let catchWording = "Your feedback will not negatively affect \(subjectName!)'s reputation, but if you need to talk to someone about your experience with \(subjectName!), you can do that <a>here.</a>"
         

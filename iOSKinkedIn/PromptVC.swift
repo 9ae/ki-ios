@@ -19,14 +19,13 @@ class PromptVC: UITableViewController {
         super.viewDidLoad()
 
         if let _prompts = profile?.prompts {
+            print("from profile")
             prompts = _prompts
             tableView.reloadData()
         } else {
         KinkedInAPI.bioPrompts { results in
-            
-            for title in results {
-                self.prompts.append(BioPrompt(title: title, answer: nil, show: false))
-            }
+            print("from public")
+            self.prompts = results
             self.tableView.reloadData()
         }
         }

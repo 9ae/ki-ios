@@ -281,9 +281,7 @@ class Profile  : Codable {
                     continue
                 }
                 
-                guard let _answer = _p["answer"] as? String else {
-                    continue
-                }
+                let _answer = _p["answer"] as? String
                 
                 let bp = BioPrompt(title: _title, answer: _answer, show: _show)
                 results.append(bp)
@@ -291,8 +289,10 @@ class Profile  : Codable {
         }
         
         if(results.count>0){
+            print("parsed successful")
             return results
         } else {
+            print("parse failed")
             return nil
         }
     }

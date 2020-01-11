@@ -41,7 +41,9 @@
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
 		006D50071E658635005DAABE /* AppTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D50061E658635005DAABE /* AppTabVC.swift */; };
+		00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */; };
 		0074A8B521D7F4AD00C22955 /* AngleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074A8B421D7F4AD00C22955 /* AngleCell.swift */; };
+		0077466F2381D424003C9F84 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077466E2381D424003C9F84 /* LineTextField.swift */; };
 		007F076E222B42720039DE76 /* PictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F076D222B42720039DE76 /* PictureVC.swift */; };
 		007F0770222B68800039DE76 /* PartnersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F076F222B68800039DE76 /* PartnersVC.swift */; };
 		009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009347441ED2A24500E35057 /* ScrollTextInputVC.swift */; };
@@ -149,7 +151,9 @@
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006D50061E658635005DAABE /* AppTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabVC.swift; sourceTree = "<group>"; };
+		00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConvoVC.swift; sourceTree = "<group>"; };
 		0074A8B421D7F4AD00C22955 /* AngleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleCell.swift; sourceTree = "<group>"; };
+		0077466E2381D424003C9F84 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		007F076D222B42720039DE76 /* PictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureVC.swift; sourceTree = "<group>"; };
 		007F076F222B68800039DE76 /* PartnersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersVC.swift; sourceTree = "<group>"; };
 		009347441ED2A24500E35057 /* ScrollTextInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextInputVC.swift; sourceTree = "<group>"; };
@@ -379,6 +383,7 @@
 				0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */,
 				002879C922D170D500DE9E64 /* KiStyles.swift */,
 				002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */,
+				0077466E2381D424003C9F84 /* LineTextField.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -391,6 +396,7 @@
 				00ED8A261E7443BD00096497 /* ConnectionsVC.swift */,
 				006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */,
 				0042DA682206C88400B85E5C /* Connect.storyboard */,
+				00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */,
 			);
 			name = Connect;
 			sourceTree = "<group>";
@@ -730,6 +736,7 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
+				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
@@ -766,6 +773,7 @@
 				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
+				00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */,
 				000BF152221A189F00FAAD97 /* MeVC.swift in Sources */,
 				00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,

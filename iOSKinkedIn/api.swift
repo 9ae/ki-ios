@@ -219,12 +219,16 @@ class KinkedInAPI {
         }
     }
     
-    static func bioPrompts(_ callback:@escaping(_ results:[String])->Void) {
+    static func bioPrompts(_ callback:@escaping(_ results:[BioPrompt])->Void) {
         get("prompts", requiresToken: false){ _json in
             guard let json = _json as? [String:Any] else { return }
-            
-            if let titles = json["prompts"] as? [String] {
-                callback(titles)
+            print("got prompts")
+            if let jp = json["prompts"] as? [Any] {
+                print("is prompts list")
+                if let _prompts =  Profile.parsePrompts(jp) {
+                    print("parsed success")
+                    callback(_prompts);
+                }
             }
         }
     }

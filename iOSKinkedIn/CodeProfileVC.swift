@@ -20,6 +20,7 @@ class CodeProfileVC: UIViewController {
     var basicInfo: UILabel
     var kinksMatched: UILabel
     var vouchedBy: UILabel
+    var bio: UITextView
     private var identies: TagListView
     var kinks: TagListView
     private var showPic: UIBarButtonItem
@@ -44,6 +45,7 @@ class CodeProfileVC: UIViewController {
         identies = TagListView()
         kinks = TagListView()
         showPic = UIBarButtonItem()
+        bio = UITextView()
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -129,13 +131,21 @@ class CodeProfileVC: UIViewController {
             content.addArrangedSubview(countStack)
         }
         
+        
+        bio.isScrollEnabled = false
+        bio.isEditable = false
+        bio.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        content.addArrangedSubview(bio)
+        
         content.addArrangedSubview(identies)
         
+       
         let kinksLabel = UILabel()
         kinksLabel.text = "I am into..."
         content.addArrangedSubview(kinksLabel)
         content.addArrangedSubview(kinks)
  
+        
     }
     
     private func setData() {
@@ -163,6 +173,12 @@ class CodeProfileVC: UIViewController {
         if profile.vouches > 0 {
             vouchedBy.numberOfLines = 2
             vouchedBy.text = "vouched by\n \(profile.vouches) members"
+        }
+        
+        if let _bio = profile.bio {
+            self.bio.text = _bio
+        } else {
+            self.bio.isHidden = true
         }
         
         let ids = profile.genders + profile.roles

@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="width" constant="88" id="b4W-EZ-DNE"/>
                                 </constraints>
                                 <inset key="titleEdgeInsets" minX="2" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="I CONSENT">
+                                <state key="normal" title="YES!">
                                     <color key="titleColor" red="0.26708459849999999" green="0.74725145100000001" blue="0.5655201674" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>

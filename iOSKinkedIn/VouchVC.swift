@@ -40,10 +40,13 @@ class VouchVC: UIViewController {
         
         self.title = "Vouch for \(subjectName!)"
 
-        q1label.text = "Was \(subjectName!) honest in the information (photos and text) they provided in their profile?"
+        q1label.text = "Was \(subjectName!) the same person they showed in their profile?"
+        
         q2label.text = "Was \(subjectName!) respectful of your boundaries?"
-        q3label.text = "Was \(subjectName!) an good communicator?"
-        confirmLabel.text = "By submitting you are saying that the feedback you provide is based on your interactions with \(subjectName!)."
+        
+        q3label.text = "Was \(subjectName!) an honest communicator?"
+        
+        confirmLabel.text = "By submitting, you are confirming that the feedback you provide is based on your interactions with \(subjectName!)."
         
     }
 

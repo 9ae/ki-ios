@@ -11,6 +11,8 @@ import TagListView
 
 class MeVC: UITableViewController {
     
+    @IBOutlet var logoutBtn: UIButton!
+    
     @IBOutlet var profileImage: UIImageView!
     @IBOutlet var basicInfo: UILabel!
     @IBOutlet var partnersContainer: UIView!
@@ -25,6 +27,12 @@ class MeVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         super.viewWillAppear(animated)
+        
+        logoutBtn.backgroundColor = ThemeColors.action
+        logoutBtn.titleLabel?.tintColor = UIColor.white
+        logoutBtn.layer.cornerRadius =  15.0
+        logoutBtn.clipsToBounds = true
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {

@@ -50,7 +50,7 @@
             <objects>
                 <tableViewController id="QoP-NF-Uzk" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6m9-TX-vjn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -118,7 +118,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="UlC-je-Pgv">
                         <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="5eA-Ud-ffh">
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="5eA-Ud-ffh">
                             <rect key="frame" x="36.5" y="7.5" width="302" height="29"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
@@ -173,7 +173,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your well-being is our priority, would you like us to checkin with you hafter your date on how you are feeling?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-lj-O2p">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your well-being is our priority, would you like us to check in with you after your date about how you are feeling?" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LE0-lj-O2p">
                                         <rect key="frame" x="16" y="317" width="343" height="58"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -182,7 +182,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tp-me-alg">
                                         <rect key="frame" x="8" y="395" width="359" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Checkin with me afterwards" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np1-bb-lyC">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check in with me afterward" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="np1-bb-lyC">
                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="31"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
@@ -290,9 +290,9 @@
                                 <rect key="frame" x="15" y="50" width="345" height="114.5"/>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they: 
-Respected boundaries &amp; were open and honest in their communication</string>
+                                        <mutableString key="content">Vouching is like recommending someone to a friend.  We suggest only vouching for community members you have played with. By vouching for someone, you are sharing that in your experience with them, they respected your boundaries and were honest in their communication.</mutableString>
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="14" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                         </attributes>
@@ -514,12 +514,42 @@ Respected boundaries &amp; were open and honest in their communication</string>
             </objects>
             <point key="canvasLocation" x="-2135" y="3907"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="Yko-Px-jXf">
+            <objects>
+                <viewController id="qaw-L7-Itz" customClass="TempConvoVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8DV-qn-2Bx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Say something flirty" translatesAutoresizingMaskIntoConstraints="NO" id="e7q-xs-9MF">
+                                <rect key="frame" x="16" y="595" width="343" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.84952910960000005" green="0.2379208599" blue="0.41901662090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bpm-Cc-Vi2" firstAttribute="trailing" secondItem="e7q-xs-9MF" secondAttribute="trailing" constant="16" id="MFB-8d-aHX"/>
+                            <constraint firstItem="e7q-xs-9MF" firstAttribute="leading" secondItem="Bpm-Cc-Vi2" secondAttribute="leading" constant="16" id="RHU-dw-EhN"/>
+                            <constraint firstItem="Bpm-Cc-Vi2" firstAttribute="bottom" secondItem="e7q-xs-9MF" secondAttribute="bottom" constant="16" id="l2D-EH-MIz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Bpm-Cc-Vi2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Chat" id="riF-D0-bNw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R59-x8-mPL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-994.39999999999998" y="3879.3103448275865"/>
+        </scene>
     </scenes>
     <resources>
         <image name="connect" width="29" height="25"/>
         <image name="connect_select" width="32" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="EGy-2F-rkq"/>
+        <segue reference="nyk-fW-EZ1"/>
     </inferredMetricsTieBreakers>
 </document>

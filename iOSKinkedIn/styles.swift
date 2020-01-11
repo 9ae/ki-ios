@@ -19,6 +19,7 @@ class ThemeColors {
     static let msgOut = #colorLiteral(red: 0.2290466428, green: 0.5670731664, blue: 0.9126873016, alpha: 1)
     static let msgBtn = #colorLiteral(red: 0.0481268242, green: 0.502655983, blue: 0.9156068563, alpha: 1)
     static let text = #colorLiteral(red: 0.4274110794, green: 0.4274764657, blue: 0.4273967147, alpha: 1)
+    static let action = #colorLiteral(red: 0.8495291096, green: 0.2379208599, blue: 0.4190166209, alpha: 1)
 
 }
 

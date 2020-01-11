@@ -120,6 +120,7 @@ class DiscoveryListVC: UICollectionViewController, UICollectionViewDelegateFlowL
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
+            if todayMatches.count == 0 { return 0 }
             return UD_MATCH_LIMIT_VALUE
             //return UserDefaults.standard.integer(forKey: UD_MATCH_LIMIT)
         } else {

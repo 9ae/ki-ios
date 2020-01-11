@@ -200,7 +200,9 @@ class ConnectionsVC: UITableViewController {
         }
         
         if (segmentMode == .partners || segmentMode == .reciprocals) {
-        //TODO launch chat view
+            let convo = TempConvoVC()
+            convo.profile = p.data[indexPath.row]
+            self.navigationController?.pushViewController(convo, animated: false)
         }
         underline.frame.origin.x = segmentX
     }
