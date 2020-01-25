@@ -22,6 +22,8 @@ class CodeProfileVC: UIViewController {
     var vouchedBy: UILabel
     var bio: UITextView
     private var identies: TagListView
+    
+    private var kinksLabel: UILabel
     var kinks: TagListView
     private var showPic: UIBarButtonItem
     
@@ -43,6 +45,7 @@ class CodeProfileVC: UIViewController {
         kinksMatched = UILabel()
         vouchedBy = UILabel()
         identies = TagListView()
+        kinksLabel = UILabel()
         kinks = TagListView()
         showPic = UIBarButtonItem()
         bio = UITextView()
@@ -138,13 +141,10 @@ class CodeProfileVC: UIViewController {
         content.addArrangedSubview(bio)
         
         content.addArrangedSubview(identies)
-        
-       
-        let kinksLabel = UILabel()
+
         kinksLabel.text = "I am into..."
         content.addArrangedSubview(kinksLabel)
         content.addArrangedSubview(kinks)
- 
         
     }
     
@@ -168,11 +168,11 @@ class CodeProfileVC: UIViewController {
         basicInfo.text = basicText
         
         kinksMatched.numberOfLines = 2
-        kinksMatched.text = "\(profile.kinksMatched) kinks\n matched"
+        kinksMatched.text = "\(profile.kinksMatched) \(profile.kinksMatched == 1 ? "kink" : "kinks")\n matched"
         
         if profile.vouches > 0 {
             vouchedBy.numberOfLines = 2
-            vouchedBy.text = "vouched by\n \(profile.vouches) members"
+            vouchedBy.text = "vouched by\n \(profile.vouches) \(profile.vouches == 1 ? "member" : "members")"
         }
         
         if let _bio = profile.bio {
@@ -200,6 +200,7 @@ class CodeProfileVC: UIViewController {
         identies.paddingY = 2
         identies.tagHighlightedBackgroundColor = ThemeColors.primaryDark
         
+        kinksLabel.isHidden = (profile.kinks.count == 0)
         for k in profile.kinks {
             kinks.addTag(k.label)
         }

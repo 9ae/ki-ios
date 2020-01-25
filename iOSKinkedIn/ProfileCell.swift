@@ -12,6 +12,7 @@ class ProfileCell: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var kinksValue: UILabel!
+    @IBOutlet var kinksLabel: UILabel!
     @IBOutlet var vouchedLabel: UILabel!
     @IBOutlet var vouchedValue: UILabel!
     @IBOutlet var picture: UIImageView!
@@ -31,9 +32,18 @@ class ProfileCell: UICollectionViewCell {
         kinksValue.text = "\(profile.kinksMatched)"
         if profile.vouches > 0 {
             vouchedValue.text = "\(profile.vouches)"
-        } else {
+        }
+        else {
             vouchedValue.isHidden = true
             vouchedLabel.isHidden = true
+        }
+        
+        if profile.vouches == 1 {
+            vouchedLabel.text = "USER VOUCHED"
+        }
+        
+        if profile.kinksMatched == 1 {
+            kinksLabel.text = "KINK MATCHED"
         }
         
         if let pictureURL = profile.picture {

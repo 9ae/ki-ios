@@ -32,11 +32,18 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
     @IBOutlet var qstack: UIStackView!
     @IBOutlet weak var tlv: TagListView!
     
+    @IBOutlet var btnOmake : UIButton!
+    @IBOutlet var btnGet : UIButton!
+    @IBOutlet var btnGive : UIButton!
+    @IBOutlet var btnWear : UIButton!
+    @IBOutlet var btnAct : UIButton!
+    
     var profile: Profile?
     private var kinksMap = [String:Kink]()
     var omakeFetched = false
     var actsFetched = false
     var servicesFetched = false
+    var isDone = false
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -237,6 +244,7 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         let newText = "\(questions[q.rawValue]) \(shortJoin(tags))"
         onQuestion?.setTitle(newText, for: .normal)
         
+        
         if let button = sender as? UIButton {
             button.setTitleColor(ThemeColors.primary, for: .normal)
             onQuestion = button
@@ -291,6 +299,33 @@ class KinksVC: SetupViewVC, TagListViewDelegate {
         
         q = .act
         loadActs()
+    }
+    
+    @IBAction func onNext (_ sender : Any) {
+        if isDone {
+            navigationController?.popViewController(animated: false)
+        }
+        
+        switch(q){
+        case .omake:
+            onGetService(btnGet)
+            break;
+        case .get_service:
+            onGiveService(btnGive)
+            break;
+        case .give_service:
+            onWear(btnWear)
+            break;
+        case .wear:
+            onActs(btnAct)
+            break;
+        case .act:
+            if let nextBtn = sender as? UIButton {
+              nextBtn.setTitle("Done", for: .normal)
+            }
+            isDone = true
+            break;
+        }
     }
     
     
