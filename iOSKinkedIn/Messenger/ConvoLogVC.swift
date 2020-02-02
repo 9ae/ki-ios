@@ -16,7 +16,7 @@ struct Message {
 
 class ConvoLogVC: UITableViewController, SBDChannelDelegate {
     
-    private let PAGE_SIZE = 3
+    private let PAGE_SIZE = 20
     private let SBID = "raven_brings_the_night"
 
        private var messages : [Message] = []

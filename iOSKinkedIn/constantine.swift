@@ -25,3 +25,4 @@ let UD_SCH_DATES = "scheduledDates"
 enum ActionOnUser : Int {
     case skip = 0, like, block
 }
+

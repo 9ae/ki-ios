@@ -14,6 +14,16 @@ enum ProfileAction: Int {
     case hide=0, skip, like
 }
 
+/* cache keys */
+
+let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW"
+
+let CK_DISCOVER = "CK_DISCOVER"
+
+let CK_CONNECTIONS = "CK_CONNECTIONS"
+let CK_PARTNERS = "CK_PARTNERS"
+let CK_BLOCKED = "CK_BLOCKED"
+
 class KinkedInAPI {
     
     static var token: String = ""
@@ -26,6 +36,8 @@ class KinkedInAPI {
         transformer: TransformerFactory.forData()
     )
     static let profileCache = ds.transformCodable(ofType: Profile.self)
+    static let aftercareCache = ds.transformCodable(ofType: CareQuestion.self)
+    static let prolistCache = ds.transformCodable(ofType: [Profile].self)
 
     
     static let MAX_ITERATIONS = 20
@@ -270,6 +282,7 @@ class KinkedInAPI {
     
     static func logout(){
         try? profileCache.removeAll()
+        try? prolistCache.removeAll()
         get("logout", requiresToken: true){ json in
             print(json)
         }
@@ -296,6 +309,11 @@ class KinkedInAPI {
     }
     
     static func listProfiles(callback: @escaping(_ profiles: [Profile])->Void ){
+        /*
+        do {
+
+        } catch {}
+        */
         get("discover/profiles"){ _json in
             guard let json = _json as? [String:Any] else { return }
             if let simple_profiles = json["result"] as? [Any] {
@@ -661,6 +679,22 @@ class KinkedInAPI {
             
             print("sendbird id = \(sendbird)")
             callback(uuid, sendbird)
+        }
+    }
+    
+    static func aftercareFlow(callback : @escaping (_ flow: CareQuestion) -> Void) {
+        let key = "KIA_LOGIC"
+        do {
+            let co = try aftercareCache.object(forKey: key)
+            callback(co)
+        } catch {
+            get("cms/aftercare/flow", requiresToken: false, isJob: false){ _json in
+                guard let json = _json as? [String:Any] else { return }
+                guard let careFlow = CareQuestion(json) else { return }
+                
+                try? aftercareCache.setObject(careFlow, forKey: key)
+                callback(careFlow)
+            }
         }
     }
     
