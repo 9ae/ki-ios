@@ -84,6 +84,7 @@ class MessengerVC: UIViewController, UITextViewDelegate {
                     print(_error)
                 }
             })
+            _convoLog?.addMyMessage(msg!)
         }
         
         textarea.text = ""
@@ -97,40 +98,11 @@ class MessengerVC: UIViewController, UITextViewDelegate {
             print("creating channel")
             
             self._chan = chan
-            
-            if let err = error {
-                print(err)
+            if let ch = chan {
+                print("get existing convo")
+                self._convoLog?.setData(theirId: profile.uuid, chan: ch)
             } else {
-                print("channel created sucessfully")
-                self.initLoadMessages()
-            }
-        }
-    }
-    
-    func initLoadMessages(){
-        guard let q = _chan?.createPreviousMessageListQuery() else {
-            print("fail to create query")
-            return
-        }
-        
-        print("query created")
-        
-        q.loadPreviousMessages(withLimit: 20, reverse: true) { (_messages, _error) in
-            if let msglog = _messages, let convoLog = self._convoLog {
-                var toAdd : [Message] = []
-                let messages = msglog.reversed()
-                for _msg in messages {
-                    guard let msg = _msg as? SBDUserMessage else { continue }
-                    guard let body = msg.message else { continue }
-                    var isMe = false
-                    if let sender = msg.sender, let myId = self._profile?.uuid {
-                        isMe = sender.userId == myId
-                    }
-                    toAdd.append(Message(body: body, isMe: isMe))
-                }
-                convoLog.addMessages(toAdd)
-            } else {
-                print(_error)
+                print(error)
             }
         }
     }

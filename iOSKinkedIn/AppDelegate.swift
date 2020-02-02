@@ -56,8 +56,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let initSendbird = SBDMain.initWithApplicationId("15A8D607-1D52-4E30-AA56-11B393263A29")
         print("init sendbird \(initSendbird)")
         
-        KinkedInAPI.sendbird { sendbirdToken in
-            SBDMain.connect(withUserId: sendbirdToken) { (_user, _error) in
+        KinkedInAPI.sendbird { uuid, sendbirdToken in
+            
+            SBDMain.connect(withUserId: uuid, accessToken: sendbirdToken){(_user, _error) in
                 if let user = _user {
                     print("connect to sendbird success!")
                     print(user)
