@@ -309,21 +309,23 @@ class KinkedInAPI {
     }
     
     static func listProfiles(callback: @escaping(_ profiles: [Profile])->Void ){
-        /*
+        
         do {
-
-        } catch {}
-        */
-        get("discover/profiles"){ _json in
-            guard let json = _json as? [String:Any] else { return }
-            if let simple_profiles = json["result"] as? [Any] {
-                var profiles = [Profile]()
-                for pro in simple_profiles {
-                    if let parsedProfile = Profile(pro as! [String:Any]) {
-                        profiles.append(parsedProfile)
+            let profiles = try prolistCache.object(forKey: CK_DISCOVER)
+            callback(profiles)
+        } catch {
+            get("discover/profiles"){ _json in
+                guard let json = _json as? [String:Any] else { return }
+                if let simple_profiles = json["result"] as? [Any] {
+                    var profiles = [Profile]()
+                    for pro in simple_profiles {
+                        if let parsedProfile = Profile(pro as! [String:Any]) {
+                            profiles.append(parsedProfile)
+                        }
                     }
+                    try? prolistCache.setObject(profiles, forKey: CK_DISCOVER)
+                    callback(profiles)
                 }
-                callback(profiles)
             }
         }
     }
@@ -361,6 +363,7 @@ class KinkedInAPI {
             let match_limit = res["match_limit"] as? Int ?? UD_MATCH_LIMIT_VALUE
             let matches_today = res["matches_today"] as? Int ?? UD_MATCHES_TODAY_VALUE
             if requited {
+                try? prolistCache.removeObject(forKey: CK_CONNECTIONS)
                 callback(requited, match_limit, matches_today)
             }
 
@@ -419,6 +422,10 @@ class KinkedInAPI {
     }
     
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
+        do {
+            let profiles = try prolistCache.object(forKey: CK_CONNECTIONS)
+            callback(profiles)
+        } catch {
         get("self/connections", isJob: true){ json in
 
             var profiles = [Profile]()
@@ -449,9 +456,10 @@ class KinkedInAPI {
                 profiles.append(p)
                 
             }
-            
+            try? prolistCache.setObject(profiles, forKey: CK_CONNECTIONS)
             callback(profiles)
             
+        }
         }
     }
     
@@ -528,7 +536,10 @@ class KinkedInAPI {
     }
     
     static func partners(callback: @escaping(_ users: [Profile]) -> Void){
-        
+        do {
+            let profiles = try prolistCache.object(forKey: CK_PARTNERS)
+            callback(profiles)
+        } catch {
         get("self/partners", isJob: true){ json in
 
             if let resArray = json as? [Any] {
@@ -545,11 +556,12 @@ class KinkedInAPI {
                     }
                     
                 }
+        try? prolistCache.setObject(users, forKey: CK_PARTNERS)
                 callback(users)
             }
             
+            }
         }
-       // callback([])
     }
     
     static func removePartner(_ uuid: String){
@@ -565,6 +577,10 @@ class KinkedInAPI {
     }
     
     static func blockedUsers(_ callback: @escaping(_ profiles: [Profile])-> Void){
+        do {
+            let profiles = try prolistCache.object(forKey: CK_BLOCKED)
+            callback(profiles)
+        } catch {
         get("self/blocks", isJob: false){ _json in
             guard let json = _json as? [String:Any] else { return }
             guard let resArray = json["result"] as? [[String:Any]] else {return}
@@ -579,8 +595,10 @@ class KinkedInAPI {
                 }
                 users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
             }
+            try? prolistCache.object(forKey: CK_BLOCKED)
             callback(users)
 
+        }
         }
     }
     
@@ -588,12 +606,14 @@ class KinkedInAPI {
         post("self/block/\(uuid)", parameters: [:]) { json in
             print(json)
         }
+        try? profileCache.removeObject(forKey: CK_BLOCKED)
     }
     
     static func unblockUser(_ uuid: String){
         delete("self/block/\(uuid)") { json in
             print(json)
         }
+        try? profileCache.removeObject(forKey: CK_BLOCKED)
     }
     
     static func dailyLimits(_ callback: @escaping(_ limit: Int, _ matchesToday: Int) -> Void){
@@ -683,16 +703,15 @@ class KinkedInAPI {
     }
     
     static func aftercareFlow(callback : @escaping (_ flow: CareQuestion) -> Void) {
-        let key = "KIA_LOGIC"
         do {
-            let co = try aftercareCache.object(forKey: key)
+            let co = try aftercareCache.object(forKey: CK_AFTERCARE_FLOW)
             callback(co)
         } catch {
             get("cms/aftercare/flow", requiresToken: false, isJob: false){ _json in
                 guard let json = _json as? [String:Any] else { return }
                 guard let careFlow = CareQuestion(json) else { return }
                 
-                try? aftercareCache.setObject(careFlow, forKey: key)
+                try? aftercareCache.setObject(careFlow, forKey: CK_AFTERCARE_FLOW)
                 callback(careFlow)
             }
         }
