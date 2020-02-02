@@ -14,6 +14,7 @@ target 'iOSKinkedIn' do
   pod 'Cloudinary'
   pod 'TagListView'
   pod 'Cache'
+  pod 'SendBirdSDK'
 
   target 'iOSKinkedInTests' do
     inherit! :search_paths

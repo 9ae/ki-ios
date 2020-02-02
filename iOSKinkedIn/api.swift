@@ -653,4 +653,14 @@ class KinkedInAPI {
         }
     }
     
+    static func sendbird(callback : @escaping(_ sendbird: String) -> Void){
+        get("self/sendbird"){_json in
+            guard let json = _json as? [String:Any] else { return }
+            guard let sendbird = json["sendbird"] as? String else { return }
+            
+            print("sendbird id = \(sendbird)")
+            callback(sendbird)
+        }
+    }
+    
 }

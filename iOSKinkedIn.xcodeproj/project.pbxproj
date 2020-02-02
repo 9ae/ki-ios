@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0001EC3023DCE5E600CF062D /* ConvoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC2F23DCE5E600CF062D /* ConvoUI.swift */; };
+		0001EC3223DCE64400CF062D /* ConvoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3123DCE64400CF062D /* ConvoWrapper.swift */; };
+		0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3323DCE8E600CF062D /* Mocks.swift */; };
+		0001EC3623DD00BA00CF062D /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0001EC3523DD00BA00CF062D /* Msg.storyboard */; };
+		0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3723DD047200CF062D /* MessengerVC.swift */; };
+		0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3923DD071C00CF062D /* MsgCell.swift */; };
 		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		000BF152221A189F00FAAD97 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF151221A189F00FAAD97 /* MeVC.swift */; };
@@ -68,6 +74,7 @@
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
+		00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */; };
 		00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D2214D9325003D79C6 /* ViewProfileVC.swift */; };
 		00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D4214DB360003D79C6 /* CodeProfileVC.swift */; };
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
@@ -112,6 +119,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0001EC2F23DCE5E600CF062D /* ConvoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoUI.swift; sourceTree = "<group>"; };
+		0001EC3123DCE64400CF062D /* ConvoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoWrapper.swift; sourceTree = "<group>"; };
+		0001EC3323DCE8E600CF062D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
+		0001EC3523DD00BA00CF062D /* Msg.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Msg.storyboard; sourceTree = "<group>"; };
+		0001EC3723DD047200CF062D /* MessengerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerVC.swift; sourceTree = "<group>"; };
+		0001EC3923DD071C00CF062D /* MsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
@@ -179,6 +192,7 @@
 		00ED085A63868A45E05ADEC8 /* Pods_iOSKinkedInUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
+		00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoLogVC.swift; sourceTree = "<group>"; };
 		00F073D2214D9325003D79C6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		00F073D4214DB360003D79C6 /* CodeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeProfileVC.swift; sourceTree = "<group>"; };
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
@@ -225,6 +239,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0001EC2E23DCE57400CF062D /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				0001EC2F23DCE5E600CF062D /* ConvoUI.swift */,
+				0001EC3123DCE64400CF062D /* ConvoWrapper.swift */,
+				0001EC3523DD00BA00CF062D /* Msg.storyboard */,
+				0001EC3723DD047200CF062D /* MessengerVC.swift */,
+				0001EC3923DD071C00CF062D /* MsgCell.swift */,
+				00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
 		00171A161E56384500640B09 = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +275,7 @@
 		00171A211E56384500640B09 /* iOSKinkedIn */ = {
 			isa = PBXGroup;
 			children = (
+				0001EC2E23DCE57400CF062D /* Messenger */,
 				006A8086213C8C78006F6354 /* Aftercare */,
 				00ED8A251E74386E00096497 /* Connect */,
 				00FD15851F6D732D00357860 /* MyProfile */,
@@ -286,6 +314,7 @@
 				00B9785A1E780E5900B7B4FA /* Gender.swift */,
 				00BF02491EB5A9B100A7DF1B /* PartnerRequests.swift */,
 				00CB0A392364C12200BCE8FA /* Case.swift */,
+				0001EC3323DCE8E600CF062D /* Mocks.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -572,6 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0042DA672206AC6D00B85E5C /* Aftercare.storyboard in Resources */,
+				0001EC3623DD00BA00CF062D /* Msg.storyboard in Resources */,
 				0042DA6B2206C8A400B85E5C /* Discover.storyboard in Resources */,
 				0042DA692206C88400B85E5C /* Connect.storyboard in Resources */,
 				00FD15801F6D610A00357860 /* Auth.storyboard in Resources */,
@@ -661,25 +691,25 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-iOSKinkedIn/Pods-iOSKinkedIn-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Atributika/Atributika.framework",
 				"${BUILT_PRODUCTS_DIR}/Cache/Cache.framework",
 				"${BUILT_PRODUCTS_DIR}/Cloudinary/Cloudinary.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
+				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
 				"${BUILT_PRODUCTS_DIR}/TagListView/TagListView.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Atributika.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cache.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cloudinary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
+				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TagListView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
 			);
@@ -726,6 +756,7 @@
 				00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */,
+				0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */,
 				002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
@@ -737,6 +768,7 @@
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
+				0001EC3223DCE64400CF062D /* ConvoWrapper.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
@@ -750,6 +782,8 @@
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */,
 				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
+				0001EC3023DCE5E600CF062D /* ConvoUI.swift in Sources */,
+				0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
@@ -760,6 +794,7 @@
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
 				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
+				0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */,
 				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
@@ -775,6 +810,7 @@
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
 				00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */,
 				000BF152221A189F00FAAD97 /* MeVC.swift in Sources */,
+				00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */,
 				00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,
 				007F076E222B42720039DE76 /* PictureVC.swift in Sources */,
@@ -938,7 +974,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				KI_API = "https://ki-slave.herokuapp.com/";
 				LAYER_APP = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -966,7 +1002,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				KI_API = "https://api-mistress.kinkedin.app/";
 				LAYER_APP = "layer:///apps/staging/39241b6e-8c36-11e6-8a28-c7b78f1e6a1c";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

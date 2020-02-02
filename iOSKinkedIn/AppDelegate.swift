@@ -12,6 +12,7 @@ import UserNotifications
 import Fabric
 import Crashlytics
 // import PusherSwift
+import SendBirdSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -48,6 +49,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let checkinHours = defaults.integer(forKey: UD_CHECKIN_TIME)
         if checkinHours == 0 {
             defaults.set(UD_CHECKIN_TIME_VALUE, forKey: UD_CHECKIN_TIME)
+        }
+    }
+    
+    private func flySendbird(){
+        let initSendbird = SBDMain.initWithApplicationId("15A8D607-1D52-4E30-AA56-11B393263A29")
+        print("init sendbird \(initSendbird)")
+        
+        KinkedInAPI.sendbird { sendbirdToken in
+            SBDMain.connect(withUserId: sendbirdToken) { (_user, _error) in
+                if let user = _user {
+                    print("connect to sendbird success!")
+                    print(user)
+                }
+                
+                if let error = _error {
+                    print("connect to sendbird failrue")
+                    print(error)
+                }
+            }
         }
     }
     
@@ -139,6 +159,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     @objc func kiapiAccessTokenSet(){
         print("access token set. prefeform listener functions")
+        
+        flySendbird()
         /*
         if let deviceToken = KinkedInAPI.deviceToken {
             // print("Pusher subscribe to my personal channel")

@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Abstract Msg-->
+        <scene sceneID="MWq-x5-Q7x">
+            <objects>
+                <tableViewController id="HrG-Lx-NFW" customClass="ConvoLogVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="DY3-lY-Oif">
+                        <rect key="frame" x="0.0" y="0.0" width="398" height="613"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCellThem" id="W90-Z4-ree" customClass="MsgCell" customModule="iOSKinkedIn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="398" height="199"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="W90-Z4-ree" id="BHc-V8-pyw">
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="199"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="oA5-ik-arY">
+                                            <rect key="frame" x="8" y="8" width="260" height="183"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="260" id="gxH-G4-7al"/>
+                                            </constraints>
+                                            <string key="text">Message Each time the loadPreviousMessagesWithLimit:reverse:completionHandler: method is called, the instance retrieves a set number of messages in the next page and then updates the token's value to complete the current call and prepare a next call.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="oA5-ik-arY" firstAttribute="leading" secondItem="BHc-V8-pyw" secondAttribute="leading" constant="8" id="OXg-h8-E43"/>
+                                        <constraint firstItem="oA5-ik-arY" firstAttribute="top" secondItem="BHc-V8-pyw" secondAttribute="top" constant="8" id="PPw-ZG-yAO"/>
+                                        <constraint firstAttribute="bottom" secondItem="oA5-ik-arY" secondAttribute="bottom" constant="8" id="tsU-E8-KRJ"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="msgLabel" destination="oA5-ik-arY" id="U1V-Aq-9C9"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCellMe" id="E46-Nh-VLJ" customClass="MsgCell" customModule="iOSKinkedIn" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="227" width="398" height="292.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="E46-Nh-VLJ" id="hLZ-01-DdM">
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="292.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-Ra-WTY">
+                                            <rect key="frame" x="130" y="8" width="260" height="284.5"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="260" id="ayl-rG-O14"/>
+                                            </constraints>
+                                            <string key="text">If you create a new query instance and call the loadPreviousMessagesWithLimit:reverse:completionHandler: method, a set number of the most recent messages are retrieved because its token has nothing to do with the previously created instance. So we recommend that you create a single query instance and store it as a member variable for traversing through the entire message history.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="M5f-Ra-WTY" firstAttribute="top" secondItem="hLZ-01-DdM" secondAttribute="top" constant="8" id="46S-sO-lXg"/>
+                                        <constraint firstAttribute="bottom" secondItem="M5f-Ra-WTY" secondAttribute="bottom" id="4TX-Jr-JkM"/>
+                                        <constraint firstItem="M5f-Ra-WTY" firstAttribute="trailing" secondItem="hLZ-01-DdM" secondAttribute="trailing" constant="-8" id="VnX-90-tcL"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="msgLabel" destination="M5f-Ra-WTY" id="PtS-Tj-PaQ"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HrG-Lx-NFW" id="MeE-lh-x2F"/>
+                            <outlet property="delegate" destination="HrG-Lx-NFW" id="nK2-B1-nNs"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Abstract Msg" id="bBp-dX-ljU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6c-ox-2CG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1806" y="121"/>
+        </scene>
+        <!--MessengerVC-->
+        <scene sceneID="99x-P7-yn3">
+            <objects>
+                <viewController storyboardIdentifier="msgVC" id="7Yg-ce-PRi" customClass="MessengerVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jSG-ZO-NfP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ymv-WK-BAb">
+                                <rect key="frame" x="8" y="52" width="398" height="613"/>
+                                <connections>
+                                    <segue destination="HrG-Lx-NFW" kind="embed" id="4Mk-0F-2UR"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syn-ZJ-HRt">
+                                <rect key="frame" x="10" y="673" width="394" height="140"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" text="say something flirty" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FxQ-hS-h18">
+                                        <rect key="frame" x="8" y="8" width="378" height="100"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="hDx-Z6-TxS"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n73-hC-aye">
+                                        <rect key="frame" x="346" y="108" width="40" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="9CB-MD-wJ5"/>
+                                            <constraint firstAttribute="width" constant="40" id="jHP-BB-hV8"/>
+                                        </constraints>
+                                        <state key="normal" title="SEND"/>
+                                        <connections>
+                                            <action selector="onSend:" destination="7Yg-ce-PRi" eventType="touchUpInside" id="j7o-es-Qtk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FxQ-hS-h18" secondAttribute="trailing" constant="8" id="4VQ-4A-rfc"/>
+                                    <constraint firstItem="n73-hC-aye" firstAttribute="top" secondItem="FxQ-hS-h18" secondAttribute="bottom" id="564-Uq-KLC"/>
+                                    <constraint firstItem="FxQ-hS-h18" firstAttribute="top" secondItem="syn-ZJ-HRt" secondAttribute="top" constant="8" id="CLu-Qz-yBp"/>
+                                    <constraint firstAttribute="height" constant="140" id="fiQ-S1-gkT"/>
+                                    <constraint firstAttribute="trailing" secondItem="n73-hC-aye" secondAttribute="trailing" constant="8" id="jq4-am-3Py"/>
+                                    <constraint firstItem="FxQ-hS-h18" firstAttribute="leading" secondItem="syn-ZJ-HRt" secondAttribute="leading" constant="8" id="rOG-0V-CGT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Ymv-WK-BAb" firstAttribute="top" secondItem="0Bd-hF-FeW" secondAttribute="top" constant="8" id="0yv-Fn-XjX"/>
+                            <constraint firstItem="0Bd-hF-FeW" firstAttribute="bottom" secondItem="syn-ZJ-HRt" secondAttribute="bottom" id="2Fi-IC-L00"/>
+                            <constraint firstItem="syn-ZJ-HRt" firstAttribute="top" secondItem="Ymv-WK-BAb" secondAttribute="bottom" constant="8" id="Akb-oS-pMr"/>
+                            <constraint firstItem="0Bd-hF-FeW" firstAttribute="trailing" secondItem="Ymv-WK-BAb" secondAttribute="trailing" constant="8" id="Oeo-2F-Q4y"/>
+                            <constraint firstItem="Ymv-WK-BAb" firstAttribute="leading" secondItem="0Bd-hF-FeW" secondAttribute="leading" constant="8" id="j5S-Es-QhJ"/>
+                            <constraint firstItem="syn-ZJ-HRt" firstAttribute="centerX" secondItem="Ymv-WK-BAb" secondAttribute="centerX" id="nwW-mV-TYK"/>
+                            <constraint firstItem="syn-ZJ-HRt" firstAttribute="leading" secondItem="0Bd-hF-FeW" secondAttribute="leading" constant="10" id="vrU-c4-Usu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Bd-hF-FeW"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <connections>
+                        <outlet property="entryView" destination="syn-ZJ-HRt" id="Ap0-qQ-WRT"/>
+                        <outlet property="noKeyboardConstraint" destination="2Fi-IC-L00" id="XdD-Rz-WtK"/>
+                        <outlet property="sendBtn" destination="n73-hC-aye" id="jk7-Gl-S45"/>
+                        <outlet property="textarea" destination="FxQ-hS-h18" id="D9u-KX-RpK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="czF-oy-baF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1005.7971014492755" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+</document>
