@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessengerVC: UIViewController {
+class MessengerVC: UIViewController, UITextViewDelegate {
     
     var _profile : Profile?
     
@@ -18,8 +18,7 @@ class MessengerVC: UIViewController {
     
     @IBOutlet weak var entryView: UIView!
     @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
-    
-    var _withKeyboardConstraint: NSLayoutConstraint?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,36 +48,31 @@ class MessengerVC: UIViewController {
             return
         }
         
-        noKeyboardConstraint.isActive = false
-        
-        if let withKeyboardConstraint = _withKeyboardConstraint {
-            withKeyboardConstraint.isActive = true
-        } else {
-        let withKeyboardConstraint = NSLayoutConstraint(item: self.view, attribute: .bottom, relatedBy: .equal, toItem: entryView, attribute: .bottom, multiplier: 1, constant: keyboardRect.size.height)
-            withKeyboardConstraint.isActive = true
-            view.addConstraint(withKeyboardConstraint)
-        
-            _withKeyboardConstraint = withKeyboardConstraint
-        }
-    
-        
+        noKeyboardConstraint.constant = keyboardRect.size.height
+        noKeyboardConstraint.isActive = true
         
     }
     
     @objc func keyboardWillBeHidden(_ notification: NSNotification) {
         print("keybaord about to hide")
         
-        if let withKeyboardConstraint = _withKeyboardConstraint {
-            withKeyboardConstraint.isActive = false
-            noKeyboardConstraint.isActive = true
-        }
+        noKeyboardConstraint.constant =  0
+        noKeyboardConstraint.isActive = true
         
+        
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if(textView == textarea){
+            sendBtn.isEnabled = true
+        }
     }
     
     @IBAction func onSend(_ sender: Any){
         textarea.endEditing(true)
         print("sending ... \(String(describing: textarea.text))")
         textarea.text = ""
+        sendBtn.isEnabled = false
     }
 
 
