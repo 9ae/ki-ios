@@ -15,7 +15,7 @@ struct Message {
 
 class ConvoLogVC: UITableViewController {
 
-       var messages : [Message] = [Message(body: "Hey cutie. A LIMIT parameter indicates how many messages to be included in a returned list. A SBDPreviousMessageListQuery instance itself does pagination of a result set according to the value of the LIMIT parameter, and internally manages a token to retrieve the next page in the result set.", isMe: false), Message(body: "Howdy!", isMe: true)]
+       private var messages : [Message] = []
 
        override func viewDidLoad() {
            super.viewDidLoad()
@@ -46,5 +46,10 @@ class ConvoLogVC: UITableViewController {
            
            return cell
        }
+    
+    func addMessages(_ msgs : [Message]){
+        self.messages.append(contentsOf: msgs)
+        self.tableView.reloadData()
+    }
 
 }

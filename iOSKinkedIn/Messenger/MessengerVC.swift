@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import SendBirdSDK
 
 class MessengerVC: UIViewController, UITextViewDelegate {
     
     var _profile : Profile?
+    var _chan : SBDGroupChannel?
+    var _convoLog: ConvoLogVC?
     
     @IBOutlet weak var textarea: UITextView!
     @IBOutlet weak var sendBtn : UIButton!
@@ -70,20 +73,75 @@ class MessengerVC: UIViewController, UITextViewDelegate {
     
     @IBAction func onSend(_ sender: Any){
         textarea.endEditing(true)
-        print("sending ... \(String(describing: textarea.text))")
+        
+        let msg = textarea.text
+        if (msg?.count ?? 0) > 0 {
+            print("sending ... \(msg)")
+            _chan?.sendUserMessage(msg, completionHandler: { (_msg, _error) in
+                if _msg != nil {
+                    print("message sent success")
+                } else {
+                    print(_error)
+                }
+            })
+        }
+        
         textarea.text = ""
         sendBtn.isEnabled = false
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setData(_ profile: Profile){
+        self._profile = profile
+        
+        SBDGroupChannel.createChannel(withUserIds: [profile.uuid], isDistinct: true) { (chan, error) in
+            print("creating channel")
+            
+            self._chan = chan
+            
+            if let err = error {
+                print(err)
+            } else {
+                print("channel created sucessfully")
+                self.initLoadMessages()
+            }
+        }
     }
-    */
+    
+    func initLoadMessages(){
+        guard let q = _chan?.createPreviousMessageListQuery() else {
+            print("fail to create query")
+            return
+        }
+        
+        print("query created")
+        
+        q.loadPreviousMessages(withLimit: 20, reverse: true) { (_messages, _error) in
+            if let msglog = _messages, let convoLog = self._convoLog {
+                var toAdd : [Message] = []
+                let messages = msglog.reversed()
+                for _msg in messages {
+                    guard let msg = _msg as? SBDUserMessage else { continue }
+                    guard let body = msg.message else { continue }
+                    var isMe = false
+                    if let sender = msg.sender, let myId = self._profile?.uuid {
+                        isMe = sender.userId == myId
+                    }
+                    toAdd.append(Message(body: body, isMe: isMe))
+                }
+                convoLog.addMessages(toAdd)
+            } else {
+                print(_error)
+            }
+        }
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("check seuges")
+        if segue.identifier == "convoEmbed" {
+            print("is segue as convo embed")
+            self._convoLog = segue.destination as? ConvoLogVC
+        }
+    }
+    
 
 }
