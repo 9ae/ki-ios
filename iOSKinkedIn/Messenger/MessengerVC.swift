@@ -131,10 +131,13 @@ class MessengerVC: UIViewController, UITextViewDelegate {
         }
         
         let report = UIAlertAction(title: "Reach Out to Care Team", style: .default) { (alert: UIAlertAction!) -> Void in
-            guard let user_uuid = self._profile?.uuid else {
+            guard let profile = self._profile else {
                 return
             }
-           // TODO make aftercare convo
+           
+            let convo = UIStoryboard(name: "Aftercare", bundle: Bundle.main).instantiateViewController(withIdentifier: "careConvoVC") as! CheckinChatVC
+            convo.setData(profile: profile, flow: mockAftercareFlow)
+            self.navigationController?.pushViewController(convo, animated: false)
         }
         
         let block = UIAlertAction(title: "Disconnect", style: .destructive) { (alert: UIAlertAction!) -> Void in

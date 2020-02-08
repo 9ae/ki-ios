@@ -8,8 +8,13 @@
 
 import Foundation
 
+struct Message {
+    let body : String
+    let isMe : Bool
+}
+
 enum ReplyType: String, Codable {
-    case question, choice
+    case statement, choice, option, question
 }
 
 struct CareQuestion : Codable {
@@ -19,14 +24,14 @@ struct CareQuestion : Codable {
     var followup: [CareQuestion]
     
     init?(_ json: [String:Any]){
-        guard let id = json["name"] as? Int else {return nil}
-        guard let content = json["content"] as? String  else {return nil}
+        guard let id = json["id"] as? Int else {return nil}
+        guard let content = json["message"] as? String  else {return nil}
         guard let type = json["type"] as? String else {return nil}
         
         self.id = id
         self.message = content
         
-        self.type = (type == "choice" ? .choice : .question)
+        self.type = ReplyType.init(rawValue: type) ?? .statement
         
         self.followup = []
         if let children = json["children"] as? [[String:Any]] {
@@ -36,5 +41,12 @@ struct CareQuestion : Codable {
                 }
             }
         }
+    }
+    
+    init(_ message: String, type: ReplyType, followup: [CareQuestion]){
+        self.id = Int.random(in: 0..<100)
+        self.message = message
+        self.type = type
+        self.followup = followup
     }
 }

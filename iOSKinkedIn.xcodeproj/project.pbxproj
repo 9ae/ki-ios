@@ -43,6 +43,8 @@
 		004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BBBED1F02BC43009AD970 /* PromptVC.swift */; };
 		004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004BBBEF1F02DECC009AD970 /* PromptCell.swift */; };
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
+		005C8C9023EF35AE000011A4 /* CheckinChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */; };
+		005C8C9223EF3D39000011A4 /* SimpleLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */; };
 		006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */; };
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
@@ -72,6 +74,7 @@
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD71BA22ECE83D0072A84B /* HelpVC.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
+		00E1B10423E76AF300A2B431 /* CareMessengerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
 		00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */; };
@@ -81,7 +84,6 @@
 		00FA104F1F04262D007BEEE3 /* constantine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA104E1F04262D007BEEE3 /* constantine.swift */; };
 		00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FA10501F042731007BEEE3 /* PerfsVC.swift */; };
 		00FD15801F6D610A00357860 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD157F1F6D610A00357860 /* Auth.storyboard */; };
-		00FD15821F6D685700357860 /* mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD15811F6D685700357860 /* mock.swift */; };
 		00FD15841F6D6D1100357860 /* MyProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FD15831F6D6D1100357860 /* MyProfile.storyboard */; };
 		00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FD2A741EF6FB190015749A /* BasicProfileVC.swift */; };
 		CEF3E0C0494D1BC836D97862 /* Pods_iOSKinkedInUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00ED085A63868A45E05ADEC8 /* Pods_iOSKinkedInUITests.framework */; };
@@ -161,6 +163,8 @@
 		004BBBED1F02BC43009AD970 /* PromptVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptVC.swift; sourceTree = "<group>"; };
 		004BBBEF1F02DECC009AD970 /* PromptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromptCell.swift; sourceTree = "<group>"; };
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinChatVC.swift; sourceTree = "<group>"; };
+		005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLogVC.swift; sourceTree = "<group>"; };
 		006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDateVC.swift; sourceTree = "<group>"; };
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DD71BA22ECE83D0072A84B /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
+		00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareMessengerUI.swift; sourceTree = "<group>"; };
 		00ED085A63868A45E05ADEC8 /* Pods_iOSKinkedInUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
@@ -200,7 +205,6 @@
 		00FA104E1F04262D007BEEE3 /* constantine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = constantine.swift; sourceTree = "<group>"; };
 		00FA10501F042731007BEEE3 /* PerfsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfsVC.swift; sourceTree = "<group>"; };
 		00FD157F1F6D610A00357860 /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
-		00FD15811F6D685700357860 /* mock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mock.swift; sourceTree = "<group>"; };
 		00FD15831F6D6D1100357860 /* MyProfile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MyProfile.storyboard; sourceTree = "<group>"; };
 		00FD2A741EF6FB190015749A /* BasicProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicProfileVC.swift; sourceTree = "<group>"; };
 		066D0773785CEBE407B9AD93 /* Pods-iOSKinkedIn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSKinkedIn.release.xcconfig"; path = "Target Support Files/Pods-iOSKinkedIn/Pods-iOSKinkedIn.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,7 +306,6 @@
 			children = (
 				00171A521E56468700640B09 /* api.swift */,
 				00DED11B1E6D837300402FA8 /* cloudinary.swift */,
-				00FD15811F6D685700357860 /* mock.swift */,
 			);
 			name = providers;
 			sourceTree = "<group>";
@@ -363,6 +366,9 @@
 				00DD71BA22ECE83D0072A84B /* HelpVC.swift */,
 				00CB0A352364BFD100BCE8FA /* CaseCell.swift */,
 				00CB0A372364C0CA00BCE8FA /* CasesVC.swift */,
+				00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */,
+				005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */,
+				005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */,
 			);
 			name = Aftercare;
 			sourceTree = "<group>";
@@ -770,6 +776,7 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
+				00E1B10423E76AF300A2B431 /* CareMessengerUI.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
 				0001EC3223DCE64400CF062D /* ConvoWrapper.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
@@ -796,9 +803,10 @@
 				00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
+				005C8C9223EF3D39000011A4 /* SimpleLogVC.swift in Sources */,
+				005C8C9023EF35AE000011A4 /* CheckinChatVC.swift in Sources */,
 				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
 				0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */,
-				00FD15821F6D685700357860 /* mock.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,

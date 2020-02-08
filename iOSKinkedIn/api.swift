@@ -595,7 +595,7 @@ class KinkedInAPI {
                 }
                 users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
             }
-            try? prolistCache.object(forKey: CK_BLOCKED)
+            try? prolistCache.setObject(users, forKey: CK_BLOCKED)
             callback(users)
 
         }

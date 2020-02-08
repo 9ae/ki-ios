@@ -9,20 +9,15 @@
 import UIKit
 import SendBirdSDK
 
-struct Message {
-    let body : String
-    let isMe : Bool
-}
-
 class ConvoLogVC: UITableViewController, SBDChannelDelegate {
     
     private let PAGE_SIZE = 20
     private let SBID = "raven_brings_the_night"
 
-       private var messages : [Message] = []
-    
-        var theirId = ""
-        var _chan : SBDGroupChannel?
+   private var messages : [Message] = []
+
+    var theirId = ""
+    var _chan : SBDGroupChannel?
     
     var query : SBDPreviousMessageListQuery?
     

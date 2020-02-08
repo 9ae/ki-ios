@@ -17,8 +17,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
             endingLineNumber = "64"
-            landmarkName = "unknown"
-            landmarkType = "0">
+            landmarkName = "loadScheduledDates()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "AD9D63E7-30B8-46CC-B4AF-3C226B392EB9 - ce9848c7bb4639ff"

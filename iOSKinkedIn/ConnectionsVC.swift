@@ -202,7 +202,6 @@ class ConnectionsVC: UITableViewController {
         if (segmentMode == .partners || segmentMode == .reciprocals) {
             let convo = UIStoryboard(name: "Msg", bundle: Bundle.main).instantiateViewController(withIdentifier: "msgVC") as! MessengerVC
             convo.setData(p.data[indexPath.row])
-                //ConvoWrapper(p.data[indexPath.row])
             self.navigationController?.pushViewController(convo, animated: false)
         }
         underline.frame.origin.x = segmentX
