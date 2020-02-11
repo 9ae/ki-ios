@@ -21,6 +21,8 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     
     var optBtns : [UIButton] = []
     
+    var isConvoEnd = false
+    
 
     @IBOutlet weak var entryView: UIStackView!
     @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
@@ -62,16 +64,9 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         optionsView.alignment = .fill
         
         clearQuestion()
+        renderQ(flow)
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        print("=== AFTER CARE CONVO NOW ===")
-        loadQuestion()
-        
-    }
-    
+
     func setData(profile: Profile, flow: CareQuestion){
         self._profile = profile
         self.flow = flow
@@ -120,73 +115,83 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     /* User action handlers */
     
     @IBAction func onSend(_ sender: Any){
-        let msg = textarea.text
-        if (msg?.count ?? 0) > 0 {
-            next(msg)
+        if isConvoEnd {
+            /*
+            let app = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabAppView")
+            self.navigationController?.pushViewController(app, animated: false)
+            */
+            // TODO dependent on case type and how we got here
+            self.navigationController?.popToRootViewController(animated: true)
+        } else {
+            let msg = textarea.text
+            if (msg?.count ?? 0) > 0 {
+                next(msg)
+            }
         }
     }
     
-    func movePointer(_ q: CareQuestion){
-        if let nextMsg = q.followup.first {
-            self.flow = nextMsg
+    @objc func optionTapped(_ sender: UIButton){
+        next(sender.title(for: .normal))
+    }
+    
+    /* Ctrl Flow */
+    
+    private func movePointer(_ q: CareQuestion) -> CareQuestion? {
+        if let nq = q.followup.first {
+            return nq
         } else {
             print("~*~ The END ~*~")
+            isConvoEnd = true
+            return nil
         }
     }
     
-    func next(_ _reply: String?){
+    private func renderQ (_ q: CareQuestion){
+        _convoLog?.botSay(q.message)
+        
+        if q.type == .choice {
+            prepChoices(q)
+        } else if q.type == .question {
+            prepQuestion()
+        }
+    }
+    
+    private func next(_ _reply: String?){
+        print("~*~ next [\(flow.type)] \(flow.message)")
+        if self.isConvoEnd {
+            onEnd()
+            return
+        }
+        
+        var _q : CareQuestion? = nil
         if let reply = _reply {
             _convoLog?.iSay(reply)
             
             if flow.type == .choice {
                 clearChoices()
-                processChoice(reply)
+                _q = processChoice(reply)
+            } else if flow.type == .question {
+                clearQuestion()
             }
         }
-        
-        switch flow.type {
-            case .choice:
-                // do nothing handled already
-            break;
-            
-            case .question:
-                clearQuestion()
-                movePointer(self.flow)
-            break;
-            
-            default:
-                movePointer(self.flow)
-            break;
+        if flow.type != .choice {
+            _q = movePointer(self.flow)
         }
         
-        loadQuestion()
-    }
-    
-    func loadQuestion(){
-        if let log = _convoLog {
-            log.botSay(flow.message)
-        }
-        
-        switch flow.type {
-            case .choice:
-                prepChoices()
-            break;
+        if let q = _q {
+            renderQ(q)
             
-            case .question:
-                prepQuestion()
-            break;
+            self.flow = q
             
-            case .statement:
-                prepStatement()
-                break;
-            
-            default:
-                prepWait()
-            break;
+            if q.type == .statement {
+                next(nil)
+            }
+        } else {
+            onEnd()
         }
     }
     
-    func clearQuestion(){
+    private func clearQuestion(){
         textarea.endEditing(true)
         textarea.isHidden = true
         sendBtn.isHidden = true
@@ -195,7 +200,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         msgInputStackHeight.isActive = true
     }
     
-    func clearChoices(){
+    private func clearChoices(){
         for b in optBtns {
             optionsView.removeArrangedSubview(b)
         }
@@ -207,9 +212,9 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         choicesStackHeigth.isActive = true
     }
     
-    func prepChoices(){
+    private func prepChoices(_ q: CareQuestion){
         
-        for o in flow.followup {
+        for o in q.followup {
             let lbl = UIButton()
             lbl.setTitleColor(UIColor.white, for: .normal)
             lbl.backgroundColor = ThemeColors.msgBtn
@@ -226,25 +231,23 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
             optBtns.append(lbl)
         }
         
-        choicesStackHeigth.constant = CGFloat(flow.followup.count) * (LABEL_HEIGHT + VPADDING)
+        choicesStackHeigth.constant = CGFloat(q.followup.count) * (LABEL_HEIGHT + VPADDING)
         choicesStackHeigth.isActive = true
         
     }
     
-    func processChoice(_ answer: String){
+    private func processChoice(_ answer: String) -> CareQuestion? {
+        var followup : CareQuestion? = nil
         for o in flow.followup {
             if o.message == answer {
-                movePointer(o)
-                break;
+                followup = movePointer(o)
+                break
             } else { continue; }
         }
+        return followup
     }
     
-    @objc func optionTapped(_ sender: UIButton){
-        next(sender.title(for: .normal))
-    }
-    
-    func prepQuestion(){
+    private func prepQuestion(){
         textarea.isHidden = false
         sendBtn.isHidden = false
         entryView.isHidden = false
@@ -253,14 +256,18 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
     }
     
-    func prepStatement(){
-        if flow.followup.count > 0 {
-            next(nil)
-        }
-    }
-    
-    func prepWait() {
-        
+    private func onEnd(){
+        _convoLog?.botSay("Thank you for sharing with us your thoughts and concerns")
+        sendBtn.setTitle("Return to App", for: .normal)
+        sendBtn.setTitleColor(ThemeColors.action, for: .normal)
+        sendBtn.isEnabled = true
+        sendBtn.isHidden = false
+        textarea.isHidden = true
+        entryView.isHidden = false
+        noKeyboardConstraint.constant = 4 * VPADDING
+        noKeyboardConstraint.isActive = true
+        msgInputStackHeight.constant = 40
+        msgInputStackHeight.isActive = true
     }
     
 

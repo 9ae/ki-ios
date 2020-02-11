@@ -20,6 +20,8 @@ let mockAftercareFlow =
                 CareQuestion("Is there anything that could have taken this from good to great?", type: .question, followup: [
                     CareQuestion("That's awesome, let's keep that in mind next time", type: .statement, followup: [])
                 ])
-            ] )])
+            ] )]),
+        CareQuestion("Just ok. I could be better", type: .option, followup: []),
+        CareQuestion("Not okay. I need help", type: .option, followup: [])
         
     ])
