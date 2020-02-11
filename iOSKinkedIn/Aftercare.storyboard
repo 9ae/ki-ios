@@ -427,7 +427,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Z0S-UJ-nQM">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z0S-UJ-nQM">
                                 <rect key="frame" x="8" y="531" width="359" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="ADq-Pa-DdP"/>
@@ -438,7 +438,7 @@
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hil-jQ-vU8">
                                         <rect key="frame" x="0.0" y="0.0" width="303" height="120"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -458,7 +458,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-q6-XyW">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
                                 <connections>
-                                    <segue destination="GfE-ji-ALc" kind="embed" id="ozL-V2-z64"/>
+                                    <segue destination="GfE-ji-ALc" kind="embed" identifier="acConvoEmbed" id="ozL-V2-z64"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -478,7 +478,9 @@
                         <viewLayoutGuide key="safeArea" id="BUw-ag-hJc"/>
                     </view>
                     <connections>
+                        <outlet property="choicesStackHeigth" destination="ADq-Pa-DdP" id="chb-rO-ood"/>
                         <outlet property="entryView" destination="kQF-6n-QBW" id="kus-Dc-Orj"/>
+                        <outlet property="msgInputStackHeight" destination="0uQ-VJ-cr5" id="XY4-uX-Vzd"/>
                         <outlet property="noKeyboardConstraint" destination="A9J-WR-Dvs" id="1DE-QP-aIs"/>
                         <outlet property="optionsView" destination="Z0S-UJ-nQM" id="k8J-Cm-UIb"/>
                         <outlet property="sendBtn" destination="39E-zw-8pS" id="rZc-qP-Hrp"/>
