@@ -34,7 +34,7 @@ struct CareQuestion : Codable {
         self.type = ReplyType.init(rawValue: type) ?? .statement
         
         self.followup = []
-        if let children = json["children"] as? [[String:Any]] {
+        if let children = json["followup"] as? [[String:Any]] {
             for child in children {
                 if let q = CareQuestion.init(child) {
                     self.followup.append(q)

@@ -59,9 +59,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
-        
-        optionsView.spacing = VPADDING
-        optionsView.alignment = .fill
+
         
         clearQuestion()
         renderQ(flow)
@@ -93,7 +91,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         }
         
         noKeyboardConstraint.constant = keyboardRect.size.height + VPADDING
-        noKeyboardConstraint.isActive = true
+        self.view.layoutIfNeeded()
         
     }
     
@@ -101,7 +99,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         print("keybaord about to hide")
         
         noKeyboardConstraint.constant =  VPADDING
-        noKeyboardConstraint.isActive = true
+        self.view.layoutIfNeeded()
         
         
     }
@@ -197,7 +195,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         sendBtn.isHidden = true
         entryView.isHidden = true
         msgInputStackHeight.constant = 0
-        msgInputStackHeight.isActive = true
+        self.view.layoutIfNeeded()
     }
     
     private func clearChoices(){
@@ -209,10 +207,14 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
         optionsView.isHidden = true
         choicesStackHeigth.constant = 0
-        choicesStackHeigth.isActive = true
+        self.view.layoutIfNeeded()
     }
     
     private func prepChoices(_ q: CareQuestion){
+        optionsView.isHidden = false
+        
+        choicesStackHeigth.constant = CGFloat(q.followup.count) * (LABEL_HEIGHT + VPADDING)
+        self.view.layoutIfNeeded()
         
         for o in q.followup {
             let lbl = UIButton()
@@ -222,7 +224,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
             lbl.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0)
             lbl.layer.cornerRadius = 10
             lbl.clipsToBounds = true
-            lbl.translatesAutoresizingMaskIntoConstraints = false
+           // lbl.translatesAutoresizingMaskIntoConstraints = false
             lbl.frame.size.height = CGFloat(LABEL_HEIGHT)
             lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
             lbl.setTitle(o.message, for: .normal)
@@ -230,10 +232,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
             optionsView.addArrangedSubview(lbl)
             optBtns.append(lbl)
         }
-        
-        choicesStackHeigth.constant = CGFloat(q.followup.count) * (LABEL_HEIGHT + VPADDING)
-        choicesStackHeigth.isActive = true
-        
+
     }
     
     private func processChoice(_ answer: String) -> CareQuestion? {
@@ -252,7 +251,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         sendBtn.isHidden = false
         entryView.isHidden = false
         msgInputStackHeight.constant = MSG_BOX_HEIGHT
-        msgInputStackHeight.isActive = true
+        self.view.layoutIfNeeded()
         
     }
     
@@ -265,9 +264,9 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         textarea.isHidden = true
         entryView.isHidden = false
         noKeyboardConstraint.constant = 4 * VPADDING
-        noKeyboardConstraint.isActive = true
         msgInputStackHeight.constant = 40
-        msgInputStackHeight.isActive = true
+        
+        self.view.layoutIfNeeded()
     }
     
 

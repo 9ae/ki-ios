@@ -16,16 +16,16 @@ class AppTabVC: UITabBarController {
         KinkedInAPI.checkProfileSetup(){ step in
             if(step == 0){
                 print("finish profile setup")
-                self.selectedIndex = 3
+                self.selectedIndex = 0
                 // TODO : MyProfile
 //                if let changeVC = self.selectedViewController as? StaticMasterVC {
 //                    changeVC.toSetupProfile()
 //                }
             } else {
-                print("discover view")
+                print("connections view")
                 // TODO: check if users has connections
                 // go to connections, else go to discover
-                self.selectedIndex = 0
+                self.selectedIndex = 2
             }
         }
         

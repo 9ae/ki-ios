@@ -427,7 +427,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z0S-UJ-nQM">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z0S-UJ-nQM">
                                 <rect key="frame" x="8" y="531" width="359" height="0.0"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="ADq-Pa-DdP"/>

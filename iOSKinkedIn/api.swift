@@ -16,7 +16,7 @@ enum ProfileAction: Int {
 
 /* cache keys */
 
-let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW"
+let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW_"
 
 let CK_DISCOVER = "CK_DISCOVER"
 
@@ -702,16 +702,18 @@ class KinkedInAPI {
         }
     }
     
-    static func aftercareFlow(callback : @escaping (_ flow: CareQuestion) -> Void) {
+    static func aftercareFlow(caseType: CaseType, callback : @escaping (_ flow: CareQuestion) -> Void) {
+        let typeStr = caseType.rawValue
+        let cacheKey = CK_AFTERCARE_FLOW + typeStr
         do {
-            let co = try aftercareCache.object(forKey: CK_AFTERCARE_FLOW)
+            let co = try aftercareCache.object(forKey: cacheKey)
             callback(co)
         } catch {
-            get("cms/aftercare/flow", requiresToken: false, isJob: false){ _json in
+            get("aftercare/\(typeStr)", requiresToken: false, isJob: false){ _json in
                 guard let json = _json as? [String:Any] else { return }
                 guard let careFlow = CareQuestion(json) else { return }
                 
-                try? aftercareCache.setObject(careFlow, forKey: CK_AFTERCARE_FLOW)
+                try? aftercareCache.setObject(careFlow, forKey: cacheKey)
                 callback(careFlow)
             }
         }
