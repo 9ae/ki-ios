@@ -136,10 +136,11 @@ class MessengerVC: UIViewController, UITextViewDelegate {
             }
             
             print("YY getting convo flow")
-            KinkedInAPI.aftercareFlow(caseType: .report) { flow in
+            let caseType : CaseType = .report
+            KinkedInAPI.aftercareFlow(caseType: caseType) { flow in
                 print("YY got convo flow @ + \(flow.message)")
                 let convo = UIStoryboard(name: "Aftercare", bundle: Bundle.main).instantiateViewController(withIdentifier: "careConvoVC") as! CheckinChatVC
-               convo.setData(profile: profile, flow: flow)
+                convo.setData(profile: profile, flow: flow, caseType: caseType)
                self.navigationController?.pushViewController(convo, animated: false)
             }
             self.view.makeToastActivity(.center)

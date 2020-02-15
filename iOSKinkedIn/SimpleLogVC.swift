@@ -11,6 +11,9 @@ import UIKit
 class SimpleLogVC: UITableViewController {
     
     private var messages : [Message] = []
+    private var _caseId : Int?
+    
+    private var msgQ : [(Message, Date)] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,15 +51,33 @@ class SimpleLogVC: UITableViewController {
         
         return cell
     }
+    
+    func setCaseId(_ caseId : Int){
+        self._caseId = caseId
+        
+        for q in msgQ {
+            let (msg, date) = q
+            KinkedInAPI.writeToCaselog(case_id: caseId, msg: msg, date: date)
+        }
+    }
+    
+    private func addMessage(_ msg : Message){
+        self.messages.append(msg)
+        self.tableView.reloadData()
+        
+        if let caseId = self._caseId {
+            KinkedInAPI.writeToCaselog(case_id: caseId, msg: msg, date: nil)
+        } else {
+            msgQ.append((msg, Date()))
+        }
+    }
 
     func iSay(_ message: String){
-        self.messages.append(Message(body: message, isMe: true))
-        self.tableView.reloadData()
+        addMessage(Message(body: message, isMe: true))
     }
     
     func botSay(_ message: String){
-        self.messages.append(Message(body: message, isMe: false))
-        self.tableView.reloadData()
+       addMessage( Message(body: message, isMe: false))
     }
 
 }

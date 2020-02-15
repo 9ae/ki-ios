@@ -30,6 +30,8 @@ class KinkedInAPI {
     static var deviceToken: Data?
     static let HOST_URL = Bundle.main.infoDictionary!["KI_API"] as! String
     
+    static let isoFormat = ISO8601DateFormatter()
+    
     static let ds = try! Storage(
         diskConfig: DiskConfig(name: "KiCache"),
         memoryConfig: MemoryConfig(),
@@ -447,7 +449,7 @@ class KinkedInAPI {
                 }
                 let p = Profile(uuid: uuid, name: name, picture_public_id: image_id)
                 if let convo = rc["convo"] as? [String:Any] {
-                    if let ts = ISO8601DateFormatter().date(from: convo["timestamp"] as! String),
+                    if let ts = isoFormat.date(from: convo["timestamp"] as! String),
                         let text = convo["text"] as? String
                     {
                      p.convo = ConvoPreview(timestamp: ts, text: text, isent: convo["isent"] as! Bool)
@@ -716,6 +718,25 @@ class KinkedInAPI {
                 try? aftercareCache.setObject(careFlow, forKey: cacheKey)
                 callback(careFlow)
             }
+        }
+    }
+    
+    static func createCase(aboutUser: String, caseType: CaseType, callback : @escaping (_ case_id : Int) -> Void){
+        post("self/case", parameters: ["about_user": aboutUser, "case_type": caseType.rawValue]) { _json in
+            guard let json = _json as? [String:Any] else { return }
+            guard let case_id = json["case_id"] as? Int else {return}
+            
+            callback(case_id)
+        }
+    }
+    
+    static func writeToCaselog(case_id: Int, msg: Message, date: Date?){
+        let timestamp = date ?? Date()
+        let body : [String:Any] = ["body" : msg.body,
+                    "is_reply" : msg.isMe,
+                    "timestamp": isoFormat.string(from: timestamp)]
+        post("self/case/\(case_id)", parameters: body){ _json in
+            
         }
     }
     

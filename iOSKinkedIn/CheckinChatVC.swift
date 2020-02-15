@@ -65,9 +65,13 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         renderQ(flow)
     }
 
-    func setData(profile: Profile, flow: CareQuestion){
+    func setData(profile: Profile, flow: CareQuestion, caseType: CaseType){
         self._profile = profile
         self.flow = flow
+        
+        KinkedInAPI.createCase(aboutUser: profile.uuid, caseType: caseType) { caseId in
+            self._convoLog?.setCaseId(caseId)
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
