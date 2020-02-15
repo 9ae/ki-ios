@@ -17,13 +17,14 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     var _profile : Profile?
     var _convoLog: SimpleLogVC?
     
+    var _caseType: CaseType?
+    
     var flow : CareQuestion
     
     var optBtns : [UIButton] = []
     
     var isConvoEnd = false
     
-
     @IBOutlet weak var entryView: UIStackView!
     @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
     
@@ -48,7 +49,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
         if let profile = _profile {
             // TODO change depending on checkin type
-            self.navigationItem.title = "Checkin about:" + profile.name
+            self.navigationItem.title = self.title
         }
         
          self.hidesBottomBarWhenPushed = true
@@ -69,9 +70,13 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         self._profile = profile
         self.flow = flow
         
+        self._caseType = caseType
+        
         KinkedInAPI.createCase(aboutUser: profile.uuid, caseType: caseType) { caseId in
             self._convoLog?.setCaseId(caseId)
         }
+        
+        self.title = "\(caseType == .checkin ? "Checkin" : "Concerns") about: \(profile.name)"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,12 +123,16 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     
     @IBAction func onSend(_ sender: Any){
         if isConvoEnd {
-            /*
-            let app = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "TabAppView")
-            self.navigationController?.pushViewController(app, animated: false)
-            */
-            // TODO dependent on case type and how we got here
-            self.navigationController?.popToRootViewController(animated: true)
+            if _caseType == .some(.checkin){
+                // TODO probaby better for app stickiness to go back to main screen. and app store submission will reject
+                
+                UIControl().sendAction(#selector(URLSessionTask.suspend), to: UIApplication.shared, for: nil)
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                    exit(EXIT_SUCCESS)
+                }
+            } else {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         } else {
             let msg = textarea.text
             if (msg?.count ?? 0) > 0 {
@@ -261,7 +270,11 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     
     private func onEnd(){
         _convoLog?.botSay("Thank you for sharing with us your thoughts and concerns")
-        sendBtn.setTitle("Return to App", for: .normal)
+        if _caseType == .some(.checkin) {
+            sendBtn.setTitle("Close checkin", for: .normal)
+        } else {
+            sendBtn.setTitle("Return to App", for: .normal)
+        }
         sendBtn.setTitleColor(ThemeColors.action, for: .normal)
         sendBtn.isEnabled = true
         sendBtn.isHidden = false

@@ -117,39 +117,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-        print("applicationDidBecomeActive")
+        print("ZZ applicationDidBecomeActive")
         
-        /*
+        
         guard let category = self.notificationLaunchOptions["category"] as? String else {
-            print("category is nil")
+            print("ZZ category is nil")
             return
         }
  
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
-        let navCtrl = storyboard.instantiateViewController(withIdentifier: "TabAppView") as! UINavigationController
-        self.window?.rootViewController = navCtrl
-        self.window?.makeKeyAndVisible()
     
         switch(category){
             case NOTECAT_AFTERCARE:
-                continue
-             
-                if let userInfo = self.notificationLaunchOptions["user_info"] as? [AnyHashable: Any] {
-                    let convo = LayerHelper.makeAftercareVC(userInfo: userInfo)
-                    navCtrl.pushViewController(convo, animated: false)
+                print("ZZ aftercare checkin found")
+                guard let userInfo = self.notificationLaunchOptions["user_info"] as? [AnyHashable: Any] else {break}
+                guard let userId = userInfo["about_user_id"] as? String else {break}
+                guard let userName = userInfo["about_user_name"] as? String else {break}
+                
+                let profile = Profile(uuid: userId, name: userName)
+                let caseType : CaseType = .checkin
+                KinkedInAPI.aftercareFlow(caseType: caseType) { flow in
+                    print("YY got convo flow @ + \(flow.message)")
+                    let convo = UIStoryboard(name: "Aftercare", bundle: Bundle.main).instantiateViewController(withIdentifier: "careConvoVC") as! CheckinChatVC
+                    convo.setData(profile: profile, flow: flow, caseType: caseType)
+                    
+                    self.window?.rootViewController = convo
+                    self.window?.makeKeyAndVisible()
                 }
-
+                
+                
+                break
             case NOTECAT_PARTNER_REQUEST:
-                let vc = storyboard.instantiateViewController(withIdentifier: "partnersVC") as! MasterPartnersVC
-                navCtrl.pushViewController(vc, animated: false)
-                print("lauch partner request screen")
+//                let vc = storyboard.instantiateViewController(withIdentifier: "partnersVC") as! MasterPartnersVC
+//                navCtrl.pushViewController(vc, animated: false)
+
+                break
             default:
                 print("not sure what to do")
+            break
                 
         }
-        */
-        // self.notificationLaunchOptions["category"] = nil
+        
+        self.notificationLaunchOptions["category"] = nil
         
 
     }

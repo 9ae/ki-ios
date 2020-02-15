@@ -58,7 +58,8 @@ class ScheduleDateVC: UIViewController {
             checkinHours = UD_CHECKIN_TIME_VALUE
         }
         
-        let scheduleDT = date.addingTimeInterval(TimeInterval(3600*checkinHours))
+     // TODO take out for testing   let scheduleDT = date.addingTimeInterval(TimeInterval(3600*checkinHours))
+        let scheduleDT = date.addingTimeInterval(TimeInterval(36))
         let content = UNMutableNotificationContent()
         content.title = "KinkedIn Aftercare"
         content.body = "How was are you feeling about your date with \(withUser!.name)?"
@@ -66,9 +67,11 @@ class ScheduleDateVC: UIViewController {
         content.categoryIdentifier = NOTECAT_AFTERCARE
         content.userInfo = [
             "meeting_dt": date,
-            "with_user_id": withUser!.uuid
+            "about_user_id": withUser!.uuid,
+            "about_user_name": withUser!.name
         ]
         registerNotification(scheduleDT, content: content)
+        print("ZZ scheduled checkin")
     }
     
     func scheduleDateReminder(_ date: Date){

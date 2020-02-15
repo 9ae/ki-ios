@@ -10,7 +10,7 @@
         <!--Help-->
         <scene sceneID="0YX-kf-2V7">
             <objects>
-                <navigationController title="Help" id="kOS-Q5-9Mb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AftercareNavCtrl" title="Help" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kOS-Q5-9Mb" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Help" image="aftercare" selectedImage="aftercare_select" id="Tdi-IJ-0Nb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2VN-s1-BsO">
