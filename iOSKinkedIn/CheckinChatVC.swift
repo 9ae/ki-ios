@@ -234,7 +234,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         for o in q.followup {
             let lbl = UIButton()
             lbl.setTitleColor(UIColor.white, for: .normal)
-            lbl.backgroundColor = ThemeColors.msgBtn
+            lbl.backgroundColor = ThemeColors.msgOut
             lbl.titleEdgeInsets = UIEdgeInsets(top: 0.5 , left: 0.0, bottom: 0.5, right: 0.0)
             lbl.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0)
             lbl.layer.cornerRadius = 10

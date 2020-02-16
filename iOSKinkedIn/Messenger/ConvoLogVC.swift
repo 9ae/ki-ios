@@ -9,12 +9,10 @@
 import UIKit
 import SendBirdSDK
 
-class ConvoLogVC: UITableViewController, SBDChannelDelegate {
+class ConvoLogVC: BaseConvoLogVC, SBDChannelDelegate {
     
     private let PAGE_SIZE = 20
     private let SBID = "raven_brings_the_night"
-
-   private var messages : [Message] = []
 
     var theirId = ""
     var _chan : SBDGroupChannel?
@@ -24,16 +22,18 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
     let loadMore = UIButton()
 
 
-       override func viewDidLoad() {
+    override func viewDidLoad() {
            super.viewDidLoad()
         
-        loadMore.setTitleColor(ThemeColors.action, for: .normal)
-        loadMore.tintColor = ThemeColors.action
-        loadMore.setTitle("show more...", for: .normal)
-        loadMore.addTarget(self, action: #selector(loadMoreMessages), for: .touchUpInside)
-        loadMore.isHidden = true
-        
-        SBDMain.add(self, identifier: SBID)
+            loadMore.setTitleColor(ThemeColors.action, for: .normal)
+            loadMore.tintColor = ThemeColors.action
+            loadMore.setTitle("show more...", for: .normal)
+            loadMore.addTarget(self, action: #selector(loadMoreMessages), for: .touchUpInside)
+            loadMore.isHidden = true
+            
+            loadMore.backgroundColor = ThemeColors.msgBg
+            
+            SBDMain.add(self, identifier: SBID)
        }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -42,33 +42,9 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
         SBDMain.removeChannelDelegate(forIdentifier: SBID)
     }
 
-       // MARK: - Table view data source
-
-       override func numberOfSections(in tableView: UITableView) -> Int {
-           // #warning Incomplete implementation, return the number of sections
-           return 1
-       }
-
-       override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           // #warning Incomplete implementation, return the number of rows
-           return messages.count
-       }
-
-       
-       override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let msg = messages[indexPath.row]
-           let cellRef = msg.isMe ? "msgCellMe" : "msgCellThem"
-           let cell = tableView.dequeueReusableCell(withIdentifier: cellRef, for: indexPath)
-           
-           if let msgCell = cell as? MsgCell {
-               msgCell.msgLabel.text = msg.body
-           }
-           
-           return cell
-       }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-            return loadMore
+        return loadMore
 
     }
     
@@ -88,7 +64,7 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
         if let msg = message as? SBDUserMessage {
             if let m = toMessage(msg) {
                 self.messages.append(m)
-                self.tableView.reloadData()
+                self.refresh()
             }
         }
     }
@@ -110,7 +86,8 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
                         continue
                     }
                 }
-                self.tableView.reloadData()
+                
+                self.refresh()
                 
                 if messages.count < self.PAGE_SIZE {
                     self.loadMore.isHidden = true
@@ -128,7 +105,7 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
     
     func addMyMessage(_ msg: String){
         self.messages.append(Message(body: msg, isMe: true))
-        self.tableView.reloadData()
+        self.refresh()
     }
     
     @objc func loadMoreMessages(_ sender: Any){
@@ -139,7 +116,8 @@ class ConvoLogVC: UITableViewController, SBDChannelDelegate {
                     return self.toMessage(msg)!
                 }
                 self.messages = prevMsgs + self.messages
-                 self.tableView.reloadData()
+                self.tableView.reloadData()
+                self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
                  
                 if msgs.count < self.PAGE_SIZE {
                     self.loadMore.isHidden = true

@@ -13,6 +13,8 @@
 		0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3923DD071C00CF062D /* MsgCell.swift */; };
 		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
+		0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */; };
+		0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729823F9C535006CE698 /* MsgTextarea.swift */; };
 		000BF152221A189F00FAAD97 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF151221A189F00FAAD97 /* MeVC.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
@@ -126,6 +128,8 @@
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
+		0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvoLogVC.swift; sourceTree = "<group>"; };
+		0007729823F9C535006CE698 /* MsgTextarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgTextarea.swift; sourceTree = "<group>"; };
 		000BF151221A189F00FAAD97 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				0001EC3723DD047200CF062D /* MessengerVC.swift */,
 				0001EC3923DD071C00CF062D /* MsgCell.swift */,
 				00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */,
+				0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */,
+				0007729823F9C535006CE698 /* MsgTextarea.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -753,10 +759,12 @@
 				007F0770222B68800039DE76 /* PartnersVC.swift in Sources */,
 				00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
+				0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */,
 				00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */,
 				0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */,
+				0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */,
 				002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,

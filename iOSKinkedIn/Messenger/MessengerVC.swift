@@ -15,7 +15,7 @@ class MessengerVC: UIViewController, UITextViewDelegate {
     var _chan : SBDGroupChannel?
     var _convoLog: ConvoLogVC?
     
-    @IBOutlet weak var textarea: UITextView!
+    @IBOutlet weak var textarea: MsgTextarea!
     @IBOutlet weak var sendBtn : UIButton!
     
     
@@ -42,14 +42,12 @@ class MessengerVC: UIViewController, UITextViewDelegate {
             animated: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Chat", style: .plain, target: nil, action: nil)
 
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWasShown),
-                                               name: UIResponder.keyboardDidShowNotification, object: nil)
+                                               name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
-        
     }
     
     @objc func keyboardWasShown(_ notification: NSNotification) {
@@ -64,25 +62,31 @@ class MessengerVC: UIViewController, UITextViewDelegate {
             return
         }
         
-        noKeyboardConstraint.constant = keyboardRect.size.height
-        noKeyboardConstraint.isActive = true
+        
+        UIView.animate(withDuration: 0.5) {
+            self.noKeyboardConstraint.constant = keyboardRect.size.height + 8
+            self.view.layoutIfNeeded()
+        }
         
     }
     
     @objc func keyboardWillBeHidden(_ notification: NSNotification) {
         print("keybaord about to hide")
         
-        noKeyboardConstraint.constant =  0
-        noKeyboardConstraint.isActive = true
-        
-        
+        UIView.animate(withDuration: 0.5) {
+            self.noKeyboardConstraint.constant = 8
+            self.view.layoutIfNeeded()
+        }
+
     }
     
+    /*
     func textViewDidBeginEditing(_ textView: UITextView) {
+        print("textViewDidBeginEditing")
         if(textView == textarea){
-            sendBtn.isEnabled = true
         }
     }
+    */
     
     @IBAction func onSend(_ sender: Any){
         textarea.endEditing(true)
@@ -101,7 +105,6 @@ class MessengerVC: UIViewController, UITextViewDelegate {
         }
         
         textarea.text = ""
-        sendBtn.isEnabled = false
     }
 
     func setData(_ profile: Profile){
