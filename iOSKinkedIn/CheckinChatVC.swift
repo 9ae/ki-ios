@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckinChatVC: UIViewController, UITextViewDelegate {
+class CheckinChatVC: BaseTextInputDelegate {
     
     private let LABEL_HEIGHT : CGFloat = 40
     private let VPADDING : CGFloat = 8
@@ -28,7 +28,6 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     var caseId = -1
     
     @IBOutlet weak var entryView: UIStackView!
-    @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
     
     @IBOutlet weak var textarea: UITextView!
     @IBOutlet weak var sendBtn : UIButton!
@@ -52,13 +51,6 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         self.navigationItem.title = self.title
         
          self.hidesBottomBarWhenPushed = true
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWasShown),
-                                               name: UIResponder.keyboardDidShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillBeHidden),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
 
         clearQuestion()
         renderQ(flow)
@@ -87,40 +79,6 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "acConvoEmbed" {
             self._convoLog = segue.destination as? SimpleLogVC
-        }
-    }
-    
-    /* Keyboard control */
-    
-    @objc func keyboardWasShown(_ notification: NSNotification) {
-        print("keyboard is shown")
-        guard let info = notification.userInfo else {
-            print("no user info")
-            return
-        }
-        
-        guard let keyboardRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else {
-            print("failed to cast as CGRect")
-            return
-        }
-        
-        noKeyboardConstraint.constant = keyboardRect.size.height + VPADDING
-        self.view.layoutIfNeeded()
-        
-    }
-    
-    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
-        print("keybaord about to hide")
-        
-        noKeyboardConstraint.constant =  VPADDING
-        self.view.layoutIfNeeded()
-        
-        
-    }
-    
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        if(textView == textarea){
-            sendBtn.isEnabled = true
         }
     }
     
@@ -218,6 +176,8 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     }
     
     private func clearChoices(){
+        self.optionsView.isHidden = true
+        
         for b in optBtns {
             optionsView.removeArrangedSubview(b)
         }
@@ -226,8 +186,6 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
         self.choicesStackHeigth.constant = 0
         self.view.layoutIfNeeded()
-
-        self.optionsView.isHidden = true
     }
     
     private func prepChoices(_ q: CareQuestion){
@@ -235,7 +193,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
 
         self.choicesStackHeigth.constant = CGFloat(q.followup.count) * (self.LABEL_HEIGHT + self.VPADDING)
         self.view.layoutIfNeeded()
-
+        
         for o in q.followup {
             let lbl = UIButton()
             lbl.setTitleColor(UIColor.white, for: .normal)
@@ -245,13 +203,14 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
             lbl.layer.cornerRadius = 10
             lbl.clipsToBounds = true
             // lbl.translatesAutoresizingMaskIntoConstraints = false
-            lbl.frame.size.height = CGFloat(self.LABEL_HEIGHT)
+          //  lbl.frame.size.height = CGFloat(self.LABEL_HEIGHT)
             lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
             lbl.setTitle(o.message, for: .normal)
-            lbl.sizeToFit()
+          //  lbl.sizeToFit()
             self.optionsView.addArrangedSubview(lbl)
             self.optBtns.append(lbl)
         }
+        self.view.layoutSubviews()
 
     }
     
@@ -271,6 +230,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         textarea.isHidden = false
         sendBtn.isHidden = false
         entryView.isHidden = false
+        sendBtn.isEnabled = true
         msgInputStackHeight.constant = MSG_BOX_HEIGHT
      //   noKeyboardConstraint.constant = VPADDING
         self.view.layoutIfNeeded()

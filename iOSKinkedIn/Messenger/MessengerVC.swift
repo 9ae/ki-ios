@@ -9,7 +9,7 @@
 import UIKit
 import SendBirdSDK
 
-class MessengerVC: UIViewController, UITextViewDelegate {
+class MessengerVC: BaseTextInputDelegate {
     
     var _profile : Profile?
     var _chan : SBDGroupChannel?
@@ -20,7 +20,6 @@ class MessengerVC: UIViewController, UITextViewDelegate {
     
     
     @IBOutlet weak var entryView: UIView!
-    @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
 
 
     override func viewDidLoad() {
@@ -42,51 +41,7 @@ class MessengerVC: UIViewController, UITextViewDelegate {
             animated: false)
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Chat", style: .plain, target: nil, action: nil)
 
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWasShown),
-                                               name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(keyboardWillBeHidden),
-                                               name: UIResponder.keyboardWillHideNotification, object: nil)
     }
-    
-    @objc func keyboardWasShown(_ notification: NSNotification) {
-        print("keyboard is shown")
-        guard let info = notification.userInfo else {
-            print("no user info")
-            return
-        }
-        
-        guard let keyboardRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect else {
-            print("failed to cast as CGRect")
-            return
-        }
-        
-        
-        UIView.animate(withDuration: 0.5) {
-            self.noKeyboardConstraint.constant = keyboardRect.size.height + 8
-            self.view.layoutIfNeeded()
-        }
-        
-    }
-    
-    @objc func keyboardWillBeHidden(_ notification: NSNotification) {
-        print("keybaord about to hide")
-        
-        UIView.animate(withDuration: 0.5) {
-            self.noKeyboardConstraint.constant = 8
-            self.view.layoutIfNeeded()
-        }
-
-    }
-    
-    /*
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        print("textViewDidBeginEditing")
-        if(textView == textarea){
-        }
-    }
-    */
     
     @IBAction func onSend(_ sender: Any){
         textarea.endEditing(true)
