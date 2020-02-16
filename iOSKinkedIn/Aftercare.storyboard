@@ -428,41 +428,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Z0S-UJ-nQM">
-                                <rect key="frame" x="8" y="531" width="359" height="0.0"/>
+                                <rect key="frame" x="8" y="591" width="359" height="0.0"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" id="ADq-Pa-DdP"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-6n-QBW">
-                                <rect key="frame" x="8" y="539" width="359" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kQF-6n-QBW">
+                                <rect key="frame" x="8" y="599" width="359" height="60"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hil-jQ-vU8">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="120"/>
-                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="303" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="39E-zw-8pS">
-                                        <rect key="frame" x="303" y="0.0" width="56" height="120"/>
-                                        <state key="normal" title="Send"/>
+                                        <rect key="frame" x="311" y="0.0" width="48" height="60"/>
+                                        <state key="normal" title="Send">
+                                            <color key="titleColor" red="0.84952910960000005" green="0.2379208599" blue="0.41901662090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="onSend:" destination="KmJ-Ss-Q3Z" eventType="touchUpInside" id="wg0-KU-reD"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="0uQ-VJ-cr5"/>
+                                    <constraint firstAttribute="height" constant="60" id="0uQ-VJ-cr5"/>
                                 </constraints>
                             </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zt0-q6-XyW">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <segue destination="GfE-ji-ALc" kind="embed" identifier="acConvoEmbed" id="ozL-V2-z64"/>
+                                    <segue destination="GfE-ji-ALc" kind="embed" identifier="acConvoEmbed" id="SEl-4N-bCD"/>
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="BUw-ag-hJc" firstAttribute="trailing" secondItem="Z0S-UJ-nQM" secondAttribute="trailing" constant="8" id="3FN-KN-pJc"/>
                             <constraint firstItem="BUw-ag-hJc" firstAttribute="bottom" secondItem="kQF-6n-QBW" secondAttribute="bottom" constant="8" id="A9J-WR-Dvs"/>
@@ -496,65 +501,39 @@
             <objects>
                 <tableViewController id="GfE-ji-ALc" customClass="SimpleLogVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="vgI-qA-X7T">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCellThem" id="oFt-VD-UOA" customClass="MsgCell" customModule="iOSKinkedIn" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCell" id="Tke-DN-6NB" customClass="MsgCell" customModule="iOSKinkedIn" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="199"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oFt-VD-UOA" id="r8d-2M-NaU">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Tke-DN-6NB" id="OuY-u6-HbL">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="199"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="Zuw-hc-etj">
-                                            <rect key="frame" x="8" y="8" width="260" height="183"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="lHx-bK-gbl">
+                                            <rect key="frame" x="8" y="8" width="287" height="183"/>
                                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="260" id="ZV0-Ds-tX0"/>
-                                            </constraints>
                                             <string key="text">Message Each time the loadPreviousMessagesWithLimit:reverse:completionHandler: method is called, the instance retrieves a set number of messages in the next page and then updates the token's value to complete the current call and prepare a next call.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="textColor" red="0.55547137790000001" green="0.53877498349999997" blue="0.63895335009999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="Zuw-hc-etj" firstAttribute="top" secondItem="r8d-2M-NaU" secondAttribute="top" constant="8" id="EVq-K4-mhd"/>
-                                        <constraint firstItem="Zuw-hc-etj" firstAttribute="leading" secondItem="r8d-2M-NaU" secondAttribute="leading" constant="8" id="hJo-kL-DZQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="Zuw-hc-etj" secondAttribute="bottom" constant="8" id="ye6-Dj-ASS"/>
+                                        <constraint firstAttribute="trailing" secondItem="lHx-bK-gbl" secondAttribute="trailing" constant="80" id="B2t-rF-6kO"/>
+                                        <constraint firstAttribute="bottom" secondItem="lHx-bK-gbl" secondAttribute="bottom" constant="8" id="Pn6-e6-vTc"/>
+                                        <constraint firstItem="lHx-bK-gbl" firstAttribute="leading" secondItem="OuY-u6-HbL" secondAttribute="leading" constant="8" id="ePO-tY-NNh"/>
+                                        <constraint firstItem="lHx-bK-gbl" firstAttribute="top" secondItem="OuY-u6-HbL" secondAttribute="top" constant="8" id="nUV-c7-ena"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outlet property="msgLabel" destination="Zuw-hc-etj" id="hDf-Tq-4Od"/>
-                                </connections>
-                            </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="msgCellMe" id="eKF-t5-1rg" customClass="MsgCell" customModule="iOSKinkedIn" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="227" width="375" height="292.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="top" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eKF-t5-1rg" id="LjT-Hd-rnJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="292.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="LzC-c5-Otv">
-                                            <rect key="frame" x="107" y="8" width="260" height="284.5"/>
-                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="260" id="Ura-O4-PAv"/>
-                                            </constraints>
-                                            <string key="text">If you create a new query instance and call the loadPreviousMessagesWithLimit:reverse:completionHandler: method, a set number of the most recent messages are retrieved because its token has nothing to do with the previously created instance. So we recommend that you create a single query instance and store it as a member variable for traversing through the entire message history.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.58188301320000002" green="0.21569153669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="LzC-c5-Otv" firstAttribute="trailing" secondItem="LjT-Hd-rnJ" secondAttribute="trailing" constant="-8" id="QH4-4W-zsQ"/>
-                                        <constraint firstAttribute="bottom" secondItem="LzC-c5-Otv" secondAttribute="bottom" id="qDZ-vG-Wvq"/>
-                                        <constraint firstItem="LzC-c5-Otv" firstAttribute="top" secondItem="LjT-Hd-rnJ" secondAttribute="top" constant="8" id="wxe-ci-7xh"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="msgLabel" destination="LzC-c5-Otv" id="cRL-lb-kwX"/>
+                                    <outlet property="leftPad" destination="ePO-tY-NNh" id="6m7-ZV-0IB"/>
+                                    <outlet property="msgLabel" destination="lHx-bK-gbl" id="VmJ-Ul-MVM"/>
+                                    <outlet property="rightPad" destination="B2t-rF-6kO" id="PF0-hz-xZd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

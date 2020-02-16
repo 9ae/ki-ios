@@ -12,7 +12,8 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     
     private let LABEL_HEIGHT : CGFloat = 40
     private let VPADDING : CGFloat = 8
-    private let MSG_BOX_HEIGHT : CGFloat = 120
+    private let MSG_BOX_HEIGHT : CGFloat = 60
+
     
     var _profile : Profile?
     var _convoLog: SimpleLogVC?
@@ -47,11 +48,8 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let profile = _profile {
-            // TODO change depending on checkin type
-            self.navigationItem.title = self.title
-        }
+
+        self.navigationItem.title = self.title
         
          self.hidesBottomBarWhenPushed = true
         
@@ -62,9 +60,14 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
                                                selector: #selector(keyboardWillBeHidden),
                                                name: UIResponder.keyboardWillHideNotification, object: nil)
 
-        
         clearQuestion()
         renderQ(flow)
+        
+        textarea.layer.cornerRadius = MSG_BOX_HEIGHT * 0.5
+        textarea.clipsToBounds = true
+        textarea.backgroundColor = UIColor.white
+        let padding = MSG_BOX_HEIGHT * 0.25
+        textarea.textContainerInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
     }
 
     func setData(profile: Profile, flow: CareQuestion, caseType: CaseType){
@@ -210,6 +213,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         sendBtn.isHidden = true
         entryView.isHidden = true
         msgInputStackHeight.constant = 0
+    //    noKeyboardConstraint.constant = -1 * MSG_BOX_HEIGHT
         self.view.layoutIfNeeded()
     }
     
@@ -220,17 +224,18 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
         optBtns.removeAll()
         
-        optionsView.isHidden = true
-        choicesStackHeigth.constant = 0
+        self.choicesStackHeigth.constant = 0
         self.view.layoutIfNeeded()
+
+        self.optionsView.isHidden = true
     }
     
     private func prepChoices(_ q: CareQuestion){
         optionsView.isHidden = false
-        
-        choicesStackHeigth.constant = CGFloat(q.followup.count) * (LABEL_HEIGHT + VPADDING)
+
+        self.choicesStackHeigth.constant = CGFloat(q.followup.count) * (self.LABEL_HEIGHT + self.VPADDING)
         self.view.layoutIfNeeded()
-        
+
         for o in q.followup {
             let lbl = UIButton()
             lbl.setTitleColor(UIColor.white, for: .normal)
@@ -239,13 +244,13 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
             lbl.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0)
             lbl.layer.cornerRadius = 10
             lbl.clipsToBounds = true
-           // lbl.translatesAutoresizingMaskIntoConstraints = false
-            lbl.frame.size.height = CGFloat(LABEL_HEIGHT)
+            // lbl.translatesAutoresizingMaskIntoConstraints = false
+            lbl.frame.size.height = CGFloat(self.LABEL_HEIGHT)
             lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
             lbl.setTitle(o.message, for: .normal)
             lbl.sizeToFit()
-            optionsView.addArrangedSubview(lbl)
-            optBtns.append(lbl)
+            self.optionsView.addArrangedSubview(lbl)
+            self.optBtns.append(lbl)
         }
 
     }
@@ -262,10 +267,12 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     }
     
     private func prepQuestion(){
+        textarea.text = ""
         textarea.isHidden = false
         sendBtn.isHidden = false
         entryView.isHidden = false
         msgInputStackHeight.constant = MSG_BOX_HEIGHT
+     //   noKeyboardConstraint.constant = VPADDING
         self.view.layoutIfNeeded()
         
     }
@@ -287,7 +294,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         sendBtn.isHidden = false
         textarea.isHidden = true
         entryView.isHidden = false
-        noKeyboardConstraint.constant = 4 * VPADDING
+      //  noKeyboardConstraint.constant = 4 * VPADDING
         msgInputStackHeight.constant = 40
         
         self.view.layoutIfNeeded()

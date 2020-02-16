@@ -15,6 +15,7 @@
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */; };
 		0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729823F9C535006CE698 /* MsgTextarea.swift */; };
+		0007729B23F9DCBB006CE698 /* BaseTextInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */; };
 		000BF152221A189F00FAAD97 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF151221A189F00FAAD97 /* MeVC.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
@@ -130,6 +131,7 @@
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
 		0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvoLogVC.swift; sourceTree = "<group>"; };
 		0007729823F9C535006CE698 /* MsgTextarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgTextarea.swift; sourceTree = "<group>"; };
+		0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextInputDelegate.swift; sourceTree = "<group>"; };
 		000BF151221A189F00FAAD97 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */,
 				0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */,
 				0007729823F9C535006CE698 /* MsgTextarea.swift */,
+				0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */,
 			);
 			path = Messenger;
 			sourceTree = "<group>";
@@ -792,6 +795,7 @@
 				0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
+				0007729B23F9DCBB006CE698 /* BaseTextInputDelegate.swift in Sources */,
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */,
 				00CB0A382364C0CA00BCE8FA /* CasesVC.swift in Sources */,
