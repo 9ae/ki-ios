@@ -27,6 +27,8 @@ class CheckinChatVC: BaseTextInputDelegate {
     var isConvoEnd = false
     var caseId = -1
     
+    var keyboardHeight : CGFloat = 0
+    
     @IBOutlet weak var entryView: UIStackView!
     
     @IBOutlet weak var textarea: UITextView!
@@ -55,11 +57,13 @@ class CheckinChatVC: BaseTextInputDelegate {
         clearQuestion()
         renderQ(flow)
         
+        // should really be MsgTextarea but something weird is going on
         textarea.layer.cornerRadius = MSG_BOX_HEIGHT * 0.5
         textarea.clipsToBounds = true
         textarea.backgroundColor = UIColor.white
         let padding = MSG_BOX_HEIGHT * 0.25
         textarea.textContainerInset = UIEdgeInsets(top: padding, left: padding, bottom: padding, right: padding)
+        
     }
 
     func setData(profile: Profile, flow: CareQuestion, caseType: CaseType){
@@ -80,6 +84,35 @@ class CheckinChatVC: BaseTextInputDelegate {
         if segue.identifier == "acConvoEmbed" {
             self._convoLog = segue.destination as? SimpleLogVC
         }
+    }
+    
+    @objc override func keyboardWillShow(_ notification: NSNotification) {
+
+        guard let info = notification.userInfo else { return }
+        
+        // set height for the first time because other heights are funky
+        if let keyboardRect = info[UIResponder.keyboardFrameBeginUserInfoKey] as? CGRect {
+            if keyboardHeight == 0 {
+                keyboardHeight = keyboardRect.size.height
+            }
+        }
+        
+        if keyboardHeight == 0 {
+            let offset : CGFloat = 308
+            print("offsetting by \(offset)")
+            UIView.animate(withDuration: 0.5) {
+                self.noKeyboardConstraint.constant = offset
+                self.view.layoutIfNeeded()
+            }
+        } else {
+            let offset = keyboardHeight + 8
+            print("offsetting by \(offset)")
+            UIView.animate(withDuration: 0.5) {
+                self.noKeyboardConstraint.constant = offset
+                self.view.layoutIfNeeded()
+            }
+        }
+        
     }
     
     /* User action handlers */
@@ -171,7 +204,6 @@ class CheckinChatVC: BaseTextInputDelegate {
         sendBtn.isHidden = true
         entryView.isHidden = true
         msgInputStackHeight.constant = 0
-    //    noKeyboardConstraint.constant = -1 * MSG_BOX_HEIGHT
         self.view.layoutIfNeeded()
     }
     
@@ -200,13 +232,11 @@ class CheckinChatVC: BaseTextInputDelegate {
             lbl.backgroundColor = ThemeColors.msgOut
             lbl.titleEdgeInsets = UIEdgeInsets(top: 0.5 , left: 0.0, bottom: 0.5, right: 0.0)
             lbl.contentEdgeInsets = UIEdgeInsets(top: 0.0, left: 6.0, bottom: 0.0, right: 6.0)
-            lbl.layer.cornerRadius = 10
+            lbl.layer.cornerRadius = LABEL_HEIGHT / 2.0
             lbl.clipsToBounds = true
-            // lbl.translatesAutoresizingMaskIntoConstraints = false
-          //  lbl.frame.size.height = CGFloat(self.LABEL_HEIGHT)
+            lbl.translatesAutoresizingMaskIntoConstraints = false
             lbl.addTarget(self, action: #selector(self.optionTapped), for: .touchUpInside)
             lbl.setTitle(o.message, for: .normal)
-          //  lbl.sizeToFit()
             self.optionsView.addArrangedSubview(lbl)
             self.optBtns.append(lbl)
         }
@@ -232,7 +262,7 @@ class CheckinChatVC: BaseTextInputDelegate {
         entryView.isHidden = false
         sendBtn.isEnabled = true
         msgInputStackHeight.constant = MSG_BOX_HEIGHT
-     //   noKeyboardConstraint.constant = VPADDING
+     //   entryView.frame.size.height = MSG_BOX_HEIGHT
         self.view.layoutIfNeeded()
         
     }
@@ -254,8 +284,10 @@ class CheckinChatVC: BaseTextInputDelegate {
         sendBtn.isHidden = false
         textarea.isHidden = true
         entryView.isHidden = false
-      //  noKeyboardConstraint.constant = 4 * VPADDING
-        msgInputStackHeight.constant = 40
+        
+     //   entryView.frame.size.height = 40
+        noKeyboardConstraint.constant = 4 * VPADDING
+       msgInputStackHeight.constant = 40
         
         self.view.layoutIfNeeded()
     }
