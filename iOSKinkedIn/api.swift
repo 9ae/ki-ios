@@ -707,10 +707,10 @@ class KinkedInAPI {
     static func aftercareFlow(caseType: CaseType, callback : @escaping (_ flow: CareQuestion) -> Void) {
         let typeStr = caseType.rawValue
         let cacheKey = CK_AFTERCARE_FLOW + typeStr
-        do {
-            let co = try aftercareCache.object(forKey: cacheKey)
-            callback(co)
-        } catch {
+//        do {
+//            let co = try aftercareCache.object(forKey: cacheKey)
+//            callback(co)
+//        } catch {
             get("aftercare/\(typeStr)", requiresToken: false, isJob: false){ _json in
                 guard let json = _json as? [String:Any] else { return }
                 guard let careFlow = CareQuestion(json) else { return }
@@ -718,7 +718,7 @@ class KinkedInAPI {
                 try? aftercareCache.setObject(careFlow, forKey: cacheKey)
                 callback(careFlow)
             }
-        }
+//        }
     }
     
     static func createCase(aboutUser: String, caseType: CaseType, callback : @escaping (_ case_id : Int) -> Void){
@@ -737,6 +737,12 @@ class KinkedInAPI {
                     "timestamp": isoFormat.string(from: timestamp)]
         post("self/case/\(case_id)", parameters: body){ _json in
             
+        }
+    }
+    
+    static func alertCATeam(case_id: Int){
+        put("self/case/\(case_id)", parameters: [:]){ _json in
+            print(_json)
         }
     }
     

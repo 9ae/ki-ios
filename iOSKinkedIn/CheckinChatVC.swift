@@ -24,6 +24,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     var optBtns : [UIButton] = []
     
     var isConvoEnd = false
+    var caseId = -1
     
     @IBOutlet weak var entryView: UIStackView!
     @IBOutlet weak var noKeyboardConstraint : NSLayoutConstraint!
@@ -74,6 +75,7 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
         
         KinkedInAPI.createCase(aboutUser: profile.uuid, caseType: caseType) { caseId in
             self._convoLog?.setCaseId(caseId)
+            self.caseId = caseId
         }
         
         self.title = "\(caseType == .checkin ? "Checkin" : "Concerns") about: \(profile.name)"
@@ -269,7 +271,12 @@ class CheckinChatVC: UIViewController, UITextViewDelegate {
     }
     
     private func onEnd(){
-        _convoLog?.botSay("Thank you for sharing with us your thoughts and concerns")
+        if flow.isTrigger && caseId != -1 {
+            KinkedInAPI.alertCATeam(case_id: caseId)
+        } else {
+            _convoLog?.botSay("Thank you for sharing with us your thoughts and concerns")
+        }
+        
         if _caseType == .some(.checkin) {
             sendBtn.setTitle("Close checkin", for: .normal)
         } else {

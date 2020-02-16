@@ -22,6 +22,7 @@ struct CareQuestion : Codable {
     var message: String
     var type : ReplyType
     var followup: [CareQuestion]
+    var isTrigger: Bool
     
     init?(_ json: [String:Any]){
         guard let id = json["id"] as? Int else {return nil}
@@ -41,6 +42,8 @@ struct CareQuestion : Codable {
                 }
             }
         }
+        
+        self.isTrigger = (json["is_trigger"] as? Bool) ?? false
     }
     
     init(_ message: String, type: ReplyType, followup: [CareQuestion]){
@@ -48,5 +51,6 @@ struct CareQuestion : Codable {
         self.message = message
         self.type = type
         self.followup = followup
+        self.isTrigger = false
     }
 }

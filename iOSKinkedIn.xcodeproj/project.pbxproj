@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0001EC3023DCE5E600CF062D /* ConvoUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC2F23DCE5E600CF062D /* ConvoUI.swift */; };
-		0001EC3223DCE64400CF062D /* ConvoWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3123DCE64400CF062D /* ConvoWrapper.swift */; };
 		0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3323DCE8E600CF062D /* Mocks.swift */; };
 		0001EC3623DD00BA00CF062D /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0001EC3523DD00BA00CF062D /* Msg.storyboard */; };
 		0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3723DD047200CF062D /* MessengerVC.swift */; };
@@ -74,7 +72,6 @@
 		00D193B21E5BA4FE0010C34C /* Kink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D193B11E5BA4FE0010C34C /* Kink.swift */; };
 		00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DD71BA22ECE83D0072A84B /* HelpVC.swift */; };
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
-		00E1B10423E76AF300A2B431 /* CareMessengerUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
 		00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */; };
@@ -122,8 +119,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0001EC2F23DCE5E600CF062D /* ConvoUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoUI.swift; sourceTree = "<group>"; };
-		0001EC3123DCE64400CF062D /* ConvoWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoWrapper.swift; sourceTree = "<group>"; };
 		0001EC3323DCE8E600CF062D /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		0001EC3523DD00BA00CF062D /* Msg.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Msg.storyboard; sourceTree = "<group>"; };
 		0001EC3723DD047200CF062D /* MessengerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerVC.swift; sourceTree = "<group>"; };
@@ -194,7 +189,6 @@
 		00D193B11E5BA4FE0010C34C /* Kink.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Kink.swift; sourceTree = "<group>"; };
 		00DD71BA22ECE83D0072A84B /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 		00DED11B1E6D837300402FA8 /* cloudinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = cloudinary.swift; sourceTree = "<group>"; };
-		00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CareMessengerUI.swift; sourceTree = "<group>"; };
 		00ED085A63868A45E05ADEC8 /* Pods_iOSKinkedInUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
@@ -248,8 +242,6 @@
 		0001EC2E23DCE57400CF062D /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
-				0001EC2F23DCE5E600CF062D /* ConvoUI.swift */,
-				0001EC3123DCE64400CF062D /* ConvoWrapper.swift */,
 				0001EC3523DD00BA00CF062D /* Msg.storyboard */,
 				0001EC3723DD047200CF062D /* MessengerVC.swift */,
 				0001EC3923DD071C00CF062D /* MsgCell.swift */,
@@ -366,7 +358,6 @@
 				00DD71BA22ECE83D0072A84B /* HelpVC.swift */,
 				00CB0A352364BFD100BCE8FA /* CaseCell.swift */,
 				00CB0A372364C0CA00BCE8FA /* CasesVC.swift */,
-				00E1B10323E76AF300A2B431 /* CareMessengerUI.swift */,
 				005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */,
 				005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */,
 			);
@@ -776,9 +767,7 @@
 				00FA10511F042731007BEEE3 /* PerfsVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
-				00E1B10423E76AF300A2B431 /* CareMessengerUI.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
-				0001EC3223DCE64400CF062D /* ConvoWrapper.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
@@ -792,7 +781,6 @@
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */,
 				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
-				0001EC3023DCE5E600CF062D /* ConvoUI.swift in Sources */,
 				0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
