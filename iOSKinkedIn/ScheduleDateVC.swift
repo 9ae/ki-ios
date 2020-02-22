@@ -71,7 +71,7 @@ class ScheduleDateVC: UIViewController {
             "about_user_name": withUser!.name
         ]
         registerNotification(scheduleDT, content: content)
-        print("ZZ scheduled checkin")
+
     }
     
     func scheduleDateReminder(_ date: Date){

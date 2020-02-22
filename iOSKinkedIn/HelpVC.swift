@@ -39,7 +39,7 @@ class HelpVC: UITableViewController {
         if (section == 0) {
             return 2
         } else {
-            return 5
+            return 6
         }
     }
     
@@ -135,6 +135,7 @@ class HelpVC: UITableViewController {
     }
     
     func actionAt(_ indexPath: IndexPath){
+        print("row tapped")
         if (indexPath.section == 0 && indexPath.row == 0) {
             print("report bug")
             reportBug()
@@ -145,6 +146,11 @@ class HelpVC: UITableViewController {
         }
         
         if (indexPath.section == 1 && indexPath.row == 4) {
+            print("scheduled dates")
+            self.performSegue(withIdentifier: "help2dates", sender: self)
+        }
+        
+        if (indexPath.section == 1 && indexPath.row == 5) {
             print("load prev convos")
             previousConvos()
         }

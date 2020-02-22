@@ -17,6 +17,7 @@
 		0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729823F9C535006CE698 /* MsgTextarea.swift */; };
 		0007729B23F9DCBB006CE698 /* BaseTextInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */; };
 		000BF152221A189F00FAAD97 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF151221A189F00FAAD97 /* MeVC.swift */; };
+		0010A84623FBBF9500C95B36 /* UpcomingDatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0010A84523FBBF9500C95B36 /* UpcomingDatesVC.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
 		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
@@ -133,6 +134,7 @@
 		0007729823F9C535006CE698 /* MsgTextarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgTextarea.swift; sourceTree = "<group>"; };
 		0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextInputDelegate.swift; sourceTree = "<group>"; };
 		000BF151221A189F00FAAD97 /* MeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeVC.swift; sourceTree = "<group>"; };
+		0010A84523FBBF9500C95B36 /* UpcomingDatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDatesVC.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00171A241E56384500640B09 /* GendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GendersVC.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 				00CB0A372364C0CA00BCE8FA /* CasesVC.swift */,
 				005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */,
 				005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */,
+				0010A84523FBBF9500C95B36 /* UpcomingDatesVC.swift */,
 			);
 			name = Aftercare;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 				005C8C9223EF3D39000011A4 /* SimpleLogVC.swift in Sources */,
 				005C8C9023EF35AE000011A4 /* CheckinChatVC.swift in Sources */,
 				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
+				0010A84623FBBF9500C95B36 /* UpcomingDatesVC.swift in Sources */,
 				0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */,
 				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
