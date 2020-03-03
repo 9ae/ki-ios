@@ -40,8 +40,10 @@ class BaseConvoLogVC: UITableViewController {
     
     func refresh(){
         self.tableView.reloadData()
-        let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
-        self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        if (self.messages.count > 0){
+            let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+            self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 
    

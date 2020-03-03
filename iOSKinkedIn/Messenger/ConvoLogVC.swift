@@ -31,7 +31,7 @@ class ConvoLogVC: BaseConvoLogVC, SBDChannelDelegate {
             loadMore.addTarget(self, action: #selector(loadMoreMessages), for: .touchUpInside)
             loadMore.isHidden = true
             
-            loadMore.backgroundColor = ThemeColors.msgBg
+            loadMore.backgroundColor = ThemeColors.bg
             
             SBDMain.add(self, identifier: SBID)
        }

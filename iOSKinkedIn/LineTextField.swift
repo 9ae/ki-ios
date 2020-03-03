@@ -13,7 +13,7 @@ class LineTextField: UITextField {
     override func draw(_ rect: CGRect) {
         let ln = CALayer()
         ln.frame = CGRect(origin: CGPoint(x:0, y: rect.height - 1), size: CGSize(width: rect.width, height: 1.0))
-        ln.backgroundColor = ThemeColors.primaryLight.cgColor
+        ln.backgroundColor = ThemeColors.primary!.cgColor
         self.borderStyle = .none
         self.layer.addSublayer(ln)
     }

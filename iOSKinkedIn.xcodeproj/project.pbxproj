@@ -11,6 +11,9 @@
 		0001EC3623DD00BA00CF062D /* Msg.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0001EC3523DD00BA00CF062D /* Msg.storyboard */; };
 		0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3723DD047200CF062D /* MessengerVC.swift */; };
 		0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3923DD071C00CF062D /* MsgCell.swift */; };
+		00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00063EFF240C3CE4006F4326 /* DiscoveryView.swift */; };
+		00063F02240C4012006F4326 /* DiscoveryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00063F01240C4012006F4326 /* DiscoveryWrapper.swift */; };
+		00063F04240C45BB006F4326 /* DM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00063F03240C45BB006F4326 /* DM.swift */; };
 		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
 		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */; };
@@ -36,6 +39,8 @@
 		0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */; };
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
+		004064DB240EB756009C2D80 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004064DA240EB756009C2D80 /* PreferencesView.swift */; };
+		004064DD240EB7CF009C2D80 /* InteractiveTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */; };
 		0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0041D5BA1E686D4D006DD440 /* KiNotification.swift */; };
 		0042DA672206AC6D00B85E5C /* Aftercare.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0042DA662206AC6D00B85E5C /* Aftercare.storyboard */; };
 		0042DA692206C88400B85E5C /* Connect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0042DA682206C88400B85E5C /* Connect.storyboard */; };
@@ -127,6 +132,9 @@
 		0001EC3523DD00BA00CF062D /* Msg.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Msg.storyboard; sourceTree = "<group>"; };
 		0001EC3723DD047200CF062D /* MessengerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerVC.swift; sourceTree = "<group>"; };
 		0001EC3923DD071C00CF062D /* MsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
+		00063EFF240C3CE4006F4326 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
+		00063F01240C4012006F4326 /* DiscoveryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryWrapper.swift; sourceTree = "<group>"; };
+		00063F03240C45BB006F4326 /* DM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DM.swift; sourceTree = "<group>"; };
 		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
 		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
@@ -157,6 +165,8 @@
 		0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserListVC.swift; sourceTree = "<group>"; };
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
+		004064DA240EB756009C2D80 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
+		004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTagsView.swift; sourceTree = "<group>"; };
 		0041D5BA1E686D4D006DD440 /* KiNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KiNotification.swift; sourceTree = "<group>"; };
 		0042DA662206AC6D00B85E5C /* Aftercare.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Aftercare.storyboard; sourceTree = "<group>"; };
 		0042DA682206C88400B85E5C /* Connect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Connect.storyboard; sourceTree = "<group>"; };
@@ -324,6 +334,7 @@
 				00CB0A392364C12200BCE8FA /* Case.swift */,
 				0001EC3323DCE8E600CF062D /* Mocks.swift */,
 				00F57D4E23E74C23006622D3 /* Aftercare.swift */,
+				00063F03240C45BB006F4326 /* DM.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -408,6 +419,9 @@
 				0074A8B421D7F4AD00C22955 /* AngleCell.swift */,
 				00FA10501F042731007BEEE3 /* PerfsVC.swift */,
 				0042DA6A2206C8A400B85E5C /* Discover.storyboard */,
+				00063EFF240C3CE4006F4326 /* DiscoveryView.swift */,
+				00063F01240C4012006F4326 /* DiscoveryWrapper.swift */,
+				004064DA240EB756009C2D80 /* PreferencesView.swift */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -425,6 +439,7 @@
 				002879C922D170D500DE9E64 /* KiStyles.swift */,
 				002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */,
 				0077466E2381D424003C9F84 /* LineTextField.swift */,
+				004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -784,6 +799,7 @@
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
+				00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
@@ -820,12 +836,16 @@
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
+				00063F02240C4012006F4326 /* DiscoveryWrapper.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
+				004064DD240EB7CF009C2D80 /* InteractiveTagsView.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
+				00063F04240C45BB006F4326 /* DM.swift in Sources */,
 				00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */,
 				000BF152221A189F00FAAD97 /* MeVC.swift in Sources */,
 				00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */,
+				004064DB240EB756009C2D80 /* PreferencesView.swift in Sources */,
 				00DD71BB22ECE83D0072A84B /* HelpVC.swift in Sources */,
 				00FD2A751EF6FB190015749A /* BasicProfileVC.swift in Sources */,
 				007F076E222B42720039DE76 /* PictureVC.swift in Sources */,

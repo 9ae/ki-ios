@@ -26,3 +26,15 @@ let mockAftercareFlow =
         CareQuestion("Not okay. I need help", type: .option, followup: [])
         
     ])
+
+func mockDM () -> DM {
+    let dm = DM()
+    
+    dm.discoverProfiles = [mockProfile, mockProfile2]
+    dm.dailyMatches = [mockProfile]
+    
+    dm.preferences.genders = ["bigender","two spirit"]
+    dm.preferences.roles = ["exhibitionist"]
+    
+    return dm
+}

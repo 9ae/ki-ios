@@ -76,8 +76,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text=" a community member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xhs-Z1-fZY">
-                                                    <rect key="frame" x="16" y="12" width="180" height="20.5"/>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text=" another member?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xhs-Z1-fZY">
+                                                    <rect key="frame" x="16" y="12" width="140.5" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -127,8 +127,8 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How many hours after the start of a date should we check in with you?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-Tp-4ew">
-                                                    <rect key="frame" x="16" y="34" width="271" height="28"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many hours after the start of a date should we check in with you?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwl-Tp-4ew">
+                                                    <rect key="frame" x="16" y="34" width="273" height="26.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -144,10 +144,11 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Sc4-dr-4Y7" firstAttribute="leading" secondItem="jx3-8G-zAq" secondAttribute="leading" constant="16" id="Crh-wf-jNb"/>
+                                                <constraint firstItem="MzS-Gn-ecU" firstAttribute="leading" secondItem="Zwl-Tp-4ew" secondAttribute="trailing" constant="16" id="Ouu-39-Tr1"/>
                                                 <constraint firstAttribute="trailing" secondItem="MzS-Gn-ecU" secondAttribute="trailing" constant="8" id="bLg-29-23H"/>
                                                 <constraint firstItem="Sc4-dr-4Y7" firstAttribute="top" secondItem="jx3-8G-zAq" secondAttribute="top" constant="8" id="bPO-YE-H2P"/>
                                                 <constraint firstItem="MzS-Gn-ecU" firstAttribute="top" secondItem="jx3-8G-zAq" secondAttribute="top" constant="8" id="lxd-gt-gZG"/>
-                                                <constraint firstItem="Zwl-Tp-4ew" firstAttribute="top" secondItem="Sc4-dr-4Y7" secondAttribute="bottom" constant="8" id="psk-Lt-zUQ"/>
+                                                <constraint firstItem="Zwl-Tp-4ew" firstAttribute="top" secondItem="Sc4-dr-4Y7" secondAttribute="bottom" constant="6.5" id="psk-Lt-zUQ"/>
                                                 <constraint firstItem="Zwl-Tp-4ew" firstAttribute="leading" secondItem="jx3-8G-zAq" secondAttribute="leading" constant="16" id="yzX-ra-uP5"/>
                                                 <constraint firstAttribute="trailing" secondItem="MzS-Gn-ecU" secondAttribute="trailing" constant="8" id="zxm-zW-vUO"/>
                                             </constraints>

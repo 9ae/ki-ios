@@ -22,7 +22,7 @@ class ScheduleDateVC: UIViewController {
     
     
     override func viewWillAppear(_ animated: Bool) {
-        self.navigationItem.titleView?.backgroundColor = ThemeColors.primaryDark
+        self.navigationItem.titleView?.backgroundColor = ThemeColors.title
         self.navigationItem.titleView?.tintColor = UIColor.white
         super.viewWillAppear(animated)
     }

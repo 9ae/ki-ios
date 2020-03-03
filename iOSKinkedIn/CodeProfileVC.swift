@@ -193,12 +193,12 @@ class CodeProfileVC: UIViewController {
         identies.leadingAnchor.constraint(equalTo: content.leadingAnchor).isActive = true
         identies.trailingAnchor.constraint(equalTo: content.trailingAnchor).isActive = true
         identies.textFont = .systemFont(ofSize: 12)
-        identies.tagBackgroundColor = ThemeColors.primaryLight
+        identies.tagBackgroundColor = ThemeColors.primaryFade!
         identies.textColor = UIColor.black
         identies.cornerRadius = 6
         identies.paddingX = 4
         identies.paddingY = 2
-        identies.tagHighlightedBackgroundColor = ThemeColors.primaryDark
+        identies.tagHighlightedBackgroundColor = ThemeColors.title!
         
         kinksLabel.isHidden = (profile.kinks.count == 0)
         for k in profile.kinks {
@@ -208,12 +208,12 @@ class CodeProfileVC: UIViewController {
         kinks.leadingAnchor.constraint(equalTo: content.leadingAnchor).isActive = true
         kinks.trailingAnchor.constraint(equalTo: content.trailingAnchor).isActive = true
         kinks.textFont = .systemFont(ofSize: 12)
-        kinks.tagBackgroundColor = ThemeColors.primaryLight
+        kinks.tagBackgroundColor = ThemeColors.primary!
         kinks.textColor = UIColor.black
         kinks.cornerRadius = 6
         kinks.paddingX = 4
         kinks.paddingY = 2
-        kinks.tagHighlightedBackgroundColor = ThemeColors.primaryDark
+        kinks.tagHighlightedBackgroundColor = ThemeColors.title!
         
         if let _prompts = profile.prompts {
             for prompt in _prompts {

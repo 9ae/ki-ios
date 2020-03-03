@@ -61,7 +61,7 @@ class ThumbnailMatchCell: UICollectionViewCell {
         clipsToBounds = true
         if(state == ThumbnailState.EMPTY){
             guard let context = UIGraphicsGetCurrentContext() else {return}
-            let fillColor = ThemeColors.primaryLight
+            let fillColor = ThemeColors.primaryFade!
             
             context.addRect(rect)
             fillColor.setFill()

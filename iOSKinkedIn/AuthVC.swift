@@ -26,7 +26,7 @@ class AuthVC: UIViewController {
         segment.tintColor = .clear
         
         segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
-        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primaryDark], for: .selected)
+        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.title!], for: .selected)
         
         underline.translatesAutoresizingMaskIntoConstraints = false
         underline.backgroundColor = ThemeColors.primary

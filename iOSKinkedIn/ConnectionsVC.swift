@@ -54,11 +54,11 @@ class ConnectionsVC: UITableViewController {
         segment.backgroundColor = .clear
         segment.tintColor = .clear
         
-        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primaryFade], for: .normal)
+        segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: ThemeColors.primary!], for: .normal)
         segment.setTitleTextAttributes([ NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         
         underline.translatesAutoresizingMaskIntoConstraints = false
-        underline.backgroundColor = ThemeColors.primaryLight
+        underline.backgroundColor = ThemeColors.primaryFade
         underline.heightAnchor.constraint(equalToConstant: 3).isActive = true
         
         if let navView = navigationItem.titleView {

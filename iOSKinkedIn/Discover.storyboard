@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vvf-lt-Mvb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HK7-VE-qfe">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,9 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <connections>
-                        <segue destination="FYT-Bs-iFg" kind="relationship" relationship="rootViewController" id="ACs-IA-Qsg"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jH6-Y1-hlH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -57,13 +53,13 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5ah-uY-mvY">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="185"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="185"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="185" id="EfS-kG-uqh"/>
                                             </constraints>
                                         </imageView>
                                         <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BOs-tK-qnQ" customClass="AngleCell" customModule="iOSKinkedIn" customModuleProvider="target">
-                                            <rect key="frame" x="-20" y="0.0" width="120" height="100"/>
+                                            <rect key="frame" x="255" y="0.0" width="120" height="185"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ViC-mO-FNM">
                                                     <rect key="frame" x="47" y="156" width="45" height="21"/>
@@ -173,14 +169,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCz-5J-TlO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="469.60000000000002" y="2414.8425787106448"/>
+            <point key="canvasLocation" x="500" y="2310"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="BoX-CM-y2t">
             <objects>
                 <tableViewController title="Preferences" id="SgI-kB-SA4" customClass="PerfsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="kVC-El-9ym">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="591"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -320,6 +316,18 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="26a-R0-vI0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1894" y="2259"/>
+        </scene>
+        <!--Discover-->
+        <scene sceneID="OKj-Fk-QGd">
+            <objects>
+                <hostingController id="HK7-VE-qfe" customClass="DiscoveryWrapper" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" image="discover" selectedImage="discover_select" id="iiR-XY-5kv"/>
+                    <navigationItem key="navigationItem" id="AlH-eD-FaS"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </hostingController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ggg-kQ-0pN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="470" y="3095"/>
         </scene>
     </scenes>
     <resources>
