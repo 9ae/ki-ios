@@ -1011,7 +1011,7 @@
 				);
 				INFOPLIST_FILE = iOSKinkedIn/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				KI_API = "https://ki-slave.herokuapp.com/";
+				KI_API = "https://api-mistress.kinkedin.app/";
 				LAYER_APP = "layer:///apps/staging/05ab61ea-c199-11e7-9a4d-0b1235b9b34b";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.trykinkedin.iOSKinkedIn;

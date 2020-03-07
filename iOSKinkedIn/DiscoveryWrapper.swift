@@ -11,18 +11,9 @@ import SwiftUI
 class DiscoveryWrapper: UIHostingController<AnyView> {
     
     @objc required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder, rootView: AnyView(DiscoveryView()))
+       let view = DiscoveryView().environmentObject(KinkedInAPI.dm)
+        super.init(coder: aDecoder, rootView: AnyView(view))
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

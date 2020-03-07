@@ -33,6 +33,10 @@ class MeVC: UITableViewController {
         logoutBtn.layer.cornerRadius =  15.0
         logoutBtn.clipsToBounds = true
         
+        if let profile = me {
+            self.updateContent(profile)
+        }
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -106,7 +110,7 @@ class MeVC: UITableViewController {
             basicText += "\n\(city)"
         }
         basicInfo.text = basicText
-        
+        genderTags.removeAllTags()
         for g in profile.genders { genderTags.addTag(g) }
         for r in profile.roles { roleTags.addTag(r) }
         for k in profile.kinks { kinksTags.addTag(k.label) }
@@ -197,6 +201,9 @@ class MeVC: UITableViewController {
         if segue.identifier == "editGenders",
             let vc = segue.destination as? GendersVC {
                 vc.profile = me
+                vc.callback = {genders in
+                    self.me?.genders = genders
+                }
         }
         
         if segue.identifier == "editRoles",

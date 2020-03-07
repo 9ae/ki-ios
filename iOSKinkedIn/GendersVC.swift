@@ -16,6 +16,8 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     var profile: Profile?
     var updatePreferencesMode: Bool = false
     
+    var callback : ((_ genders : [String]) -> Void)? = nil
+    
     private var genders = [String]()
     private var selectedGenders = Set<String>()
 
@@ -105,7 +107,10 @@ class GendersVC: SetupViewVC, UITableViewDataSource, UITableViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         let newGenders = Array(selectedGenders)
-        profile?.genders = newGenders
+      //  profile?.genders = newGenders
+        self.callback?(newGenders)
+        print("== new genders ==")
+        print(newGenders)
         let params = ["genders": newGenders]
         KinkedInAPI.updateProfile(params)
     }

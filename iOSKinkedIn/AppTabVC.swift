@@ -12,22 +12,18 @@ class AppTabVC: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        /*
         KinkedInAPI.checkProfileSetup(){ step in
             if(step == 0){
                 print("finish profile setup")
                 self.selectedIndex = 0
-                // TODO : MyProfile
-//                if let changeVC = self.selectedViewController as? StaticMasterVC {
-//                    changeVC.toSetupProfile()
-//                }
             } else {
                 print("connections view")
                 // TODO: check if users has connections
                 // go to connections, else go to discover
                 self.selectedIndex = 2
             }
-        }
+        } */
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

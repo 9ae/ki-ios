@@ -31,7 +31,7 @@ func mockDM () -> DM {
     let dm = DM()
     
     dm.discoverProfiles = [mockProfile, mockProfile2]
-    dm.dailyMatches = [mockProfile]
+    dm.dailyMatches = []
     
     dm.preferences.genders = ["bigender","two spirit"]
     dm.preferences.roles = ["exhibitionist"]

@@ -12,6 +12,12 @@ struct PreferencesView: View {
 
     @EnvironmentObject var dm : DM
     
+    init(){
+        if (dm.genders.count == 0){
+            KinkedInAPI.genders({_ in print("got genders")})
+        }
+    }
+    
     func makeTags(all: [String], choosen: [String]) -> [Tag] {
         return all.map { label in
             let isActive = choosen.contains(label)
@@ -37,7 +43,9 @@ struct PreferencesView: View {
             }
             VStack(alignment: .leading) {
                 Text("Looking for people who identify as")
-                
+                if (dm.genders.count == 0){
+                    Text("loading")
+                } else {
                 InteractiveTagsView(tags: makeTags(all: dm.genders, choosen: dm.preferences.genders)) { (label, active) in
                     if active {
                         self.dm.preferences.genders.append(label)
@@ -46,6 +54,7 @@ struct PreferencesView: View {
                             gender != label
                         })
                     }
+                    } // end of tags view
                 }
             }
             

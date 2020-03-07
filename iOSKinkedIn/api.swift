@@ -41,7 +41,7 @@ class KinkedInAPI {
     static let aftercareCache = ds.transformCodable(ofType: CareQuestion.self)
     static let prolistCache = ds.transformCodable(ofType: [Profile].self)
     
-    static let dm = DM()
+   static let dm = DM()
 
     
     static let MAX_ITERATIONS = 20
