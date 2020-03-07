@@ -11,8 +11,10 @@ import SwiftUI
 class DiscoveryWrapper: UIHostingController<AnyView> {
     
     @objc required init?(coder aDecoder: NSCoder) {
-       let view = DiscoveryView().environmentObject(KinkedInAPI.dm)
-        super.init(coder: aDecoder, rootView: AnyView(view))
+        let view = DiscoveryView().environmentObject(Dungeon.shared)
+            //EnvView().environmentObject(Widow())
+       // super.init(coder: aDecoder, rootView: view)
+       super.init(coder: aDecoder, rootView: AnyView(view))
         
     }
 

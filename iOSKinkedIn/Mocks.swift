@@ -27,14 +27,14 @@ let mockAftercareFlow =
         
     ])
 
-func mockDM () -> DM {
-    let dm = DM()
+func mockDM () -> Dungeon {
+    let dm = Dungeon()
     
     dm.discoverProfiles = [mockProfile, mockProfile2]
     dm.dailyMatches = []
     
-    dm.preferences.genders = ["bigender","two spirit"]
-    dm.preferences.roles = ["exhibitionist"]
+    dm.genders = ["agender", "andrygynous", "bigender", "cisman", "ciswoman", "gender non-conforming", "genderfluid", "hijra", "intersex", "man", "non-binary", "other", "pangender", "trans man", "trans woman", "transfeminine", "transgender", "transmasculine", "transsexual", "two spirit", "woman"]
+    dm.roles = ["bottom", "dominant", "domme", "evolving", "exhibitionist", "exploring", "hedonist", "kinkster", "masochist", "master", "mistress", "sadist", "sadomasochist", "sensualist", "slave", "submissive", "swinger", "switch", "top", "voyeur"]
     
     return dm
 }

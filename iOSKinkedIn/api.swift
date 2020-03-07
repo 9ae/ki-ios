@@ -41,9 +41,6 @@ class KinkedInAPI {
     static let aftercareCache = ds.transformCodable(ofType: CareQuestion.self)
     static let prolistCache = ds.transformCodable(ofType: [Profile].self)
     
-   static let dm = DM()
-
-    
     static let MAX_ITERATIONS = 20
     static let TIMER_DELAY = 2.0
     
@@ -199,7 +196,7 @@ class KinkedInAPI {
         
         get("list/genders", requiresToken: false, isJob: true){ json in
             if let list = json as? [String] {
-                dm.genders = list
+                Dungeon.shared.genders = list
                 callback(list)
             }
         }
@@ -220,7 +217,7 @@ class KinkedInAPI {
         
         get("list/roles", requiresToken: false, isJob: true){ json in
             if let list = json as? [String] {
-                dm.roles = list
+                Dungeon.shared.roles = list
                 callback(list)
             }
         }

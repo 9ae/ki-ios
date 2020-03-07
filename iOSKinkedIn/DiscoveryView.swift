@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct DiscoveryView: View {
-    @EnvironmentObject var dm : DM
+    @EnvironmentObject var dm : Dungeon
     @State var showDailyMatches = false
     
     init(){
@@ -37,7 +37,7 @@ struct DiscoveryView: View {
                 .shadow(color: Color.black, radius: 8, x: 0, y: 5)
             */} // end of zStack
             .navigationBarItems(trailing:
-                NavigationLink(destination: PreferencesView().environmentObject(dm), label: {
+                NavigationLink(destination: PreferencesView().environmentObject(dm.preferences), label: {
                     Image(systemName: "slider.horizontal.3").foregroundColor(Color("primaryColor"))
                 })
                     .padding(.trailing, 16)

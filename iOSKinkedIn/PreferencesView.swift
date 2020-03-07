@@ -10,13 +10,10 @@ import SwiftUI
 
 struct PreferencesView: View {
 
-    @EnvironmentObject var dm : DM
+    @EnvironmentObject var preferences : DiscoveryPreferences
     
-    init(){
-        if (dm.genders.count == 0){
-            KinkedInAPI.genders({_ in print("got genders")})
-        }
-    }
+    @State var genders : [String] = []
+    @State var roles : [String] = []
     
     func makeTags(all: [String], choosen: [String]) -> [Tag] {
         return all.map { label in
@@ -26,56 +23,66 @@ struct PreferencesView: View {
     }
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
-            HStack(alignment: .firstTextBaseline, spacing: 16) {
-                Text("Min Age")
-                Spacer()
-                TextField("18", text: $dm.preferences.minAge)
-                    .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
-                    .frame(width: 40)
-            }
-            HStack(alignment: .firstTextBaseline) {
-                Text("Max Age")
-                Spacer()
-                TextField("100", text: $dm.preferences.maxAge)
-                    .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
-                    .frame(width: 40)
-            }
-            VStack(alignment: .leading) {
+        ScrollView(.vertical, showsIndicators: true) {
+            VStack(alignment: .leading, spacing: 16) {
+                HStack(alignment: .firstTextBaseline, spacing: 16) {
+                    Text("Min Age")
+                    Spacer()
+                    TextField("18", text: $preferences.minAge)
+                        .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
+                        .frame(width: 40)
+                }
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Max Age")
+                    Spacer()
+                    TextField("100", text: $preferences.maxAge)
+                        .keyboardType(/*@START_MENU_TOKEN@*/.numberPad/*@END_MENU_TOKEN@*/)
+                        .frame(width: 40)
+                }
+
                 Text("Looking for people who identify as")
-                if (dm.genders.count == 0){
+                if (genders.count == 0){
                     Text("loading")
                 } else {
-                InteractiveTagsView(tags: makeTags(all: dm.genders, choosen: dm.preferences.genders)) { (label, active) in
-                    if active {
-                        self.dm.preferences.genders.append(label)
-                    } else {
-                        self.dm.preferences.genders = self.dm.preferences.genders.filter({ gender in
-                            gender != label
-                        })
-                    }
-                    } // end of tags view
+                InteractiveTagsView(tags: makeTags(all: genders, choosen: preferences.genders)) { (label, active) in
+                    self.preferences.setGender(label: label, add: active)
+                }.frame(minHeight: 300) // end of tags view
+              }
+                
+                Text("Looking for people who are").padding(.top, 20)
+                if (roles.count == 0){
+                    Text("loading")
+                } else {
+                    InteractiveTagsView(tags: makeTags(all: roles, choosen: preferences.roles)){ (label, active) in
+                        self.preferences.setRole(label: label, add: active)
+                    }.frame(minHeight: 300)
+                } // end of else
+                    
+            }.padding()
+        }
+        .navigationBarTitle("Preferences")
+        .onAppear {
+            if (self.genders.count == 0){
+                KinkedInAPI.genders { genders in
+                    self.genders = genders
                 }
             }
             
-            VStack(alignment: .leading) {
-                Text("Looking for people who are")
-               InteractiveTagsView(tags: makeTags(all: dm.roles, choosen: dm.preferences.roles), updateFn: { (label, active) in
-                if (active) {
-                    self.dm.preferences.roles.append(label)
-                } else {
-                    self.dm.preferences.roles = self.dm.preferences.roles.filter({role in role != label})
+            if(self.roles.count == 0){
+                KinkedInAPI.roles { roles in
+                    self.roles = roles
                 }
-               })
             }
-        }.padding()
-        .navigationBarTitle("Preferences")
+        }
+        .onDisappear {
+            //TODO update API
+        }
     } // end of body
 }
 
 struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesView().environmentObject(mockDM())
+        PreferencesView().environmentObject(mockDM().preferences)
     }
 }
 
