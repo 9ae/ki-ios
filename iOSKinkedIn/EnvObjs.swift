@@ -45,9 +45,14 @@ final class Dungeon : ObservableObject {
     
     @Published var dailyMatches : [Profile] = []
     
-    func markProfile(_ uuid: String) -> Void {
+    func markProfile(_ profile: Profile, likes: Bool) -> Void {
         self.discoverProfiles = self.discoverProfiles.filter({ pro in
-            pro.uuid != uuid
+            pro.uuid != profile.uuid
         })
+        
+        if (likes) {
+            // Take out in for realz
+            self.dailyMatches.append(profile)
+        }
     }
 }

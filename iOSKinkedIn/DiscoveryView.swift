@@ -19,23 +19,22 @@ struct DiscoveryView: View {
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
-            Text("test")
-            /*
+
             List(dm.discoverProfiles, id: \.uuid){ pro in
                 NavigationLink(destination: ProfileView(profile: pro, goBack: {self.showDailyMatches = self.dm.dailyMatches.count > 0}) ){
-                    DiscoverRow(profile: pro)
+                    DiscoverThView(profile: pro)
                         .frame(width: nil, height: 230, alignment: .top)
                         .cornerRadius(16)
                         .shadow(color: Color.gray, radius: 7, x: 1, y: 2)
                 }
             } // end of list
-            
-            DailyMatches(hideAction: {
+
+            DailyMatchesView(hideAction: {
                 self.showDailyMatches = false
             }).offset(x: 0, y: showDailyMatches ? 0 : -300).animation(.easeIn)
                 .clipped()
                 .shadow(color: Color.black, radius: 8, x: 0, y: 5)
-            */} // end of zStack
+            } // end of zStack
             .navigationBarItems(trailing:
                 NavigationLink(destination: PreferencesView().environmentObject(dm.preferences), label: {
                     Image(systemName: "slider.horizontal.3").foregroundColor(Color("primaryColor"))
@@ -45,13 +44,23 @@ struct DiscoveryView: View {
            .navigationBarHidden(showDailyMatches)
         } // end of nav view
         .background(Color.myBG)
-        /*
         .onAppear {
-            print("view appears")
             self.showDailyMatches = self.dm.dailyMatches.count > 0
-            print("show daily matches \(self.showDailyMatches)")
+            
+            if self.dm.discoverProfiles.count == 0 {
+                KinkedInAPI.listProfiles(){ profiles in
+                    self.dm.discoverProfiles = profiles
+                }
+            }
+            
+            if self.dm.dailyMatches.count == 0 {
+                KinkedInAPI.dailyMatches { profiles in
+                    self.dm.dailyMatches = profiles
+                    
+                    self.showDailyMatches = profiles.count > 0
+                }
+            }
         }
-        */
     }
 }
 

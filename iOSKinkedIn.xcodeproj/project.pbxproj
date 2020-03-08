@@ -37,6 +37,14 @@
 		002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */; };
 		0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */; };
 		0028CA271FB25598002CEC76 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0028CA261FB25598002CEC76 /* UserCell.swift */; };
+		0033EE802414634600D0C332 /* DailyMatchesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE7F2414634600D0C332 /* DailyMatchesView.swift */; };
+		0033EE822414674B00D0C332 /* KinksCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE812414674B00D0C332 /* KinksCountView.swift */; };
+		0033EE842414677600D0C332 /* VouchCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE832414677600D0C332 /* VouchCountView.swift */; };
+		0033EE86241467CD00D0C332 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE85241467CD00D0C332 /* NextButton.swift */; };
+		0033EE88241467F400D0C332 /* HeartButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE87241467F400D0C332 /* HeartButton.swift */; };
+		0033EE8A2414685600D0C332 /* DiscoverThView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE892414685600D0C332 /* DiscoverThView.swift */; };
+		0033EE8C2414693400D0C332 /* TagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE8B2414693400D0C332 /* TagList.swift */; };
+		0033EE8E2414698E00D0C332 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0033EE8D2414698E00D0C332 /* ProfileView.swift */; };
 		003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003B15941E6D1E3200BE2F82 /* graphics.swift */; };
 		004064DB240EB756009C2D80 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004064DA240EB756009C2D80 /* PreferencesView.swift */; };
 		004064DD240EB7CF009C2D80 /* InteractiveTagsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */; };
@@ -162,6 +170,14 @@
 		002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiSegmentControl.swift; sourceTree = "<group>"; };
 		0028CA231FB2534F002CEC76 /* AbstractUserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbstractUserListVC.swift; sourceTree = "<group>"; };
 		0028CA261FB25598002CEC76 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		0033EE7F2414634600D0C332 /* DailyMatchesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMatchesView.swift; sourceTree = "<group>"; };
+		0033EE812414674B00D0C332 /* KinksCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinksCountView.swift; sourceTree = "<group>"; };
+		0033EE832414677600D0C332 /* VouchCountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VouchCountView.swift; sourceTree = "<group>"; };
+		0033EE85241467CD00D0C332 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		0033EE87241467F400D0C332 /* HeartButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartButton.swift; sourceTree = "<group>"; };
+		0033EE892414685600D0C332 /* DiscoverThView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverThView.swift; sourceTree = "<group>"; };
+		0033EE8B2414693400D0C332 /* TagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagList.swift; sourceTree = "<group>"; };
+		0033EE8D2414698E00D0C332 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		003B15941E6D1E3200BE2F82 /* graphics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = graphics.swift; sourceTree = "<group>"; };
 		004064DA240EB756009C2D80 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveTagsView.swift; sourceTree = "<group>"; };
@@ -391,6 +407,7 @@
 				00C08F3821448564005098ED /* AngleView.swift */,
 				00F073D2214D9325003D79C6 /* ViewProfileVC.swift */,
 				00F073D4214DB360003D79C6 /* CodeProfileVC.swift */,
+				0033EE8D2414698E00D0C332 /* ProfileView.swift */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -409,6 +426,9 @@
 		00ED8A231E7437A000096497 /* Discover */ = {
 			isa = PBXGroup;
 			children = (
+				0033EE7F2414634600D0C332 /* DailyMatchesView.swift */,
+				0033EE87241467F400D0C332 /* HeartButton.swift */,
+				0033EE85241467CD00D0C332 /* NextButton.swift */,
 				00A8472021C8C912002DEE8A /* DiscoverProfileVC.swift */,
 				00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */,
 				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
@@ -419,6 +439,7 @@
 				00063EFF240C3CE4006F4326 /* DiscoveryView.swift */,
 				00063F01240C4012006F4326 /* DiscoveryWrapper.swift */,
 				004064DA240EB756009C2D80 /* PreferencesView.swift */,
+				0033EE892414685600D0C332 /* DiscoverThView.swift */,
 			);
 			name = Discover;
 			sourceTree = "<group>";
@@ -437,6 +458,9 @@
 				002879CB22D172DB00DE9E64 /* KiSegmentControl.swift */,
 				0077466E2381D424003C9F84 /* LineTextField.swift */,
 				004064DC240EB7CF009C2D80 /* InteractiveTagsView.swift */,
+				0033EE812414674B00D0C332 /* KinksCountView.swift */,
+				0033EE832414677600D0C332 /* VouchCountView.swift */,
+				0033EE8B2414693400D0C332 /* TagList.swift */,
 			);
 			name = ui;
 			sourceTree = "<group>";
@@ -779,6 +803,7 @@
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */,
 				00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */,
+				0033EE8C2414693400D0C332 /* TagList.swift in Sources */,
 				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */,
 				0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */,
@@ -793,6 +818,7 @@
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
+				0033EE86241467CD00D0C332 /* NextButton.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
 				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */,
@@ -814,12 +840,15 @@
 				00171A531E56468700640B09 /* api.swift in Sources */,
 				0028CA241FB2534F002CEC76 /* AbstractUserListVC.swift in Sources */,
 				00CB0A382364C0CA00BCE8FA /* CasesVC.swift in Sources */,
+				0033EE8E2414698E00D0C332 /* ProfileView.swift in Sources */,
 				006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */,
 				00CA86171F06DCF200ED281A /* RoundButton.swift in Sources */,
 				00B978591E780E4300B7B4FA /* Role.swift in Sources */,
 				004BBBEE1F02BC43009AD970 /* PromptVC.swift in Sources */,
 				005C8C9223EF3D39000011A4 /* SimpleLogVC.swift in Sources */,
 				005C8C9023EF35AE000011A4 /* CheckinChatVC.swift in Sources */,
+				0033EE822414674B00D0C332 /* KinksCountView.swift in Sources */,
+				0033EE842414677600D0C332 /* VouchCountView.swift in Sources */,
 				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
 				0010A84623FBBF9500C95B36 /* UpcomingDatesVC.swift in Sources */,
 				0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */,
@@ -828,13 +857,16 @@
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
+				0033EE88241467F400D0C332 /* HeartButton.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
 				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
+				0033EE8A2414685600D0C332 /* DiscoverThView.swift in Sources */,
 				00063F02240C4012006F4326 /* DiscoveryWrapper.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
+				0033EE802414634600D0C332 /* DailyMatchesView.swift in Sources */,
 				004064DD240EB7CF009C2D80 /* InteractiveTagsView.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,

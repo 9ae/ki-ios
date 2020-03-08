@@ -196,7 +196,6 @@ class KinkedInAPI {
         
         get("list/genders", requiresToken: false, isJob: true){ json in
             if let list = json as? [String] {
-                Dungeon.shared.genders = list
                 callback(list)
             }
         }
@@ -217,7 +216,6 @@ class KinkedInAPI {
         
         get("list/roles", requiresToken: false, isJob: true){ json in
             if let list = json as? [String] {
-                Dungeon.shared.roles = list
                 callback(list)
             }
         }
