@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4r6-Zu-VLZ">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4r6-Zu-VLZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,7 +14,7 @@
                     <tabBarItem key="tabBarItem" title="Connect" image="connect" selectedImage="connect_select" id="4Gp-zX-BFM"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="JHN-ww-BPj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,7 +47,7 @@
             <objects>
                 <tableViewController id="QoP-NF-Uzk" customClass="ConnectionsVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6m9-TX-vjn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -58,7 +55,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="dzr-vS-aSY" id="a1n-1C-nZi">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gim-qc-JHK">
@@ -119,7 +116,7 @@
                     <navigationItem key="navigationItem" id="UlC-je-Pgv">
                         <nil key="title"/>
                         <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="5eA-Ud-ffh">
-                            <rect key="frame" x="36.5" y="7.5" width="302" height="29"/>
+                            <rect key="frame" x="36.5" y="6" width="302" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="300" id="pQ6-du-Fv8"/>
@@ -138,7 +135,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9l-Th-Unk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2135" y="3206"/>
+            <point key="canvasLocation" x="-2223" y="3164"/>
         </scene>
         <!--Schedule Date-->
         <scene sceneID="wz5-2k-TKa">
@@ -153,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cvm-3K-P1d">
-                                <rect key="frame" x="0.0" y="84" width="375" height="496"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="500"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When are you meeting?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpC-c9-fdZ">
                                         <rect key="frame" x="8" y="0.0" width="359" height="20.5"/>
@@ -163,9 +160,6 @@
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OxW-w5-2bw">
                                         <rect key="frame" x="27.5" y="40.5" width="320" height="216"/>
-                                        <date key="date" timeIntervalSinceReferenceDate="518458380.86711502">
-                                            <!--2017-06-06 16:13:00 +0000-->
-                                        </date>
                                     </datePicker>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aftercare" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6n-V0-5UE">
                                         <rect key="frame" x="8" y="276.5" width="359" height="20.5"/>
@@ -194,27 +188,26 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bNr-bY-cyT">
-                                        <rect key="frame" x="8" y="446" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="446" width="359" height="34"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="In how many hours" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3uR-Kh-fze">
-                                                <rect key="frame" x="0.0" y="0.0" width="251" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="34"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ioe-9F-5Wy">
-                                                <rect key="frame" x="259" y="0.0" width="100" height="30"/>
+                                                <rect key="frame" x="259" y="0.0" width="100" height="34"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="c4w-51-lf5"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid phone number. Put in the format of..." lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beX-P4-9ul">
-                                        <rect key="frame" x="8" y="486" width="359" height="30"/>
+                                        <rect key="frame" x="8" y="490" width="359" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="Ya8-Br-UY8"/>
                                         </constraints>
@@ -223,7 +216,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will check in with you 12 hours after your scheduled date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAP-2N-p0Z">
-                                        <rect key="frame" x="16.5" y="496" width="342" height="0.0"/>
+                                        <rect key="frame" x="16.5" y="500" width="342" height="0.0"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -272,247 +265,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sxf-4h-ziM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-994" y="3205"/>
-        </scene>
-        <!--Vouch IntroVC-->
-        <scene sceneID="mIQ-RL-afQ">
-            <objects>
-                <viewController storyboardIdentifier="vouchIntro" id="idA-ud-ggy" customClass="VouchIntroVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fYL-HN-GFd"/>
-                        <viewControllerLayoutGuide type="bottom" id="lh8-Ox-L5S"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="QhP-ot-wIF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-yd-21u">
-                                <rect key="frame" x="15" y="50" width="345" height="114.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <mutableString key="content">Vouching is like recommending someone to a friend.  We suggest only vouching for community members you have played with. By vouching for someone, you are sharing that in your experience with them, they respected your boundaries and were honest in their communication.</mutableString>
-                                        <attributes>
-                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <string key="userLabel">Vouching is like recommending someone to a friend. We recommend only vouching for users you have engaged in play with. By vouching for a user you are essentially saying in your experience with them, you can account that they:  Respected boundaries &amp; were open and honest in their communication</string>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrR-LO-shQ">
-                                <rect key="frame" x="172.5" y="184.5" width="30" height="30"/>
-                                <state key="normal" title="Yes"/>
-                                <connections>
-                                    <segue destination="x6h-Zv-f1B" kind="show" id="qcN-Ro-nFt"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGW-LI-KrL">
-                                <rect key="frame" x="16" y="224.5" width="343" height="14.5"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="catch statement">
-                                        <attributes>
-                                            <font key="NSFont" size="12" name=".AppleSystemUIFont"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="vrR-LO-shQ" firstAttribute="centerX" secondItem="QhP-ot-wIF" secondAttribute="centerX" id="5AS-Ze-daj"/>
-                            <constraint firstItem="GGW-LI-KrL" firstAttribute="top" secondItem="aD3-yd-21u" secondAttribute="bottom" constant="60" id="BsM-RZ-rUh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GGW-LI-KrL" secondAttribute="trailing" id="HcZ-GL-TJL"/>
-                            <constraint firstItem="GGW-LI-KrL" firstAttribute="leading" secondItem="QhP-ot-wIF" secondAttribute="leadingMargin" id="MNA-rc-Nuh"/>
-                            <constraint firstAttribute="trailing" secondItem="aD3-yd-21u" secondAttribute="trailing" constant="15" id="PwI-4I-Pb5"/>
-                            <constraint firstItem="vrR-LO-shQ" firstAttribute="top" secondItem="aD3-yd-21u" secondAttribute="bottom" constant="20" id="SML-Th-Jkl"/>
-                            <constraint firstItem="aD3-yd-21u" firstAttribute="leading" secondItem="QhP-ot-wIF" secondAttribute="leading" constant="15" id="kNE-iB-T26"/>
-                            <constraint firstItem="aD3-yd-21u" firstAttribute="top" secondItem="fYL-HN-GFd" secondAttribute="bottom" constant="30" id="vai-UX-GNv"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="C3Y-RV-qfZ"/>
-                    </view>
-                    <connections>
-                        <outlet property="catchText" destination="GGW-LI-KrL" id="LI2-Yt-SOd"/>
-                        <outlet property="goButton" destination="vrR-LO-shQ" id="CRT-5c-Byb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mYm-7I-TP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2986" y="3906"/>
-        </scene>
-        <!--Vouch for [user]-->
-        <scene sceneID="XPl-Um-ICA">
-            <objects>
-                <viewController id="x6h-Zv-f1B" customClass="VouchVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bw0-02-JDG"/>
-                        <viewControllerLayoutGuide type="bottom" id="oW6-7T-bwg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="VYc-QT-tAT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] honest in the information (photos and text) they provided in their profile?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-5v-ziO">
-                                <rect key="frame" x="16" y="50" width="343" height="42.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] an good communicator?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79L-G6-4q5">
-                                <rect key="frame" x="16" y="261" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Was [user] respectful of your boundaries?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzL-iD-ff8">
-                                <rect key="frame" x="16" y="166.5" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="eHq-aa-XpK">
-                                <rect key="frame" x="46" y="199" width="283" height="32"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="74j-0y-dPQ" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="No">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onNoQ2:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="X77-Cf-lW7"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dts-DD-TUg" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Yes">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onYesQ2:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="m1p-UX-a8w"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Oxf-aE-qGN">
-                                <rect key="frame" x="46" y="104.5" width="283" height="32"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUf-cI-WCe" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="No">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onNoQ1:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="Tq0-YE-cwj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Weh-QK-maq" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Yes">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onYesQ1:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="40x-MQ-vyz"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lCw-Ge-HSC">
-                                <rect key="frame" x="46" y="293.5" width="283" height="32"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ea-yN-JWY" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="No">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onNoQ3:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="QX5-IP-P4V"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUx-Jq-KQf" customClass="ReverseButton" customModule="iOSKinkedIn" customModuleProvider="target">
-                                        <rect key="frame" x="144" y="0.0" width="139" height="32"/>
-                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <state key="normal" title="Yes">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onYesQ3:" destination="x6h-Zv-f1B" eventType="touchUpInside" id="5g2-3r-qnf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By submitting you are saying that the feedback you provide is based on your interactions with [user]." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlm-5B-HH6">
-                                <rect key="frame" x="16" y="375.5" width="343" height="30.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="KYA-5v-ziO" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" id="0Wa-Mq-dnw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eHq-aa-XpK" secondAttribute="trailing" constant="30" id="0We-BY-98Y"/>
-                            <constraint firstItem="eHq-aa-XpK" firstAttribute="top" secondItem="lzL-iD-ff8" secondAttribute="bottom" constant="12" id="5eD-Bl-o7T"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lzL-iD-ff8" secondAttribute="trailing" id="8C2-Js-Iwk"/>
-                            <constraint firstItem="lCw-Ge-HSC" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" constant="30" id="9NW-Y1-0U2"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Oxf-aE-qGN" secondAttribute="trailing" constant="30" id="FZ3-yp-9qe"/>
-                            <constraint firstItem="KYA-5v-ziO" firstAttribute="top" secondItem="bw0-02-JDG" secondAttribute="bottom" constant="30" id="GAD-ks-hCK"/>
-                            <constraint firstItem="Tlm-5B-HH6" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" id="HvX-9d-Wjl"/>
-                            <constraint firstItem="Tlm-5B-HH6" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" id="NGD-fF-cOL"/>
-                            <constraint firstItem="eHq-aa-XpK" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" constant="30" id="QCh-vx-IRX"/>
-                            <constraint firstItem="Tlm-5B-HH6" firstAttribute="top" secondItem="lCw-Ge-HSC" secondAttribute="bottom" constant="50" id="SYf-db-WOz"/>
-                            <constraint firstItem="lzL-iD-ff8" firstAttribute="top" secondItem="Oxf-aE-qGN" secondAttribute="bottom" constant="30" id="VzY-89-vPd"/>
-                            <constraint firstItem="79L-G6-4q5" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" id="YAP-cc-i6l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Tlm-5B-HH6" secondAttribute="trailing" id="b45-U2-PtT"/>
-                            <constraint firstItem="79L-G6-4q5" firstAttribute="top" secondItem="eHq-aa-XpK" secondAttribute="bottom" constant="30" id="cao-br-Gd8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="KYA-5v-ziO" secondAttribute="trailing" id="iKo-v4-mYe"/>
-                            <constraint firstItem="lCw-Ge-HSC" firstAttribute="top" secondItem="79L-G6-4q5" secondAttribute="bottom" constant="12" id="ijv-va-53K"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="79L-G6-4q5" secondAttribute="trailing" id="lyc-KX-m97"/>
-                            <constraint firstItem="lzL-iD-ff8" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" id="omZ-kU-R1X"/>
-                            <constraint firstItem="Oxf-aE-qGN" firstAttribute="top" secondItem="KYA-5v-ziO" secondAttribute="bottom" constant="12" id="qFJ-se-rVc"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lCw-Ge-HSC" secondAttribute="trailing" constant="30" id="qzC-ZC-q1u"/>
-                            <constraint firstItem="Tlm-5B-HH6" firstAttribute="trailing" secondItem="VYc-QT-tAT" secondAttribute="trailingMargin" id="vFz-qD-Xq0"/>
-                            <constraint firstItem="Oxf-aE-qGN" firstAttribute="leading" secondItem="VYc-QT-tAT" secondAttribute="leadingMargin" constant="30" id="vUP-kh-O02"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="IQP-Io-lqk"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Vouch for [user]" id="MPr-81-KjW">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="NaH-yP-cmo">
-                            <connections>
-                                <action selector="onSubmit:" destination="x6h-Zv-f1B" id="OxL-rU-NXv"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="confirmLabel" destination="Tlm-5B-HH6" id="98P-Nc-wMC"/>
-                        <outlet property="q1label" destination="KYA-5v-ziO" id="GO9-L7-Zm2"/>
-                        <outlet property="q1no" destination="xUf-cI-WCe" id="hS9-kP-YWv"/>
-                        <outlet property="q1yes" destination="Weh-QK-maq" id="uFv-ce-p0q"/>
-                        <outlet property="q2label" destination="lzL-iD-ff8" id="7Tt-f7-3d3"/>
-                        <outlet property="q2no" destination="74j-0y-dPQ" id="ipU-CJ-xXT"/>
-                        <outlet property="q2yes" destination="Dts-DD-TUg" id="JYp-GX-VRD"/>
-                        <outlet property="q3label" destination="79L-G6-4q5" id="Ta1-z7-yiv"/>
-                        <outlet property="q3no" destination="0Ea-yN-JWY" id="rHq-Qd-g57"/>
-                        <outlet property="q3yes" destination="fUx-Jq-KQf" id="p61-dV-nkD"/>
-                        <segue destination="QoP-NF-Uzk" kind="show" identifier="vouch2connect" id="nyk-fW-EZ1"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="g25-9k-yyw" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2135" y="3907"/>
+            <point key="canvasLocation" x="-1433" y="3163"/>
         </scene>
         <!--Chat-->
         <scene sceneID="Yko-Px-jXf">
@@ -549,7 +302,4 @@
         <image name="connect" width="29" height="25"/>
         <image name="connect_select" width="32" height="30"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="nyk-fW-EZ1"/>
-    </inferredMetricsTieBreakers>
 </document>

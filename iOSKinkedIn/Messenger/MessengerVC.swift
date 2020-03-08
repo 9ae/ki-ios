@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 import SendBirdSDK
 
 class MessengerVC: BaseTextInputDelegate {
@@ -155,9 +156,10 @@ class MessengerVC: BaseTextInputDelegate {
     }
     
     func vouch(){
-        let vc = UIStoryboard(name: "Connect", bundle: Bundle.main).instantiateViewController(withIdentifier: "vouchIntro") as! VouchIntroVC
-        vc.subjectName = _profile?.name
-        vc.subjectUUID = _profile?.uuid
+
+        guard let profile = _profile else { return }
+        
+        let vc = UIHostingController(rootView: VouchView(profile: profile ))
         self.navigationController?.pushViewController(vc, animated: false)
     }
 

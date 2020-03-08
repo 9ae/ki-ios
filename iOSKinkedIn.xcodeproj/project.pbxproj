@@ -13,8 +13,6 @@
 		0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0001EC3923DD071C00CF062D /* MsgCell.swift */; };
 		00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00063EFF240C3CE4006F4326 /* DiscoveryView.swift */; };
 		00063F02240C4012006F4326 /* DiscoveryWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00063F01240C4012006F4326 /* DiscoveryWrapper.swift */; };
-		00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */; };
-		00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */; };
 		0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */; };
 		0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729823F9C535006CE698 /* MsgTextarea.swift */; };
 		0007729B23F9DCBB006CE698 /* BaseTextInputDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0007729A23F9DCBB006CE698 /* BaseTextInputDelegate.swift */; };
@@ -28,8 +26,6 @@
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
-		001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DF11EB9E171005A03F4 /* VouchVC.swift */; };
-		002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */; };
 		0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */; };
 		0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */; };
 		002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002879C722D162BF00DE9E64 /* AuthVC.swift */; };
@@ -59,20 +55,16 @@
 		0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0051D1FD1E62D3DC004ABBF6 /* Profile.swift */; };
 		005C8C9023EF35AE000011A4 /* CheckinChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */; };
 		005C8C9223EF3D39000011A4 /* SimpleLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */; };
+		0066F0BE2414A242007A63E9 /* VouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066F0BD2414A242007A63E9 /* VouchView.swift */; };
 		006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */; };
 		006B263B1E67C3DE002DC302 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006B263A1E67C3DE002DC302 /* RegisterVC.swift */; };
 		006D50051E65810B005DAABE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 006D50041E65810B005DAABE /* Assets.xcassets */; };
 		006D50071E658635005DAABE /* AppTabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006D50061E658635005DAABE /* AppTabVC.swift */; };
-		00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */; };
-		0074A8B521D7F4AD00C22955 /* AngleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0074A8B421D7F4AD00C22955 /* AngleCell.swift */; };
 		0077466F2381D424003C9F84 /* LineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0077466E2381D424003C9F84 /* LineTextField.swift */; };
 		007F076E222B42720039DE76 /* PictureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F076D222B42720039DE76 /* PictureVC.swift */; };
 		007F0770222B68800039DE76 /* PartnersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 007F076F222B68800039DE76 /* PartnersVC.swift */; };
 		009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009347441ED2A24500E35057 /* ScrollTextInputVC.swift */; };
-		0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */; };
-		009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009840A01ED2EAEB0024EC27 /* ProfileCell.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
-		00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A8472021C8C912002DEE8A /* DiscoverProfileVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00B978591E780E4300B7B4FA /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B978581E780E4300B7B4FA /* Role.swift */; };
 		00B9785B1E780E5900B7B4FA /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9785A1E780E5900B7B4FA /* Gender.swift */; };
@@ -141,8 +133,6 @@
 		0001EC3923DD071C00CF062D /* MsgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgCell.swift; sourceTree = "<group>"; };
 		00063EFF240C3CE4006F4326 /* DiscoveryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryView.swift; sourceTree = "<group>"; };
 		00063F01240C4012006F4326 /* DiscoveryWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryWrapper.swift; sourceTree = "<group>"; };
-		00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyMatchesVC.swift; sourceTree = "<group>"; };
-		00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThumbnailMatchCell.swift; sourceTree = "<group>"; };
 		000752C41EB1EA52004A3D41 /* iOSKinkedIn.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iOSKinkedIn.entitlements; sourceTree = "<group>"; };
 		0007729623F9BB32006CE698 /* BaseConvoLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConvoLogVC.swift; sourceTree = "<group>"; };
 		0007729823F9C535006CE698 /* MsgTextarea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MsgTextarea.swift; sourceTree = "<group>"; };
@@ -161,8 +151,6 @@
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
-		001E3DF11EB9E171005A03F4 /* VouchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchVC.swift; sourceTree = "<group>"; };
-		0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VouchIntroVC.swift; sourceTree = "<group>"; };
 		0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
 		002879C722D162BF00DE9E64 /* AuthVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthVC.swift; sourceTree = "<group>"; };
@@ -192,20 +180,16 @@
 		0051D1FD1E62D3DC004ABBF6 /* Profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		005C8C8F23EF35AE000011A4 /* CheckinChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckinChatVC.swift; sourceTree = "<group>"; };
 		005C8C9123EF3D39000011A4 /* SimpleLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLogVC.swift; sourceTree = "<group>"; };
+		0066F0BD2414A242007A63E9 /* VouchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VouchView.swift; sourceTree = "<group>"; };
 		006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleDateVC.swift; sourceTree = "<group>"; };
 		006B263A1E67C3DE002DC302 /* RegisterVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		006D50041E65810B005DAABE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		006D50061E658635005DAABE /* AppTabVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTabVC.swift; sourceTree = "<group>"; };
-		00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempConvoVC.swift; sourceTree = "<group>"; };
-		0074A8B421D7F4AD00C22955 /* AngleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AngleCell.swift; sourceTree = "<group>"; };
 		0077466E2381D424003C9F84 /* LineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextField.swift; sourceTree = "<group>"; };
 		007F076D222B42720039DE76 /* PictureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureVC.swift; sourceTree = "<group>"; };
 		007F076F222B68800039DE76 /* PartnersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnersVC.swift; sourceTree = "<group>"; };
 		009347441ED2A24500E35057 /* ScrollTextInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextInputVC.swift; sourceTree = "<group>"; };
-		0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryListVC.swift; sourceTree = "<group>"; };
-		009840A01ED2EAEB0024EC27 /* ProfileCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCell.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		00A8472021C8C912002DEE8A /* DiscoverProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverProfileVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00B978581E780E4300B7B4FA /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
 		00B9785A1E780E5900B7B4FA /* Gender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
@@ -372,8 +356,7 @@
 		0025651E1EB839C900B7BF2A /* vouch */ = {
 			isa = PBXGroup;
 			children = (
-				0025651F1EB83A1500B7BF2A /* VouchIntroVC.swift */,
-				001E3DF11EB9E171005A03F4 /* VouchVC.swift */,
+				0066F0BD2414A242007A63E9 /* VouchView.swift */,
 			);
 			name = vouch;
 			sourceTree = "<group>";
@@ -429,12 +412,6 @@
 				0033EE7F2414634600D0C332 /* DailyMatchesView.swift */,
 				0033EE87241467F400D0C332 /* HeartButton.swift */,
 				0033EE85241467CD00D0C332 /* NextButton.swift */,
-				00A8472021C8C912002DEE8A /* DiscoverProfileVC.swift */,
-				00069E621E6F198800A9FB95 /* ThumbnailMatchCell.swift */,
-				00069E601E6F18CC00A9FB95 /* DailyMatchesVC.swift */,
-				0098409E1ED2E5040024EC27 /* DiscoveryListVC.swift */,
-				009840A01ED2EAEB0024EC27 /* ProfileCell.swift */,
-				0074A8B421D7F4AD00C22955 /* AngleCell.swift */,
 				0042DA6A2206C8A400B85E5C /* Discover.storyboard */,
 				00063EFF240C3CE4006F4326 /* DiscoveryView.swift */,
 				00063F01240C4012006F4326 /* DiscoveryWrapper.swift */,
@@ -473,7 +450,6 @@
 				00ED8A261E7443BD00096497 /* ConnectionsVC.swift */,
 				006AE53D1EE70FFA0028F513 /* ScheduleDateVC.swift */,
 				0042DA682206C88400B85E5C /* Connect.storyboard */,
-				00732EA2239CCFF7009C1DEE /* TempConvoVC.swift */,
 			);
 			name = Connect;
 			sourceTree = "<group>";
@@ -802,25 +778,19 @@
 				00BF024A1EB5A9B100A7DF1B /* PartnerRequests.swift in Sources */,
 				00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */,
 				0007729723F9BB32006CE698 /* BaseConvoLogVC.swift in Sources */,
-				00A8472121C8C912002DEE8A /* DiscoverProfileVC.swift in Sources */,
 				0033EE8C2414693400D0C332 /* TagList.swift in Sources */,
-				00069E631E6F198800A9FB95 /* ThumbnailMatchCell.swift in Sources */,
 				002879CA22D170D500DE9E64 /* KiStyles.swift in Sources */,
 				0001EC3A23DD071C00CF062D /* MsgCell.swift in Sources */,
 				0007729923F9C535006CE698 /* MsgTextarea.swift in Sources */,
 				002879CC22D172DB00DE9E64 /* KiSegmentControl.swift in Sources */,
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
-				001E3DF21EB9E171005A03F4 /* VouchVC.swift in Sources */,
 				0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
-				0074A8B521D7F4AD00C22955 /* AngleCell.swift in Sources */,
-				0098409F1ED2E5040024EC27 /* DiscoveryListVC.swift in Sources */,
 				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
 				0033EE86241467CD00D0C332 /* NextButton.swift in Sources */,
 				00CB0A362364BFD100BCE8FA /* CaseCell.swift in Sources */,
-				002565201EB83A1500B7BF2A /* VouchIntroVC.swift in Sources */,
 				00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */,
@@ -852,7 +822,6 @@
 				00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */,
 				0010A84623FBBF9500C95B36 /* UpcomingDatesVC.swift in Sources */,
 				0001EC3823DD047200CF062D /* MessengerVC.swift in Sources */,
-				00069E611E6F18CC00A9FB95 /* DailyMatchesVC.swift in Sources */,
 				00C0D4BA24144B2800B7F127 /* EnvObjs.swift in Sources */,
 				0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */,
 				00BA200F1E62B8C200D31F6F /* tables.swift in Sources */,
@@ -862,7 +831,6 @@
 				002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,
 				004BBBF01F02DECC009AD970 /* PromptCell.swift in Sources */,
-				009840A11ED2EAEB0024EC27 /* ProfileCell.swift in Sources */,
 				0033EE8A2414685600D0C332 /* DiscoverThView.swift in Sources */,
 				00063F02240C4012006F4326 /* DiscoveryWrapper.swift in Sources */,
 				00BA528D1E75744300EE20E4 /* KinksVC.swift in Sources */,
@@ -870,7 +838,7 @@
 				004064DD240EB7CF009C2D80 /* InteractiveTagsView.swift in Sources */,
 				00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */,
 				00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */,
-				00732EA3239CCFF7009C1DEE /* TempConvoVC.swift in Sources */,
+				0066F0BE2414A242007A63E9 /* VouchView.swift in Sources */,
 				000BF152221A189F00FAAD97 /* MeVC.swift in Sources */,
 				00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */,
 				004064DB240EB756009C2D80 /* PreferencesView.swift in Sources */,

@@ -706,9 +706,11 @@ class KinkedInAPI {
     static func aftercareFlow(caseType: CaseType, callback : @escaping (_ flow: CareQuestion) -> Void) {
         let typeStr = caseType.rawValue
         let cacheKey = CK_AFTERCARE_FLOW + typeStr
+        
         do {
-            let co = try aftercareCache.object(forKey: cacheKey)
-            callback(co)
+//            let co = try aftercareCache.object(forKey: cacheKey)
+//            callback(co)
+            try aftercareCache.removeObject(forKey: cacheKey)
         } catch {
             get("aftercare/\(typeStr)", requiresToken: false, isJob: false){ _json in
                 guard let json = _json as? [String:Any] else { return }
