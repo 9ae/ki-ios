@@ -119,11 +119,13 @@ struct ProfileView: View {
             } //end of scroll view
             HStack(alignment: .center, spacing: 24) {
                 NextButton(size: 32){
-                    print("skip")
+                    
                     self.returnToList(likes: false)
                 }
                 HeartButton(size: 48) {
-                    print("like")
+                    KinkedInAPI.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
+                        print("they also like you \(reciprocal)")
+                    }
                     self.returnToList(likes: true)
                 }
             }.padding()

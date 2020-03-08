@@ -54,7 +54,7 @@ struct DailyMatchesView: View {
             HStack {
                 Button(action: self.hideAction){Image(systemName: "chevron.up.square.fill").foregroundColor(Color.myAction)}
                 Spacer()
-                Text("Today's Matches").font(.callout).foregroundColor(Color.myText)
+                Text("Today's Connections").font(.callout).foregroundColor(Color.myText)
                 Spacer()
             }
             HStack(alignment: .top) {
