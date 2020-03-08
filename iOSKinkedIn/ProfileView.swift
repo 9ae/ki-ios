@@ -101,13 +101,11 @@ struct ProfileView: View {
                     
                     bioText()?.padding(16).font(.body).lineLimit(nil).foregroundColor(Color.myText)
                     
-                    VStack(alignment: .leading, spacing: 4){
-                        Text("My gender(s) are:").font(.subheadline).foregroundColor(Color.myText)
-                        TagList(labels: profile.genders, bgColor: Color.myFadePrimary, textColor: Color.white).padding(.leading, -8)
-                        Spacer()
-                        Text("Role(s) I play are:").font(.subheadline).foregroundColor(Color.myText).padding(.top, 16)
-                        TagList(labels: profile.roles, bgColor: Color.myFadePrimary, textColor: Color.white).padding(.leading, -8)
-                    }.padding(.horizontal, 16)
+                    Text("My gender(s) are:").font(.subheadline).foregroundColor(Color.myText).padding(.horizontal, 16)
+                    TagList(labels: profile.genders, bgColor: Color.myFadePrimary, textColor: Color.white).frame(minHeight: 50).padding(16).padding(.leading, 0)
+                    
+                    Text("Role(s) I play are:").font(.subheadline).foregroundColor(Color.myText).padding(.horizontal, 16).padding(.top, 24)
+                    TagList(labels: profile.roles, bgColor: Color.myFadePrimary, textColor: Color.white).frame(minHeight: 50).padding(16).padding(.leading, 0)
                     
                     myKinks().padding(.horizontal, 16).padding(.top, 24)
                     

@@ -11,6 +11,8 @@ import SwiftUI
 struct DiscoveryView: View {
     @EnvironmentObject var dm : Dungeon
     @State var showDailyMatches = false
+    @State var isProfilesFetched = false
+    @State var isDailyMatchesFetched = false
     
     init(){
         UITableView.appearance().separatorStyle = .none
@@ -47,17 +49,18 @@ struct DiscoveryView: View {
         .onAppear {
             self.showDailyMatches = self.dm.dailyMatches.count > 0
             
-            if self.dm.discoverProfiles.count == 0 {
+            if self.dm.discoverProfiles.count == 0 && !self.isProfilesFetched {
                 KinkedInAPI.listProfiles(){ profiles in
                     self.dm.discoverProfiles = profiles
+                    self.isProfilesFetched = true
                 }
             }
             
-            if self.dm.dailyMatches.count == 0 {
+            if self.dm.dailyMatches.count == 0 && !self.isDailyMatchesFetched {
                 KinkedInAPI.dailyMatches { profiles in
                     self.dm.dailyMatches = profiles
-                    
                     self.showDailyMatches = profiles.count > 0
+                    self.isDailyMatchesFetched = true
                 }
             }
         }
