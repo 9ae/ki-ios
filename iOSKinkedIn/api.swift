@@ -16,7 +16,7 @@ enum ProfileAction: Int {
 
 /* cache keys */
 
-let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW_"
+let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW2_"
 
 let CK_DISCOVER = "CK_DISCOVER"
 
@@ -282,8 +282,8 @@ class KinkedInAPI {
     }
     
     static func logout(){
-        try? profileCache.removeAll()
-        try? prolistCache.removeAll()
+       try? profileCache.removeAll()
+       try? prolistCache.removeAll()
         get("logout", requiresToken: true){ json in
             print(json)
         }

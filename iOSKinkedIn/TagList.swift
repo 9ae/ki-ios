@@ -58,8 +58,8 @@ struct TagList: View {
                         }
                         return result
                     })
-            }
-        }
+            } //end of loop
+      } // end of stack
     }
 }
 

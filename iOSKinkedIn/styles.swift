@@ -63,3 +63,9 @@ extension UIViewController {
     }
 
 }
+
+struct ThemeDimensions {
+    static let smSpace : CGFloat = 8
+    static let mdSpace : CGFloat = 16
+    static let lgSpace : CGFloat = 24
+}

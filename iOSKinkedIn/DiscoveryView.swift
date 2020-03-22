@@ -45,7 +45,7 @@ struct DiscoveryView: View {
             )
            .navigationBarHidden(showDailyMatches)
         } // end of nav view
-        .background(Color.myBG)
+        .background(Color.white)
         .onAppear {
             self.showDailyMatches = self.dm.dailyMatches.count > 0
             

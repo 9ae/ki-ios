@@ -14,6 +14,7 @@ struct ProfileView: View {
     @EnvironmentObject var dm : Dungeon
     
     @State var profile : Profile
+    var isFriend: Bool = false
     var goBack : () -> Void
     
     func picture() -> Image {
@@ -39,9 +40,14 @@ struct ProfileView: View {
         }
     }
     
-    func bioText () -> Text? {
+    func bioText () -> AnyView? {
         if let s = profile.bio {
-            return Text(s)
+            return AnyView(Text(s)
+                .font(.body)
+                .lineLimit(nil)
+                .foregroundColor(Color.myText)
+                .padding(.horizontal, ThemeDimensions.mdSpace)
+            )
         } else {
             return nil
         }
@@ -52,26 +58,36 @@ struct ProfileView: View {
             return AnyView(VStack(alignment: .leading) {
                 ForEach(prompts, id: \.title) { q in
                     VStack(alignment: .leading) {
-                        Text(q.title).font(.caption).foregroundColor(Color.myText)
+                        Text(q.title).font(.subheadline).foregroundColor(Color.myText)
                         Text(q.answer!).font(.body).foregroundColor(Color.myText)
-                    }.padding(.vertical, 8)
+                    }.padding(.vertical, ThemeDimensions.smSpace)
                     } //end of ForeEach
                 }) // end of VStack
             }
         else { return nil }
     }
     
-    func myKinks () -> AnyView? {
-        if profile.kinks.count > 0 {
-            let kinks = profile.kinks.map { k in
-                return k.label
-            }
-            return AnyView(VStack(alignment: .leading, spacing: 4){
-                Text("I'm into...").font(.subheadline).foregroundColor(Color.myText)
-                TagList(labels: kinks, bgColor: Color.myPrimary, textColor: Color.white).padding(.leading, -8)
+    func myLabels (list: [String], label: String) -> AnyView? {
+        if list.count > 0 {
+        
+            let tagsView = TagList(labels: list, bgColor: Color.myFadePrimary, textColor: Color.white)
+                .padding(.trailing, ThemeDimensions.mdSpace)
+                .padding(.leading, ThemeDimensions.smSpace)
+                .frame(minHeight: (CGFloat(list.count/3)+1) * 25.0 )
+                // This is a hacky rough estimate, but until we can do better, we'll keep this for now
+            
+            return AnyView(VStack(alignment: .leading, spacing: ThemeDimensions.smSpace){
+                Text(label)
+                .font(.subheadline)
+                .foregroundColor(Color.myText)
+                .padding(.horizontal, ThemeDimensions.mdSpace)
+                .padding(.vertical, 0)
+                tagsView
             })
-        } else { return nil }
+           // return AnyView(tagsView)
+        } else {return nil}
     }
+    
     
     func returnToList(likes: Bool){
         dm.markProfile(self.profile, likes: likes)
@@ -82,34 +98,36 @@ struct ProfileView: View {
     var body: some View {
         ZStack(alignment: .bottom) {
             ScrollView(.vertical, showsIndicators: true) {
-                VStack(alignment: .leading, spacing: 16) {
-                    picture().resizable().frame(width: nil, height: 400, alignment: .center)
+                VStack(alignment: .leading, spacing: ThemeDimensions.lgSpace) {
+                   picture().resizable().frame(width: nil, height: 400, alignment: .center)
                     
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .leading, spacing: ThemeDimensions.smSpace) {
                         Text(profile.name).font(.title).foregroundColor(Color.myTitle)
                         
                         basicInfo()?.foregroundColor(Color.myText).font(.body)
                         
-                        HStack(alignment: .top, spacing: 16) {
+                        HStack(alignment: .top, spacing: ThemeDimensions.lgSpace) {
                             KinksCountView(count: profile.kinksMatched).fixedSize(horizontal: false, vertical: true)
                             
                             if profile.vouches > 0 {
                                 VouchCountView(count: profile.vouches).fixedSize(horizontal: false, vertical: true)
                             }
                         }
-                    }.padding(.horizontal, 16)
+                    }.padding(.horizontal, ThemeDimensions.mdSpace)
                     
-                    bioText()?.padding(16).font(.body).lineLimit(nil).foregroundColor(Color.myText)
+                  bioText()
                     
-                    Text("My gender(s) are:").font(.subheadline).foregroundColor(Color.myText).padding(.horizontal, 16)
-                    TagList(labels: profile.genders, bgColor: Color.myFadePrimary, textColor: Color.white).frame(minHeight: 50).padding(16).padding(.leading, 0)
+
+                    myLabels(list: profile.genders, label: "My gender(s) are")
+                    myLabels(list: profile.roles, label: "Role(s) I play are")
                     
-                    Text("Role(s) I play are:").font(.subheadline).foregroundColor(Color.myText).padding(.horizontal, 16).padding(.top, 24)
-                    TagList(labels: profile.roles, bgColor: Color.myFadePrimary, textColor: Color.white).frame(minHeight: 50).padding(16).padding(.leading, 0)
+                    if isFriend {
+                        myLabels(list: self.profile.kinks.map { k in
+                            return k.label
+                        }, label: "I'm into")
+                    }
                     
-                    myKinks().padding(.horizontal, 16).padding(.top, 24)
-                    
-                    bioPrompts()?.padding(.horizontal, 16).padding(.top, 24)
+                    bioPrompts()?.padding(.horizontal, ThemeDimensions.mdSpace).padding(.top, ThemeDimensions.lgSpace)
                     
                     // To give additional space between content and buttons
                     Rectangle().frame(minWidth: 10, idealWidth: nil, maxWidth: nil, minHeight: 50, idealHeight: nil, maxHeight: nil, alignment: .center)
@@ -117,19 +135,21 @@ struct ProfileView: View {
                     
                 } // end of content stack
             } //end of scroll view
-            HStack(alignment: .center, spacing: 24) {
-                NextButton(size: 32){
-                    
-                    self.returnToList(likes: false)
-                }
-                HeartButton(size: 48) {
-                    KinkedInAPI.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
-                        print("they also like you \(reciprocal)")
+            if !isFriend {
+                HStack(alignment: .center, spacing: 24) {
+                    NextButton(size: 32){
+                        
+                        self.returnToList(likes: false)
                     }
-                    self.returnToList(likes: true)
-                }
-            }.padding()
-        }.background(Color.myBG)
+                    HeartButton(size: 48) {
+                        KinkedInAPI.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
+                            print("they also like you \(reciprocal)")
+                        }
+                        self.returnToList(likes: true)
+                    }
+                }.padding()
+            }
+        }.background(Color.white)
         .onAppear {
             if self.profile.age == 0 {
                 KinkedInAPI.readProfile(self.profile.uuid) { profile in
@@ -142,7 +162,7 @@ struct ProfileView: View {
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileView(profile: mockFullProfile() , goBack: {
+        ProfileView(profile: mockFullProfile() , isFriend: true, goBack: {
             print("return")
         }).environmentObject(mockDM())
     }

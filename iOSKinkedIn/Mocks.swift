@@ -27,22 +27,20 @@ let mockAftercareFlow =
         
     ])
 
-func mockFullProfile(showKinks : Bool = false) -> Profile {
+func mockFullProfile() -> Profile {
     var pro = mockProfile
     pro.vouches = 3
     pro.kinksMatched = 6
     
     pro.city = "New York"
-    pro.genders = ["agender","non-binary"]
+    pro.genders = ["agender", "androgynous", "bigender", "cisman", "ciswoman", "gender non-conforming", "genderfluid", "hijra", "intersex", "man", "non-binary", "other", "pangender", "trans man", "trans woman", "transfeminine", "transgender", "transmasculine", "transsexual", "two spirit", "woman"]
     pro.roles = ["domme", "exhibitionist", "masochist"]
     pro.bio = "Lorem ipsum. blah bha. | He's not like the other guys. He's a NICE guy -- but wait, is he really that nice? What's behind his sweet, romantic act? In this video, we take on the Nice Guy archetype and figure out what he represents in our world today."
-    if  showKinks {
     pro.kinks =
         [ Kink(label: "pegging", code: "pegging", form: .act, exp: 3, likesGive: true, likesGet: false, likesBoth: false),
           Kink(label: "massages", code: "massages", form: .service, exp: 2, likesGive: false, likesGet: false, likesBoth: true),
           Kink(label: "corset", code: "corset", form: .wearable, exp: 2, likesGive: false, likesGet: true, likesBoth: false)
         ]
-    }
     
     pro.prompts =
         [BioPrompt(title: "I am really good at...", answer: "making breakfast", show: true),

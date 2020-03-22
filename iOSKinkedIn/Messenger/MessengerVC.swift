@@ -140,9 +140,13 @@ class MessengerVC: BaseTextInputDelegate {
             self.view.makeToastActivity(.center)
             
             KinkedInAPI.readProfile(uuid) { profile in
-                let profileView = ViewProfileVC(profile)
+                print("got profile data")
+                let profileView = ProfileView(profile: profile, isFriend: true) {
+                    print("segue back to msg")
+                }
                 self.view.hideToastActivity()
-                self.navigationController?.pushViewController(profileView, animated: false)
+                let host = UIHostingController(rootView: profileView)
+                self.navigationController?.pushViewController(host, animated: false)
             }
             
         }
