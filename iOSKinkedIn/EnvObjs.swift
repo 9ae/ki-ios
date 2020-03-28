@@ -39,11 +39,16 @@ final class Dungeon : ObservableObject {
     @Published var genders: [String] = []
     @Published var roles: [String] = []
     
+    @Published var kinksAct : [Kink] = []
+    @Published var kinksService : [Kink] = []
+    @Published var kinksOmake : [Kink] = []
+    
     @Published var discoverProfiles: [Profile] = []
     
     @Published var preferences : DiscoveryPreferences = DiscoveryPreferences()
     
     @Published var dailyMatches : [Profile] = []
+    
     
     func markProfile(_ profile: Profile, likes: Bool) -> Void {
         self.discoverProfiles = self.discoverProfiles.filter({ pro in

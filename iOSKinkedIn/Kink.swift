@@ -10,6 +10,22 @@ import Foundation
 
 let experiences = ["curious about", "dabbled with", "learning", "practicing", "skilled in", "master of"]
 
+enum way : String, Codable {
+    case give  = "GIVE"
+    case get = "GET"
+    case both = "BOTH"
+    case none = ""
+}
+
+enum KinkForm: String, Codable {
+    case service = "SERVICE"
+    case wearable = "WEARABLE"
+    case act = "ACT"
+    case other = "OTHER"
+    case accessory = "ACCESSORY"
+    case aphrodisiac = "APHRODISIAC"
+}
+
 class Kink : Codable {
     var label: String
     var code: String
@@ -17,18 +33,14 @@ class Kink : Codable {
     var form: KinkForm
     var exp: Int
     
-    var likesGive = false
-    var likesGet = false
-    var likesBoth = false
+    var way : way
     
-    init(label: String, code: String, form: KinkForm, exp: Int, likesGive: Bool, likesGet: Bool, likesBoth: Bool){
+    init(label: String, code: String, form: KinkForm, exp: Int, way: way){
         self.label = label
         self.code = code
         self.form = form
         self.exp = exp
-        self.likesGet = likesGet
-        self.likesGive = likesGive
-        self.likesBoth = likesBoth
+        self.way = way
     }
 
 
@@ -56,12 +68,14 @@ class Kink : Codable {
         if let _ways = json["ways"] as? String {
             switch(_ways){
                 case "GIVE":
-                    self.likesGive = true
+                    self.way = .give
                 case "GET":
-                    self.likesGet = true
+                    self.way = .get
                 default:
-                    self.likesBoth = true
+                    self.way = .both
             }
+        } else {
+            self.way = .none
         }
         
     }
@@ -79,49 +93,4 @@ class Kink : Codable {
         
         return kinks
     }
-    
-    func way() -> String? {
-        if(!self.likesBoth && !self.likesGive && !self.likesGet){
-            return nil
-        }
-
-        if(self.likesGet && self.likesGive){
-            return "BOTH"
-        } else if (self.likesGive){
-            return "GIVE"
-        } else if (self.likesGet){
-            return "GET"
-        } else {
-            return "BOTH"
-        }
-    }
 }
-
-enum KinkForm: String, Codable {
-    case service = "SERVICE"
-    case wearable = "WEARABLE"
-    case act = "ACT"
-    case other = "OTHER"
-    case accessory = "ACCESSORY"
-    case aphrodisiac = "APHRODISIAC"
-}
-
-/*
-class KinkInterest: Object {
-    
-    dynamic var code = ""
-    dynamic var label = ""
-    dynamic var way = 0
-    dynamic var form = 0
-    
-    /*
-    static func has(_label: String) -> Bool {
-        let realm = RealmDB.instance()
-        
-        let predicate = NSPredicate(format: "code = %@", _label)
-        let results = realm.objects(KinkInterest.self).filter(predicate)
-        return results.count==1
-    }
-    */
-}
-*/

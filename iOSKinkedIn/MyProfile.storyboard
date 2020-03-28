@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CKB-js-uXZ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="CKB-js-uXZ">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -331,7 +331,7 @@
                                                         <segue destination="VHW-HT-ZvS" kind="show" identifier="editGenders" id="5bW-AN-fr6"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGs-7J-fvv" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGs-7J-fvv" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -394,7 +394,7 @@
                                                         <segue destination="myc-TK-knf" kind="show" identifier="editRoles" id="hGk-f9-8fe"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Pd-4Ac" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Pd-4Ac" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -453,11 +453,8 @@
                                                     <state key="normal" image="edit"/>
                                                     <state key="selected" image="edit-active"/>
                                                     <state key="highlighted" image="edit-active"/>
-                                                    <connections>
-                                                        <segue destination="MlR-fM-GSp" kind="show" identifier="editKinks" id="7PB-dw-zNp"/>
-                                                    </connections>
                                                 </button>
-                                                <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-5s-FOx" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-5s-FOx" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -872,161 +869,12 @@
             </objects>
             <point key="canvasLocation" x="-228" y="3797.4512743628188"/>
         </scene>
-        <!--Select Kinks-->
-        <scene sceneID="hgz-UV-LGa">
-            <objects>
-                <viewController id="MlR-fM-GSp" customClass="KinksVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="032-ET-asC"/>
-                        <viewControllerLayoutGuide type="bottom" id="e5Q-sq-tDs"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="wZK-De-ffy">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EXb-wG-Dhv">
-                                <rect key="frame" x="8" y="8" width="359" height="170"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywd-nH-NXZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
-                                        <state key="normal" title="I am turned on by">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onOmake:" destination="MlR-fM-GSp" eventType="touchUpInside" id="RpF-lQ-vbs"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzv-MM-VW7">
-                                        <rect key="frame" x="0.0" y="35" width="359" height="30"/>
-                                        <state key="normal" title="I want to receive">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onGetService:" destination="MlR-fM-GSp" eventType="touchUpInside" id="Kuf-Gk-udj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="115-SY-j2N">
-                                        <rect key="frame" x="0.0" y="70" width="359" height="30"/>
-                                        <state key="normal" title="I want to give you">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onGiveService:" destination="MlR-fM-GSp" eventType="touchUpInside" id="fSQ-cd-esw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Dz-is-V87">
-                                        <rect key="frame" x="0.0" y="105" width="359" height="30"/>
-                                        <state key="normal" title="I like to wear">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onWear:" destination="MlR-fM-GSp" eventType="touchUpInside" id="G61-3F-yzy"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VzN-c9-P2m">
-                                        <rect key="frame" x="0.0" y="140" width="359" height="30"/>
-                                        <state key="normal" title="I fantasize about">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="onActs:" destination="MlR-fM-GSp" eventType="touchUpInside" id="ugF-0c-hay"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS4-kU-vrY">
-                                <rect key="frame" x="1" y="208" width="373" height="366"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM7-X5-grq" customClass="TagListView" customModule="TagListView">
-                                        <rect key="frame" x="15" y="0.0" width="300" height="20"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedTextColor">
-                                                <color key="value" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="8"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="selectedBorderColor">
-                                                <color key="value" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingY">
-                                                <real key="value" value="4"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="paddingX">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="marginY">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="marginX">
-                                                <real key="value" value="12"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="tagSelectedBackgroundColor">
-                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="VM7-X5-grq" secondAttribute="trailing" constant="30" id="LUK-SF-MJP"/>
-                                    <constraint firstItem="VM7-X5-grq" firstAttribute="top" secondItem="DS4-kU-vrY" secondAttribute="top" id="O5O-Fp-AKq"/>
-                                    <constraint firstAttribute="bottom" secondItem="VM7-X5-grq" secondAttribute="bottom" id="QqR-v5-71P"/>
-                                    <constraint firstAttribute="width" constant="373" id="f23-6c-fZn"/>
-                                    <constraint firstItem="VM7-X5-grq" firstAttribute="leading" secondItem="DS4-kU-vrY" secondAttribute="leading" constant="15" id="h6B-mm-Vxo"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="DS4-kU-vrY" secondAttribute="trailing" constant="-15" id="5Cv-2s-j0d"/>
-                            <constraint firstItem="EXb-wG-Dhv" firstAttribute="top" secondItem="032-ET-asC" secondAttribute="bottom" constant="8" id="Kcb-jS-eDX"/>
-                            <constraint firstItem="e5Q-sq-tDs" firstAttribute="top" secondItem="DS4-kU-vrY" secondAttribute="bottom" id="MKX-YZ-fmx"/>
-                            <constraint firstItem="EXb-wG-Dhv" firstAttribute="leading" secondItem="wZK-De-ffy" secondAttribute="leading" constant="8" id="TQK-Fp-GfK"/>
-                            <constraint firstItem="DS4-kU-vrY" firstAttribute="top" secondItem="EXb-wG-Dhv" secondAttribute="bottom" constant="30" id="UPE-dV-FGW"/>
-                            <constraint firstAttribute="trailing" secondItem="EXb-wG-Dhv" secondAttribute="trailing" constant="8" id="XgI-w3-ptL"/>
-                            <constraint firstItem="DS4-kU-vrY" firstAttribute="leading" secondItem="wZK-De-ffy" secondAttribute="leadingMargin" constant="-15" id="kbI-Rh-YLF"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Select Kinks" id="F9I-Vj-kt9">
-                        <barButtonItem key="rightBarButtonItem" title="Next" id="LC7-Am-vqV">
-                            <connections>
-                                <action selector="onNext:" destination="MlR-fM-GSp" id="sfe-GY-usf"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="btnAct" destination="VzN-c9-P2m" id="8n9-FH-U8D"/>
-                        <outlet property="btnGet" destination="Tzv-MM-VW7" id="htb-Kv-3Yw"/>
-                        <outlet property="btnGive" destination="115-SY-j2N" id="L7K-xH-QD9"/>
-                        <outlet property="btnOmake" destination="ywd-nH-NXZ" id="rtI-Of-dqa"/>
-                        <outlet property="btnWear" destination="0Dz-is-V87" id="2zA-IZ-QpH"/>
-                        <outlet property="qstack" destination="EXb-wG-Dhv" id="uIQ-0g-nMh"/>
-                        <outlet property="tlv" destination="VM7-X5-grq" id="EHm-pK-JBQ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RIh-rd-sk7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="509.60000000000002" y="3832.5337331334335"/>
-        </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="edit" width="32" height="32"/>
         <image name="edit-active" width="32" height="32"/>
         <image name="profile" width="32" height="32"/>
         <image name="profile_select" width="32" height="32"/>
     </resources>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

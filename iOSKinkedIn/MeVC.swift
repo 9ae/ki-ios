@@ -211,11 +211,6 @@ class MeVC: UITableViewController {
             vc.profile = me
         }
         
-        if segue.identifier == "editKinks",
-            let vc = segue.destination as? KinksVC {
-            vc.profile = me
-        }
-        
         if segue.identifier == "editPrompts",
             let vc = segue.destination as? PromptVC {
             vc.profile = me
