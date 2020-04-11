@@ -44,10 +44,10 @@ final class Dungeon : ObservableObject {
     @Published var kinksOmake : [Kink] = []
     
     @Published var discoverProfiles: [Profile] = []
-    
     @Published var preferences : DiscoveryPreferences = DiscoveryPreferences()
-    
     @Published var dailyMatches : [Profile] = []
+    
+    @Published var myProfle : Profile?
     
     
     func markProfile(_ profile: Profile, likes: Bool) -> Void {
@@ -58,6 +58,19 @@ final class Dungeon : ObservableObject {
         if (likes) {
             // Take out in for realz
             self.dailyMatches.append(profile)
+        }
+    }
+    
+    func updateMyProfileWithKink(_ kink: Kink) -> Void {
+        let kinks = self.myProfle?.kinks ?? []
+        
+        if let index = kinks.firstIndex(where: { k in
+            k.code == kink.code
+        }) {
+            self.myProfle?.kinks.remove(at: index)
+            self.myProfle?.kinks.append(kink)
+        } else {
+            self.myProfle?.kinks.append(kink)
         }
     }
 }

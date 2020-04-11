@@ -26,7 +26,6 @@ class MeVC: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.setNavigationBarHidden(true, animated: false)
-        super.viewWillAppear(animated)
         
         logoutBtn.backgroundColor = ThemeColors.action
         logoutBtn.titleLabel?.tintColor = UIColor.white
@@ -37,6 +36,7 @@ class MeVC: UITableViewController {
             self.updateContent(profile)
         }
         
+        super.viewWillAppear(animated)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -137,7 +137,7 @@ class MeVC: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 6
+        return 7
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -148,6 +148,8 @@ class MeVC: UITableViewController {
         case 2: return genderTags.frame.height + labelHeight
         case 3: return roleTags.frame.height + labelHeight
         case 4: return kinksTags.bounds.height + labelHeight + 20
+        case 5: return 50
+        case 6: return 50
         default: return 300
         }
         
@@ -224,6 +226,11 @@ class MeVC: UITableViewController {
         if segue.identifier == "editPartners",
             let vc = segue.destination as? PartnersVC {
             vc.partners = self.partners
+        }
+        
+        if segue.identifier == "editBio",
+            let vc = segue.destination as? BioVC {
+            vc.bioText = me?.bio
         }
     }
     

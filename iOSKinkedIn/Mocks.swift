@@ -28,7 +28,7 @@ let mockAftercareFlow =
     ])
 
 func mockFullProfile() -> Profile {
-    var pro = mockProfile
+    let pro = mockProfile
     pro.vouches = 3
     pro.kinksMatched = 6
     
@@ -37,9 +37,10 @@ func mockFullProfile() -> Profile {
     pro.roles = ["domme", "exhibitionist", "masochist"]
     pro.bio = "Lorem ipsum. blah bha. | He's not like the other guys. He's a NICE guy -- but wait, is he really that nice? What's behind his sweet, romantic act? In this video, we take on the Nice Guy archetype and figure out what he represents in our world today."
     pro.kinks =
-        [ Kink(label: "pegging", code: "pegging", form: .act, exp: 3, way: .none),
-          Kink(label: "massages", code: "massages", form: .service, exp: 2,  way: .none),
-          Kink(label: "corset", code: "corset", form: .wearable, exp: 2,  way: .none)
+        [ Kink(label: "leather", code: "leather", form: .act, exp: 3, way: .give),
+          Kink(label: "biting", code: "bite", form: .service, exp: 2,  way: .get),
+          Kink(label: "exhibitionism", code: "exhibition", form: .wearable, exp: 2,  way: .both),
+          Kink(label: "bondage", code: "bond", form:.service, exp: 3, way: .give)
         ]
     
     pro.prompts =
@@ -50,6 +51,39 @@ func mockFullProfile() -> Profile {
     return pro
 }
 
+let mockKinksOmake = [
+    Kink(label: "masks" , code: "mask", form: .wearable, exp: 0, way: .none),
+    Kink(label: "leather" , code: "leather", form: .wearable, exp: 0, way: .none),
+    Kink(label: "corsets" , code: "corsets", form: .wearable, exp: 0, way: .none),
+    Kink(label: "vibrators" , code: "vibrators", form: .accessory, exp: 0, way: .none),
+    Kink(label: "intelligence", code: "intelligence", form: .aphrodisiac, exp: 0, way: .none)
+]
+
+let mockKinksActs = [
+    Kink(label: "breath play", code: "breath", form: .act, exp: 0, way: .none),
+    Kink(label: "double penetration", code: "ddp", form: .act, exp: 0, way: .none),
+    Kink(label: "exhibitionism", code: "exhibition", form: .act, exp: 0, way: .none),
+    Kink(label: "outdoor sex", code: "outdoorsex", form: .act, exp: 0, way: .none),
+    Kink(label: "role play", code: "roleplay", form: .act, exp: 0, way: .none),
+    Kink(label: "power exchange", code: "powerex", form: .act, exp: 0, way: .none),
+    Kink(label: "voyeurism", code: "voyeur", form: .act, exp: 0, way: .none)
+]
+
+let mockKinksService = [
+    Kink(label: "begging", code: "beg", form: .service, exp: 0, way: .none),
+    Kink(label: "biting", code: "bite", form: .service, exp: 0, way: .none),
+    Kink(label: "bondage", code: "bond", form: .service, exp: 0, way: .none),
+    Kink(label: "caging/confinement", code: "cage", form: .service, exp: 0, way: .none),
+    Kink(label: "candle wax", code: "candlewax", form: .service, exp: 0, way: .none),
+    Kink(label: "choking", code: "choke", form: .service, exp: 0, way: .none),
+    Kink(label: "fisting", code: "fist", form: .service, exp: 0, way: .none),
+    Kink(label: "flogging", code: "flog", form: .service, exp: 0, way: .none),
+    Kink(label: "orgasm control", code: "orgasmctrl", form: .service, exp: 0, way: .none),
+    Kink(label: "spanking", code: "spank", form: .service, exp: 0, way: .none),
+    Kink(label: "whipping", code: "whipping", form: .service, exp: 0, way: .none)
+]
+
+/* mock dungeon */
 func mockDM () -> Dungeon {
     let dm = Dungeon()
     
@@ -59,37 +93,10 @@ func mockDM () -> Dungeon {
     dm.genders = ["agender", "andrygynous", "bigender", "cisman", "ciswoman", "gender non-conforming", "genderfluid", "hijra", "intersex", "man", "non-binary", "other", "pangender", "trans man", "trans woman", "transfeminine", "transgender", "transmasculine", "transsexual", "two spirit", "woman"]
     dm.roles = ["bottom", "dominant", "domme", "evolving", "exhibitionist", "exploring", "hedonist", "kinkster", "masochist", "master", "mistress", "sadist", "sadomasochist", "sensualist", "slave", "submissive", "swinger", "switch", "top", "voyeur"]
     
+    dm.kinksAct = mockKinksActs
+    dm.kinksService = mockKinksService
+    dm.kinksOmake = mockKinksOmake
+    dm.myProfle = mockFullProfile()
+    
     return dm
 }
-
-let mockKinksOmake = [
-    Kink(label: "masks" , code: "mask", form: .wearable, exp: 0, way: .none),
-    Kink(label: "leather" , code: "leather", form: .wearable, exp: 0, way: .get),
-    Kink(label: "corsets" , code: "corsets", form: .wearable, exp: 0, way: .give),
-    Kink(label: "vibrators" , code: "vibrators", form: .accessory, exp: 0, way: .none),
-    Kink(label: "intelligence", code: "intelligence", form: .aphrodisiac, exp: 0, way: .both)
-]
-
-let mockKinksActs = [
-    Kink(label: "breath play", code: "breath", form: .act, exp: 0, way: .give),
-    Kink(label: "double penetration", code: "ddp", form: .act, exp: 0, way: .none),
-    Kink(label: "exhibitionism", code: "exhibition", form: .act, exp: 0, way: .both),
-    Kink(label: "outdoor sex", code: "outdoorsex", form: .act, exp: 0, way: .none),
-    Kink(label: "role play", code: "roleplay", form: .act, exp: 0, way: .none),
-    Kink(label: "power exchange", code: "powerex", form: .act, exp: 0, way: .get),
-    Kink(label: "voyeurism", code: "voyeur", form: .act, exp: 0, way: .none)
-]
-
-let mockKinksService = [
-    Kink(label: "begging", code: "beg", form: .service, exp: 0, way: .none),
-    Kink(label: "biting", code: "bite", form: .service, exp: 0, way: .both),
-    Kink(label: "bondage", code: "bond", form: .service, exp: 0, way: .give),
-    Kink(label: "caging/confinement", code: "cage", form: .service, exp: 0, way: .none),
-    Kink(label: "candle wax", code: "candlewax", form: .service, exp: 0, way: .none),
-    Kink(label: "choking", code: "choke", form: .service, exp: 0, way: .get),
-    Kink(label: "fisting", code: "fist", form: .service, exp: 0, way: .none),
-    Kink(label: "flogging", code: "flog", form: .service, exp: 0, way: .none),
-    Kink(label: "orgasm control", code: "orgasmctrl", form: .service, exp: 0, way: .none),
-    Kink(label: "spanking", code: "spank", form: .service, exp: 0, way: .none),
-    Kink(label: "whipping", code: "whipping", form: .service, exp: 0, way: .none)
-]

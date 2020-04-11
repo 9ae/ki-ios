@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct EditKinkForm: View {
+
     @State var kinks : [Kink]
     let formSentence: String
     @Binding var searchLabels : String
@@ -23,7 +24,7 @@ struct EditKinkForm: View {
                 { (label, selected) in
                     if let kink = self.kinks.first(where: { k  in
                         k.label == label
-                    }) { self.markFn(kink, selected) }
+                    }) { print("checked \(kink.label)"); self.markFn(kink, selected) }
                 }
         }
     }

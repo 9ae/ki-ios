@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kOS-Q5-9Mb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kOS-Q5-9Mb">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -10,20 +11,20 @@
         <!--Help-->
         <scene sceneID="0YX-kf-2V7">
             <objects>
-                <navigationController storyboardIdentifier="AftercareNavCtrl" title="Help" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kOS-Q5-9Mb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="AftercareNavCtrl" title="Help" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kOS-Q5-9Mb" customClass="KiNavCtrl" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Help" image="aftercare" selectedImage="aftercare_select" id="Tdi-IJ-0Nb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="2VN-s1-BsO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="2VN-s1-BsO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" name="titleColor"/>
+                        <color key="tintColor" name="bgColor"/>
+                        <color key="barTintColor" name="titleColor"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="0.87624916900000005" green="0.85276388120000002" blue="0.89747431509999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="bgColor"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.87624916900000005" green="0.85276388120000002" blue="0.89747431509999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" name="bgColor"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -623,5 +624,11 @@
     <resources>
         <image name="aftercare" width="30" height="26"/>
         <image name="aftercare_select" width="30" height="26"/>
+        <namedColor name="bgColor">
+            <color red="0.93300002813339233" green="0.97299998998641968" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="titleColor">
+            <color red="0.32499998807907104" green="0.22699999809265137" blue="0.44299998879432678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
