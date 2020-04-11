@@ -12,34 +12,23 @@ class PromptCell: UITableViewCell, UITextViewDelegate {
     
     
     @IBOutlet var title: UILabel!
-    @IBOutlet var show: UISwitch!
+    @IBOutlet var isPrivate: UISwitch!
     @IBOutlet var answer: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         
         answer.delegate = self
+        
+        answer.layer.cornerRadius = 8.0
+        answer.clipsToBounds = true
+        answer.textContainerInset = UIEdgeInsets(top: 4, left: 4, bottom: 4, right: 4)
     }
     
     func setContent(_ prompt: BioPrompt){
         title.text = prompt.title
-        show.isOn = prompt.show
+        isPrivate.isOn = !prompt.show
         answer.text = prompt.answer ?? ""
     }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if(!textView.text.isEmpty){
-            self.show.isOn = true
-        }
-        
-    }
-    /*
-    func textViewDidBeginEditing(_ textView: UITextView) {
-        self.setEditing(true, animated: false)
-    }
-    */
-    
-    
 
 }

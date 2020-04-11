@@ -29,6 +29,8 @@ class PromptVC: UITableViewController {
             self.tableView.reloadData()
         }
         }
+        
+        self.tableView.separatorColor = UIColor.clear
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,7 +65,7 @@ class PromptVC: UITableViewController {
     override func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let promptCell = cell as? PromptCell {
             prompts[indexPath.row].answer = promptCell.answer.text
-            prompts[indexPath.row].show = promptCell.show.isOn
+            prompts[indexPath.row].show = !promptCell.isPrivate.isOn
         }
     }
     
@@ -73,7 +75,7 @@ class PromptVC: UITableViewController {
         var i = 0
         while i < prompts.count {
             if let cell = tableView.cellForRow(at: IndexPath(row: i, section: 0)) as? PromptCell {
-                prompts[i].show = cell.show.isOn
+                prompts[i].show = !cell.isPrivate.isOn
                 prompts[i].answer = cell.answer.text
             }
             i = i + 1
@@ -87,7 +89,6 @@ class PromptVC: UITableViewController {
         KinkedInAPI.updateProfile(params)
         
     }
-    
 
     /*
     // Override to support conditional editing of the table view.
