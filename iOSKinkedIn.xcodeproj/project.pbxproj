@@ -19,7 +19,6 @@
 		000BF152221A189F00FAAD97 /* MeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000BF151221A189F00FAAD97 /* MeVC.swift */; };
 		0010A84623FBBF9500C95B36 /* UpcomingDatesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0010A84523FBBF9500C95B36 /* UpcomingDatesVC.swift */; };
 		00171A231E56384500640B09 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A221E56384500640B09 /* AppDelegate.swift */; };
-		00171A251E56384500640B09 /* GendersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A241E56384500640B09 /* GendersVC.swift */; };
 		00171A281E56384500640B09 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A261E56384500640B09 /* Main.storyboard */; };
 		00171A2D1E56384500640B09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00171A2B1E56384500640B09 /* LaunchScreen.storyboard */; };
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
@@ -27,7 +26,6 @@
 		001A8A32242FDD8200C819F5 /* AllForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A8A31242FDD8200C819F5 /* AllForms.swift */; };
 		001A8A34242FDFAB00C819F5 /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A8A33242FDFAB00C819F5 /* FormRow.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
-		001D21191E5A4B1300317600 /* RolesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21181E5A4B1300317600 /* RolesVC.swift */; };
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */; };
 		0025B30A213CF7C100BBE8A3 /* SetupViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */; };
@@ -69,6 +67,7 @@
 		009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009347441ED2A24500E35057 /* ScrollTextInputVC.swift */; };
 		00954CCD2442383E005C2BA3 /* BioVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00954CCC2442383E005C2BA3 /* BioVC.swift */; };
 		00954CCF244266B9005C2BA3 /* KiNavCtrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00954CCE244266B9005C2BA3 /* KiNavCtrl.swift */; };
+		00954CD324428A5E005C2BA3 /* EditIDsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00954CD224428A5E005C2BA3 /* EditIDsView.swift */; };
 		00A0CD7D1E56D85800D39CD8 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */; };
 		00B5659D1E57906100639B8E /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B5659C1E57906100639B8E /* SplashVC.swift */; };
 		00B978591E780E4300B7B4FA /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B978581E780E4300B7B4FA /* Role.swift */; };
@@ -145,7 +144,6 @@
 		0010A84523FBBF9500C95B36 /* UpcomingDatesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingDatesVC.swift; sourceTree = "<group>"; };
 		00171A1F1E56384500640B09 /* iOSKinkedIn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSKinkedIn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00171A221E56384500640B09 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		00171A241E56384500640B09 /* GendersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GendersVC.swift; sourceTree = "<group>"; };
 		00171A271E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		00171A2C1E56384500640B09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00171A2E1E56384500640B09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 		001A8A31242FDD8200C819F5 /* AllForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllForms.swift; sourceTree = "<group>"; };
 		001A8A33242FDFAB00C819F5 /* FormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
-		001D21181E5A4B1300317600 /* RolesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RolesVC.swift; sourceTree = "<group>"; };
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewVC.swift; sourceTree = "<group>"; };
@@ -198,6 +195,7 @@
 		009347441ED2A24500E35057 /* ScrollTextInputVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollTextInputVC.swift; sourceTree = "<group>"; };
 		00954CCC2442383E005C2BA3 /* BioVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioVC.swift; sourceTree = "<group>"; };
 		00954CCE244266B9005C2BA3 /* KiNavCtrl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KiNavCtrl.swift; sourceTree = "<group>"; };
+		00954CD224428A5E005C2BA3 /* EditIDsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditIDsView.swift; sourceTree = "<group>"; };
 		00A0CD7C1E56D85800D39CD8 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		00B5659C1E57906100639B8E /* SplashVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		00B978581E780E4300B7B4FA /* Role.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
@@ -479,8 +477,6 @@
 				00FD15831F6D6D1100357860 /* MyProfile.storyboard */,
 				001A8A2E242FD4DA00C819F5 /* MyKinks */,
 				004BBBED1F02BC43009AD970 /* PromptVC.swift */,
-				001D21181E5A4B1300317600 /* RolesVC.swift */,
-				00171A241E56384500640B09 /* GendersVC.swift */,
 				00FD2A741EF6FB190015749A /* BasicProfileVC.swift */,
 				004BBBEF1F02DECC009AD970 /* PromptCell.swift */,
 				0025B309213CF7C100BBE8A3 /* SetupViewVC.swift */,
@@ -488,6 +484,7 @@
 				007F076D222B42720039DE76 /* PictureVC.swift */,
 				007F076F222B68800039DE76 /* PartnersVC.swift */,
 				00954CCC2442383E005C2BA3 /* BioVC.swift */,
+				00954CD224428A5E005C2BA3 /* EditIDsView.swift */,
 			);
 			name = MyProfile;
 			sourceTree = "<group>";
@@ -806,7 +803,6 @@
 				0028CA271FB25598002CEC76 /* UserCell.swift in Sources */,
 				0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */,
 				003B15951E6D1E3200BE2F82 /* graphics.swift in Sources */,
-				001D21191E5A4B1300317600 /* RolesVC.swift in Sources */,
 				001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */,
 				0077466F2381D424003C9F84 /* LineTextField.swift in Sources */,
 				0033EE86241467CD00D0C332 /* NextButton.swift in Sources */,
@@ -824,7 +820,6 @@
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
 				001A8A34242FDFAB00C819F5 /* FormRow.swift in Sources */,
 				00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */,
-				00171A251E56384500640B09 /* GendersVC.swift in Sources */,
 				0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
 				00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */,
@@ -852,6 +847,7 @@
 				00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */,
 				001A8A32242FDD8200C819F5 /* AllForms.swift in Sources */,
 				0033EE88241467F400D0C332 /* HeartButton.swift in Sources */,
+				00954CD324428A5E005C2BA3 /* EditIDsView.swift in Sources */,
 				0041D5BB1E686D4D006DD440 /* KiNotification.swift in Sources */,
 				002879C822D162BF00DE9E64 /* AuthVC.swift in Sources */,
 				00171A231E56384500640B09 /* AppDelegate.swift in Sources */,

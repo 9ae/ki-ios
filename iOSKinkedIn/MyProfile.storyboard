@@ -329,10 +329,10 @@
                                                     <state key="selected" image="edit-active"/>
                                                     <state key="highlighted" image="edit-active"/>
                                                     <connections>
-                                                        <segue destination="VHW-HT-ZvS" kind="show" identifier="editGenders" id="5bW-AN-fr6"/>
+                                                        <action selector="onEditGenders:" destination="7JR-Xf-iJ2" eventType="touchUpInside" id="WG0-Vz-JjY"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PGs-7J-fvv" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PGs-7J-fvv" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -340,10 +340,10 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" red="0.38813080659999999" green="0.38813080659999999" blue="0.38813080659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                                            <color key="value" red="0.60081036779999997" green="0.8478037088" blue="0.86836201440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" name="primaryColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="8"/>
@@ -392,10 +392,10 @@
                                                     <state key="selected" image="edit-active"/>
                                                     <state key="highlighted" image="edit-active"/>
                                                     <connections>
-                                                        <segue destination="myc-TK-knf" kind="show" identifier="editRoles" id="hGk-f9-8fe"/>
+                                                        <action selector="onEditRoles:" destination="7JR-Xf-iJ2" eventType="touchUpInside" id="mG2-GK-11U"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Pd-4Ac" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xsL-Pd-4Ac" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -403,10 +403,10 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" red="0.38813080659999999" green="0.38813080659999999" blue="0.38813080659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                                            <color key="value" red="0.60378208860000004" green="0.60081036779999997" blue="0.86836201440000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" name="primaryColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="8"/>
@@ -455,7 +455,7 @@
                                                     <state key="selected" image="edit-active"/>
                                                     <state key="highlighted" image="edit-active"/>
                                                 </button>
-                                                <view contentMode="redraw" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-5s-FOx" customClass="TagListView" customModule="TagListView">
+                                                <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="pWM-5s-FOx" customClass="TagListView" customModule="TagListView">
                                                     <rect key="frame" x="8" y="29" width="359" height="20"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -463,10 +463,10 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="textColor">
-                                                            <color key="value" red="0.38813080659999999" green="0.38813080659999999" blue="0.38813080659999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="tagBackgroundColor">
-                                                            <color key="value" red="0.93446283740000002" green="0.70697593530000002" blue="0.73354478030000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="value" name="primaryColor"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="8"/>
@@ -671,114 +671,6 @@
             </objects>
             <point key="canvasLocation" x="-2487.1999999999998" y="5351.8740629685162"/>
         </scene>
-        <!--Roles-->
-        <scene sceneID="ePO-Xd-Kaa">
-            <objects>
-                <viewController storyboardIdentifier="vcSetupRoles" useStoryboardIdentifierAsRestorationIdentifier="YES" id="myc-TK-knf" customClass="RolesVC" customModule="iOSKinkedIn" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Iuv-D3-1Pq"/>
-                        <viewControllerLayoutGuide type="bottom" id="v9w-Gr-JRQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="d5T-Q9-ILV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="C2K-ed-N8Q">
-                                <rect key="frame" x="16" y="0.0" width="343" height="574"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="cellRole" textLabel="cwm-cB-hk4" style="IBUITableViewCellStyleDefault" id="SK5-Ri-j7P">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SK5-Ri-j7P" id="VIU-EG-6hR">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cwm-cB-hk4">
-                                                    <rect key="frame" x="15" y="0.0" width="313" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="C2K-ed-N8Q" secondAttribute="bottom" id="4ok-NE-pFG"/>
-                            <constraint firstItem="C2K-ed-N8Q" firstAttribute="top" secondItem="Iuv-D3-1Pq" secondAttribute="bottom" id="HH7-Qx-cCn"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="C2K-ed-N8Q" secondAttribute="trailing" id="XiB-bV-kRo"/>
-                            <constraint firstItem="C2K-ed-N8Q" firstAttribute="leading" secondItem="d5T-Q9-ILV" secondAttribute="leadingMargin" id="hWv-Cx-OKe"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Roles" id="lx1-RM-Xvl"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="C2K-ed-N8Q" id="stA-df-xEN"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e5o-Es-HN9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="510" y="4536"/>
-        </scene>
-        <!--Genders-->
-        <scene sceneID="XLn-Og-xTa">
-            <objects>
-                <viewController storyboardIdentifier="vcSetupGenders" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VHW-HT-ZvS" customClass="GendersVC" customModule="iOSKinkedIn" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fYZ-hg-7ud"/>
-                        <viewControllerLayoutGuide type="bottom" id="XgO-a6-LTc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ipC-B0-WdU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9Kp-4i-fVr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="574"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationLevel="3" indentationWidth="10" shouldIndentWhileEditing="NO" reuseIdentifier="cellGender" textLabel="J6r-zW-iaq" style="IBUITableViewCellStyleDefault" id="IfD-QW-GUN">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IfD-QW-GUN" id="Tnc-GP-hoK">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J6r-zW-iaq">
-                                                    <rect key="frame" x="45" y="0.0" width="315" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="9Kp-4i-fVr" firstAttribute="top" secondItem="fYZ-hg-7ud" secondAttribute="bottom" id="9gc-8m-eFG"/>
-                            <constraint firstItem="XgO-a6-LTc" firstAttribute="top" secondItem="9Kp-4i-fVr" secondAttribute="bottom" id="Ar9-d4-WOV"/>
-                            <constraint firstAttribute="trailing" secondItem="9Kp-4i-fVr" secondAttribute="trailing" id="SBa-45-bpF"/>
-                            <constraint firstItem="9Kp-4i-fVr" firstAttribute="leading" secondItem="ipC-B0-WdU" secondAttribute="leading" id="peb-6e-I93"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Genders" id="7e7-RR-wKz"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
-                    <connections>
-                        <outlet property="tableView" destination="9Kp-4i-fVr" id="npx-Vl-5Bf"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="MjK-zV-0tD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-228" y="4474"/>
-        </scene>
         <!--About Me-->
         <scene sceneID="3DE-AE-KHD">
             <objects>
@@ -981,6 +873,9 @@
         </namedColor>
         <namedColor name="bgColor">
             <color red="0.93300002813339233" green="0.97299998998641968" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryColor">
+            <color red="0.60799998044967651" green="0.3919999897480011" blue="0.83499997854232788" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="textColor">
             <color red="0.20000000298023224" green="0.21600000560283661" blue="0.27099999785423279" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

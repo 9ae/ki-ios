@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 import TagListView
 
 class MeVC: UITableViewController {
@@ -232,6 +233,30 @@ class MeVC: UITableViewController {
             let vc = segue.destination as? BioVC {
             vc.bioText = me?.bio
         }
+    }
+    
+    @IBAction func onEditGenders(_ sender: Any){
+        KinkedInAPI.genders { allGenders in
+            self.view.hideToastActivity()
+            if let myGenders = self.me?.genders {
+                let editView = EditIDsView(kind: "Genders", all: allGenders, mine: myGenders)
+                let host = UIHostingController(rootView: editView)
+                self.navigationController?.pushViewController(host, animated: false)
+            }
+        }
+        self.view.makeToastActivity(.center)
+    }
+    
+    @IBAction func onEditRoles(_ sender: Any){
+        KinkedInAPI.roles { allRoles in
+            self.view.hideToastActivity()
+            if let myRoles = self.me?.roles {
+                let editView = EditIDsView(kind: "Roles", all: allRoles, mine: myRoles)
+                let host = UIHostingController(rootView: editView)
+                self.navigationController?.pushViewController(host, animated: false)
+            }
+        }
+        self.view.makeToastActivity(.center)
     }
     
 
