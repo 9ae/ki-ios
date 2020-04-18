@@ -69,18 +69,18 @@ struct AllForms: View {
 
     func markGiveService (_ kink: Kink, _ active: Bool) -> Void {
         if active {
-            if kink.way == .get {kink.way = .both} else {kink.way = .give}
+            kink.addGive()
         } else {
-            if kink.way == .both {kink.way = .get} else {kink.way = .none}
+            kink.rmGive()
         }
         self.dm.updateMyProfileWithKink(kink)
     }
     
     func markGetService(_ kink: Kink, _ active: Bool) -> Void {
         if active {
-            if kink.way == .give {kink.way = .both} else {kink.way = .get}
+            kink.addGet()
         } else {
-            if kink.way == .both {kink.way = .give} else {kink.way = .none}
+            kink.rmGet()
         }
         self.dm.updateMyProfileWithKink(kink)
     }
@@ -89,7 +89,7 @@ struct AllForms: View {
         if active {
             switch kink.form {
             case .wearable:
-                if (kink.way == .give) {kink.way = .both} else {kink.way = .get}
+                kink.addGet()
                 break;
             default:
                 kink.way = .both
@@ -97,7 +97,7 @@ struct AllForms: View {
         } else {
             switch kink.form {
                 case .wearable:
-                    if (kink.way == .both) {kink.way = .give} else {kink.way = .none}
+                    kink.rmGet()
                     break
                 default:
                     kink.way = .none
@@ -109,9 +109,9 @@ struct AllForms: View {
     
     func markWear (_ kink: Kink, _ active: Bool) -> Void {
         if active {
-            if kink.way == .get { kink.way = .both} else {kink.way = .give}
+            kink.addGive()
         } else {
-            if kink.way == .both { kink.way = .get} else {kink.way = .none}
+            kink.rmGive()
         }
         self.dm.updateMyProfileWithKink(kink)
     }

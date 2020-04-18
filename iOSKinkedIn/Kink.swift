@@ -80,6 +80,38 @@ class Kink : Codable {
         
     }
     
+    func addGet(){
+        if self.way == .give {
+            self.way = .both
+        } else {
+            self.way = .get
+        }
+    }
+    
+    func addGive(){
+        if self.way == .get {
+            self.way = .both
+        } else {
+            self.way = .give
+        }
+    }
+    
+    func rmGet(){
+        if self.way == .both {
+            self.way = .give
+        } else {
+            self.way = .none
+        }
+    }
+    
+    func rmGive(){
+        if self.way == .both {
+            self.way = .get
+        } else {
+            self.way = .none
+        }
+    }
+    
     static func parseJsonList(_ list: [Any]) -> [Kink] {
         var kinks = [Kink]()
         
