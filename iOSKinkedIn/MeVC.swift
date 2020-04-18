@@ -201,19 +201,6 @@ class MeVC: UITableViewController {
                 vc.profile = me
         }
         
-        if segue.identifier == "editGenders",
-            let vc = segue.destination as? GendersVC {
-                vc.profile = me
-                vc.callback = {genders in
-                    self.me?.genders = genders
-                }
-        }
-        
-        if segue.identifier == "editRoles",
-            let vc = segue.destination as? RolesVC {
-            vc.profile = me
-        }
-        
         if segue.identifier == "editPrompts",
             let vc = segue.destination as? PromptVC {
             vc.profile = me

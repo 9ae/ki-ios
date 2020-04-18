@@ -11,6 +11,7 @@ import SwiftUI
 struct AllForms: View {
     
     @EnvironmentObject var dm : Dungeon
+    @State var myOmake : [Kink] = []
     
     func kinks () -> [Kink] {
        return self.dm.myProfle?.kinks ?? []
@@ -27,7 +28,7 @@ struct AllForms: View {
         return others + mine
     }
     
-    static func omakeFilter (_ k : Kink) -> Bool {
+    static func filterOmake (_ k : Kink) -> Bool {
         if (k.form == .wearable){
             return (k.way == .get || k.way == .both)
         } else if (k.form == .accessory || k.form == .aphrodisiac || k.form == .other){
@@ -57,9 +58,8 @@ struct AllForms: View {
         print(dm.myProfle?.kinks.map{k in k.label}.joined(separator: ","))
     }
     
-    func formRow(label: String, kinks: [Kink], myFilter: @escaping (Kink) -> Bool,/* kink2tagFn: @escaping (Kink) -> Tag, */ markFn: @escaping (Kink, Bool) -> Void) -> AnyView {
-        
-        let myKinks =  dm.myProfle?.kinks.filter(myFilter) ?? []
+    func formRow(label: String, kinks: [Kink], myKinks:[Kink], myFilter: @escaping (Kink) -> Bool, markFn: @escaping (Kink, Bool) -> Void) -> AnyView {
+
         let destination = EditKinkForm(kinks: AllForms.join(all: kinks, mine: myKinks),
         formSentence: label,
         searchLabels: .constant(""),
@@ -103,7 +103,8 @@ struct AllForms: View {
                 
                 formRow(label: "I am turned on by",
                         kinks: dm.kinksOmake,
-                        myFilter: AllForms.omakeFilter,
+                        myKinks: myOmake,
+                        myFilter: AllForms.filterOmake,
                         markFn: markOmake)
                 /*
                 formRow(label: "I can provide you with",
@@ -121,8 +122,12 @@ struct AllForms: View {
                     k.form == .act && k.way != .none
                 }, destination:)
                 */
+
             } // vstack
         } // scroll view
+            .onAppear {
+                self.myOmake = self.dm.myProfle?.kinks.filter(AllForms.filterOmake) ?? []
+            }
         } // navigation view ~ remove later we'll it's parent is in a navigation view already
     } // body
 

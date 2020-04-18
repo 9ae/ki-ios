@@ -24,7 +24,6 @@
 		00171A531E56468700640B09 /* api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00171A521E56468700640B09 /* api.swift */; };
 		001A8A30242FD4FF00C819F5 /* EditKinkForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A8A2F242FD4FF00C819F5 /* EditKinkForm.swift */; };
 		001A8A32242FDD8200C819F5 /* AllForms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A8A31242FDD8200C819F5 /* AllForms.swift */; };
-		001A8A34242FDFAB00C819F5 /* FormRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001A8A33242FDFAB00C819F5 /* FormRow.swift */; };
 		001D21151E5A286900317600 /* strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001D21141E5A286900317600 /* strings.swift */; };
 		001E3DF01EB9E019005A03F4 /* ReverseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */; };
 		0025B308213CEA4C00BBE8A3 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */; };
@@ -152,7 +151,6 @@
 		00171A521E56468700640B09 /* api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = api.swift; sourceTree = "<group>"; };
 		001A8A2F242FD4FF00C819F5 /* EditKinkForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditKinkForm.swift; sourceTree = "<group>"; };
 		001A8A31242FDD8200C819F5 /* AllForms.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllForms.swift; sourceTree = "<group>"; };
-		001A8A33242FDFAB00C819F5 /* FormRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormRow.swift; sourceTree = "<group>"; };
 		001D21141E5A286900317600 /* strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = strings.swift; sourceTree = "<group>"; };
 		001E3DEF1EB9E019005A03F4 /* ReverseButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseButton.swift; sourceTree = "<group>"; };
 		0025B307213CEA4C00BBE8A3 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
@@ -348,7 +346,6 @@
 			children = (
 				001A8A2F242FD4FF00C819F5 /* EditKinkForm.swift */,
 				001A8A31242FDD8200C819F5 /* AllForms.swift */,
-				001A8A33242FDFAB00C819F5 /* FormRow.swift */,
 			);
 			path = MyKinks;
 			sourceTree = "<group>";
@@ -818,7 +815,6 @@
 				0044DFB91EFD79DC001F1299 /* KeychainWrapper.swift in Sources */,
 				001D21151E5A286900317600 /* strings.swift in Sources */,
 				0051D1FE1E62D3DC004ABBF6 /* Profile.swift in Sources */,
-				001A8A34242FDFAB00C819F5 /* FormRow.swift in Sources */,
 				00CB0A3A2364C12200BCE8FA /* Case.swift in Sources */,
 				0001EC3423DCE8E600CF062D /* Mocks.swift in Sources */,
 				006AE53E1EE70FFA0028F513 /* ScheduleDateVC.swift in Sources */,
