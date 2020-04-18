@@ -12,6 +12,11 @@ struct AllForms: View {
     
     @EnvironmentObject var dm : Dungeon
     @State var myOmake : [Kink] = []
+    @State var myGiveService : [Kink] = []
+    @State var myGetService : [Kink] = []
+    @State var myActs : [Kink] = []
+    @State var myWears : [Kink] = []
+    @State var wearableKinks : [Kink] = []
     
     func kinks () -> [Kink] {
        return self.dm.myProfle?.kinks ?? []
@@ -37,25 +42,87 @@ struct AllForms: View {
           return false
         }
     }
+    
+    static func filterGiveService(_ k : Kink) -> Bool {
+        if (k.form == .service) {
+            return k.way == .give || k.way == .both
+        } else {return false}
+    }
+    
+    static func filterGetService(_ k: Kink) -> Bool {
+        if (k.form == .service) {
+            return k.way == .get || k.way == .both
+        } else {return false}
+    }
+    
+    static func filterWears(_ k: Kink) -> Bool {
+        if (k.form == .wearable) {
+            return k.way == .give || k.way == .both
+        } else {return false}
+    }
+    
+    static func filterActs(_ k: Kink) -> Bool {
+        if (k.form == .act) {
+            return k.way == .both
+        } else {return false}
+    }
 
     func markGiveService (_ kink: Kink, _ active: Bool) -> Void {
         if active {
             if kink.way == .get {kink.way = .both} else {kink.way = .give}
         } else {
-            if kink.way == .both {kink.way = .get} else {kink.way = .give}
+            if kink.way == .both {kink.way = .get} else {kink.way = .none}
+        }
+        self.dm.updateMyProfileWithKink(kink)
+    }
+    
+    func markGetService(_ kink: Kink, _ active: Bool) -> Void {
+        if active {
+            if kink.way == .give {kink.way = .both} else {kink.way = .get}
+        } else {
+            if kink.way == .both {kink.way = .give} else {kink.way = .none}
         }
         self.dm.updateMyProfileWithKink(kink)
     }
     
     func markOmake (_ kink: Kink, _ active: Bool) -> Void {
-        // TODO more detail later
+        if active {
+            switch kink.form {
+            case .wearable:
+                if (kink.way == .give) {kink.way = .both} else {kink.way = .get}
+                break;
+            default:
+                kink.way = .both
+            }
+        } else {
+            switch kink.form {
+                case .wearable:
+                    if (kink.way == .both) {kink.way = .give} else {kink.way = .none}
+                    break
+                default:
+                    kink.way = .none
+                    break
+            }
+        }
+        self.dm.updateMyProfileWithKink(kink)
+    }
+    
+    func markWear (_ kink: Kink, _ active: Bool) -> Void {
+        if active {
+            if kink.way == .get { kink.way = .both} else {kink.way = .give}
+        } else {
+            if kink.way == .both { kink.way = .get} else {kink.way = .none}
+        }
+        self.dm.updateMyProfileWithKink(kink)
+    }
+    
+    func markAct (_ kink: Kink, _ active: Bool) -> Void {
         if active {
             kink.way = .both
         } else {
             kink.way = .none
         }
         self.dm.updateMyProfileWithKink(kink)
-        print(dm.myProfle?.kinks.map{k in k.label}.joined(separator: ","))
     }
     
     func formRow(label: String, kinks: [Kink], myKinks:[Kink], myFilter: @escaping (Kink) -> Bool, markFn: @escaping (Kink, Bool) -> Void) -> AnyView {
@@ -86,47 +153,35 @@ struct AllForms: View {
         NavigationView{
         ScrollView(.vertical, showsIndicators: true) {
             VStack{
-
-                /*
-                FormRow(label: "I am turned on by", kinks: kinks.filter{k in
-                    if (k.form == .wearable){
-                       return k.way == .get
-                    } else if (k.form == .accessory || k.form == .aphrodisiac || k.form == .other){
-                        return k.way != .none
-                    } else {
-                        return false;
-                    }
-                }, destination: )
-                
-                FormRow(label: "I want to receive", kinks: kinks.filter{k in k.form == .service && k.way == .get }, destination:  )
-                */
                 
                 formRow(label: "I am turned on by",
                         kinks: dm.kinksOmake,
                         myKinks: myOmake,
                         myFilter: AllForms.filterOmake,
                         markFn: markOmake)
-                /*
-                formRow(label: "I can provide you with",
-                        kinks: dm.kinksService,
-                        myKinks: kinks().filter{k in k.form == .service && k.way == .give },
-                        kink2tagFn: {kink in Tag(label: kink.label, isActive: kink.way == .give || kink.way == .both) },
-                        markFn: markGiveService)
-                */
-                /*
-                FormRow(label: "I like to wear", kinks: kinks.filter{k in
-                    k.form == .wearable && (k.way == .give || k.way == .both)
-                }, destination:)
                 
-                FormRow(label: "I fantasize about", kinks: kinks.filter{k in
-                    k.form == .act && k.way != .none
-                }, destination:)
-                */
+                formRow(label: "I want to receive", kinks: dm.kinksService, myKinks: myGetService,
+                        myFilter: AllForms.filterGetService, markFn: markGetService)
+                
+                formRow(label: "I can provide you with", kinks: dm.kinksService, myKinks: myGiveService,
+                        myFilter: AllForms.filterGiveService, markFn: markGiveService)
+                
+                formRow(label: "I like to wear", kinks: wearableKinks, myKinks: myWears,
+                        myFilter: AllForms.filterWears, markFn: markWear)
+                
+                formRow(label: "I fantasize about", kinks: dm.kinksAct, myKinks: myActs,
+                        myFilter: AllForms.filterActs, markFn: markAct)
 
             } // vstack
         } // scroll view
             .onAppear {
                 self.myOmake = self.dm.myProfle?.kinks.filter(AllForms.filterOmake) ?? []
+                self.myGiveService = self.dm.myProfle?.kinks.filter(AllForms.filterGiveService) ?? []
+                self.myGetService = self.dm.myProfle?.kinks.filter(AllForms.filterGetService) ?? []
+                self.myWears = self.dm.myProfle?.kinks.filter(AllForms.filterWears) ?? []
+                self.myActs = self.dm.myProfle?.kinks.filter(AllForms.filterActs) ?? []
+                
+                self.wearableKinks = self.dm.kinksOmake.filter({ k in k.form == .wearable })
             }
         } // navigation view ~ remove later we'll it's parent is in a navigation view already
     } // body

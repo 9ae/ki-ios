@@ -37,9 +37,9 @@ func mockFullProfile() -> Profile {
     pro.roles = ["domme", "exhibitionist", "masochist"]
     pro.bio = "Lorem ipsum. blah bha. | He's not like the other guys. He's a NICE guy -- but wait, is he really that nice? What's behind his sweet, romantic act? In this video, we take on the Nice Guy archetype and figure out what he represents in our world today."
     pro.kinks =
-        [ Kink(label: "leather", code: "leather", form: .act, exp: 3, way: .give),
+        [ Kink(label: "leather", code: "leather", form: .wearable, exp: 3, way: .give),
           Kink(label: "biting", code: "bite", form: .service, exp: 2,  way: .get),
-          Kink(label: "exhibitionism", code: "exhibition", form: .wearable, exp: 2,  way: .both),
+          Kink(label: "exhibitionism", code: "exhibition", form: .act, exp: 2,  way: .both),
           Kink(label: "bondage", code: "bond", form:.service, exp: 3, way: .give)
         ]
     

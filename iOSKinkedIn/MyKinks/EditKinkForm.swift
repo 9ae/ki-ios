@@ -18,8 +18,8 @@ struct EditKinkForm: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(formSentence)
-            TextField("what you're into?", text: $searchLabels)
+            Text(formSentence).padding(.horizontal)
+            TextField("what you're into?", text: $searchLabels).padding(.horizontal)
             InteractiveTagsView(tags: kinks.map(self.kink2tagFn))
                 { (label, selected) in
                     if let kink = self.kinks.first(where: { k  in
