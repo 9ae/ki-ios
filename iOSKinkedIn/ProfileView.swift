@@ -90,7 +90,7 @@ struct ProfileView: View {
     
     
     func returnToList(likes: Bool){
-        dm.markProfile(self.profile, likes: likes)
+        DataTango.likeProfile(self.profile.uuid)
         self.goBack()
         self.presentation.wrappedValue.dismiss()
     }
@@ -142,9 +142,7 @@ struct ProfileView: View {
                         self.returnToList(likes: false)
                     }
                     HeartButton(size: 48) {
-                        DataTango.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
-                            print("they also like you \(reciprocal)")
-                        }
+                        DataTango.likeProfile(self.profile.uuid)
                         self.returnToList(likes: true)
                     }
                 }.padding()

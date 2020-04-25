@@ -151,8 +151,8 @@ class MessengerVC: BaseTextInputDelegate {
     }
     
     func blockUser(){
-        if let uuid = _profile?.uuid {
-            DataTango.blockUser(uuid)
+        if let profile = _profile {
+            DataTango.blockUser(profile)
         }
         self.navigationController?.popViewController(animated: false)
     }

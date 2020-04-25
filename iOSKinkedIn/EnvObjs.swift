@@ -46,29 +46,27 @@ final class Dungeon : ObservableObject {
     @Published var kinksService : [Kink] = []
     @Published var kinksOmake : [Kink] = []
     
+    @Published var hasKinksAct : Bool = false
+    @Published var hasKinksService : Bool = false
+    @Published var hasKinksOmake : Bool = false
+    
     @Published var allProfiles : [String:Profile] = [:]
-    @Published var discoverProfiles: [Profile] = [] // TODO opt
+    @Published var discoverProfiles: [Profile] = []
+    @Published var hasDiscoverProfiles : Bool = false
     @Published var preferences : DiscoveryPreferences = DiscoveryPreferences()
-    @Published var dailyMatches : [Profile] = [] // TODO opt
-    @Published var connections: [Profile] = [] // TODO opt
-    @Published var partners : [Profile] = [] // TODO opt
-    @Published var blockedProfiles : [Profile] = [] // TODO opt
+    @Published var dailyMatches : [Profile] = []
+    @Published var hasDailyMatches : Bool = false
+    @Published var connections: [Profile] = []
+    @Published var hasConnections : Bool = false
+    @Published var partners : [Profile] = []
+    @Published var hasPartners : Bool = false
+    @Published var blockedProfiles : [Profile] = []
+    @Published var hasBlockedProfiles : Bool = false
     
     @Published var myPhoneNumber : String?
     
     func myProfile() -> Profile? {
         return self.allProfiles["myself"]
-    }
-    
-    func markProfile(_ profile: Profile, likes: Bool) -> Void {
-        self.discoverProfiles = self.discoverProfiles.filter({ pro in
-            pro.uuid != profile.uuid
-        })
-        
-        if (likes) {
-            // Take out in for realz
-            self.dailyMatches.append(profile)
-        }
     }
     
     func updateMyProfileWithKink(_ kink: Kink) -> Void {

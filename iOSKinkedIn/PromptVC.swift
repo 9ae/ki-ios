@@ -86,7 +86,7 @@ class PromptVC: UITableViewController {
         let params = [
             "prompts": prompts.map{p in p.objectify()}
         ]
-        DataTango.updateProfile(params)
+        DataTango.updateProfile(params, newProfile: profile)
         
     }
 

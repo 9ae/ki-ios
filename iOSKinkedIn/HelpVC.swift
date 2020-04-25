@@ -12,9 +12,6 @@ class HelpVC: UITableViewController {
     
     @IBOutlet var fieldHours: UITextField!
     @IBOutlet var fieldPhone: UITextField!
-    @IBOutlet var countDatesScheduled: UILabel!
-    @IBOutlet var countRepliedCheckins: UILabel!
-    @IBOutlet var countRaisedIssues: UILabel!
     
 
     override func viewDidLoad() {
@@ -38,7 +35,7 @@ class HelpVC: UITableViewController {
         if (section == 0) {
             return 2
         } else {
-            return 6
+            return 5
         }
     }
     
@@ -58,14 +55,13 @@ class HelpVC: UITableViewController {
     
     func loadScheduledDates(){
         let dates = UserDefaults.standard.integer(forKey: UD_SCH_DATES)
-        countDatesScheduled.text = String(dates)
+        // TODO put as badge in scheduled dates row?
     }
 
     @objc
     func onHoursChanged(_ textField: UITextField) {
         let valCheckinHours = Int(textField.text ?? "0") ?? UD_CHECKIN_TIME_VALUE
         UserDefaults.standard.set(valCheckinHours, forKey: UD_CHECKIN_TIME)
-        print("XX checkin hours changed")
     }
     
     @objc func onPhoneChanged (_ textField: UITextField){
@@ -134,12 +130,12 @@ class HelpVC: UITableViewController {
             chatWithKia()
         }
         
-        if (indexPath.section == 1 && indexPath.row == 4) {
+        if (indexPath.section == 1 && indexPath.row == 3) {
             print("scheduled dates")
             self.performSegue(withIdentifier: "help2dates", sender: self)
         }
         
-        if (indexPath.section == 1 && indexPath.row == 5) {
+        if (indexPath.section == 1 && indexPath.row == 4) {
             print("load prev convos")
             previousConvos()
         }

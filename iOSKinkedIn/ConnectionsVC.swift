@@ -266,7 +266,7 @@ class ConnectionsVC: UITableViewController {
     }
     
     private func disconnect(_ profile: Profile){
-        DataTango.blockUser(profile.uuid)
+        DataTango.blockUser(profile)
     }
     
     private func reconnect(_ profile: Profile){

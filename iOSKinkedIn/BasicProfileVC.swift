@@ -134,7 +134,7 @@ class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataS
             profile?.city = city.label
         }
         
-        DataTango.updateProfile(params)
+        DataTango.updateProfile(params, newProfile: profile)
     }
     
     func isNameSet() -> Bool {

@@ -19,9 +19,18 @@ class CacheLayer {
     static let CK_PARTNERS = "CK_PARTNERS"
     static let CK_BLOCKED = "CK_BLOCKED"
     
+    static let CK_GENDERS = "CK_GENDERS"
+    static let CK_ROLES = "CK_ROLES"
+    
+    static let CK_ACT_KINKS = "CK_ACT_KINKS"
+    static let CK_SERVICE_KINKS = "CK_SERVICE_KINKS"
+    static let CK_OMAKE_KINKS = "CK_OMAKE_KINKS"
+    
     private var profileCache : Storage<Profile>
     private var aftercareCache : Storage<CareQuestion>
     private var prolistCache : Storage<[Profile]>
+    private var kinksCache : Storage<[Kink]>
+    private var labelsCache : Storage<[String]>
     
     init(){
         let ds = try! Storage(
@@ -32,6 +41,8 @@ class CacheLayer {
         self.profileCache = ds.transformCodable(ofType: Profile.self)
         self.aftercareCache = ds.transformCodable(ofType: CareQuestion.self)
         self.prolistCache = ds.transformCodable(ofType: [Profile].self)
+        self.kinksCache = ds.transformCodable(ofType: [Kink].self)
+        self.labelsCache = ds.transformCodable(ofType: [String].self)
     }
     
     func logout() {
@@ -101,6 +112,38 @@ class CacheLayer {
         try? profileCache.removeObject(forKey: uuid)
     }
     
+    func setGenders(_ genders : [String]){
+        try? labelsCache.setObject(genders, forKey: CacheLayer.CK_GENDERS)
+    }
+    
+    func getGenders() -> [String]? {
+        do {
+            return try labelsCache.object(forKey: CacheLayer.CK_GENDERS)
+        } catch {return nil}
+    }
+    
+    func setRoles(_ roles: [String]){
+        try? labelsCache.setObject(roles, forKey: CacheLayer.CK_ROLES)
+    }
+    
+    func getRoles() -> [String]? {
+        do {
+            return try labelsCache.object(forKey: CacheLayer.CK_ROLES)
+        } catch {return nil}
+    }
+    
+    func getKinks(form : KinkForm) -> [Kink]? {
+        let key = form == .act ? CacheLayer.CK_ACT_KINKS : (form == .service ? CacheLayer.CK_SERVICE_KINKS : CacheLayer.CK_OMAKE_KINKS )
+        do {
+            return try kinksCache.object(forKey: key)
+        } catch {return nil}
+    }
+    
+    func setKinks(form : KinkForm, kinks : [Kink]) {
+        let key = form == .act ? CacheLayer.CK_ACT_KINKS : (form == .service ? CacheLayer.CK_SERVICE_KINKS : CacheLayer.CK_OMAKE_KINKS )
+        try? kinksCache.setObject(kinks, forKey: key)
+    }
+    
 }
 
 class DataTango {
@@ -134,16 +177,18 @@ class DataTango {
     static func discoverProfiles(callback: @escaping(_ profiles: [Profile])->Void) {
         let envObj = dm.discoverProfiles
         
-        if !envObj.isEmpty {
+        if dm.hasDiscoverProfiles {
             callback(envObj)
         } else if let cached = cache.getDiscoverProfiles() {
                 callback(cached)
                 dm.discoverProfiles = cached
+                dm.hasDiscoverProfiles = true
         } else {
             KinkedInAPI.listProfiles { api in
                 callback(api)
                 cache.setDiscoverProfiles(api)
                 dm.discoverProfiles = api
+                dm.hasDiscoverProfiles = true
             }
         }
     }
@@ -163,11 +208,19 @@ class DataTango {
         }
     }
     
-    static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool,
-        _ match_limit: Int, _ matches_today: Int)->Void ){
-        KinkedInAPI.likeProfile(uuid, callback: callback)
-        // TODO rm discovery list
-        // TODO add to connections list
+    static func likeProfile(_ uuid: String){
+        KinkedInAPI.likeProfile(uuid) { reciprocal,limit,matches in
+            if let p = dm.discoverProfiles.firstIndex { p in p.uuid == uuid } {
+                let profile = dm.discoverProfiles[p]
+                
+                if reciprocal {
+                    addConnection(profile)
+                    dm.dailyMatches.append(profile)
+                }
+                
+                dm.discoverProfiles.remove(at: p)
+            }
+        }
     }
     
     /* My Profile */
@@ -187,11 +240,29 @@ class DataTango {
         }
     }
     
-    static func updateProfile(_ body: [String: Any]){
+    static func updateProfile(_ body: [String: Any], newProfile : Profile? = nil){
         KinkedInAPI.updateProfile(body)
-        dm.allProfiles.removeValue(forKey: myCacheKey)
-        cache.rmProfile(myCacheKey)
-        // TODO update both stores with only updated keys
+        
+        if let profile = newProfile {
+            dm.allProfiles[myCacheKey] = profile
+            cache.setProfile(profile, uuid: myCacheKey)
+        } else {
+            if let profile = dm.allProfiles[myCacheKey] {
+                if let bio = body["bio"] as? String {
+                    profile.bio = bio
+                }
+                
+                if let genders = body["genders"] as? [String] {
+                    profile.genders = genders
+                }
+                
+                if let roles = body["roles"] as? [String] {
+                    profile.roles = roles
+                }
+                dm.allProfiles[myCacheKey] = profile
+                cache.setProfile(profile, uuid: myCacheKey)
+            }
+        }
     }
     
     static func checkProfileSetup(callback: @escaping(_ step: Int)->Void ){
@@ -203,38 +274,69 @@ class DataTango {
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
         let envObj = dm.connections
         
-        if !envObj.isEmpty {
+        if dm.hasConnections {
             callback(envObj)
         } else if let cached = cache.getConnections() {
             callback(cached)
             dm.connections = cached
+            dm.hasConnections = true
         } else {
             KinkedInAPI.connections { api in
                 callback(api)
                 cache.setConnections(api)
                 dm.connections = api
+                dm.hasConnections = true
             }
         }
     }
     
+    private static func rmConnection(_ uuid : String) {
+        dm.connections.removeAll { p in p.uuid == uuid }
+        if var conns = cache.getConnections() {
+            conns.removeAll { p in p.uuid == uuid }
+            cache.setConnections(conns)
+        }
+    }
+    
+    private static func addConnection(_ profile : Profile) {
+        dm.connections.append(profile)
+        if var conns = cache.getConnections() {
+            conns.append(profile)
+            cache.setConnections(conns)
+        }
+    }
+    
     static func dailyMatches(callback: @escaping(_ profiles: [Profile])-> Void) {
-        KinkedInAPI.dailyMatches(callback: callback)
+        let envObj = dm.dailyMatches
+        
+        if dm.hasDailyMatches {
+            callback(envObj)
+        } else {
+            KinkedInAPI.dailyMatches { api in
+                callback(api)
+                dm.dailyMatches = api
+                dm.hasDailyMatches = true
+            }
+        }
+        
     }
     
     /* Partners */
     
     static func partners(callback: @escaping(_ profiles: [Profile])-> Void){
         let envObj = dm.partners
-        if !envObj.isEmpty {
+        if dm.hasPartners {
             callback(envObj)
         } else if let cached = cache.getPartners() {
             callback(cached)
             dm.partners = cached
+            dm.hasPartners = true
         } else {
             KinkedInAPI.partners { api in
                 callback(api)
                 cache.setPartners(api)
                 dm.partners = api
+                dm.hasPartners = true
             }
         }
     }
@@ -263,28 +365,53 @@ class DataTango {
     
     static func blockedProfiles (callback: @escaping(_ profiles: [Profile])-> Void){
         let envObj = dm.blockedProfiles
-        if !envObj.isEmpty {
+        if dm.hasBlockedProfiles {
             callback(envObj)
         } else if let cached = cache.getBlocked() {
             callback(cached)
             dm.blockedProfiles = cached
+            dm.hasBlockedProfiles = true
         } else {
             KinkedInAPI.blockedUsers { api in
                 callback(api)
                 cache.setBlocked(api)
                 dm.blockedProfiles = api
+                dm.hasBlockedProfiles = true
             }
         }
     }
     
-    static func blockUser(_ uuid: String){
-        KinkedInAPI.blockUser(uuid)
-        // TODO update connection & block cache
+    private static func addBlockedProfiles(_ profile: Profile) {
+        if dm.hasBlockedProfiles {
+            dm.blockedProfiles.append(profile)
+        }
+        
+        if var blocked = cache.getBlocked() {
+            blocked.append(profile)
+            cache.setBlocked(blocked)
+        }
+    }
+    
+    private static func rmBlockedProfiles(_ uuid : String){
+        if dm.hasBlockedProfiles {
+            dm.blockedProfiles.removeAll{p in p.uuid == uuid}
+        }
+        
+        if var blocked = cache.getBlocked() {
+            blocked.removeAll{p in p.uuid == uuid}
+            cache.setBlocked(blocked)
+        }
+    }
+    
+    static func blockUser(_ profile: Profile){
+        KinkedInAPI.blockUser(profile.uuid)
+        rmConnection(profile.uuid)
+        addBlockedProfiles(profile)
     }
     
     static func unblockUser(_ uuid: String){
         KinkedInAPI.blockUser(uuid)
-        // TODO update block cache
+        rmBlockedProfiles(uuid)
     }
     
     static func myPhoneNumber(callback: @escaping(_ phone: String) -> Void){
@@ -335,10 +462,12 @@ class DataTango {
     /* Public Endpoints */
     
     static func genders(_ callback:@escaping(_ results:[String])->Void ) {
-        // TODO we can cache this
         let envObj = dm.genders
         if !envObj.isEmpty {
             callback(envObj)
+        } else if let cached = cache.getGenders() {
+            callback(cached)
+            dm.genders = cached
         } else {
             KinkedInAPI.genders { api in
                 callback(api)
@@ -348,11 +477,15 @@ class DataTango {
     }
     
     static func roles(_ callback:@escaping(_ results:[String])->Void ) {
-        // TODO we can cache this
         let envObj = dm.roles
         if !envObj.isEmpty {
             callback(envObj)
-        } else {
+        }
+        else if let cached = cache.getRoles() {
+            callback(cached)
+            dm.roles = cached
+        }
+        else {
             KinkedInAPI.roles { (api) in
                 callback(api)
                 dm.roles = api
@@ -360,13 +493,52 @@ class DataTango {
         }
     }
     
-//    static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
-//        // TODO we should definitely cache this
-//        let envObj = (form == KinkForm.service) ?? (dm.kinksService) : (form == KinkForm.act ?? dm.kinks : )
-//    }
+    static func actKinks (callback: @escaping(_ results:[Kink]) -> Void) {
+        if dm.hasKinksAct {
+            callback(dm.kinksAct)
+        } else if let cached = cache.getKinks(form: .act) {
+            callback(cached)
+            dm.kinksAct = cached
+        } else {
+            KinkedInAPI.kinks(form: "act") { (api) in
+                callback(api)
+                cache.setKinks(form: .act, kinks: api)
+                dm.kinksAct = api
+            }
+        }
+    }
+    
+    static func serviceKinks(callback: @escaping(_ results:[Kink]) -> Void) {
+        if dm.hasKinksService {
+            callback(dm.kinksService)
+        } else if let cached = cache.getKinks(form: .service) {
+            callback(cached)
+            dm.kinksService = cached
+        } else {
+            KinkedInAPI.kinks(form: "service") { (api) in
+                callback(api)
+                cache.setKinks(form: .service, kinks: api)
+                dm.kinksService = api
+            }
+        }
+    }
+    
+    static func omakeKinks(callback: @escaping(_ results:[Kink]) -> Void) {
+        if dm.hasKinksOmake {
+            callback(dm.kinksOmake)
+        } else if let cached = cache.getKinks(form: .other) {
+            callback(cached)
+            dm.kinksOmake = cached
+        } else {
+            KinkedInAPI.kinks(form: "omake") { (api) in
+                callback(api)
+                cache.setKinks(form: .other, kinks: api)
+                dm.kinksService = api
+            }
+        }
+    }
     
     static func bioPrompts(_ callback: @escaping(_ results:[BioPrompt])->Void) {
-        // TODO we can cache this
         let envObj = dm.bioPrompts
         if !envObj.isEmpty {
             callback(envObj)
@@ -379,7 +551,6 @@ class DataTango {
     }
     
     static func experienceLevels(_ callback:@escaping(_ results:[String])->Void) {
-        // TODO we can cache this
         let envObj = dm.expLevels
         if !envObj.isEmpty {
             callback(envObj)
@@ -392,7 +563,7 @@ class DataTango {
     }
     
     static func cities(_ callback:@escaping(_ results:[City])->Void) {
-        // TODO we can cache this
+
         let envObj = dm.cities
         
         if !envObj.isEmpty {

@@ -182,9 +182,7 @@ class KinkedInAPI {
         }
     }
 
-    static func kinks(form: KinkForm, callback: @escaping(_ results:[Kink]) -> Void) {
-        
-        print("fetching \(form) kinks")
+    static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
         get("kinks/\(form)", requiresToken: false, isJob: true){ json in
             if let list = json as? [Any] {
                 let kinks = Kink.parseJsonList(list)
