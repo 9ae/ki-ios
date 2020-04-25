@@ -70,7 +70,7 @@ class PartnersVC: UITableViewController {
         let uuid = segment.selectedSegmentIndex == 1 ? self.requests[indexPath.row].from_uuid : self.partners[indexPath.row].uuid
         
         self.view.makeToastActivity(.center)
-        KinkedInAPI.readProfile(uuid) { profile in
+        DataTango.readProfile(uuid) { profile in
             let profileView = ViewProfileVC(profile)
             self.view.hideToastActivity()
             self.navigationController?.pushViewController(profileView, animated: false)
@@ -94,7 +94,7 @@ class PartnersVC: UITableViewController {
     private func makeRequestActionConfirm() -> UITableViewRowAction {
         let confirm = UITableViewRowAction(style: .normal, title: "Confirm") { action, index in
             let req = self.requests[index.row]
-            KinkedInAPI.replyPartnerRequest(req.id, confirm: true)
+            DataTango.replyPartnerRequest(req.id, confirm: true)
             // self.vouchFor(req.from_uuid, name: req.from_name, index: index.row)
             
         }
@@ -104,7 +104,7 @@ class PartnersVC: UITableViewController {
     
     private func makeRequestActionDeny() -> UITableViewRowAction {
         let deny = UITableViewRowAction(style: .normal, title: "Deny") { action, index in
-            KinkedInAPI.replyPartnerRequest(self.requests[index.row].id, confirm: false)
+            DataTango.replyPartnerRequest(self.requests[index.row].id, confirm: false)
             self.deleteRequest(index.row)
         }
         deny.backgroundColor = UIColor.red
@@ -115,7 +115,7 @@ class PartnersVC: UITableViewController {
         let remove = UITableViewRowAction(style: .destructive, title: "Remove") { action, index in
             let ind = index.row
             let uuid = self.partners[ind].uuid
-            KinkedInAPI.removePartner(uuid)
+            DataTango.unPartner(uuid)
             self.partners.remove(at: ind)
             self.tableView.reloadData()
             
@@ -171,7 +171,7 @@ class PartnersVC: UITableViewController {
             return
         }
         print("getting partner requests")
-        KinkedInAPI.partnerRequests{ reqs in
+        DataTango.partnerRequests{ reqs in
             print(reqs)
             self.requests = reqs
             self.isRequestsLoaded = true
@@ -202,7 +202,7 @@ class PartnersVC: UITableViewController {
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let send = UIAlertAction(title: "Done", style: .default){ (action) in
             self.newPartnersEmail = partnerEmail?.text
-            KinkedInAPI.addPartner(self.newPartnersEmail!, callback: self.findPartnerResult)
+            DataTango.addPartner(self.newPartnersEmail!, callback: self.findPartnerResult)
         }
         addPartnerAlert.addAction(cancel)
         addPartnerAlert.addAction(send)
@@ -225,7 +225,7 @@ class PartnersVC: UITableViewController {
             }
             
             let invite = UIAlertAction(title: "Invite Partner", style: .default){ action in
-                KinkedInAPI.invitePartner(email)
+                DataTango.invitePartner(email)
             }
             
             invitePartnerAlert.addAction(reenter)

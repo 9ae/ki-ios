@@ -30,7 +30,7 @@ class BioVC: UIViewController {
     }
     
     func updateBio(){
-        KinkedInAPI.updateProfile(["bio": textarea.text])
+        DataTango.updateProfile(["bio": textarea.text])
     }
     
     @IBAction func onSave(_ sender: Any){

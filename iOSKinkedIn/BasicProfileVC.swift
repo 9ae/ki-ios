@@ -34,13 +34,13 @@ class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataS
         nameField.delegate = self
         cityField.delegate = self
         
-        KinkedInAPI.experienceLevels { results in
+        DataTango.experienceLevels { results in
             self.expTitles = results
             self.expField.reloadComponent(0)
             self.expField.selectRow((self.profile?.expLv!)!, inComponent: 0, animated: false)
         }
         
-        KinkedInAPI.cities { results in
+        DataTango.cities { results in
             self.cities = results
             self.cityField.reloadComponent(0)
             if let city = self.profile?.city {
@@ -134,7 +134,7 @@ class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataS
             profile?.city = city.label
         }
         
-        KinkedInAPI.updateProfile(params)
+        DataTango.updateProfile(params)
     }
     
     func isNameSet() -> Bool {

@@ -96,7 +96,7 @@ class MessengerVC: BaseTextInputDelegate {
             
             print("YY getting convo flow")
             let caseType : CaseType = .report
-            KinkedInAPI.aftercareFlow(caseType: caseType) { flow in
+            DataTango.aftercareFlow(caseType: caseType) { flow in
                 print("YY got convo flow @ + \(flow.message)")
                 let convo = UIStoryboard(name: "Aftercare", bundle: Bundle.main).instantiateViewController(withIdentifier: "careConvoVC") as! CheckinChatVC
                 convo.setData(profile: profile, flow: flow, caseType: caseType)
@@ -139,14 +139,12 @@ class MessengerVC: BaseTextInputDelegate {
             
             self.view.makeToastActivity(.center)
             
-            KinkedInAPI.readProfile(uuid) { profile in
-                print("got profile data")
-                let profileView = ProfileView(profile: profile, isFriend: true) {
-                    print("segue back to msg")
-                }
-                self.view.hideToastActivity()
-                let host = UIHostingController(rootView: profileView)
-                self.navigationController?.pushViewController(host, animated: false)
+            DataTango.readProfile(uuid) { profile in
+               let profileView = ProfileView(profile: profile, isFriend: true) {
+               }
+               self.view.hideToastActivity()
+               let host = UIHostingController(rootView: profileView)
+               self.navigationController?.pushViewController(host, animated: false)
             }
             
         }
@@ -154,7 +152,7 @@ class MessengerVC: BaseTextInputDelegate {
     
     func blockUser(){
         if let uuid = _profile?.uuid {
-            KinkedInAPI.blockUser(uuid)
+            DataTango.blockUser(uuid)
         }
         self.navigationController?.popViewController(animated: false)
     }

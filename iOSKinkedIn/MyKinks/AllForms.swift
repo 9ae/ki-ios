@@ -19,7 +19,11 @@ struct AllForms: View {
     @State var wearableKinks : [Kink] = []
     
     func kinks () -> [Kink] {
-       return self.dm.myProfle?.kinks ?? []
+        if let pro = dm.myProfile() {
+            return pro.kinks
+        } else {
+            return []
+        }
     }
     
     static func isKinkIn(_ kinks : [Kink], code: String) -> Bool {
@@ -175,11 +179,11 @@ struct AllForms: View {
             } // vstack
         } // scroll view
             .onAppear {
-                self.myOmake = self.dm.myProfle?.kinks.filter(AllForms.filterOmake) ?? []
-                self.myGiveService = self.dm.myProfle?.kinks.filter(AllForms.filterGiveService) ?? []
-                self.myGetService = self.dm.myProfle?.kinks.filter(AllForms.filterGetService) ?? []
-                self.myWears = self.dm.myProfle?.kinks.filter(AllForms.filterWears) ?? []
-                self.myActs = self.dm.myProfle?.kinks.filter(AllForms.filterActs) ?? []
+                self.myOmake = self.dm.myProfile()?.kinks.filter(AllForms.filterOmake) ?? []
+                self.myGiveService = self.dm.myProfile()?.kinks.filter(AllForms.filterGiveService) ?? []
+                self.myGetService = self.dm.myProfile()?.kinks.filter(AllForms.filterGetService) ?? []
+                self.myWears = self.dm.myProfile()?.kinks.filter(AllForms.filterWears) ?? []
+                self.myActs = self.dm.myProfile()?.kinks.filter(AllForms.filterActs) ?? []
                 
                 self.wearableKinks = self.dm.kinksOmake.filter({ k in k.form == .wearable })
             }

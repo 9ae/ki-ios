@@ -49,12 +49,12 @@ class MeVC: UITableViewController {
         super.viewDidLoad()
         
         self.view.makeToastActivity(.center)
-        KinkedInAPI.myself { profile in
+        DataTango.myself { profile in
             self.view.hideToastActivity()
             self.updateContent(profile)
         }
         
-        KinkedInAPI.partners { profiles in
+        DataTango.partners { profiles in
             self.partners = profiles
             self.updatePartnersView()
         }
@@ -119,7 +119,7 @@ class MeVC: UITableViewController {
     }
     
     @IBAction func logout(_ sender: Any){
-        KinkedInAPI.logout()
+        DataTango.logout()
         KeychainWrapper.standard.removeObject(forKey: "kiToken")
         self.performSegue(withIdentifier: "logout2auth", sender: sender)
     }
@@ -223,7 +223,7 @@ class MeVC: UITableViewController {
     }
     
     @IBAction func onEditGenders(_ sender: Any){
-        KinkedInAPI.genders { allGenders in
+        DataTango.genders { allGenders in
             self.view.hideToastActivity()
             if let myGenders = self.me?.genders {
                 let editView = EditIDsView(kind: "Genders", all: allGenders, mine: myGenders)
@@ -235,7 +235,7 @@ class MeVC: UITableViewController {
     }
     
     @IBAction func onEditRoles(_ sender: Any){
-        KinkedInAPI.roles { allRoles in
+        DataTango.roles { allRoles in
             self.view.hideToastActivity()
             if let myRoles = self.me?.roles {
                 let editView = EditIDsView(kind: "Roles", all: allRoles, mine: myRoles)

@@ -176,6 +176,10 @@ class Profile  : Codable {
         self.vouches = 0
         self.picture_public_id = picture_public_id
     }
+    
+    func isFull() -> Bool {
+        return  (self.bio != nil) || (self.picture != nil) || (self.city != nil) || (self.picture_public_id != nil) || (self.prompts != nil)
+    }
 
     
     func kinkLabels() -> [String] {

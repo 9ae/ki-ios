@@ -40,7 +40,7 @@ class RegisterVC: ScrollTextInputVC {
             self.signup.alpha = 0.1
         }
         
-        KinkedInAPI.register(
+        DataTango.register(
             email: email.text!,
             password: password.text!,
             inviteCode: inviteCode.text!) { success in

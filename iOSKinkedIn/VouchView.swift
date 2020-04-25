@@ -118,7 +118,7 @@ struct VouchView: View {
                 "respect": respect
             ]
             
-            KinkedInAPI.vouch(self.profile.uuid, answers: answers)
+            DataTango.vouch(self.profile.uuid, answers: answers)
             self.presentation.wrappedValue.dismiss()
         }){ Text("Submit").foregroundColor(Color.white) }.disabled(!self.isVouchReady) )
     } // END OF body

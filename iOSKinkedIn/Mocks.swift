@@ -96,7 +96,8 @@ func mockDM () -> Dungeon {
     dm.kinksAct = mockKinksActs
     dm.kinksService = mockKinksService
     dm.kinksOmake = mockKinksOmake
-    dm.myProfle = mockFullProfile()
+    dm.allProfiles["myself"] = mockFullProfile()
+    dm.myPhoneNumber = "212-123-1999"
     
     return dm
 }

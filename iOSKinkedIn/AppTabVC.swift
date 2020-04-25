@@ -13,7 +13,7 @@ class AppTabVC: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         /*
-        KinkedInAPI.checkProfileSetup(){ step in
+        DataTango.checkProfileSetup(){ step in
             if(step == 0){
                 print("finish profile setup")
                 self.selectedIndex = 0

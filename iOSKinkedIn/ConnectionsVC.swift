@@ -84,7 +84,7 @@ class ConnectionsVC: UITableViewController {
         if isFetched {
             self.tableView.reloadData()
         } else {
-            KinkedInAPI.connections { profiles in
+            DataTango.connections { profiles in
                 self.profiles[.reciprocals] = ProfileList(isFetched: true, data: profiles)
                 if profiles.isEmpty {
                     let alert = emptyList(
@@ -114,7 +114,7 @@ class ConnectionsVC: UITableViewController {
             self.tableView.reloadData()
         }
         else {
-            KinkedInAPI.partners { profiles in
+            DataTango.partners { profiles in
                 self.profiles[.partners] = ProfileList(isFetched: true, data: profiles)
                 if profiles.isEmpty {
                     let alert = emptyList(
@@ -142,7 +142,7 @@ class ConnectionsVC: UITableViewController {
         if isFetched {
             self.tableView.reloadData()
         } else {
-            KinkedInAPI.blockedUsers { profiles in
+            DataTango.blockedProfiles { profiles in
                 self.profiles[.disconnects] = ProfileList(isFetched: true, data: profiles)
                 if profiles.isEmpty {
                     let alert = UIAlertController(title: "No disconnected users", message: "", preferredStyle: .alert)
@@ -159,7 +159,7 @@ class ConnectionsVC: UITableViewController {
     
     
     func unblock(_ user: Profile){
-        KinkedInAPI.unblockUser(user.uuid)
+        DataTango.unblockUser(user.uuid)
     }
 
     override func didReceiveMemoryWarning() {
@@ -258,7 +258,7 @@ class ConnectionsVC: UITableViewController {
     private func viewProfile(_ profile: Profile){
         self.view.makeToastActivity(.center)
         
-        KinkedInAPI.readProfile(profile.uuid) { profile in
+        DataTango.readProfile(profile.uuid) { profile in
             let profileView = ViewProfileVC(profile)
             self.view.hideToastActivity()
             self.navigationController?.pushViewController(profileView, animated: false)
@@ -266,15 +266,15 @@ class ConnectionsVC: UITableViewController {
     }
     
     private func disconnect(_ profile: Profile){
-        KinkedInAPI.blockUser(profile.uuid)
+        DataTango.blockUser(profile.uuid)
     }
     
     private func reconnect(_ profile: Profile){
-        KinkedInAPI.unblockUser(profile.uuid)
+        DataTango.unblockUser(profile.uuid)
     }
     
     private func unpartner(_ profile: Profile){
-        KinkedInAPI.unPartner(profile.uuid)
+        DataTango.unPartner(profile.uuid)
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {

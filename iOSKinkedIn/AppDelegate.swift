@@ -90,7 +90,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken : Data) {
         print("didRegisterForRemoteNotificationsWithDeviceToken")
-        KinkedInAPI.deviceToken = deviceToken
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -136,7 +135,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 
                 let profile = Profile(uuid: userId, name: userName)
                 let caseType : CaseType = .checkin
-                KinkedInAPI.aftercareFlow(caseType: caseType) { flow in
+                DataTango.aftercareFlow(caseType: caseType) { flow in
                     print("YY got convo flow @ + \(flow.message)")
                     let convo = UIStoryboard(name: "Aftercare", bundle: Bundle.main).instantiateViewController(withIdentifier: "careConvoVC") as! CheckinChatVC
                     convo.setData(profile: profile, flow: flow, caseType: caseType)
@@ -171,18 +170,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("access token set. prefeform listener functions")
         
         flySendbird()
-        /*
-        if let deviceToken = KinkedInAPI.deviceToken {
-            // print("Pusher subscribe to my personal channel")
-            // let pusher = Pusher(key: "24ee5765edd3a7a2bf66")
-            KinkedInAPI.get("self/pusheen"){ json in
-                if let uuid = json["my_channel"] as? String {
-                   // pusher.nativePusher.register(deviceToken: deviceToken)
-                   // pusher.nativePusher.subscribe(interestName: uuid)
-                }
-            }
-        }
-        */
         
     }
   
@@ -243,10 +230,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         switch(response.actionIdentifier){
             case "partner_confirm":
                 print("yes we are partners!")
-                KinkedInAPI.replyPartnerRequest(request_id, confirm: true)
+                DataTango.replyPartnerRequest(request_id, confirm: true)
             case "partner_deny":
                 print("no who is this?")
-                KinkedInAPI.replyPartnerRequest(request_id, confirm: false)
+                DataTango.replyPartnerRequest(request_id, confirm: false)
             default:
                 //go to partner requests screen
                 break

@@ -27,11 +27,11 @@ struct EditIDsView: View {
         print("update")
         if self.kind == "Genders" {
             print("genders")
-            KinkedInAPI.updateProfile(["genders": self.mine])
+            DataTango.updateProfile(["genders": self.mine])
         }
         if self.kind == "Roles" {
             print("roles")
-            KinkedInAPI.updateProfile(["roles": self.mine])
+            DataTango.updateProfile(["roles": self.mine])
         }
         self.presentation.wrappedValue.dismiss()
     }

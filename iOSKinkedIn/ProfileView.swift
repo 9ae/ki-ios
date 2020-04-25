@@ -142,7 +142,7 @@ struct ProfileView: View {
                         self.returnToList(likes: false)
                     }
                     HeartButton(size: 48) {
-                        KinkedInAPI.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
+                        DataTango.likeProfile(self.profile.uuid) { (reciprocal, dailyLimit, dailyMatches) in
                             print("they also like you \(reciprocal)")
                         }
                         self.returnToList(likes: true)
@@ -152,7 +152,7 @@ struct ProfileView: View {
         }.background(Color.white)
         .onAppear {
             if self.profile.age == 0 {
-                KinkedInAPI.readProfile(self.profile.uuid) { profile in
+                DataTango.readProfile(self.profile.uuid) { profile in
                     self.profile = profile
                 }
             }

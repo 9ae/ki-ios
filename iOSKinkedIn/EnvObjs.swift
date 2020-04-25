@@ -38,17 +38,27 @@ final class Dungeon : ObservableObject {
     
     @Published var genders: [String] = []
     @Published var roles: [String] = []
+    @Published var bioPrompts : [BioPrompt] = []
+    @Published var cities : [City] = []
+    @Published var expLevels : [String] = []
     
     @Published var kinksAct : [Kink] = []
     @Published var kinksService : [Kink] = []
     @Published var kinksOmake : [Kink] = []
     
-    @Published var discoverProfiles: [Profile] = []
+    @Published var allProfiles : [String:Profile] = [:]
+    @Published var discoverProfiles: [Profile] = [] // TODO opt
     @Published var preferences : DiscoveryPreferences = DiscoveryPreferences()
-    @Published var dailyMatches : [Profile] = []
+    @Published var dailyMatches : [Profile] = [] // TODO opt
+    @Published var connections: [Profile] = [] // TODO opt
+    @Published var partners : [Profile] = [] // TODO opt
+    @Published var blockedProfiles : [Profile] = [] // TODO opt
     
-    @Published var myProfle : Profile?
+    @Published var myPhoneNumber : String?
     
+    func myProfile() -> Profile? {
+        return self.allProfiles["myself"]
+    }
     
     func markProfile(_ profile: Profile, likes: Bool) -> Void {
         self.discoverProfiles = self.discoverProfiles.filter({ pro in
@@ -62,15 +72,20 @@ final class Dungeon : ObservableObject {
     }
     
     func updateMyProfileWithKink(_ kink: Kink) -> Void {
-        let kinks = self.myProfle?.kinks ?? []
+        guard let profile = self.allProfiles["myself"] else {
+            return
+        }
+        
+        let kinks = profile.kinks
         
         if let index = kinks.firstIndex(where: { k in
             k.code == kink.code
         }) {
-            self.myProfle?.kinks.remove(at: index)
-            self.myProfle?.kinks.append(kink)
+            profile.kinks.remove(at: index)
+            profile.kinks.append(kink)
         } else {
-            self.myProfle?.kinks.append(kink)
+            profile.kinks.append(kink)
         }
+        self.allProfiles["myself"] = profile
     }
 }

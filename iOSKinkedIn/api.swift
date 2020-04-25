@@ -8,21 +8,11 @@
 
 import Foundation
 import Alamofire
-import Cache
 
 enum ProfileAction: Int {
     case hide=0, skip, like
 }
 
-/* cache keys */
-
-let CK_AFTERCARE_FLOW = "CH_AFTERCARE_FLOW2_"
-
-let CK_DISCOVER = "CK_DISCOVER"
-
-let CK_CONNECTIONS = "CK_CONNECTIONS"
-let CK_PARTNERS = "CK_PARTNERS"
-let CK_BLOCKED = "CK_BLOCKED"
 
 class KinkedInAPI {
     
@@ -31,15 +21,6 @@ class KinkedInAPI {
     static let HOST_URL = Bundle.main.infoDictionary!["KI_API"] as! String
     
     static let isoFormat = ISO8601DateFormatter()
-    
-    static let ds = try! Storage(
-        diskConfig: DiskConfig(name: "KiCache"),
-        memoryConfig: MemoryConfig(),
-        transformer: TransformerFactory.forData()
-    )
-    static let profileCache = ds.transformCodable(ofType: Profile.self)
-    static let aftercareCache = ds.transformCodable(ofType: CareQuestion.self)
-    static let prolistCache = ds.transformCodable(ofType: [Profile].self)
     
     static let MAX_ITERATIONS = 20
     static let TIMER_DELAY = 2.0
@@ -201,7 +182,7 @@ class KinkedInAPI {
         }
     }
 
-    static func kinks(form: String, callback: @escaping(_ results:[Kink]) -> Void) {
+    static func kinks(form: KinkForm, callback: @escaping(_ results:[Kink]) -> Void) {
         
         print("fetching \(form) kinks")
         get("kinks/\(form)", requiresToken: false, isJob: true){ json in
@@ -282,8 +263,6 @@ class KinkedInAPI {
     }
     
     static func logout(){
-       try? profileCache.removeAll()
-       try? prolistCache.removeAll()
         get("logout", requiresToken: true){ json in
             print(json)
         }
@@ -311,10 +290,6 @@ class KinkedInAPI {
     
     static func listProfiles(callback: @escaping(_ profiles: [Profile])->Void ){
         
-        do {
-            let profiles = try prolistCache.object(forKey: CK_DISCOVER)
-            callback(profiles)
-        } catch {
             get("discover/profiles"){ _json in
                 guard let json = _json as? [String:Any] else { return }
                 if let simple_profiles = json["result"] as? [Any] {
@@ -324,34 +299,24 @@ class KinkedInAPI {
                             profiles.append(parsedProfile)
                         }
                     }
-                    try? prolistCache.setObject(profiles, forKey: CK_DISCOVER)
                     callback(profiles)
                 }
             }
-        }
+        
     }
     
     static func readProfile(_ uuid: String, callback: @escaping(_ profile: Profile)->Void) {
-        do {
-            let cachedProfile = try profileCache.object(forKey: uuid)
-            print("YY found profile \(uuid) from cache")
-            callback(cachedProfile)
-        } catch {
-            print("YY not found \(uuid) in cache")
-            get("profile/\(uuid)", isJob: true){ json in
-                
-                if let user = Profile(uuid, json: json as! [String:Any]) {
-                    try? profileCache.setObject(user, forKey: uuid)
-                    callback(user)
-                } else {
-                    print("error in parsing profile")
-                }
-            }
+        get("profile/\(uuid)", isJob: true){ json in
             
+            if let user = Profile(uuid, json: json as! [String:Any]) {
+                callback(user)
+            } else {
+                print("error in parsing profile")
+            }
         }
     }
     
-    static func likeProfile(_ uuid: String,callback: @escaping(_ reciprocal: Bool,
+    static func likeProfile(_ uuid: String, callback: @escaping(_ reciprocal: Bool,
         _ match_limit: Int, _ matches_today: Int)->Void ){
         let params : Parameters = [ "likes": true ]
         post("profile/\(uuid)", parameters: params, isJob: true){ json in
@@ -364,7 +329,6 @@ class KinkedInAPI {
             let match_limit = res["match_limit"] as? Int ?? UD_MATCH_LIMIT_VALUE
             let matches_today = res["matches_today"] as? Int ?? UD_MATCHES_TODAY_VALUE
             if requited {
-                try? prolistCache.removeObject(forKey: CK_CONNECTIONS)
                 callback(requited, match_limit, matches_today)
             }
 
@@ -389,25 +353,19 @@ class KinkedInAPI {
     
     
     static func myself(_ callback: @escaping(_ profile: Profile)->Void){
-        do {
-            let cachedProfile = try profileCache.object(forKey: "myself")
-            callback(cachedProfile)
-        } catch {
             get("self/profile", isJob: true){ json in
                 guard let pro = json as? [String: Any] else {
                     return
                 }
                 let profile = Profile.parseSelf(pro)
                 profile.is_myself = true
-                try? profileCache.setObject(profile, forKey: "myself")
                 callback(profile)
             }
-        }
+        
     }
     
     
     static func updateProfile(_ body: [String: Any], callback: ((_ json: [String: Any]) -> Void)? = nil) {
-        try? profileCache.removeObject(forKey: "myself")
         put("self/profile", parameters: body){ _json in
             guard let json = _json as? [String:Any] else { return }
             print(json)
@@ -423,10 +381,7 @@ class KinkedInAPI {
     }
     
     static func connections(callback: @escaping(_ profiles: [Profile])-> Void){
-        do {
-            let profiles = try prolistCache.object(forKey: CK_CONNECTIONS)
-            callback(profiles)
-        } catch {
+
         get("self/connections", isJob: true){ json in
 
             var profiles = [Profile]()
@@ -457,10 +412,10 @@ class KinkedInAPI {
                 profiles.append(p)
                 
             }
-            try? prolistCache.setObject(profiles, forKey: CK_CONNECTIONS)
+            
             callback(profiles)
             
-        }
+        
         }
     }
     
@@ -537,10 +492,7 @@ class KinkedInAPI {
     }
     
     static func partners(callback: @escaping(_ users: [Profile]) -> Void){
-        do {
-            let profiles = try prolistCache.object(forKey: CK_PARTNERS)
-            callback(profiles)
-        } catch {
+
         get("self/partners", isJob: true){ json in
 
             if let resArray = json as? [Any] {
@@ -557,18 +509,11 @@ class KinkedInAPI {
                     }
                     
                 }
-        try? prolistCache.setObject(users, forKey: CK_PARTNERS)
                 callback(users)
             }
             
             }
-        }
-    }
-    
-    static func removePartner(_ uuid: String){
-        delete("self/partners/\(uuid)") { json in
-            print(json)
-        }
+        
     }
     
     static func invitePartner(_ partner_email: String){
@@ -578,10 +523,7 @@ class KinkedInAPI {
     }
     
     static func blockedUsers(_ callback: @escaping(_ profiles: [Profile])-> Void){
-        do {
-            let profiles = try prolistCache.object(forKey: CK_BLOCKED)
-            callback(profiles)
-        } catch {
+
         get("self/blocks", isJob: false){ _json in
             guard let json = _json as? [String:Any] else { return }
             guard let resArray = json["result"] as? [[String:Any]] else {return}
@@ -596,10 +538,10 @@ class KinkedInAPI {
                 }
                 users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
             }
-            try? prolistCache.setObject(users, forKey: CK_BLOCKED)
+         
             callback(users)
 
-        }
+        
         }
     }
     
@@ -607,14 +549,12 @@ class KinkedInAPI {
         post("self/block/\(uuid)", parameters: [:]) { json in
             print(json)
         }
-        try? profileCache.removeObject(forKey: CK_BLOCKED)
     }
     
     static func unblockUser(_ uuid: String){
         delete("self/block/\(uuid)") { json in
             print(json)
         }
-        try? profileCache.removeObject(forKey: CK_BLOCKED)
     }
     
     static func dailyLimits(_ callback: @escaping(_ limit: Int, _ matchesToday: Int) -> Void){
@@ -705,24 +645,17 @@ class KinkedInAPI {
     
     static func aftercareFlow(caseType: CaseType, callback : @escaping (_ flow: CareQuestion) -> Void) {
         let typeStr = caseType.rawValue
-        let cacheKey = CK_AFTERCARE_FLOW + typeStr
         
-        do {
-//            let co = try aftercareCache.object(forKey: cacheKey)
-//            callback(co)
-            try aftercareCache.removeObject(forKey: cacheKey)
-        } catch {
             get("aftercare/\(typeStr)", requiresToken: false, isJob: false){ _json in
                 guard let json = _json as? [String:Any] else { return }
                 guard let careFlow = CareQuestion(json) else { return }
                 
-                try? aftercareCache.setObject(careFlow, forKey: cacheKey)
                 callback(careFlow)
             }
-        }
     }
     
     static func createCase(aboutUser: String, caseType: CaseType, callback : @escaping (_ case_id : Int) -> Void){
+        
         post("self/case", parameters: ["about_user": aboutUser, "case_type": caseType.rawValue]) { _json in
             guard let json = _json as? [String:Any] else { return }
             guard let case_id = json["case_id"] as? Int else {return}

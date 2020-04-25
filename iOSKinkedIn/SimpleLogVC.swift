@@ -24,7 +24,7 @@ class SimpleLogVC: BaseConvoLogVC {
         
         for q in msgQ {
             let (msg, date) = q
-            KinkedInAPI.writeToCaselog(case_id: caseId, msg: msg, date: date)
+            DataTango.writeToCaselog(case_id: caseId, msg: msg, date: date)
         }
     }
     
@@ -33,7 +33,7 @@ class SimpleLogVC: BaseConvoLogVC {
         self.refresh()
         
         if let caseId = self._caseId {
-            KinkedInAPI.writeToCaselog(case_id: caseId, msg: msg, date: nil)
+            DataTango.writeToCaselog(case_id: caseId, msg: msg, date: nil)
         } else {
             msgQ.append((msg, Date()))
         }

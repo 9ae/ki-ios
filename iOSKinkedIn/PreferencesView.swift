@@ -63,13 +63,13 @@ struct PreferencesView: View {
         .navigationBarTitle("Preferences")
         .onAppear {
             if (self.genders.count == 0){
-                KinkedInAPI.genders { genders in
+                DataTango.genders { genders in
                     self.genders = genders
                 }
             }
             
             if(self.roles.count == 0){
-                KinkedInAPI.roles { roles in
+                DataTango.roles { roles in
                     self.roles = roles
                 }
             }

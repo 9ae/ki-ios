@@ -85,6 +85,7 @@
 		00DED11C1E6D837300402FA8 /* cloudinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DED11B1E6D837300402FA8 /* cloudinary.swift */; };
 		00ED8A201E74374800096497 /* ConnectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A1F1E74374800096497 /* ConnectionCell.swift */; };
 		00ED8A271E7443BD00096497 /* ConnectionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00ED8A261E7443BD00096497 /* ConnectionsVC.swift */; };
+		00EE43A02453E48E000C7A48 /* DataTango.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE439F2453E48E000C7A48 /* DataTango.swift */; };
 		00EE8ADB23DE2D3100E04673 /* ConvoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */; };
 		00F073D3214D9325003D79C6 /* ViewProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D2214D9325003D79C6 /* ViewProfileVC.swift */; };
 		00F073D5214DB360003D79C6 /* CodeProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F073D4214DB360003D79C6 /* CodeProfileVC.swift */; };
@@ -213,6 +214,7 @@
 		00ED085A63868A45E05ADEC8 /* Pods_iOSKinkedInUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSKinkedInUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00ED8A1F1E74374800096497 /* ConnectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionCell.swift; sourceTree = "<group>"; };
 		00ED8A261E7443BD00096497 /* ConnectionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionsVC.swift; sourceTree = "<group>"; };
+		00EE439F2453E48E000C7A48 /* DataTango.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTango.swift; sourceTree = "<group>"; };
 		00EE8ADA23DE2D3100E04673 /* ConvoLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvoLogVC.swift; sourceTree = "<group>"; };
 		00F073D2214D9325003D79C6 /* ViewProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProfileVC.swift; sourceTree = "<group>"; };
 		00F073D4214DB360003D79C6 /* CodeProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeProfileVC.swift; sourceTree = "<group>"; };
@@ -321,6 +323,7 @@
 			children = (
 				00171A521E56468700640B09 /* api.swift */,
 				00DED11B1E6D837300402FA8 /* cloudinary.swift */,
+				00EE439F2453E48E000C7A48 /* DataTango.swift */,
 			);
 			name = providers;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 				00063F00240C3CE4006F4326 /* DiscoveryView.swift in Sources */,
 				006D50071E658635005DAABE /* AppTabVC.swift in Sources */,
 				009347451ED2A24500E35057 /* ScrollTextInputVC.swift in Sources */,
+				00EE43A02453E48E000C7A48 /* DataTango.swift in Sources */,
 				00B5659D1E57906100639B8E /* SplashVC.swift in Sources */,
 				00BA200D1E62B2F000D31F6F /* styles.swift in Sources */,
 				0044DFBB1EFD7A64001F1299 /* KeychainItemAccessibility.swift in Sources */,

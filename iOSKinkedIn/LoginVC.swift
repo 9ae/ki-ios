@@ -37,7 +37,7 @@ class LoginVC: ScrollTextInputVC {
         }
         if let email = fieldEmail.text,
             let password = fieldPassword.text {
-            KinkedInAPI.login(email: email, password: password){ success in
+            DataTango.login(email: email, password: password){ success in
                 if success {
                     self.performSegue(withIdentifier: "login2app", sender: self.loginBtnSender!)
                 } else {

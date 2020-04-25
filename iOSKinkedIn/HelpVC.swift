@@ -27,7 +27,6 @@ class HelpVC: UITableViewController {
         loadCheckinHours()
         loadPhoneNumber()
         loadScheduledDates()
-        loadAftercareStats()
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,23 +51,14 @@ class HelpVC: UITableViewController {
     }
     
     func loadPhoneNumber(){
-        KinkedInAPI.loadProps(props: ["phone"]) { json in
-            if let phone = json["phone"] as? String {
-                self.fieldPhone.text = phone
-            }
+        DataTango.myPhoneNumber { phone in
+            self.fieldPhone.text = phone
         }
     }
     
     func loadScheduledDates(){
         let dates = UserDefaults.standard.integer(forKey: UD_SCH_DATES)
         countDatesScheduled.text = String(dates)
-    }
-    
-    func loadAftercareStats(){
-        KinkedInAPI.aftercareStats { (reports, checkins) in
-            self.countRepliedCheckins.text = String(checkins)
-            self.countRaisedIssues.text = String(reports)
-        }
     }
 
     @objc
@@ -79,9 +69,8 @@ class HelpVC: UITableViewController {
     }
     
     @objc func onPhoneChanged (_ textField: UITextField){
-        print("XX phoneChanged")
         if let phone = textField.text {
-            KinkedInAPI.updateProfile(["phone": phone])
+            DataTango.updateMyPhoneNumber(phone)
         }
     }
     
@@ -101,7 +90,7 @@ class HelpVC: UITableViewController {
     func chatWithKia(){
         
         self.view.makeToastActivity(.center)
-        KinkedInAPI.connections { profiles in
+        DataTango.connections { profiles in
             self.view.hideToastActivity()
             let selectUserVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "AbstractUserListVC") as! AbstractUserListVC
             selectUserVC.profiles.append(contentsOf: profiles)

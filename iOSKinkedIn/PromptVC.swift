@@ -23,7 +23,7 @@ class PromptVC: UITableViewController {
             prompts = _prompts
             tableView.reloadData()
         } else {
-        KinkedInAPI.bioPrompts { results in
+        DataTango.bioPrompts { results in
             print("from public")
             self.prompts = results
             self.tableView.reloadData()
@@ -86,7 +86,7 @@ class PromptVC: UITableViewController {
         let params = [
             "prompts": prompts.map{p in p.objectify()}
         ]
-        KinkedInAPI.updateProfile(params)
+        DataTango.updateProfile(params)
         
     }
 

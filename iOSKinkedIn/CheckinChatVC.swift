@@ -72,7 +72,7 @@ class CheckinChatVC: BaseTextInputDelegate {
         
         self._caseType = caseType
         
-        KinkedInAPI.createCase(aboutUser: profile.uuid, caseType: caseType) { caseId in
+        DataTango.createCase(aboutUser: profile.uuid, caseType: caseType) { caseId in
             self._convoLog?.setCaseId(caseId)
             self.caseId = caseId
         }
@@ -269,7 +269,7 @@ class CheckinChatVC: BaseTextInputDelegate {
     
     private func onEnd(){
         if flow.isTrigger && caseId != -1 {
-            KinkedInAPI.alertCATeam(case_id: caseId)
+            DataTango.alertCATeam(case_id: caseId)
         } else {
             _convoLog?.botSay("Thank you for sharing with us your thoughts and concerns")
         }

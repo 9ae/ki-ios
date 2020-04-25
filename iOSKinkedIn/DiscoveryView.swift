@@ -50,14 +50,14 @@ struct DiscoveryView: View {
             self.showDailyMatches = self.dm.dailyMatches.count > 0
             
             if self.dm.discoverProfiles.count == 0 && !self.isProfilesFetched {
-                KinkedInAPI.listProfiles(){ profiles in
+                DataTango.discoverProfiles { profiles in
                     self.dm.discoverProfiles = profiles
                     self.isProfilesFetched = true
                 }
             }
             
             if self.dm.dailyMatches.count == 0 && !self.isDailyMatchesFetched {
-                KinkedInAPI.dailyMatches { profiles in
+                DataTango.dailyMatches { profiles in
                     self.dm.dailyMatches = profiles
                     self.showDailyMatches = profiles.count > 0
                     self.isDailyMatchesFetched = true

@@ -15,7 +15,7 @@ class CasesVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        KinkedInAPI.aftercareCases{ _cases in
+        DataTango.aftercareCases{ _cases in
             self.cases = _cases
             self.tableView.reloadData()
         }

@@ -15,19 +15,6 @@ class SplashVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        KinkedInAPI.test { ok in
-            if(ok){
-                self.allowGo()
-            } else {
-                self.waitForReadyTimer = Timer.scheduledTimer(timeInterval: 3,
-                                                              target: self,
-                                                              selector: #selector(self.pingServer),
-                                                              userInfo: nil, repeats: true);
-                
-            }
-        }
-        */
         allowGo()
     }
     
@@ -35,18 +22,6 @@ class SplashVC: UIViewController {
         self.iConsent.isEnabled = true
         UIView.animate(withDuration: 1){
             self.iConsent.alpha = 1.0
-        }
-    }
-
-    func pingServer(){
-        KinkedInAPI.test{ ok in
-            if(ok){
-                print("server up")
-                self.waitForReadyTimer?.invalidate()
-                self.allowGo()
-            } else {
-                print("server down... waiting 3 seconds to try again")
-            }
         }
     }
     
@@ -62,7 +37,7 @@ class SplashVC: UIViewController {
         }
 
         if let token = KeychainWrapper.standard.string(forKey: "kiToken") {
-            KinkedInAPI.setToken(token)
+            DataTango.setToken(token)
             self.performSegue(withIdentifier: "splash2app", sender: sender)
         } else {
             self.performSegue(withIdentifier: "splash2auth", sender: sender)
