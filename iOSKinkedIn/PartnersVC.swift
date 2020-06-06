@@ -55,7 +55,7 @@ class PartnersVC: UITableViewController {
             print("cast cell")
             if segment.selectedSegmentIndex == 0 {
                 let profile = partners[indexPath.row]
-                userCell.set(profile.picture_public_id!, profile.name)
+                userCell.set(profile.th_picture!, profile.name)
             } else {
                 let req = requests[indexPath.row]
                 userCell.set(req.from_image, req.from_name)

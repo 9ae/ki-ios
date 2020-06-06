@@ -15,7 +15,7 @@ struct DailyMatchesView: View {
     var hideAction: () -> Void
     
     func picture(_ profile : Profile) -> Image? {
-        if let pic_url = profile.picture {
+        if let pic_url = profile.th_picture {
             let url = URL(string: pic_url)
             do {
                 let imgData = try Data(contentsOf: url!)

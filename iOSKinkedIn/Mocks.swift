@@ -8,9 +8,11 @@
 
 import Foundation
 
-let mockProfile = Profile(uuid: "11675dce-b6a7-4b0c-acc0-3d28f72ca905", name: "Test Kenzi", age: 29, picture_public_id: "95f2176b-5369-42b3-9bab-bc6494361c76")
+let mockProfile = Profile(uuid: "11675dce-b6a7-4b0c-acc0-3d28f72ca905", name: "Test Kenzi", age: 29,
+                          picture: "https://ik.imagekit.io/0njmnkkx4o/11675dce-b6a7-4b0c-acc0-3d28f72ca905_t7ePgPcM6.jpg")
 
-let mockProfile2 = Profile(uuid: "5aad1438-5506-41b5-88a7-369ffa184502", name: "Test Demo 2", age: 32, picture_public_id: "f2e2f199-3a7c-4392-82a1-dcc796c74bb9")
+let mockProfile2 = Profile(uuid: "5aad1438-5506-41b5-88a7-369ffa184502", name: "Test Demo 2", age: 32,
+                           picture: "https://ik.imagekit.io/0njmnkkx4o/11675dce-b6a7-4b0c-acc0-3d28f72ca905_t7ePgPcM6.jpg")
 
 let mockAftercareFlow =
     CareQuestion("How are you feeling about your date?", type: .choice, followup: [

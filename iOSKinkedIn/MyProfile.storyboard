@@ -35,18 +35,39 @@
                                     <action selector="changePicture" destination="fKG-tt-5Dk" eventType="touchUpInside" id="gLy-yO-I4a"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guidelines" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-2K-Ena">
-                                <rect key="frame" x="16" y="308" width="59.5" height="14.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDELINES KinkedIn Community Standards: - blah blah  Apple Restrictions: - blah blah" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-2K-Ena">
+                                <rect key="frame" x="16" y="308" width="343" height="130.5"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to express yourself beyond the boundaries of Apple's restrictions, you may do so on our webapp." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rih-ub-YpA">
+                                <rect key="frame" x="8" y="458.5" width="359" height="61"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPe-zC-c5q">
+                                <rect key="frame" x="261" y="527.5" width="98" height="30"/>
+                                <state key="normal" title="Open Webapp">
+                                    <color key="titleColor" name="actionColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="openWebapp:" destination="fKG-tt-5Dk" eventType="touchUpInside" id="8n3-EV-p5i"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FPe-zC-c5q" firstAttribute="top" secondItem="rih-ub-YpA" secondAttribute="bottom" constant="8" id="7Vg-Qh-Vfq"/>
                             <constraint firstItem="tqS-a6-tlz" firstAttribute="top" secondItem="A9c-HR-YxX" secondAttribute="bottom" constant="8" id="Qvd-Uy-oai"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uNI-2K-Ena" secondAttribute="trailing" id="Udh-Ip-Xeh"/>
+                            <constraint firstAttribute="trailing" secondItem="FPe-zC-c5q" secondAttribute="trailing" constant="16" id="Vmg-bF-nIk"/>
                             <constraint firstItem="uNI-2K-Ena" firstAttribute="leading" secondItem="cDD-pv-fle" secondAttribute="leadingMargin" id="VzX-W5-jGa"/>
                             <constraint firstItem="uNI-2K-Ena" firstAttribute="top" secondItem="tqS-a6-tlz" secondAttribute="bottom" constant="50" id="X0N-f0-6Cp"/>
+                            <constraint firstItem="rih-ub-YpA" firstAttribute="top" secondItem="uNI-2K-Ena" secondAttribute="bottom" constant="20" id="dAa-1U-QA0"/>
+                            <constraint firstItem="rih-ub-YpA" firstAttribute="leading" secondItem="cDD-pv-fle" secondAttribute="leading" constant="8" id="ibo-fR-Uwa"/>
+                            <constraint firstAttribute="trailing" secondItem="rih-ub-YpA" secondAttribute="trailing" constant="8" id="lbf-cf-CZ1"/>
                             <constraint firstItem="tqS-a6-tlz" firstAttribute="centerX" secondItem="cDD-pv-fle" secondAttribute="centerX" id="mdy-Wt-5nU"/>
                             <constraint firstItem="2et-dM-q8x" firstAttribute="top" secondItem="tqS-a6-tlz" secondAttribute="bottom" constant="8" id="oJb-Ho-hIq"/>
                             <constraint firstItem="2et-dM-q8x" firstAttribute="trailing" secondItem="cDD-pv-fle" secondAttribute="trailingMargin" id="xTu-Bi-7YX"/>

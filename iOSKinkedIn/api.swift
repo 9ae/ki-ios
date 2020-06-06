@@ -395,11 +395,11 @@ class KinkedInAPI {
                 }
                 guard let name = rc["name"] as? String,
                     let uuid = rc["uuid"] as? String,
-                    let image_id = rc["image_id"] as? String else {
+                    let picture = rc["picture"] as? String else {
                         print("can't get profile values")
                         continue
                 }
-                let p = Profile(uuid: uuid, name: name, picture_public_id: image_id)
+                let p = Profile(uuid: uuid, name: name, picture: picture)
                 if let convo = rc["convo"] as? [String:Any] {
                     if let ts = isoFormat.date(from: convo["timestamp"] as! String),
                         let text = convo["text"] as? String
@@ -499,11 +499,11 @@ class KinkedInAPI {
                     if let pj = usr as? [String:Any] {
                         guard let name = pj["name"] as? String,
                             let uuid = pj["uuid"] as? String,
-                            let image_id = pj["image_id"] as? String else {
+                            let picture = pj["picture"] as? String else {
                                 print("can't get profile values")
                                 continue
                         }
-                        users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+                        users.append(Profile(uuid: uuid, name: name, picture: picture))
                     }
                     
                 }
@@ -530,11 +530,11 @@ class KinkedInAPI {
             for e in resArray {
                 guard let name = e["name"] as? String,
                     let uuid = e["uuid"] as? String,
-                    let image_id = e["image_id"] as? String else {
+                    let picture = e["picture"] as? String else {
                         print("can't get profile values")
                         continue
                 }
-                users.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+                users.append(Profile(uuid: uuid, name: name, picture: picture))
             }
          
             callback(users)
@@ -584,11 +584,11 @@ class KinkedInAPI {
                 }
                 guard let name = rc["name"] as? String,
                     let uuid = rc["uuid"] as? String,
-                    let image_id = rc["image_id"] as? String else {
+                    let picture = rc["picture"] as? String else {
                         print("can't get profile values")
                         continue
                 }
-                profiles.append(Profile(uuid: uuid, name: name, picture_public_id: image_id))
+                profiles.append(Profile(uuid: uuid, name: name, picture: picture))
                 
             }
             

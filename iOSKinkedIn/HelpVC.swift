@@ -114,7 +114,8 @@ class HelpVC: UITableViewController {
     }
     
     func reportBug() {
-        if let url = URL(string: "http://bugs.trykinkedin.com") {
+        if let url = URL(string: "https://bugs.trykinkedin.com") {
+            print("open in safari")
             UIApplication.shared.open(url, options: [:])
         }
     }

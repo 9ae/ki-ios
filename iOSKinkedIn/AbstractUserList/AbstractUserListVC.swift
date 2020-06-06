@@ -57,7 +57,7 @@ class AbstractUserListVC: UITableViewController {
         
         if let userCell = cell as? UserCell {
             let profile = profiles[indexPath.row]
-            userCell.set(profile.picture_public_id!, profile.name)
+            userCell.set(profile.th_picture!, profile.name)
         }
         
         return cell

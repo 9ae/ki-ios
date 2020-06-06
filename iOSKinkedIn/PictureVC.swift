@@ -17,7 +17,7 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let picUrl = profile?.picture {
+        if let picUrl = profile?.pictures[0] {
             let imgurl = URL(string: picUrl)
             do {
                 let imgData = try Data(contentsOf: imgurl!)
@@ -27,7 +27,6 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                 print("error loading profile picture")
             }
         }
-
         // Do any additional setup after loading the view.
     }
 
@@ -66,13 +65,18 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func uploadImage(){
         if let image = self.defaultPicture.image, let data = image.jpegData(compressionQuality: 1.0) {
             print("Converted image to data of width:\(image.size.width)")
-            let cloud = CloudNine(data)
-            cloud.completionHandler = { imageUrl in
-                self.profile?.picture = imageUrl
-            }
-            cloud.startUpload()
+
         } else {
             print("Unable to convert image")
+        }
+    }
+    
+    @IBAction
+    func openWebapp(_ sender : Any) {
+        // "https://api-mistress.kinkedin.app/web/my/upload?token=\(KinkedInAPI.token)"
+        if let url = URL(string: "http://localhost:5000/web/my/upload?token=\(KinkedInAPI.token)") {
+            print("open in safari")
+            UIApplication.shared.open(url, options: [:])
         }
     }
     

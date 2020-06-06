@@ -15,9 +15,8 @@ class ConnectionCell: UITableViewCell {
     @IBOutlet weak var timestamp: UILabel!
     @IBOutlet weak var lastMsg: UILabel!
     
-    private func setProfilePicture(_ publicId: String){
+    private func setProfilePicture(_ url: String){
         
-        let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_120,w_120/\(publicId)"
         let imgURL = URL(string: url)
         do {
             let imgData = try Data(contentsOf: imgURL!)
@@ -33,7 +32,12 @@ class ConnectionCell: UITableViewCell {
     
     func setData(_ profile : Profile){
         self.name.text = profile.name
-        self.setProfilePicture(profile.picture_public_id!)
+        
+        if let th_url = profile.th_picture {
+            self.setProfilePicture(th_url)
+        } else {
+            self.picture.image = UIImage(systemName: "icloud")
+        }
         
         if let convo = profile.convo {
             lastMsg.text = convo.text

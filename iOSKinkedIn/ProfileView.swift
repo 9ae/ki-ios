@@ -19,17 +19,16 @@ struct ProfileView: View {
     
     func picture() -> Image {
         
-        if let pic_url = profile.picture {
-            let url = URL(string:pic_url)
-            do {
-                let imgData = try Data(contentsOf: url!)
-                let img = UIImage(data: imgData)
-               return Image(uiImage: img!)
-            } catch {
-              return Image(systemName: "icloud")
-            }
-        } else {
-          return  Image(systemName: "icloud")}
+        let pic_url = profile.pictures[0]
+        let url = URL(string: pic_url)
+        do {
+            let imgData = try Data(contentsOf: url!)
+            let img = UIImage(data: imgData)
+           return Image(uiImage: img!)
+        } catch {
+          return Image(systemName: "icloud")
+        }
+
     }
     
     func basicInfo () -> Text? {

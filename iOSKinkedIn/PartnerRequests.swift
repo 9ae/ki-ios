@@ -26,6 +26,6 @@ class PartnerRequest {
         
         self.from_uuid = from["uuid"]!
         self.from_name = from["name"]!
-        self.from_image = from["image_id"]!
+        self.from_image = from["picture"]!
     }
 }

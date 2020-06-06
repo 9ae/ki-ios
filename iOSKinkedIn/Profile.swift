@@ -55,9 +55,7 @@ class Profile  : Codable {
     var genders: [String] = [String]()
     var roles: [String] = [String]()
     var kinks = [Kink]()
-    var picture: String?
     var city: String?
-    var picture_public_id: String?
     var birthday: Date?
     var prompts : [BioPrompt]?
     
@@ -65,6 +63,9 @@ class Profile  : Codable {
     var is_myself: Bool = false
     var expLv: Int?
     var exp: String?
+    
+    var th_picture: String?
+    var pictures: [String] = []
     
     var convo: ConvoPreview?
     
@@ -89,8 +90,8 @@ class Profile  : Codable {
             self.kinksMatched = kic
         }
         
-        if let image_url = json["image_url"] as? String {
-            self.picture = image_url.replacingOccurrences(of: "http:", with: "https:")
+        if let image_url = json["picture"] as? String {
+            self.th_picture = image_url
         }
         
         if let _vouches = json["vouches"] as? Int {
@@ -138,9 +139,7 @@ class Profile  : Codable {
         }
         
         if let _pictures = profile["pictures"] as? [String] {
-            if(_pictures.count > 0){
-                self.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
-            }
+            self.pictures = _pictures
         }
         
         if let _vouches = profile["vouches"] as? Int {
@@ -168,17 +167,17 @@ class Profile  : Codable {
     
     init(uuid: String, name: String,
          age: Int = 0,
-         picture_public_id: String? = nil){
+         picture: String? = nil){
         self.uuid = uuid
         self.name = name
         self.age = age
         self.kinksMatched = 0
         self.vouches = 0
-        self.picture_public_id = picture_public_id
+        self.th_picture = picture
     }
     
     func isFull() -> Bool {
-        return  (self.bio != nil) || (self.picture != nil) || (self.city != nil) || (self.picture_public_id != nil) || (self.prompts != nil)
+        return  (self.bio != nil) || (!self.pictures.isEmpty) || (self.city != nil) || (self.th_picture != nil) || (self.prompts != nil)
     }
 
     
@@ -227,9 +226,7 @@ class Profile  : Codable {
         }
         
         if let _pictures = json["pictures"] as? [String] {
-            if(_pictures.count > 0){
-                pro.picture = _pictures[0].replacingOccurrences(of: "http:", with: "https:")
-            }
+            pro.pictures = _pictures
         }
         
         if let _kinks = json["kinks"] as? [Any] {

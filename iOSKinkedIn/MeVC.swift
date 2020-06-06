@@ -65,10 +65,10 @@ class MeVC: UITableViewController {
         var leadingOffset: CGFloat = 8.0;
         for p in self.partners {
             
-            guard let picture_id = p.picture_public_id else {
+            guard let url = p.th_picture else {
                 continue
             }
-            let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_40,w_40/\(picture_id)"
+            
             let imgURL = URL(string: url)
             
             do {
@@ -95,7 +95,7 @@ class MeVC: UITableViewController {
     
     func updateContent(_ profile: Profile){
         self.me = profile
-        if let pictureURL = profile.picture {
+        let pictureURL = profile.pictures[0]
             let imgURL = URL(string: pictureURL)
             do {
                 let imgData = try Data(contentsOf: imgURL!)
@@ -104,7 +104,6 @@ class MeVC: UITableViewController {
                 // TODO: use put in place holder image
                 print("ERR loading profile picture")
             }
-        }
         
         var basicText = "\(profile.name), \(profile.age)"
         if let city = profile.city {

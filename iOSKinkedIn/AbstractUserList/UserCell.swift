@@ -13,9 +13,8 @@ class UserCell: UITableViewCell {
     @IBOutlet weak var picture: UIImageView!
     @IBOutlet weak var name: UILabel!
     
-    func set(_ publicId: String, _ name: String){
+    func set(_ url: String, _ name: String){
         self.name.text = name
-        let url = "https://res.cloudinary.com/i99/image/upload/c_thumb,g_face,h_120,w_120/\(publicId)"
         let imgURL = URL(string: url)
         do {
             let imgData = try Data(contentsOf: imgURL!)

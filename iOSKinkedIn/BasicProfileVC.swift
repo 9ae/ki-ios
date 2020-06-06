@@ -108,11 +108,7 @@ class BasicProfileVC: ScrollTextInputVC, UIPickerViewDelegate, UIPickerViewDataS
         
         if let birthday = birthdayField?.date, let calendar = birthdayField?.calendar {
             if profile?.birthday != birthday {
-                params["birthday"] = [
-                    "year": calendar.component(.year, from: birthday),
-                    "month": calendar.component(.month, from: birthday),
-                    "date": calendar.component(.day, from: birthday)
-                ]
+                params["birthday"] = KinkedInAPI.isoFormat.string(from: birthday)
                 profile?.birthday = birthday
                 
                 let today = Date()

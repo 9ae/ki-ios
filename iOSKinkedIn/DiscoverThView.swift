@@ -13,7 +13,7 @@ struct DiscoverThView: View {
    var profile : Profile
    
    func picture() -> Image {
-       if let pic_url = profile.picture {
+       if let pic_url = profile.th_picture {
            let url = URL(string: pic_url)
            do {
                let imgData = try Data(contentsOf: url!)

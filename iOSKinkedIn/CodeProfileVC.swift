@@ -149,7 +149,7 @@ class CodeProfileVC: UIViewController {
     }
     
     private func setData() {
-        if let pictureURL = profile.picture {
+        let pictureURL = profile.pictures[0]
             let imgURL = URL(string: pictureURL)
             do {
                 let imgData = try Data(contentsOf: imgURL!)
@@ -158,7 +158,6 @@ class CodeProfileVC: UIViewController {
                 // TODO: use put in place holder image
                 print("ERR loading profile picture")
             }
-        }
         
         basicInfo.numberOfLines = 2
         var basicText = "\(profile.name), \(profile.age)"
