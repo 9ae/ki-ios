@@ -52,9 +52,9 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController,
                                didFinishPickingMediaWithInfo info: [String : Any]) {
         picker.dismiss(animated: false) {
-            //UIImagePickerControllerReferenceURL
+            // TODO put in image cropper
             var selectImage = info["UIImagePickerControllerOriginalImage"] as? UIImage
-            selectImage = selectImage?.scaledTo(width: 375.0)
+            selectImage = selectImage?.scaledTo(width: 350.0)
             self.defaultPicture.image = selectImage
             self.imageUpdated = true
             self.uploadImage()
@@ -65,7 +65,7 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     func uploadImage(){
         if let image = self.defaultPicture.image, let data = image.jpegData(compressionQuality: 1.0) {
             print("Converted image to data of width:\(image.size.width)")
-
+            KinkedInAPI.uploadPicture(data: data.base64EncodedString())
         } else {
             print("Unable to convert image")
         }
@@ -73,8 +73,8 @@ class PictureVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction
     func openWebapp(_ sender : Any) {
-        // "https://api-mistress.kinkedin.app/web/my/upload?token=\(KinkedInAPI.token)"
-        if let url = URL(string: "http://localhost:5000/web/my/upload?token=\(KinkedInAPI.token)") {
+        // "http://localhost:5000/web/my/upload?token=\(KinkedInAPI.token)"
+        if let url = URL(string: "https://api-mistress.kinkedin.app/web/my/upload?token=\(KinkedInAPI.token)") {
             print("open in safari")
             UIApplication.shared.open(url, options: [:])
         }

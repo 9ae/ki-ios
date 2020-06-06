@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tqS-a6-tlz">
-                                <rect key="frame" x="7.5" y="8" width="360" height="250"/>
+                                <rect key="frame" x="7.5" y="8" width="360" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="qdX-HN-Hzf"/>
+                                    <constraint firstAttribute="height" constant="350" id="qdX-HN-Hzf"/>
                                     <constraint firstAttribute="width" constant="360" id="v2q-ZK-Cm8"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2et-dM-q8x">
-                                <rect key="frame" x="257" y="266" width="102" height="30"/>
+                                <rect key="frame" x="257" y="366" width="102" height="30"/>
                                 <state key="normal" title="Upload Picture">
                                     <color key="titleColor" red="0.84952910960000005" green="0.2379208599" blue="0.41901662090000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -36,19 +36,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GUIDELINES KinkedIn Community Standards: - blah blah  Apple Restrictions: - blah blah" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uNI-2K-Ena">
-                                <rect key="frame" x="16" y="308" width="343" height="130.5"/>
+                                <rect key="frame" x="16" y="408" width="343" height="130.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to express yourself beyond the boundaries of Apple's restrictions, you may do so on our webapp." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rih-ub-YpA">
-                                <rect key="frame" x="8" y="458.5" width="359" height="61"/>
+                                <rect key="frame" x="8" y="558.5" width="359" height="61"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FPe-zC-c5q">
-                                <rect key="frame" x="261" y="527.5" width="98" height="30"/>
+                                <rect key="frame" x="261" y="627.5" width="98" height="30"/>
                                 <state key="normal" title="Open Webapp">
                                     <color key="titleColor" name="actionColor"/>
                                 </state>

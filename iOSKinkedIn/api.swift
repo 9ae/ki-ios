@@ -604,6 +604,17 @@ class KinkedInAPI {
         }
     }
     
+    static func uploadPicture (data: String) {
+        let params : Parameters = [
+            "format" : "jpg",
+            "data": data,
+            "web_only": false
+        ]
+        post("self/picture", parameters: params){ json in
+            print(json)
+        }
+    }
+    
     static func aftercareStats(callback: @escaping(_ reports: Int, _ checkins: Int) -> Void){
         get("self/aftercare/stats"){ _json in
             guard let json = _json as? [String:Any] else { return }

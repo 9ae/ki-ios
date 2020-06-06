@@ -11,7 +11,6 @@ target 'iOSKinkedIn' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Atributika'
-  pod 'Cloudinary'
   pod 'TagListView'
   pod 'Cache'
   pod 'SendBirdSDK'
